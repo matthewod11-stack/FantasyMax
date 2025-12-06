@@ -269,15 +269,29 @@ export class YahooFantasyClient {
     const leagueData = response.fantasy_content?.league;
     console.log('leagueData type:', Array.isArray(leagueData) ? 'array' : typeof leagueData);
 
+    let leagueProps: Record<string, unknown>;
+
     if (Array.isArray(leagueData)) {
-      this.safeLog('leagueData[0]:', leagueData[0], 500);
-      return leagueData[0] as YahooLeague;
+      // league[0] might be the props directly or an array of single-property objects
+      const firstItem = leagueData[0];
+      if (Array.isArray(firstItem)) {
+        leagueProps = this.flattenYahooArray(firstItem);
+      } else {
+        leagueProps = firstItem || {};
+      }
+    } else {
+      // Handle object with numeric keys: {"0": {...}, "1": {...}}
+      const leagueArray = this.yahooObjectToArray(leagueData);
+      const firstItem = leagueArray[0];
+      if (Array.isArray(firstItem)) {
+        leagueProps = this.flattenYahooArray(firstItem);
+      } else {
+        leagueProps = firstItem || {};
+      }
     }
-    // Handle object with numeric keys: {"0": {...}, "1": {...}}
-    const leagueArray = this.yahooObjectToArray(leagueData);
-    console.log('leagueArray length:', leagueArray.length);
-    this.safeLog('leagueArray[0]:', leagueArray[0], 500);
-    return leagueArray[0] as YahooLeague;
+
+    this.safeLog('parsed league:', leagueProps, 500);
+    return leagueProps as YahooLeague;
   }
 
   // Get all teams in a league with standings
@@ -285,7 +299,7 @@ export class YahooFantasyClient {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const response = await this.apiRequest<any>(`/league/${leagueKey}/teams;out=standings`);
 
-    this.safeLog('getLeagueTeams raw response:', response, 2000);
+    this.safeLog('getLeagueTeams raw response:', response, 3000);
 
     // Yahoo returns league as array or object with numeric keys
     const leagueData = response.fantasy_content?.league;
@@ -293,26 +307,53 @@ export class YahooFantasyClient {
 
     const leagueArray = Array.isArray(leagueData) ? leagueData : this.yahooObjectToArray(leagueData);
     console.log('teams leagueArray length:', leagueArray.length);
-    this.safeLog('teams leagueArray[0]:', leagueArray[0], 500);
-    this.safeLog('teams leagueArray[1]:', leagueArray[1], 1000);
 
     // Second element contains teams
     const teamsContainer = leagueArray[1]?.teams;
-    console.log('teamsContainer:', teamsContainer ? 'exists' : 'undefined', 'type:', typeof teamsContainer);
+    console.log('teamsContainer:', teamsContainer ? 'exists' : 'undefined');
 
     if (!teamsContainer) return [];
 
-    // Teams can be in .team array or as object with numeric keys
-    if (Array.isArray(teamsContainer.team)) {
-      console.log('teams in .team array, count:', teamsContainer.team.length);
-      this.safeLog('first team:', teamsContainer.team[0], 500);
-      return teamsContainer.team;
+    // Extract teams from object with numeric keys: {"0": {"team": [...]}, "1": {"team": [...]}}
+    const teamsRaw = this.yahooObjectToArray(teamsContainer);
+    console.log('teamsRaw count:', teamsRaw.length);
+    this.safeLog('first teamsRaw item:', teamsRaw[0], 500);
+
+    // Each team is wrapped: {"team": [{...props...}, {...standings...}]}
+    // We need to unwrap and merge team[0] (info) with team[1] (standings)
+    const teams: YahooTeam[] = [];
+    for (const teamWrapper of teamsRaw) {
+      const teamArray = teamWrapper?.team;
+      if (!Array.isArray(teamArray)) continue;
+
+      // team[0] contains an array of property objects, team[1] has standings
+      // Flatten team[0] array into single object
+      const teamProps = this.flattenYahooArray(teamArray[0]);
+      const teamStandings = teamArray[1]?.team_standings;
+
+      teams.push({
+        ...teamProps,
+        team_standings: teamStandings,
+      } as YahooTeam);
     }
 
-    const teamsArray = this.yahooObjectToArray(teamsContainer);
-    console.log('teams from object keys, count:', teamsArray.length);
-    this.safeLog('first team:', teamsArray[0], 500);
-    return teamsArray;
+    console.log('parsed teams count:', teams.length);
+    this.safeLog('first parsed team:', teams[0], 500);
+    return teams;
+  }
+
+  // Yahoo returns arrays of single-property objects that need flattening
+  // e.g., [{team_key: "..."}, {team_id: "..."}, {name: "..."}] -> {team_key, team_id, name}
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private flattenYahooArray(arr: any[]): Record<string, any> {
+    if (!Array.isArray(arr)) return arr || {};
+    const result: Record<string, unknown> = {};
+    for (const item of arr) {
+      if (item && typeof item === 'object') {
+        Object.assign(result, item);
+      }
+    }
+    return result;
   }
 
   // Get scoreboard (all matchups for a week)
@@ -321,19 +362,48 @@ export class YahooFantasyClient {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const response = await this.apiRequest<any>(`/league/${leagueKey}/scoreboard${weekParam}`);
 
+    this.safeLog('getScoreboard raw response:', response, 2000);
+
     // Yahoo returns league as array or object with numeric keys
     const leagueData = response.fantasy_content?.league;
     const leagueArray = Array.isArray(leagueData) ? leagueData : this.yahooObjectToArray(leagueData);
 
     // Second element contains scoreboard
     const matchupsContainer = leagueArray[1]?.scoreboard?.matchups;
+    console.log('matchupsContainer:', matchupsContainer ? 'exists' : 'undefined');
     if (!matchupsContainer) return [];
 
-    // Matchups can be in .matchup array or as object with numeric keys
-    if (Array.isArray(matchupsContainer.matchup)) {
-      return matchupsContainer.matchup;
+    // Extract matchups from object with numeric keys: {"0": {"matchup": {...}}, "1": {...}}
+    const matchupsRaw = this.yahooObjectToArray(matchupsContainer);
+    console.log('matchupsRaw count:', matchupsRaw.length);
+
+    // Each matchup may be wrapped: {"matchup": {...}} - unwrap if needed
+    const matchups: YahooMatchup[] = [];
+    for (const matchupWrapper of matchupsRaw) {
+      // Sometimes it's {"matchup": {...}}, sometimes it's the matchup directly
+      const matchup = matchupWrapper?.matchup || matchupWrapper;
+      if (!matchup) continue;
+
+      // Parse teams within the matchup - they're also wrapped
+      const teamsContainer = matchup.teams;
+      if (teamsContainer) {
+        const teamsRaw = this.yahooObjectToArray(teamsContainer);
+        const parsedTeams = teamsRaw.map((tw: { team?: unknown[] }) => {
+          const teamArray = tw?.team;
+          if (!Array.isArray(teamArray)) return tw;
+          return {
+            ...this.flattenYahooArray(teamArray[0] as unknown[]),
+            team_points: teamArray[1]?.team_points,
+          };
+        });
+        matchup.teams = parsedTeams;
+      }
+
+      matchups.push(matchup as YahooMatchup);
     }
-    return this.yahooObjectToArray(matchupsContainer);
+
+    console.log('parsed matchups count:', matchups.length);
+    return matchups;
   }
 
   // Get all matchups for the season
