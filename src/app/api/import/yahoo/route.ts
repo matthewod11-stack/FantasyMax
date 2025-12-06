@@ -214,7 +214,7 @@ export async function POST(request: NextRequest) {
       const weekMatchups = await yahoo.getScoreboard(leagueKey, week);
 
       for (const matchup of weekMatchups) {
-        if (matchup.teams.length !== 2) continue;
+        if (!matchup.teams || matchup.teams.length !== 2) continue;
 
         const [team1, team2] = matchup.teams;
         if (!team1 || !team2) continue;
@@ -236,15 +236,15 @@ export async function POST(request: NextRequest) {
 
         if (!homeTeam || !awayTeam) continue;
 
-        const homeScore = team1.team_points.total;
-        const awayScore = team2.team_points.total;
+        const homeScore = team1.team_points?.total ?? 0;
+        const awayScore = team2.team_points?.total ?? 0;
         const winnerId =
           homeScore > awayScore ? homeTeam.id : awayScore > homeScore ? awayTeam.id : null;
 
         await supabase.from('matchups').upsert(
           {
             season_id: season.id,
-            week: parseInt(matchup.week),
+            week: parseInt(matchup.week) || week,
             home_team_id: homeTeam.id,
             away_team_id: awayTeam.id,
             home_score: homeScore,
