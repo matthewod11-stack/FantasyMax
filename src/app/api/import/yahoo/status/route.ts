@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { getYahooClient } from '@/lib/yahoo/client';
-import type { YahooOAuthTokens } from '@/lib/yahoo/types';
+import type { YahooOAuthTokens, YahooLeague } from '@/lib/yahoo/types';
 
 export async function GET() {
   try {
@@ -15,8 +15,25 @@ export async function GET() {
     const tokens: YahooOAuthTokens = JSON.parse(tokensCookie.value);
     const client = getYahooClient(tokens);
 
-    // Try to fetch leagues to verify connection
-    const leagues = await client.getUserLeagues();
+    // Fetch all available NFL games (seasons) first
+    console.log('Fetching available games...');
+    const games = await client.getAvailableGames();
+    console.log('Available games:', games.map(g => ({ key: g.game_key, season: g.season })));
+
+    // Fetch leagues for all seasons
+    let allLeagues: YahooLeague[] = [];
+    for (const game of games) {
+      try {
+        console.log(`Fetching leagues for game ${game.game_key} (${game.season})...`);
+        const seasonLeagues = await client.getUserLeagues(game.game_key);
+        console.log(`Found ${seasonLeagues.length} leagues for ${game.season}`);
+        allLeagues = [...allLeagues, ...seasonLeagues];
+      } catch (e) {
+        console.log(`No leagues for game ${game.game_key}`);
+      }
+    }
+
+    const leagues = allLeagues;
 
     // Update tokens if refreshed
     const updatedTokens = client.getTokens();
