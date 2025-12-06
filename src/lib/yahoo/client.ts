@@ -190,11 +190,17 @@ export class YahooFantasyClient {
   async getAvailableGames(): Promise<YahooGame[]> {
     const response = await this.apiRequest<{
       fantasy_content: {
-        games: { game: YahooGame[] };
+        games: { game: YahooGame[] } | { count: number };
       };
     }>('/games;game_codes=nfl');
 
-    return response.fantasy_content.games?.game || [];
+    console.log('Raw games response:', JSON.stringify(response, null, 2));
+
+    const games = response.fantasy_content.games;
+    if ('game' in games) {
+      return games.game || [];
+    }
+    return [];
   }
 
   // Get league details
