@@ -307,6 +307,9 @@ export class YahooFantasyClient {
 
     const leagueArray = Array.isArray(leagueData) ? leagueData : this.yahooObjectToArray(leagueData);
     console.log('teams leagueArray length:', leagueArray.length);
+    this.safeLog('leagueArray[0] keys:', leagueArray[0] ? Object.keys(leagueArray[0]) : 'undefined', 500);
+    this.safeLog('leagueArray[1] keys:', leagueArray[1] ? Object.keys(leagueArray[1]) : 'undefined', 500);
+    this.safeLog('leagueArray[1] full:', leagueArray[1], 1000);
 
     // Second element contains teams
     const teamsContainer = leagueArray[1]?.teams;
