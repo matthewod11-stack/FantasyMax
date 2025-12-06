@@ -132,7 +132,10 @@ export async function POST(request: NextRequest) {
     let teamsImported = 0;
 
     for (const yahooTeam of yahooTeams) {
-      const manager = yahooTeam.managers[0];
+      // Yahoo wraps managers: managers[0].manager, not managers[0] directly
+      const managerWrapper = yahooTeam.managers?.[0];
+      const manager = managerWrapper?.manager || managerWrapper;
+      console.log('Processing team:', yahooTeam.name, 'manager:', manager?.nickname);
       if (!manager) continue;
 
       // Find or create member

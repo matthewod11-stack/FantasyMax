@@ -371,8 +371,15 @@ export class YahooFantasyClient {
     const leagueData = response.fantasy_content?.league;
     const leagueArray = Array.isArray(leagueData) ? leagueData : this.yahooObjectToArray(leagueData);
 
-    // Second element contains scoreboard
-    const matchupsContainer = leagueArray[1]?.scoreboard?.matchups;
+    // Second element contains scoreboard - but scoreboard itself has numeric keys!
+    const scoreboardWrapper = leagueArray[1]?.scoreboard;
+    console.log('scoreboardWrapper:', scoreboardWrapper ? 'exists' : 'undefined');
+
+    // Unwrap the "0" key from scoreboard
+    const scoreboardContent = this.yahooObjectToArray(scoreboardWrapper)[0];
+    console.log('scoreboardContent:', scoreboardContent ? 'exists' : 'undefined');
+
+    const matchupsContainer = scoreboardContent?.matchups;
     console.log('matchupsContainer:', matchupsContainer ? 'exists' : 'undefined');
     if (!matchupsContainer) return [];
 
