@@ -210,31 +210,51 @@ export async function POST(request: NextRequest) {
     const totalWeeks = parseInt(yahooLeague.end_week);
     let matchupsImported = 0;
 
+    // Debug: log season info for matchup lookups
+    console.log('Looking up matchups with season.id:', season.id);
+
     for (let week = 1; week <= Math.min(totalWeeks, yahooLeague.current_week); week++) {
       const weekMatchups = await yahoo.getScoreboard(leagueKey, week);
 
       for (const matchup of weekMatchups) {
-        if (!matchup.teams || matchup.teams.length !== 2) continue;
+        if (!matchup.teams || matchup.teams.length !== 2) {
+          console.log('Skipping matchup - invalid teams:', matchup.teams?.length);
+          continue;
+        }
 
         const [team1, team2] = matchup.teams;
-        if (!team1 || !team2) continue;
+        if (!team1 || !team2) {
+          console.log('Skipping matchup - null team1 or team2');
+          continue;
+        }
+
+        // Debug: log team keys we're searching for
+        if (week === 1) {
+          console.log('Week 1 matchup - looking for team_key:', team1.team_key, 'vs', team2.team_key);
+        }
 
         // Find team IDs
-        const { data: homeTeam } = await supabase
+        const { data: homeTeam, error: homeErr } = await supabase
           .from('teams')
           .select('id')
           .eq('season_id', season.id)
           .eq('yahoo_team_key', team1.team_key)
           .single();
 
-        const { data: awayTeam } = await supabase
+        const { data: awayTeam, error: awayErr } = await supabase
           .from('teams')
           .select('id')
           .eq('season_id', season.id)
           .eq('yahoo_team_key', team2.team_key)
           .single();
 
-        if (!homeTeam || !awayTeam) continue;
+        if (!homeTeam || !awayTeam) {
+          if (week === 1) {
+            console.log('Team lookup failed - homeTeam:', homeTeam, 'awayTeam:', awayTeam);
+            console.log('Errors:', homeErr?.message, awayErr?.message);
+          }
+          continue;
+        }
 
         const homeScore = team1.team_points?.total ?? 0;
         const awayScore = team2.team_points?.total ?? 0;
