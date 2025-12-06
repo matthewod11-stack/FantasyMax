@@ -270,6 +270,8 @@ export async function POST(request: NextRequest) {
       })
       .eq('id', season.id);
 
+    // Skip import log update (disabled for dev)
+    /*
     if (importLog?.id) {
       await supabase
         .from('import_logs')
@@ -281,6 +283,7 @@ export async function POST(request: NextRequest) {
         })
         .eq('id', importLog.id);
     }
+    */
 
     // Update tokens if refreshed
     const updatedTokens = yahoo.getTokens();
