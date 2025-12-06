@@ -133,7 +133,8 @@ export async function POST(request: NextRequest) {
 
     for (const yahooTeam of yahooTeams) {
       // Yahoo wraps managers: managers[0].manager, not managers[0] directly
-      const managerWrapper = yahooTeam.managers?.[0];
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const managerWrapper = yahooTeam.managers?.[0] as any;
       const manager = managerWrapper?.manager || managerWrapper;
       console.log('Processing team:', yahooTeam.name, 'manager:', manager?.nickname);
       if (!manager) continue;
