@@ -163,6 +163,12 @@ export class YahooFantasyClient {
     return response.json();
   }
 
+  // Debug method to see raw user leagues response
+  async debugUserLeagues(): Promise<string> {
+    const response = await this.apiRequest<unknown>('/users;use_login=1/games;game_codes=nfl/leagues');
+    return JSON.stringify(response).substring(0, 1000); // Truncate for logging
+  }
+
   // Get user's leagues for a specific game (NFL)
   async getUserLeagues(gameKey: string = 'nfl'): Promise<YahooLeague[]> {
     const response = await this.apiRequest<{

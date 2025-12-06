@@ -15,25 +15,27 @@ export async function GET() {
     const tokens: YahooOAuthTokens = JSON.parse(tokensCookie.value);
     const client = getYahooClient(tokens);
 
-    // Fetch all available NFL games (seasons) first
-    console.log('Fetching available games...');
-    const games = await client.getAvailableGames();
-    console.log('Available games:', games.map(g => ({ key: g.game_key, season: g.season })));
+    // Try direct user leagues query first
+    console.log('Fetching user leagues directly...');
+    let leagues: YahooLeague[] = [];
 
-    // Fetch leagues for all seasons
-    let allLeagues: YahooLeague[] = [];
-    for (const game of games) {
-      try {
-        console.log(`Fetching leagues for game ${game.game_key} (${game.season})...`);
-        const seasonLeagues = await client.getUserLeagues(game.game_key);
-        console.log(`Found ${seasonLeagues.length} leagues for ${game.season}`);
-        allLeagues = [...allLeagues, ...seasonLeagues];
-      } catch (e) {
-        console.log(`No leagues for game ${game.game_key}`);
-      }
+    try {
+      // Try with 'nfl' game code (current season)
+      leagues = await client.getUserLeagues('nfl');
+      console.log(`Found ${leagues.length} leagues with nfl game code`);
+    } catch (e) {
+      console.log('Error fetching nfl leagues:', e);
     }
 
-    const leagues = allLeagues;
+    // If no leagues, try fetching raw user data to debug
+    if (leagues.length === 0) {
+      try {
+        const rawResponse = await client.debugUserLeagues();
+        console.log('Raw user leagues response:', rawResponse);
+      } catch (e) {
+        console.log('Debug error:', e);
+      }
+    }
 
     // Update tokens if refreshed
     const updatedTokens = client.getTokens();
