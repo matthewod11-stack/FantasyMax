@@ -3,6 +3,13 @@ import { NextResponse, type NextRequest } from 'next/server';
 import type { Database } from '@/types/database.types';
 
 export async function updateSession(request: NextRequest) {
+  const pathname = request.nextUrl.pathname;
+
+  // Skip Supabase session check for Yahoo OAuth routes entirely
+  if (pathname.startsWith('/api/auth/yahoo')) {
+    return NextResponse.next();
+  }
+
   let supabaseResponse = NextResponse.next({
     request,
   });
