@@ -72,7 +72,7 @@ export async function POST(request: NextRequest) {
     // Fetch Yahoo league data
     console.log('Fetching Yahoo league:', leagueKey);
     const yahooLeague = await yahoo.getLeague(leagueKey);
-    console.log('Yahoo league data:', JSON.stringify(yahooLeague).substring(0, 500));
+    console.log('Yahoo league data:', JSON.stringify(yahooLeague ?? 'undefined').substring(0, 500));
 
     if (!league) {
       const { data: newLeague } = await supabase
@@ -128,7 +128,7 @@ export async function POST(request: NextRequest) {
     console.log('Fetching Yahoo teams...');
     const yahooTeams = await yahoo.getLeagueTeams(leagueKey);
     console.log('Yahoo teams count:', yahooTeams?.length || 0);
-    console.log('First team:', JSON.stringify(yahooTeams?.[0]).substring(0, 300));
+    console.log('First team:', JSON.stringify(yahooTeams?.[0] ?? 'undefined').substring(0, 300));
     let teamsImported = 0;
 
     for (const yahooTeam of yahooTeams) {

@@ -249,36 +249,58 @@ export class YahooFantasyClient {
 
   // Get league details
   async getLeague(leagueKey: string): Promise<YahooLeague> {
-    const response = await this.apiRequest<{
-      fantasy_content: {
-        league: YahooLeague[];
-      };
-    }>(`/league/${leagueKey}`);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const response = await this.apiRequest<any>(`/league/${leagueKey}`);
 
-    return response.fantasy_content.league[0] as YahooLeague;
+    // Yahoo returns league as array or object with numeric keys
+    const leagueData = response.fantasy_content?.league;
+    if (Array.isArray(leagueData)) {
+      return leagueData[0] as YahooLeague;
+    }
+    // Handle object with numeric keys: {"0": {...}, "1": {...}}
+    const leagueArray = this.yahooObjectToArray(leagueData);
+    return leagueArray[0] as YahooLeague;
   }
 
   // Get all teams in a league with standings
   async getLeagueTeams(leagueKey: string): Promise<YahooTeam[]> {
-    const response = await this.apiRequest<{
-      fantasy_content: {
-        league: [YahooLeague, { teams: { team: YahooTeam[] } }];
-      };
-    }>(`/league/${leagueKey}/teams;out=standings`);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const response = await this.apiRequest<any>(`/league/${leagueKey}/teams;out=standings`);
 
-    return response.fantasy_content.league[1]?.teams?.team || [];
+    // Yahoo returns league as array or object with numeric keys
+    const leagueData = response.fantasy_content?.league;
+    const leagueArray = Array.isArray(leagueData) ? leagueData : this.yahooObjectToArray(leagueData);
+
+    // Second element contains teams
+    const teamsContainer = leagueArray[1]?.teams;
+    if (!teamsContainer) return [];
+
+    // Teams can be in .team array or as object with numeric keys
+    if (Array.isArray(teamsContainer.team)) {
+      return teamsContainer.team;
+    }
+    return this.yahooObjectToArray(teamsContainer);
   }
 
   // Get scoreboard (all matchups for a week)
   async getScoreboard(leagueKey: string, week?: number): Promise<YahooMatchup[]> {
     const weekParam = week ? `;week=${week}` : '';
-    const response = await this.apiRequest<{
-      fantasy_content: {
-        league: [YahooLeague, { scoreboard: { matchups: { matchup: YahooMatchup[] } } }];
-      };
-    }>(`/league/${leagueKey}/scoreboard${weekParam}`);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const response = await this.apiRequest<any>(`/league/${leagueKey}/scoreboard${weekParam}`);
 
-    return response.fantasy_content.league[1]?.scoreboard?.matchups?.matchup || [];
+    // Yahoo returns league as array or object with numeric keys
+    const leagueData = response.fantasy_content?.league;
+    const leagueArray = Array.isArray(leagueData) ? leagueData : this.yahooObjectToArray(leagueData);
+
+    // Second element contains scoreboard
+    const matchupsContainer = leagueArray[1]?.scoreboard?.matchups;
+    if (!matchupsContainer) return [];
+
+    // Matchups can be in .matchup array or as object with numeric keys
+    if (Array.isArray(matchupsContainer.matchup)) {
+      return matchupsContainer.matchup;
+    }
+    return this.yahooObjectToArray(matchupsContainer);
   }
 
   // Get all matchups for the season
