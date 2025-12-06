@@ -169,27 +169,64 @@ export class YahooFantasyClient {
     return JSON.stringify(response).substring(0, 1000); // Truncate for logging
   }
 
-  // Get user's leagues for a specific game (NFL)
+  // Helper to convert Yahoo's object-with-numeric-keys to array
+  private yahooObjectToArray<T>(obj: Record<string, T> | undefined): T[] {
+    if (!obj) return [];
+    return Object.keys(obj)
+      .filter(key => !isNaN(Number(key)))
+      .map(key => obj[key]);
+  }
+
+  // Get all user's leagues across all NFL seasons
+  async getAllUserLeagues(): Promise<YahooLeague[]> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const response = await this.apiRequest<any>('/users;use_login=1/games;game_codes=nfl/leagues');
+
+    const allLeagues: YahooLeague[] = [];
+
+    try {
+      const users = response.fantasy_content?.users;
+      const userArray = this.yahooObjectToArray(users);
+
+      for (const userObj of userArray) {
+        const userData = userObj?.user;
+        if (!Array.isArray(userData) || userData.length < 2) continue;
+
+        const gamesObj = userData[1]?.games;
+        const gamesArray = this.yahooObjectToArray(gamesObj);
+
+        for (const gameObj of gamesArray) {
+          const gameData = gameObj?.game;
+          if (!Array.isArray(gameData) || gameData.length < 2) continue;
+
+          const gameInfo = gameData[0];
+          const leaguesObj = gameData[1]?.leagues;
+          const leaguesArray = this.yahooObjectToArray(leaguesObj);
+
+          for (const leagueObj of leaguesArray) {
+            const leagueData = leagueObj?.league;
+            if (Array.isArray(leagueData) && leagueData[0]) {
+              // Add season from game info
+              allLeagues.push({
+                ...leagueData[0],
+                season: gameInfo?.season,
+              });
+            }
+          }
+        }
+      }
+    } catch (e) {
+      console.error('Error parsing Yahoo leagues:', e);
+    }
+
+    console.log(`Parsed ${allLeagues.length} leagues from Yahoo`);
+    return allLeagues;
+  }
+
+  // Get user's leagues for a specific game (NFL) - legacy method
   async getUserLeagues(gameKey: string = 'nfl'): Promise<YahooLeague[]> {
-    const response = await this.apiRequest<{
-      fantasy_content: {
-        users: [
-          {
-            user: [
-              unknown,
-              {
-                games: [{ game: [unknown, { leagues: { league: YahooLeague[] } }] }];
-              },
-            ];
-          },
-        ];
-      };
-    }>(`/users;use_login=1/games;game_keys=${gameKey}/leagues`);
-
-    const games = response.fantasy_content.users[0]?.user[1]?.games;
-    if (!games) return [];
-
-    return games[0]?.game[1]?.leagues?.league || [];
+    // Use the new method that handles all seasons
+    return this.getAllUserLeagues();
   }
 
   // Get available NFL games (seasons)

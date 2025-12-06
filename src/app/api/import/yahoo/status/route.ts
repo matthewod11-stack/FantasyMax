@@ -15,27 +15,10 @@ export async function GET() {
     const tokens: YahooOAuthTokens = JSON.parse(tokensCookie.value);
     const client = getYahooClient(tokens);
 
-    // Try direct user leagues query first
-    console.log('Fetching user leagues directly...');
-    let leagues: YahooLeague[] = [];
-
-    try {
-      // Try with 'nfl' game code (current season)
-      leagues = await client.getUserLeagues('nfl');
-      console.log(`Found ${leagues.length} leagues with nfl game code`);
-    } catch (e) {
-      console.log('Error fetching nfl leagues:', e);
-    }
-
-    // If no leagues, try fetching raw user data to debug
-    if (leagues.length === 0) {
-      try {
-        const rawResponse = await client.debugUserLeagues();
-        console.log('Raw user leagues response:', rawResponse);
-      } catch (e) {
-        console.log('Debug error:', e);
-      }
-    }
+    // Fetch all user leagues across all seasons
+    console.log('Fetching all user leagues...');
+    const leagues = await client.getAllUserLeagues();
+    console.log(`Found ${leagues.length} total leagues`);
 
     // Update tokens if refreshed
     const updatedTokens = client.getTokens();
