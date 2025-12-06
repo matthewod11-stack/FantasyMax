@@ -391,9 +391,11 @@ export class YahooFantasyClient {
         const parsedTeams = teamsRaw.map((tw: { team?: unknown[] }) => {
           const teamArray = tw?.team;
           if (!Array.isArray(teamArray)) return tw;
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const teamStats = teamArray[1] as any;
           return {
             ...this.flattenYahooArray(teamArray[0] as unknown[]),
-            team_points: teamArray[1]?.team_points,
+            team_points: teamStats?.team_points,
           };
         });
         matchup.teams = parsedTeams;
