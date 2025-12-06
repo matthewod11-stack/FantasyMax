@@ -252,13 +252,18 @@ export class YahooFantasyClient {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const response = await this.apiRequest<any>(`/league/${leagueKey}`);
 
+    console.log('getLeague raw response:', JSON.stringify(response).substring(0, 1000));
+
     // Yahoo returns league as array or object with numeric keys
     const leagueData = response.fantasy_content?.league;
+    console.log('leagueData type:', Array.isArray(leagueData) ? 'array' : typeof leagueData);
+
     if (Array.isArray(leagueData)) {
       return leagueData[0] as YahooLeague;
     }
     // Handle object with numeric keys: {"0": {...}, "1": {...}}
     const leagueArray = this.yahooObjectToArray(leagueData);
+    console.log('leagueArray length:', leagueArray.length, 'first item:', JSON.stringify(leagueArray[0]).substring(0, 300));
     return leagueArray[0] as YahooLeague;
   }
 
@@ -267,19 +272,30 @@ export class YahooFantasyClient {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const response = await this.apiRequest<any>(`/league/${leagueKey}/teams;out=standings`);
 
+    console.log('getLeagueTeams raw response:', JSON.stringify(response).substring(0, 2000));
+
     // Yahoo returns league as array or object with numeric keys
     const leagueData = response.fantasy_content?.league;
+    console.log('teams leagueData type:', Array.isArray(leagueData) ? 'array' : typeof leagueData);
+
     const leagueArray = Array.isArray(leagueData) ? leagueData : this.yahooObjectToArray(leagueData);
+    console.log('teams leagueArray length:', leagueArray.length);
 
     // Second element contains teams
     const teamsContainer = leagueArray[1]?.teams;
+    console.log('teamsContainer:', teamsContainer ? 'exists' : 'undefined', 'type:', typeof teamsContainer);
+
     if (!teamsContainer) return [];
 
     // Teams can be in .team array or as object with numeric keys
     if (Array.isArray(teamsContainer.team)) {
+      console.log('teams in .team array, count:', teamsContainer.team.length);
       return teamsContainer.team;
     }
-    return this.yahooObjectToArray(teamsContainer);
+
+    const teamsArray = this.yahooObjectToArray(teamsContainer);
+    console.log('teams from object keys, count:', teamsArray.length);
+    return teamsArray;
   }
 
   // Get scoreboard (all matchups for a week)
