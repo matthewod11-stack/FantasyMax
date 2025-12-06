@@ -291,7 +291,7 @@ export class YahooFantasyClient {
     }
 
     this.safeLog('parsed league:', leagueProps, 500);
-    return leagueProps as YahooLeague;
+    return leagueProps as unknown as YahooLeague;
   }
 
   // Get all teams in a league with standings
