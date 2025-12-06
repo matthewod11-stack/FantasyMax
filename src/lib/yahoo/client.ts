@@ -170,7 +170,8 @@ export class YahooFantasyClient {
   }
 
   // Helper to convert Yahoo's object-with-numeric-keys to array
-  private yahooObjectToArray<T>(obj: Record<string, T> | undefined): T[] {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private yahooObjectToArray(obj: Record<string, any> | undefined): any[] {
     if (!obj) return [];
     return Object.keys(obj)
       .filter(key => !isNaN(Number(key)))
