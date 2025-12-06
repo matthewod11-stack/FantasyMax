@@ -78,6 +78,53 @@ supabase/
 4. **Server Components**: Default to RSC, use 'use client' only when needed
 5. **Zod Validation**: All API inputs and imports validated with Zod
 
+## Yahoo API Integration
+
+### Response Structure Quirks
+Yahoo's Fantasy API has non-standard JSON formatting that requires special handling:
+
+1. **Objects with Numeric Keys**: Returns `{"0": {...}, "1": {...}}` instead of arrays
+2. **Wrapper Objects**: Data nested in wrappers like `{"team": [...]}`, `{"manager": {...}}`
+3. **Property Arrays**: Properties as `[{a: 1}, {b: 2}]` instead of `{a: 1, b: 2}`
+
+### Helper Functions (in `src/lib/yahoo/client.ts`)
+```typescript
+// Convert {"0": {...}, "1": {...}} to array
+yahooObjectToArray(obj)
+
+// Merge [{a: 1}, {b: 2}] into {a: 1, b: 2}
+flattenYahooArray(arr)
+
+// Safe logging that never crashes on undefined
+safeLog(label, data, maxLen)
+```
+
+### Common Patterns
+```typescript
+// Unwrap manager from wrapper
+const manager = managerWrapper?.manager || managerWrapper;
+
+// Access team standings (team is array: [props, standings])
+const teamProps = flattenYahooArray(teamArray[0]);
+const standings = teamArray[1]?.team_standings;
+
+// Scoreboard has extra "0" key layer
+const scoreboardContent = yahooObjectToArray(leagueArray[1]?.scoreboard)[0];
+const matchups = scoreboardContent?.matchups;
+```
+
+### Endpoint Response Structures
+| Endpoint | Access Path |
+|----------|-------------|
+| `/league/{key}` | `fantasy_content.league[0]` |
+| `/league/{key}/teams` | `fantasy_content.league[1].teams{"0": {"team": [...]}}` |
+| `/league/{key}/scoreboard` | `fantasy_content.league[1].scoreboard{"0": {matchups: ...}}` |
+
+### Alternative: Use Existing Libraries
+If starting fresh, consider these wrappers that handle parsing:
+- **Node.js**: [yahoo-fantasy-sports-api](https://github.com/whatadewitt/yahoo-fantasy-sports-api)
+- **Python**: [yfpy](https://github.com/uberfastman/yfpy)
+
 ## Database Tables
 
 Core tables (see migrations for full schema):
