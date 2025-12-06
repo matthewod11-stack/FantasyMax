@@ -247,23 +247,36 @@ export class YahooFantasyClient {
     return [];
   }
 
+  // Safe JSON stringify for logging (never crashes)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private safeLog(label: string, data: any, maxLen = 500): void {
+    try {
+      const str = JSON.stringify(data) ?? 'undefined';
+      console.log(label, str.substring(0, maxLen));
+    } catch {
+      console.log(label, '[stringify error]', typeof data);
+    }
+  }
+
   // Get league details
   async getLeague(leagueKey: string): Promise<YahooLeague> {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const response = await this.apiRequest<any>(`/league/${leagueKey}`);
 
-    console.log('getLeague raw response:', JSON.stringify(response).substring(0, 1000));
+    this.safeLog('getLeague raw response:', response, 1500);
 
     // Yahoo returns league as array or object with numeric keys
     const leagueData = response.fantasy_content?.league;
     console.log('leagueData type:', Array.isArray(leagueData) ? 'array' : typeof leagueData);
 
     if (Array.isArray(leagueData)) {
+      this.safeLog('leagueData[0]:', leagueData[0], 500);
       return leagueData[0] as YahooLeague;
     }
     // Handle object with numeric keys: {"0": {...}, "1": {...}}
     const leagueArray = this.yahooObjectToArray(leagueData);
-    console.log('leagueArray length:', leagueArray.length, 'first item:', JSON.stringify(leagueArray[0]).substring(0, 300));
+    console.log('leagueArray length:', leagueArray.length);
+    this.safeLog('leagueArray[0]:', leagueArray[0], 500);
     return leagueArray[0] as YahooLeague;
   }
 
@@ -272,7 +285,7 @@ export class YahooFantasyClient {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const response = await this.apiRequest<any>(`/league/${leagueKey}/teams;out=standings`);
 
-    console.log('getLeagueTeams raw response:', JSON.stringify(response).substring(0, 2000));
+    this.safeLog('getLeagueTeams raw response:', response, 2000);
 
     // Yahoo returns league as array or object with numeric keys
     const leagueData = response.fantasy_content?.league;
@@ -280,6 +293,8 @@ export class YahooFantasyClient {
 
     const leagueArray = Array.isArray(leagueData) ? leagueData : this.yahooObjectToArray(leagueData);
     console.log('teams leagueArray length:', leagueArray.length);
+    this.safeLog('teams leagueArray[0]:', leagueArray[0], 500);
+    this.safeLog('teams leagueArray[1]:', leagueArray[1], 1000);
 
     // Second element contains teams
     const teamsContainer = leagueArray[1]?.teams;
@@ -290,11 +305,13 @@ export class YahooFantasyClient {
     // Teams can be in .team array or as object with numeric keys
     if (Array.isArray(teamsContainer.team)) {
       console.log('teams in .team array, count:', teamsContainer.team.length);
+      this.safeLog('first team:', teamsContainer.team[0], 500);
       return teamsContainer.team;
     }
 
     const teamsArray = this.yahooObjectToArray(teamsContainer);
     console.log('teams from object keys, count:', teamsArray.length);
+    this.safeLog('first team:', teamsArray[0], 500);
     return teamsArray;
   }
 
