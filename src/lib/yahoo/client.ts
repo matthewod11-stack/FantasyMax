@@ -387,12 +387,27 @@ export class YahooFantasyClient {
     const matchupsRaw = this.yahooObjectToArray(matchupsContainer);
     console.log('matchupsRaw count:', matchupsRaw.length);
 
-    // Each matchup may be wrapped: {"matchup": {...}} - unwrap if needed
+    // Each matchup may be wrapped: {"matchup": {"0": {...}}} - unwrap both layers
     const matchups: YahooMatchup[] = [];
     for (const matchupWrapper of matchupsRaw) {
-      // Sometimes it's {"matchup": {...}}, sometimes it's the matchup directly
-      const matchup = matchupWrapper?.matchup || matchupWrapper;
-      if (!matchup) continue;
+      // First unwrap: {"matchup": {...}} -> {...}
+      const matchupOuter = matchupWrapper?.matchup || matchupWrapper;
+      if (!matchupOuter) continue;
+
+      // Second unwrap: {"0": {"teams":...}, "1": ...} -> {"teams":...}
+      // The matchup itself has numeric keys for some reason
+      const matchupArray = this.yahooObjectToArray(matchupOuter);
+      const matchupInner = matchupArray[0] || matchupOuter;
+      if (!matchupInner) continue;
+
+      // Merge properties from outer level (week, is_playoffs, etc.) with inner level (teams)
+      const matchup = { ...matchupOuter, ...matchupInner };
+
+      // Debug: log first matchup structure
+      if (matchups.length === 0) {
+        this.safeLog('First matchup structure:', matchup, 500);
+        console.log('matchup.teams exists:', !!matchup.teams);
+      }
 
       // Parse teams within the matchup - they're also wrapped
       const teamsContainer = matchup.teams;
