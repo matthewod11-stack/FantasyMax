@@ -1,33 +1,84 @@
 # FantasyMax Progress Report
 
-**Last Updated:** December 6, 2025
+**Last Updated:** December 6, 2025 (Evening Session)
 
 ---
 
-## Overall Status: ~75-80% Complete
+## Overall Status: ~80-85% Complete
 
-The foundation is solid—database, auth, and import infrastructure are production-ready. App is now deployed to Vercel. Remaining work is primarily feature page implementation and completing Yahoo OAuth setup.
+Yahoo OAuth fully working, leagues loading from all 11 seasons. Currently debugging the sync/import to Supabase. GitHub connected to Vercel for auto-deploys.
 
 ---
 
-## Session Summary (December 6, 2025)
+## Project Workflow
+
+### Git & Vercel Connection
+- **GitHub Repo**: `matthewod11-stack/FantasyMax` (private)
+- **Vercel Auto-Deploy**: Connected - every push to `main` triggers deployment
+- **Production URL**: https://fantasymax.vercel.app
+
+### Environment Variables (IMPORTANT)
+When adding env vars to Vercel, **DO NOT copy-paste with trailing newlines**. This caused hours of debugging. Type values manually or carefully trim whitespace.
+
+Required in Vercel Settings → Environment Variables:
+```
+NEXT_PUBLIC_SUPABASE_URL=https://ykgtcxdgeiwaiqaizdqc.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+YAHOO_CLIENT_ID=dj0yJmk9dTNTNkNKZFZ3YTVDJmQ9WVdrOU5rdDBWMVpDVmxZbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PWZi
+YAHOO_CLIENT_SECRET=20af8e3eb725cb6c5ef37870f5a2cd3dad3dfd37
+NEXT_PUBLIC_APP_URL=https://fantasymax.vercel.app
+```
+
+### Yahoo Developer Console
+- App configured at https://developer.yahoo.com/apps/
+- Redirect URI: `https://fantasymax.vercel.app/api/auth/yahoo/callback`
+- Permissions: Fantasy Sports (Read)
+
+---
+
+## Session Summary (December 6, 2025 - Evening)
 
 ### Accomplished
-1. **Supabase restored** - Project unpaused and MCP connected for direct database control
-2. **Auth fixed** - Resolved duplicate member records causing login loops
-3. **Password reset** - Commissioner account reset to `matthew.od11@gmail.com` / `Judge99!`
-4. **Middleware fix** - Added `/api/auth/yahoo` to public routes so OAuth callback works
-5. **TypeScript fix** - Added required `joined_year` field to auth setup route
-6. **Deployed to Vercel** - App live at `https://fantasymax.vercel.app`
-7. **Environment variables configured** - All Supabase and Yahoo keys added to Vercel
+1. **GitHub repo created** - `matthewod11-stack/FantasyMax` (private)
+2. **Vercel connected to GitHub** - Auto-deploys on push to main
+3. **Yahoo OAuth fixed** - Env vars had trailing newlines causing "invalid redirect uri" and "invalid client secret" errors
+4. **League fetching working** - All 11 seasons of leagues now visible in dropdown:
+   - FFL 2K15 (2015) through FFL 2K24 (2024)
+   - Plus older leagues: The League of Fantasy (2012), Better Football Better World (2013), etc.
+5. **Fixed Yahoo API parsing** - Yahoo returns objects with numeric keys (`{"0": {...}}`) not arrays
+6. **Middleware fix** - Supabase middleware now skips Yahoo OAuth routes to avoid auth errors
 
-### Blocked / Next Session
-1. **Complete Yahoo OAuth setup**:
-   - Update Yahoo Developer Console with Vercel URLs:
-     - Homepage URL: `https://fantasymax.vercel.app`
-     - Redirect URI: `https://fantasymax.vercel.app/api/auth/yahoo/callback`
-   - Test OAuth flow on deployed Vercel site
-2. **Import league data** - Once Yahoo OAuth works, import historical data
+### In Progress
+1. **Sync/Import to Supabase** - Shows "Synced 0 teams, 0 matchups"
+   - Auth check temporarily disabled for development
+   - Debug logging added to see what Yahoo returns for teams/matchups
+   - Likely needs same object-to-array parsing fix as leagues
+
+### Debug Logging Added
+The following files have `console.log` statements for debugging (check Vercel Runtime Logs):
+- `src/app/api/auth/yahoo/route.ts` - OAuth URL generation
+- `src/app/api/import/yahoo/route.ts` - Sync process
+- `src/lib/yahoo/client.ts` - API responses
+
+---
+
+## Current State
+
+### What's Working
+| Feature | Status |
+|---------|--------|
+| Vercel deployment | ✅ Auto-deploys from GitHub |
+| Yahoo OAuth | ✅ Connects and authenticates |
+| League listing | ✅ All 11 seasons visible |
+| Yahoo disconnect | ✅ Works |
+
+### What Needs Work
+| Feature | Issue |
+|---------|-------|
+| Team/matchup sync | Returns 0 - needs API response parsing fix |
+| Supabase auth | Temporarily disabled for dev |
+| Import logs | Temporarily disabled (needs member ID) |
 
 ---
 
@@ -36,117 +87,31 @@ The foundation is solid—database, auth, and import infrastructure are producti
 | Environment | URL |
 |-------------|-----|
 | **Production** | https://fantasymax.vercel.app |
-| **Local Dev** | http://localhost:3004 |
+| **GitHub** | https://github.com/matthewod11-stack/FantasyMax |
 | **Supabase** | https://ykgtcxdgeiwaiqaizdqc.supabase.co |
 
-### Vercel Environment Variables (Configured)
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-- `SUPABASE_SERVICE_ROLE_KEY`
-- `YAHOO_CLIENT_ID`
-- `YAHOO_CLIENT_SECRET`
-- `NEXT_PUBLIC_APP_URL`
-
 ---
 
-## Complete (Production-Ready)
+## Next Session Tasks
 
-| Area | What's Built |
-|------|--------------|
-| **Database** | Full 15-table schema with RLS, materialized views, indexes |
-| **Types** | Auto-generated TypeScript types for entire schema |
-| **Auth** | Commissioner setup, login, Yahoo OAuth flow |
-| **Supabase Clients** | Browser, server, admin clients with typed queries |
-| **Yahoo API** | Full OAuth + league/team/matchup/trade sync |
-| **CSV Import** | Parser + validators for all 5 data types |
-| **UI System** | shadcn/ui fully integrated (14+ components) |
-| **Layout** | Sidebar, Header, role-aware navigation |
-| **Vercel Deployment** | Production deployment with env vars |
+### Immediate Priority
+1. **Fix team/matchup parsing** - Apply same `yahooObjectToArray` helper to:
+   - `getLeague()` method
+   - `getLeagueTeams()` method
+   - `getScoreboard()` method
+2. **Check Vercel Runtime Logs** - Look for debug output when syncing
+3. **Test sync with one season** - Try syncing FFL 2K24 (2024)
 
----
+### After Sync Works
+4. **Re-enable Supabase auth** - Uncomment auth checks in import route
+5. **Remove debug logging** - Clean up console.log statements
+6. **Test end-to-end** - Import a full season, verify data in Supabase
 
-## Substantially Built (70-95%)
-
-| Area | Status | What's Done | What Remains |
-|------|--------|-------------|--------------|
-| **Dashboard Home** | Complete | Stats cards, champion display | - |
-| **Seasons List** | Complete | Grid display, import status | - |
-| **Admin Dashboard** | Complete | Quick stats, recent imports | - |
-| **CSV Import** | Complete | Full upload→preview→import workflow | - |
-| **Yahoo Import** | 95% | Connect, select league, sync | Complete OAuth setup on Vercel |
-| **API Routes** | 70% | Auth + import endpoints | Media, votes APIs |
-
----
-
-## Scaffolded (Directories Exist, Pages Need Content)
-
-### Dashboard Feature Pages
-
-```
-src/app/(dashboard)/
-├── awards/          # Season awards display
-├── constitution/    # Rules/amendments viewer
-├── hall-of-shame/   # Last place history
-├── head-to-head/    # H2H record lookup
-├── managers/        # Manager profiles/stats
-├── media/           # Photo/video gallery
-├── records/         # League records
-├── trades/          # Trade history browser
-└── voting/          # Polls and voting
-```
-
-### Admin Pages
-
-```
-src/app/admin/
-├── members/         # Member CRUD, invites
-├── seasons/         # Season management
-└── writeups/        # Commissioner recaps
-```
-
----
-
-## Database Tables (All Created)
-
-| Table | Purpose | Status |
-|-------|---------|--------|
-| `league` | Single league config | Ready |
-| `members` | People + roles | Ready (1 commissioner) |
-| `seasons` | Year-by-year | Ready |
-| `teams` | Member's team per season | Ready |
-| `matchups` | Weekly results | Ready |
-| `trades` | Trade history | Ready |
-| `award_types` | 11 pre-seeded awards | Ready |
-| `awards` | Season award assignments | Ready |
-| `polls` / `votes` | Voting system | Ready |
-| `media` / `media_tags` | Photos with tagging | Ready |
-| `rules` / `rule_amendments` | Constitution | Ready |
-| `import_logs` | Import tracking | Ready |
-| `head_to_head_records` | Materialized view | Ready |
-
----
-
-## Recommended Next Steps
-
-### Immediate (Complete Yahoo Setup)
-1. Update Yahoo Developer Console with Vercel callback URL
-2. Test Yahoo OAuth on production
-3. Import league data from Yahoo
-
-### Quick Wins (Use Existing Data)
-4. **Managers page** - Query `members` + join with `teams` for stats
-5. **Trades page** - Query `trades` table, already imported
-6. **Head-to-Head** - Uses the materialized view already built
-
-### Medium Effort
-7. **Awards page** - Display past awards, admin can assign new ones
-8. **Hall of Shame** - Filter awards where `award_type = 'sacko'`
-9. **Records page** - SQL queries against matchups for highs/lows
-
-### Larger Features
-10. **Media gallery** - Needs upload UI + Supabase Storage integration
-11. **Voting system** - Create polls, cast votes, show results
-12. **Constitution** - CRUD for rules + amendment proposals
+### Feature Pages (Once Data Imported)
+- Managers page - Query `members` + `teams`
+- Head-to-Head - Uses existing materialized view
+- Trades page - Query `trades` table
+- Records page - SQL queries for highs/lows
 
 ---
 
@@ -154,14 +119,47 @@ src/app/admin/
 
 | Purpose | Location |
 |---------|----------|
+| Yahoo API client | `src/lib/yahoo/client.ts` |
+| Yahoo OAuth routes | `src/app/api/auth/yahoo/` |
+| Yahoo sync/import | `src/app/api/import/yahoo/route.ts` |
+| Supabase middleware | `src/lib/supabase/middleware.ts` |
 | Database schema | `supabase/migrations/20241123000000_initial_schema.sql` |
 | TypeScript types | `src/types/database.types.ts` |
-| Yahoo client | `src/lib/yahoo/client.ts` |
-| CSV parser | `src/lib/import/csv-parser.ts` |
-| Auth setup | `src/app/api/auth/setup/route.ts` |
-| Auth middleware | `src/lib/supabase/middleware.ts` |
-| Dashboard layout | `src/app/(dashboard)/layout.tsx` |
 | Project config | `CLAUDE.md` |
+
+---
+
+## Technical Notes
+
+### Yahoo API Response Structure
+Yahoo returns objects with numeric string keys instead of arrays:
+```json
+{
+  "users": {
+    "0": { "user": [...] },
+    "count": 1
+  }
+}
+```
+
+Use the `yahooObjectToArray()` helper in `client.ts` to convert these to proper arrays.
+
+### Supabase Middleware
+The middleware at `src/lib/supabase/middleware.ts` skips auth checks for `/api/auth/yahoo/*` routes to prevent Supabase errors during Yahoo OAuth flow.
+
+### Auth Temporarily Disabled
+In `src/app/api/import/yahoo/route.ts`, the commissioner auth check is commented out. Re-enable once Supabase auth is set up:
+```typescript
+// Lines 18-37 are commented out - uncomment when ready
+```
+
+---
+
+## Login Credentials
+
+| Account | Email | Password |
+|---------|-------|----------|
+| Commissioner | matthew.od11@gmail.com | Judge99! |
 
 ---
 
@@ -171,5 +169,4 @@ src/app/admin/
 - **Materialized Views**: Pre-calculated head-to-head records for fast queries
 - **Row Level Security**: Supabase RLS enforces member-only access
 - **Server Components**: Default to RSC, use 'use client' only when needed
-- **Role-Based Access**: Commissioner sees admin nav, members see standard nav
-- **Vercel Deployment**: Production hosting with serverless functions
+- **Auto-Deploy**: Push to main → Vercel builds and deploys automatically
