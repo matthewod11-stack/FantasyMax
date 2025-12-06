@@ -11,8 +11,6 @@ const syncRequestSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
-    console.log('=== Starting Yahoo Sync ===');
-
     // Skip auth check for now during development
     // TODO: Re-enable auth check when Supabase auth is set up
     /*
@@ -70,9 +68,7 @@ export async function POST(request: NextRequest) {
     let { data: league } = await supabase.from('league').select('id').single();
 
     // Fetch Yahoo league data
-    console.log('Fetching Yahoo league:', leagueKey);
     const yahooLeague = await yahoo.getLeague(leagueKey);
-    console.log('Yahoo league data:', JSON.stringify(yahooLeague ?? 'undefined').substring(0, 500));
 
     if (!league) {
       const { data: newLeague } = await supabase
@@ -125,10 +121,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Fetch and import teams
-    console.log('Fetching Yahoo teams...');
     const yahooTeams = await yahoo.getLeagueTeams(leagueKey);
-    console.log('Yahoo teams count:', yahooTeams?.length || 0);
-    console.log('First team:', JSON.stringify(yahooTeams?.[0] ?? 'undefined').substring(0, 300));
     let teamsImported = 0;
 
     for (const yahooTeam of yahooTeams) {
@@ -136,7 +129,6 @@ export async function POST(request: NextRequest) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const managerWrapper = yahooTeam.managers?.[0] as any;
       const manager = managerWrapper?.manager || managerWrapper;
-      console.log('Processing team:', yahooTeam.name, 'manager:', manager?.nickname);
       if (!manager) continue;
 
       // Find or create member
@@ -210,51 +202,31 @@ export async function POST(request: NextRequest) {
     const totalWeeks = parseInt(yahooLeague.end_week);
     let matchupsImported = 0;
 
-    // Debug: log season info for matchup lookups
-    console.log('Looking up matchups with season.id:', season.id);
-
     for (let week = 1; week <= Math.min(totalWeeks, yahooLeague.current_week); week++) {
       const weekMatchups = await yahoo.getScoreboard(leagueKey, week);
 
       for (const matchup of weekMatchups) {
-        if (!matchup.teams || matchup.teams.length !== 2) {
-          console.log('Skipping matchup - invalid teams:', matchup.teams?.length);
-          continue;
-        }
+        if (!matchup.teams || matchup.teams.length !== 2) continue;
 
         const [team1, team2] = matchup.teams;
-        if (!team1 || !team2) {
-          console.log('Skipping matchup - null team1 or team2');
-          continue;
-        }
-
-        // Debug: log team keys we're searching for
-        if (week === 1) {
-          console.log('Week 1 matchup - looking for team_key:', team1.team_key, 'vs', team2.team_key);
-        }
+        if (!team1 || !team2) continue;
 
         // Find team IDs
-        const { data: homeTeam, error: homeErr } = await supabase
+        const { data: homeTeam } = await supabase
           .from('teams')
           .select('id')
           .eq('season_id', season.id)
           .eq('yahoo_team_key', team1.team_key)
           .single();
 
-        const { data: awayTeam, error: awayErr } = await supabase
+        const { data: awayTeam } = await supabase
           .from('teams')
           .select('id')
           .eq('season_id', season.id)
           .eq('yahoo_team_key', team2.team_key)
           .single();
 
-        if (!homeTeam || !awayTeam) {
-          if (week === 1) {
-            console.log('Team lookup failed - homeTeam:', homeTeam, 'awayTeam:', awayTeam);
-            console.log('Errors:', homeErr?.message, awayErr?.message);
-          }
-          continue;
-        }
+        if (!homeTeam || !awayTeam) continue;
 
         const homeScore = team1.team_points?.total ?? 0;
         const awayScore = team2.team_points?.total ?? 0;

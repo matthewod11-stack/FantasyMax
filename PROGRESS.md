@@ -1,12 +1,31 @@
 # FantasyMax Progress Report
 
-**Last Updated:** December 6, 2025 (Late Night Session)
+**Last Updated:** December 6, 2025 (Late Night Session - SYNC COMPLETE!)
 
 ---
 
-## Overall Status: ~85-90% Complete
+## Overall Status: ~95% Complete
 
-Yahoo OAuth working, teams parsing correctly (14 teams!), matchups parsing in progress. The Yahoo API response parsing has been extensively debugged and documented.
+Yahoo sync fully working! 10 seasons imported with 978 matchups across 22 members. All data persisted in Supabase.
+
+---
+
+## Data Imported
+
+| Year | Teams | Matchups | Status |
+|------|-------|----------|--------|
+| 2024 | 14 | 110 | Complete |
+| 2023 | 14 | 110 | Complete |
+| 2022 | 14 | 110 | Complete |
+| 2021 | 14 | 105 | Complete |
+| 2020 | 14 | 105 | Complete |
+| 2019 | 13 | 90 | Complete |
+| 2018 | 13 | 92 | Complete |
+| 2017 | 13 | 90 | Complete |
+| 2016 | 13 | 90 | Complete |
+| 2015 | 11 | 76 | Complete |
+
+**Totals:** 22 members, 133 teams, 978 matchups
 
 ---
 
@@ -20,7 +39,7 @@ Yahoo OAuth working, teams parsing correctly (14 teams!), matchups parsing in pr
 ### Environment Variables (IMPORTANT)
 When adding env vars to Vercel, **DO NOT copy-paste with trailing newlines**. This caused hours of debugging. Type values manually or carefully trim whitespace.
 
-Required in Vercel Settings → Environment Variables:
+Required in Vercel Settings -> Environment Variables:
 ```
 NEXT_PUBLIC_SUPABASE_URL=https://ykgtcxdgeiwaiqaizdqc.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
@@ -37,54 +56,33 @@ NEXT_PUBLIC_APP_URL=https://fantasymax.vercel.app
 
 ---
 
-## Session Summary (December 6, 2025 - Late Night)
-
-### Accomplished This Session
-1. **Teams parsing fixed** - 14 teams now parse correctly from FFL 2K24
-2. **Yahoo API structure fully decoded** - See Technical Notes below
-3. **Helper functions created**:
-   - `yahooObjectToArray()` - Converts `{"0": {...}, "1": {...}}` to arrays
-   - `flattenYahooArray()` - Merges `[{a: 1}, {b: 2}]` into `{a: 1, b: 2}`
-   - `safeLog()` - Debug logging that never crashes on undefined
-4. **Scoreboard parsing updated** - Fixed extra "0" key nesting layer
-5. **Manager access fixed** - Now correctly accesses `managers[0].manager`
-
-### Current Status
-- **Teams**: Parsing correctly (14 teams from FFL 2K24)
-- **Matchups**: Parsing logic updated, testing in progress
-- **Database writes**: Need to verify after parsing works
-
-### Debug Logging Active
-Check Vercel Runtime Logs for detailed output:
-- `src/lib/yahoo/client.ts` - All API responses and parsing steps
-- `src/app/api/import/yahoo/route.ts` - Team/member processing
-
----
-
 ## Current State
 
 ### What's Working
 | Feature | Status |
 |---------|--------|
-| Vercel deployment | ✅ Auto-deploys from GitHub |
-| Yahoo OAuth | ✅ Connects and authenticates |
-| League listing | ✅ All 11 seasons visible |
-| Yahoo disconnect | ✅ Works |
-| Teams parsing | ✅ 14 teams parsed correctly |
-| League details | ✅ Parses name, settings, etc. |
+| Vercel deployment | Done |
+| Yahoo OAuth | Done |
+| League listing | Done - All 11 seasons visible |
+| Yahoo disconnect | Done |
+| Teams sync | Done - 133 teams imported |
+| Matchups sync | Done - 978 matchups imported |
+| Members sync | Done - 22 members created |
+| Database persistence | Done - All data in Supabase |
 
-### What Needs Testing
+### In Progress
 | Feature | Status |
 |---------|--------|
-| Matchups parsing | 🔄 Logic updated, needs verification |
-| Database writes | 🔄 Teams should write to Supabase |
-| Full season sync | 🔄 End-to-end test needed |
+| Dashboard page | Uses createAdminClient for dev |
+| Seasons page | Uses createAdminClient for dev |
+| Auth integration | RLS bypassed during development |
 
 ### Still Disabled
 | Feature | Reason |
 |---------|--------|
 | Supabase auth check | Commented out for dev |
 | Import logs | Needs member ID |
+| RLS enforcement | Using admin client for dev |
 
 ---
 
@@ -101,20 +99,15 @@ Check Vercel Runtime Logs for detailed output:
 ## Next Session Tasks
 
 ### Immediate Priority
-1. **Test sync again** - Verify teams write to Supabase
-2. **Check matchups** - Confirm scoreboard parsing works end-to-end
-3. **Verify in Supabase** - Query `teams` and `matchups` tables
+1. **Build feature pages** - Managers, Head-to-Head, Records
+2. **Enable Supabase auth** - Re-enable auth checks, set up RLS
+3. **Switch pages back to createClient()** - After RLS is configured
 
-### After Sync Works
-4. **Re-enable Supabase auth** - Uncomment auth checks in import route
-5. **Remove debug logging** - Clean up console.log statements
-6. **Test multiple seasons** - Import FFL 2K23, 2K22, etc.
-
-### Feature Pages (Once Data Imported)
-- Managers page - Query `members` + `teams`
+### Feature Pages (Data Ready!)
+- Managers page - Query `members` + `teams` (data exists)
 - Head-to-Head - Uses existing materialized view
-- Trades page - Query `trades` table
 - Records page - SQL queries for highs/lows
+- Trades page - Query `trades` table (needs trade sync)
 
 ---
 
@@ -134,9 +127,9 @@ Check Vercel Runtime Logs for detailed output:
 
 ## Technical Notes: Yahoo API Response Structure
 
-### The Three Layers of Yahoo API Quirks
+### The Four Layers of Yahoo API Quirks
 
-Yahoo's Fantasy API is notoriously difficult to work with. The JSON responses have **three layers of non-standard formatting**:
+Yahoo's Fantasy API has **four layers of non-standard formatting** that required extensive debugging:
 
 #### 1. Objects with Numeric Keys (Not Arrays)
 Instead of returning `[{...}, {...}]`, Yahoo returns:
@@ -150,15 +143,7 @@ Instead of returning `[{...}, {...}]`, Yahoo returns:
 }
 ```
 
-**Solution**: Use `yahooObjectToArray()` helper:
-```typescript
-private yahooObjectToArray(obj: Record<string, any>): any[] {
-  if (!obj) return [];
-  return Object.keys(obj)
-    .filter(key => !isNaN(Number(key)))
-    .map(key => obj[key]);
-}
-```
+**Solution**: Use `yahooObjectToArray()` helper.
 
 #### 2. Wrapper Objects
 Data is nested inside wrapper objects:
@@ -166,10 +151,7 @@ Data is nested inside wrapper objects:
 - Managers: `{"manager": {"nickname": "...", "guid": "..."}}`
 - Matchups: `{"matchup": {...}}`
 
-**Solution**: Always check for and unwrap these:
-```typescript
-const manager = managerWrapper?.manager || managerWrapper;
-```
+**Solution**: Always check for and unwrap: `obj?.wrapper || obj`
 
 #### 3. Arrays of Single-Property Objects
 Properties come as arrays that need flattening:
@@ -177,18 +159,21 @@ Properties come as arrays that need flattening:
 [{"team_key": "449.l.75850.t.1"}, {"team_id": "1"}, {"name": "Game of Jones"}]
 ```
 
-**Solution**: Use `flattenYahooArray()` helper:
+**Solution**: Use `flattenYahooArray()` helper.
+
+#### 4. Double Numeric Keys in Matchups (THE BREAKTHROUGH!)
+Matchups have an EXTRA numeric key layer inside:
+```
+matchups["0"].matchup["0"].teams  // actual structure
+matchups["0"].matchup.teams       // what we expected
+```
+
+**Solution**: Unwrap twice and merge:
 ```typescript
-private flattenYahooArray(arr: any[]): Record<string, any> {
-  if (!Array.isArray(arr)) return arr || {};
-  const result: Record<string, unknown> = {};
-  for (const item of arr) {
-    if (item && typeof item === 'object') {
-      Object.assign(result, item);
-    }
-  }
-  return result;
-}
+const matchupOuter = matchupWrapper?.matchup || matchupWrapper;
+const matchupArray = this.yahooObjectToArray(matchupOuter);
+const matchupInner = matchupArray[0] || matchupOuter;
+const matchup = { ...matchupOuter, ...matchupInner };
 ```
 
 ### Endpoint-Specific Quirks
@@ -197,7 +182,7 @@ private flattenYahooArray(arr: any[]): Record<string, any> {
 |----------|-----------|-------|
 | `/league/{key}` | `league[0]` = props | Direct object, no flattening needed |
 | `/league/{key}/teams` | `league[1].teams{"0": {"team": [[props], {standings}]}}` | Needs unwrap + flatten |
-| `/league/{key}/scoreboard` | `league[1].scoreboard{"0": {matchups: ...}}` | Extra "0" key layer! |
+| `/league/{key}/scoreboard` | `league[1].scoreboard{"0": {matchups{"0": {matchup{"0": {...}}}}}}` | FOUR layers of unwrapping! |
 
 ### Useful Libraries (If Starting Fresh)
 - **Node.js**: [yahoo-fantasy-sports-api](https://github.com/whatadewitt/yahoo-fantasy-sports-api)
@@ -207,14 +192,13 @@ These handle all the parsing quirks automatically.
 
 ---
 
-## Supabase Middleware
-The middleware at `src/lib/supabase/middleware.ts` skips auth checks for `/api/auth/yahoo/*` routes to prevent Supabase errors during Yahoo OAuth flow.
+## Supabase Notes
 
-## Auth Temporarily Disabled
-In `src/app/api/import/yahoo/route.ts`, the commissioner auth check is commented out. Re-enable once Supabase auth is set up:
-```typescript
-// Lines 18-37 are commented out - uncomment when ready
-```
+### RLS Temporarily Bypassed
+Dashboard and Seasons pages use `createAdminClient()` instead of `createClient()` to bypass RLS during development. TODOs mark these for switching back once auth is enabled.
+
+### Middleware
+The middleware at `src/lib/supabase/middleware.ts` skips auth checks for `/api/auth/yahoo/*` routes to prevent Supabase errors during Yahoo OAuth flow.
 
 ---
 
@@ -230,6 +214,6 @@ In `src/app/api/import/yahoo/route.ts`, the commissioner auth check is commented
 
 - **Dual Import System**: Yahoo API + CSV import feed same normalized schema
 - **Materialized Views**: Pre-calculated head-to-head records for fast queries
-- **Row Level Security**: Supabase RLS enforces member-only access
+- **Row Level Security**: Supabase RLS enforces member-only access (disabled for dev)
 - **Server Components**: Default to RSC, use 'use client' only when needed
-- **Auto-Deploy**: Push to main → Vercel builds and deploys automatically
+- **Auto-Deploy**: Push to main -> Vercel builds and deploys automatically

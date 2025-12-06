@@ -1,11 +1,12 @@
-import { createClient } from '@/lib/supabase/server';
+import { createAdminClient } from '@/lib/supabase/server';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Plus, Calendar, Trophy, Users } from 'lucide-react';
 
 export default async function SeasonsPage() {
-  const supabase = await createClient();
+  // TODO: Switch back to createClient() when auth is enabled
+  const supabase = await createAdminClient();
 
   const { data: seasons } = await supabase
     .from('seasons')

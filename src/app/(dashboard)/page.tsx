@@ -1,10 +1,11 @@
-import { createClient } from '@/lib/supabase/server';
+import { createAdminClient } from '@/lib/supabase/server';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Trophy, Users, Calendar, ArrowLeftRight } from 'lucide-react';
 
 export default async function DashboardPage() {
-  const supabase = await createClient();
+  // TODO: Switch back to createClient() when auth is enabled
+  const supabase = await createAdminClient();
 
   // Fetch league data
   const { data: league } = await supabase.from('league').select('*').single();
