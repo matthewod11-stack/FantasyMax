@@ -10,7 +10,6 @@
 Most recent session should be first.
 -->
 
-<<<<<<< HEAD
 ## Session 2025-12-07 (Agent D: Testing & Infrastructure)
 
 **Phase:** Multi-Agent Experiment - Agent D
