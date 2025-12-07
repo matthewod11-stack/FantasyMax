@@ -1,9 +1,9 @@
 {
   "_meta": {
     "description": "Feature tracking for FantasyMax. Status: not-started | in-progress | pass | fail | blocked",
-    "lastUpdated": "2024-12-07",
-    "totalFeatures": 35,
-    "passing": 15,
+"lastUpdated": "2025-12-07",
+    "totalFeatures": 43,
+    "passing": 21,
     "failing": 0,
     "inProgress": 3,
     "blocked": 1
@@ -17,6 +17,14 @@
     "vercel-deploy": { "status": "pass", "notes": "Auto-deploy from main branch" },
     "supabase-setup": { "status": "pass", "notes": "Database schema complete" },
     "build": { "status": "blocked", "notes": "Pre-existing TS error in dashboard layout - see KNOWN_ISSUES.md" }
+  },
+  "testing-infrastructure": {
+    "vitest-config": { "status": "pass", "notes": "Vitest 4.0.13 with jsdom, path aliases, 80% coverage threshold" },
+    "test-fixtures": { "status": "pass", "notes": "Members, seasons, teams, matchups fixtures with factory functions" },
+    "stat-calculators": { "status": "pass", "notes": "11 pure functions for win%, H2H, streaks, achievements" },
+    "error-boundaries": { "status": "pass", "notes": "5 error types, 3 fallback components, App Router integration" },
+    "structured-logging": { "status": "pass", "notes": "Request IDs, query timing, JSON in prod, colors in dev" },
+    "ci-pipeline": { "status": "pass", "notes": "GitHub Actions: lint, typecheck, test, build" }
   },
   "sprint-0-design-system": {
     "typography-system": { "status": "pass", "notes": "Bebas Neue + DM Sans + DM Mono via next/font" },

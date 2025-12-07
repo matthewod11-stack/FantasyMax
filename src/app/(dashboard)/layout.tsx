@@ -58,7 +58,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
     member = anyMember;
   }
 
-  // If still no member found (empty database), redirect to setup
+// If no members exist at all (empty database), redirect to login
   if (!member) {
     redirect('/login');
   }
