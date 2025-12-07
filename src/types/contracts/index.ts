@@ -19,7 +19,48 @@
  */
 
 // Component contracts (Agent A → Agent C)
-export * from './components';
+export {
+  // Manager Components
+  type ManagerCardProps,
+  type ManagerAvatarProps,
+  // Stats Components
+  type StatBadgeProps,
+  type StatCardProps,
+  // H2H / Rivalry Components
+  type HeatmapCellProps,
+  type RivalryCardProps,
+  type H2HDrawerProps,
+  // Season Components
+  type SeasonCardProps,
+  type PlayoffBracketProps,
+  // Loading Components
+  type SkeletonCardProps,
+  // Layout Components
+  type DrawerPanelProps,
+  type CommandPaletteProps,
+  type CommandPaletteItem,
+  // Composite Types (from components.ts)
+  type CareerStats,
+  type H2HRecord,
+  type MatchupWithTeams,
+  type MatchupWithDetails,
+} from './components';
 
 // Query contracts (Agent B → Agent C)
-export * from './queries';
+export {
+  // Materialized View Types
+  type CareerStatsRow,
+  type H2HMatrixRow,
+  type SeasonStandingsRow,
+  type LeagueRecordRow,
+  type RecordType,
+  type RecordCategory,
+  // Query Function Signatures
+  type QueryFunctions,
+  // Composite Query Types
+  type RivalryData,
+  type UpcomingMatchup,
+  type HistoricalEvent,
+  // Dashboard Widget Data
+  type DashboardData,
+} from './queries';
