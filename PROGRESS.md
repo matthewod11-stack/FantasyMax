@@ -1,16 +1,50 @@
-# FantasyMax Progress Report
+# FantasyMax — Session Progress Log
 
-**Last Updated:** December 6, 2025 (Late Night Session - SYNC COMPLETE!)
+> **Purpose:** Track progress across multiple Claude Code sessions. Each session adds an entry.
+> **How to Use:** Add a new "## Session YYYY-MM-DD" section at the TOP of this file after each work session.
 
 ---
 
-## Overall Status: ~95% Complete
+<!--
+=== ADD NEW SESSIONS AT THE TOP ===
+Most recent session should be first.
+-->
+
+## Session 2024-12-06 (Workflow Setup)
+
+**Phase:** Pre-implementation Infrastructure
+**Focus:** Long-running agent workflow setup
+
+### Completed
+- [x] Created `docs/SESSION_PROTOCOL.md` - Session management guidelines
+- [x] Created `docs/KNOWN_ISSUES.md` - Parking lot for blockers
+- [x] Created `features.json` - Machine-readable pass/fail tracking
+- [x] Created `scripts/dev-init.sh` - Session initialization script
+- [x] Restructured PROGRESS.md to session log format
+
+### Verified
+- [x] All session tracking files created
+- [x] Dev init script executable
+
+### Notes
+- Applied long-running agent patterns from Anthropic article
+- Preserved all historical context from original PROGRESS.md below
+- ROADMAP.md already comprehensive - no changes needed
+
+### Next Session Should
+- Start with: `./scripts/dev-init.sh` to verify environment
+- Pick first task from Sprint 0 in ROADMAP.md (Design System Foundation)
+- Be aware of: Tech debt items (auth bypass, RLS) tracked in KNOWN_ISSUES.md
+
+---
+
+## Pre-Session State (Historical Context)
+
+**Overall Status:** ~95% Data Import Complete
 
 Yahoo sync fully working! 10 seasons imported with 978 matchups across 22 members. All data persisted in Supabase.
 
----
-
-## Data Imported
+### Data Imported
 
 | Year | Teams | Matchups | Status |
 |------|-------|----------|--------|
@@ -27,38 +61,7 @@ Yahoo sync fully working! 10 seasons imported with 978 matchups across 22 member
 
 **Totals:** 22 members, 133 teams, 978 matchups
 
----
-
-## Project Workflow
-
-### Git & Vercel Connection
-- **GitHub Repo**: `matthewod11-stack/FantasyMax` (private)
-- **Vercel Auto-Deploy**: Connected - every push to `main` triggers deployment
-- **Production URL**: https://fantasymax.vercel.app
-
-### Environment Variables (IMPORTANT)
-When adding env vars to Vercel, **DO NOT copy-paste with trailing newlines**. This caused hours of debugging. Type values manually or carefully trim whitespace.
-
-Required in Vercel Settings -> Environment Variables:
-```
-NEXT_PUBLIC_SUPABASE_URL=https://ykgtcxdgeiwaiqaizdqc.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-YAHOO_CLIENT_ID=dj0yJmk9dTNTNkNKZFZ3YTVDJmQ9WVdrOU5rdDBWMVpDVmxZbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PWZi
-YAHOO_CLIENT_SECRET=20af8e3eb725cb6c5ef37870f5a2cd3dad3dfd37
-NEXT_PUBLIC_APP_URL=https://fantasymax.vercel.app
-```
-
-### Yahoo Developer Console
-- App configured at https://developer.yahoo.com/apps/
-- Redirect URI: `https://fantasymax.vercel.app/api/auth/yahoo/callback`
-- Permissions: Fantasy Sports (Read)
-
----
-
-## Current State
-
-### What's Working
+### Working Features
 | Feature | Status |
 |---------|--------|
 | Vercel deployment | Done |
@@ -70,14 +73,14 @@ NEXT_PUBLIC_APP_URL=https://fantasymax.vercel.app
 | Members sync | Done - 22 members created |
 | Database persistence | Done - All data in Supabase |
 
-### In Progress
+### Currently In Development
 | Feature | Status |
 |---------|--------|
 | Dashboard page | Uses createAdminClient for dev |
 | Seasons page | Uses createAdminClient for dev |
 | Auth integration | RLS bypassed during development |
 
-### Still Disabled
+### Still Disabled (See KNOWN_ISSUES.md)
 | Feature | Reason |
 |---------|--------|
 | Supabase auth check | Commented out for dev |
@@ -96,21 +99,6 @@ NEXT_PUBLIC_APP_URL=https://fantasymax.vercel.app
 
 ---
 
-## Next Session Tasks
-
-### Immediate Priority
-1. **Build feature pages** - Managers, Head-to-Head, Records
-2. **Enable Supabase auth** - Re-enable auth checks, set up RLS
-3. **Switch pages back to createClient()** - After RLS is configured
-
-### Feature Pages (Data Ready!)
-- Managers page - Query `members` + `teams` (data exists)
-- Head-to-Head - Uses existing materialized view
-- Records page - SQL queries for highs/lows
-- Trades page - Query `trades` table (needs trade sync)
-
----
-
 ## Key Files Reference
 
 | Purpose | Location |
@@ -122,98 +110,60 @@ NEXT_PUBLIC_APP_URL=https://fantasymax.vercel.app
 | Database schema | `supabase/migrations/20241123000000_initial_schema.sql` |
 | TypeScript types | `src/types/database.types.ts` |
 | Project config | `CLAUDE.md` |
+| Session protocol | `docs/SESSION_PROTOCOL.md` |
+| Known issues | `docs/KNOWN_ISSUES.md` |
+| Feature tracking | `features.json` |
 
 ---
 
-## Technical Notes: Yahoo API Response Structure
+## Technical Reference: Yahoo API
 
-### The Four Layers of Yahoo API Quirks
+### Response Structure Quirks
 
-Yahoo's Fantasy API has **four layers of non-standard formatting** that required extensive debugging:
+Yahoo's Fantasy API has **four layers of non-standard formatting**:
 
-#### 1. Objects with Numeric Keys (Not Arrays)
-Instead of returning `[{...}, {...}]`, Yahoo returns:
-```json
-{
-  "teams": {
-    "0": {"team": [...]},
-    "1": {"team": [...]},
-    "count": 2
-  }
-}
-```
+1. **Objects with Numeric Keys** - Returns `{"0": {...}, "1": {...}}` instead of arrays
+   - Solution: Use `yahooObjectToArray()` helper
 
-**Solution**: Use `yahooObjectToArray()` helper.
+2. **Wrapper Objects** - Data nested in wrappers like `{"team": [...]}`
+   - Solution: Always unwrap: `obj?.wrapper || obj`
 
-#### 2. Wrapper Objects
-Data is nested inside wrapper objects:
-- Teams: `{"team": [[...props...], {...standings...}]}`
-- Managers: `{"manager": {"nickname": "...", "guid": "..."}}`
-- Matchups: `{"matchup": {...}}`
+3. **Arrays of Single-Property Objects** - Properties as `[{a: 1}, {b: 2}]`
+   - Solution: Use `flattenYahooArray()` helper
 
-**Solution**: Always check for and unwrap: `obj?.wrapper || obj`
+4. **Double Numeric Keys in Matchups** - Extra layer inside matchups
+   - Solution: Unwrap twice and merge
 
-#### 3. Arrays of Single-Property Objects
-Properties come as arrays that need flattening:
-```json
-[{"team_key": "449.l.75850.t.1"}, {"team_id": "1"}, {"name": "Game of Jones"}]
-```
+### Endpoint Structures
 
-**Solution**: Use `flattenYahooArray()` helper.
-
-#### 4. Double Numeric Keys in Matchups (THE BREAKTHROUGH!)
-Matchups have an EXTRA numeric key layer inside:
-```
-matchups["0"].matchup["0"].teams  // actual structure
-matchups["0"].matchup.teams       // what we expected
-```
-
-**Solution**: Unwrap twice and merge:
-```typescript
-const matchupOuter = matchupWrapper?.matchup || matchupWrapper;
-const matchupArray = this.yahooObjectToArray(matchupOuter);
-const matchupInner = matchupArray[0] || matchupOuter;
-const matchup = { ...matchupOuter, ...matchupInner };
-```
-
-### Endpoint-Specific Quirks
-
-| Endpoint | Structure | Notes |
-|----------|-----------|-------|
-| `/league/{key}` | `league[0]` = props | Direct object, no flattening needed |
-| `/league/{key}/teams` | `league[1].teams{"0": {"team": [[props], {standings}]}}` | Needs unwrap + flatten |
-| `/league/{key}/scoreboard` | `league[1].scoreboard{"0": {matchups{"0": {matchup{"0": {...}}}}}}` | FOUR layers of unwrapping! |
-
-### Useful Libraries (If Starting Fresh)
-- **Node.js**: [yahoo-fantasy-sports-api](https://github.com/whatadewitt/yahoo-fantasy-sports-api)
-- **Python**: [yfpy](https://github.com/uberfastman/yfpy)
-
-These handle all the parsing quirks automatically.
+| Endpoint | Structure |
+|----------|-----------|
+| `/league/{key}` | `league[0]` = props |
+| `/league/{key}/teams` | `league[1].teams{"0": {"team": [[props], {standings}]}}` |
+| `/league/{key}/scoreboard` | `league[1].scoreboard{"0": {matchups{"0": {matchup{"0": {...}}}}}}` |
 
 ---
 
-## Supabase Notes
+<!-- Template for future sessions:
 
-### RLS Temporarily Bypassed
-Dashboard and Seasons pages use `createAdminClient()` instead of `createClient()` to bypass RLS during development. TODOs mark these for switching back once auth is enabled.
+## Session YYYY-MM-DD
 
-### Middleware
-The middleware at `src/lib/supabase/middleware.ts` skips auth checks for `/api/auth/yahoo/*` routes to prevent Supabase errors during Yahoo OAuth flow.
+**Phase:** X.Y
+**Focus:** [One sentence describing the session goal]
 
----
+### Completed
+- [x] Task 1 description
+- [x] Task 2 description
 
-## Login Credentials
+### Verified
+- [ ] Build passes
+- [ ] [Feature-specific verification]
 
-| Account | Email | Password |
-|---------|-------|----------|
-| Commissioner | matthew.od11@gmail.com | Judge99! |
+### Notes
+[Any important context for future sessions]
 
----
+### Next Session Should
+- Start with: [specific task or verification]
+- Be aware of: [any gotchas or considerations]
 
-## Architecture Notes
-
-- **Dual Import System**: Yahoo API + CSV import feed same normalized schema
-- **Materialized Views**: Pre-calculated head-to-head records for fast queries
-- **Row Level Security**: Supabase RLS enforces member-only access (disabled for dev)
-- **Server Components**: Default to RSC, use 'use client' only when needed
-- **Auto-Deploy**: Push to main -> Vercel builds and deploys automatically
+-->

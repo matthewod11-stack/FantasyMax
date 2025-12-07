@@ -1,0 +1,56 @@
+{
+  "_meta": {
+    "description": "Feature tracking for FantasyMax. Status: not-started | in-progress | pass | fail | blocked",
+    "lastUpdated": "2024-12-06",
+    "totalFeatures": 35,
+    "passing": 7,
+    "failing": 0,
+    "inProgress": 3,
+    "blocked": 0
+  },
+  "foundation": {
+    "yahoo-oauth": { "status": "pass", "notes": "Yahoo OAuth connection working" },
+    "league-sync": { "status": "pass", "notes": "All 10 seasons synced" },
+    "teams-sync": { "status": "pass", "notes": "133 teams imported" },
+    "matchups-sync": { "status": "pass", "notes": "978 matchups imported" },
+    "members-sync": { "status": "pass", "notes": "22 members created" },
+    "vercel-deploy": { "status": "pass", "notes": "Auto-deploy from main branch" },
+    "supabase-setup": { "status": "pass", "notes": "Database schema complete" }
+  },
+  "sprint-0-design-system": {
+    "typography-system": { "status": "not-started", "notes": "CSS variables, font loading" },
+    "color-system": { "status": "not-started", "notes": "Dark mode palette, CSS custom properties" },
+    "manager-card": { "status": "not-started", "notes": "Reusable manager card component" },
+    "stat-badge": { "status": "not-started", "notes": "Reusable stat badge component" },
+    "skeleton-card": { "status": "not-started", "notes": "Loading state component" },
+    "drawer-panel": { "status": "not-started", "notes": "Side drawer for drilldowns" },
+    "animation-system": { "status": "not-started", "notes": "Framer Motion setup" },
+    "command-palette": { "status": "not-started", "notes": "Global cmd+K navigation" }
+  },
+  "phase-1-core-stats": {
+    "dashboard-your-opponent": { "status": "not-started", "notes": "Next opponent card with H2H history" },
+    "dashboard-history-widget": { "status": "not-started", "notes": "This week in your history" },
+    "dashboard-trophy-case": { "status": "not-started", "notes": "Personal achievements" },
+    "dashboard-rivalry-tracker": { "status": "not-started", "notes": "Nemesis/victim mini-view" },
+    "managers-card-grid": { "status": "in-progress", "notes": "Basic page exists, needs design polish" },
+    "managers-sorting": { "status": "not-started", "notes": "Sort by championships, wins, etc." },
+    "manager-profile-timeline": { "status": "not-started", "notes": "Career timeline visualization" },
+    "manager-profile-rivalry": { "status": "not-started", "notes": "Broadcast-style rivalry cards" },
+    "h2h-matrix": { "status": "not-started", "notes": "Interactive H2H grid" },
+    "h2h-drawer": { "status": "not-started", "notes": "In-context rivalry drilldown" },
+    "h2h-heatmap": { "status": "not-started", "notes": "Heatmap mode toggle" },
+    "records-trophy-cards": { "status": "not-started", "notes": "Trophy card design for records" },
+    "records-categories": { "status": "not-started", "notes": "Single week, season, all-time, playoffs" },
+    "season-playoff-bracket": { "status": "not-started", "notes": "Interactive playoff visualization" },
+    "season-journey-chart": { "status": "not-started", "notes": "Week-by-week rank chart" }
+  },
+  "phase-2-data-enrichment": {
+    "trade-sync": { "status": "not-started", "notes": "Yahoo trade history import" },
+    "trade-timeline": { "status": "not-started", "notes": "Trade timeline view" }
+  },
+  "tech-debt": {
+    "enable-auth": { "status": "in-progress", "notes": "Currently using BYPASS_AUTH" },
+    "enable-rls": { "status": "in-progress", "notes": "Currently using admin client" },
+    "switch-to-createClient": { "status": "not-started", "notes": "After RLS configured" }
+  }
+}

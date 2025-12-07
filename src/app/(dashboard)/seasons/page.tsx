@@ -8,11 +8,12 @@ export default async function SeasonsPage() {
   // TODO: Switch back to createClient() when auth is enabled
   const supabase = await createAdminClient();
 
-  const { data: seasons } = await supabase
+  // Use explicit FK to avoid ambiguity (seasons has champion_team_id and last_place_team_id too)
+  const { data: seasons, error: seasonsError } = await supabase
     .from('seasons')
     .select(`
       *,
-      teams:teams(count)
+      teams:teams!teams_season_id_fkey(count)
     `)
     .order('year', { ascending: false });
 

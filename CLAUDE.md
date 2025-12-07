@@ -16,6 +16,38 @@
 - Validation: Zod
 - Testing: Vitest, Playwright
 
+## Session Management
+
+This is a **long-running, multi-session implementation**. Follow these protocols:
+
+### Session Start
+```bash
+./scripts/dev-init.sh
+```
+
+### Key Documents
+| Document | Purpose |
+|----------|---------|
+| `PROGRESS.md` | Session-by-session log of completed work |
+| `ROADMAP.md` | Checkbox tracking of all tasks |
+| `features.json` | Machine-readable pass/fail status |
+| `docs/KNOWN_ISSUES.md` | Parking lot for blockers |
+| `docs/SESSION_PROTOCOL.md` | Full protocol documentation |
+
+### Single-Feature-Per-Session Rule
+> **CRITICAL:** Work on ONE checkbox item per session. This prevents scope creep.
+
+### After Each Session
+1. Run verification (`npm run build`)
+2. Update `PROGRESS.md` with session entry
+3. Update `features.json` status
+4. Check off completed tasks in `ROADMAP.md`
+5. Commit with descriptive message
+
+For full protocol details, see `docs/SESSION_PROTOCOL.md`.
+
+---
+
 ## Core Concepts
 
 ### This is NOT a fantasy platform replacement

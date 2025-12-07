@@ -5,6 +5,12 @@ import type { Database } from '@/types/database.types';
 export async function updateSession(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
+  // Development: bypass all auth checks when BYPASS_AUTH is set
+  // TODO: Remove this when production auth is ready
+  if (process.env.BYPASS_AUTH === 'true') {
+    return NextResponse.next();
+  }
+
   // Skip Supabase session check for Yahoo OAuth routes entirely
   if (pathname.startsWith('/api/auth/yahoo')) {
     return NextResponse.next();
