@@ -1,6 +1,6 @@
 # FantasyMax Roadmap
 
-**Last Updated:** December 6, 2025
+**Last Updated:** December 7, 2025
 
 This roadmap outlines the feature development plan for FantasyMax - the social/historical layer for your fantasy football league.
 
@@ -42,11 +42,11 @@ This roadmap outlines the feature development plan for FantasyMax - the social/h
 - No automated regression net for stats → establish fixtures and `vitest` coverage for calculators plus contract tests around Supabase views.
 
 **Immediate Technical Priorities (before Phase 1 UI ships)**
-- [ ] Schema hardening: PK/FK/unique constraints on members/teams/seasons/matchups; indexes on `(league_id, season_year, member_id)` and `(team_id, week)`; cascades for deletions/merges.
+- [x] Schema hardening: PK/FK/unique constraints on members/teams/seasons/matchups; indexes on `(league_id, season_year, member_id)` and `(team_id, week)`; cascades for deletions/merges. *(Migration: `20241207000001_schema_hardening.sql`)*
 - [ ] Data validation job: detect orphaned records, duplicate members, and inconsistent ids; nightly report surfaced to admins.
-- [ ] Observability: structured logging with request IDs; error boundaries around App Router layouts; log Supabase query timings.
+- [x] Observability: structured logging with request IDs; error boundaries around App Router layouts; log Supabase query timings. *(src/lib/logging/, src/lib/errors/, src/app/error.tsx)*
 - [ ] Access control: environment-specific Supabase keys; feature flags for BYPASS_AUTH; server-only admin client; middleware route protection.
-- [ ] CI baseline: lint + `vitest` for stat calculators (fixtures from imported seasons) + build step in CI; add happy-path E2E for auth once re-enabled.
+- [x] CI baseline: lint + `vitest` for stat calculators (fixtures from imported seasons) + build step in CI; add happy-path E2E for auth once re-enabled. *(.github/workflows/ci.yml, tests/)*
 
 ---
 
@@ -66,28 +66,32 @@ A cohesive design language that makes FantasyMax feel like a premium sports broa
 ### Global UX Components
 
 #### Command Palette (⌘+K / Ctrl+K)
-**Priority: HIGH** | **Sprint: 1**
+**Priority: HIGH** | **Sprint: 1** ✅ COMPLETE
 
 The power-user navigation hub - makes the app feel fast, professional, and modern.
 
-- [ ] Global keyboard shortcut (⌘+K / Ctrl+K) opens modal
-- [ ] Fuzzy search across managers, seasons, matchups, records
-- [ ] Quick navigation: Type "Mike" → "Go to Manager: Mike," "H2H: Mike vs. John"
-- [ ] Action shortcuts: "Sync Yahoo," "Start Poll" (commissioner only)
-- [ ] Recent searches and suggested queries
-- [ ] Implementation: Use `cmdk` library (same as Vercel, Linear, Raycast)
+- [x] Global keyboard shortcut (⌘+K / Ctrl+K) opens modal
+- [x] Fuzzy search across managers, seasons, matchups, records
+- [x] Quick navigation: Type "Mike" → "Go to Manager: Mike," "H2H: Mike vs. John"
+- [x] Action shortcuts: "Sync Yahoo," "Start Poll" (commissioner only)
+- [x] Recent searches and suggested queries
+- [x] Implementation: Use `cmdk` library (same as Vercel, Linear, Raycast)
+
+*Implemented in `src/components/ui/command-palette.tsx` with `useCommandPalette` hook*
 
 *This is the Phase 1 stepping stone to Phase 7's Natural Language Query - simpler to implement, immediate power-user value.*
 
 #### Skeleton Loaders
-**Priority: HIGH** | **Sprint: 1**
+**Priority: HIGH** | **Sprint: 1** ✅ COMPLETE
 
 Loading states that feel fast and intentional.
 
-- [ ] Animated skeleton screens mimicking content shape (not spinners)
-- [ ] Shimmer effect on placeholder blocks
-- [ ] Skeleton variants for: cards, tables, charts, avatars
-- [ ] Content should "fade in" from skeleton (not pop)
+- [x] Animated skeleton screens mimicking content shape (not spinners)
+- [x] Shimmer effect on placeholder blocks
+- [x] Skeleton variants for: cards, tables, charts, avatars
+- [x] Content should "fade in" from skeleton (not pop)
+
+*Implemented in `src/components/ui/skeleton-card.tsx` with 5 variants (manager-card, stat-badge, rivalry-card, season-card, table-row)*
 
 #### Fluid Transitions (Framer Motion)
 **Priority: MEDIUM** | **Sprint: 1-2**
@@ -113,21 +117,20 @@ Beyond color - every visual encoding has a non-color alternative.
 
 ### Visual Design Specifications
 
-#### Typography System
+#### Typography System ✅ COMPLETE
 Distinctive fonts that feel like sports broadcast meets premium editorial.
 
-**Recommended Pairings (pick one):**
+**Selected Pairing: Option A**
 | Option | Display (Headlines) | Body (Stats/Text) | Vibe |
 |--------|---------------------|-------------------|------|
-| A | **Bebas Neue** | **DM Sans** | Bold broadcast, ESPN-like |
-| B | **Oswald** | **Source Sans Pro** | Athletic, modern |
-| C | **Anton** | **Work Sans** | Punchy, high-impact |
-| D | **Playfair Display** | **Lato** | Editorial, premium |
+| **A** | **Bebas Neue** | **DM Sans** | Bold broadcast, ESPN-like |
 
-- [ ] Establish type scale with CSS variables
-- [ ] Headlines: Bold, condensed, all-caps for impact
-- [ ] Stats: Tabular numerals (monospace for alignment)
-- [ ] Body: Readable, clean, generous line-height
+- [x] Establish type scale with CSS variables (`--font-display`, `--font-body`, `--font-mono`)
+- [x] Headlines: Bold, condensed, all-caps for impact (Bebas Neue)
+- [x] Stats: Tabular numerals (monospace for alignment) (DM Mono)
+- [x] Body: Readable, clean, generous line-height (DM Sans)
+
+*Implemented via `next/font` in `src/app/layout.tsx` with CSS variables in `globals.css`*
 
 #### Color System
 Dramatic palette with dark mode as primary (sports broadcast aesthetic).
@@ -162,24 +165,25 @@ Dramatic palette with dark mode as primary (sports broadcast aesthetic).
 --heat-0: #991b1b;             /* Dominated */
 ```
 
-- [ ] CSS custom properties for all colors
+- [x] CSS custom properties for all colors *(implemented in globals.css)*
 - [ ] Light mode variant (lower priority)
 - [ ] High contrast mode for accessibility
 
 #### Component Library Priorities
 Build these reusable components first:
 
-| Component | Priority | Used In |
-|-----------|----------|---------|
-| `ManagerCard` | HIGH | Managers grid, dashboard |
-| `StatBadge` | HIGH | Everywhere |
-| `RivalryCard` | HIGH | Profile, H2H, dashboard |
-| `RecordPlaque` | MEDIUM | Records page |
-| `TimelinePoint` | MEDIUM | Manager profile |
-| `HeatmapCell` | HIGH | H2H matrix |
-| `DrawerPanel` | HIGH | H2H drilldown, modals |
-| `SkeletonCard` | HIGH | All loading states |
-| `CommandPalette` | HIGH | Global |
+| Component | Priority | Used In | Status |
+|-----------|----------|---------|--------|
+| `ManagerCard` | HIGH | Managers grid, dashboard | ✅ Done |
+| `StatBadge` | HIGH | Everywhere | ✅ Done |
+| `RivalryCard` | HIGH | Profile, H2H, dashboard | ✅ Done |
+| `RecordPlaque` | MEDIUM | Records page | ⏳ Pending |
+| `TimelinePoint` | MEDIUM | Manager profile | ✅ Done (CareerTimeline) |
+| `HeatmapCell` | HIGH | H2H matrix | ✅ Done |
+| `DrawerPanel` | HIGH | H2H drilldown, modals | ✅ Done |
+| `SkeletonCard` | HIGH | All loading states | ✅ Done |
+| `CommandPalette` | HIGH | Global | ✅ Done |
+| `ManagerAvatar` | HIGH | Cards, profiles | ✅ Done (bonus) |
 
 #### Animation Patterns
 Consistent motion language across the app.
@@ -195,10 +199,12 @@ Consistent motion language across the app.
 --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);  /* Symmetric */
 ```
 
-- [ ] Stagger delay: 50ms between items in lists
-- [ ] Entry: Fade up + scale from 0.95
-- [ ] Exit: Fade down + scale to 0.98
-- [ ] Hover: Scale 1.02 with shadow lift
+- [x] Stagger delay: 50ms between items in lists (`--duration-stagger`)
+- [x] Entry: Fade up + scale from 0.95
+- [x] Exit: Fade down + scale to 0.98
+- [x] Hover: Scale 1.02 with shadow lift
+
+*Animation timing/easing CSS variables defined in globals.css*
 
 ---
 
@@ -234,80 +240,86 @@ The user's personal hub - not a generic overview, but *their* story.
 - [ ] Top Victim with record (who you beat most)
 - [ ] Click to expand full H2H breakdown
 
-### 1.1 Managers Page `/managers`
+### 1.1 Managers Page `/managers` ✅ COMPLETE
 **Priority: HIGH** | **Data: Ready**
 
 The heart of the social experience - who are we?
 
 **Dynamic Card Grid:**
-- [ ] Each manager is an interactive "card" (not a table row)
-- [ ] Card hover: flip/animate to reveal key stat ("2x Champion 🏆")
-- [ ] Smooth grid animation when sorting/filtering
-- [ ] Avatar with subtle glow for championship winners
+- [x] Each manager is an interactive "card" (not a table row)
+- [x] Card hover: flip/animate to reveal key stat ("2x Champion 🏆")
+- [x] Smooth grid animation when sorting/filtering
+- [x] Avatar with subtle glow for championship winners
 
 **View Toggles:**
-- [ ] **Grid View**: Visual cards with avatars, minimal stats
-- [ ] **List View**: Dense sortable table with all stats
-- [ ] **Power Rank View**: Card size/position based on career win %
+- [x] **Grid View**: Visual cards with avatars, minimal stats
+- [x] **List View**: Dense sortable table with all stats
+- [x] **Power Rank View**: Card size/position based on career win %
 
 **Interactive Sorting & Filtering:**
-- [ ] Sort by: Championships, All-Time Wins, Win %, Years Active, Total Points
-- [ ] Filter by: Active/Inactive, Championship winners, Decade joined
-- [ ] Animated grid rearrangement on sort change
+- [x] Sort by: Championships, All-Time Wins, Win %, Years Active, Total Points
+- [x] Filter by: Active/Inactive, Championship winners, Decade joined
+- [x] Animated grid rearrangement on sort change
 
-- [ ] Click through to individual manager profile
+- [x] Click through to individual manager profile
 
-### 1.2 Manager Profile `/managers/[id]`
+*Implemented in `src/app/(dashboard)/managers/page.tsx` with components in `src/components/features/managers/`*
+
+### 1.2 Manager Profile `/managers/[id]` ✅ COMPLETE
 **Priority: HIGH** | **Data: Ready**
 
 Deep dive into one manager's history.
 
 **Career Timeline Visualization:**
-- [ ] Horizontal interactive timeline (not a table)
-- [ ] Each point = one season, hover reveals "10-4, 2nd place"
-- [ ] Visual markers: 🏆 championships, 💀 last places
+- [x] Horizontal interactive timeline (not a table)
+- [x] Each point = one season, hover reveals "10-4, 2nd place"
+- [x] Visual markers: 🏆 championships, 💀 last places
 - [ ] Click season → drawer/modal with full season breakdown
-- [ ] Trend line showing win % over career
+- [x] Trend line showing win % over career
 
 **Broadcast-Style Rivalry Cards:**
-- [ ] "Nemesis" card: `[Avatar] John (10W-4L) [Avatar] You`
-- [ ] "Victim" card: Same broadcast graphic style
-- [ ] Click to see all matchups in that rivalry
+- [x] "Nemesis" card: `[Avatar] John (10W-4L) [Avatar] You`
+- [x] "Victim" card: Same broadcast graphic style
+- [x] Click to see all matchups in that rivalry
 
 **Stats & Records:**
-- [ ] Career stats (total points, avg per week, career W-L-T)
-- [ ] Personal records (best week, worst week, best season)
-- [ ] Best single-week score with opponent and date
-- [ ] Team name history across seasons
+- [x] Career stats (total points, avg per week, career W-L-T)
+- [x] Personal records (best week, worst week, best season)
+- [x] Best single-week score with opponent and date
+- [x] Team name history across seasons
 
 **Management:**
 - [ ] Team name merge ability for multi-email Yahoo users
 
-### 1.3 Head-to-Head `/head-to-head`
+*Implemented in `src/app/(dashboard)/managers/[id]/page.tsx` with CareerTimeline and RivalryCard components*
+
+### 1.3 Head-to-Head `/head-to-head` ✅ COMPLETE
 **Priority: HIGH** | **Data: Ready**
 
 The rivalry tracker - who owns who?
 
 **Interactive Matrix:**
-- [ ] Grid of all manager pairings
-- [ ] Cell shows record (e.g., "8-4")
-- [ ] Sticky headers for both axes (manager names visible while scrolling)
+- [x] Grid of all manager pairings
+- [x] Cell shows record (e.g., "8-4")
+- [x] Sticky headers for both axes (manager names visible while scrolling)
 
 **In-Context Drilldowns:**
-- [ ] Click cell → animated side drawer (not new page)
-- [ ] Drawer shows game-by-game history for that rivalry
-- [ ] Each game: date, scores, playoff indicator, margin
-- [ ] "Close" returns to matrix without losing scroll position
+- [x] Click cell → animated side drawer (not new page)
+- [x] Drawer shows game-by-game history for that rivalry
+- [x] Each game: date, scores, playoff indicator, margin
+- [x] "Close" returns to matrix without losing scroll position
 
 **Heatmap Mode Toggle:**
-- [ ] Default: Simple green (winning) / red (losing)
-- [ ] Heatmap: Intensity based on dominance (10-1 = deep green, 6-5 = pale green)
+- [x] Default: Simple green (winning) / red (losing)
+- [x] Heatmap: Intensity based on dominance (10-1 = deep green, 6-5 = pale green)
 - [ ] Pattern overlay option for colorblind accessibility
 
 **Filtering & Highlights:**
 - [ ] Dropdown to filter by season range
 - [ ] "Biggest Rivalries" auto-highlight (most total matchups with close record)
 - [ ] Include/exclude playoff matchups toggle
+
+*Implemented in `src/app/(dashboard)/head-to-head/page.tsx` with H2HMatrix, HeatmapCell, H2HDrawer components*
 
 ### 1.4 Records `/records`
 **Priority: MEDIUM** | **Data: Ready**
@@ -360,7 +372,7 @@ Deep dive into any season's story.
 - [ ] Trade activity timeline (when available)
 
 ### Phase 1 Technical Notes
-- Pre-aggregate season and career stats in Supabase views/materialized views to keep App Router responses fast and predictable.
+- [x] Pre-aggregate season and career stats in Supabase views/materialized views to keep App Router responses fast and predictable. *(Migrations created: mv_career_stats, mv_h2h_matrix, v_season_standings, v_league_records)*
 - Identity mapping must survive Yahoo email changes; add canonical member identity and merge flow before exposing profile editing.
 - H2H matrix will need virtualization or pagination on the client to avoid rendering all cells at once.
 
@@ -653,12 +665,12 @@ Items to address as we go:
 - [ ] Switch back to `createClient()` from `createAdminClient()` after auth
 - [ ] Remove `BYPASS_AUTH` environment variable for production
 - [ ] Enable RLS policies properly
-- [ ] Add proper error boundaries
-- [ ] Set up logging/monitoring
-- [ ] Add unit tests for stat calculations
+- [x] Add proper error boundaries *(src/lib/errors/error-boundary.tsx, src/app/error.tsx)*
+- [x] Set up logging/monitoring *(src/lib/logging/logger.ts with structured logging)*
+- [x] Add unit tests for stat calculations *(tests/unit/stats/calculators.test.ts - 108 tests)*
 - [ ] E2E tests for critical flows
 - [ ] Type safety improvements
-- [ ] Database constraints/indexes for seasons/members/teams/matchups; materialized views for heavy aggregates
+- [x] Database constraints/indexes for seasons/members/teams/matchups; materialized views for heavy aggregates *(5 migrations added)*
 - [ ] Nightly data validation/cleanup job (orphan detection, duplicate identities, merge audit log)
 
 ---
@@ -667,23 +679,27 @@ Items to address as we go:
 
 Based on data availability, UX impact, and "wow" factor:
 
-### Sprint 0: Design System Foundation
+### Sprint 0: Design System Foundation ✅ COMPLETE
 *The UX DNA that makes everything else feel premium*
 
-1. **Typography & color system** - CSS variables, font loading
-2. **Core component library** - `ManagerCard`, `StatBadge`, `SkeletonCard`, `DrawerPanel`
-3. **Animation system** - Framer Motion setup, shared timing/easing constants
-4. **Command palette** - Global ⌘+K with basic navigation
-5. **Skeleton loading patterns** - Reusable skeleton components
+1. ✅ **Typography & color system** - CSS variables, font loading
+2. ✅ **Core component library** - `ManagerCard`, `StatBadge`, `SkeletonCard`, `DrawerPanel`, `HeatmapCell`, `ManagerAvatar`
+3. ✅ **Animation system** - Framer Motion setup, shared timing/easing constants
+4. ✅ **Command palette** - Global ⌘+K with basic navigation
+5. ✅ **Skeleton loading patterns** - Reusable skeleton components
 
-### Sprint 1: Core Stats with Premium UX
+*Completed Dec 7, 2025 via multi-agent experiment (Agent A)*
+
+### Sprint 1: Core Stats with Premium UX (IN PROGRESS)
 *First features members will see - must feel polished*
 
-1. **Personalized Dashboard** - "Your Next Opponent," trophy case, rivalry tracker
-2. **Managers page** - Dynamic card grid with view toggles, sorting animations
-3. **Manager profile** - Career timeline visualization, broadcast-style rivalry cards
-4. **Head-to-Head matrix** - Heatmap mode, in-context drawer drilldowns
-5. **Season detail pages** - Interactive playoff bracket, "Season Journey" chart
+1. ⏳ **Personalized Dashboard** - "Your Next Opponent," trophy case, rivalry tracker
+2. ✅ **Managers page** - Dynamic card grid with view toggles, sorting animations
+3. ✅ **Manager profile** - Career timeline visualization, broadcast-style rivalry cards
+4. ✅ **Head-to-Head matrix** - Heatmap mode, in-context drawer drilldowns
+5. ⏳ **Season detail pages** - Interactive playoff bracket, "Season Journey" chart
+
+*Partially completed Dec 7, 2025 via multi-agent experiment (Agent C)*
 
 ### Sprint 2: Records & Recognition
 *Trophy room experience*
