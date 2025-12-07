@@ -48,7 +48,7 @@ const statBadgeVariants = cva(
 );
 
 export interface StatBadgeComponentProps
-  extends Omit<StatBadgeProps, 'size'>,
+  extends Omit<StatBadgeProps, 'size' | 'variant'>,
     VariantProps<typeof statBadgeVariants> {
   className?: string;
 }

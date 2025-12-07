@@ -91,7 +91,7 @@ const CommandPalette = React.forwardRef<HTMLDivElement, CommandPaletteComponentP
         if (!groups[item.category]) {
           groups[item.category] = [];
         }
-        groups[item.category].push(item);
+        groups[item.category]!.push(item);
       });
       return groups;
     }, [items]);

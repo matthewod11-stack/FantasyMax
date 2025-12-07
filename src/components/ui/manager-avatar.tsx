@@ -32,11 +32,13 @@ const sizeClasses: Record<ManagerAvatarProps['size'], string> = {
  * "John Smith" -> "JS", "Mike" -> "M"
  */
 function getInitials(name: string): string {
-  const parts = name.trim().split(/\s+/);
-  if (parts.length >= 2) {
-    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  const parts = name.trim().split(/\s+/).filter(Boolean);
+  const first = parts[0];
+  const last = parts[parts.length - 1];
+  if (parts.length >= 2 && first && last) {
+    return ((first[0] ?? '') + (last[0] ?? '')).toUpperCase();
   }
-  return name.slice(0, 2).toUpperCase();
+  return (name.slice(0, 2) || '??').toUpperCase();
 }
 
 export interface ManagerAvatarComponentProps extends ManagerAvatarProps {
