@@ -58,6 +58,11 @@ export default async function DashboardLayout({ children }: { children: React.Re
     member = anyMember;
   }
 
+  // If still no member found (empty database), redirect to setup
+  if (!member) {
+    redirect('/login');
+  }
+
   return (
     <div className="flex min-h-screen bg-background">
       <Sidebar userRole={member.role} />

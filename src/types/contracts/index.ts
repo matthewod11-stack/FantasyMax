@@ -22,4 +22,19 @@
 export * from './components';
 
 // Query contracts (Agent B → Agent C)
-export * from './queries';
+// Note: MatchupWithDetails conflicts between files - queries uses snake_case for DB rows
+export type {
+  CareerStatsRow,
+  H2HMatrixRow,
+  SeasonStandingsRow,
+  LeagueRecordRow,
+  RecordType,
+  RecordCategory,
+  QueryFunctions,
+  RivalryData,
+  UpcomingMatchup,
+  HistoricalEvent,
+  DashboardData,
+  // Export queries' MatchupWithDetails as a distinct name to avoid conflict
+  MatchupWithDetails as QueryMatchupWithDetails,
+} from './queries';

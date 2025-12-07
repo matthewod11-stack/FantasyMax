@@ -10,6 +10,95 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-07 (Agent B: Data Layer Foundation)
+
+**Phase:** Multi-Agent Experiment
+**Focus:** Database views, indexes, and query functions for Agent C consumption
+**Agent:** B (Data Layer)
+**Branch:** `experiment/agent-b-data-layer`
+
+### Completed
+
+**Database Migrations Created:**
+- [x] `20241207000001_schema_hardening.sql` — Performance indexes and constraints
+  - Composite indexes for common query patterns
+  - Partial indexes for playoff/championship/final matchups
+  - Check constraints for data integrity
+- [x] `20241207000002_mv_career_stats.sql` — Career stats materialized view
+  - Aggregates wins, losses, championships per member
+  - Auto-refresh triggers on teams/members changes
+- [x] `20241207000003_mv_h2h_matrix.sql` — Enhanced H2H matrix
+  - Adds ties, streak calculation, last_matchup_date
+  - Normalizes pairs (member_1_id < member_2_id)
+- [x] `20241207000004_v_season_standings.sql` — Season standings view
+  - Denormalized view with member info
+  - Fallback ranking if final_rank not set
+- [x] `20241207000005_v_league_records.sql` — League records view
+  - Single-week, season, career, and dubious records
+  - Union-based for extensibility
+
+**Query Functions Created:**
+- [x] `src/lib/supabase/queries/career.ts` — 5 functions
+- [x] `src/lib/supabase/queries/h2h.ts` — 7 functions
+- [x] `src/lib/supabase/queries/records.ts` — 9 functions
+- [x] `src/lib/supabase/queries/dashboard.ts` — 5 functions
+- [x] `src/lib/supabase/queries/index.ts` — Re-exports
+
+**Bug Fixes:**
+- [x] Fixed TypeScript null check in `layout.tsx` (pre-existing issue)
+- [x] Fixed contract export conflict for `MatchupWithDetails`
+
+### Verified
+- [x] TypeScript compilation passes
+- [x] All query files export correct types from contracts
+
+### Technical Notes
+
+**Type Assertions Pattern:**
+Query functions use `getUntypedClient()` helper to bypass strict typing until migrations run and `database.types.ts` is regenerated:
+```typescript
+async function getUntypedClient(): Promise<SupabaseClient> {
+  return (await createAdminClient()) as any;
+}
+```
+This allows querying views not yet in the generated types.
+
+**View Dependencies:**
+- `v_league_records` depends on `mv_career_stats`
+- Refresh order matters: career_stats first, then records
+
+### Files Created/Modified
+
+| File | Action | Purpose |
+|------|--------|---------|
+| `supabase/migrations/20241207000001_schema_hardening.sql` | Created | Indexes and constraints |
+| `supabase/migrations/20241207000002_mv_career_stats.sql` | Created | Career stats view |
+| `supabase/migrations/20241207000003_mv_h2h_matrix.sql` | Created | H2H matrix view |
+| `supabase/migrations/20241207000004_v_season_standings.sql` | Created | Season standings view |
+| `supabase/migrations/20241207000005_v_league_records.sql` | Created | League records view |
+| `src/lib/supabase/queries/*.ts` | Created | Query functions |
+| `src/types/contracts/index.ts` | Modified | Fixed export conflict |
+| `src/app/(dashboard)/layout.tsx` | Modified | Fixed null check bug |
+
+### Next Steps for Agent B
+- [ ] Apply migrations to Supabase (requires admin access)
+- [ ] Regenerate `database.types.ts` after migrations
+- [ ] Remove type assertion workarounds
+- [ ] Add `longest_win_streak` record (gap-and-island query)
+
+### For Agent C (Features)
+Query functions are ready for consumption:
+```typescript
+import {
+  getCareerStats,
+  getH2HMatrix,
+  getLeagueRecords,
+  getDashboardData,
+} from '@/lib/supabase/queries';
+```
+
+---
+
 ## Session 2024-12-06 (Workflow Setup)
 
 **Phase:** Pre-implementation Infrastructure
