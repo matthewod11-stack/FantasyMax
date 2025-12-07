@@ -1,12 +1,12 @@
 {
   "_meta": {
     "description": "Feature tracking for FantasyMax. Status: not-started | in-progress | pass | fail | blocked",
-    "lastUpdated": "2024-12-06",
+    "lastUpdated": "2024-12-07",
     "totalFeatures": 35,
-    "passing": 7,
+    "passing": 15,
     "failing": 0,
     "inProgress": 3,
-    "blocked": 0
+    "blocked": 1
   },
   "foundation": {
     "yahoo-oauth": { "status": "pass", "notes": "Yahoo OAuth connection working" },
@@ -15,17 +15,19 @@
     "matchups-sync": { "status": "pass", "notes": "978 matchups imported" },
     "members-sync": { "status": "pass", "notes": "22 members created" },
     "vercel-deploy": { "status": "pass", "notes": "Auto-deploy from main branch" },
-    "supabase-setup": { "status": "pass", "notes": "Database schema complete" }
+    "supabase-setup": { "status": "pass", "notes": "Database schema complete" },
+    "build": { "status": "blocked", "notes": "Pre-existing TS error in dashboard layout - see KNOWN_ISSUES.md" }
   },
   "sprint-0-design-system": {
-    "typography-system": { "status": "not-started", "notes": "CSS variables, font loading" },
-    "color-system": { "status": "not-started", "notes": "Dark mode palette, CSS custom properties" },
-    "manager-card": { "status": "not-started", "notes": "Reusable manager card component" },
-    "stat-badge": { "status": "not-started", "notes": "Reusable stat badge component" },
-    "skeleton-card": { "status": "not-started", "notes": "Loading state component" },
-    "drawer-panel": { "status": "not-started", "notes": "Side drawer for drilldowns" },
-    "animation-system": { "status": "not-started", "notes": "Framer Motion setup" },
-    "command-palette": { "status": "not-started", "notes": "Global cmd+K navigation" }
+    "typography-system": { "status": "pass", "notes": "Bebas Neue + DM Sans + DM Mono via next/font" },
+    "color-system": { "status": "pass", "notes": "Dark theme palette with gold accent, heatmap scale" },
+    "manager-card": { "status": "pass", "notes": "3 variants: compact, full, grid with hover effects" },
+    "stat-badge": { "status": "pass", "notes": "5 variants: default, win, loss, championship, highlight" },
+    "skeleton-card": { "status": "pass", "notes": "5 variants with shimmer animation" },
+    "drawer-panel": { "status": "pass", "notes": "Built on shadcn Sheet with size variants" },
+    "heatmap-cell": { "status": "pass", "notes": "6-level heatmap scale for H2H dominance" },
+    "animation-system": { "status": "pass", "notes": "CSS vars for timing/easing, shimmer keyframe" },
+    "command-palette": { "status": "pass", "notes": "cmdk with Cmd+K hook, categorized search" }
   },
   "phase-1-core-stats": {
     "dashboard-your-opponent": { "status": "not-started", "notes": "Next opponent card with H2H history" },

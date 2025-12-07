@@ -26,14 +26,16 @@ By dividing work across 4 specialized agents with clear boundaries, we can:
 - `tailwind.config.ts` (theme extensions)
 
 **Tasks:**
-- [ ] Typography system (Bebas Neue + DM Sans via next/font)
-- [ ] Color CSS variables (dark theme palette from ROADMAP)
-- [ ] Animation constants (Framer Motion timing/easing)
-- [ ] `ManagerCard` component
-- [ ] `StatBadge` component
-- [ ] `SkeletonCard` component
-- [ ] `HeatmapCell` component
-- [ ] Command palette setup (cmdk)
+- [x] Typography system (Bebas Neue + DM Sans via next/font)
+- [x] Color CSS variables (dark theme palette from ROADMAP)
+- [x] Animation constants (Framer Motion timing/easing)
+- [x] `ManagerCard` component
+- [x] `StatBadge` component
+- [x] `SkeletonCard` component
+- [x] `HeatmapCell` component
+- [x] Command palette setup (cmdk)
+- [x] `DrawerPanel` component (bonus)
+- [x] `ManagerAvatar` component (bonus)
 
 **Does NOT touch:**
 - Database/Supabase

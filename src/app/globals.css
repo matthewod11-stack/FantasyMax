@@ -4,45 +4,90 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* =====================================
+   * FantasyMax Design System
+   * Sports Broadcast meets Premium Editorial
+   * ===================================== */
+
+  /* Typography - Font Families */
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+  --font-sans: var(--font-body);
+
+  /* Core Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* FantasyMax Semantic Colors */
+  --color-win: var(--win);
+  --color-loss: var(--loss);
+  --color-tie: var(--tie);
+  --color-gold: var(--gold);
+  --color-gold-dim: var(--gold-dim);
+
+  /* Heatmap Scale (for H2H dominance visualization) */
+  --color-heat-5: var(--heat-5);
+  --color-heat-4: var(--heat-4);
+  --color-heat-3: var(--heat-3);
+  --color-heat-2: var(--heat-2);
+  --color-heat-1: var(--heat-1);
+  --color-heat-0: var(--heat-0);
+
+  /* Chart Colors */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Sidebar */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Border Radius */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Animation Timing (Framer Motion compatible) */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-stagger: 50ms;
+
+  /* Animation Easing */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+/* =====================================
+ * Light Theme (secondary, for future use)
+ * ===================================== */
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -63,6 +108,22 @@
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
+
+  /* FantasyMax Semantic - Light */
+  --win: #22c55e;
+  --loss: #ef4444;
+  --tie: #eab308;
+  --gold: #fbbf24;
+  --gold-dim: #92702a;
+
+  /* Heatmap - Light */
+  --heat-5: #166534;
+  --heat-4: #22c55e;
+  --heat-3: #86efac;
+  --heat-2: #fca5a5;
+  --heat-1: #ef4444;
+  --heat-0: #991b1b;
+
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -78,38 +139,86 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+/* =====================================
+ * Dark Theme (primary - sports broadcast aesthetic)
+ *
+ * Design Philosophy:
+ * - Near-black backgrounds for dramatic contrast
+ * - Championship gold as primary accent
+ * - Green/red for win/loss with accessibility patterns
+ * - Heatmap scale for H2H dominance visualization
+ * ===================================== */
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Backgrounds - Deep, cinematic */
+  --background: #0a0a0f;           /* Near-black, primary bg */
+  --foreground: #ffffff;           /* Pure white text */
+  --card: #12121a;                 /* Card/elevated surfaces */
+  --card-foreground: #ffffff;
+  --popover: #12121a;
+  --popover-foreground: #ffffff;
+
+  /* Primary - Championship Gold */
+  --primary: #fbbf24;              /* Gold accent */
+  --primary-foreground: #0a0a0f;   /* Dark text on gold */
+
+  /* Secondary - Elevated surfaces */
+  --secondary: #1a1a24;            /* Hover/elevated state */
+  --secondary-foreground: #ffffff;
+
+  /* Muted - Subdued elements */
+  --muted: #1a1a24;
+  --muted-foreground: #9ca3af;     /* Gray-400 equivalent */
+
+  /* Accent - Interactive highlights */
+  --accent: #1a1a24;
+  --accent-foreground: #ffffff;
+
+  /* Destructive - Errors/danger */
+  --destructive: #ef4444;
+
+  /* Borders & Inputs */
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #fbbf24;                 /* Gold focus ring */
+
+  /* FantasyMax Semantic Colors */
+  --win: #22c55e;                  /* Green-500 */
+  --loss: #ef4444;                 /* Red-500 */
+  --tie: #eab308;                  /* Yellow-500 */
+  --gold: #fbbf24;                 /* Championship gold */
+  --gold-dim: #92702a;             /* Muted gold */
+
+  /* Heatmap Scale (H2H dominance)
+   * heat-5: Dominant (10-1 record)
+   * heat-4: Strong (8-3)
+   * heat-3: Slight advantage (6-5)
+   * heat-2: Slight disadvantage
+   * heat-1: Bad record
+   * heat-0: Dominated (1-10)
+   */
+  --heat-5: #166534;               /* Green-800 - Dominant */
+  --heat-4: #22c55e;               /* Green-500 - Strong */
+  --heat-3: #86efac;               /* Green-300 - Slight win */
+  --heat-2: #fca5a5;               /* Red-300 - Slight loss */
+  --heat-1: #ef4444;               /* Red-500 - Bad */
+  --heat-0: #991b1b;               /* Red-800 - Dominated */
+
+  /* Chart Colors - Vibrant for dark backgrounds */
+  --chart-1: #fbbf24;              /* Gold */
+  --chart-2: #22c55e;              /* Green */
+  --chart-3: #3b82f6;              /* Blue */
+  --chart-4: #a855f7;              /* Purple */
+  --chart-5: #ef4444;              /* Red */
+
+  /* Sidebar - Matches card background */
+  --sidebar: #12121a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #fbbf24;
+  --sidebar-primary-foreground: #0a0a0f;
+  --sidebar-accent: #1a1a24;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #fbbf24;
 }
 
 @layer base {
@@ -118,5 +227,180 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* =====================================
+ * Typography Utilities
+ *
+ * Usage:
+ * - .font-display: Headlines, stats, impact text (Bebas Neue)
+ * - .font-body: Readable content (DM Sans)
+ * - .font-mono: Tabular data, scores (DM Mono)
+ * ===================================== */
+@layer utilities {
+  /* Font families */
+  .font-display {
+    font-family: var(--font-display), system-ui, sans-serif;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+  }
+
+  .font-body {
+    font-family: var(--font-body), system-ui, sans-serif;
+  }
+
+  .font-mono {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-feature-settings: "tnum" 1; /* Tabular numbers */
+  }
+
+  /* Type scale - Display (Bebas Neue) */
+  .text-display-2xl {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-size: 4.5rem;
+    line-height: 1;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+  }
+
+  .text-display-xl {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-size: 3rem;
+    line-height: 1;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+  }
+
+  .text-display-lg {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-size: 2.25rem;
+    line-height: 1.1;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+  }
+
+  .text-display-md {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+  }
+
+  .text-display-sm {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Stat numbers - Large, impactful */
+  .text-stat-hero {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-size: 5rem;
+    line-height: 1;
+    letter-spacing: 0.025em;
+  }
+
+  .text-stat-lg {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 2rem;
+    line-height: 1;
+    font-feature-settings: "tnum" 1;
+  }
+
+  .text-stat-md {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    font-feature-settings: "tnum" 1;
+  }
+
+  .text-stat-sm {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    font-feature-settings: "tnum" 1;
+  }
+
+  /* Win/Loss indicator styling */
+  .text-win {
+    color: var(--win);
+  }
+
+  .text-loss {
+    color: var(--loss);
+  }
+
+  .text-tie {
+    color: var(--tie);
+  }
+
+  .text-gold {
+    color: var(--gold);
+  }
+
+  /* Background utilities for semantic colors */
+  .bg-win {
+    background-color: var(--win);
+  }
+
+  .bg-loss {
+    background-color: var(--loss);
+  }
+
+  .bg-gold {
+    background-color: var(--gold);
+  }
+
+  /* Heatmap backgrounds */
+  .bg-heat-5 { background-color: var(--heat-5); }
+  .bg-heat-4 { background-color: var(--heat-4); }
+  .bg-heat-3 { background-color: var(--heat-3); }
+  .bg-heat-2 { background-color: var(--heat-2); }
+  .bg-heat-1 { background-color: var(--heat-1); }
+  .bg-heat-0 { background-color: var(--heat-0); }
+
+  /* Animation utilities */
+  .animate-duration-fast {
+    animation-duration: var(--duration-fast);
+  }
+
+  .animate-duration-normal {
+    animation-duration: var(--duration-normal);
+  }
+
+  .animate-duration-slow {
+    animation-duration: var(--duration-slow);
+  }
+
+  .transition-ease-out {
+    transition-timing-function: var(--ease-out);
+  }
+
+  .transition-ease-in-out {
+    transition-timing-function: var(--ease-in-out);
+  }
+
+  .transition-ease-spring {
+    transition-timing-function: var(--ease-spring);
+  }
+
+  /* Gold glow effect for champions */
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+  }
+
+  .glow-gold-lg {
+    box-shadow: 0 0 40px rgba(251, 191, 36, 0.4);
+  }
+}
+
+/* Shimmer animation for skeleton loaders */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
   }
 }
