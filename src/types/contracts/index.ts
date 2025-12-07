@@ -22,4 +22,19 @@
 export * from './components';
 
 // Query contracts (Agent B → Agent C)
-export * from './queries';
+// Note: queries.ts has its own MatchupWithDetails that extends Matchup directly
+// We re-export with explicit handling to avoid duplicate export conflicts
+export {
+  type CareerStatsRow,
+  type H2HMatrixRow,
+  type SeasonStandingsRow,
+  type LeagueRecordRow,
+  type RecordType,
+  type RecordCategory,
+  type QueryFunctions,
+  type MatchupWithDetails as QueryMatchupWithDetails,
+  type RivalryData,
+  type UpcomingMatchup,
+  type HistoricalEvent,
+  type DashboardData,
+} from './queries';
