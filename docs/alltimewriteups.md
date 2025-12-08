@@ -1,0 +1,3143 @@
+Fantasy all time
+
+2015 season
+
+Teams are in!
+Some draft notes:
+- Someone picking Nelson (Andrew) was bound to happen
+- Jim picked 2 defenses and 4 TE's
+- Mike OD was the homer of the draft, picking 5 guys off the cowboys. 
+The Yahoo projections are interesting....
+With PJ M and Nick D projected to have 12-2 records. 
+Jim is predicted to go 0-14, and Mike OD 1-13..
+Good luck fuckers
+
+Well Boys it's coming down to the wire for a coveted playoff birth. 
+At this stage only two teams are guaranteed a spot... theACEboog1e Nick de Molina and God Bless the Gonk (Andrew Smith).
+Geno 911! ( Pj O'Brien) is barely surviving their 2 game losing streak but is still in a strong position to make the playoffs, their seeding is another story. 
+We have 2 "playoff" games this week, where the winner gaurantees themselves a playoff spot. 
+12.5 PSI to freedom (Mike Boggiano) VS. ODEEZUS (Michael O'Donnell)
+and
+The Nastiest Sack (PJ Miles) VS. HOODIE CRÜ
+ (Billy O'Brien too cool for Facebook). 
+It's worth noting Billy's 5 game winning streak is the most clutch performance the league has seen in it's 1 year existence, starting the season as a laughing stock and ending as a match up nightmare.  
+Ben's Sack Fumblers (Ben) also controls his own fate against the very tough AceBoog1e crew.  With a win, Big Ben will be the 6th and final seed in the playoffs.  
+With a loss there will between a 3 and 5 team tie at 6-7 for the final playoff spot.  
+The tie breaker will be decided by total points scored according to Yahoo!.  I'm open to changing that little rule shuld there be a consensus...as my team hasn't scored any points the last 3 weeks I'd be towards the bottom of the tie breaker so I'd obviously be open to an amendment making things more interesting. 
+Last but not least..
+Home Balogna pt duex (Jim Williamson) and Laces Out (Nick Frigenti) are battling eachother for the title of WORST TEAM.  With a Home Balgona win and a strong scoring performance that title will be gifted to Laces Out...Of coarse, Home Balogna pt duex is a horrible team and will probably lose. 
+-Commish Out
+
+Gentleman let the playoffs begin!
+The Ace Boog1e - Nick de Molina and God Bless the Gonk - Andrew Smith both earned themselves a bye week with 10-3 records. 
+For the first round matchups:
+(4 seed) Geno 911! - Pj O'Brien will be facing off against (5 seed) 12.5 PSI to freedom - Mike Boggiano
+The only time they matched up this season, Geno 911! came out on top 127 to 105. That was however in week 8, when Geno 911! had a lovely 30 points from Julian Edelman (RIP).  That week 12.5 PSI also left a whopping 40 points on the bench. 
+Should be a really tight match up between 2 equally delusional Jets fans. 
+Now for the Game of the Week
+(3 seed....YES the 3 seed) Hoodie Cru (Billy) will be matched up against the toughest 6 seed I have ever seen - The Nasty Sack - PJ Miles. 
+To put things in perspective...Hoodie Cru's 6 game winning streak vaulted them up from worst to 3rd.  The Nasty sack scored the 2nd most points in the league (1895) only to drop to the 6th seed cause teams scored more against them than anyone else (1845). 
+These teams faced off twice this year in arguably the two best match ups of the season.  
+In week 2 the Nasty Sack prevailed 156 to 148 even though he left 50! points on the bench. 
+In last week's play-in matchup Hoodie Cru came out on top 169 - 159 thanks to another monster Bortles performance (by the way Hoodie Cru drafted Andrew Luck with the 2nd pick of the draft....).
+The season total for the matchups between these teams are:
+Hoodie Cru - 317 over Nasty Sack 315
+This should be an interesting week!
+Commish
+
+
+2016 season
+
+On the day of the actual NFL draft, it made me start thinking about this upcoming season and how we can all come together and not allow Billy to repeat. 
+Obviously we will build upon our success and failures from last season, and that starts with the draft.  This year, we need more food, more beer, more space, and maybe some sweet babes to put our picks up on the draft board.  Maybe a pig roast will coincide with the draft, something I've given serious thought to. 
+Please confirm your interest in running it back and joining year 2. For our west coast brethren if you want in, we'll have to figure out some technology to have you at the draft without being at the draft.  Or, fuck it, come to NYC for a weekend. 
+The real draft is roughly 3 months away.  Start planning. 
+~Commish out
+
+HUGE UPDATE!
+The league has grown.  When Andrew Smith (God Bless the Gonk) could no longer participate.  A collective effort was put forward to find his replacement.  
+Naturally, the reputation this league has built in it's lone year brought on quite a bit of interest.  
+Help me welcome Drew Nagda, Camil B and Hugo Boss. 
+If you can do math, you now realize we have upped our league from 12 teams to 14 teams.  This should change your draft strategy slightly, but not enough to cause too much pain. 
+Commish
+
+The day is finally here!
+Friendly reminder to bring $110 cash and between 6-12 beers for the festivities tonight.  
+If you have research that you think will help you, I suggest bringing that as well. 
+Come by between 8-9, I'll be there around 7 to start setting up so feel free to head over whenever.  
+We'll probably start around 9:30 to give PJ and Jim time to get set up on skype. 
+Like PJ said, if you're interested in extra curricular's shoot a text in advance so we can prepare.
+Commish
+
+Rosters are in!  Sorry for the delay. 
+
+Camil B drafted 2 players who aren't in the league so his team sits at 13 total players.  
+Before diving into the Dak Prescott sweepstakes, check your rosters and be sure everything is right. 
+Free agency begin at noon EST sharp.  If i see a time stamp for 11:59 am I will remove the player from your team. 
+All voted on league roles have been updated accordingly.  Schedules are out.  Lets play.
+Commish
+
+Week 1 is in the books!
+We saw some high scores, some low scores, some good plays and some bad plays. 
+Dez and Confused (139) vs. Hoodie Cru (142)
+Well Dez Bryant strikes again for Dez and Confused with an impressive 1.8 point game.  In the closest game of the week, one that was only decided by 3 points, Dez literally only needed 1 20 yard catch and it would have been game over. 
+Of course Palmer only throwing TDs to Fitzgerald, and keeping Fuller (21 points) on the bench didn’t help. 
+ **Commissioners note – Fuller is available**
+Regardless, our Defending Champ showed grit and determination despite playing Ajayi who didn’t even put on cleats.  His Rodgers/Nelson/Crosby combo essentially guarantees him points every time Green Bay scores, after watching them this weekend, it’s looking like they’re going to be scoring a whole lot. 
+WattMeWhip (160) vs. Ditka’s Revenge (185)
+WOOOOO BOYYYYY.  This was a high scoring game, and an awesome win by one of our newest members (actually the only win by one of our new members). 
+Even though Ditka put up 185, he still left 44 points on the bench.  This is a strong squad.  One that was an all-star team in 2014, but non-the-less, if his old core of RB’s performs, he’ll be hard to beat with Julio eventually going beast mode on the league. 
+Deangelo Williams made things interesting for WattmeWhip.  Despite scoring 35 points, he needed roughly another 100 yards and 2 touchdowns to catch Ditka. 
+Worth noting the 27 points Riddick picked up this week for WattmeWhip, he was a 10th round pick and an early favorite for pick of the year. 
+Sack Fumblers (112) vs. Nasty Sack (105)
+The battle of the Sacks.  Which Sack is strongest?  Whose Sack got kicked?  How many more sack puns can we come up with?  This game is the closest to a Jets/Giants type rivalry we have. A rivalry based solely on name/location and not actually playing each other. 
+Sack Fumblers got the win and “sack cup” this season despite a pretty horrid performance from starting QB Tyrod Taylor. 
+As we all know from the greatest football speech of all time, football is a game of inches, life is a game of inches.  If Brandon Marshal remembers how to catch the ball, Nasty Sack could have pulled out a close victory. 
+Still trying to figure out how LA Rams DEF scored 9 points despite getting smoked up and down the field by the lowly 49ers. 
+ACE Boogie (170) vs. Knickerbockers (137)
+After the most devastating loss in league history, a history only 1 year in the making, ACE BOOGIE is looking to start strong this season.  Boy oh Boy did they start strong in a not as close as it seems 170 to 137 drubbing of the Knickerbockers. 
+Despite Brees’ hot start for the Knickerbockers, it wasn’t enough to overcome ACE’s ridiculous lineup of skill position players (and this was a down week for ODB thanks to that vaunted cowboys D). 
+Gurley could have pulled the miracle from out of the hat last night, but instead pooped in the hat for a total of 5 points.  Not the kind of start you want for the top back picked. 
+Worth noting Spencer Ware for Ace Boogie was a write in pick, the 201st pick of the draft and the dude scored 32 points.  Another early front runner for potential pick of the year.  We’ll see how long that lasts now that they’re expecting Charles back in the near future. 
+Laces Out (179) vs Bologna (94) 
+Well well well, Mr. Bologna strikes again with the lowest score of the week.  
+I want to point out to all members who are thinking about moving out west.  The two lowest scores this week were by the two teams who decided that sunshine, family and opportunity on the west coast are more important than our fantasy football league.  May this serve as a reminder to all how important it is to be at the draft live (so you don’t fall asleep chain smoking at your computer screen). 
+Bologna isn’t out of it yet, Wilson will rebound, Brown is an absolute football alien come to earth to destroy defenses and the rest of the team makes sense when compared to last year.  
+He also has Brady and Denver DEF on the bench for some potential trade bait. 
+With all that said, there was nothing he could have done to stymie Laces Outs absolutely dominating performance.   Huge gambles on Cooks, Gordon, Sanu all paid off, and when you combine those guys with Big Ben, Jeffery and David Johnson…well this is a really scary team.  
+After an off year by Laces in 2015, 2016 looks to be a massive rebound. 
+12.56 PS1 (112) vs Drinking Fortes (116)
+Sometimes fantasy football gives you lemonade, sometimes it gives you devastating injuries that halt your season in its tracks week 1.  12.5 PSI lost Keenan Allen for the season, and now Demaryius Thomas might miss some time with a hip injury, two pretty big losses but there’s still hope.  Have to remember Billy was 0-6 last year before his championship turnaround. 
+For those with surplus receivers, I’m sure PSI will be listening. 
+Fortes’s pulled off the win thanks to Minnesota’s dominant DEF and Forte’s namesake having a rival in Jets green. He’s taking a gamble on some young high potential players (Bortles!, Landry, Austin, Lockett) but if they pan out than we’re going to be looking at a playoff team. 
+ODeezus 144) vs. Frites (127)
+Dak who?  After the preseason drama surrounded by Ace Boogie’s questionable signing of Dak Prescott, ODeezus stuck to his guns and played Winston who rewarded him with a solid 27 point game and some serious hope for the future. 
+Combining him with AJ Green and Zeke who will undoubtedly rush for 2,000 yards creates a solid core that will compete every week. 
+Frites had a rough draft but after week one must be feeling pretty good about things.  Luck is back, Seattle DEF is back, and if Peterson remembers how to play football then they will be a strong contender each week. 
+This game really could have gone either way.  Frites picked up Ebron Sunday morning, didn’t play him, and he outscored the starting TE 15.6 to 0. Those 15 points wouldn’t have made up the entire difference, but ODeezus might have lucked out in this one.
+Commish
+
+Week 2 recap
+Waiver Highlights
+Dez and Confused picked up Tyrell Williams who is taking Keenan Allen’s snaps for the chargers. 
+Sack Fumblers picks up Flacco and the question everyone around the league is asking…Is he Elite?
+12.5 PSI did some work picking up Phillip Dorsett, Nelson Agholor and Eli Rodgers to fill out their WR depth.  Also looks to be stashing Dion Lewis on their IR
+Laces out picks up James Starks and Jeremy Kerley, two players you might remember from 2013
+TRADES
+Dez and Confused trades Will Fuller and Isiah Crowell for 12.5 PSI’s Latavius Murray
+Standings
+There are 4 2-0 teams, 4 0-2 teams and 6 teams tied at 1-1. 
+Dez and Confused ( 142) vs. WattmeWhip (114)
+Solid trade for both Dez and 12.5 PSI this week.  Dez bringing in Latavius Murray to solidify their running attack in the absence of Leveon Bell proved to be a solid move as Murray racked up 22 points.  
+Dez, Edelman and Snead kept things moving along as planned leading to a 142 to 114 victory over WattmeWhip
+Dez and Confused is now at 1-1 and is sitting in the final playoff spot. 
+WattmeWhip had a rough week as Woodhead is now down and out for the season with a torn ACL.  
+Real tough blow to the Chargers, but with Deangelo Williams eventually finding the bench in Pittsburgh, WatchmeWhip might have some serious running back depth issues.  
+Could he be looking for a trade???
+Hoodie Cru 9135) vs Frites (125)
+Hoodie Cru continues his winning streak from last year which now sits at 11 games in a row with another close (or is it lucky?) win. 
+He did have a solid overall week with Rodgers, Nelson, Kelvin and Fitz doing what they do.  
+If Luck had a decent game for Frites we’d be talking about the upset of the week, not a winning streak. 
+Sack Fumbler (141) vs Ditkas Revenge (176)
+Ditka continues to take out his revenge on our poor league.  Once again they had the highest score, bringing their season total to a whopping 361 points (through 2 weeks!)
+His team is just solid, Carr, Julio, Demarco, Panthers DEF...  Looking like the league will need a few of his guys to have off weeks at the same time to pull out a win. 
+Sack Fumblers benched Tyrod after a horrid first game, only to see him turn things around week 2 and outscore Joe “Elite” Flacco by 10 points.  Not enough to make the comeback but enough to 
+conclude Tyrod is out to get him. 
+Knickerbockers (132) vs Nastiest Sack (129)
+Another close loss for Nastiest sack who has now fallen to 0-2 to start of the season (sounding eerily like last season).  This game came down to a 2 point difference, unfortunately for Nastiest Sack they left 84 points on the bench.  
+Some of those would have come in handy. 
+The question on all of our minds is why they are carrying 3 QB’s on their roster.
+Knickerbockers pulled out a nice win, their first in the league, following strong performances from Travis Benjamin and Greg Olsen.   
+Laces out (135) vs AceBoogie (140)
+Battle of the Nick’s took place this week with AceBoogie pulling out a close win despite lackluster performances from Baldwin, Abdullah and Sefarian-Jenkins. 
+4 interceptions for Arizona’s DEF helped the cause, as did an instant classic from Matt Ryan. 
+Melvin Gordon had another big time week, and with Woodhead going down looks to make the jump into serious RB1 conversation the remainder of the season.  We’ll see how these guys perform each week, could very well be a boom/bust kind of season. 
+12.5 PSI (166) vs. Balogna (78)
+12.5 PSI’s trade for Fuller and Crowell netted him 38 points, but they each could have scored 0 and they would have ran away with the win this week.  
+Despite Denver DEF scoring 25 points for Balogna, they managed a total of 78.  To put things in perspective, Balogna DEF scored more than is 3 starting WRs and 2 starting RBs COMBINED.  
+ODeezus is up next week for their free win weekend versus Balogna. 
+ODeezus (59) vs Drinking Fortes (153)
+Woof, Odeezus’ squad forgot to play football this weekend.  Luckily, as mentioned earlier they get Balogna next week…
+Unfortunately for ODeezus, Balonga in all of their misery still outscored them by 20 points.  This will be a barn burner. 
+As for this week, only 2 of their players scored in double figures, while Forte’s squad turned out another huge performance despite McKinnon’s 1 point (even though AP is out). 
+If Peterson missed time, Forte has a legit RB1/2 in McKinnon ready to go.  And that kids is why you handcuff talent…
+Overall
+Another solid week all around, for those who came to the BBQ, I enjoyed your presence even if I didn’t watch a second of football.
+Commish
+
+Week 3 Update
+The league currently has 3 undefeated teams at 3-0 (AceBoogie, Drinking Fortes and Hoodie Cru).  Two of the remaining undefeated teams were in the championship last year.
+There are also 3 totally defeated teams (Balogna, WattmeWhip and French Frites). 
+The remaining 8 teams are battling it out at either 1-2 or 2-1.  This is going to be a tight season, the final 3 or 4 playoffs spots will likely be decided by a game or two.  No one is out of it, and no one is running away with things. 
+This upcoming week sees Frites and WattmeWhip in a must win game, one of those teams will get their first win.  The other will continue their downward slide to 0-4.
+We also have the Camden (a band they were in once upon a midnight dreary) boyz going at it with 3-0 Fortes taking on 0-3 Balgona.  Is this a rivalry game?
+Now for the games:
+Dez and Confused (138) vs. Sack Fumblers (164)
+Things were looking good for Dez and Confused as they entered Monday night up 50 points.  Alas, The Sack Fumblers had 3 players in the Monday night game, and each performed far above projections with Freeman, Ingram and Fleener all going off. 
+Both teams Quarterbacks came out of the gate slow, 4th quarter comes around and Sack Fumblers Tannehill made things interesting while Dez and Confused’s Palmer threw 4 INTs.  
+His performance would have been the worst of the week if not for the heroic showing from Fitzmagic. 
+Hoodie Cru (127) vs. WattmeWhip (86)
+Hoodie Cru comes away with the rivalry win against baby cousin WattmeWhip.  Winning streak now sits at 12 straight games going back to last season.  When will it end??
+Somehow keeps pulling out W’s despite always having a starter that scores 0 points...  The Rodgers, Nelson, Crosby combo again comes up big. 
+WattmeWhip made some questionable moves on Sunday, dropping the Bills DEF (31 points) for the Steelers (-1 point).  That 30 point swing plus the goose egg his kicker gave him crippled any hope at a victory. 
+WattmeWhip has had the worst injury luck of the season with Walker, Watkins, Charles and Woodhead all missing time.  
+Deangelo Williams will be finding the bench with Bell’s return as well.  Big week next week against the lowly Frites. 
+KnickerBockers (201) vs Ditkas Revenge (147)
+Kncikerbockers is the first team this season to break the 200 point threshold handing Ditka their first loss of the year.  Even in defeat Ditka put up another strong week with 147 points with their RBs continuing to shoulder the load as Julio Jones continues his slow start to the year. 
+Their point total through 3 weeks sits at a staggering 508, roughly 200 points more than cellar dweller Balogna. 
+Knickerbockers made some great plays this week, including the Chiefs DEF 37 point performance. 
+Laces Out (101) vs Nastiest Sack (176)
+Nastiest sack finally finds the win column thanks to this drubbing of Laces Out.  Marvin Jones put up 44 points, which if my calculations are correct is the highest scoring week of any player so far this season.  It also helped to have Coleman snatch 3 TD’s from Freeman Monday night. 
+Laces Out will need some more help from their WR’s to keep any early season momentum alive. 
+12.5 PSI (122) vs. AceBoogie (128)
+12.5 just couldn’t hold onto their lead heading into Monday night and AceBoogie picks up their 3rd win to start the season. 
+Matt Ryan only picked up 19 points in this high scoring Monday night game and that was just enough to overcome 12.5 tenuous lead.  
+Looks like Ryan knew Tamme was on 12.5 PSI which caused him to seemingly avoid throwing his way the entire game. Few more catches and a handful of yards for Tamme and AceBoogie would be staring at their first loss of the season. 
+RB’s for AceBoogie put up a whopping 6 points this week, they will need more out of them if they want to keep this winning streak alive. 
+Question on all our minds is when will they trust the young gunslinger Dakota Prescott??
+ODeezus (154) vs. Balogna (120)
+ODeezus rebounds nicely after a horrid week 2.  Playing Balogna tends to do that for you regardless but ODeezus got great performances out of Winston, Hyde (finally) and Michael.  The 0 points from Charles Clay made no difference this week but with their other TE (Gates) still out with injury this is a serious position of need. 
+Balogna put up a solid effort, picking up Pryor, prior to the game was a huge move as he scored 31 points throwing, running and catching.  Mighty be the best athlete in the NFL…not sure how many other guys can do that at the professional level. 
+Brown put on another virtuoso performance scoring 26 points. He has the most targets, catches and 4th most yards this season to go along with his 2 TD’s.  Gotta imagine those numbers will remain pretty consistent this season.  
+Drinking Fortes (160) vs. French Frites (103)
+Drinking Forte’s continues their strong start to the season with a dominating 60 point win over French Frites.  
+Led by Landry, Sanders and the early season MVP – Minnesota DEF (72 total points overall – the 4th highest total score out of all players).
+With Peterson going down for an extended period and Vereen now out for the season Frites is going to have to get really creative in their RB slots if they want to secure their first victory. 
+Overall:
+Not many close games this week but slowly but surely the cream is rising to the top.  Remember this next week is the first Bye week of the season so plan accordingly.
+
+
+Week 4 Update 
+A day late, a dollar short.  This year has been a battle of the haves and have nots…
+The standings look like oil and water.  There are currently 7 teams tied at the top at 3-1.  They are led by the Ditka juggernaut who has 100 points more than the next highest team. 
+In the middle sits 12.5 PSI who is actually well within striking distance at 2-2.
+5 teams are tied at 1-3, they will all need a solid win streak to crack the top 6 (for playoffs). 
+They say, never say never, and we all said never to last year’s champions 0-6 start…but the reality is, French Frites sitting at 0-4 might just be playing for pride at this point. 
+TRADE BLOCK
+Pj has made Cam Newton available – looking for a WR and RB combo 
+Jim has made Brady available – what are you looking for Jim?
+Dez and Confused (95) vs. Knickerbockers (115)
+This was an ugly game.  Both teams came in way below their projections. Dez couldn’t get the win despite Knickerbockers getting 0 points from both their kicker and DEF…that’s just bad. 
+Crabtree’s heroic effort catching 3 TD’s single handily won this game as the rest of both teams were wallowing in their own mediocrity.  
+With that said its not about how you win as long as you do, Knickerbockers is sitting pretty at 3-1, while Dez and Confused continues their painfully slow (and lowest margin of loss) season falling to 1-3. 
+Hoodie Cru (72) vs. Sack Fumbler (126)
+Sack Fumbler finally put an end to Hoodie Cru’s winning streak dating back to last year. 
+Hoodies had their Packers contingent on bye so he was left starting Siemian, in place of Rodgers…a pretty severe drop-off there.  
+Sack Fumblers cruised to victory on Flaccos’ 22, Rams DEF 18 and Ingrams 22.  
+Solid win overall, both teams now sit at 3-1 through the first 4 weeks, in great position for a playoff push. 
+WattmeWhipp (109) vs. French Frites (95)
+WattmeWhip picks up their first win of the season over the lowly and French Frites.  
+Frites played a player on bye week which makes me think he’s no longer paying attention.  But the reality is he also has 2 players on IR on his bench, as well as the suspended and team less Gordon…so there weren’t many options.  
+We all know how dire the free agency wire is these days. As commissioner I will be keeping track of this and will intervene as necessary. 
+For WattmeWhip, Cam had another down week, Charles picked up only 7 yards in his return to action and Watkins looks to be out for the season.  
+Too bad they can’t play Frites every week. 
+Laces Out (121) vs. Ditka’s Revenge (179)
+Ditka stomped another team this week, led by Julio Jones who only scored 1 Touchdown…oh wait he also had 300 yards and 12 catches.  His 59 points would have come close to beating Hoodie Cru’s entire team this week. 
+Did I mention Ditka pulled in 0 points from their TE this week? This could have been even uglier. 
+For Laces Out, who have now lost 3 straight, there were signs of life.  Big Ben looks to be in vintage form now that Bell is back and Gordon again had a really solid game for San Diego.  
+12.5 PSI (169) vs. Nastiest Sack (116)
+12.5 PSI put on their most dominating performance, dating all the way back to last year.  They were led by Thomas, Crowell, Gore and Cincinnati DEF who all scored in the 20’s, and then of course Will Fuller who put up 30.  Steve Smith even had 27 on their bench. 
+That trade between them and Dez at the beginning of the year seems to be working quite well for one of the parties….
+Nastiest Sack came in below projections as Parker, Coleman and Humphries all fell back down to earth.  
+Jordan Reed carried them and he sure does look like the best TE in fantasy right now…Brady might help Gronk regain form, but Reed is an absolute beast in the redzone. 
+ODeezus (144) vs. AceBoogie (104)
+ODeezus pulled out the big win in their rivalry game against AceBoogie. 
+They were led by AJ Green’s monster performance, Elliott’s methodical destruction of the San Fran Defense and Christine Michael's solid all-around game. 
+It wouldn’t have been enough but Aceboogie played with their heart, not their head in starting Prescott over Ryan who torched his beloved Panthers for 500 yards and 4 TDs. 
+John brown finally had a big game after disappointing all season, but it wasn’t big enough to overcome another poor performance by OBJ (WTF is with this guy?? Sorry playing professional football, making millions of dollars and banging super models isn’t fun for you anymore..).
+Drinking Forte’s (127) vs. Home Balogna (144)
+Home Balogna pulled out his first victory of the season against rival, Drink Forte. 
+What a win it was with Wilson, Brown and Denver DEF all putting up 20+. Brady is back, and apparently he’s looking to trade.  We’ll see, might be a better player than Wilson.  
+Forte needs more out of the 1st overall pick, Gronk if they want to keep their early season fortunes alive and well.  Drafting Howard for the Bears was once panned across the league, but with Langford going down for the foreseeable future, Howard is a RB2 lock and low tier RB1.   Between him and McKinnon Forte is riding high on handcuffs. 
+That’s it for this week, we’ll see how things progress.  
+Dez and Confused and Laces out are playing a huge game to each avoid starting 1-4.  
+Home bologna is matched up against French Frites in a matchup of the two lowest scoring teams. 
+More important games are between Hoodie Cru and Knickerbockers, and Drinking Fortes and Aceboogie.  All 4 teams are sitting at 3-1 right now.
+
+Fantasy Week 5
+Getting a little bored trying to put a positive spin on all your great wins as my team continues its steady path into the gutter so I’m taking a note from my idol Matthew Berry and writing a 10 Things I Hate About Fantasy Football style column.  This week’s preview at the end. 
+1.  Sammie Coates..I hate Sammie Coates.  Spot started against me not only in this league but also in my work league.  He scored more on the first play of the game than he did in any other game this season.  He scored more in the game than he did in every other week combined this season.  I hate him, once he burned the Jets I knew I was on my way to my 3rd straight loss. 
+2. Every week there are 5 guys on the free agency wire that put up 20+ points.  I think of the first 10 TD’s scored on Sunday, 7 or 8 of them belong to guys not owned by anyone.  Bullshit, I hate it.  If they aren’t on a fantasy roster why do they even play football?
+3. Don’t want to make this all about me, but our lopsided schedules are just the worst.  I have .12 more points total than ODeezus, yet he sits pretty at 4-1. 
+4. All projections.  Where do they come up with this stuff?  
+5. First Round Picks.  Of the 14 guys taken in the first round of our draft this year only Brown, Julio, Green and Johnson have even come close to their lofty status.  Gronk has been out, Dez has been out, Cam has been out, Peterson is gone.  Experts are dumb, we’re dumb, and injuries are dumb.
+6. I hate Running Backs.  Of the top 50 scorers in all of fantasy this season, only 10 are RB’s… To make matters worse, 1 of those 10 was picked in the 1st round and 3 were taken in the second.  This is a lose lose situation.  You need to draft RB early cause there aren’t many good ones..but then only 4 of the 10 taken in our first two rounds are performing with any consistency… Oh, and what the fuck is with these RB committees featuring 3 guys?? 2 dudes splitting carries were enough.  
+***Rules committee potential vote – Scrap all positions and make every slot on the roster FLEX except QB, K, DEF??????
+7. I hate Ditka’s Revenge.  Of the 16 players in fantasy who have scored more than 100 points so far this season he has 4 of them.  Oh, and he has a guy at 98 points total.  But I digress, this isn’t a personal hate column. 
+8. I already mentioned how I hate projections, but I also hate averages.  How many of you have said this to yourself “He averages 10 a game!  That’s not bad considering there’s no one on the waiver wire!  Oh…wait…he scored 30 one game, and then 3 in the following 3 games total…”  I think the better stat, the stat we all need, is a consistency rating.  Putting together the formula now as I’m already preparing for next year’s draft. 
+9. 2 Defenses being in the top 25 point scorers in all of fantasy.  That means they both should have been drafted in the first 2 rounds.  I stand by our defensive scoring rules, but wish I drafted one before the last round. 
+10.  Losing.  Each week brings new hope, new projections which validate drafting that player a round too early, preparing your trash talking texts to your weeks opponent… All to just watch your best player go down in the first quarter, your QB throw that dreaded pick 6, that defense you’re going against return a fumble and block a punt… You delete your texts… you close your apps… you swear off fantasy… you start watching Pitch Perfect 2… and then you realize the Dallas Cowboys are 4-1 and everything is right in the world after all. 
+This week’s games:
+Big week of games headlined by the ODeezus (4-1) vs. Ditka (4-1) match up.  Both are well positioned, but this will be a game of bragging rights and leader board domination. 
+Speaking of unbalanced schedules to start the year.  Our 3 other 4-1 teams (Knickerbockers, Sack Fumblers and Drinking Fortes) are all playing teams with a 1-4 record.  WE NEED SOME UPSETS GUYS!!!!
+Drinking Forte's is playing brother from the same mother, Nasty Sack in the first of 2 blood brother match-ups this season (ODeezus vs Dez will be later on).
+The big season saving game might be between Dez and Confused (1-4) and 12.5 PSI (2-3), both need a win in a big way to stay afloat. 
+Good Luck and God speed, may all your starters go down with injuries.
+Commish
+
+
+Things are starting to fall into place in the standings after an exciting Week 6. The playoffs as of today would include 3 5-1 teams and 3 4-2 teams. 
+French Frites picked up their first win of the season, Ditka’s revenge somehow lost again and both ODeezus and Knickerbockers continue to roll with their 4 and 5 game winning streaks. 
+Big trade went down this week.  Hoodie Cru sent Jordy Nelson and his touchdown per week average to the Sack Fumblers for a DEF, a rookie WR and hopefully a blowjob.  I really thought about vetoing this trade, but given I’ve already played Sack Fumblers, and have no desire to see Hoodie Cru win another championship I bit my tongue. 
+If you’re interested in doing a fantasy basketball league. Here is a link to one I just set up.  Thinking 8-10 teams, $20 a person, auction draft.  If we have the numbers we’ll do it, if you have friends interested than send them the link. 
+https://yho.com/nba?l=109667&k=03a699e1e8430313...
+Week 7 matchups
+Dez and Confused (1-5) vs Odeezus (5-1)
+Our last blood brother matchup of the season taking place this week.  Dez again needs a win, but it’s been 4 weeks in a row where a win was needed and nowhere to be found.  Luckily the Cowboys are on bye so ODeezus doesn’t have half his team this week. 
+Hoodie Cru (3-3) vs 12.5 PSI (3-3)
+Huge game for potential playoff positioning.  One of these team will find themselves a game over .500 at the half way point of the season. 
+WattmeWhip (1-5) vs. Laces Out (3-3)
+Tough game for WattmeWhip without Cam playing this week.  He’ll be looking for Stafford to match last week’s 4 TD performance. Still might not be enough to overcome Laces Out’s David Johnson who in my eyes is the mid-season MVP so far. 
+Sack Fumblers (4-2) vs Knickerbockers (5-1)
+After last week’s loss to the winless Frites, Sack Fumblers pulled off another major trade.  Over the last 2 weeks, he has turned Freeman, Fleener and Shepard into Jordy Nelson and Tom Brady….not bad at all!  Early season vote for GM/Executive of the year.  
+This week he puts his newly formed team up against the Knickerbockers, who have won 5 straight after dropping their first game. They have a sneaky good team, and if Gurley picks things up in the second half of the season will be primed to make a serious run. 
+Drinking Fortes (5-1) vs. Ditkas Revenge (4-2)
+Big game between two of the top teams in the league.  Forte’s will hope Gronk continues to Gronk on everyone and Ditka will need to be creative replacing both their K and DEF who are on bye this week. 
+Balogna (2-4) vs. Nastiest Sack (1-5)
+West coast battle.  Nastiest Sack continues their poor start to the season while Balogna is back down to earth after they had their 2 game win streak snapped last week. Tough call leaving Ajayi on the bench last week costing him the game. 
+AceBoogie (4-1) vs. French Frites (1-5)
+Frites was the last team to enter the win column last week but did so in style with huge games from a few of their players.  None of those players had as big of a game as ODB did for AceBoogie last week, he put up 48 points.  The guy might suck but he is pretty damn good.
+
+
+Last week I decided to focus my energy on the team and not the write up.  Thought it was a critical week and needed a win.  Well, I made all the wrong plays, so we’re back to the weekly write up routine as this is all I have going for me at this point. 
+This week we’ll be reviewing each team’s playoff likelihood now that we are a mere 5 games away from week one of the playoffs. 
+TIER 1 - NEAR LOCKS – Would likely need to lose 3 or 4 of the remaining games to miss the playoffs
+KnickerBockers (6-2):
+Really solid team, comes through each week.  Brees/Hilton is a great combo, Olsen’s still got it, Crabtree has really broken out, and Gurley though not spectacular has been consistent at the RB spot which is really all you can ask for these days.  
+Drinking Forte’s (6-2):
+Bortles, Bortles, Bortles.  Sitting there watching that game unfold and he’s completely unable to even through a 15 yard out route.  Turn the game off, and he puts up 30 against me in garbage time.  Might be the perfect fantasy QB (he did lead Billy to victory last season) because you don’t need to draft him and he will undoubtedly break the back of whoever you’re playing week in week out. 
+It’s not just Bortles though, the Gronk stash is seriously paying off, Sanders/Landry put up scores in the teens each week, Forte has come alive and his duo of handcuffs (McKinnon/Howard) are doing some big things.  
+TIER 2 – SOLID POSITIONING – No real cause for concern these teams – other than catastrophic injuries
+Ditka’s Revenge (5-3):
+Derek Carr has been awesome, Julio and Mike Evans each get seemingly 20 targets a game, McCoy, Demarco, Blount are arguably the 3 best backs in fantasy.  
+Surprising this team lost 3 games, but of those 3 losses, he had 201 points against, 161 points against, and 141 points against.  Arguably the best weeks for each of those 3 teams came against Ditka. 
+Laces Out (5-3):
+After a 1-3 start, Laces Out has rolled off 4 straight wins (longest active win streak) bringing them up to 5-3 and comfortably in playoff position. 
+He’s been riding David Johnson (best player in fantasy) and Melvin Gordon while Big Ben has been out.  It does look like Ben will be back this week which will be a huge plus to an already high scoring team. 
+Cooks has been really solid during the win streak and Jeffery seems to be happy Cutler is back under center.  How long can this streak last?
+The AceBoogie (5-3):
+Huge season from Matt Ryan and Amari Cooper have led the scoring for Ace this year.  Spencer Ware has picked things up the last few weeks on his campaign for pick of the season. 
+ODB has been kind of a boom or bust play, but when he booms he booms – his 48 point game a few weeks ago is the reason he was one of the first picks of the draft. 
+TIER 3 – THINGS ARE GETTING SCARY
+ODeezus (5-3)
+Despite their 5-3 record, ODeezus has dropped their last 2 games, and in a league with 9 teams at or above .500, ODeezus needs to break this slump ASAP. 
+Luckily Ezekial Elliott is capable of anything. 
+Hoodie Cru (5-3)
+Despite being the lowest scoring team in the league with a meager 926 points (top score is 1248…) Hoodie Cru’s deal with the devil dating back to last season has them sitting at 5-3 with 2 straight wins. 
+Don’t buy it.  Trading Nelson is still a complete mystery to me, Rodgers is having a down year.  Benjamin goes as Cam goes, and Cam hasn’t been going like Cam this season.  Most consistent guy is Fitzgerald, who is like 45 years old and on a surprisingly bad offense.  
+Winter is coming for Hoodie Cru
+Sack Fumblers (4-4)
+After all their wheeling and dealing Sack Fumblers have managed to drop 3 straight games. 
+This week they have a huge match up with 12.5 PSI, the only other 4-4 team.  This is a make or break week. One where both Hopkins and Brady are on bye. 
+TIER 4 – STRIKING POSITION
+12.5 PSI to Freedom (4-4)
+Slowly but surely 12.5 PSI has climbed themselves out of the basement.  Last week’s heroic effort against Watt me Whip (back and forth 146-144 victory) might just be the launching pad PSI needs this week against Sack Fumblers. 
+Bad week to be rolling with Josh McCown as their starting QB, but even the Browns have to gain SOME yards each week…
+TIER 5 – FEEL GOOD STORIES
+French Frites (3-5)
+Who saw this coming?  I sure didn’t… After a rough draft, some questionable early season acquisitions and brutal luck (Peterson going down, Luck forgetting how to play football), Frites has turned things around with a 3 game winning streak. 
+Home Balogna pt Deux (3-5)
+Well, well, well Balogna.  You’ve sure made this commissioner eat his words from earlier in the season.  Great pickups of Chris Hogan, Pryor Sr and Jay Ajayi bolster solid starters Devonta Freeman and Antonio Brown. 
+Might be too late this season, but there is hope that next year’s Balogna edition won’t leave the draft with 2 K, 2 DEF and 3 TE’s again. 
+TIER 6 – BETTER LUCK NEXT YEAR
+Nasty Sack (2-6):
+Another unlikely season for Nasty Sack – that’s 2 years in a row where the draft looks good, the roster moves look right, and the wins don’t come. 
+WATTmeWhip (1-7):
+League isn’t the same without its top trash talker winning any games.  Maybe he’ll revisit the QB with the second pick of the draft strategy next year. 
+DEZ AND CONFUSED (2-6):
+Well isn’t this bitter sweet for you all.  Looks like DEZ has put too much effort into draft parties and weekly write ups this year.  
+Just one of those years for your trusty Commish…If you check Yahoo’s power rankings, Dez and Confused is comfortably in first place.  That has not translated week to week despite great projections and solid depth, fantasy football remains the bain of my existence. 
+Changes coming next year, watch out.
+
+Not much to say this week so I'm going to keep it brief.  Next week we might have the first of teams being locked into spots.  
+6 teams tied at 6-3, all in playoff positioning. 
+2 teams at 5-4, on the door step
+2 teams at 4-5, hope is still alive. 
+After this week we can legit have 10 teams within striking distance of the playoffs.  This is getting interesting.  Good luck all.
+
+
+In the unfortunate scenario where I do not win the championship...payouts will be as follows:
+$1100 to 1st place
+$200 to 2nd place
+$100 to 3rd place
+Payments will be made via Venmo at the final whistle of week 16 (Xmas Eve).  For one of you this will be a VERY MERRY CHRISTMAS
+If you plan to try and make some sort of deal, to split the pot, that is your own prerogative, but again, payments will be made upon completion of ALL games. This is a way to keep competitive spirit alive the final (most important) week.  Let the champion win $1100 and send half of that to the team they just beat out of the kindness of their heart.
+
+YUGE matchups this week.  This is now do or die for a lot of teams. 
+Let’s hit some of the highlights from around the league and then take a look ahead at this week’s matchups. 
+Laces out is continuing their scorching win streak which now rests at 6 games.  They were 1-3 at one point this season, I remember it well because that was the week I played him…
+Despite their win streak, they still find themselves in 2nd place thanks in large part to Ditka’s massive scoring totals. 
+Odeezus continues to ride Zeke to the promise lands. 
+Hoodie Cru’s deal with the devil has continued with a staggering 4 game win streak despite scoring the second fewest points in the league this year. Can this last?  Can he be a repeat champion?
+Knickerbockers and Fortes, if you remember from my write up weeks ago were “Near Locks.”  Well, in the time since they’ve gone on 3 and 2 game losing streaks respectively.  So that near lock prediction, similar to all predications in fantasy this season was completely and totally off. 
+12.5 PSI, Sack Fumblers, and AceBoogies all find themselves at .500 through the first 10 weeks of the season.  With only 6 playoffs spots – all of which are filled with teams currently over .500 – time is running out. 
+Dez and Confused is riding high after their first back-to-back victories.  If matchups break the right way and they win out you could be looking at a dangerous 6 seed. 
+French Frites, Balogna, Watt and Nasty are all but out of the race for the playoffs.  Even with incredible luck they likely won’t have the points needed to break any kind of tie-breaker scenario. But keep your pride up boys!  Play spoiler! Win the upset! Your wins will not be forgotten 
+Week 11 Match Ups:
+8 of the 9 teams at or above .500 are playing each other this week.  This not only has playoff seeding implications on the line, but the reality of missing the playoffs entirely. 
+Hoodie Cru (7-3) vs. AceBoogie (5-5)
+HoodieCru looks to keep their magic alive.  A loss will likely have them tumbling out of playoff positioning.  Ace needs the win after 2 straight losses if they hope to make any sort of run this season. 
+Sack Fumblers (5-5) vs. Drinking Fortes (6-4)
+Both teams are coming off of tough losses and jockeying for positioning.  Looking like 5th seed is their ceiling. 
+Knickerbockers (6-4) vs. ODeezus (7-3)
+ODeezus can really separate from the pack with a win this week. Knickerbockers has lost 3 straight since this commissioner blessed them with “near lock” certainty.  Despite a tough few weeks their high point total buys some leeway.  
+Laces Out (7-3) vs. 12.5 PSI (5-5)
+Let’s see if Laces Out can keep the streak alive and extend to 7 straight wins.  Alshon Jeffrey suspension really could not have come at a worse time for him.  12.5 needs another win this week to keep their playoff probability above dumb luck. 
+Other games are happening this week, and their important in their own ways but will not likely affect the playoff situation.
+Good luck this week, I hope teams 1-9 all lose.
+
+What a week of upsets!  I'll be writing up a more detailed preview for next weeks games later this week when the standings shake out. 
+Everyone is welcome to come over this Sunday for football (12/4).  Its the last week of the fantasy regular season, and playoff spots WILL BE ON THE LINE.  Let's watch together!
+Dez and Confused continued their scorching stretch, putting up 184 against Ditka's revenge. 
+Hoodie Cru's luck has taken another hit, with an inevitable loss to last place Nastiest Sack this week. 
+WattmeWhip came up huge, knocking Aceboogie to 6-6. 
+Home Bologna put on arguably their best performance of the season and are well on their way to beating the Sack Fumblers
+Laces out continues their win streak by squeaking by (reeling?) ODeezus
+12.5 PSI and Frites are going at in in the worst fantasy match up of the year.  
+The only meaningful match up that still has consequences is knickerbockers Vs. Fortes.  Knick is down 8 points with Sproles going tonight.  A win for Knick secures his playoff spot.  A loss for Fortes all but eliminates him.
+
+
+What season!  
+Congrats to everyone for making this one of the most competitive fantasy leagues I’ve ever seen.  
+Congrats to our new league members, 2 of the 3 are going to the playoffs.  
+This final week will go down in our history books.  There are 7 teams fighting for the final 3 playoff spots – 3 of them are within 20 points of each other so every yard, catch, and TD will have an impact.  
+I can’t wait to see how the final week and playoffs pan out, and I can’t wait to run it back next year for year 3. 
+Let’s walk through scenarios for each team still in the running. 
+Laces Out
+8 game win streak brought them from 1-3 to 9-3.  Best running game in the league.  They’ve already clinched the bye week heading into the playoffs, but one more win means they lock up the 1st seed and a 2016 fantasy award.
+Ditka’s Revenge and Knickerbockers
+Both teams clinched the playoffs, one will have a bye week next week when the playoffs start.  If it goes to points tie breaker than Ditka has the bye.  If Ditka loses and Knickerbockers wins than Knickerbockers has the bye.  
+ODeezus
+Sitting at 7-5, a win this week clinches a playoff spot.  No AJ Green for the stretch run will be tough to overcome, but with Zeke anything is possible.  Just keep feeding him. Match up against PSI has playoff implications. 
+Hoodie Cru
+This is a huge week for the luckiest team in the league.  A win guarantees a playoff spot.  A loss (their 3rd straight) will likely drop them from the playoffs all together based on point tie breakers.  Really tough match up against the highest scoring team in the league this week – Ditka’s Revenge.
+Dez and Confused
+Well looky here.  Riding a dominating 4 game win streak, and high point totals (3rd in the league) a win will guarantee at least the 6th seed.  Based on how ODeezus and Hoodie Cru do this week they can jump to 4th place.  By the way, 4 weeks ago they were in 13th place at 2-6.  They control their own destiny with a win and have been playing do-or-die playoff football for the last 4 weeks.  They have the lowly French Frites this week.
+Sack Fumblers and The Ace Boogie
+Untimely losses last week to two of the bottom dwellers kept them from being comfortable this week.  They each need a loss from one of 3 teams (Dez and Confused, Hoodie Cru, ODeezus) and a high scoring week to have a chance at a playoff spot. Interestingly enough, they play each other this week, after completing a trade with each other at the end of last week.  Will that affect the outcome??  HUGE MATCH UP.  One team has a chance, the other is done. 
+12.5 PSI
+Still in this thing, if they manage a high scoring win against ODeezus, and a low scoring outcome of Sack Fumblers Vs. Aceboogie they can make the playoffs.  With a revolving door of WR’s who will get this critical start?
+Drinking Fortes
+From 2nd in the league to 10th in the league in a matter of weeks Drinking Fortes is all but done. That’s what a 4 game losing streak will do to you.  That’s what drafting Gronk with the second pick (instead of David Johnson, Zeke, Julio, ODB, etc.) will do to you during crunch time.  Gronk is obviously one of the best players in the league but getting harder and harder to trust. 
+WattmeWhipp – Home Balonga – French Frites – Nastiest Sack
+There’s always next year!  Some of your wins the last few weeks made this Commish VERY happy.  Well done, and I salute you for keeping at it despite insurmountable odds!
+
+
+Playoff Football is in full swing. 
+Last weeks wins/losess and tiebreakers left us with a solid final 6 teams. 2 new members, and 2 O'Donnell brothers made the playoffs.
+1. Ditka's Revenge
+2. Laces Out
+3. Knickerbockers
+4. DEZ and CONFUSED
+5. Sack Fumblers
+6. ODeezus 
+As for this week's wildcard round.  DEZ and CONFUSED is all but assured of a victory after Laveon Bell went spacejam MONSTARS on the Bills for arguably the best fantasy game of the season.  Rounded out by the superb pickup and play of ATL DEF, DEZ and Confused will be moving on. 
+Well done Sack Fumblers, great season, good draft, some solid pickups and great trades made you a formidable opponent week in week out. 
+The other matchup this week is coming down to Monday Night Football.  Both ODeezus and Knickerbockers had down weeks and left some points on the board. 
+With ODeezus up 1 point heading into the game tonight this will get interesting.  Both have players going for the Pats.  Will they kick field goals (Gostkowski - Knickerbockers) or score TD's with their rookies (Mitchell - ODeezus). 
+Either way, one team will be moving on to the final 4. 
+Will have a preview of semi-finals later in the week. 
+Commish
+
+
+It's all come down to this weekend. 
+The championship. 
+The two best teams all season are representing the league. 
+Ditkas revenge had the highest point total
+Laces out hasn't lost in months. 
+Most of their guys are going on Christmas Eve. 
+Who's waking up Christmas morning on santas nice list? To be determined. 
+Best of luck
+Commish
+
+
+It's been a long season and it's finally winding down.  Only two weeks left, let's take a look at the semi-final matchups:
+DEZ and Confused vs. Ditka's Revenge
+Huge matchup between the two highest scoring teams in fantasy this season.  Commish vs. Newbie.  Pass Catchers vs. Ball Runners. 
+These teams faced off in week 12, with DEZ coming out on top 184 to 143.  That was arguably the most important game of DEZ's season and their team came through, will they again?  Will Ditka exact the Revenge he's been hinting at all season?
+Graham already put up a dud on Thursday night, so DEZ is behind the at ball a bit. 
+Will Julio Jones play?  How will McCoy and Bell fare in snowy weather (hopefully just as well as last week!)?  Will Cam turn things around?
+A lot of football to be played to decide this one. 
+Laces Out vs. ODeezus
+Laces is coming off the bye after riding a 9 game win streak to secure the top seed. 
+Week 12 (do week 12 matchups = semi finals???) saw Laces Out come out on top in a close game 129-122. 
+Last week ODeezus pulled off the upset on the back of Powel and Hyde. 
+Does Gordon play for Laces?  How come the other playoff teams didn't lock up his handcuff in Farrow? Does Alshon play coming off his roid suspension? Does AJ Green play?? Will Bilal be the guy again in NY?
+Lot's of questions, lots of big name players hurting, lots of intrigue, and lots on the line. 
+Next week will be the Championship, who will be there??
+Commish
+
+
+
+
+2017 season
+
+Gentleman!
+Hope the summer has been treating you well. 
+Wanted to give a heads up that over the next few weeks I'll be rolling out polls that will determine potential rule changes for the upcoming season.  Will be important to vote so your voice is heard and unlike recent elections I will monitoring external hacking attempts like a hawk. 
+The way I look at it - I'll release the idea/change and give everyone a few days to discuss, debate and voice their opinion.  That will then be followed up by a vote. 
+Lastly, just wanted to check in that we are all good with the previously agreed upon DRAFT DATE - September 9th - the Saturday before Sunday football kicks off. 
+We'll have to discuss how to approach the previous weeks Thursday night game and the subsequent players that will likely be drafted.  Have a few ideas that I've chatted with some of you about individually so I think all in all we'll be fine. 
+For Jim and PJ - let me know if flying to NYC that weekend is still a possibly and confirm that you are going to make it happen. 
+All the best - Go Cowboys
+Commish
+
+SEE INVITE:
+FEES: 
+$150 season fee (pays out 1st, 2nd, 3rd and high score each week)
+$15 - food and draft materials
+Beer - each person should bring between 6 and 12 beers if you plan on drinking. 
+Fees are due on the day of the draft - cash preferred, but venmo acceptable (if you're on the west coast)
+Performance enhancers will likely be flowing at one point. 
+Still working through food options. 
+Timmy Miles make sure you bring your "toilet trophy"
+William Obrien Your ring is yours, there will be a new one given to last years Champion, but would be good if you can bring (find!) it, for historical purposes. 
+Order of Events:
+Noon: Arrive at Matt's - proceed to indulge in beers, re-connect after a long offseason and digitally connect with our West Coasters
+1pm: Random Draft Order
+1:30pm: Food arrives - Award ceremony celebrating best and worst performances from last season. 
+2-4pm: Drink, eat, prepare, cut deals, do drugs...This is YOUR time. Use it as you will. 
+4pm: DRAFT STARTS
+Draft: 
+- Thinking 1st and 2nd rounds will be 2 min each. 
+- 1 minute for each subsequent round. 
+- Every team NEEDS TO DRAFT A DEF AND K. 
+- Trades allowed - commisioner approval required
+- Players WHO PLAYED ON THE PREVIOUS THURSDAY (Chiefs vs. Pats) WILL NOT BE ELIGIBLE WEEK 1
+Let me repeat: Players WHO PLAYED ON THE PREVIOUS THURSDAY (Chiefs vs. Pats) WILL NOT BE ELIGIBLE WEEK 1
+Computers are allowed, but will not be used for drafting purposes - everyone is responsible for their own research
+
+
+Despite the mishap this morning, I have to say ya'll made me a happy Commish.  The fact that I had multiple messages from multiple people before 8am this morning in regards to the Waiver wire speaks to the quality of this league and it's owners. 
+Here's the week 1 recap!!
+Dez 135 - Hoodie 83
+Dez and Confused came out strong in week 1, picking up where they left off last season as one of the hottest teams in the league.  Of course, these are totally different rosters so the similarities pretty much end there.  Carried by top 2 picks Zeke Elliot and Todd Gurley (whose laughing now) and dominant performances by their 2nd and 3rd to last picks (Pit DEF + Gold Jacket Witten).  Alls good on the front despite losing admitted longshot Kevin White for the season (welp thats the end of his career).   
+Hoodie Cru got off to their typical slow start to the season, what else is new.  Thing about Hoodie cru is that luck is somehow always on his side.  Rodgers put in a pedestrian performance and ODB (his first rounder) didn't play.  He left some points on the board by not getting Kupp in his starting lineup for the injured ODB, but that wouldn't have been enough to overcome Dez's overall team win. 
+WattmeWhip 125 - Ditka 88
+WattmeWhip cruised to victory on another virtuoso performance from Antonio Brown.  Question has to be asked…is he the greatest fantasy player of all time?  When 11 cathces and 180 yards seems normal, you have to ask.  Putting up 125 points in week 1 is no easy feet, and to do so without Gronk and Gillislee (who played Thursday) is all the more impressive.  After a tough 2 seasons for WattmeWhip, it looks like he finally has a team that can not only contend, but be a front runner.
+Ditka's Revenge was unsuccessful in avoiding a Championship Hangover.  Did the Boos get to him??  He needed big games from Hilton (no QB), Marshall (no ODB) and Eifert (is Dalton the new flacco?) and received a shit sandwich instead.  Lucky to have Carolina DEF otherwise this would have been really ugly. 
+Sack Fumblers 136 - Knickerbockers - 70
+Fantasy is Pain.  Pain is Fantasy.  May the joy of having the 1st pick of the draft turn to ashes in your mouth within 24 hours.  The debate of Johnson/Bell/Brown seemed like a no-brainer to many of us only 2 days ago…Now, let's just say, Sack Fumblers needs to get creative.   Despite it all, a week 1 win must come as a sigh of relief.  A solid overall draft carried him this week, but what happens over the next few as DJ's 20 point average continues to be a memory of 2016?
+Knickerbockers could be in trouble if Wilson doesn't snap out of it ASAP.  His veteran core provides a solid floor, but where is the gamebreaker?  Where is the guy who shocks the world? Could be Shepard, he looked good last night despite no ODB.  More will be needed from vets Peterson, Olsen and Decker. 
+Laces out 138 - Nastiest Sack 112
+Laces out and Nastiest Sack picked up right where they left off last season.  That is, with Laces out winning another game, scoring more than enough points.  And of course, our Toliet Trophy recipient kicked off another season with a solid score yet no win.  
+Laces rode big games from his two first 2 picks, McCoy and Gordon, forming one of the top runningback tandems in the league.  A big game from Tate and a monster DEF performance sealed the deal. 
+Nastiest Sack put up a respectable score, with their players averaging 10 points each..Consistency, as valuable as it is, isn't enough to win this league - he'll need some big plays and big games from his guys.
+2 Gurley 158 - AceBoogie 82
+Dominating win this week for 2 Gurleys 1 Kupp who will be recieving our first ever WEEKLY SCORING CHAMPION PRIZE.  He was led by the LAR DEF, Jordy (who looks better than ever) and masterful pick of Wentz late in the draft. Is this the year Diggs breaks out?  With Pryor, McCaffrey and Lynch in the fold this team is built for both long and short term success. 
+Don't let this week 1 loss fool you.  The ACEBoogie is solid all around - unable to play Hill and Ajayi this week (2 of his top picks) a win this week was always a long shot.  With Brees under center, J Stew getting goalline carries and Dez looking liked Dez (despite a lackluster week 1) they will be a team to keep an eye on moving forward. 
+Balogna 111 - Odezus 87
+Massive leap forward for Balogna this year - after a solid and rather un-Balogna like draft, smart plays of Coleman and Blount - Balogna cruised to a week 1 victory of Odeezus
+Odeezus was burned by Hurricane Irma canceling the TB game so he rode without a DEF.  Unfortunately this isn't the Balogna team of past years. He needs much more from Benjamin and Henry - two players poised for breakouts.  Doug Martin can't come back from suspension fast enough.  In a short season every win counts and this one slipped away for ODezus 
+Forte 86 - JetSetters 82
+In the ugliest and closet game of the week, Drinking Forte came out on top of newcomer JetSetters.
+No Mike Evans for Forte cou,d have spelled disaster, but the pick of Austin Hooper could be a game breaker for Fortes as he has Kelce on the bench.  Trade bait?  Dez's TE techniqu of 2016?  Hard to tell at this stage, but solid win overall. 
+New comer JetSetters always knew this week was a long shot.  Drafting Kareem Hunt came with week 1 risk, but season long upside. Having 3 QBs on the roster seems silly...especially when the one that was played scored only 1 point.  Does look like he has another rookie runner in Cook that can make a difference going forward.
+
+
+Another tough week for NFL Offenses…
+WattMeWhip 133 Vs Dez and Confused 108
+Dez isn’t going to win many games when Zeke has less than 10 yards rushing so no surprise here that WattmeWhip came away with their 2nd win of the season.  Garbage time TD’s from a pair of Jags proved enough to put them over the top.  We’ll see if Gronk plays this coming week but seeing him go down in week 2 must have been a heart stopper
+Hoodie Cru 130 Vs Knickerbockers 112
+Hoodie cru cruised to their 1st win of the season on the back of Crabtree who single handedly torched the Jets. His 2$ waiver claim of Thompson (Redskins back) is early season favorite for best pickup.  He really flashed last week - lets see if it lasts. OBJ is great, but this is starting to look more and more like Eli’s fall from grace. 
+Theres no other way to put this…Knickerbockers is in trouble.  Peterson is a shell of his former self and the saints don’t seem to give a shit about what he thinks/says.  Olsen broke his foot and is out 6-8 weeks.  He’s a big man, so getting back on the field might be easier said than done. Moves will need to be made otherwise playoffs will be a memory of 2016 for the Knickerbockers. 
+Sack Fumblers 144 Vs. JetSetters 129
+Sack Fumblers picks up a critical 2nd win despite not having David Johnson. Their pick up of Cohen at 47$ seems a bit high after week 2, but the kid is talented so we’ll see. 
+For JetSetters another huge week from Hunt who is looking like the early season MVP so far.  Playing Bradford, who was scratched was clearly a mistake - but the only QB remaining was Jarred Goff and his 12 point performance wouldn’t have been enough to overcome Sack Fumblers
+Laces Out 160 Vs. ODeezus 122
+Laces out wins week 2’s high score $50 bills - Congrats!  
+They continue to roll - Brady, Adams, Gordon, Sanders all went off, McCoy had a slow week but once he gets going Laces Out will be a formidable opponent week in week out.  Bal DEF after 2 straight 20+ week performances is somehow an early season MVP candidate. 
+ODeezus continues their slide with poor performances out of Murray (…this could be D Henry’s year…) Rawls and Bernard. Potentially missing on 3/4 starting RB’s is more or less a death sentence for ODeezus if his guys don’t turn it around. They need Dougie Martin to come back ASAP and in his 2015 pre-rehab form. 
+Nastiest Sack 136 Vs. 2 Gurley’s 1 Kupp 102
+Woof, this week was a fall from grace for 2 Gurleys.  Looks like they avoided a serious injury for Jordy but he’s still 50/50 for next week. They spent a lot of $$ on waivers last week - lets see if it pays off. 
+Nastiest Sack gets a huge win on the back of James White and Alshon Jeffery.  Once CIN starts scoring again (with AJ Green) this will be a solid team. 
+Drinking Forte 125 Vs. Home Bologna 112
+Drinking Forte won the annual Camden Bowl (a band with classics such as “Mexico”, “Don’t Care” and “Country Class”) 
+Drinking Forte’s Mike Evans is LEGIT - huge game for him as well as Kelce who literally flew 5+ yards into the end zone this weekend
+Bologna had solid but un-spectacular scores from nearly their entire team.  Corey Coleman is out for the season now so moves will need to be made.  
+Ace boogie 106 vs. Cutlets Bottom 71
+This was an ugly matchup that Aceboogie comes out of with a cheap win (3rd lowest score this week).  Dez had a solid game despite the cowboys looking like a steaming pile of garbage and Brees racked up points despite his defense being completely manhandled by a Pats team that played WR’s that literally no one has ever heard of. 
+Cutlets Bottom made ALL the wrong moves, with pretty much everyone on his bench outscoring their respective starters.  That first round pick of Jordan Howard is looking worse and worse with each passing week.
+
+
+Some of you might have noticed changes to the schedule...
+I was looking ahead at future weeks and noticed I was playing Hoodie Cru twice this season...
+That caused me to look into schedules on the back end and sure enough, Yahoo has us going against only 12 teams, rather than 13, with 1 matchup being played twice. 
+Thats not how we roll so I began tinkering with the schedule to ensure we each play eachother once. 
+Needless to say, I now know why it takes so long for NBA/NFL to create and release schedules..it is a serious pain in the ass. 
+I'm close to completing, just wanted to give a heads up. 
+I think I need to tell my work to take away a day of Paid time Off because this is literally the only thing I've been working on this morning.
+
+Fantasy week 3 write up - Next week we'll be trying a slightly different write-up format, starting to get into the groove so the creative juices are flowing...
+Dez and Confused 165 Vs. Laces Out 132
+Dez and confused made the selfish and foolish call to bench Larry Fitzgerald this week who was matched up against his beloved Cowboys.  Playing Fitzgerald would have meant that Dez had the highest score and an extra $50…Lucky for Dez Fitz wasn’t needed to knock Laces Out off their pedestal with a convincing win. 
+No worries though for Laces out who would have beaten a number of other team this week.  Looking forward to the inevitable playoff matchup between these two clubs.
+2 Gurleys 1 Kupp 126 Vs. Hoodie Cru 121
+Close game between two league veterans.  Hoodie Cru’s studs (Rodgers, OBJ) came to play and the pick up of Thompson is looking more and more like a lock for “Best Pickup”
+Despite it all it wasn't enough to overcome 2 Gurleys in the closest matchup of the week. 
+I bet 2 Gurley’s wish they had their namesake but will settle with Jordy, Diggs and McCaffrey blasting opponents each week.
+WattmeWhip 121 Vs. Sack Fumblers 103
+Sack Fumblers rolled the dice with no Kicker this week and it did not pay off…Granted not many kickers are going to have 20 point performances, so even with one a victory would have been slim. 
+WattmeWhip continues their winning streak and is now the lone undefeated team in the league, sitting pretty at 3-0.  First 3 picks of Brown, Fournette and Gronk are looking really good.  Matt Ryan is leading the best offense in football.  Wattme is here to stay
+JetSetters 171 Vs. Odeezus 58
+Congrats to JeTsetters for their first league win and it came in spectacular fashion, putting up a whopping 171 to collect the $50 weekly winner.  Cook and Hunt form one of the top RB pairings in the league, and by far the best rookie RB pairing. 
+Odeezus…my god…58 points (Dez had more after Thursday night)…with Demarco murray scoring most of his 21points on a single play…Not many bright spots here - could a toilet be their future?
+Nastiest Sack 152 Vs. Drinking Forte 117
+In the first of two brother vs. brother match-ups this season, Big bro Nastiest Sack came away with a dominating win.  AJ Green finally came through, Cooks might be the best Pats receiver since Moss and Dak put on a show. 
+Forte needs way more than 1 point from Kelce if they want to stay on the right side of .500.  Hyde and Thomas both performed - as Evans gets in a groove and they solidify their FLEX spots Drinking Fortes will contend
+Home Bologna 129 Vs. AceBoogie 116. 
+Home Balongna heads to 2-1 after a comfortable win over AceBoogie.  A better game from Dez (why don’t they move him around the field?  Like..At all?) could have pulled off the upset. 
+Bologna is looking solid this year despite needing Cam to look like the Cam from 2 years ago.
+Cutlet’s bottom 138 Vs. Knickerbockers 119. 
+Cutlets Bottom, our defending Champ, got themselves in the win column after taking down the lowly Knickerbockers. Bad news wasn’t too far behind as it looks like Eifert is now going to be out for a few weeks (again). 
+Knickerbockers left 60 points on their bench by opting for cutler over wilson, decker over shepard and gates over engram…Its not all about drafting the players, its about putting them in a position to win you games 
+Till next week, 
+Commish
+
+
+A rule I read about in Matt Berry's column today.  Find it pretty interesting...would have to go completely offline to make it happen though so it's out of the question:
+"I've mentioned this before, but a rule I've played with (in a league we kept by hand) was the potential for two wins every week: one head-to-head against your opponent and another for the top five scorers (assuming a 10-team league) in a given week. So every week you either go 2-0, 1-1 or 0-2. That evens out good or bad teams being helped or hurt by scheduling."
+
+
+Standings are starting to take shape and there are some surprises currently in line for the playoffs. 
+1 - Dez and Confused - RB heavy and versatile attack.  Poised for the playoffs, with or without Zeke. 
+2 - 2 Gurleys 1 Kupp - Deep team led by the top WR tandem in the league (Nelson + Diggs) through the 1st 4 weeks. 
+3 - Home Bologna - Amazing start to the year and Congrats on weekly scoring prize!
+4 - WattmeWhip - strong record thanks to teams missing their projected total (2nd fewest points against in the league).  In need of RB (trades anyone?)
+5 - Drinking Fortes - less points for (453) than points against (456) yet sitting at 3-1.  Fools Gold?
+6 - Nastiest Sack - Most points scored through 4 weeks (555).  A strong 2-2 to start the season. 
+Through the first 4 weeks, lets take a look at how our first round draft picks are stacking up. You know who you picked.  Fantasy is a crapshoot...
+1 - David Johnson - Current rank: 322
+2 - Le’Veon Bell - Current rank: 12
+3 - Antonio Brown - Current rank: 14
+4 - Julio Jones - Current rank: 87
+5 - AJ Green - Current rank: 26
+6 - Odell Beckham - Current rank: 73
+7 - Mike Evans - Current rank: 68
+8 - Zeke Elliot - Current rank: 19
+9 - Devonta Freeman - Current rank: 15
+10 - Jordy Nelson - Current rank: 32
+11 - Jordan Howard - Current rank: 45
+12 - DeMarco Murray - Current rank: 144
+13 - Dez Bryant - Current rank: 83
+14 - LeSean McCoy - Current rank: 53
+If we re-drafted today, based on total points scored (QB’s not included since we didn’t select any 1st round). It would look like this:
+1- Gurley - Drafted 21st
+2 - Hunt - Drafted 25th
+3 - Diggs - Drafted 66th
+4 - Thompson - UNDRAFTED FA
+5 - Bell - Drafted 2nd
+6 - Fournette - Drafted 31st
+7 - Brown - Drafted 3rd
+8 - Freeman - Drafted 9th
+9 - Hopkins - Drafted 20th
+10 - Elliot - Drafted 8th
+11 - Hyde - Drafted 50th
+12 - Green - Drafted 5th
+13 - Thomas - Drafted 22nd
+14 - Nelson - Drafted 10th
+
+
+Alright Alight Alright… A day late but here we are. 
+Some Waiver, Injury and Trade news:
+WattmeWhip wins the Buck Allen pickup this week at $27…not the first time he’s been bid on heavily this year, previously won on waivers by Two Gurleys at $21…Thats a lot of money spent this year on an up and down player. 
+Hoodie Cru, after their Weekly Win (166 points - highest this season) had to do some serious roster shuffling with OBJ going down for the year…Another top pick bites the dust..
+Knickerbockers gets a boost in the form of AP being traded to the Cardinals.  I think this ups his value quite a bit, and for all of us waiting for the Cardinals offense to click, maybe this gets the ball moving in the right direction. 
+Last Week
+2 very close games had a large impact on the standings.  
+WattmeWhip narrowly edges out Nasty Sack 126 vs. 123.  This loss brings Nasty Sack to 2-3 despite being tied for most points scored this season.  WattmeWhip continues their improbable and low scoring run to 4-1.  With 6 teams ahead from a point perspective, and 2 only 5 points behind - each win matters, and a big scoring week will help solidify playoff positioning. 
+Home bologna lost a close one to Cutlets, 115 to 113.  Both teams are now sitting at 3-2.  After Cutlets championship hangover the first 2 weeks, they have won 3 straight on the backs of players on bad teams.  Someone needs to catch, run, throw, and score for an NFL team, even if those teams are god awful (see: browns, colts, bears). 
+This weeks Preview:
+3 massive games this week that will go a long way in shaping the second half of the season. And 1 big game that may shape the Toilet Trophy race
+2nd place 2 Gurleys Vs 4th place Laces Out
+2 veteran teams - draft well, waiver well, make the tough calls and right plays.  Both are primed for playoffs. 
+3rd place WattmeWhip vs. 6th place Home bologna
+Home Bologna looking to bounce back after their tough loss and WattmeWhip looking to keep the train rolling along after their close win. 
+5th place Hoodie Cru vs. 7th place Drinking Forte
+Hoodie cry coming in riding a two game win streak - how will the loss of OBJ affect him?  Well, it would affect any of us, but he made some serious moves this waiver so we’ll see.  Drinking Forte is living on the edge…the edge of the playoffs that is.  7th place in this league is simply 1st of the Losers.  A loss this week will likely cause a tumble down the standings thanks to their 4th lowest points scored total. 
+Last but not least
+0-5 Odeezus Vs. 1-4 Knickerbockers. 
+Is this the week ODeezus gets a win on the board? Doug Martin looked legit in his comeback and pairing him with CJ Anderson could be just what the doctor ordered.
+
+
+ATTENTION:
+A Blockbuster trade just took place between The Sack Fumblers and 2 Gurleys 1 Kupp. 
+As commissioner, I approved the trade after a lengthy review. 
+If there are issues, take it to the Players Associate President and he'll file a formal complaint.
+
+
+Going to keep this short and sweet because I'm DEEPLY invested in the Yankees and can't really concentrate on anything else. 
+Just wanted to call out the devastating loss by Drinking Fortes.  With so few points scored overall, they need every win they can get.  This week....They missed out on a win to Hoodie Cru by .9 points!!
+Yes.. .9 points... that's less than a yard..
+Fantasy is Pain.  Pain is Fantasy
+
+
+WOW Week 7 is almost in the books.  That means we’re just over halfway through our regular season…
+In a league as close as ours (10 teams .500 or better), every game counts.  Might be too early to worry about playoff positioning, but the outcomes of some games this week will have a ripple affect on the season. 
+#2 WattmeWhip Vs. #5 Hoodie Cru
+Cousin battle coming down to the wire.  With the winner likely sitting in second place. 
+No Fournette this week clearly hurt WattmeWhip, but they made up for it with some solid plays of Thompson in the Flex and Forte in the RB.  A pedestrian game from Gronk hurts his chances, a TD from him last night would have likely sealed the victory. 
+Hoodie Cru will be counting on HIS Thompson and Agholor tonight.  Down 20 points with two high risk, high reward guys isn’t exactly where you want to be, but I’m sure he’ll take it. Especially after watching his bench put up quite a few points (while his 2 Flex spots combined for 3.5). 
+#3 Laces Out Vs. #12 Knickerbockers
+Low scoring game comes at bad time for Laces Out.  A low scoring loss here to the lowly Knickerbockers will not crush their hopes and dreams, it will just make things that much harder come playoff seeding time. 
+They still have their K going tonight, the magnificent Jake Elliot, so anything is possible.  
+For the Knickerbockers, they have Crowder going tonight. Most times, you’d take the WR over the K any day of the week..this year, as many know…Crowder has played just about as poorly as a WR can, scoring less than 30 points over the course of the ENTIRE season. Him putting up even a few might give them the edge over Laces Out, but a few points from him this year is no guarantee. 
+MORE TO COME TOMORROW AS THE STANDINGS SHAKE OUT
+Commish
+
+
+ANOTHER TRADE
+WattmeWhip sends Gronk! and the artist formerly known as Andy Dalton to 2 Gurleys for Austing Sefarian-Jenkins and MVP frontrunner Wentz.
+
+
+
+
+
+
+Let’s take a look at the standings!  Love how the Elderty boys are sitting 1-4!
+Playoffs
+Laces Out 
+Put together a fine week beating Hoodie Cru and finding themselves in pole position. Huge DEF performance from Bal (not the first time I’ve said that) gave them an early cushion coming out of Thursday night.  McCoy did what he does, Gordon impressed and Marvin Jones put up one of his best weeks.  158 points scored despite a .7 from Gabriel and 0 from Moncrief.  Playoffs are a near lock. 
+Dez and Confused
+Tough loss to swallow to the lowly Knickerbockers.  But when you’re opponent puts up 191, theres not much to be done.  All that said, the biggest loss this week for Dez and Confused comes from the suspension of Zeke Elliot.  It was a good run Zeke…He’ll be back for the second week of the playoffs, so as long as the squad holds serve there is still a lot of hope in the air. 
+WattmeWhip
+Watt cruised to victory against Aceboogie. New addition Wentz had a solid game.  AB wasn’t quite himself, but he’s not a player to worry about.  Solid performances from Butker (K) and Washington (RB) put them over the top. Built a nice cushion for themselves for the second half of the year. 
+Hoodie Cru
+Lost a heart breaker to Laces Out.  Two underrated and undrafted RBs (McKinnon + Thompson) are leading this now potent team.  A 0 from Kerley hurt their chances this week, but this is a team to keep an eye on, especially if Oakland (Carr + Crabtree) pick things up).
+2 Gurley 1 Kupp
+Huge win to stop 2 Guleys slide down the standings.  Of course, this was led by Deshaun Watson who…WOW…this guy can play (and the Jets passed on him…sorry…couldn’t help myself). Solid team all around, and with the newly acquired Gronk..they are looking more and more dangerous. 
+Jetsetters
+Tough loss…a better game from Hunt was needed…Julio didn’t do much...Reed went out…Beasley went out…yet they where in this thing thanks to PHI Def, their K, and last FLEX play.  If the stars play like stars, and the support does what it needs to, then this League Rookie might find themselves in the playoffs.  
+No Playoffs…But close...
+Home Bologna
+Juuuuust missing out on a spot, but as the 2nd of 5 teams all tied at 4-4, they are still right in the mix. This was just one of those games that you lose over the course of the season..team played solid but without a breakout performance, it’s tough to win. 
+Sack Fumblers
+Still only 30 points behind the 6th and final spot of the playoffs, Sack Fumblers has made move after move to overcome some serious adversity. McCaffrey, Kamara, Ertz, Thielan…this is a good squad and the win this week looks like a turning point. 
+Drinking Forte
+Needed the win against Odeezus, have to take care of business when fighting for position. Gotta think Big Ben picks it up, Evans and Thomas can go off any moment, so can Kelce.  
+Cutlet Bottom
+The win snaps the 2 game slide, and though they don’t have the points, they’re sitting tied at 4-4 so every win matters.  Some nice pieces on the roster, still have 2 Browns though...
+No Playoffs…Hope is dwindling
+Knickerbockers
+Well that was quite the win against the top team in the league… Wilson was ridiculous, Hopkins seems to have some serious chemistry with Watson, Doyle played the game of his life, Crowder remembered how to play football and the Cowboys Def performance put them over the top.  Long way to go for Knickerbockers to find the playoffs, but take solace in winning the Weekly scoring award!
+Nastiest Sack
+Thats 5 losses in a row.  the first 4 where by a combined 30 points..this week…they lost by 30 points.  3rd most points scored this year and a roster many owners envy hasn’t been enough.  We’re looking at a run the table or bust week on the horizon. 
+Aceboogie
+Another poor week in a season filled with them.  Garcon and Hill did not perform well, Miller might be losing his leg and they didn’t play a K (despite one putting up 11 points on their bench). Let’s see how this Ajayi trade pans out - though having two backs both in Philly might be a matchup problem going forward. 
+No Playoffs…Theres always next year
+Odeezus
+Not much to say here. Couple wins might change playoff positioning though so a spoiler role is in play.
+
+
+3 trades in 3 weeks for 2 Gurleys 1 Kupp. This time with Commish Dez and Confused. 
+Jordy, Pryor and Lewis 
+for
+doctson, watkins, jackson
+
+
+I have a feeling Week 9 of the 2017 Fantasy Season might live in infamy.  With losses across the top of the standings, we have 10 teams within legit striking distance of the playoffs.  
+With 4 weeks to go, things are getting really tight!
+Will do a matchup preview later this week.
+
+
+Been a long time away, rehashing previous decisions and imagining an alternate universe where I don’t fall from 6-1 to 7-5, one where Zeke eats is suspension at the beginning of the year and not during crunch time..
+With that out of the way, the league stops for no man, team or commish.  This has been the tightest season yet with 8 teams fighting for their playoff positioning and lives.  Those 8 don’t even include arguably the best roster in the league (belonging to Nastiest Sack). 
+Let’s get together this weekend for Beers and Wings - Invite to follow - but plan for 1pm at Mel’s Burger Bar on the Upper East side - All you can eat wings, sliders and beers for $25!
+Let’s start at the top and work our way through some of the big matchups this week. 
+Watt me Whip
+Sitting in pole position with a locked in playoff spot is WattmeWhip.  They are riding a 3 game win streak and finally putting up the points their projections have been..well…projecting all season.  The trade for Wentz has proven a success, Antonio Brown is capable of putting up 40 every week,  pick ups of Rudolph and Drake are looking better and better, and if Fournette finds his way out of the doghouse then this team will be tough to beat.  Worth noting that a loss this week to Drinking Fortes, and some wins elsewhere can knock them from having a Bye Week in the playoffs. 
+2 Gurleys 1 Kupp
+2nd place after a ridiculous 5 game win streak has Gurleys locked into the playoffs and in position for a bye.  They have the 8th highest point total this season, but when the schedule/matchups fall your way there is nothing to do but sit back and laugh.  It’s crazy that they have 0, ZERO, NONE, players that they drafted.  Playing Dez and Confused this weekend and we’ll be digging into that in detail later…
+Sack Fumblers
+Probably my favorite team and story of the season.  Written off within a week after David Johnson went down, but thats when the fun began.  Pick up after pick up (63 of them total!), trade after trade, slowly but surely.  Not everything was a homer, but when you put together a team that LEADS THE LEAGUE IN SCORING, after losing David Johnson, you deserve serious props.  Riding a 5 game win steak, if one or both of the teams ahead of him lose this week than they will finish the season as the 1 seed.  Oh, and he’s won the last 2 weekly scoring titles, in addition to one earlier this year…so yea…he made his money back and is now playing “for the love of the game”
+Laces Out
+What a difference a week makes!  After losing to WattmeWhip last week, Laces Out tumbled from 1st to 4th in the league.  Thanks to their point total, they are locked into a spot, but seeding is still up in the air.  They are matched up against top seed Sack Fumblers in a potential championship preview.  Winner of this game could find themselves in position for a bye, loser is playing next week.  Not exactly a playoff game atmosphere thanks to the lower stakes, but will be a matchup to keep your eye one if you’re positioning yourselves for a playoff run. 
+Dez and Confused
+Somehow, despite going 1-4 the last month+ of the season Dez is still in control of their fate.  Another tough loss last week, no longer has the same visceral effect as previous losses have had, but the numbing has to stop at one point.  A win this week against 2nd place 2 Gurleys locks up a playoff spot.  A loss this week and a loss by Hoodie Cru in their matchup locks up a playoff spot.  A loss this week and a win by Hoodie Cru…god I can’t say it.  Don’t think it - positive thoughts only. So lets think positively... a high scoring win (170 points, etc.) and some losses from teams ahead in the standings could mean Dez finishes in 3rd!!  What a time to be alive!!!!  Silver lining…looks like Rodgers will be back week 15, to pair with Jordy who doesn’t know how to play football without him…thats the semi-final…and then we ALLLLLLL know whose coming back week 16 - thats right, Zeke “Keep feeding him” “keep appealing” “i didn’t hit her, but maybe he did” Elliot, will be back for the CHAMPIONSHIP.  Every week from here on out is do or die, and the squad WILL get stronger…just have to give them a shot..
+JetSetters + Home Bologna
+New comer to the league making his presence known VS. "perennial league punching bag who turned his shit around when he moved to Arizona and became a sports fan” Balogna. 
+This is a playoff game.  Winner is in unless Hoodie Cru goes off and scores a ton of points in a win.  But more importantly, the Loser of this game is out.  
+Two old school Boston Buds, battling from across the country - This is what fantasy football is about.  More than winning, more than losing, definitely more than rooting for a 3rd string receiver on the Jaguars to have a fluke 40+ yard TD - its about competing with friends while sitting on a couch 2000+ miles apart from each other. 
+Hoodie Cru
+T
+wo huge wins in a row has Hoodie Cruller primed for the role of spoiler.  After squeaking out the win last week on the back of their kicker, they have the potential to both knock people out of the playoffs, and knock themselves into the playoffs with a win this week.  Losing Crabtree to suspension is a heartbreaker and you gotta figure he’s not the only fantasy team in the world cursing him for wearing a gaudy and awesome gold chain on the field in the first place. 
+Drinking Forte, Nastiest Sack, Cutlets Bottom, Knickerbockers
+Solid season, close wins, closer losses, good picks/pickups, very bad picks/pickups.  
+We salute you, you’ve kept competition up the last few weeks while the lights were growing dimmer and dimmer.  This is why this league is great - consistent effort and competition.  Well done, let’s run it back next year.  But before we run it back - some of you have a chance to play spoiler this week - so set your lineups, make the right plays, and end the season on a high note!!
+The Fluids
+Ace Boogie, Odezus…two perennial playoff teams mired in the muck.  2-10 vs. 1-11.  Toilet is on the line, but not really - an Odeezus win ties them at the bottom of the standings, but unless Odeezus somehow scores 100 points MORE THAN Aceboogie, he’ll still get the infamous trophy (PJ I haven’t forgotten about you, its in the mail, merry christmas). 
+Great regular season - lets keep it up these last few weeks!
+Commish
+
+
+Week 13 recap + Playoff Preview
+What a week. 
+Thanks everyone for coming out for drinks!
+Let’s give a healthy and hearty congratulations to Home Balogna.  3 years into the league and making their first trip to the playoffs.  Well done knocking out JetSetters this week - keep it going and pull the upset in Round 1!
+Dez and Confused took care of business and secured themselves a playoff spot after beating 2 Gurley 1 Kupp who had a down week and will be dropping from 2nd to 3d in the standings…Now instead of the bye, they get matched up with the suddenly hot Home Balonga. 
+Sack Fumblers beat down Laces Out this week and will be jumping into the 2nd place spot in our final standings.  They will have a bye this week while Laces Out faces off against Dez and Confused. 
+Despite Hoodie Cru’s win and climb up the standings they will not be participating in the playoffs this year.  
+We have 2 playoff games this week, and since this is 3 years into the league we have some historic data to dig into!
+Laces Out vs. Dez and Confused. 
+This is becoming a storied rivalry in the league, with Dez up 2 games to 1. 
+2015 - Dez 118 - Laces 98
+2016 - Dez 130 - Laces 153
+2017 - Dez 165 - Laces 132
+2017 Playoffs - ????????
+Not liking the every other game trend, but only 3 points separate these team this year from a Total point standpoint, so its going to be close.  
+2 Gurley 1 Kupp vs. Home Balogna
+2 Gurleys is up 2 games to 1 on Balogna in their careers against each other.  
+2015 - 2 Gurley 110 - Balogna 94
+2016 - 2 Gurley 166 - Balogna 78
+2017 - 2 Gurley 91 - Balogna 106
+2017 Playoffs - ??????????
+Of course, the most recent game, and really the only relevant game went to Home bologna in a nail biter.  No Gronk for 2 Gurleys so that could spell trouble. 
+LET THE PLAYOFFS BEGIN
+Commish
+
+
+Holy hell! Everyone check the score from championship!
+When I say this is a tight and competitive league...well...that takes it to a whole different level. 
+Congratulations to Laces Out and there owner Nick Frigenti
+Will follow up with more recap shortly as I'm heading to California for the week. 
+Enjoy the cold suckers 
+Commish
+
+
+2018 season
+
+
+Boys.. we are a week and a day away from the DRAFT!
+Some notes and tips as you finalize your preparations:
+1. Arrive between noon and 1pm
+2. Draft Order will be drawn at 1pm
+3. From 1-2 we will be giving out awards for the 2017 season. 5-year draft anniversary plan discussion. 
+4. Draft will start at 2pm.  We will draft the first 2 rounds and then take a break for food. 
+5. Finish the draft. 
+Everyone should bring:
+- 6-12 beers (if we all bring, then we'll all have)
+- $160 in league fees ($150 for season with weekly payouts, $10 for food/draft materials)
+- RESEARCH - like always this is a love draft, there is no auto-pick or consensus rankings to help/save you
+- $$ If you're interested in performance enhancers. 
+FEES ARE DUE DAY OF DRAFT - CASH OR VENMO - DON'T BE THE ONE WHO DOESN'T PAY ON TIME
+~~Unfortunately Kerry Ross will not be in NY since he planned a trip here for the following weekend... so we will have to get tech savvy for him.  
+~~Be prepared to talk next years draft..If we are serious about going to Vegas for our 5 year anniversary and the beginning of the Las Vegas Raiders era we need to commit to a plan.
+Yours truly,
+Commish
+
+
+We had a damn successful draft, saw plenty of trade offers (though none accepted), everyone seems to be looking for RB’s and now Week 1 is in the books. 
+Lets take a look at the games from last week, and dig into what each team should be excited/worried about going forward. 
+2 Gurley 1 Kupp smokes Game of Jones 187 to 127
+This game felt a lot closer coming out of the 1pm games.  Dare I say Game of Jones was even confident?  Getting 34 points from James Conner, who’s pinch hitting for Bell, who was on the opposing team (2 Gurley)…how could this not work out?!?!
+Well, Tyrek Hill is how..He put up an all-time game, dropping 48 points on Game of Jones. 
+2 Gurleys is scary as is…and if Bell ever comes back, we could be looking at a juggernaut.  Congrats on the WEEK 1 POINTS WIN
+As for Game of Jones…his all WR draft strategy seems to have been fucked…of his 4 WR’s, who started, they scored a combine 16 points…thats not gonna do it.  With Baldwin doubtful and Cooper still in a funk, Game of Jones runs the risk of falling behind the standings early in the season 
+Cutlets Bottom rolls TheACEboog1e 172 to 125
+Cutlets bottom put together some great performances, Jones, Mixon, Cook, and Lewis all put 20+ which was more than enough to get past ACE’s trio of Cam, Cobb and McCaffrey. 
+This matchup would have been much closer had Olsen not gone down with an injury early, and if the Chargers DEF came to play. 
+The Sack Fumblers starting strong against Drinking Fortes, winning 151 to 122. 
+After “winning” the shit luck award last year, The Sack Fumbler ran it back with Johnson and Luck.  Lucky for him, Luck looked good, Johnson seem ready for a big workload and new addition, Gronk, Gronked about against Houston. 
+For Drinking Fortes, the “Mahomes” experiment/experience would have gone much better had he started him..He has to be feeling good about his WR combo of Evans and Hopkins, despite the loss this week, there is potential on this team to shock the world. 
+Home Balogna, puts the Nastiest Sack in a body bag, winning easily 156 to 103. 
+Nastiest sack is a real case of have and have nots…3 players scored 20+ setting the stage for a big week, but the remains 7 starters put up less than 10 each.  you can survive a few bad weeks here and there..but you can’t survive all your players having bad weeks in the same week..
+Just a solid W for Balogna, who only started 1 TE in week 1!.  Good, but not great games from his starters brought home the win and with Cousins, Adams, Thielan and Gordon…my gut is telling me there will be more wins than losses this year for Balogna. 
+Aaron Rodgers saves the Packers and Hoodie Cru, who comes out on top of ODeezus 157 to 127. 
+Rodgers went down early, and it looked like that might have been the window ODeezus needed to squeak out the early season win. Even without Rodgers, that trade for Michael Thomas (which made us all shake our head and say “ohhh Billy”) is actually looking damn good after his 38 point performance. 
+ODeezus will be fine, Wilson, OBJ and Cook will make one of the top “Triplets” in the league. He goes as they go. 
+Trump 2020 wins his league debut against, none other than our 2K17 champion, Laces out.  
+Trump 2020 rode Crowell and this DYNAMIC Jets offense to the promise land Monday night.  Can he do it again?  Will the Jets score 48 more points this season?!?!  What the hell happened to Hunt?  Lots of questions, but lots of potential.  
+Each game counts and this was a tough one to watch go by the wayside.  Laces didn’t get much from RB2, TE, and both FLEX, but saw Gurley and Brady do what they do.  Once Diggs and Jones Jr. pick it up, this will be a tough team to beat. 
+Knickerbockers slam dunk WattmeWhip 168 to 114. 
+Knickerbockers looking good with an well rounded team.  Going down the line of their starters, there isn’t a wink link.  Ajayi?  No looks like he’s the guy in philly….Gordon?  No…he’s a freak of nature who I’d love to smoke a bong with. 
+WattmeWhip needs to thank Samara for a monster week.  He made this matchup look far closer than it really was.  with 4 players scoring under 5 points (and a 5th with only 6 points)…WattmeWhip has to be starting to wonder how they will score!
+Commish out
+
+
+Week 2 is wrapped up!  Lets get to last weeks recap
+But before we get into that...  
+Quick shout out to our Fantasy Baseball league…Jesus Christ this is a long season and we’re finally in the semi-championship round. 
+Bleacher Creatures (Matt) vs. Judge and Andujar (Mike B) are squaring off once again.  Bleacher Creatures owns a 2-1 record against Judge and Andujar this year, and their win in the last week of the season was for “home field” and the Bye earlier in the playoffs.  
+Both teams have been top of the charts this season and sport a healthy collection of yankees. 
+The other match up is between Up Your Butt Jobu (PJ M) whose team has been utterly dominant this season and Pauls Team (PJ O) who has arguably the most basic name in all of fantasy sports.  
+Up Your Butt has over 50 more wins on the season than Pauls Team, but that will all be for naught if the upset gods start playing tricks after 7 months of fantasy baseball. 
+NOW FOR FOOTBALL
+Knickerbockers vs. Laces Out
+Laces out knocked out Knickerbockers this week, bringing both teams to 1-1. 
+Huge games from Gurley and Diggs paced the squad, outshining AJ Green's monster performance from Thursday night. 
+Knickerbockers could have played Dede Westbrook making this a closer game, but the real stories are whether or not Fournette will be back this week.
+Oh and it looks like he might have just won’t he lottery with Gordon going to the Pats…he’s no Moss…but he’s still a freak of nature who, if he buys in and sticks to the straight and narrow would be Bradys favorite new play thing. 
+Trump 2020 vs ODeezus
+This one was ugly…Trump 106, ODeezus 102
+Couple miss-starts could have cost the game for ODeezus, but with Trump trading for Breida…and not playing him..and then him going off…he’s lucky he got the win.  
+With only 245 "Points For”, Trump has the lowest point total of all 2-0 teams..wins are wins as we find out every season. 
+Hoodie Cru vs. Nasty Sack
+Hoodie continues their scorching start thanks to the continued success of their draft day trade for Michael Thomas. 
+Nastiest remains one of the more cursed players in the history of our league - maybe he should stick to baseball. 
+Bologna vs. Sack Fumblers
+Bologna takes home the high score award for the week - Congrats!
+This is the best start to a season Bologna has ever had - this past week he had 3 players all put up 30+
+Sack fumblers barely scratched the 100 point mark this week after shit performances from Johnson and Gronk, as well as the wasted day from Cole who was stuck on the bench. 
+Drinking Fortes vs AceBoogie
+Drink Forte falls to 0-2 despite putting up 146 points.  He had a huge day from Mahomes who looks like this years Watson, aswell as the standard and excellent performances from Evans and Hopkins.  They sat a whole bunch of points this week, so the outcome was semi-self inflicted. 
+Ace Boogie riding high with the win on the backs of his home town heroes Newton and McCaffrey.  Solid games from Ertz, Watkins and Coleman rounded out this well earned win. 
+2 Gurleys vs WattmeWhip
+2 Gurleys took home another huge win despite the absence of Bell…with the most points scored in the league through the first 2 weeks, we all need to pray Bell remains the most selfish player in football. 
+WattmeWhip had a bit of bounce back week despite the loss after a flurry of moves on the weekend.  Dez Bryant is now rostered in our league, but not THE league!  I still got love for him, can’t deny it. 
+Good news is that Wentz will be back this week, and while Jeffery won’t be, its only a matter of time and thats a really solid QB/WR pairing.  
+Game of Jones vs. Cutlets Bottom
+Last but not least, Game of Jones gets himself in the win column thanks to HIS pairing of Watson/Fuller, as well as solid weeks from Zeke, Conner (please please never come back Bell!!!) and Cooper.  Things are looking up for the commish
+Cutlets had a massive week from Big Ben as well as solid performances from Cooks and Chicago DEF.  He needed more from Julio, but shouldn't be worried there.  The worry should come from his duel Tenn RB threat of Henry/Lewis only putting up a combined 11 points…1 offense, 2 guys, same position, running QB, only so many touches….might need to rethink the strategy
+Next weeks write up will look at the early season standings - its usually around week 3 where teams get both confident and desperate....We'll see... 
+Commish Out
+
+
+The Undefeated:
+Home Balogna -  Another week another top score win.  Not many weak spots on the squad and now it could be Baker time
+Trump 2020 - Newbie yet to have a loss despite being 8th in "Points For"
+Battling for Playoff position:
+Hoodie Cru - Ridley on the bench in his breakout week cause the loss, but picking him up could put them over the top
+2 Gurleys - tough week while away in Italy.  back at it, reports of Bell to the Jets would be a dream like scenario
+Game of Jones - Team is rounding into form behind Watson/Fuller.  Needs Baldwin back. 
+Cutlets Bottom - Jimmy G down and out but Big Ben is looking good.  Dicey RB situation but solid Jones/Cooks receiving duo
+Sack Fumblers - Team is coming together nicely, leaves some points on the bench, but its better to have hard game-time decisions, then a roster full of guys all scoring less than 10 points
+Looking up at .500:
+Ace Boogie - solid behind his pairing of newton/mccaffrey and waiting on the draft day trade (which netted him Ingram) to pan out. 
+Knickerbockers - lost and is most deserving…played 2 guys who were clearly out.  Don’t like seeing this! I give you this one mulligan, but your on thin ice. 
+Watt me Whip - huge win to get out of the “totally defeated“ cellar.  Injuries have really hurt them, but once the full team is at health, there is some big play/point potential up and down the roster. 
+Laces Out - Lowest scoring week, and first below 100 points in this early season.  Still a solid and dangerous team, just needs more from the role players. 
+Previous Toilet Winners:
+ODeezus (1-2) - 1 of our 3 previous toilet winners, squeaked by with a win thanks in large part to the lack of effort by his opponent. Team is in shambles, don’t let the win fool you, this could get ugly before it gets better.
+Drinking Fortes/Nastiest Sack - The other two of our previous toilet winners, brothers by birth and through fantasy torment, starting 0-3 isn’t a death sentence, but its damn close.
+
+
+
+
+What a week!!  
+This weeks write up is brought to you by non other than toilet bowl winner and bottom dweller - ODeezus (Michael O'Donnell)
+Congrats to Cutlets Bottom for the first 200+ point performance and the weekly scoring award!
+Without further ado...
+----------------------------------------
+Hello All - 
+Greetings from the bottom. 
+It is a place I have grown accustomed to the past two years. It’s a place where moves are made in silence, often for naught. It is a place where Tarik Cohen rests peacefully on your bench while scoring 31 points (Mazel Tov, Tarik).  
+It’s a place I now call home. 
+As Team ODEEZUS plows forward, encumbered by what I can only assume is a curse, bad voodoo, or someone opening an umbrella indoors, I have found a certain comfort in the bottom and the perspective it offers. Thus, from this unique vantage point, I offer my take on the Week 4 match-ups. 
+ODEEZUS vs. LACES OUT
+As I touched on above, Team ODEEZUS is mired in what my brother and I now creatively refer to as, “The ODEEZUS Curse”.
+Hot new waiver wire pickup? Oh, he’ll get injured in the first quarter like OJ Howard. Which is almost as bad as my last ‘hot new waiver wire pickup’, Philip Lindsay, getting ejected for embarrassing himself by trying to land a punch. But i shouldn’t fret on weeks past.
+LACES OUT jumped to an early lead this week, with big performances on Thursday night from both Gurley and Diggs. On cue, Dalvin Cooked provided a whopping 2 points for Team ODEEZUS on Thursday, setting him up for almost certain failure.  
+Much like the Cowboys, Team ODEEZUS is not meant to play from behind, and after more pedestrian efforts from big ticket stars like OBJ  and Russell Wilson, hope is finally, and truly, lost. Tarik Cohen had 31 points on the bench, and it wouldn’t of meant a damn thing if I started him…
+This, my friends, is the bottom…
+GAME OF JONES vs. HOME BALOGNA PT DEUX
+The difference between this match up and our previous entry is like much like going from watching a Hawks-Hornets game to checking in on Warriors-Rockets.
+GAME OF JONES, riding high on Zeke’s career performance, put up an impressive 179.15 points. While James Connor has come back down to earth, if Zeke hits his stride, GAME OF JONES is going to be in good shape. Getting a 16 spot from Justin Tucker ain’t bad either.
+HOME BOLOGNA PT DEUX also had no problem putting up points, running into the wrong opponent at the wrong time. And let me say this…while HOME BOLOGNA PT. 2 came into this week undefeated, I sense trouble in paradise…calling it!
+2 GURLEY’S 1 KUPP vs. DRINKING FORTE’S
+This one was ugly from the start. This was Pat-Dolphins all over again. Tim was winning by 90 points before Mahomes played. ‘Nuff said.
+CUTLET’S BOTTOM vs. WATTmeWhipWATTmeJJ
+A barn burner!
+In the highest scoring matchup of the week, CUTLET’S BOTTOM pulled out a big win on the back of…well just about all of his players. 
+WATTmeWhipWATTmeJJ had an outlandish performance from Kamara but rather underwhelming efforts from the likes of LeSean Mccoy and former Team ODEEZUS standout, Austin Sefarian-Jenkins. 
+Tip: if Team ODEEZUS is dropping guys from his dilapidated and historically bad team, it might not be a good idea to pick them up…
+HOODIE CRU vs THEACEBOOG1E
+Ahh who remembers that draft day trade? Ol’ Nick D, sitting on top of the world, flush with mid-round picks, and ready to nab Randall Cobb AS SOON AS HUMANLY POSSIBLE.
+Four weeks in, and it would appear that Billy may have known what he was doing. He comfortably walked away with this win, even with the star of the draft-day trade, Michael Thomas, only being targeted 4 times, down from his usual 36.
+This was going to be a tough one for theACEboog1e to win from the get go, with the Panthers (and Nick’s two best players) on their bye.
+Trump 2020 vs. The Sack Fumblers
+Well, things look like they finally caught up to Trump 2020. Aside from Matty Ice’s 29 points, Trump 2020 struggled to find a big scorer elsewhere. As the owner of the other member of the Jets backfield committee, I feel your pain brother.
+Another solid day for tall-ass Ben, riding Cooper Kupp and the vaunted GB defense to victory. With David Johnson showing signs of life, it appears The Sack Fumblers are in it for the long haul.
+The Nastiest Sack vs. KnickerBockers
+This is the last matchup, and I have to actually do some work, so don’t have much. It was a blow out. Nastiest Sack gets off the schneid with some big performances from Golden Tate and James White. Wouldn’t anticipate that continuing, but then again, I’m in last!
+After Hugo’s embarrassing defeat at the hands of Team ODEEZUS last week (in which he started two inactive players while leaving 20 points scorer Adrian Peterson on the bench), his team largely laid an egg, with Brees, Gordon and Fournette combining for under 20 points.
+In the words of Joe Girardi: it’s not what you want.
+That’s all for me, folks. I’m hoping that actually writing one of these damn things will a) get Matt to stop bothering me and b) create some positive juju for Team ODEEZUS moving forward. 
+Because when faced with rock bottom, there is only one place to go…
+
+
+Here we go! Another week in the books. This will be brought to you by another bottom feeder no other then Pj O'Brien. Alright fellas well start from the closest game of the week between two top perennials 
+Game of Jones Vs. Hoodie Crew 
+Game of Jones started out really strong with an amazing performance by James Conner, brought his projections up to about 160 and it looked like that was all she wrote for Billy the Kiddd. But some poor performances by Cooper, Baldwin and Fuller smashed that dream of a victory and by Monday night all Hoodie Crew needed was 1.5 points from his mind blowing game day trade to win. Which of course happened. The commish might want to reconsider his “depth” at wide receiver post.
+Our next matchup well start off with two bottom feeders looking to claw their way back up the ladder. 
+WaTTmEWHippWattmeJJ vs. ODEZZUS
+Wattmewhip made some big moves in free agency this past week dropping a whopping 75$ out of his 100$. 3/4 players picked up dropped 15+ but ODEZZUS had a hell of a week and really strong performances from ODB, T. Lockett, D. Thomas, CLE DEF., and his kicker dropping a whopping 16 points was to much for Wattmewhip to overcome. 
+Our next matchup between:
+The Sack Fumblers vs Knickerbockers 
+This was a pretty tight matchup through and through. Both teams players put up solid numbers through out the matchup. For Sack Fumblers he finally got Edleman back who put up nice numbers for his first game, also DJ and Joe Mixon both had 20 point performances, unfortunately for Knickerbockers who also had nice solid numbers through out and didnt leave the RB position open this week... although it seems the reason for the heartbreaking loss goes to losing J. Ajayi in the first quarter of the game. 
+Our next tight barn burner was between: 
+The ACEBoogie and our newest addition to the fantasy family (who we might want to get rid of after the season if he continues to shine) 
+￼
+ TRUMP 2020
+Very close match here. In the beginning it looked like Trump 2020 was a sure win with his projections raising up to the 175 point area with some really strong performances from I. Crowell and an amazing performance from Ebron in the Thursday night game. But ACEBoogie had just as strong performances from Ertz.. McCaffrey looked a little shaky in the beginning of the game but came out strong and finished with 20 points and looked like his draft day pickup of the suspended Ingram worked out to be a good wait with a nice 18 point performance and 2 touchdowns his first game back. Unfortunately just wasn't enough to beat TRUMP 2020
+Next up we got Laces Out Vs. the Nastiest Sack
+Both teams for the most part had very poor performances from their players. The Nastiest Sack had A. Brown and J. White with season highs (Brown with 29.3 and J. White with 23.7). Even with 2 of Laces Outs players scoring 0 points he was able to sneak by with a victory with strong performances from T. Gurly and his go to QB...T. Brady slid him through to the W. To make him 3-2 on the season. 
+Our number one seed Home Balogna vs. 2 Gurlys 1 Kupp turned out to be a land slide. As usual Jimmer continues to put up high volume numbers week in and week out. With strong performances from Theilen, D. Adams, Gordon and PITT Def. With a 24 point performance 2 Gurlys 1 Kupp never really stood a chance even though he had a couple of stand out performances from BAL. Def and P. Rivers... Just wasnt enough to get past our league leader in points. 
+And our final matchup, another not so close game goes to Drinking Fortes vs. Cutlets bottoms. 
+Although Cutlets Bottoms had a nice performance from Big Ben this week and Carolina DEF.  The rest of the team did not come to play this week and Brandon Cooks with the big goose egg 0 did not help either. Drinking Fortes had a strong performance this week putting up 137 points beating his projected total with some strong performances from Hopkins, 19 points from S. Michel and the rook who continues to shock everyone Patrick Mahomes continues to dominate and the rest of the team all putting up solid numbers led him to an easy 40 point victory.
+
+
+good to be back!
+After 2 weeks of fantastic “guest commentators” and last week off (I was in Ireland drinking far to much and sleeping far too little) lets dig into how things look at the midway point of the season. 
+First and foremost - Congrats to Laces Out for their Week 6 High Point Score win - putting up a massive 173 point week in one of the highest scoring games of the season!
+This week, we’re congratulating ODeezus who put up 166 - bringing his record to 2-1 since he wrote a write-up which is looking like the ODeezus curse breaker he was hoping for. 
+Our top two teams are both riding 3 game winning streaks and sporting impressive 6-1 records.  They are no fluke, rolling out 2 of the 3 highest scoring teams in the league. 
+Home Balogona squeaked out a win on the incredibly consistent back of Adam Thailand - despite getting goose eggs from their two starting backs.  Gordon should be back healthy after their bye week - but Hyde looks to have lost some value being traded from the run happy/succesful BROWNS…to the “in utter shambles” Jaguars.  If fournette comes back healthy, Hyde falls from clear every down starter to back up…
+Trump 2020 keeps stringing along wins thanks to the stellar play of Kareem Hunt…whom he was trying to trade earlier this year…good thing he only received trash offers
+Hoodie Cru is 3rd in record, but 2nd in scoring.  He has arguably the most dominant foursome in the league consisting of Rodgers, Juju, Thomas and Saquan.  This is a team built for the playoffs.  Poor weeks from other starters don’t hurt as much when averaging 80 among 4 players. 
+Rounding out the top 6 (i.e.: Playoff Teams) are The Sack Fumblers, Cutlets Bottom, and Laces Out.  All three consist of consistent veterans and big play young-ins. If they all hit at the same time, a run to the ship is very much in the cards for all three of these teams. 
+The bottom are fighting for some semblance of consistency, either for their playoffs hopes or pride. 
+Next week we’ll dig into how the draft and picks are looking through 8 weeks. 
+Commish
+
+GENTLEMAN
+Apologies for the radio silence the last few weeks.  Turns out when you pay more attention to work than to fantasy write ups you get promoted and get to travel around the UK.  
+Don’t get me wrong, a fantasy championship, in the league I commission is the only thing I have my mind on - i've just focused my efforts on my team rather than building y'all up through my captivating prose. 
+With that!
+We’re now in the final stretch of the regular season.  3 more weeks to go, and we have our first playoff team secured. Congrats to ODEEZUS for bringing him his second high score award this year.  The comeback might be coming a bit too late though. 
+Lets hear it for the leagues newest member - TRUMP 2020, who despite having the 5th most points, has by far the best record, sitting pretty at 9-1.  Of course, regular season wins only mean something when you bring home the title, but there is a combination of luck, skill, timing, and history on his side as he is playoff bound. 
+Trump 2020 beat #2 Home Balogna whose cinderella season is no fluke.  The loss dropped him to 3rd overall despite being #1 in points scored. 
+This week, Trump 2020 takes on the NEW #2 team in the standings - Hoodie Cru - who squeaked out a win on the back of Barkleys garbage time touches. While he might have cried a little when his trade for Hill was downright rejected, he still has a great team built on two huge draft day moves - “over drafting” JuJu and the now infamous and legendary trade for Michael Thomas. 
+4th in the league is yours truly - Game of Jones - who has the 2nd most points this season.  Picking up James Connor before week 1 will go down as one of the all time great pre season pickups - granted, luck, greed, and selfishness on the part of Bell made this possible - but its guys like Connor that makes teams NOT pay guys like Bell.  Of course, Zeke as your 2nd best back is quite a luxury to have, and with Cooper looking to have woken up as a Cowboy - could this be the year the Commish finally breaks through?
+Cutlets bottom pulled off a huge win over Laces out, vaulting them into 5th place, and in control of their own playoff destiny.  Cooks, Big Ben and Julio make up a consistently scary top 3.  His duel titan RB plan seems to be paying off more than originally thought by this commish. 
+The final playoff spot as of today belongs to THE ACEBOOG1E who is riding a 5 game win streak after starting the season 1-4. He has one of the top 4-somes with Cam, McCaffrey, Ingram and Ertz - they all can go off any given week.  This team is heating up at the right time and is looking scary. 
+Funny thing this fantasy sports…The reasons I love it are the exact reasons I hate it. 
+- Top RB this season (Gurley) belongs to 8th place Laces Out.  
+- 2 of top 3 QBs, including Mahomes who has been a revelation belong to 9th place Drinking Fortes. 
+- The 2nd best running back (Kamara) belongs to 12th place WattmeWHIP
+- the 6th best WR and first drafted (Brown) plays his sundays for Nastiest Sack - 13th place
+- and lastly, the top WR this season Tyreek Hill is on by far the worst team in the league - Le’veons Career - granted this team also as Bell, who skipped the season….
+Just goes to show, its not who has the best players.  But who has the best team!
+Let this be a warning - trades involving non-playoffs teams to playoffs teams will be highly vetted and unlikely to be approved unless there are legitimate cases to be made.  
+Have pride in your team and how you manage it.  For those out of the race…time to play spoiler for those jockeying for position.  
+All the best
+Commissioner O'Donnell
+
+
+Week 12 – 2018
+Yo, its my turn at a write up!
+Only one week left to try and get a playoff seed OR one week left of begrudgingly setting a lineup for a league you have zero chance in now! (Better luck in year 5!).
+Matchup Reviews:
+Game of Jones (186.32) v theACEboog1e (171.89) 
+An important game for both parties, one would fall out of the playoff seeding and one would remain. Both teams put up a valiant effort with the two highest scores of the week. Game of Jones is now the point leader and is sitting as the 3rd seed, however a loss next week could still knock them out. theACEboog1e is third in points, so will be looking for a win this coming week to slot himself back up into the playoffs. With big point scorers on both teams (Cooper and CMC) they both probably thought they were in good standing. That being said it won’t be surprising if both make it into the playoffs.
+Cutlet’s Bottom (140.88) v The Nastiest Sack (66.60)
+This ended as a lopsided affair with Cutlet getting the win to keep him in the top six. The Nastiest Sack scored the mark of the beast (66.6), the lowest score of the season, with only one player getting double digit points. Week 13 is still important for The Nastiest Sack as they will be fighting to avoid that toilet bowl! Cutlet will also have a crucial game next week which may decide his fate for the playoffs. This may be a team on the rise with Josh Adams now seeming like a valuable asset, the only one who stunk on his team was Royce Freeman – it’s a shame I had high hopes for Freeman this year, only to be dashed by an undrafted rookie who came outta nowhere (Philip Lindsey).
+Drinking Forte’s (158.66) v ODEEZUS (173.66)
+Both teams put up good point totals this week on the backs of multiple solid players. Whoever won here still had a chance to make it to the final 6, and it was our leader of the FF players association, ODEEZUS who got the W. With a strong all round team, might he be the fairytale story we haven’t seen since year 1? The resurgence of ODEEZUS might be enough to pull an upset and steal a playoff spot next week if he is lucky. Better luck next year Drinking Forte’s (although if you win next week, you can probably still force the toilet bowl upon your brother, so something worth paying for!).
+The Sack Fumblers (128.98) v Le’Veons Career (120.96) 
+I had the worst first round pick last year and my opponent had the worst first round pick this year (I feel your pain). I figured I had this matchup in the bag quite early on, then my points started to slow down later in the afternoon. I can’t say I wasn’t nervous when Miller pulled of a 97 yard TD on Monday night, for 17.7 points on 1 play! Even with Keke going out early my lead was just a little bit too much to be caught. Better luck next year, you probably won’t have the worst first round pick two years in a row…..
+Home Balogna pt duex (142.40) v Laces Out (82.62) 
+So it’s the reigning champs vs one of the power house teams. Home Balogna took care of business easily with a 60 point difference and officially clinched their spot in the playoffs (although it seemed unlikely they wouldn’t make it anyway). Home Balogna obviously had a great draft and seems intent on rubbing it in our faces by NOT HAVING SPENT EVEN $1 of FAAB! Not many moves are needed when you draft Gordon, Thielen and Adams I guess. Hard luck for last year’s winner, with early season injuries and not much luck in terms of replacements for them, there will be no back to back winner this time.
+HOODIE CRÜ !!! (146.42) v KnickerBockers (149.54)
+The success of the much talked about draft day trade may be starting to finally dwindle, with Fournette back Hoodie Cru didn’t have much production out of Yeldon (although next week might be a saving grace for him, since Fournette forgot he is in the NFL and not the UFC, potentially giving Yeldon another week of production). Knickerbockers will be a middle of the pack finisher, no glory but no toilet either. Hoodie Cru has to keep it together one more week or risk missing out on his playoff spot.
+Trump 2020 (139.08) v WATTmeWhipWATTmeJJ (109.99)
+The new hotness of our league, standing at a mighty 10-1 record was not to be defeated by the back end WATTmeWhipWATTmeJJ. A solid performance all round for the POTUS (or GEOTUS?) Trump 2020, Trump said we would get tired of winning and I am definitely tired of him winning. Maybe some better picks on DEF and K would’ve pushed his score a little higher. WATTmeWhipWATTmeJJ had some disappointment from Jeffery and Landry again and will be looking towards next year’s draft.
+Locked Playoff Spots:
+Trump 2020 is locked as the number 1 seed and will enjoy a bye in week 14 regardless of what goes on next week.
+Home Balogna pt duex has a spot locked up but it is not clear if they will maintain 2nd and get the bye week.
+Teams clenching their buttholes to try and get a spot with a win in week 13:
+Game of Jones probably is the least clenched of this group with a massive points lead and will most likely be in the playoffs, maybe even with the 2 seed depending how things play out.
+Cutlet’s Bottom, The Sack Fumblers and HOODIE CRU!!! are all within 4 points of each other and will be pushing for the win in week 13. Even more dramatic it will be Cutlet’s Bottom v The Sack Fumblers next week, meaning the loser will most likely drop out the top 6.
+theACEboog1e and ODEEZUS both sit at 6-6 and are looking to pull the upset and steal a playoff spot next week
+Teams competing for the glory of the toilet bowl and the pink t-shirt:
+Le’Veons Career and The Nastiest Sack are both contending for the prize sitting at 3-9, Le’Veons Career has a good point lead and may have an easier time avoiding the shame.
+
+
+Wow! What a season.  Filled with triumph, heartbreak, bouts of confusion and brief moments of ecstasy. 
+Some highlights and lowlights below, 1st round playoff matchups to be written tomorrow!
+HOODIE CRU
+The biggest “loser” and arguably winner of next years “Shit Luck” award has to be Billy Obrien and his squad Hoodie Cru…Yes a 3 game losing streak to end the regular season is a bitter pill to swallow, knocking him from 3rd place and 2nd in scoring…to out of the playoffs…
+But the real NUT PUNCH for him is the fact that he beat ODeezus, Aceboogie, Game of Jones, and Home Balogna…oh and lost by .25…yes a quarter of a point..to Cutlets bottom.   AND he only lost to Trump 2020 by 5 points!…
+That means that of the 6 playoff teams…he’s 4-2, with the his 2 losses coming be less that 6 points…
+Thats SHIT LUCK!
+NASTIEST SACK
+Well well well..the FIRST ever repeat winner…and no…he didn’t win a championship before or this year…he is the repeat TOILET BOWL WINNER. 
+Le’veons Career made a real run for it, but with 50 more points and the W against Nasiests there was no other choice but than our most consistent Loser.  
+Despite the great pick of James White, and the consistently great Antonio Brown…the rest of the team left much to be desired…never really able to bounce back from Freeman hitting the IR early on. 
+Trump 2020
+With the top seed, 12-1 record and the bye week…that is a hell of a way to start their career in the league. 
+Yes, had the FEWEST Points against, meaning he might be the luckiest winner in the league, but lets not focus on the facts, this is Trump after all…
+The loss of Kareem Hunt is definitely rough, but his quick trigger finger in picking up Spencer Ware is numbing the pain. 
+With a great trio of pass catchers (Hilton, Allen, Ebron), any week can be the week they go off for 35 points, OR finish the day with 2 catches for 20 yards..
+We’ll see if he’s still in the white house after next week…
+Game of Jones
+Your league leading scorer, the only team to break the 1900 points for barrier coming in at a whopping 1911.37 on the season - and average of 147 points per week. 
+They are a bit roughed up right now with Connor on the mend…thank god for the bye week. 
+Big decisions between playing Luck or Watson could be a point of concern. 
+But with Zeke, Woods and a revitalized Cooper…the seed is strong…
+
+
+TWO HUGE playoff matchups this week. and what a start last night was!
+Cutlets Bottom Vs. ODeezus
+Wow, just wow…Derrick Henrys star turn last night, the highest scoring game for a player this season…won and lost many a fantasy players playoff matchups this week…but thats when he was played…Unfortunately for Cutlets Bottom, he went with the OTHER Titans RB…a decision that I’m sure will haunt him for years to come…especially if he can’t pull off the win this week. 
+For ODeezus, this has been a legendary comeback.  He’s gone 5-2 the last 7 weeks (with 4 in a row) heading into the playoffs and have 5, yes 5, starting caliber RB’s.  He’s also managed to finish 3rd in points scored this season despite starting the year with abysmal performances. 
+Lady luck (or lady fantasy football reddit) might be on his side this season. 
+Home Bologna Vs. AceBoogie
+Home Bologna got off to a scorching start this year with a 6-1 record, but has gone 2-4 the back half of the year, stumbling from the top spot and a bye week, to having to a face a scary Aceboogie in Round 1. Surprisingly, the downfall for Home Bologna seems to have been when Cleveland traded Carlos Hyde, essentially turning him from a reliable RB1/2 to a legit waiver drop. Thielan and Adams are both top 15 players this season so anything can happen.  NEEDS Gordon back this week, could be the difference between a playoff run and a precipitous fall from grace. 
+His head was getting REAL BIG, and the fantasy gods might be looking to strike him down. 
+AceBoogie has gone 6-2 to finish their season after starting 1-4.  Cam and Christian are a legit scary duo…with Christian catching so many touchdowns, those essentially become 2-for-1’s.  Filling out the squad with Ingram (whose laughing now at that draft day trade!) and Zach Ertz allows quite a few high scoring options week in and week out. 
+AS FOR NEXT WEEK
+Playoffs have “re-seeding” meaning TRUMP 2020 will play the LOWEST seed…and Game of Jones the HIGHEST seed… Looking like our 5 and 6 seeds have the inside track this week and all the late season momentum needed to carry a late season run.  Game of Jones has to be happy about that.
+
+
+HOW THE FUCK DID WE GET HERE?!?!?!?!?!?
+Cutlets Bottom almost pulled off the ODONNELL SWEEP, by narrowly beating ODeezus, despite leaving a 50 point scorer on the bench.  Cutlet then went onto the next ODonnell, and came away victorious…by 1.7 points!!!  WOW What a close game!  Can’t believe it!  This sucks! Marco is about to go 2 for 3 in championships vs. seasons…Oh wait, Oh my God…This can’t be…ZEKEEEEEEEEEEEEEEE
+Yes..just like that, with the scoring adjustment taking a fumble away from Zeke, giving him back 2 points…and putting the COMMISIONER Game of Jones the WIN…by .25 points!!!
+Such a devastating blow that will go down in the history of not just our league, but all of fantasy football. 
+The Aceboogie might have just lost Cam for the year, but they took care of business in the Wildcard round by smoking Home Balogna Part deux…who despite their breakout year…only put up 83 points in their first and only playoff game.  Tough way to end the season for Home Balogna. 
+That led Ace to the semi-finals against top seed, the 12-1 juggernaut known as Trump 2020.  Felt that Trump caught some serious luck throughout the year, but he almost pulled the impossible in the semi….heading into Monday night projected to lose by close to 60…he made it a game thanks to some timely performances, and lack there of from Aceboogies top guys…All that was for naught that, as was the season, the 5 point loss to Aceboogie will be tough to swallow heading into the offseason, knowing that he left some quality points on the board…
+That leaves us to the SHIP…
+Game of Jones vs. Aceboogie
+Including this season, Game of Jones is 3-1 against Aceboogie historically, but this is Game of Jones first ever championship game, and Ace has played in a championship before…our inaugural season where he lost by 2 points to eventual champion Hoodie Cru. 
+Both teams are missing some stars this week…Cam is out for the year for Ace and Connor looks to be out again this week for Game of Jones…The heads up from ODeezus Wednesday night about the Zeke point change allowed Game of Jones to stock up on this weeks streamers
+All will be decided by the end of Sunday night…
+For the winner of the 3rd place game you’ll be receiving $150 - your money back!
+Second place will take home $300 - doubling their money on the season. 
+1st place will get the ring…..$1000….and if a certain team wins…just maybe they will be receiving a CHAMPIONSHIP BELT
+God speed, Hell of a season…
+
+2019 Season
+
+Gentleman!
+This is your commissioner and reigning champion speaking so time to listen up. 
+I want to move on from facebook as our primary means of communication and enter the real world and connect via email. 
+I have most of your emails, but please send me THE email you use the most and thats what we'll use for weekly updates, trash talking, trade negotiations, and general announcements. 
+The big news is, despite not going to VEGAS, we'll still have an amazing draft.  Planning for Saturday August, 24th.  Its the weekend before labor day. 
+Let me know ASAP if that weekend works/doesn't work.  
+Commish
+
+
+Gentleman, 
+
+We're 85 days away from football season, and more importantly, 74 Days away from our 5th draft!
+
+Confirming again that the Draft will be at my house, in the yard on Saturday August 24th. 
+
+As much as we'd all love to go to Vegas, without the Raiders there, and us potentially going to one of their preseason games...it would end up being an unnecessary expense for everyone.  Maybe next year? Who knows..
+
+Over the course of the season I'll be using this email thread for updates/recaps - and figure its a good way to get us all actively talking shit/shop/deals. 
+
+I renewed the league on Yahoo - so we're good to go. 
+
+May your research over these next few months serve you well. 
+
+If you have ideas for rule changes, send em to Big Ben, Deputy Commish will be tracking potential changes, and we'll put them all up for a vote at one point this summer. 
+
+Your Commish/Champion
+MOD
+
+GENTLEMAN
+
+We're less than 2 weeks away from Draft Day - Saturday - 8/24.  I NEED CONFIRMATION THAT THIS DAY WORKS AND YOU WILL ALL BE IN ATTENDANCE (Looking at you PJ Miles).  As we know, technology is dumb and I DO NOT WANT any "virtual" drafting. 
+
+I'm thinking you can start heading to my house (200 Hancock Street) around noon, we will pick draft order around 130, and then start the festivities at 2. 
+
+As per usual...its $150 for the season (yeard end and weekly payouts), plus an additional $30 for food/awards/expenses. 
+
+So...$180 is owed to me ON THE DAY OF THE DRAFT...No IOUs, No I'll pay double next year, No BULLSHIT. 
+
+From what I gather we're going to be voting on Keepers Rules - day of - Any other potential rule changes you'd like up for a vote, please send to Ben as he will track.
+
+Please respond to me that you can make it...If you don't I'll be reaching out directly and possibly/likely publicly shame you. 
+
+Week 1 is in the books!  And your commish is BACK in mid-season form!
+
+Let’s cover some league wide news and then dig into some of the highlights from last week. 
+
+Good news bad news for commish….Zeke is back!  Gordon is dead to me!
+
+Retired Jabroni - Andrew Luck really letting down his team..Trump 2020
+
+Good trade / bad trade - still quite early, but commish flipping Ertz and Penny to HoodieCru for Engram and Ingram seems to be one for the books. 
+
+Antonio Brown! - He’s back (sack fumblers exhales), he’s released (sack fumblers inhales), he signs with the fucking patriots!! (sack fumblers jumps and screams for joy)…..and now…will Antonio be making the long walk to the commissioners office now that he’s a raper? check this space for updates on how much worse of a person he is!
+
+Good pick up / Bad drop? - Sack fumblers again…dropped Shady McCoy when he was dropped from the Bills…only to be picked up by the chiefs and WattmeWhip.  Looks good for WattmeWhip on paper, but can Shady carve out a consistent impact on the leagues most dominant offense?
+
+The big Waivers this week…
+* Malcom brown to Laces Out for $31
+* Chris Thompson to Sack Fumblers for $32
+* Scary Terry McLaurin to Game of Jones for $30
+* Gio bernand ($12), Carlos Hyde ($13), John Ross ($15), and Rex Burkhead ($20) round out the other big pickups this week. 
+
+
+Cutlets Bottom DESTROYS Games of Jones - 191-110
+* Call it payback for last seasons semi final game which was “stolen” from Cutlets bottom and gifted to Game of Jones on his route to the Championship. If this is all the Karma that comes from that, the commish is happy.
+* Congrats on the week 1 points win - check the ol’ venmo. 
+* Couple double 0’s on the board for commish…hard to come back from…but he might have a player in DK Metcalf…
+
+WattmeWhipp off to a STRONG start against Drinking (never been to the playoffs) Forte - 182-107
+* This one was never really close, Forte had some poor performances from his 2 starting WRs, and Trubisky looked like Trubisky.  
+* WattmeWhips team is stacked across the board and will be tough to beat should his flex’s keep playing the way they have through 1 week. 
+
+Trump 2020 ROLLS into 2019 with a big win against Home Balogna. 158-110
+* Picking up where they left off in their dominating virgin season in 2018, Trump 2020 made up for the lack of Luck by picking up Kirk (thank god we dont throw anymore) Cousins.  That wasn’t what brought the victory tho… that goes to SF Def dominating the hapless bucs and and special thanks to the COMMISH for declining to trade for Ekeler because as he said he's “just a a handcuff”….well Trump was right (never thought i’d type THAT sentence) and Ekeler is way waaaaay more than just a handcuff. 
+* Home Balogna lost Hill for a few weeks, and now might have to give it a go week two without Mixon as well…Going to be hard to roster 2 injured WR (hill/green) as well as A RETIRED WR!!!! BALDWIN IS NOT IN THE LEAGUE 
+
+Knickerbockers “SQUEEKS” by Aceboogie - 162-143
+* SAMMY WATKINS have yourself a day!  With even a great 20 point performance from Watkins, Knickerbockers would have lost to Aceboogie…but alas, this was not just a great performance, it was an ALLTIMER.
+* For Aceboogie - McCaffrey is the prodigal son.  He’s incredible, and will be the reason to fear this team all year long.   
+
+Laces Out says NICE TRY to the Sack Fumblers. 159-128
+* Great drafting, year after year for Laces who has been one of the most consistent players in our league…Gallup and Jacobs are breakouts and pairing wentz and jackson is a veteran savvy move.
+* Sack Fumblers…lets see what happens with Antonio but this isn’t looking good.  Great days from 3 players, and then shit days from everyone else, brings you to 0-1
+
+Nastiest Sack CANT CATCH A BREAK losing to Leveons Career in the closest match up of the week. 135-121
+* Looking at both rosters isn’t leaving me with much hope for either teams future….
+
+Hoodie Cru GETS BY ODeezus.  139-107
+* Not a route, but not exactly close.  Surprised this is the team ODeezus drafted, not nearly enough Cowboys. 
+* Hoodie Cru found a stud in Hollywood Brown with Diggs barely getting targets in the new look vikings offense things can get ugly this season.  BUT Mahomes is better than Jesus or Brady or Jim Jones or whoever you pray to...so there’s always a chance
+
+TILL NEXT WEEK SUCKERS
+COMMISH
+
+
+Hello Gentleman!
+
+I know I’ve been sorely missed the last two weeks!
+
+First and foremost, lets give a round of applause to Nastiest Sack for having the high score in week 2!  From bottom dweller to contender, their team has come a long way. 
+
+This past weeks high score is non other than Ace Boogie. 
+
+Both teams (as well as Cutlets Bottom in week 1) put up 190+ points, so that seems to be the line in the sand for high scoring weeks.  Both teams should expect their winnings in their venmo this week. 
+
+There have been some big pickups, trades, injuries and news on the league (both our and the NFLs). 
+
+Pretty insane last 2 weeks…Antonio Brown went from dud to stud back to dud while Simultaneously ending his career.  Womp womp…
+
+Brees is down and out for a half the season, Big Ben for all of it, Saquan is out for the next two months, Darnold has a runny nose (tanking the other Jets), Cam was hurt after all, Tyreek Hill is still out….woof, fantasy is pain. 
+
+But! Melvin Gordon is back for your trusty commish, so we got that going for us! And Danny Dimes is a thing!
+
+Home Bologna seems to have been hit the hardest…losing Hill and Brees and more or less all hope.  He’s flipped Hill as well as AJ Green (still hurt) to Sack Fumblers and ODeezus respectively, trying desperately to cling to some semblance of hope.  
+
+Sack Fumblers also managed to pull a trade with Trump 2020, flipping average players back and forth. 
+
+Knickerbockers won the bidding war for Gallman as he looks to take over the NYG backfield.  
+
+Before that $25 was spent on Demarcus Robinson on the chiefs, and a whopping $40 for Adrian Peterson (not the best move commish..). 
+
+ALL THIS TALK ABOUT WAVIER BIDDING RAISES AN IDEA THAT I WOULD LIKE YOU TO VOTE ON.  
+
+DO WE WANT TO ALLOW TRADING FAAB $?  ON THE BACKEND, WE CAN ADJUST FAAB BALANCE, SO IF YOU WOULD LIKE TO INCLUDE IN A TRADE NEGOTIATION TO SWEETEN THE OFFER, THAT WOULD BE ALLOWED.  
+
+BEN AND I THINK THIS IS COOL, SO THATS ALREADY TWO YES VOTES.  MAKE YOUR VOICE HEARD. 
+
+Next week’s update will be brought to you by Big Ben. 
+
+Commish Out
+
+
+AND WE’RE BACK!
+
+This season is shaping up to be an all timer.  12 teams still in legit contention to make the playoffs…separated by just two games..with 4 games to go..
+
+Breaking down the teams, and what needs to happen the rest of the way for a playoff push. 
+
+THE 6-3 TEAMS
+
+Worst-to-first for The Nastiest Sack.  TBH, watching the PATS DEF consistently score 20+ points, leaving them as the FOURTH highest scoring “player”, and 1 of 6 to have over 200 points so far this season….almost made me quit fantasy.  
+
+For Nastiest Sack to make waves down the stretch, they need the Pats DEF to avoid regressing to the mean…
+
+ODeezus has a consistent squad, led by Lockett (legit top 5 WR in football).  Chubb needs to maintain his workload for the disappointing Browns and Henry needs to stay out of the doctors office for this team to make a deep run.  
+
+Getting a healthy AJ Green back will be nice, but who will be throwing him the ball?
+
+No surprise here but Laces Out finds themselves once again, in the thick of the playoff push.  They’ve been carried by the otherworldly Aaron Jones this season, and similar to above, if OBJ can help turn things around in Cleveland, that would form a solid 1-2 punch come December. 
+
+The 5-4 TEAMS
+
+WattmeWhip, Sack Fumblers, Cutlets Bottom and Trump 2020 are all sitting at 5-4, AND playing each other this week.  Now these are the kind of late season matchups that make or break seasons. 
+
+If the season ended today, only 3 of these 4 teams would make the playoffs, so its safe to say that each need a win this week, but only 2 will come away with one.  Lets look ahead at the matchups. 
+
+Cutlet Bottom Vs. Sack Fumblers. 
+
+This is a huge BYE Week-week for Sack fumblers with Hopkins, freeman, sanders and jeffery all on by.  Despite all this, Lamar Jackson is one of the most dominant offensive players I’ve ever seen, and with him on your roster, real football or fake, you have a chance for a massive game and even more massive victory during the home stretch of the regular season. 
+
+Cutlets Bottom has consistency across the board and has to hope Julio gets into the end zone (he hasn’t scored since week 3), but they are going up against the saints and you’d have to imagine him living on Lattimore Island.  
+
+Trump 2020 vs. WattmeWhip
+
+Trump has scored the 11th most points in the league this year, yet sit at 5-4, thanks in large part for having the second fewest points scored against this year (only 3 more than last).  With that said, and jokes aside about him, true to his name, not winning the popular vote…his team is stacked with Evans, Bell, Singletary, Montgomery…he just needs some consistent scoring these next few weeks, because the points they’ve been putting up won’t cut it much longer. 
+
+WattmeWhip has bounced around every spot in the top 5 this year.  Couple weeks slipped away earlier in the season but this is a team that is built for the postseason with great WR’s and high volume RB’s…not to mention Deshaun Watson who might actually be Michael Jordan in shoulder pads. 
+
+The 4-5 TEAMS
+
+Pretty much need to win out the rest of the season, which is doable and daunting at the same time.  I think we see at least 2 of the following teams in the playoffs despite all currently being out as of today. 
+
+Why they can make it?
+
+Aceboogie - one word. McCaffrey.  
+
+Leveon career - congrats on the weekly point win, despite benching a 22 point player for one who was inactive!  This team is built on current and former Seahawks.  He goes as they go. 
+
+Game of Jones - Zeke is a freak. Gordon getting going, Godwin and Ingram, and IR stash of Brees paying off…. In this commissioners humble opinion, this is NOT A TEAM YOU WANT TO SEE IN DECEMBER.
+
+Knickerbockers - Rodgers, Saquan, Kittle is as good as a big three as there is in our league. If Hunt can come back and steal carries from Chubb, this team will be a tough out.  Also would like to point out to all the Watkins bandwagoners (after week 1), that he scored more in week 1 than he has the rest of the season combined.  
+
+Hoodie Cru - While sitting at 4-5, can’t find much to be excited about.  Mahomes needs to come back in a major way to make up for the inconsistency across the rest of the (strong) roster. 
+
+Everyone needs a win
+
+Drinking Fortes - keep fighting!  Avoid the toilet!
+
+Home Balogna - projected for 25 points this week with literally the entire team on BYE…if you were sitting at 8-1 or 7-2 I’d like the strategy, give up 1 game, whatevs…but alas…your not.  Don’t give up and don’t fire sale your guys…never should have allowed that Tyreek Hill trade to go through!
+
+Back next week, or next month, or maybe will just wait to the draft next year…haven’t decided. 
+
+COMMISH
+
+
+Wow!  What a week.  Our top 3 teams from last week each fell to one of the 3 bottom teams.  
+
+Drinking Fortes, took out brother The Nastiest Sack. They say defense wins championships, but Nastiest Sack didn’t think the saying was that literal. 
+
+The bottom dwelling Home Balogna knocked off ODeezus.  The fantasy Gods heard ODeezuz trash talk all week, about locking up a playoff spot and returned the favor by injuring the dynamic Lockett and blessing David Johnson with a goose egg. 
+
+Hoodie Cru got one over on Laces out, thanks literally to one play…Mecole Hardman goes for 63 yards and a TD on 1 catch this week.  That one play was enough to carry out the upset.  
+
+3 more weeks left in the season with 5 teams sitting at 6 wins and 5 teams sitting at 5 wins.  
+
+The playoffs, not to mention the seeding will look very different in 3 weeks. 
+
+I’m thinking 8 wins locks up a playoff spot this year. 
+
+COMMISH
+
+
+Gentlemen,
+
+Major games this week, teams control their own fate which is all you can ask for this time of year. 
+
+#3 WattmeWhip Vs. #4 Game of Jones
+
+#5 Le’Veons Career Vs. #9 Hoodie Cru
+
+#7 Laces Out Vs. #8 ODeezus
+
+All 6 of those teams currently sit at 6-5.  Winning and getting to 7 is almost a requirement for making the playoffs.  Thats not to say that luck could play a  role in Week 13.  But you gotta make the playoffs to win the Ship, and for these teams, the playoffs start NOW. 
+
+Thats not to mention the matchup between Cutlets Bottom (also looking for that golden 7th win) and Trump 2020 who has lost 6 of the last 7, coincidently timing up with his impeachment inquiry. 
+
+Our new #1, Sack Fumblers has the most moves made, the most point scored, and most importantly…the most wins.  Comfortably sitting at 7 wins and facing off against Home Balogna this week who is fighting his way out of the Toilet Trophy with 2 straight wins against two of the best teams (Nastiest Sack + ODeezus). Smelling another upset?
+
+Speaking of Nastiest Sack and upsets…that makes 3 straight losses, and while still in 2nd place, with a ton of points scored..a loss this week against the sneaky tough/good Knickerbockers would make things real dicey for this two time toilets' redemption tour. 
+
+The last matchup this week is between AceBoogie and Drinking Fortes, both fighting for room between themselves and the bottom of the standings. 
+
+Thats all folks, two weeks left this regular season, time to nut up or get out. 
+
+Commish
+
+
+Going to skip past this wildcard weekend, and we'll lock into semi-final matchups and and in-memoriam's next week.
+
+Took a deep dive into the stats this week and came out with some interesting tidbits. 
+
+Here are the first two rounds from our draft, on the right is their final “end of season” points ranking.  
+
+Of the top 28 players selected, only 9 of them are amongst the top 28 points scorers this season.  Fantasy is pain. 
+
+Round 1			end of season rank
+1	Saquon Barkley(NYG - RB)	KnickerBockers	89
+2	Christian McCaffrey(Car - RB)	theACEboog1e	1
+3	Alvin Kamara(NO - RB)	Le'Veons Career	49
+4	Ezekiel Elliott(Dal - RB)	Game of Jones	23
+5	DeAndre Hopkins(Hou - WR)	The Sack Fum...	21
+6	Odell Beckham Jr.(Cle - WR)	Laces Out	77
+7	Travis Kelce(KC - TE)	The Nastiest...	46
+8	Le'Veon Bell(NYJ - RB)	Trump 2020	54
+9	Michael Thomas(NO - WR)	WATTmeWhipWA...	5
+10	Davante Adams(GB - WR)	Drinking For...	95
+11	David Johnson(Ari - RB)	ODEEZUS	117
+12	Julio Jones(Atl - WR)	Cutlet's Bottom	47
+13	Tyreek Hill(KC - WR)	Home Balogna...	102
+14	Todd Gurley II(LAR - RB)	HOODIE...	78
+			
+Round 2			
+1	Patrick Mahomes(KC - QB)	HOODIE...	18
+2	Joe Mixon(Cin - RB)	Home Balogna...	90
+3	JuJu Smith-Schuster(Pit - WR)	Cutlet's Bottom	158
+4	Nick Chubb(Cle - RB)	ODEEZUS	24
+5	Dalvin Cook(Min - RB)	Drinking For...	7
+6	James Conner(Pit - RB)	WATTmeWhipWA...	110
+7	Mike Evans(TB - WR)	Trump 2020	20
+8	Adam Thielen(Min - WR)	The Nastiest...	155
+9	Aaron Jones(GB - RB)	Laces Out	17
+10	Antonio Brown(NE - WR)	The Sack Fum...	436
+11	Melvin Gordon III(LAC - RB)	Game of Jones	159
+12	Chris Carson(Sea - RB)	Le'Veons Career	42
+13	T.Y. Hilton(Ind - WR)	theACEboog1e	166
+14	George Kittle(SF - TE)	KnickerBockers	85
+
+QB
+Lamar - Sack Fumblers - Round 10, Pick 10
+Dak - Cutlets Bottom - Round 11, Pick 12
+Watson - WattmeWHIP - Round 4, Pick 6
+Wilson - Le’veon Career - Round 8, Pick 12
+
+Some of the best QBs in the league are sitting on our top 3 teams (sack, le'veon cultet) heading into the playoffs…whose to say QBs aren’t important?
+
+RB
+McCaffrey - Aceboogie
+Cook - Drinking Fortes
+Ekeler - Trump2020
+
+Now this is interesting, the top 3 RB’s this season ALL MISSED THE PLAYOFFS…..who says RBs are important?
+
+WR
+Thomas - WattmeWhip
+Godwin - Game of Jones
+Evans - Trump2020
+
+LOL, two Tampa Bay WRs (one of which I’m very proud of) make the top 3 this season….who says your WRs should be in “good/efficient” offenses…Jameis is a wonder and a treasure. 
+
+So who had shit luck this year?
+
+Well HoodieCru, for the 2nd year in a row missed out on the playoffs thanks to low point total.  Wins are wins, but you gotta have a couple high score weeks sprinkled in over the course of the season.  He went 3-3 against playoff teams this year. 
+
+Laces out was sitting pretty a month ago at 6-3, then went on to lose 4 straight ending their season at 6-7 and in 12th place. 
+
+Similar story for WatmeWhip, who just 3 weeks ago was 6-4, with a firm grasp on a playoff spot…now, their season is done. 
+
+We have to mention trump2020 who despite having top 5 players at QB/RB/WR will not be participating in the playoffs this year. 
+
+Lastly, we must celebrate our TOILET WINNER - HOME BALOGNA!!!!
+
+Take a look below for a quick breakdown of one of the all-time worst drafts in modern fantasy history…
+
+Player	Notes
+Tyreek Hill(KC - WR)	hurt, traded for cents on the dollar, starting for a playoff team
+Joe Mixon(Cin - RB)	never got going in the worst offense in the league
+Julian Edelman(NE - WR)	great pick!
+James White(NE - RB)	solid pick
+A.J. Green(Cin - WR)	never played, traded for shitty players
+Drew Brees(NO - QB)	hurt and dropped, starting for a playoff team
+Jordan Howard(Phi - RB)	never got going
+Vance McDonald(Pit - TE)	30 catches, for 240 yards…
+Los Angeles(LAR - DEF)	dropped
+Mike Davis(Car - RB)	11 rushes, 25 yards
+Stephen Gostkowski(NE - K)	IR week 4
+Chris Hogan(Car - WR)	LOL, 3 catches for 24 yards
+Ronald Jones II(TB - RB)	good pick! But dropped him and hes now starting on a playoff team
+Doug Baldwin(Sea - WR)	retired before the season started…
+
+
+
+Gentlemen,
+
+We started all those months ago as 14 teams, ready to take on the world…as of today we are down to the final 4, looking for glory. 
+
+Last week, Game of Jones knocked out Nastiest Sack in a runaway that included the top scorer of the week (Brees) comfortably on the bench.  Don’t get me wrong, there were moments Game of Jones cursed the fantasy gods LOUDLY during the saints and Brees’ dominant first half, but in the end, the overall quality and depth of team won out. 
+
+Nastiest sack truly rebounded this year, coming off their toilet in 2018.  But that early season run was fueled in large part by a Pats DEF that put up 14, 45, 19, 31, 17, 35, 30 and 24 the first 8 weeks of the season.  Thielen missing half the season did not help matters. 
+
+Last week also saw ODeezus knock out Cutlets Bottom, who have now been knocked out of the playoffs by O’Donnell brothers in 2 straight years.  Thats what you get for the Bears dismantling the cowboys…
+
+Sack Fumblers and Le’veons Career are both coming off bye weeks and matched up against our wildcard winners.  
+
+Lots on the line - the commish, the deputy commish, and two mikes…battling it out for fantasy supremacy. 
+
+Will there be an OBR Productions championship game?  Only time will tell…..(cue Buttnose/killing villa Roma theme music)
+
+
+Commish
+
+
+2020 season
+
+Gentleman, 
+
+Felt it was time you heard from the commissioner, as I'm sure you're chomping at the bit for the plan for fantasy football this fall. 
+
+This now marks two years in a row where Vegas is off the table, last year it was because of the delays in building the Raiders stadium, this year, it's good ol' Covid-19.  Whata world. Maybe next year.
+
+Given the current pandemic, I will be relaxing my #1 rule: Must draft in person. 
+
+With that said, I'm still happy to have folks over my backyard, however we'll likely all be required to have a computer, and draft virtually (in person).  
+
+September 5 is the start of the Football season, and with me likely away most of August, I'm targeting Saturday the 29th of August for our DRAFT.
+
+Given we'll be doing this virtually, I'm not going to stress as much this year on picking the perfect day for everyone, make the time or you're out of the league lol. 
+
+If you do not plan on playing this year, let me know ASAP. 
+
+Please follow up with Ben (Deputy Commish and Champion) for any potential rule changes. 
+
+Please follow up with Mike O (Players Association President) for any complaints. 
+
+Commish OUT
+
+
+
+Hello from sunny California. 
+
+What a year it's been, pandemics, lockdowns, road trips, and cross country moves.  I found comfort in the one and only constant, the thing that made life feel "normal" - inevitable and predictable pain and suffering caused by fantasy football. 
+
+Apologies for the lack of write ups this year, without being stuck in an office, or in fact working at all, I hadn't had a reason to waste/kill time writing these!
+
+Make no mistake about it, you are all getting vaccinated and will be flying to Vegas in August for the draft.  With flight/hotel prices where they are right now, I'm considering booking pretty far in advance to fully commit. 
+
+Here's how we did!
+
+ACEboogie - couldn't get things going this year, finishing 3-10 and with less points than Knickerbockers - so a lovely toilet award awaits. Kittle got hurt, and despite having King Henry, they just couldn't field a competitive team week to week - yes including the week where they scored an eye popping 65 points... 
+
+Knickerbockers - mentioned above, finished 3-10.  Losing McCaffrey for most of the season and not picking up his handcuff really hurt - outside of stars Evans and Watson, they just couldn't get it going. 
+
+Home Bologna - shocked the world by not receiving the toilet despite scoring the fewest points this season.  The fact that this squad won 5 games is a testament to how truly stupid fantasy football is. 
+
+Drinking Fortes - was feeling himself to start the season 4-3, with their first ever high score week.  Alas, the last 6 weeks they went 1-5 and found their rightful place outside of the playoffs once again.  I have to check the league history, but I think this might be the longest non playoff streak in the league.  
+
+Cutlets Bottom - just had shit luck this year with a whopping and league leading 1900 point against.  This is a good team on paper, but when you go up against another team's best week, week after week, there just isn't much you can do.
+
+Laces Out - had a consistently mediocre season - perhaps making more moves (tied for fewest with 8) would have given them enough wins to break through. 
+
+Game of Jones - well fuck mike thomas, looking forward to next years draft when i avoid him on purpose, only to then see him catch 150 balls for 1800 yards and 14 TDs...
+
+HoodieCru - bad year to go all in on the Cowboys offense, but I respect it all the same - playoffs for the boys are in sight!  But hoodie cru has no one to blame but bad luck, despite having the fewest points scored against this season (1558) and starting 5-2 the back half of the season really sunk any chance at the playoffs. 
+
+Sackfumblers - our reigning champion and league leader in trades, transactions, and as we all know - trade requests.  They rode a 5 game winning streak to close out the season and sneak into the playoffs where they were resoundingly beat by one of our championship contenders.
+
+WattmeWhip - put together one of their better seasons, somehow managing to correctly play a star qb on the right week almost every week.  Despite putting up 158 points in the quarterfinals they were outmatched and lost by 10 - a heartbreaker.  But all things considered this team has had one hell of a year, culminating in an engagement! congrats PJ!
+
+Leveons Career - put together a rocking season despite being based in brazil and (hopefully) avoiding STDs left and right.  Despite a solid season and start to the playoffs (159 in their loss in the semi finals) you can't overcome the highest scoring week in the history of our league. 
+
+Trump/Kaep 2020 - put together an absolutely terrifying team stacking mahomes and hill, while having drafting Keenan Allen and quickly picking up Justin Jefferson.  This team was my pick/prediction when the playoffs started but a down week for Allen (2.6 points) and a monstrous week from their opponent ended what could have been a championship run.  But again, things aren't so bad as they welcomed their second baby to the world - congrats on having twice as many kids as the rest of the league combined! 
+
+AND NOW THE CHAMPIONSHIP
+
+Both Odeezus and The nastiest sack have had wildly successful seasons - a combination of drafting, working the waiver and some injury health/luck contributed to both of their success. Having the 1st and 3rd most points scored this season was a clear tell that their success in the playoffs (odeezus putting up 177 and 180 in back to back weeks, and nastiest sack with a first round bye and a monstrous 211 in the semis) was earned. 
+
+After tonight we'll have a winner...and it all rests on the shoulders of Josh Allen - who among us predicted that to start the season??  One team will win $1000, the other $300 - with the difference being a PS5, an extra controller and a couple of games...Best of luck to both, but I can't deny I'm rooting for ODeezus, who with a win will join his brother Game of Jones as league champions. 
+
+Till next year!
+COMMISH
+
+
+2021 season
+
+Hello Friends, 
+
+Hope you're excited to embark on another legendary season of fantasy football!
+
+I know the plan for some time has been to go to Vegas, but with planning weddings, honeymoons, moving across the country and starting a new job...I simply don't have it in me to plan a trip like this. 
+
+I'd be happy to nominate a Vegas Draft Czar, if one of you wanted to raise your hand to make that happen.  But in case none of you do, we'll likely be picking the "old fashioned" way...over the internet, in a yahoo draft room. 
+
+Before I go and set the date of the draft, I wanted to:
+1. Have you each confirm you're interested in running it back - if not, we'll likely make the league smaller rather than find replacements.  
+2. Give one of you glorious bastards a chance at taking on the mantle of Vegas Draft Czar - I'd be willing to guarantee a top 3 pick to the person who successfully gets that done. 
+
+If no Vegas, then we're looking at a night during the last two weeks of August for the online draft. 
+
+Commish
+
+Fantasy Familia, 
+
+We're 1 day away from our draft.  Unfortunately we won't be sitting in Raiders stadium, or ogling a "pick girl" in a vegas hotel room, or even shooting paintball guns/doing pushups in a bedstuy backyard. 
+
+Hopefully the world gets its act together next year so we can get the group together again!
+
+But in the meantime, we'll have to go "old school" and simply do our draft online, vitually.  
+
+As you all know, I need your money lol.  Pay outs are: $50 for high score each week, $150 for 3rd place finish, $300 for 2nd place finish, $1000 for our champion.  
+
+With that, I'll need each of you to Venmo me $150.  Ideally by tomorrow's draft time.  But before the start of the season at the latest.  If you need to send me a check (lol) you can send it to: 1346 Alabama Street, Apt B, San Francisco, CA, 94110.
+
+See you tomorrow and I'll be drafting Mac Jones with the 1st pick of the draft so adjust your big boards accordingly. 
+
+Commish
+
+
+Hello gentleman 
+
+I just updated our waiver budget to 1000 - let the good times roll!  I think with the higher budget, people will be more inclined to use some as a trade sweetener. 
+
+Also, the playoffs will run week 14, 15, 16....leaving week 17/18 when teams are resting players outside the playoffs.  
+
+Well drafted Timmy with the A rating.  And LOL at DeMolina for the projected 0-14 record. 
+
+Commish
+
+
+
+
+
+
+HELLO!
+
+Now that we’re nearly a 1/3 of the way through our fantasy season, I felt this was the proper time for the triumphant return of the Commish write up!
+
+I swear this has nothing to do with my squad, despite 0 quality RBs running roughshod over the league. 
+
+Let's look at the contenders, the teams in the mix, and then of course, the bottom dwellers…
+
+THE CONTENDERS
+Game of Jones - 4-0
+Aceboogie - 3-1
+Laces Out - 3-1
+Wattmewhipp - 3-1
+Hoodiecru - 3-1
+Return of the Mack - 3-1
+
+This is a solid group of teams and some familiar faces at the top of the standings.  
+
+Leading the pack is Game of Jones - their gamble on pairing mahomes (2nd Round) with Hill doesn’t really feel like much of a gamble anymore.  On top of that pairing, hitting on Kupp and Hollywood Brown, make this team a formidable threat every week…someone will go off…and when they do there's not much that can be done to stop them.  With that said, the biggest weakness is the lack of running backs, and a penchant for picking up and dropping potential breakout starters (see Patterson, Hubbard, Pollard). 
+
+We have 5 other teams sitting pretty at 3-1, making up the final 6 if the playoffs were to start today.  
+
+Aceboogie has put together a strong, despite CAR heavy team, but what else is new.  The emergence of Darnold as a legitimate redzone threat was likely not on any of your football bingo cards this year. 
+
+Laces Out once again finds themselves at the top of the standings, year after year I write that sentence, but they’ve earned it.  Pretty dominant run game led by Brady, that would equal success in the real world, will it in fantasy??  Either way the big congrats isn’t for fantasy, but for their wedding this weekend!!  Lets GOOOOO
+
+WattmeWhip is off to a fast start despite losing Dobbins almost immediately upon drafting him…he’s made up for it with some otherworldly and unexpected performance from the aforementioned Corarelle Patterson, who despite fantasy potential for the last 8 years, seems to finally be cashing in.  Again, the biggest congrats isn’t fantasy related, but sobriety related - they have recently celebrated 2 years clean and sober - a major accomplishment!!!
+
+HoodieCru - despite taking Barkley with the first pick overall (not as bad now that CMC is again on the medical table) they have built a team of studs centered around my boy Dak Prescott - the best QB in the league, possibly in history!
+
+Return of the Mack - once again, we have return of the mack putting up wins, despite what on paper looks to be a relatively subpar team!  Starting two players from PIT (Claypool/Harris) is a bold move considering their QB is about 90 years old and plays as if he’s 105.  
+
+IN THE MIX
+ODeezus - some big wins, but with some tough losses along the way.  DK, Adams, and Josh Allen make up a formidable trio that will be hard to beat.  What they need is for one of their 100 RB stashes to make some waves. 
+
+Hop and Lock - as their name suggests, they go as their top two WRs go.  With that said, having Ekeler, Chase, and not to mention Jacobs who is on the mend, playing strong as the season progresses will launch this squad directly into the playoff hunt. 
+
+Sack Fumblers - another 27 transactions to lead the league, yet no trades…I feel like something is brewing behind the scenes.  You can’t judge this team this early as it will inevitably change considerably en route to the playoffs.  Yea, I know I owe you a ring, its’ coming (been saying that for 2 years). 
+
+LeVeons Career - well looks like getting lost in Brazil for two years wipes out your fantasy skills.  On the short list for being booted next year, but gosh I want to hear more debauchery stories. 
+
+BOTTOM DWELLERS
+Drinking Fortes - man... things were looking good after the draft, then again after week 1 when they put up 191 points winning the weekly prize.  But all good things seem to come to an end, and after 3 straight losses, they will once again be climbing uphill in the snow, carrying a 100lb bag, on their way to likely missing the playoffs. 
+
+Knickerbockers/Nastiest Sack/Home Bologna 
+What can be said about these teams that hasn’t already been said 100s of times over the years…going to be tough digging out of an 0-4 hole in this league…essentially they’d need to win out or come close - and that doesn’t seem feasible.  
+
+Till next time suckers!
+COMMISH
+
+PLAYOFFS BABY
+
+As expected, the ODonnell Brothers each secured a bye last week. 
+
+This week, they're going up against two former champions. 
+
+Of the 4 teams still alive, 3 have won a championship....Will we have our first ever 2x champ....or will ODeezus break through for their first chip?
+
+Stay tuned for some exciting games this weekend, as always Go Cowboys!
+
+COMMISH
+
+
+
+GLORY GLORY
+
+ALL IS RIGHT IN THE WORLD AFTER ALL!
+
+YOUR COMMISSIONER HAS WON, DEFEATING HIS FIRST EVER RIVAL, ODEEZUS...IN A BARN BURNING CHAMPIONSHIP THAT RESTED ON THE LEG OF MIAMI KICKER - JASON SANDERS.  
+
+OH HOW SWEET IT IS.  
+
+GETTING FITTED FOR MY SECOND RING, NBD. 
+
+~COMMISH
+
+
+2022 season
+
+
+
+Hello Gentlemen!
+
+Been a bit behind this season but thought we'd better get started if we plan on keeping it alive for what will be our 8TH SEASON!
+
+Now...I'm not going to lie...despite winning last year, I was quite disappointed in a number of teams/owners who bailed mid-season, didn't draft or adjust (looking at you Mikey Bogg), or who failed to send me league fees (meaning I lost money despite winning...).
+
+Maybe we're all not into this anymore?
+
+Maybe we don't want to pay $150 for the season (weekly + end of year payouts)?
+
+Maybe you keep finishing the season under .500 and just can't cut it?
+
+I tentatively scheduled our online draft for Thursday September 1st at 6pm EST. Can easily move and adjust. 
+
+But before we get into that.  I need EACH OF YOU to:
+1. Confirm you're interested
+2. If you are interested - should we scale back league fees to $100, and remove the weekly high score bonus
+
+If I don't hear from you by the end of next week, I'll reach out once via text.  Beyond that you are out. 
+
+Really want to keep this going, but only if we have a committed group.  Of course, if 8 of us are down, or 10 of us, etc. then we'll scale back the number of teams in the league and keep it moving. 
+
+Love you, Miss you
+COMMISH
+
+
+Alright, this looks like our league. 
+
+11 of us have confirmed and committed (we lost the Miles brothers and Jimbo). 
+
+11 team league means - we each have 1 bye week, and play 2 teams twice...Not exactly the cleanest solution, but it's what we're working with. 
+
+Of course, if you know someone who would be committed / solid addition to the league, going to 12 teams would be better than staying put at 11.  Let me know who it is, why we should add them, and their email address and I'll take it from there. 
+
+Decided to cut out the 50 weekly bonus, just too much of a hassle.  League will be $100 per person - with 11 of us, that would leave $1000 to the winner, and $100 (money back) to 2nd place.  If we find the 12th, we'll do a $1000/$200 split for the championship. Payment will be due on draft day via venmo/applepay/etc - no exceptions this year...  
+
+I still have Thursday Sept 1, 6pm est as the day and time of the draft.  Please let me know if that works for you.  I'll be sending out a zoom invite as well so we can see each other as we draft. 
+
+Despite losing teams, I'm deciding to stick with our existing roster size.  Doing so will allow us more to play with in free agency, and will help limit teams hoarding players on their bench. 
+
+Started my research, getting excited,on track for my 3rd CHIP...
+
+COMMISH
+
+
+Alright gentlemen, excited to introduce another new team - Feeling Good - led by owner and boy wonder James Hogan!
+
+The Miles brothers are also still considering whether to call it quits or run it back once more to come in last place.
+
+TBD - looks like we might be back to 14 teams (possibly 15), and if thats the case...maybe we go for 16???? Which in my opinion is insane, but gets us closer to my dream league of 32 fantasy owners for 32 NFL teams lol...
+
+We'll see - money and payouts will adjust accordingly. 
+
+One GOOD thing is - everyone seems to be motivated and ready for another great season.  Thinking the kick in the ass is what this league needed to take things to the next level. 
+
+More details to come. 
+
+COMMISH
+
+
+Alright Gentlemen!
+
+We're 8 days out from the draft.  Will be taking place next Thursday the 1st at 6pm EST (3pm for us west coasters). 
+
+I have sent an additional calendar invite from my work email with a Zoom link.  While not together in person (Vegas still on my radar for one of these years..) we can at least talk some trash virtually. 
+
+Not necessary to join virtually, but it is necessary to be drafting live which can easily be done via your computer (obviously), or the Yahoo Fantasy App (if you're on the go).
+
+We have 14 people in the league - Adding 2 (Evan Stephens and James Hogan) and losing 2 (Tim Miles and Jim Williamson).  Sorry to see them go, but we have some good additions who'll help keep the league alive.  PJ Miles - you're championship ring from a few years ago is ACTUALLY ORDERED AND BEING SENT TO YOU AS WE SPEAK)
+
+I'll be fitting my SECOND championship ring now, hopefully will arrive in time for our draft so I can show off my two-time-winner bling. 
+
+Going to cut back the entry fee this year to $100, down from $150.  Don't feel like dealing with weekly payouts.  Payment is expected on draft day via venmo.  End of year payout will be simple:
+- Champion will receive $1000
+- Runner up will receive $400
+
+The only "rule" change being made this year is that 8 teams will make the playoffs (out of our 14 teams), instead of 6 teams.  I'm hoping that by increasing the number of teams that can "be in the hunt" it will cut back on end of year "tanking/not caring"
+
+Please reach out with any questions.  
+
+Please let me know if the draft time doesn't work for you. 
+
+Please direct any complaints to our Player Association President - Mike O'Donnell
+
+Get your research locked in!
+
+COMMISH
+
+
+Week away from the draft, 
+
+Had a great recommendation to make things even more interesting this year. 
+
+I'm going to use a draft order generator and have the draft results sent out TODAY. 
+
+That way we'll know with a weeks notice our drafting position, making for a more strategic draft day experience. 
+
+IF YOU ARE NOT OK WITH THIS, LET ME KNOW. 
+
+If I don't hear from anyone, draft order results will be auto-emailed from the tool by 5pm EST. 
+
+COMMISH
+
+
+Fantasy Football Week 1 Recap
+
+Well Well Well - like a broken record, every year starts with the same sentence...
+
+Fantasy Football is Pain...
+
+We saw a number of players go down with injury (Dak..oh Dak!!), players putting up duds (Henry, Lamb, Kamara), and some breakouts (Duverney??? Wasn't he drafted by mistake??). 
+
+After week 1, naturally the league is split down the middle (1-0, 0-1), but a few teams jumped out as serious contenders
+
+EberflusMyDitka, Easy E-Z's and and ThrowinBombsBanginMoms all charged out of the gates with scores over 150 (typically the magic number for a win).  
+
+On the other side of the spectrum, our top toilet contenders are NajmaHill, Feeling Good and the Sack Fumblers. 
+
+No other major breakout players this week, but the season is early, and they are coming.  Who will have the FAAB dollars when they do break out?  Dropping 200+ on the likes of Burkhead and Wilson Jr might sound good now, but could come back to haunt some overly aggressive owners. 
+
+More to come next week. 
+
+COMMISH
+
+
+Oh Doggy!  The season is starting to pick up!
+
+Looks like preseason in the NFL is now played in September so it's good to finally have some solid games, and good performances from our players. 
+
+Big news coming out of last week is The Sack Fumblers dropping a cool $603 in FAAB money on Kenneth Walker III, can't tell the other bids, but I know I was pretty confident in my $300 bid...ce la vie!
+
+As for the rest of the league, the cream is starting to rise.  WattmeWhip, with the most points scored in the league is starting to put together some wins, while ODEEZUS and their flawed roster are no longer undefeated.  
+
+Can't tell if Zero RB was the move this year...or maybe it was Zero WR...all that seems to matter these days is targets.  
+
+Fantasy is fun, Fantasy is dumb. 
+
+COMMISH 
+
+P.S. Meg and I are expecting TWIN girls in April, hence my delay in updates...  So there's that lol
+
+P.P.S HOW BOUT THEM COWBOYS!
+
+
+GENTLEMEN!
+
+2 Weeks left in the regular season.  No surprise that seeding and entry into the playoffs is coming down to the wire. 
+
+4 teams have clinched (out of 8).  Still some jockeying for position but the teams are:
+
+Malort - No surprise here with Mahomes, Diggs, Pierce and Andrews - solid squad all around.  Couple shots in the chamber... waiting for Waller to get back and OBJ to make his decision.  Could add a couple legit weapons for the playoff push. Going for their 2nd Chip in 3 years. 
+
+ODEEZUS - The season has taught us that if you have Kelce, you just might win every week.  Despite a relatively flawed roster, they do just enough to then be carried by a 4TD Kelce game.  Can't deny the perfect timing pickup of Justin Fields who casually dropped 86 points over two weeks...The fear of him getting smacked around too much while running might have come to fruition as it sounds like his shoulder is no longer a part of his body.  Let's see if oldman Brady can pick up the pieces. After losing in the finals the last two years, will they finally make it over the hump?
+
+The Sack Fumblers - Strongest team on paper, they are absolutely stacked...Deebo, King Henry, Scary Terry, Jamal "12 TD breakout" Williams and of course their bold bid for Kenneth Walker...And those are just the stars...Every position on this team is a plus, so it will come down to matchups and injury luck...but if those shakeout the right way, The Sack Fumblers could be on their way to their second chip. 
+
+EberflusMyDikta - Solid team with no true standout, but anything is possible when deploying DK, Kamara and AJ Brown.  Herbert's down year stunted this team a bit but savvy pickups and highly active waiver wiring has kept this team firmly in the hunt. They won the chip way back in 2016...can they make it back to the mountain top?
+
+As for the remaining four teams in the playoffs...here are a few matchups to keep an eye on this week.  Teams 5 through 12 are separated by 2 games, and teams 6 through 12 are separated by only 1 game!  That's the definition of close....These are some high stakes matchups that are happening this week, winners of these games will be looking good, losers will have to fight and claw and hope for the best in next week's regular season finale. 
+
+Games of Jones (6) vs. Throwin Bombz Banging Momz (12)
+- With Game of Jones high points for, they need wins at this stage.  Their big 3 of Jefferson, Chubb, Jacobs can go off each and every week...will there ever be a week when they go off at the same time?  Having already won 2 Chips, Game of Jones is used to the spotlight and lives for the pressure!
+- Throwin Bombz have had an up and down season.  Needs big weeks out of Jones, Swift and Kittle the remainder of the way to make some noise, get in the playoffs, and see what happens. 
+
+Feeling Good (9) vs. WattmeWhip (7)
+- Feeling Good, in their first season in the league has done just enough to be sitting at 9...one spot out of playoffs.. But with Higgins, Cook, and the incredible Amon Ra St Brown, they have just enough to make a run. 
+- WattmeWhip lost Cooper Kupp, and when you lose someone at that level it's hard to maintain.  With that said, they've pulled together enough wins led by Cooper and Stevenson to be in the hunt at this late stage. 
+
+Naj Mahill (5) vs. HoodieCru (8)
+- Naj Mahill has dealt with some relatively disappointing seasons from Sutton, Aiyuk, Sanders, Harris...but as their names suggests, they employe Tyreek Hill who could be the best receiver (or atleast fantasy reciever) in the world.  He can put up 30+ any given week, and when he does, Naj Mahill typically take home the W. 
+- HoodieCru has great WR's (Adams, Waddle), a premier RB (McCaffrey) and two intriguing QB options (Burrow/Watson), they are built for the playoffs, and sitting in the 8 spot they control their own destiny!
+
+That's all for this week, GodSpeed and go USA!
+
+COMMISH
+
+
+
+Gentlemen!
+
+Here we are, can’t believe how fast time flies, but we’re now officially in the last week of our regular season. 
+
+Some clutch performance last week have left us with 6 teams who have clinched a playoff spot (we’ll be assessing these squads in the lead up to next week).  Playoff seeding is on the line, but as you’ll, see this group is a “whose who” of past league glory:
+
+Malort (Previous champion)
+ODEEZUS (2x runner up/loser)
+EberflusMyDitka (Previous champion)
+The Sack Fumblers (Previous champion)
+Games of Jones (2x champion)
+The Naj MaHill
+
+Two playoff spots remain, and the next two teams control their own destiny and will be IN with a win. 
+
+HoodieCru (previous champion) is up against Knickerbockers this week.  Don’t let the record fool you HoodieCru, despite Knickerbockers being in 13th place, they’ve scored the 9th more points…teams have big weeks against them, so you and your squad need to bring your A-Game. 
+
+Feeling Good (first year in the league) has had some luck this year…having the 12th fewest points scored against them this season.  Despite playing 2nd place ODEEZUS, luck might be on their side again as the Bears and Justin Fields are one of 6 teams that inexplicably have a bye in Week 14.  Feeling good will need to make some moves to fill their own bye week gaps, but a win is very possible.
+
+The next 4 teams are sitting at 5-8, however given their points scored, the reality is that there are only two teams with a realistic chance of jumping into the playoffs:
+
+WATTmeWhipWATTmeJJ and Easy E-Z’s…
+
+As luck would have it…they are PLAYING EACH OTHER this week, in what is ultimately a playoff game.  One team will move to 6-8 and will need at least one of the aforementioned teams to lose, the other will fall to 5-9 and be out.  On paper, Easy E’Z’s seem to be the favorite, deploying Josh Allen, Evans, and the incomparable Ja’Marr Chase. One has to wonder if they’d be in this position at all had Chase not gotten hurt earlier this season...
+
+Till next week!
+COMMISH
+
+
+Gentlemen!
+
+And just like that…the playoffs….are….BACK!
+
+What a season, and HUGE thanks to everyone in the league who kept it competitive till the very end.  
+
+We started this thing 8 years ago as a bunch of undesirables living in a shared house in Brooklyn living off a diet of salami and cocaine and look at us now!…A bunch of undesirables living across the country (world at times), with houses and babies and grownup jobs and wives and bills!  Part of me pines for the old days, but a larger part is excited to see where we each take our lives, and this league over the next 8 years. 
+
+We’ve had teams come and go, but really proud of this group of guys for coming together (and sticking together) through it all.  Love this group, and regardless of how the playoffs shake out, I’m proud to be your COMMISH!
+
+Now that the sappy shit is out of the way…lets get to the matchups this week!
+
+Malort (1) vs. Feeling Good (8)
+
+Malort only had 3 losses this year, but one of them came to Feeling good in a Week 4 romp 159-115…
+
+That week Feeling Good had Kyler Murray, Tee Higgins and Zach Ertz all go off for major weeks…not to mention a 17 point effort from their Kicker…  Things don’t look as rosy this time around with Murray feared to have torn his ACL, Ertz on the IR and Higgins being in then out then in then out of games without so much as a target.  
+
+Since that loss, Malort only lost twice more through the rest of the season.  Unfortunately Pierce seems to be out both this week and next so big games will be needed from Mahomes, Diggs and Pollard.  It’s very possible, but the number 1 seed is only predicted for a slight win (once they backfill Pierce).  
+
+Anything can happen once you make the playoffs, can Feeling Good pull the upset in their first season?  Will Malort squeak by this week on their run for their second chip?  
+
+Only time will tell. 
+
+ODEEZUS (2) vs. HOODIECRU (7)
+
+Another tough matchup for one of our top seeds.  ODEEZUS is currently projected to lose 148-137 to HOODIECRU….With that said, if you play fantasy, which you all do, you know that projections could be VERY misleading.  
+
+Back in Week 7 when these teams last got together, HOODIECRU walked away with a 142-120 win over ODEEZUS on the back of Joe Burrows best game of the season (41 points), despite a goose egg from James Robinson. 
+
+While ODEEZUS left points on the bench that week that could have brought them to victory, their upgrade from Jared Goff (3.52 points that week) to Justin Fields in this week's playoff matchup can’t go unnoticed.  
+
+Can ODEEZUS find a way to get on a run after losing in the last two championships (90s Bills vibes)?  Can HOODIECRU's general level of incredible luck and timing over the last 8 years continue with an upset of the number 2 seed?
+
+Only time will tell..
+
+The Sack Fumblers (3) vs. The Naj MaHill (6)
+
+Back in Week 3 when these teams last faced off, The Sack Fumblers absolutely stomped The Naj MaHill 155-75 in what was NajMahill’s worst week of the season.  
+
+Nothing went right that week, but squads are different now in Week 15.  The Sack Fumblers will likely be without Deebo and will need to have Walker III return with a fury.  They have plenty of depth options on their bench, but guys on the bench don’t count towards the score.  Some smart plays, and good fortune will be required to get the most out of this stacked team.  
+
+For Naj Mahill, as their name suggests they need big weeks from Hill and Harris, and need to hope and pray that Engram can repeat even half of his performance from last week.  With Deebo down, their play of Aiyuk looks to be a strong and stinging blow to The Sack Fumblers in this matchup. 
+
+The Sack Fumblers have been to the mountaintop, so they know what it takes.  And ever since The Naj MaHill entered the league they have been a force, despite never bringing home the chip.  Will this year be their first?  Will The Sack Fumblers get the elusive 2nd chip??
+
+Only time will tell…
+
+EberflusMyDitka (4) vs. Game of Jones (5)
+
+The rubber match…in one of the biggest rivalries in league history…
+
+Going all the way back to the semi-final matchup in 2k18, Eberflus thought they cruised to a narrow victory over Games of Jones…only to have a next day stat correction vault Games of Jones to the championship game by less than a point.  They went on to win their first championship that season. 
+
+This year, given the new scheduling format where we each play 1 team twice, these two have already faced off 2 times, bookending the season in Week 1 and Week 14. 
+
+Week 1 went to EberflusMyDitka 165-123 thanks to massive performances from Pittman and Brown.  Game of Jones was in dire straits starting the season seeing Dak put up only 5 points in the loss AND being knocked out of the game (and next few weeks). 
+
+Fast forward to Week 14 and Game of Jones got their revenge, knocking off Eberflus 148-127, however Eberflus had both Pittman and Kamara on bye.  
+
+This week will determine the winner of the season series in what is projected to be the highest scoring game of the week.  As it stands, Games of Jones is predicted to have 149.25 points, versus Eberflus’ 148.77 points…a margin of victory of only .48 points (or in fantasy terms, a RB catch that loses 5 yards…)...giving me 2k18 flashbacks...
+
+Can Eberflus get their second title after winning way back in 2k16?  Will Game of Jones repeat as champions for their 3rd Chip in 8 years?  
+
+Only time will tell….
+
+Love ya’ll, good luck, god speed, and Go Cowboys!
+
+COMMISH
+
+
+Will keep this short and sweet.  MAJOR upsets across the league in round 1 of the playoffs. 
+
+Top seed...out
+2nd seed...out
+4th seed...out
+
+I don't fuck around when I say its all about making the playoffs, because anything can happen. 
+
+For this week:
+
+We have Game of Jones vs. HOODIECRU.  Back in Week 4 Game of Jones took home the win 138-118. HOODIECRU has 4, yes 4, Jets playing in the semi-final, but with Burrow/Adams/Waddle/McCaffrey he doesn't have TOO much to worry about.  Game of Jones will go as far as Jefferson and Jacobs take him.  
+
+The other matchup is Sack Fumblers vs. Feeling Good.  Feeling Good knocked off the top seed, and after taking a deeper look at this team, it's clear why.  Smith, Higgins, Cook, St Brown - that's a formidable core.  He has to hope the Vikings go down 33 points by halftime again to get THAT Kirk Cousins.  Sack Fumblers, looking to avoid the upset and make their way back to the Championship... Henry, Walker, McLaurin might not go too far in the actual NFL playoffs, but could be the wave Sack Fumblers rides to the gloryland. Worth noting that back in Week 5 Sack Fumblers SQUEAKED by Feeling Good with a 153.13 to 152.55 victory (margin of .58 points)!
+
+Will try and get a championship preview out during the holidays, but for now, this Commish has to get his team ready for the stretch run.  
+
+In the immortal words of Kobe Bryant: “jobs not finished”
+
+Gentleman!
+
+Not at all the ending any of us were expecting to the fantasy season with what happened Monday night. 
+
+Most importantly, gotta hope and pray Damar Hamlin recovers, regardless of whether or not he ever plays football again. 
+
+For the Championship, James (Feeling Good) and I have been in communication and our plan is to follow what the NFL decides to do. 
+
+If they end up playing the game, we'll be back on, and will await final stats from Higgins.  If the game is canceled, we'll manually score him at his average points scored this season.  In that case, I'd come out on top, but we'll worry about that later.
+
+Regardless, we're considering donating our collective winnings to his charity - Chasing M's Foundation, and suggest anyone who is feeling up for it, donate what they can.
+
+There will be a time for celebrating the year and the championship, but that time isn't now...
+
+Life is fragile, love y'all, be good. 
+
+COMMISH
+
+
+Well that’s all she wrote!
+
+As I’m sure you’ve guessed…yours truly, is once again…CHAMPION!
+
+I know how you must be feeling - “how does he keep winning?”, “how do I model my strategy after his?”, “should I change my team name and rebrand next year?”
+
+Well my friends, the answers are unknown. 
+
+Games of Jones started the season 4-6 with a handful of blowout losses, a couple close calls, and some devastating injury luck….all to go on a 4 game winning streak to end the season 8-6 as the 5th seed (of 8) in the playoffs. 
+
+Who got them there?
+
+No doubt Justin Jefferson was the best player in fantasy this season - and rightfully so, he led Game of Jones to victory time and time again. Despite a terrifying and horrible performance in the championship, Jefferson still averaged 21 points per game this season finishing as the 6th highest scoring player, and highest scoring WR. He was Game of Jones' 1st round pick (pick 6!)
+
+Chubb had a down back half of the season with the addition of Watson in the Browns offense, but still manager to churn out yards at an impressive pace.  He carried the team early on as they dealt with injuries. He was Game of Jones 2nd round pick and the 23rd overall selection. 
+
+Games of Jones’ 3rd round pick was a bust - Elijah Mitchell….he is now on this owners ‘Do not draft’ list
+
+In the fourth round Games of Jones selected Dalton Shultz…even now looking back that was a bit of a reach…he was hurt or barely used the majority of the season…but when the rubber met the road, he put up a MONSTROUS 24 point performance in the championship game.  He will now be referred to as “Championship Shultzy” in the commissioners household. 
+
+The 5th round brought the STEAL of the draft - with Game of Jones picking up Josh Jacobs who despite tough reports coming out of training camp finished with a whopping 1653 yards, 12 td, 53 rec, and 400 rec yards….making him the 10th ranked player overall and 3rd ranked RB… As I’ve always said, championships are won in the 5th round!
+
+In the 6th, Game of Jones was openly mocked for selecting Buf Def…but having the 37th ranked “player” in fantasy, and the 6th ranked def, provided a floor and piece of mind that only prior fantasy champions can understand. 
+
+In the 7th, Game of Jones went “homer” and picked Dak - hurt, some rough games, wild interceptions and pick 6’s, but again provided a stable enough floor to let the skill players do their thing on this squad. 
+
+Round 8-14 consisted of picks that WERE NOT on the championship roster.  Gotta makes moves to make moves…
+
+Biggest pick up has to be D’Onta Foreman who had some monster weeks.  JK Dobbins stashed on IR brought some solid play to end the season.  And last and certainly not least, playoff MVP…picked up earlier in the season, then dropped, then picked up AND STARTED for the semi-final (17 points) and championship (20 points)…was the one and only Richie James…
+
+I know I know - it's clear from this write up that fantasy is entirely luck, mostly pain, and a gigantic waste of time.  But boy do I love winning!
+
+2nd place funds being sent to Feeling Good who had a great run and remarkable first year in the league.  
+
+1st place funds staying with ya boy.  
+
+TBD what gets donated lol…may just make a deposit to the Human Fund (Seinfeld reference) to help prepare for OD Baby Girl in March. 
+
+Here is a shitty picture of the ring..  It’s my 3rd....Whatever...no big deal...  
+
+All three are dangling on a chain in my room, waiting for the moment we finally have a draft in Vegas so I can rock it and rub it in all of your faces. 
+
+Till next year!
+
+COMMISH
+
+
+2023 season
+
+GENTLEMEN!
+
+We're now 64 days away from the NFL season kicking off on Thursday September 7th. 
+
+With that, I thought it was time to kick things off for our 9th season as a league (or atleast 9th season with me as your COMMISH). 
+
+I went ahead and set our Virtual Draft date for Thursday August 31, at 8pm EST.  I'll send a calendar invite shortly to mark it down for all of you. 
+
+Going to assume you're all in for another season, but if you're not up for it this year, let me know ASAP so I can start working the friend waiver wire. 
+
+Last year we lowered the buy in to $100, cutting out the weekly high score $50 payout.  I'm fine going forward with that approach again this year. I'm also open to bringing back the $50 weekly, upping the buy-in back to $150.  Hell, I'm up for increasing the buy-in as well ($200, $250..etc) now that we're not all 25 year olds living on salami and cocaine.  Let me know your preference, I'll take an informal poll and follow up with the group with what we decide.  I vote for option D
+* Option A - $100 Buy-in = $1000 1st place, $400 2nd place
+* Option B - $150 Buy-in = $1000 1st place, $400 2nd place, $50 weekly high score bonus
+* Option C - $200 Buy-in = $1500 1st place, $400 2nd place, $200 3rd place, $50 weekly high score bonus
+* Option D - $250 Buy-in = $2000 1st place, $600 2nd place, $200 3rd place, $50 weekly high score bonus
+Still early, but next season (2024) will be our 10th as a league, and I'd love nothing more than to book a suite in Vegas for a few nights, do our draft, and have an old fashioned roast with all of you. Let's keep that in mind as we keep momentum going this year. 
+
+Oh, how can I forget.  I'm a repeat champion who has won 3 of the last 5 championships!!  Who is coming for the crown??
+
+Good luck, and I'm looking forward to another season. 
+
+COMMISH
+
+Some history: 
+League Year	Winner	2nd Place	3rd Place
+FF2k23			
+FF2k22	Game of Jones (MOD)	Feeling Good (James Hogan)	HoodieCru (Billy)
+FF2K21	Game of Jones (MOD)	ODEEZUS (Mike OD)	HoodieCru (Billy)
+FF2K20	Nastiest Sack (PJ Miles)	ODEEZUS (Mike OD)	Le'Veons Career (Mikey B)
+FF2K19	The Sack Fumblers (Big Ben)	Games of Jones (MOD)	ODEEZUS (Mike OD)
+FF2K18	Game of Jones (MOD)	theACEboogie (Nick D)	Cutlets Bottom (Marko)
+FF2K17	Laces Out (Nick F)	WattmeWhipWattmeJJ (PJ O)	Home Balogna (Jim W)
+FF2K16	Ditkas Revenge (Marko)	Laces Out (Nick F)	Dez and Confused (MOD)
+FF2K15	HoodieCru (Billy)	theACEboogie (Nick D)	OBriensDabbinonEm (PJ O)
+
+
+
+GENTLEMEN, 
+
+About 4 weeks out from Draft Day (Thursday, 8/31).  The only person I have yet to hear from in any capacity is Mikey B, so I'm beginning the process of finding a 14th team to take his place (unless I hear back soon!). 
+
+Votes have been cast, and we'll be going with:
+* Option D - $250 Buy-in = $2000 1st place, $600 2nd place, $200 3rd place, $50 weekly high score bonus
+Feeling good about that pricing model, as a back to back champ, I wish this has been in place the last two seasons!
+
+If you're one of the folks that wanted lower buy-in and decide you don't want to move forward at the $250 reach out directly with your concerns and we'll discuss. 
+
+Payment due on draft day.  Best way to pay: Venmo - @matt-odonnell-1 
+
+Hope you're starting your research!
+
+COMMISH
+
+
+GENTLEMEN!
+
+Quick Update:
+
+Mikey B has gone completely silent, so the decision has been made to boot him from the league for this season.  As an early member I'll be happy to welcome him back with open arms in the future. 
+
+Our very own Big Ben has decided to take a sabbatical from fantasy this season.  Assuming he'll be back next year. 
+
+So the question is:  
+
+Do we roll with 12 teams this season instead of 14?  Would require some tweaks to the schedule and possibly bench depth. payouts will adjust slightly. 
+
+Or do we find 2 more to keep us at 14?  I wasn't expecting much from MIkey, so I went ahead and found someone interested in joining.  Bringing him in would leave us at 13, so would need to add 1 more person.  Does anyone have leads on a 14th team?  Ideally someone I know..
+
+Let me know your thoughts - almost 3 weeks out from draft day!
+
+COMMISH
+
+
+Alright Alright Alright!!!
+
+Confirming the new roster of teams for this season as we say so long to Mikey B and Big Ben. 
+
+Welcome Spates and Garrett! May the fantasy gods be in your favor!  Yahoo invites coming to the both of you shortly.  Draft is Thursday 8/31 at 5pm PST.  $250 buyin, payment due draft day! Venmo - @matt-odonnell-1 
+
+Matt
+
+Team Owner
+Rohit
+Billy
+Evan S
+Hugo
+James H
+Marko
+Matt OD
+Mike OD
+Nick D
+Nick F
+PJ M
+PJ O
+Garrett
+Spates
+
+The order is in.  Feast your eyes!
+1. WATTmeWhipWATTmeJJ
+2. HOODIECRU
+3. Eazy E-Z's
+4. Laces Out
+5. Garrett's Groovy Team
+6. Joe Buck Yourself
+7. EberflusMyDitka
+8. Game of Jones
+9. ODEEZUS
+10. Malort
+11. The Naj MaHill
+12. Feeling Good
+13. Knickerbockers
+14. theACEBoog1e
+
+
+Solid Draft Gentlemen!
+
+Yahoo analysis is out now, not surprised to see myself at the top. 
+
+I'll have a breakdown of drafts/teams as I see it before things kick off next Thursday. 
+
+Public shame for the following teams who have yet to pay dues!
+Rohit
+Evan
+Hugo
+Nick D
+PJ M
+
+COMMISH
+
+
+ALRIGHT GENTLEMEN
+
+Are we ready for Week 1??
+
+Before we get into my quick notes on teams/drafts - worth mentioning I'm still waiting on payment from: Evan, Hugo, Nick D, PJ M - don't make me text you!
+
+Real quick for those that are new - 8 teams make playoffs which start Week 15!
+
+Game jones
+* Stack of burrow and Higgins
+* Ride Jacobs + Hill again to championships
+* High upside w. Javonte, Jeudy, toney, achane, Kincaid
+Watt
+* Fields, Jefferson, sf def could all be #1 
+* Gibbs + New York boys hall and waller will take this team from playoff contender to championship contender. 
+Knick
+* Lamar back with a vengeance, love stacking tucker for nearly all Bal scores
+* Solid overall - Pitts wild card
+Swifty (R)
+* Allen, kelce, deebo all can go for 40
+* Year 1 - rosters built in draft, but championships won on the wire
+EZ
+* Stud wr, with solid floor rb group
+* Rodgers of old will be a weapon
+
+Buck (R)
+* Ekeler slips, dak mvp season
+* Old guard wr/te have one more go?
+Malort (auto)
+* Full auto goes diggs, pollard, jones.  solid group with a few lottery tickets
+* Computer knows what it's doing, all things considered..
+2024
+* Ceedee, Barkley and Andrews poised for big years
+* Watson is a POS but he used to be pretty good at football.  
+
+AceBoogie
+* Hurts will dominate and Wilson could be wr1 
+* Taylor dropping in with a contender midseason would be huge (mccaffrey like)
+
+Feeling Good
+* Really strong start with a couple of studs in Amon-Ra and Bijan
+* Things slowed with a string of picks with middling floor and relatively low ceiling
+* Could Richardson be this year's Fields?  He’s got the legs, but from my research (playing madden with him as my QB) he can’t really throw..
+
+ODEEZUS
+* The classic punting on QB leaves him with Howell/Young, could there be a trade on the horizon?
+* Adams + Kupp bring 2 of the best WRs from last couple seasons, will age/roster/qb hold up all season?
+
+Laces Out
+* Solid RB/WR/TE/def core, bit surprised this group is rated as low as they are. 
+* Lots riding on Danny dimes for this giants fan and fantasy owner
+
+MyDitka
+* Chubb/Henry provides a high floor RB room with a couple handcuffs in Mitchell/Warren on the bench. 
+* Will olave/diontae/Lawrence take another leap this year?  Season depends on it. 
+
+HoodieCru
+* Death, taxes and hoodie cru picking qb in round 1.  Bigger surprise was 2 qbs in first 5 rounds…pretty big trade chip in either guy. 
+* Waddle/ridley/hockenson is a good core of pass catchers - can’t help but imagine chase or mcaffrey with this squad with that pick 1.02
+* Rookies in smith-njigba and Johnston and vets in OBJ/Lazard will make the difference for this team. 
+
+
+
+And just like that...after 7 looooong months....FOOTBALL....IS....BACK
+
+And like a broken record....2 picks...kelce...kuppp...in the top 9 picks in the draft...might be out....for an extended period of time...
+
+Fantasy is pain
+
+Good luck this weekend, Go Cowboys!
+
+COMMISH
+
+Well, week 1 is in the books!  What a week it was!
+
+Big headline is of course Rodgers going down after 4 plays and 1 pass.  I for one am excited for Zach Wilson 2.0… This leaves our week 1 high score winner (Easy E’s) without his primary starter.  Will he go with Goff (on his bench) or will he work the waiver?  They pulled out an easy win against Laces Out, who is lucky Danny Jones got out of MetLife alive against that dominating Cowboys Def (highest scoring player in week 1!)
+
+2nd highest scorer this week, our league runner up last season, Feeling Good, was hit with the injury bug already as well seeing JK Dobbins go down once again to start a season. Still, it was enough to pick up the win on Aceboogie who’s high scoring DEF (NY Jets) had a 3rd of the teams points…will need more from Hurts, Moore, Connor and McLaurin if they want to turn things around.  Gotta hope and pray the Wilson to Wilson jets connection gets in sync. 
+
+It Was Just A Massage (formerly Trump2024) picked up the win on the back of Aiyuk, who is looking like a beast and early season “best pick” award winner.  Was helped by Eberflus having two guys (Goedert + Sky Moore) combine for a whopping .40 points…
+
+Our back to back champion - Game of Jones - came out the gates squeaking by with a win - all thanks to their first round pick Tyreek Hill having the best offensive day of the young season.  Gotta hope Burrow and Higgins combine for more than 3.18 points going forward!  Hoodie cru's was looking good early with a pretty loaded team, but will need far more output from their running backs if they want any shot at the playoffs.  Herbert continues to collect dust on the bench despite being the 6th highest scoring QB in week 1.  
+
+Despite the autodraft team - Malort came out of week 1 with the win and possibly the strongest RB room in the league with Pollard, Jones, Montgomery.  For Knickerbockers, gotta believe Lamar will start putting up his usual numbers sooner rather than later, Etienne looked the part of a 1st/2nd round pick, and Pitts once again looked electric when they threw him the ball…why the Falcons aren’t throwing it to him every play is a mystery. 
+
+In his first foray in the league, Joe Buck Yourself took down league regular ODEEZUS.  Both teams need more from their guys to compete this season.  For Buck, Ekeler looked the part, and Allen/Hopkins looked decent in their matchup with Father Time.  ODEEZUS needs Kupp and his 20+ point games back ASAP or this could be a long season. 
+
+Despite losing Kelce, couldn’t help but expect more from Swiftly, the other new entrant in the league. Allen, Deebo, Walker all had mediocre days - will need more from that trio if Kelce stays on the mend.  Also…Kelce being linked to T Swift in real life??  Did this team speak that into existence??  WattmeWhip, perennial playoff team, got out to a great start and will be formidable this season.  
+
+Till next week, keep your eyes on the wire
+COMMISH
+
+
+Congrats to Swifty for the quick turnaround and Week 2 scoring win!
+
+Two weeks in and the NFL seems to be all over the place. 
+
+Top performing QBs entering week 3
+* Cousins (preseason rank 114)
+* Love (preseason rank 150)
+* Herbert (stuck on the bench)
+* Mahomes (makes sense)
+* Russel Wilson (preseason rank 131)
+* Tua (makes sense)
+* Mac Jones (preaseaon rank 167)
+
+Top QBs missing in action
+* Allen - QB 13
+* Jackson - QB 22
+* Fields - OB 16
+* Lawrence - QB 23
+* Burrow - QB 32 (VR rank 146) - Major source of Agita for the commish
+
+RBs gone missing
+* Chubb - Hurt, OVR Rank 116
+* Ekeler - Hurt, OVR Rank 92
+* Jacobs - OVR Rank 150 - Another major source of Agita for the commish
+* Ettiene - OVR 86
+* Hall - OVR 175
+* Mizon OVR 110
+* Gibbs - OVR 139
+* Najee - OVR 247 (woof)
+* Pierce - OVR 225
+* Mattison - OVR 162
+
+RBs out of nowhere
+* Kryen Williams - Preseason 115 - today rank 7 Overall
+* Brian Robinson - Preseason 84 - today rank 13 Overall
+* Mostert - Preseason 98, today rank 26 Overall - not to mention he’s the reason the commish fell to 1-1
+
+Surprise WR / Good!
+* Nacua, Evans, Collins, Shaheed, Reynolds, Atwell
+
+Surprise WR / Bad!
+* Chase, Brown, Waddle, Cooper, Godwin, Watson, Moore, Hopkins…
+
+TE garbage = only 6 TEs are averaging at least 10 points per game.  Of those 6, only 2 have actually scored more than 10 in both games.  Kelce on the mend will increase that number, but there is a severe lack of players
+
+DEF - the actual, number 1 scoring player in fantasy through 2 weeks is the dominating devastating diabolical Dallas Defense scoring a whopping 67.75 
+
+General moral of the story is this is a long season, don’t overreact to these early weeks, but don’t sit ideally by while others scoop up potential league winners,. 
+
+COMMISH
+
+
+Gonna keep it quick this week. 
+
+High score goes to Joe Buck Yourself - 2 of the 3 highscores so far this season belong to brand new league members!
+
+As for your COMMISH - had to drop the hammer (FAAB) on Achane after drafting and then dropping him 3 days before his 50+ point explosion...looking forward to starting him for a solid 4.6 fantasy points this week...
+
+Will do a deep dive next week (possibly the week after) on current standings a third of the way through the season. 
+
+COMMISH
+
+
+“Will do a deep dive next week (possibly the week after) on current standings a third of the way through the season. 
+
+COMMISH“
+
+Is the COMMISH OK?!?! Did anyone check for a pulse? Deep dive was week 4, possibly next week was week 5.  It’s onto week 6.  The PEOPLE look forward to the weekly news.  Give them what they want! 
+
+(I’m assuming COMMISH gives updates only when he wins, is that possible??)
+
+
+
+
+Ahhhh the new guy picked up on the COMMISH's time honored tradition of going silent when his team hits the dumpster…
+
+Well this week's write up won’t be about me! 
+I’m sure you’d love to hear about Burrow being terrible, finally getting benched and going off during the week, with the spread of points between him and his replacement being enough for the week's win. 
+
+I’m sure you’re dying to hear about how the commish dropped Achane right before his break out week, dropped 300 FAAB on him, kept him on the bench for an even bigger breakout week, before finally getting him in the starting lineup….all to then watch him miss the next 5 weeks (IR + bye week). 
+
+Don’t even get me started on Javonte Williams (29 points), Jerry Jeudy (37 points) and Tee Higgins (36) points averaging a whopping 5-7 points each per week falling far below even the most reasonable expectations..
+
+I’d hate to give you the satisfaction. 
+
+For now, let’s focus on the top tier of teams.  We’ll hit the next couple tiers in future installments. 
+
+Reminder - top 8 teams make the playoffs. 
+
+Tier 1
+Joe Buck Yourself (5-0)
+* Dominating wins this season, with 3 of the 5 over 140 points, and did just enough in their other 2 wins to pull out the W - a mark of a championships caliber squad
+* Keenan Allen has been a revelation.  Mostert, if he stays healthy, will continue to run all over the league, especially now without Achane taking his carries.  Hopkins rounding into form and Jakobi Meyers having a bit of a career revival now that he’s removed from the Mac Jones experience. 
+
+WattmeWhip (5-0)
+* Consistently great having scored over 133 points each week this season beating some of the top teams in the league.  Now that the schedule will get “easier” this could this team be making a run at the immortal undefeated season…
+* Can’t speak to too soon though with Jefferson hitting the IR, the vikings being terrible, him not having a contract…will he be back this year?  Might not matter if Fields keeps improving, Puka (clear pick up of the year) keeps producing alongside Kupp, and if Breece makes a return to the dominant back that he was last year..
+
+Joshin Swiftly (4-1)
+* Congrats on the high score last week!
+* Despite an ugly week 1 loss (that could be chalked up to Kelce missing the game) this team has been a juggernaut scoring over 160 points in 3 of the 4 wins.  Not to mention single handedly being responsible for Taylor Swift being on TV during games more than the players..
+* Just a solid group all around - Allen, Deebo, Walker, Kelce, Gabe Davis…hard to beat a team that has multiple guys that can go for 30+ in a given week.  
+
+Tier 2 (3-2)
+Easy EZ
+It Was Just a Massage
+ODEEZUS
+
+Tier 3
+4 times are sitting at 2-3 battling for what would be the final 2 playoff spots if the season ended today…
+
+Tier 4
+The bottom for, all 1-4 need to start making moves before it’s a wrap on the season…
+
+Till next time!
+
+
+Another week, another devastating defeat. 
+
+In Mexico for work offsite, so I will get to a proper write up next week..
+
+Congrats again to Joe Buck Yourself for the high score. 
+
+Tyreek Hill is on the block...but I need more than what I've been recently offered..
+
+COMMISH
+
+
+Feeling better this week after a convincing win.  Watch out league, from worst to first is in my sights!
+
+Congrats to Knickerbockers for the high score win with a whopping 187 point week, beating out ODEEZUS (167), Joshin Swiftly (160) and WATTmeWhip (152)!
+
+Half way through the season we have 3 teams vying for 1st overall seed, all 6-1 - Joshin Swiftly, Joe Buck Yourself, and WATTmeWhip. 
+
+2 teams standing firm at 4-3 are Knickerbockers and ODEEZUS. 
+
+Two HUGE matchups this week for playoff positioning between a couple 3-4 teams:
+
+(6) Laces out vs. (8) Malort
+- Couple "No QB" teams starting Sam Howell and Geno Smith 
+- Couple studs on each squad - McCaffrey and Diggs
+- Mixed with some solid performers having good seasons (Laces - Addison, Moore, Swift, Kittle) (Malort - Pollard, Montgomery). 
+- Question of the week for each team:  
+        - Will Lace's reliance on WAS (Howell, WAS DEF) vs the mighty Eagles work in his favor?
+        - Will Malorts reliance on ATL pass catchers (London, Smith) provide any meaningful points with Ridder under center?
+
+(7) It was just a Massage vs. (9) Eazy E's
+- No show from Eazy E's last week, leaving in a couple players on bye.  Will he return to form?
+- The old QB swap from a few years ago (stafford vs. goff) looks different these days.  How will they each perform in this head to head (fantasy) matchup?
+- Dallas DEF has been a monster for Eazy E's, will they keep it up against the Rams?  Chase looks to keep dominating now that Burrow is looking healed, but a matchup against the 9ers doesn't bode well. 
+- Massage has a solid group running out Aiyuk, Barkley and Andrews.  All with decent matchups this week - will 1, or 2, or all 3 pop for a big game??
+
+For those in the cellar (Hoodie, Game of Jones, Aceboogies, Feeling good, Ditka) it's not too late!  Only 2 games in the loss column back from solid playoff positioning with 7 games to go.  No doubt some of these teams will end up making it...which begs the question...who from the current top 8 will drop and miss out on the glory land that is the playoffs?  As this COMMISH has proven year after year, you gotta be in it to win it, playing your best ball from week 15 and on. 
+
+God Speed, Go Cowboys
+
+COMMISH
+
+
+Another week, another win.  
+
+This time, the weekly high score will be staying at home in the Commish's bank account.  Happy Day!
+
+Looking to keep the momentum going this week.  
+
+Tune in next week for a brief playoff positioning overview. 
+
+COMMISH
+
+
+Well the cream continues to rise! 
+
+Congrats to Joe Buck Yourself who narrowly beat out ya boy Game of Jones for high score of the week.  Another notch on your belt, making this his 3rd of the season (33% of the season). 
+
+Buck Yourself is also sitting comfortably in first place with the best record and most points scored through 9 weeks this year.  Would take a collapse of monumental proportions to miss the playoffs at this point.  Now it’s about tweaking the fringes of the team, and praying for health when it comes to his LAC power duo. 
+
+In 2nd and 3rd are WattmeWhip and Joshin Swiftly who both came up short this past week, dropping to 7-2.  
+* WattmeWhip is staying strong despite Jefferson hitting the IR.  Sounds like he might be close to a return, so when added to the core of Hall, Ford, Gibbs, and Puka this team will have a real chance to do some damage.  
+* Joshin Shifty only managed to put up 95 points this week, but that’s in thanks to their RB and WR starters putting up a whopping 5.3 points this week.  Obviously he’ll see better days from that group, but will need T swift showing up to chiefs game to give Kelce that extra juice it seems he now needs to dominate. 
+Knickerbockers, Massage, and ODEEZUS are all sitting above .500 at 5-4.  Playoffs are in their view if they keep steady through the end of the season. 
+* Knickerbockers left points on the bench last week, but you really can’t blame him for starting Lamar over stroud and Pitts over kmet.  Consistently in the weekly high score conversation, often thanks to AJ Brown, this team will be a tough out. 
+* It was just a Massage has ridden the emergence of Ceedee Lamb as the number 1 WR he was always envisioned to be.  Troubling signs for Barkley and the Gmen could limit this teams longevity. 
+* ODEEZUS believes championships are won on the wire, proven by the 41 transactions he has made, 15 more than the next highest team. Kyler might be back to give their QB ceiling a boost and Ferguson’s connection with Dak this back half of the season could be a game breaker at the TE spot week to week. 
+The 7 and 8 spots, the last two in the playoffs if the season ended today belong to Game of Jones and Laces Out
+* Game of Jones has a healthy squad on the come up, with Achane and Kyren sitting pretty on IR.  Keep up the good work squad, help is on the way. 
+* Laces out plays the QB matchups each week deciding on Howell and Mayfield - that decision looms large each week as both are relatively unpredictable.  But what is predictable is McCaffrey being an absolute beast.  Hard to fathom he was drafted with the 4th pick.
+Easy E’s and Malort are the other two squads in the thick of things with 4-5 records.  
+* Easy E won in the weeks Dallas DEF dominates, will need the boys to to get after an easy stretch of games (NYG, CAR, WAS) to make a true push towards the playoffs. 
+* Malort is looking to get healthy if they want to make a run at things.  Montgomery should be back soon, Jones rounding into form, London getting back on the field (despite Arthur smiths inexplicable play calling).  But that all might be moot if Pollard continues running directly into his lineman’s back. 
+Bottom of the league is AceBoogie (most points against this season), Hoodie Cru (drafted mahomes 1…), Feeling Good (Bijan not part of the offense in ATL anymore? WTF?), and Eberflus (lowest points scored this season). 
+
+But have no fear bottom feeders!  There are 5 weeks left of the regular fantasy season and only 3 games (in the loss column) separating the last team (2-7) and the 4th team (5-4).  The season is a long one and isn’t won in September and October.  Get your minds right for the final push these next two months.  
+
+COMMISH
+
+
+
+Gonna keep it short this week and next as we gear up for the playoffs.  We'll likely have some teams who have officially clinched playoffs, and clinched being out of the playoff running by the time we're all back from Thanksgiving.  
+
+Congrats to Laces Out who picked up the high score this week in a class in an instant classic matchup with WattmeWhip (who had the 2nd highest points scored). 
+
+For those of you at home keeping track - Commish is on a 4 game role climbing from 1-5 to 5-5.  Watch out ya'll - you don't win 3 out of 9 league championships on luck alone...
+
+COMMISH
+
+
+Quick congrats to last weeks high score winner - WattMeWhip!
+
+This week, goes to yours truly with an eye popping 190 points!  That score goes down as the highest weekly score this season. 
+
+Lets take a look at the teams that have officially clinched this/last week:
+
+Clinched:
+
+Joe Buck Yourself
+* Continuing to ride high with an 11-1 record and the highest points scored thus far this season, despite leaving tons of points on the bench each week (first world fantasy problems!).
+* Dak making an MVP run.  Riding with a couple chargers.  Solid RB core of Singletary, mystery, Dixon, Pacheco (in addition to ekeler). WRs who can go off each week in Hopkins, Godwin, Meyers, brown (in addition to Allen).  TE is a weak spot but that is nothing new.
+* Big question for their playoff fate is whether or not they make the right start / sit decisions each week as they fill the roster.  Couple miss plays this time of year can derail a historic season in the blink of an eye!
+Officially out:
+
+*8 playoff spots*
+“1” teams have clinched
+Bottom playoff seed currently has 6 losses - if those teams lose the last 2 of the season - that would be 8 losses in the L column - so that is the bar teams need to clear (not to mention points scored…) if they want a spot in the dance. 
+
+Feeling Good (XX record)
+* Hit their 9th loss last week, and picked up their 10th this week. They are out of the playoff picture. 
+* Every other team in the league likely tried to trade for Bijan or Amon Ra at one point - their steadfast denial of those trades (or low quality of offers) led to sticking with one of the top 1-2 punches coming out of the draft…all that did was lead to heart break week and after week. Including this week, losing out to Eberflus (2nd to last team) thanks to a relatively garbage time rushing TD by Zay Flowers..
+
+AceBoogie (XX record)
+* Picked up their 9th loss this week in what will go down as a season to forget. 
+* Low points scored and high points against... Mismanagement x bad luck = out of the playoffs. 
+* Rodgers going down undoubtedly tanked this team (Wilson) despite MVP type season for Jalen Hurts. 
+
+Last two weeks of the season we’ll catch up with other teams who have clinched the playoffs - and those who clinched missing the playoffs. 
+
+Playoff preview comes in the lead up to week 15!
+
+COMMISH
+
+
+
+
+Ho Hum…Another week, another high score win for the COMMISH.  Massive 206 point week, putting him at the top of the points scored standings on the season.  Hot at the right time, or peaking too soon?  
+
+Tough losses for Knickerbockers and Malort, pushing them back in the standings, but even tougher loss for It was just a Massage who is now sitting in the 9th spot…just missing the playoffs if the season ended today (more on that later)
+
+
+Newly clinched:
+Watt me whip
+* Lost Tank Dell which is a blow, but looks to be getting back Jefferson for the playoff stretch.  
+* Lots of talent on this roster - Pittman, ford, Gibbs, puma, breece - all have big week potential and all will need to continue to have solid floors to give this team an edge come playoffs. 
+* Lots riding on Justin Fields…his 10 point weeks could sync WattmeWhip despite a strong team.  If he pulls some of his 30 point weeks out of the hat to finish out the season, that could put WattmeWhip over the top. 
+
+Joshin Swiftly
+* Deebo, Allen and Kelce are all potential matchup winners on any given week.  
+* Getting Moss “back” (JT hurt again..) and Walker back will give this squad a solid floor
+* Hot and Cold Gabe Davis could be the critical swing piece for Swiftly in the playoffs. 
+
+
+Newly out:
+Eberflus
+Hoodie Cru
+Easy E’s
+
+Pretty rough seasons all around for these 3 teams.  Play for pride this last week as your season has come to an end!
+
+Matchups of interest:
+
+Knickerbockers vs Malort
+* While Knickerbockers is likely safe even with a Loss, this is a playoff game for Malort.  Their points scored, which is the first tie breaker, is by far the lowest of all teams in currently in the playoffs.  A loss, could knock them out of the playoffs if other matchups don’t fall the right way. 
+* These two faced off way back in week 1.  With Malort taking the win 119 to 101. 
+
+It was just a Massage NEEDS to win this week against Eberflus if they want any chance at making the playoffs. They did get the win in week 1 134-114 but that team was starting Watson/knox/williams all who are now on IR (they even had Andrews who was out that week, on their bench..another IR fella)
+
+Even with a win, they aren’t exactly in given their points scored falls below 4 of the 5 teams sitting at 7-6.  So they will need to win with a BIG points scored total, or hope one of the teams ahead of them put up a sub ~75 point score in a loss…Not impossible!
+
+Feeling Good vs Ace Boogie
+* Who will be in last?
+* In week 1, Feeling good had one of their best weeks and one of their 3 wins against AceBoogie. 
+* Dreaming up punishments for next year, and I personally like:
+    * 24 hours in a McDonalds.  Minus 1 hour for every cheese burger eaten.  We’ll see!
+
+***IMPORTANT***
+I commit to making Vegas a reality for the draft next season.  I’m targeting Friday August 23rd to Sunday August 25th. 
+* Friday we arrive and party
+* Saturday is all day live draft
+* Sunday everyone goes their own way
+If you have 0 interest in going to Vegas let me know.  If you consider yourself 100% in let me know.  If you are someone who needs some convincing let me know..
+
+Basically let me (and the rest of the guys) know your thoughts on Vegas next summer so I can start thinking through logistics. 
+
+This will be a live draft, so worth noting how horrible it will be for someone to be in the league, not be there, and still need to draft.  I think PJ M (Malort) did that before and I’m sure he can share with the group how painful that was..
+
+PLAYOFFS NEXT WEEK
+
+COMMISH
+
+
+Alright Alright Alright!
+
+Playoff time!
+
+Quick weekly high score award to ODEEZUS.  Little momentum this time of year can go a long way!
+
+Reminder on payouts:
+There is no longer high score weekly winning - That is only for regular season
+1st Place = $2000
+2nd Place = $550
+3rd Place = $250
+
+Week 17 championship ends Sunday night 12/31.  
+
+I’ll be in Yosemite that week/weekend so payment will be made the following week once I’m back. 
+
+Now that is out of the way….drum roll please……..
+
+Playoff Week 1 Matchups:
+
+(1) Joe Buck Yourself vs. (8) Malort
+* Prior Meeting: No surprise here, but Joe Buck Yourself took the regular season matchup against Malort 143 - 121.
+* Malort won the 2K20 season.  Back then they went by Nastiest Sack and beat out ODEEZUS for his first championship. 
+* Joe Buck in his first year in the league put on quite the performance, finishing with league leads in both wins (12-2) and points scored (2034)!
+* Matchup this week will be interesting as the news of Herbert being out for the season will have a pretty big impact on Allen and Ekeler - to core pieces of Joe Buck Yourselfs squad
+* Malort was the only team this year that let autodraft play out from start to finish.  London seems to be turning a corner, and Pollard, Montgomery and Diggs provide high floor, high ceiling returns. 
+
+(2) WATTmeWhipWATTmeJJ vs. (7) Laces Out
+* Prior Meeting: Laces Out won a barn burner of a game winning 170 - 164. 
+* Couple OGs lacing it up this week....Laces Out beat WattmeWhip all the way back in the 2k17 season championship game.  That game went down in infamy as Laces out won by .1 point.  Yes..you read that right, .1 point…that was one year after Laces out lost in the 2K16 championship
+* This will be a tight matchup, ESPECIALLY if Jefferson and Ford miss games this week.  That would put WattmeWhip behind the 8ball quite a bit considering lining up on the other side is Metcalf, McCaffrey and Kittle.  Big weeks for Addison, Moore and swift could make this upset a reality. 
+
+(3) Game of Jones vs. (6) Joshin Swiftly to the KelZone
+* Prior Meeting: Joshin Swiftly narrowly edged out Game of Jone 119 - 115. 
+* Game of Jones has collected 3 rings in 8 seasons thus far - 2K18, 2K21 and 2K22 and is going for his 4th in 9, to complete the threepeat.   Worth noting Game of Jone lost the 2K19 championship, and came in third (then known as Dez and Confused) way back in 2K16
+* Joshin Swiftly came out the gates in his first season in the league with a dominant 7-1 record.  He did regress to the mean through the back half of the season as his desperation trade attempts fell on deaf ears, finishing up the year 8-6. 
+* Exact reverse happened with Game of Jones who started 1-5 yet finished 8-6. 
+* To the above points - this COMMISH keeps receipts.  A week 7 trade offer from Joshin Swiftly to Game of Jones stated the following in the trade comments - “Ur in last place.  Keep same lineup and stay in last place or shake it up” - We all see how that played out..
+* Now that the bulletin board material is out there for all to see - get your popcorn ready and keep an eye on this matchup
+
+(4) Knickerbockers vs. (5) ODEEZUS
+* Prior Meeting: ODEEZUS smoked Knickerbockers 156 - 103.
+* Knickerbockers, despite being a long standing league member, has yet to crack the top 3 in any of our 8 seasons.  ODEEZUS on the other has lost twice in the championship (2K20 + 21) as well as a third place finish in 2K19.
+* No surprise it's a close projected score between the 4 and 5 teams this week. 
+* Couple of MVP candidates lead the way with Jackson and Purdy.  Solid RB and WR groups for both teams.  Great K and Def.  
+* Regardless how this matchup plays out, both teams will present difficulties in future weeks. 
+
+God Speed to all those in the fantasy playoffs!
+
+COMMISH
+
+
+First week of the playoffs in the books!
+
+ODEEZUS getting hot at the right time put up a massive 198 points beating out Knickerbockers who unfortunately would have beaten every other playoff team this week with their score of 155.  Tough luck, but as we all know, fantasy is pain…
+
+Joe Buck yourself eeked out a win on the back of Chris Godwin who had his best game of the season.  Lotta points left on the bench which could come back to haunt him during the next few rounds if the right decisions aren’t made.  
+
+Laces Out and the mighty McCaffrey took the victory against the 2nd seeded WATTmeWhip who scored the second fewest points of his season (104) at the worst possible time.…again, fantasy is pain…
+
+When Game of Jones put out the bulletin board material last week, the idea of having Hill and Jacobs (first 2 picks, 2 best players) on the IR for week 1 of the playoffs was a distant nightmare…Despite that, the rest of the squad stepped up and out for the win putting up a respectable 140 point performance.  Jokes aside, hell of a first season from Joshin Swiftly, looking forward to seeing how you fare in your sophomore campaign!
+
+As for this week!  Playoffs reseed based on standings, so the “conference” final matchups are:
+
+Joe Buck Yourself (1) vs. Laces Out (7)
+* New comer in Joe Buck Yourself vs. grizzled veteran and former champion Laces Out.  
+* Previous Meeting: Joe Buck Yourself rolled to a dominating victory in week 3 178-130 thanks to 2, yes 2, 45 point games from Allen and Mostert.  
+* This week:  The two best backs in the fantasy season are duking it out…McCaffrey for Laces out and Mostert for Joe buck yourself.  
+    * Laces out will need a monster performance from McCaffrey to pull off the upset.  
+    * As mentioned above, Joe Buck Yourself will need to make the right lineup choices, especially now that Ekeler and Allen aren’t what they were at the beginning of the year. 
+Game of Jones (3) vs. ODEEZUS (5)
+* Another year, another O’Donnell brother face-off in the playoffs.  All this does is guarantee an O’Donnell is in their rightful position competing for a championship.  Will ODEEZUS break through for their 3rd attempt at the chip in 4 years (coming up short in previous attempts..).  Or will Game of Jones be on his way to a 4th chip (and 5th attempt). 
+* Previous Meeting: ODEEZUS won the week 3 matchup 155 - 129 thanks in large part to a 42 point game from Davante Adams.  That was also the week Game of Jones dropped Achane (he scored 53 points…) before putting down a whopping $300 waiver bid to make up for the mistake.  
+* This week: 
+    * Will Game of Jones be healthy (Hill, Jacobs), will Higgins go on a little end of contract year money grab run of good games, will the late season rams additions (stafford/Williams) continue paying dividends, will Achane workload warrant the waiver bid and IR stash?  Lots of questions…
+    * Will ODEEZUS’ late season climb come to an end?  With Purdy and Rice playing their best ball of the season…Kupp and Adams performing at their projected dominance…White and Kamara dominating backfield touches…and Aubrey blasting 50+ yarders…this team will be hard to beat..
+Winners this week are guaranteed some prize money.  Losers will face off next week in a game for 3rd place. 
+
+Till next week!
+
+COMMISH
+
+P.S. Yes I wrote this yesterday, and yes I was sweating out the win thanks to Ken Walker's great game last night...
+
+
+Gonna keep this short and sweet..
+
+A game of chance, a game of luck....and just like that...A Game of Jones...is...BACK in the championship.  Going for their 4th chip in 5 tries (in 9 seasons)!
+
+Laces Out joins them on the gridiron this week, going for their 2nd championship in 3 tries.  
+
+Too league grizzled vets, duking it out...
+
+Couple worthy mentions..
+- Joe Buck Yourself had an incredible season, all to see it comes to a crashing halt by putting up 100 points in the semis...their lowest score of the season..
+- 1 week too late for WattmeWhip...their team put up a whopping 186 points this semi final weekend...unfortunately, they fell short the week prior and all those points are essentially useless..
+- Amari Coopers generational performance all for naught on the 3-11 Feeling Good.
+
+Rings are getting sized for the champion as we speak.  Till next week!
+
+COMMISH
+
+
+ALL HAIL THE KING OF FANTASY!!
+
+GAME OF JONES!
+
+4 title in 9 years - the unheard of 3 peat!
+
+Picture to come later this week once my championship ring arrives!
+
+Till next year (in Vegas!)
+
+COMMISH
+
+
+2024 season (Vegas draft year)
+
+GENTLEMEN,
+
+As you know, I've been conducting an informal poll, and I'm shocked and pleased that we are ALL down for Vegas this year!!
+
+The hard part, as always, is finding the weekend that works for the most people possible.  To help me navigate the labyrinth of dates, please FILL OUT THIS SURVEY ASAP. 
+
+As I mentioned, the idea is we'd arrive Friday (or Saturday morning), draft Saturday, then head home on Sunday. 
+
+Couple notes on the makeup of the league.  Rohit bowed out at the end of last season, and Evan Stephens (who quit playing after his team sucked) has been booted. 
+
+I replaced them both with Kerry (many of you know), and Jeff (you might have met at my wedding).  Both will be solid additions to the league, and this is actually Kerry's second stint in the league after a 7-6 showing back in the 2K17 season. 
+
+The sooner you get me the info I need, the sooner we can start locking things down. 
+
+COMMISH
+
+
+Alright boys. 
+
+My flights are booked.  The suite is booked.  Custom draft board has arrived. Schemes and plans are becoming a reality. 
+
+2 months out from Vegas draft weekend!
+
+
+Alright Gentlemen, we're getting close!
+
+We have 14 people in the league. 
+* 10 people are confirmed for LIVE DRAFT in Vegas and arriving either Friday afternoon/evening or Saturday morning.  
+* 2 are still working through logistics, though there is a strong chance they can't make it
+* 2 won't be attending live
+For those not attending live:
+* I'll be setting up a zoom room and camera which will be pointed directly at the board so you can follow along the draft and make your picks.  This isn't "easy" for you as the draft will take longer than a normal yahoo virtual draft, so you might lose your mind sitting at a computer for 3 hours as the rest of us continue to get louder and more drunk in the background. 
+* If you don't want to go through that, and want to "auto draft" - I will need you to send me your big board in advance of the draft so I can print and have it ready.  As commissioner, I can be trusted to go straight down the line and pick your "best available" player.  If you are not online, and don't provide your personal big board, I will simply use yahoo rankings to make your selections.  No complaining about your team or draft if this is you.  
+League Fees
+* We'll stick with what we did last year which was a $250 league fee.  Payouts as follows:
+    * Weekly high score = $50
+    * 1st place champion = $2000
+    * 2nd place runner up = $500
+    * 3rd place consolation = $300
+* League dues will be due on the DAY OF THE DRAFT.  Venmo is fine, Cash is king. 
+* While I'm not requiring it, I have/will have put down considerable funds on the suite, entertainment, food, draft gear, booze.  Any additional donation to the fantasy cause is appreciated and trust that it will be money well spent.
+Event Details
+* Friday: 
+    * Everyone arrives at different times.  I'll be landing at 2:45pm and will be gathering supplies (booze) and setting up the suite for draft day
+    * I will host a "welcome party" of sorts at the suite Friday evening.  This will be an opportunity for us all to link up in 1 place and decide what to do.  Lots of options in Vegas; gambling, group dinner, table/club, general debauchery, Wayne Newton..
+* Saturday:
+    * Arrive at my suite between 12-1pm. 
+    * Draft order will be decided at 1pm sharp
+    * Lunch will arrive somewhere between 2-3pm
+    * Aiming for the draft to be completed by 4pm. 
+Performance Enhancers
+* Our very own Joe Buck Yourself (Kevin Spates) has a remarkable connection in Vegas which has any and everything we'd need.  Tried and true resource I experienced during a grateful dead weekend earlier this year. 
+* If you are certain that you know what you want, reach out to me directly and we'll add to a preliminary order.  
+* If you aren't certain and want to feel things out, I think we can decide on a potential group order Friday night which should hold people over for the weekend.
+
+
+* Any questions, reach out. 
+
+Do your research and keep in mind there is no way Yahoo mock drafts can simulate the randomness of an in person!
+
+COMMISH 
+
+
+Week 1 write up
+
+Alright gentlemen!
+
+Dusting off the ol' keyboard to get you amped for another season. 
+
+Some draft day highlights/lowlights:
+* The first set of girls (shout out to the zoom crew for capturing their “view” in realtime)
+* Bijan dropping to 14 (still pissed at myself, though now have a built in excuse if things don’t go my way this year)
+* The “menu” of options (meth anyone? DMT vape anyone?)
+* “I can live in that ass” - KR
+* Trying to make a pick and having an undisclosed amount of shroom chocolate shoved in my mouth
+* All things Gruden, though disappointed we never made it to whatever sketchy dive bar he recommended
+* “DALVIN Cook!  The running back!” - KR
+* Old stripper trying to sexily eat a chicken drumstick (this image is seared in my mind (in a bad way))
+* Marko getting roasted by the girls for getting yelled at by his wife for being on the computer all day
+* Collectively getting through 10 grams of the good stuff in about 24 hours (animals we are)
+So much more happened in that marathon session of a draft, including actually drafting teams…Lets look ahead at this week's matchups.  Remember that the team we play this week, we will also play the last week of the season in a rematch. 
+
+Game of Jones (Matt) vs. ODEEZUS (Mike)
+* One of the leagues premier rivalries…the OD brothers…back again to kick off a season
+* Pre matchup trade between them will carry weight this week and through the season.
+* Games of Jones with arguably the best WR room in the league (Wilson, London, Higgins, McLaurin)
+* For ODEEZUS, gotta worry a bit about who is throwing to Jefferson, but other than that, solid squad from top to bottom (Burrow, Aiyuk, Henry, Kyren)
+
+EberflusmyDitka (Marko) vs. PurpleReign (Jeff)
+* Quite the start for Purplereign in the league selecting Chase with his 1st pick (can’t blame him!) who is trending towards not playing….1st reminder of the season that fantasy is pain!
+* For Eberflus - having Lamb and Mahomes means any week can be one with a 40+ scorer…Stacking and praying for Worthy to be Pat's guy will in many ways determine if this is a playoff team or championship contender. 
+Feeling Good (James) vs. HoodieCru (Will)
+* Despite 5 rookies drafted, and only 1 RB drafted, HoodieCru put together a squad led by Lamar and Gibbs.  Lots of speed, and he’ll need a return to form from his top WRs (Metcalf and Diggs) to reach the promised land. 
+* Feeling Good put together a solid big three of Allen, St. Brown and White.  Aubrey (yes the kicker!) is an absolute beast who can bang home 50+ yarders with ease for the boys. 
+Joe Buck Yourself (Kevin) vs. Victorious Secret (Garret)
+* Top name in the league (Joe Buckyourself) received the worst draft grade in the league - however that was due to them breaking rules and not having proper K/Def in place to end the draft…Lots of scary injury potential with both McCaffrey and Rodgers leading the way for this squad. 
+* Really solid team in year 2 for Victorious secret.  Tons riding on the Eagles (Hurts and Barkley), this team will go as the Eagles go (hopefully for this cowboys fan, things go very poorly). 
+Knickerbockers (Hugo) vs. Malort (PJ M)
+* Knickerbockers are relying on some real wild cards this season…will Nacau repeat last year's performance with a healthy Kupp?, Coleman/Nabers forming a high ceiling low floor Rookie WR room.  Ekeler is back or does he need to be put down out back?  Pitts (nuff said)?
+* Malort is hoping for big followup seasons from both Collins and LaPorta.  If they do, and White gets the carries many expect, this will be a solid overall squad.  AJ Brown is still a cheat code and stacking Purdy(QB)/Moody(K) means points on nearly every SF drive this season. 
+Laces Out (Nick F) vs. theACEboogie (Nick D)
+* Couple o’ Nicks cutting it up in a long standing league matchup. 
+* Will Aceboogies approach of drafting all the Dolphins guys work?  If you think about it, they all score a ton whether they are on 3 fantasy teams or 1.  I love this experiment and will be tuning in to enjoy the MIA/AceBoogie wave of emotion.
+* Solid draft from Laces Out (as usual) with excellent players across all positions.  IN particular the Taylor/Pacheco RB room could be the best/most consistent in the league. 
+Tittsburg Feelers (PJ O) vs. AK Rossdgers (Kerry)
+* Tittsburg on his 3rd name of the season 
+* Tittsburg has in my opinion the best team in the league.  Helped by the league's collective idiocy in allowing Bijan to fall.  That wasn’t all though, Kupp at the turn, Richardson and his potential, Kelce/Rice KC pass catching stack, Smith/Addison as the 2's to stud 1’s…Only injuries will prevent this team from doing damage in the playoffs. 
+* AK Rossdgers.  First year back after a multi year hiatus, with a draft that leaves you wanting more.  Stroud and Hall will be studs, Deebo and Pittman vacillate every week giving fantasy owners agita year after year.
+Let's have fun this season, let's let the trades fly, let's make side bets, let's remember that fantasy is pain and that at least one of our first round picks will go down for a season ending injury this weekend!
+
+Go Cowboys,
+COMMISH
+
+
+Gentlemen!
+
+Week 1 is in the books…McCaffrey was on the shelf week one, St. Brown put up 4.3 points, Nacua out, Harrison Jr. 1 catch, London and Olive did nothing…and those are just a few of the big names that struggled. 
+
+Some less familiar names…Reed, Baker, Likely, Jameson, Dobbins, Pierce, Lazard…all showed out in week 1. 
+
+No one knows anything...
+
+Speaking of Lazard….As noted by AceBoogie…Knickerbockers must have been knocking some back when he put in that $690 bid on Lazard (beating out the 1 other bid of $125).  Could pay massive dividends if he is indeed Rodgers guy…but could also really hamstring Knickerbockers later this season if he doesn’t now perform under heavy expectations. 
+
+Likely was the most bid on player, going to VictoriousSecret for a whopping $425…Personally, surprised AK Rossdgers bid of $0 didn’t win out!
+
+Congrats to theACEBoogie for their high score last week riding the Dolphins to victory. 
+
+On the other side of the spectrum was ODEEZUS, who despite a promising lineup, put up a miserable 79.31 points..
+
+Heading towards week 2, best of luck, go Cowboys!
+
+COMMISH
+
+
+
+Gentlemen, 
+
+Lots of rules chatter over the weekend, thankfully it didn’t affect the outcome THIS week.  We’ll monitor throughout the season and raise as tweak for next year. 
+
+Congrats again to AceBoogie who has now taken both high score awards this season.  Doing so primarily on the leg of Fairbarn, who has been on a real tear. 
+
+Lots of FAAB moves this week…
+
+In particular:
+$175 for Steele, $200 for Hunt, $220 for Perine…
+
+For those scoring at home, that’s $595 on Chiefs backup running backs!  
+
+Unfortunately, FAAB bids were only part one of this lottery ticket.  The second part is Andy Reid deciding which of these guys will actually play/get the rock…Could be all of them, could be one of them, or given they have Pat f’ing Mahomes, it could be NONE of them as they just decide to throw it and hand it off on sweeps to WRs…we’ll see. 
+
+Deeper dive ahead next week!
+
+COMMISH
+
+
+Gentlemen!
+
+3 weeks in and the standings are starting to take shape. 
+
+Feeling Good off to a rollicking start to the year with a quick and easy 3-0 record. Really strong team led by Allen and St. Brown
+
+They did however juuuuust miss out on the weekly high score, which of course, went to ODEEZUS on the backs of a couple Bengals Monday night. 
+
+Lots of 2-1 teams bunching towards the top, we'll see how things shake out after this week and will dig into them more next time. 
+
+Bottom of the league consists of: 
+Joe Buck Yourself
+* 1st pick curse? McCaffrey curse? Madden curse?  Feeding gross strippers causing them to stay longer curse?  Hard to say…
+Laces Out
+* Woof, another week, another loss to a team having their best performance of the season. 
+* Had the wherewithal to pick up Jennings prior to the weekend…didn’t have the balls to start him on his way to the best performance of the young season.  To make matters the worse…the 4 WR he did start combined for a total of 27.3 points (19 points less than Jennings alone..).  Fantasy is pain. 
+Malort
+* Yes they have a win, but unfortunately are averaging 93 points a week…which if you’re counting at home..is not very good.  
+
+Big pickups on the waiver this week highlighted by the $200 winning bid on Chuba Hubbard, a middling running back on the worst team in the league!
+
+Victorious Secret with $65 FAAB dollars remaining this year…which as we all know, means the wild (ie. Horrible) trade requests will begin flying throughout the league as he looks to tweak his team in the future. 
+
+Till next week
+
+COMMISH
+
+
+Gentlemen!
+
+Ahh, they say better late than never..
+
+First, congrats to ODEEZUS for his 2nd straight high score week, let’s see if the dominance continues week 5. 
+
+Second, I’ll admit when I was wrong.  That Chubba pickup worked out well last week for Victorious Secret, nicely done!  Not as much on the waiver this week, pickings are beginning to thin out for the year..
+
+Third, Congrats to Laces Out and Joe Buck Yourself on picking up the first wins of their seasons! 
+
+Finally, the league is now divided into 3rds:
+* The 3-1’s - hot starts don’t guarantee playoffs, but each squad looks to keep things stable through the middle 3rd of the season. 
+* The 2-2’s - Aceboogie and Tittsburg both fell down the standings after back-to-back losing weeks. 
+* The 1-3’s - with 8 teams making the playoffs, it’s very likely one or 2 of these squads climbs their way out of the basement into the playoff race. 
+
+Good luck this week
+
+For those of you who are down with Fantasy BBall, I'll be sending invites tomorrow. 
+
+COMMISH
+
+
+
+Gentlemen!
+
+Woooo what a week of matchups!
+
+Only 2 teams won by 20+…and yes, they are the top two teams in the league, the dreaded O’Donnell Brothers…
+
+I’ll be taking the high score for myself after a thorough dismantling of Laces Out who once again found themselves going up against a team's best week.  Laces Out now has 771 points against this season.  Not much you can do when your opponents seemingly get hot every week. 
+
+ODEEZUS was second highest scoring this week, after 2 straight high scoring weeks.  They sit atop the standings with 4 wins and 737 total points. They beat KnickerBockers who had an excellent week themselves (would have beaten 9 of the other 13 teams this week).
+
+The other matchups this week all came down to the wire. 
+
+Joe Buck Yourself picked up their second win of the season thanks to DJ Moore and the Green Bay defense.  EberflusMyDitka needed more from Mahomes and Worthy on Monday night, and generally need more from Olave and Lamb if they want to hold their playoff positioning this season. 
+
+Real barn burner between Feeling Good who took the win this week with a measly 106 points against AK Rossdgers who for the 2nd time this season scored less than 100 points.. Not good. Mooney put up huge numbers on his bench, but he’s a hard to start player.  Still gotta be kicking themselves for not stealing one from Feeling Good who had St Brown and Goedert on bye. 
+
+Battle of the Northeastern roommates went to Victorious Secret who outscored Malort by 5 points. If they started Geno Smith over Purdy things would have played out differently and they’d be sitting at 2-3 (a much more palatable record than their current 1-4). Might have found something with Bigsby and Tolbert so all hope is not yet lost.  
+
+The ACEBoogie has continued to slide and is now 2-3 after starting 2-0 with the first two weekly high scores.. The dolphin experience produced about 23 points (from Ace’s top 3 picks)…that’s not going to get it done.  Tittsbrug squeaked this win out by less than 3 points thanks to a resurgent Kelce, and smart plays of Whittington (who?) and Downs (Flacco!). Still waiting for the Bijan breakout, dude is way too talented to be producing as poorly as he is (in fantasy, and real football). Still expect big things from them as Kupp and Richardson get healthy. 
+
+Lastly, a high scoring thriller between HoodieCru and newcomer Purple Reign.  Purple pulled this one out 168-164 making this the highest scoring matchup of the young season.  Chase having the game he did made this a win, instead of a large loss (even if he scored 20 points), so that pick is looking better and better.  Shaheed, drafted in the 9th round has scored 20+ in 4 of 5 games (the 5th was a goose egg) and might go down as the best pick of the draft. Have no fear, HoodieCru, your team is looking solid.  Your rookies are starting to get used to the speed of the NFL and are poised to get better as the season progresses. 
+
+Back to work
+
+COMMISH
+
+
+Welcome back gentlemen to another addition of “Fantasy is Pain” brought to you by TheACEBoogie who lost a tight matchup on the back of a stat correction…
+
+Big congrats to the last two weekly winners, Feeling Good put up 171 last week.  But the big story is HoodieCru knocking down your 3 time defending champ (who was sitting in first) with a HUGE score of 192, which if you’re counting at home, is the HIGHEST score of the season.
+
+The Top (safely in playoff position):
+
+Feeling Good: We’ve heard it before, Josh Allen + Amon-Ra lead this team.  If Najee can keep this up, and Rachaad White returns to form this is a scary playoff squad.  Godwin looks to be out for the year, so that’s a blow. 
+
+ODEEZUS: Jefferson, Henry (SHEESH…the cowboys didn’t need him!), Burrow, Kyren..all lining up with that big 4.  Aiyuk is the latest casualty of the season so will need their WRs (Doubs, Douglas, Ridley) to step up. 
+
+Games of Jones:  Daniels was a massive QB win, but he might be hitting the bench.  Not too worried given Goff waiting in the wings.  Still a strong WR room with Wilson/London/Higgins/McClaurin with solid TE contributors.  Big question facing this squad is Mason and whether or not McCaffrey actually comes back this season. 
+
+Purple Reign:  New team in the league starting their career strong. Chase is a beast and lining him up with Shaheed was solid (another one down to injury). With the Cooper trade, this squad has a lot riding on the Bills (Cooper, Cook, Kincaid) as AceBoogie will tell you…3 players from one squad is DICEY. 
+
+The Middle (in the hunt):
+
+Victorious Secret:  2 straight losses dropping them into this category.  Strong squad led by eagles in Hurts and Saquan (that had to be tough to watch for Giants fans..).  Needs more from Dell and Harrison Jr to be a real playoff threat. 
+
+EberflusMyDitka:  Low floor and high upside team.  Mahomes hasn’t been himself, taking away from Worthy.  CeeDee (and the Cowboys) are the definition of shambles so we’ll see how that plays out.  Other than that, they need big random weeks from the likes of Mixon/Smith-Njigba/Olave…easier said than done. 
+
+Tittsburg Feelers: Draft day darlings have to be feeling good about Bijan turning things around.  Need more from Smith and Addison, but Kupp coming back should help shore up the WR room.  Anthony Richardson unable to complete passes and their coaching staff unwilling to use him in the Cam Newton role limits this squads ceiling. 
+
+theACEboogie:  Won’t beat a dead horse on this, but with Tua hopefully coming back in a few weeks (and hopefully staying healthy) I expect a late season run that can make them dangerous (Hill has won me 2 of my 4 championships so I’ll always respect what he can do on the fantasy gridiron).  Timely and strategic waiver moves have kept this team afloat. 
+
+Laces Out: 2 straight wins making things interesting though possibly being hit by injury bug (Evans, Kittle, Jennings).  Hoping Taylor gets back to action this week will go a long way in keeping this momentum alive. 
+
+AK Rossdgers:  Another team with 2 straight wins, and as I mentioned earlier, juuuuuuust squeaked this one out. Deebo is always an injury risk, but CJ Stroud is such a baller that anything is possible. If Breece keeps this up, he’ll carry them to some more wins.  And while this is a few weeks late, congrats to team owner Kerry for getting engaged!  Promise I won’t hire those exact strippers for your bachelor party!
+
+HoodieCru ( 2-5):  They have put up 990 points this season which is tied for 3rd most in the league.  They score, and have been slammed week in and week out.  Lamar (nuff said), Gibbs, Thomas Jr. DK…this is a good squad.  I remember waaaaaay back in Year 1 of the league they started 0-6 before winning out the season…anything is possible (KG voice)
+
+The Bottom (work to do):
+
+Joe BuckYourself:  Year 2 decimated by McCaffrey (thanks Gruden!).  Without him back, there isn’t much hope.
+
+Knickerbockers:  Tough season.  Dak stinks, Pitts stinks, Lazard hasn’t been bad but that waiver amount (500+ I believe) still doesn’t make sense, Jameson is gonna be suspended again, Ekeler is 90 years old.  Don’t really see how this team (when compared to others above fighting for playoffs) can get it done. 
+
+Malort: 761 points for this season for a whopping 108 per week.  WOOF.
+
+Till next week, 
+COMMISH
+
+
+
+Gentlemen, 
+
+And just like that….make no mistake about it…Taysom hill….is…..BACK…
+
+Well, he’s back for his annual monster performance. 
+
+This year, it catapulted Laces Out to the weekly high score of 197 points…beating this season's league villain, Victorious Secret. 
+Speaking of Victorious Secret and the “league breaking” trade... lets recap where we stand after 2 weeks:
+
+
+Garret	W	L
+Aj Brown	15.9	11.5
+Nico Collins	INJ	9.4
+Andrews	18.8	4.2
+		
+PJ	W	L
+Chubb	Bye	5
+McConkey	7.2	18.3
+Dell	8.3	9.8
+		
+PJ Total Points	48.6	
+Garret Total Points	59.8	
+From my perspective, not league breaking...yet...
+
+As for the rest of us...Its starting to come down to the wire. 
+
+3 Teams have pulled away with 3 weeks left:
+- ODEEZUS
+- Feeling Good
+- Tittsburg Feelers
+
+All of these teams will cruise into the playoffs, from my back of napkin math even if they lose out the rest of the season, they will still make the big dance. 
+
+3 teams are pretty firmly out of contention:
+- HoodieCru
+- Malort
+- Knickerbockers
+
+Flaws across all of these squads.  I suppose closing out the year with 3 straight W's and an insane amount of luck could get them in...but given the state of their rosters, the rest of the season will test their pride and ability to play spoiler. 
+
+The rest of the league (8 teams) will be fighting for the final 5 playoff spots with 6 teams tied through week 11 with 6-5 records.  
+
+Big matchups this week that will go a long way in determining playoff seeding:
+
+(7) Game of Jones vs (4) Victorious Secret.
+
+(8) EberflusMyDitka vs (5) AceBoogie
+
+(2) Feeling Good vs (6) Laces Out
+
+(1) ODEEZUS vs (9) Purple Reign
+
+Looks to me that 8 wins will get you into the playoffs...a few teams will fall to 6-6 this week with two weeks left...
+
+We'll have a clearer playoff picture next week and will dig in deeper. 
+
+COMMISH
+
+
+Getting down to the wire!!
+
+2 weeks ago Victorious Secret picked up the high score win thanks to Saquan picking up a 50 spot against the rams against yours truly.  
+
+This week, in the highest scoring matchup of the season Game of Jones took home the high score beating Feeling Good 187 to 180. 
+
+Don’t let Game of Jones get hot this time of year!!
+
+Two pretty big losses this past week - both Victorious Secret and theACEBoogie had a chance to clinch and lost close matchups dropping them to 7-6 on the year. 
+
+As of today, 3 teams are clinched for playoffs: Tittsburg, Feeling Good, ODeezus. 
+
+Tittsburgh is riding a 6 game winning streak, which is the longest streak of the season, climbing from 4-3 to 10-3 and pole position. 
+
+6 teams sitting at 7-6 fighting for 5 playoff spots. 
+
+HUGE matchups this week:
+* Laces Out vs. theACEBoogie
+* ThomasBrownMyDitka vs. Purple Reign
+
+In both instances, it’s win and in…playoffs starting early!  Still an opportunity for playoffs with a loss, but will require a bit of luck, and reliance on high season point totals. 
+
+Regardless, seeding will be in play. 
+
+Joe Buck Yourself, despite a strong late season push, might finally be done given McCaffrey is officially out for the season.  
+
+Whoever is going to win the Guerendo waiver sweepstakes this week will be hoping for RB1 value off waivers in week 14…which is pretty unheard of...
+
+We also have 13 Malort facing off against 14 Knickerbockers…Knickerbockers will need to win and outscore Malort by roughly 80 points to avoid last place in the league. 
+
+HoodieCru and AK Rossdgers playing for pride this week.  Playoffs aren’t a reality and they are both going up against teams who have clinched. 
+
+Playoff matchup previews next week!
+
+COMMISH
+
+
+You smell that?
+
+Yea..that's the smell of PLAYOFF FANTASY FOOTBALL
+
+This season started in the bowels of the Flamingo, and yet, here we are, 8 teams on the precipice of glory. 
+
+Last week, Purple Reign took home the high score AND a playoff spot, knocking off (and out of the playoffs) ThomsBrownMyDitka.  
+
+In last, and deservedly so, is MALORT.  After all those years of holding onto the toilet trophy..he only gave it up for one season...  Expect it to return to its rightful home shortly!
+
+THE PLAYOFF TEAMS (with some help from AI)
+
+In the kingdom of fantasy football, the "Tittsburg Feelers" rise as a mighty 1 seed, boasting an impressive regular season with 1969.38 points and a potent 11-3 record. They've stormed into the playoffs for their fifth time, fueled by a fiery seven-game winning streak! Yet, despite their prowess, they remain championship-less—an unfortunate title that mocks this proud franchise. Will this be the year they finally break free from mediocrity? The road to glory is paved with grit; let’s rally behind them and cheer them on towards their first-ever championship victory!
+
+Get ready to feel the excitement! "Feeling Good" charges into the playoffs as the formidable 2 seed, boasting a stellar record of 10-4. With an impressive total score of 2002.81 points and a robust all-play record of 111-71, they are riding high on momentum with their current win streak. Though they've yet to taste championship glory in their two playoff appearances—finishing second once and enduring a two-season drought—their time is coming! Can this be the year they shake off those pesky 'never won' tags? Fans should rally behind them because "Feeling Good" might just turn that long-awaited championship dream into reality!
+
+Welcome to the ODEEZUS saga, where dreams of glory have been dashed like a balloon at a cactus convention. Entering the playoffs as the 3 seed and boasting an impressive but ultimately futile playoff history, this team stands on the precipice—yet has never tasted championship nectar in eight attempts.  They can’t help but be haunted by near-misses: two second-place finishes and one third. Sure, they scored more points than their opponents during the regular season (1976.5 vs 1735.89), but stats don’t win championships; otherwise they'd have one by now! Will the drought continue for ODEEZUS; will this be just another heartbreak?
+
+Ladies and gentlemen, step right up to witness the underdog tale of "theACEboog1e," strutting into the playoffs as the 4 seed with a twinkle in their eye! With an 8-6 record and a sparkling all-play mark of 117-65, they’ve racked up points aplenty—2001.88 to be exact—but alas, fortune has eluded them like a mirage in the desert; zero championships after three playoff appearances! The last time they tasted victory was nine seasons ago—what a drought! Will this team finally break their chains of mediocrity and snag that coveted title? Or will they remain haunted by memories of near-misses? Only time will tell as they march forth on this quest for glory!
+
+As the "Purple Reign" team steps into the playoffs as the 5 seed in their first season in the league.  Their record shows an 8-6 finish, but despite scoring 1830.07 points, they narrowly missed out on greater success with opponents racking up 1834.87 against them. The current two-game winning streak offers a glimmer of hope.
+
+In the intricate tapestry of fantasy football, "Victorious Secret" emerges as a paradox—a team adorned with aspirations yet shadowed by a championship drought spanning an eternity. As the 6 seed, they traverse uncharted waters in their second playoff foray, teetering on the brink of transcendence amid a modest 7-7 record. While others bask in glory, they dwell in humble obscurity; never has this squad tasted victory or ascended to the lofty peaks of podium finishes. Scoring slightly more than their opponents demonstrates resilience but reveals fragility—an echoing reminder of past failures. With two losses haunting them like specters from seasons long gone, will they rise phoenix-like from ashes? Or continue their comedic saga as perennial underdogs? The quest for redemption beckons; can "Victorious Secret" finally unveil its true potential and etch its name into history? Only time shall reveal whether fortunes change or laughter echoes once more through the annals of mediocrity.
+
+
+Ah, "Laces Out," the team that wears its heart on its sleeve as they saunter into the playoffs like a lovesick poet yearning for glory. With a record of 7-7 and an all-play score that whispers tales of potential, they've battled through the storm yet find themselves in the shadow of their last championship win in 2017—oh, how time has flown! A fifth playoff appearance beckons with hope after six seasons without gold. Though they’ve graced second place twice, third eludes them like an unrequited romance. Will this be their moment to break free from their drought and reclaim that sweet elixir of victory? Only fate knows if they'll dance again amidst triumphant cheers or wallow in poetic sorrow once more.
+
+
+Once upon a field of fantasy dreams, the "GameOfJones" team emerges from the shadows as the 8 seed—an underdog with a storied past. With four championships to their name and no droughts in sight since last hoisting the trophy in 2023, they flaunt an impressive playoff pedigree. But can this squad turn their lackluster regular season record of 7-7 into postseason magic? Scoring just shy of their opponents and finishing on a losing streak, doubt lingers like mist before dawn. Yet history whispers that champions rise when least expected; perhaps it's time for another epic saga to unfold, or will they tumble out yet again? The quest for glory begins anew!
+
+
+COMMISH
+
+
+
+First week of fantasy playoffs in the books, and 2 of the top 3 seeds were knocked OUT!
+
+This week we have:
+
+Feeling Good Vs. Game of Jones
+* Rematch of 2K22 season championship game.  That game ended on some controversy as the final matchup included the Damar Hamlin “heart stopped” game, which threw off final scores. 
+* Earlier this season (week 13), they faced off in the highest scoring matchup of the season.  Games of Jones edged out Feeling good that week 187 - 180. 
+* Projections this week show a Game of Jones edge, but what Yahoo doesn’t take into account is the fact that it is far more likely for Josh Allen to have 40 points than it is for him to 24.  
+* Can Game of Jones keep marching towards their FIFTH Championship in 10 seasons??  
+* Will Feeling Good get over the hump on the way to their 2nd championship appearance in their 3 year league career?
+* “Gotta beat the best to be the best”
+
+theACEboog1e Vs. Victorious Secret
+* Only fitting these two face off in the semis after the trade drama this season. 
+* Back in week 8 of the season ACE beat Victorious Secret 160 - 143 despite only 6 points from their QB.  
+* Of course, that was a very different looking Victorious Secret team…
+* Projections this week predict a very close matchup.  I have a feeling this matchup will bring the drama this weekend. 
+
+Despite the Holiday season, I’ll commit to getting a championship preview out next week!
+
+COMMISH
+
+
+
+Well boys, this was an email I’ve been dreading for weeks. 
+
+While it’s not exactly official, we can all agree that this championship is all but wrapped up. 
+
+Congratulations to the 2K24 champion - Victorious Secret!
+
+Feeling Good came up short.  VERY Short.  Honestly, one of the most gutless performances these eyes have ever seen in a championship matchup!  
+
+This is their 3rd season.  The first was a loss in the championship, the second found them in last place, and this season, they once again came up short in the championship…. This year though they won’t even break 100 points…
+
+So while Malort is in last in the league, and is more than deserving of the Toilet Trophy after the trade to end all trades…I’m unilaritialy declaring that Feeling Good will retain the toilet trophy for another season as punishment for letting us ALL Down!
+
+Now, onto the champion. 
+
+No denying that trade was absolute garbage.  While I still contend there was no collusion.  The trade should never have been allowed to go through, and that’s on me, your commissioner, taking full responsibility.  
+
+Next year, we will be reverting back to league voting on trades to ensure the integrity of the league doesn’t get stretched any further. 
+
+BUT WITH THAT SAID
+
+This team was more than just 1 lopsided trade.  
+
+They drafted Barkley who will easily win OPOY with over 2k yards rushing through week 17.  He was wise to stack Barkley with Hurts, collecting pretty much every rushing touchdown the Eagles high powered offense had this season. 
+
+They drafted Ken Walker who had a great season before an injury and waived Chubba Hubbard. 
+
+Speaking of Chubba, this team ATE the criticism from yours truly when that bid was placed, stayed firm, and can now smile down on a league of losers knowing that pickup was arguably the best waiver add of the season. 
+
+Hurts got hurt this week, Walker officially hit IR, Chubba hit IR…this team was hit hard going into the championship, yet they persevered on the back of their bell cow - Barkley.  
+
+Would they have made it all the way to the championship if the trade didn’t go through?  Maybe?  Probably?  It's all luck anyway... Hard to make a season long comparison in the trade when Chubb officially went down, and Tank Dell blew up his knee.   McConkey did go off for 30 points this week (more than Brown + Collins combined), but again, it's hard to make the case that the trade WON the league for this team.  
+
+Did it help?  Of course.  But trades are supposed to help.  
+
+Should it have been allowed?  No, like I said that’s on me…
+
+He’s been awfully quiet the last few weeks, so I’m sure the gloating will begin soon, let me be the first to extend a hearty congratulations!  I know winning the chip aint easy.
+
+We’ll let tonight's game play out and will send funds to 1st, 2nd, 3rd place this week. 
+
+Garret, start getting sized for your ring (and send me your address)!
+
+COMMISH
+
+
+
+
+
+
+
+
+
+
+
+
+
+

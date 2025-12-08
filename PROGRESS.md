@@ -10,6 +10,46 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-08 (Commissioner Writeups - Planning)
+
+**Phase:** Sprint 2.4 - Records & Recognition
+**Focus:** Historical Writeups Archive - planning and analysis
+
+### Completed
+- [x] **Content Analysis** of `docs/alltimewriteups.md`:
+  - ~3,100 lines covering 9 seasons (2015-2024)
+  - ~100+ individual writeups with authentic commissioner voice
+  - Content types: weekly recaps, playoff previews, draft notes, standings updates, season recaps
+  - Each season prefixed with "20XX season" header for parsing
+
+- [x] **Implementation Plan** defined:
+  - Phase 1: Historical Archive (priority) - import existing content
+  - Phase 2: Commissioner Tools (future) - rich text editor for new content
+  - Hybrid parsing approach: AI-assisted splitting with user review
+
+- [x] **Roadmap Updated** with detailed Sprint 2.4 tasks:
+  - Database schema design
+  - Parse script for historical content
+  - Seed script for import
+  - Writeups page with season grouping
+  - Full-text search
+  - Member tagging detection
+
+### Next Session Tasks
+1. Design database schema for `writeups` table
+2. Create Supabase migration
+3. Build parse script to split `alltimewriteups.md` into JSON
+4. Create seed script to import writeups
+5. Build Writeups page with accordion by season
+
+### Notes
+- Content is messy/inconsistent by design - reflects real league engagement patterns
+- Some seasons have weekly recaps, others just playoffs or draft notes
+- Archive preserves authentic voice - no normalization needed
+- Consider full-text search for "that time Billy went 0-6" type queries
+
+---
+
 ## Session 2025-12-08 (Awards System)
 
 **Phase:** Sprint 2.3 - Records & Recognition

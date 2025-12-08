@@ -202,9 +202,18 @@ End-of-season recognition.
 
 ### 2.4 Commissioner Writeups
 
-Season recaps and narratives.
+Historical archive and future content creation.
 
-- [ ] Rich text editor for recaps
+**Phase 1: Historical Archive (Priority)**
+- [ ] Database schema for writeups (season, title, content, type, author)
+- [ ] Parse `docs/alltimewriteups.md` into individual writeups with metadata
+- [ ] Seed script to import ~100+ historical writeups (2015-2024)
+- [ ] Writeups page with season grouping (accordion/expand)
+- [ ] Full-text search across writeups
+- [ ] Auto-detect mentioned members for tagging
+
+**Phase 2: Commissioner Tools (Future)**
+- [ ] Rich text editor for new recaps
 - [ ] Weekly power rankings posts
 - [ ] Publish/draft status
 - [ ] Feature on homepage
