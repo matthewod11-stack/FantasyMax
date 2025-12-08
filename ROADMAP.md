@@ -385,6 +385,23 @@ Before inviting league members:
 
 ---
 
+## Future Considerations
+
+For operational maturity items (observability, staging controls, data integrity, guardrails), see **[docs/FUTURE_CONSIDERATIONS.md](docs/FUTURE_CONSIDERATIONS.md)**.
+
+This includes:
+- Weekly Yahoo refresh strategy
+- Feature flags & deployment controls
+- Auth/RLS bootstrap & admin recovery
+- Data integrity & validation jobs
+- Observability & ops runbooks
+- Testing & performance budgets
+- Media/AI guardrails
+
+**Session Protocol:** When completing sprints, check if any items from `FUTURE_CONSIDERATIONS.md` should be promoted to active tasks.
+
+---
+
 ## Ideas Backlog
 
 *Features to consider for future sprints.*

@@ -10,6 +10,37 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-08 (Roadmap Planning)
+
+**Focus:** Capture operational maturity requirements as parking lot items
+
+### Completed
+- [x] **Created `docs/FUTURE_CONSIDERATIONS.md`** — Parking lot for ops/infra items not blocking current sprints:
+  - Weekly Yahoo refresh strategy (sync, retries, provenance)
+  - Staging & compensating controls (feature flags, dark-launch, previews)
+  - Auth/RLS bootstrap & admin recovery (commissioner seeding, audit logging)
+  - Data integrity & validation (deterministic IDs, duplicate resolution, timezone handling)
+  - Observability & operations (error monitoring, backup drills, rollback playbook)
+  - Testing & performance (E2E smoke tests, accessibility, perf budgets, caching)
+  - Media/AI guardrails (storage quotas, abuse scanning, AI grounding, cost limits)
+- [x] **Updated `ROADMAP.md`** — Added "Future Considerations" section with link and protocol note
+- [x] **Updated `docs/SESSION_PROTOCOL.md`** — Added FUTURE_CONSIDERATIONS.md to:
+  - Artifact table
+  - Session End Protocol (step 5: promote items if sprint-relevant)
+  - Session End Prompt template
+  - Key Project Locations table
+
+### Notes
+- These items capture operational maturity requirements identified during roadmap review
+- Each section has requirements checkboxes and open questions to resolve before promoting
+- Priority mapping table shows which sprint each item naturally fits into
+
+### Next Session Should
+- Continue Sprint 1 work (Dashboard or Season Detail pages)
+- Or address Sprint 4 auth/RLS if preparing for production
+
+---
+
 ## Session 2025-12-07 (Agent D: Testing & Infrastructure)
 
 **Phase:** Multi-Agent Experiment - Agent D

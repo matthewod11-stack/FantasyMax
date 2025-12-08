@@ -16,7 +16,8 @@ We use **structured artifacts** to maintain continuity:
 | **PROGRESS.md** | Log of completed work | `PROGRESS.md` |
 | **ROADMAP.md** | Checkbox tracking | `ROADMAP.md` |
 | **features.json** | Pass/fail status | `features.json` |
-| **KNOWN_ISSUES.md** | Parking lot | `docs/KNOWN_ISSUES.md` |
+| **KNOWN_ISSUES.md** | Parking lot for blockers | `docs/KNOWN_ISSUES.md` |
+| **FUTURE_CONSIDERATIONS.md** | Ops/infra parking lot | `docs/FUTURE_CONSIDERATIONS.md` |
 
 ---
 
@@ -66,8 +67,9 @@ We use **structured artifacts** to maintain continuity:
 2. Add entry to TOP of PROGRESS.md
 3. Update features.json status
 4. Check off tasks in ROADMAP.md
-5. Commit with descriptive message
-6. Note "Next Session Should" in PROGRESS.md
+5. **Review FUTURE_CONSIDERATIONS.md** — promote items to ROADMAP.md if sprint-relevant
+6. Commit with descriptive message
+7. Note "Next Session Should" in PROGRESS.md
 
 ---
 
@@ -98,7 +100,8 @@ Before ending: Please follow session end protocol:
 2. Add session entry to TOP of PROGRESS.md
 3. Update features.json with pass/fail status
 4. Check off completed task in ROADMAP.md
-5. Commit with descriptive message
+5. Review FUTURE_CONSIDERATIONS.md — promote items if sprint-relevant
+6. Commit with descriptive message
 
 What's the "Next Session Should" note for PROGRESS.md?
 ```
@@ -161,6 +164,7 @@ Summarize: where are we, what's next, any blockers?
 | Task roadmap | `ROADMAP.md` |
 | Feature tracking | `features.json` |
 | Known issues | `docs/KNOWN_ISSUES.md` |
+| Future ops/infra | `docs/FUTURE_CONSIDERATIONS.md` |
 | Dev init script | `scripts/dev-init.sh` |
 | Project config | `CLAUDE.md` |
 | Source code | `src/` |
