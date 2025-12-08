@@ -2,10 +2,10 @@
   "_meta": {
     "description": "Feature tracking for FantasyMax. Status: not-started | in-progress | pass | fail | blocked",
     "lastUpdated": "2025-12-08",
-    "totalFeatures": 50,
-    "passing": 42,
+    "totalFeatures": 52,
+    "passing": 47,
     "failing": 0,
-    "inProgress": 3,
+    "inProgress": 2,
     "blocked": 0
   },
   "foundation": {
@@ -53,12 +53,18 @@
     "records-categories": { "status": "pass", "notes": "5 categories with tabbed navigation: Single Week, Season, Career, Playoffs, Hall of Shame" },
     "records-page": { "status": "pass", "notes": "Full records page with category tabs, skeleton loading, empty state handling" },
     "records-top-n-queries": { "status": "pass", "notes": "Top N query functions for 6 record types: scores, blowouts, closest, season wins/points" },
-    "records-detail-drawer": { "status": "in-progress", "notes": "RecordDetailDrawer component done, needs wiring to page state" },
+    "records-detail-drawer": { "status": "pass", "notes": "RecordDetailDrawer fully wired with server action, client state management, and Top 10 leaderboard display" },
     "season-playoff-bracket": { "status": "pass", "notes": "Horizontal bracket with matchup cards, winner highlighting, championship badge" },
     "season-journey-chart": { "status": "pass", "notes": "SVG line chart with 12-color palette, team selection, playoff zone marker" },
     "season-standings": { "status": "pass", "notes": "Table with rank, record, points, status badges" },
     "season-highlights": { "status": "pass", "notes": "Champion/last place cards, season records grid" },
     "season-detail-page": { "status": "pass", "notes": "Tabbed interface with Standings/Journey/Playoffs" }
+  },
+  "sprint-2-records": {
+    "hall-of-shame-page": { "status": "pass", "notes": "Full Hall of Shame page with leaderboard, season inductees, stats footer" },
+    "hall-of-shame-leaderboard": { "status": "pass", "notes": "Most last places ranking with King/Prince/Duke titles" },
+    "hall-of-shame-timeline": { "status": "pass", "notes": "Season-by-season inductees grouped by decade" },
+    "shame-card-component": { "status": "pass", "notes": "Inverted trophy design with skull watermark" }
   },
   "phase-2-data-enrichment": {
     "trade-sync": { "status": "not-started", "notes": "Yahoo trade history import" },

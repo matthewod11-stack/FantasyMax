@@ -10,6 +10,135 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-08 (Hall of Shame Page)
+
+**Phase:** Sprint 2.2 - Records & Recognition
+**Focus:** Build the Hall of Shame page - immortalizing last place finishers
+
+### Completed
+- [x] **Query Functions** in `career.ts`:
+  - `getShameInducteesBySeason()` - All last place finishers by year
+  - `getClosestToShame()` - Teams that barely avoided last place
+  - `ShameInductee` interface for season-by-season data
+
+- [x] **ShameCard** component:
+  - Inverted trophy design (dark, skull watermark)
+  - Year badge, member avatar, team name
+  - Record and points stats
+  - Featured variant for latest inductee
+
+- [x] **ShameLeaderboard** component:
+  - Ranked list of members by total last place finishes
+  - Gold/silver/bronze styling (inverted as "King/Prince/Duke of Shame")
+  - Crown icon for top shamer
+
+- [x] **SeasonInductees** component:
+  - Year-by-year timeline grouped by decade
+  - Grid layout of ShameCards per decade
+  - Timeline connector decoration
+
+- [x] **ShameSkeleton** - Loading states
+
+- [x] **Hall of Shame Page** `/hall-of-shame`:
+  - Latest inductee hero card
+  - Tabbed interface: Leaderboard / By Season
+  - Stats footer with total inductees, unique members, seasons tracked
+  - Empty state handling
+
+### Files Created
+```
+src/app/(dashboard)/hall-of-shame/page.tsx
+src/components/features/hall-of-shame/
+├── index.ts
+├── ShameCard.tsx
+├── ShameLeaderboard.tsx
+├── SeasonInductees.tsx
+└── ShameSkeleton.tsx
+```
+
+### Files Modified
+```
+src/lib/supabase/queries/career.ts
+src/lib/supabase/queries/index.ts
+scripts/dev-init.sh (macOS case fix - earlier this session)
+```
+
+### Verified
+- [x] `npm run build` passes
+- [x] TypeScript compiles without errors
+- [x] New route `/hall-of-shame` visible in build output
+
+### Technical Notes
+- Reuses `getHallOfShame()` from existing career.ts (returns `CareerStatsRow[]`)
+- Season inductees query joins teams→seasons→members
+- Decade grouping calculated client-side for flexible display
+
+### Sprint 2 Progress
+- [x] 2.1 Records Page `/records` (with Top N drawer)
+- [x] 2.2 Hall of Shame `/hall-of-shame`
+- [ ] 2.3 Awards System `/awards`
+- [ ] 2.4 Commissioner Writeups
+
+### Next Session Should
+- Continue Sprint 2.3: Awards System `/awards`
+- Or add "Closest to Avoiding" stats to Hall of Shame
+
+---
+
+## Session 2025-12-08 (Records Detail Drawer Wiring)
+
+**Phase:** Sprint 2.1 - Records & Recognition
+**Focus:** Wire up the RecordDetailDrawer to show Top 10 leaderboard when clicking record cards
+
+### Completed
+- [x] **Server Action** `fetchTopNAction` in `records/actions.ts`:
+  - Wraps `getTopNForRecordType()` for client-side invocation
+  - Error handling with graceful fallback to empty array
+
+- [x] **RecordsClient** component in `records/RecordsClient.tsx`:
+  - Client-side wrapper managing drawer state (`selectedRecord`, `isDrawerOpen`)
+  - `handleRecordClick` callback passed through RecordCategorySection
+  - Integrates RecordDetailDrawer with fetchTopN function
+  - Preserves empty state handling from original server component
+
+- [x] **Records Page** refactored:
+  - Server component now only fetches data
+  - Passes `recordsByCategory` to RecordsClient
+  - Clean separation of server data fetching and client interactivity
+
+- [x] **Fixed dev-init.sh** script:
+  - Case-insensitive directory check for macOS compatibility
+
+### Files Created
+```
+src/app/(dashboard)/records/actions.ts
+src/app/(dashboard)/records/RecordsClient.tsx
+```
+
+### Files Modified
+```
+src/app/(dashboard)/records/page.tsx
+scripts/dev-init.sh
+```
+
+### Verified
+- [x] `npm run build` passes
+- [x] TypeScript compiles without errors
+
+### Technical Notes
+- Architecture pattern: Server Component fetches data → Client Component manages UI state
+- Server Actions enable client components to call server-side database queries
+- Drawer state cleared after 300ms delay to allow close animation
+
+### Sprint 2.1 Status
+Records Page feature is now **fully complete** with interactive Top 10 leaderboards.
+
+### Next Session Should
+- Continue Sprint 2: Hall of Shame page `/hall-of-shame`
+- Or move to Sprint 2.3: Awards System `/awards`
+
+---
+
 ## Session 2025-12-08 (Records Page)
 
 **Phase:** Sprint 2.1 - Records & Recognition

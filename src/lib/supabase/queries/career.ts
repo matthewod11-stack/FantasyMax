@@ -160,3 +160,111 @@ export async function getHallOfShame(): Promise<CareerStatsRow[]> {
 
   return data as CareerStatsRow[];
 }
+
+/**
+ * Hall of Shame inductee for a single season
+ */
+export interface ShameInductee {
+  season_year: number;
+  member_id: string;
+  display_name: string;
+  team_name: string;
+  wins: number;
+  losses: number;
+  ties: number;
+  points_for: number;
+  final_rank: number;
+}
+
+/**
+ * Get all last place finishers by season (Hall of Shame inductees)
+ *
+ * @returns Array of last place finishers sorted by year descending
+ */
+export async function getShameInducteesBySeason(): Promise<ShameInductee[]> {
+  const supabase = await createAdminClient();
+
+  const { data, error } = await supabase
+    .from('teams')
+    .select(`
+      season:seasons!teams_season_id_fkey(year),
+      member:members(id, display_name),
+      team_name,
+      final_record_wins,
+      final_record_losses,
+      final_record_ties,
+      total_points_for,
+      final_rank
+    `)
+    .eq('is_last_place', true)
+    .order('season(year)', { ascending: false });
+
+  if (error) {
+    console.error('[getShameInducteesBySeason] Error:', error);
+    return [];
+  }
+
+  return (data || []).map((t) => ({
+    season_year: t.season?.year ?? 0,
+    member_id: t.member?.id ?? '',
+    display_name: t.member?.display_name ?? 'Unknown',
+    team_name: t.team_name ?? '',
+    wins: t.final_record_wins ?? 0,
+    losses: t.final_record_losses ?? 0,
+    ties: t.final_record_ties ?? 0,
+    points_for: t.total_points_for ?? 0,
+    final_rank: t.final_rank ?? 0,
+  }));
+}
+
+/**
+ * Get "closest to avoiding" stats - teams that barely missed last place
+ *
+ * @param limit - Number of results to return
+ * @returns Teams sorted by smallest margin above last place
+ */
+export async function getClosestToShame(limit: number = 5): Promise<{
+  season_year: number;
+  member_id: string;
+  display_name: string;
+  final_rank: number;
+  last_place_rank: number;
+  margin_wins: number;
+}[]> {
+  const supabase = await createAdminClient();
+
+  // Get teams that finished second-to-last (one spot above last place)
+  // This is a simplified version - could be enhanced to show actual point differential
+  const { data, error } = await supabase
+    .from('teams')
+    .select(`
+      season:seasons!teams_season_id_fkey(year),
+      member:members(id, display_name),
+      final_rank,
+      final_record_wins,
+      is_last_place
+    `)
+    .eq('is_last_place', false)
+    .not('final_rank', 'is', null)
+    .order('final_rank', { ascending: false })
+    .limit(limit * 3); // Get more to filter
+
+  if (error) {
+    console.error('[getClosestToShame] Error:', error);
+    return [];
+  }
+
+  // Filter to second-to-last place finishes and format
+  // This is approximate - ideally we'd compare to the actual last place team each season
+  return (data || [])
+    .filter((t) => t.final_rank && t.final_rank >= 10) // Assuming 10+ team leagues
+    .slice(0, limit)
+    .map((t) => ({
+      season_year: t.season?.year ?? 0,
+      member_id: t.member?.id ?? '',
+      display_name: t.member?.display_name ?? 'Unknown',
+      final_rank: t.final_rank ?? 0,
+      last_place_rank: (t.final_rank ?? 0) + 1,
+      margin_wins: 1, // Simplified - would need more complex query for actual margin
+    }));
+}

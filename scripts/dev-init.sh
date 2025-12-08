@@ -15,12 +15,12 @@ NC='\033[0m'
 echo -e "${BLUE}=== FantasyMax Session Init ===${NC}"
 echo ""
 
-# 1. Confirm directory
-EXPECTED_DIR="FantasyMax"
-CURRENT_DIR=$(basename "$PWD")
+# 1. Confirm directory (case-insensitive for macOS)
+EXPECTED_DIR="fantasymax"
+CURRENT_DIR=$(basename "$PWD" | tr '[:upper:]' '[:lower:]')
 
 if [ "$CURRENT_DIR" != "$EXPECTED_DIR" ]; then
-    echo -e "${RED}ERROR: Expected to be in $EXPECTED_DIR${NC}"
+    echo -e "${RED}ERROR: Expected to be in FantasyMax${NC}"
     echo "Current: $PWD"
     exit 1
 fi

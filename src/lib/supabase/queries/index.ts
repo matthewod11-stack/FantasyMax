@@ -15,7 +15,10 @@ export {
   getCareerLeaderboard,
   getChampions,
   getHallOfShame,
+  getShameInducteesBySeason,
+  getClosestToShame,
 } from './career';
+export type { ShameInductee } from './career';
 
 // H2H queries
 export {

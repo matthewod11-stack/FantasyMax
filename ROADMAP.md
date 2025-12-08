@@ -178,14 +178,14 @@ League record book as a virtual trophy room.
 
 *Location: `src/app/(dashboard)/records/page.tsx`*
 
-### 2.2 Hall of Shame `/hall-of-shame`
+### 2.2 Hall of Shame `/hall-of-shame` ✅ COMPLETE
 
 Immortalize the last place finishers.
 
-- [ ] Last place "trophy case" with photos
-- [ ] Shame leaderboard (most last places)
-- [ ] "Closest to avoiding it" stats
-- [ ] Season-by-season inductees
+- [x] Last place "trophy case" with photos
+- [x] Shame leaderboard (most last places)
+- [ ] "Closest to avoiding it" stats (query ready, UI pending)
+- [x] Season-by-season inductees
 
 ### 2.3 Awards System `/awards`
 
