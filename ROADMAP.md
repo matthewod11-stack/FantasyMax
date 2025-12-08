@@ -12,7 +12,7 @@ The social/historical layer for your fantasy football league. This document is o
 |--------|-------|--------|
 | **Sprint 0** | Design System | ✅ Complete |
 | **Sprint 1** | Core Stats Pages | ✅ Complete |
-| **Sprint 2** | Records & Recognition | ⏳ Not Started |
+| **Sprint 2** | Records & Recognition | 🔄 In Progress (2.4 remaining) |
 | **Sprint 3** | Data Enrichment | ⏳ Not Started |
 | **Sprint 4** | Production Ready | ⏳ Not Started |
 | **Sprint 5** | Social Features | ⏳ Not Started |
@@ -187,15 +187,18 @@ Immortalize the last place finishers.
 - [ ] "Closest to avoiding it" stats (query ready, UI pending)
 - [x] Season-by-season inductees
 
-### 2.3 Awards System `/awards`
+### 2.3 Awards System `/awards` ✅ BASIC DISPLAY COMPLETE
 
 End-of-season recognition.
 
-- [ ] MVP, Comeback Player, Biggest Disappointment
-- [ ] Trade of the Year, Worst Trade
-- [ ] Custom commissioner-defined awards
-- [ ] Award history by year
+- [x] MVP, Comeback Player, Biggest Disappointment (display ready)
+- [x] Trade of the Year, Worst Trade (display ready)
+- [x] Award history by year (timeline view)
+- [x] Most Decorated leaderboard
+- [ ] Custom commissioner-defined awards (commissioner UI)
 - [ ] Award ceremony/reveal page
+
+*Location: `src/app/(dashboard)/awards/page.tsx`*
 
 ### 2.4 Commissioner Writeups
 

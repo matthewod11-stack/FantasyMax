@@ -10,6 +10,90 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-08 (Awards System)
+
+**Phase:** Sprint 2.3 - Records & Recognition
+**Focus:** Build the Awards page - end-of-season recognition system
+
+### Completed
+- [x] **Query Functions** in `awards.ts`:
+  - `getAwardTypes()` - All available award types
+  - `getAllAwards()` - All awards with full details (joins)
+  - `getAwardsBySeason()` - Awards grouped by year
+  - `getAwardsForSeason(year)` - Awards for a specific season
+  - `getAwardsForMember(id)` - Awards for a specific member
+  - `getAwardLeaderboard(limit)` - Most decorated members
+  - `getLatestSeasonAwards()` - Most recent season's awards
+  - Types: `AwardType`, `AwardWithDetails`, `AwardsBySeason`, `AwardsByMember`
+
+- [x] **AwardCard** component:
+  - Trophy plaque design for positive awards (gold styling)
+  - Thumbs-down design for negative awards (muted styling)
+  - Emoji icon support from database
+  - Featured variant for hero display
+  - Optional year badge (hideYear prop)
+
+- [x] **AwardLeaderboard** component:
+  - Ranked list of most decorated members
+  - Gold/silver/bronze styling for top 3
+  - Crown icon for leader, medal icons for 2nd/3rd
+  - Shows positive and "dubious" award counts
+
+- [x] **AwardsByYear** component:
+  - Timeline view with year headers
+  - Visual connectors between years
+  - Responsive grid of award cards per year
+  - Automatic sorting (positive awards first)
+
+- [x] **AwardsSkeleton** - Loading states for all sections
+
+- [x] **Awards Page** `/awards`:
+  - Latest champion hero card
+  - Tabbed interface: Most Decorated / By Season
+  - Stats footer with totals
+  - Empty state handling
+
+### Files Created
+```
+src/lib/supabase/queries/awards.ts
+src/app/(dashboard)/awards/page.tsx
+src/components/features/awards/
+├── index.ts
+├── AwardCard.tsx
+├── AwardsByYear.tsx
+├── AwardLeaderboard.tsx
+└── AwardsSkeleton.tsx
+```
+
+### Files Modified
+```
+src/lib/supabase/queries/index.ts (added awards exports)
+```
+
+### Verified
+- [x] `npm run build` passes
+- [x] TypeScript compiles without errors
+- [x] New route `/awards` visible in build output
+
+### Technical Notes
+- **Schema already exists**: `award_types` and `awards` tables were in initial migration with 11 pre-seeded award types
+- Reuses trophy room aesthetic from Records and Hall of Shame pages
+- Query functions use `createAdminClient()` (consistent with dev bypass pattern)
+- Negative awards handled with `is_positive: false` flag for styling differentiation
+
+### Sprint 2 Progress
+- [x] 2.1 Records Page `/records` (with Top N drawer)
+- [x] 2.2 Hall of Shame `/hall-of-shame`
+- [x] 2.3 Awards System `/awards` (basic display)
+- [ ] 2.4 Commissioner Writeups
+
+### Next Session Should
+- Add commissioner editing UI for awards (create/grant awards)
+- Or continue to Sprint 2.4: Commissioner Writeups
+- Or add "Award Ceremony" reveal page for dramatic announcements
+
+---
+
 ## Session 2025-12-08 (Hall of Shame Page)
 
 **Phase:** Sprint 2.2 - Records & Recognition

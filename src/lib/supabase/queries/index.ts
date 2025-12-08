@@ -53,3 +53,22 @@ export {
   getSeasonStandings,
   getAllSeasonStandings,
 } from './dashboard';
+
+// Awards queries
+export {
+  getAwardTypes,
+  getAllAwards,
+  getAwardsBySeason,
+  getAwardsForSeason,
+  getAwardsForMember,
+  getAwardLeaderboard,
+  getLatestSeasonAwards,
+  getAwardCounts,
+  getSeasonsWithAwards,
+} from './awards';
+export type {
+  AwardType,
+  AwardWithDetails,
+  AwardsBySeason,
+  AwardsByMember,
+} from './awards';

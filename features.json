@@ -2,8 +2,8 @@
   "_meta": {
     "description": "Feature tracking for FantasyMax. Status: not-started | in-progress | pass | fail | blocked",
     "lastUpdated": "2025-12-08",
-    "totalFeatures": 52,
-    "passing": 47,
+    "totalFeatures": 56,
+    "passing": 51,
     "failing": 0,
     "inProgress": 2,
     "blocked": 0
@@ -64,7 +64,11 @@
     "hall-of-shame-page": { "status": "pass", "notes": "Full Hall of Shame page with leaderboard, season inductees, stats footer" },
     "hall-of-shame-leaderboard": { "status": "pass", "notes": "Most last places ranking with King/Prince/Duke titles" },
     "hall-of-shame-timeline": { "status": "pass", "notes": "Season-by-season inductees grouped by decade" },
-    "shame-card-component": { "status": "pass", "notes": "Inverted trophy design with skull watermark" }
+    "shame-card-component": { "status": "pass", "notes": "Inverted trophy design with skull watermark" },
+    "awards-page": { "status": "pass", "notes": "Full Awards page with leaderboard, by-season timeline, stats footer" },
+    "awards-queries": { "status": "pass", "notes": "9 query functions for awards data with typed interfaces" },
+    "awards-card-component": { "status": "pass", "notes": "Trophy plaque design with positive/negative variants" },
+    "awards-leaderboard": { "status": "pass", "notes": "Most decorated members with gold/silver/bronze styling" }
   },
   "phase-2-data-enrichment": {
     "trade-sync": { "status": "not-started", "notes": "Yahoo trade history import" },
