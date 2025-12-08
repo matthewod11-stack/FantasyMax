@@ -43,6 +43,27 @@ Most recent session should be first.
   - Suspense boundary with skeleton fallback
   - Uses existing `getRecordsGroupedByCategory()` query
 
+### In Progress (Top N Leaderboard Feature)
+- [x] **Top N Query Functions** in `records.ts`:
+  - `getTopHighestScores()`, `getTopLowestScores()`
+  - `getTopBlowouts()`, `getTopClosestGames()`
+  - `getTopSeasonWins()`, `getTopSeasonPoints()`
+  - `getTopNForRecordType()` router function
+  - `TopNEntry` interface for leaderboard data
+
+- [x] **RecordDetailDrawer** component:
+  - Drawer shows top 10 leaderboard when clicking a record
+  - Hero card for current record holder
+  - Ranked list with gold/silver/bronze styling
+  - Loading and error states
+  - Only shows for supported record types
+
+- [~] **RecordCard clickable** (partially done):
+  - Added `onClick` and `hasLeaderboard` props
+  - "View Top 10" hint on clickable cards
+  - Keyboard accessible (Enter key support)
+  - **NOT YET WIRED**: Page needs to connect drawer state
+
 ### Files Created
 ```
 src/app/(dashboard)/records/page.tsx
@@ -50,6 +71,7 @@ src/components/features/records/
 ├── index.ts
 ├── RecordCard.tsx
 ├── RecordCategorySection.tsx
+├── RecordDetailDrawer.tsx
 └── RecordsSkeleton.tsx
 ```
 
@@ -71,8 +93,12 @@ src/components/features/records/
 - [ ] 2.4 Commissioner Writeups
 
 ### Next Session Should
-- Continue Sprint 2: Build Hall of Shame page `/hall-of-shame`
-- Or polish Records page with real data testing
+- **Finish Top N Leaderboard**: Wire up the drawer in Records page
+  - Add client-side state for selected record
+  - Create server action to call `getTopNForRecordType()`
+  - Pass `onRecordClick` to RecordCategorySection
+  - Test with real data
+- Then continue Sprint 2: Hall of Shame page `/hall-of-shame`
 
 ---
 

@@ -3,12 +3,28 @@
 import { cn } from '@/lib/utils';
 import { RecordCard } from './RecordCard';
 import { Trophy, Flame, Calendar, Medal, Skull } from 'lucide-react';
-import type { LeagueRecordRow, RecordCategory } from '@/types/contracts/queries';
+import type { LeagueRecordRow, RecordCategory, RecordType } from '@/types/contracts/queries';
+
+/**
+ * Record types that support the Top N leaderboard view
+ */
+const LEADERBOARD_SUPPORTED_TYPES: RecordType[] = [
+  'highest_single_week_score',
+  'lowest_single_week_score',
+  'biggest_blowout_margin',
+  'closest_game_margin',
+  'most_season_wins',
+  'most_season_points',
+];
 
 interface RecordCategorySectionProps {
   category: RecordCategory;
   records: LeagueRecordRow[];
   className?: string;
+  /**
+   * Called when a record card is clicked
+   */
+  onRecordClick?: (record: LeagueRecordRow) => void;
 }
 
 /**
@@ -77,6 +93,7 @@ export function RecordCategorySection({
   category,
   records,
   className,
+  onRecordClick,
 }: RecordCategorySectionProps) {
   const { title, description, icon, color } = getCategoryInfo(category);
 
@@ -103,12 +120,17 @@ export function RecordCategorySection({
 
       {/* Records grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {records.map((record) => (
-          <RecordCard
-            key={record.record_type}
-            record={record}
-          />
-        ))}
+        {records.map((record) => {
+          const hasLeaderboard = LEADERBOARD_SUPPORTED_TYPES.includes(record.record_type);
+          return (
+            <RecordCard
+              key={record.record_type}
+              record={record}
+              onClick={onRecordClick ? () => onRecordClick(record) : undefined}
+              hasLeaderboard={hasLeaderboard}
+            />
+          );
+        })}
       </div>
     </section>
   );

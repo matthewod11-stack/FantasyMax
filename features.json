@@ -2,10 +2,10 @@
   "_meta": {
     "description": "Feature tracking for FantasyMax. Status: not-started | in-progress | pass | fail | blocked",
     "lastUpdated": "2025-12-08",
-    "totalFeatures": 48,
-    "passing": 41,
+    "totalFeatures": 50,
+    "passing": 42,
     "failing": 0,
-    "inProgress": 2,
+    "inProgress": 3,
     "blocked": 0
   },
   "foundation": {
@@ -52,6 +52,8 @@
     "records-trophy-cards": { "status": "pass", "notes": "Digital plaque design with gradient bg, trophy watermark, dubious variant styling" },
     "records-categories": { "status": "pass", "notes": "5 categories with tabbed navigation: Single Week, Season, Career, Playoffs, Hall of Shame" },
     "records-page": { "status": "pass", "notes": "Full records page with category tabs, skeleton loading, empty state handling" },
+    "records-top-n-queries": { "status": "pass", "notes": "Top N query functions for 6 record types: scores, blowouts, closest, season wins/points" },
+    "records-detail-drawer": { "status": "in-progress", "notes": "RecordDetailDrawer component done, needs wiring to page state" },
     "season-playoff-bracket": { "status": "pass", "notes": "Horizontal bracket with matchup cards, winner highlighting, championship badge" },
     "season-journey-chart": { "status": "pass", "notes": "SVG line chart with 12-color palette, team selection, playoff zone marker" },
     "season-standings": { "status": "pass", "notes": "Table with rank, record, points, status badges" },

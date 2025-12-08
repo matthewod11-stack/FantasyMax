@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { ManagerAvatar } from '@/components/ui/manager-avatar';
-import { Trophy, Flame, Target, TrendingUp, Skull, Medal, Zap, Calendar } from 'lucide-react';
+import { Trophy, Flame, Target, TrendingUp, Skull, Medal, Zap, Calendar, ChevronRight } from 'lucide-react';
 import type { LeagueRecordRow, RecordType } from '@/types/contracts/queries';
 
 interface RecordCardProps {
@@ -19,6 +19,14 @@ interface RecordCardProps {
     name: string;
     value: number;
   };
+  /**
+   * Called when the card is clicked (for opening detail drawer)
+   */
+  onClick?: () => void;
+  /**
+   * Whether this record type has a leaderboard to show
+   */
+  hasLeaderboard?: boolean;
 }
 
 /**
@@ -157,11 +165,18 @@ export function RecordCard({
   className,
   isRecent = false,
   previousHolder,
+  onClick,
+  hasLeaderboard = false,
 }: RecordCardProps) {
   const isDubious = isDubiousRecord(record.record_type);
+  const isClickable = onClick && hasLeaderboard;
 
   return (
     <div
+      role={isClickable ? 'button' : undefined}
+      tabIndex={isClickable ? 0 : undefined}
+      onClick={isClickable ? onClick : undefined}
+      onKeyDown={isClickable ? (e) => e.key === 'Enter' && onClick() : undefined}
       className={cn(
         // Base plaque design
         'relative overflow-hidden rounded-xl border-2 p-5',
@@ -174,6 +189,8 @@ export function RecordCard({
           : 'border-gold/30 hover:border-gold/50',
         // Recent record glow
         isRecent && !isDubious && 'ring-2 ring-gold/50 ring-offset-2 ring-offset-background',
+        // Clickable styling
+        isClickable && 'cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background',
         className
       )}
     >
@@ -264,6 +281,14 @@ export function RecordCard({
               Previous: <span className="font-medium">{previousHolder.name}</span>
               {' '}({formatRecordValue(record.record_type, previousHolder.value)} {getRecordUnit(record.record_type)})
             </p>
+          </div>
+        )}
+
+        {/* View leaderboard hint for clickable cards */}
+        {isClickable && (
+          <div className="flex items-center justify-end gap-1 text-xs text-muted-foreground pt-2">
+            <span>View Top 10</span>
+            <ChevronRight className="h-3.5 w-3.5" />
           </div>
         )}
       </div>
