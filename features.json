@@ -1,12 +1,12 @@
 {
   "_meta": {
     "description": "Feature tracking for FantasyMax. Status: not-started | in-progress | pass | fail | blocked",
-"lastUpdated": "2025-12-07",
-    "totalFeatures": 43,
-    "passing": 28,
+    "lastUpdated": "2025-12-08",
+    "totalFeatures": 47,
+    "passing": 38,
     "failing": 0,
-    "inProgress": 3,
-    "blocked": 1
+    "inProgress": 2,
+    "blocked": 0
   },
   "foundation": {
     "yahoo-oauth": { "status": "pass", "notes": "Yahoo OAuth connection working" },
@@ -16,7 +16,7 @@
     "members-sync": { "status": "pass", "notes": "22 members created" },
     "vercel-deploy": { "status": "pass", "notes": "Auto-deploy from main branch" },
     "supabase-setup": { "status": "pass", "notes": "Database schema complete" },
-    "build": { "status": "blocked", "notes": "Pre-existing TS error in dashboard layout - see KNOWN_ISSUES.md" }
+    "build": { "status": "pass", "notes": "Build passing as of 2025-12-08" }
   },
   "testing-infrastructure": {
     "vitest-config": { "status": "pass", "notes": "Vitest 4.0.13 with jsdom, path aliases, 80% coverage threshold" },
@@ -38,10 +38,10 @@
     "command-palette": { "status": "pass", "notes": "cmdk with Cmd+K hook, categorized search" }
   },
   "phase-1-core-stats": {
-    "dashboard-your-opponent": { "status": "not-started", "notes": "Next opponent card with H2H history" },
-    "dashboard-history-widget": { "status": "not-started", "notes": "This week in your history" },
-    "dashboard-trophy-case": { "status": "not-started", "notes": "Personal achievements" },
-    "dashboard-rivalry-tracker": { "status": "not-started", "notes": "Nemesis/victim mini-view" },
+    "dashboard-your-opponent": { "status": "pass", "notes": "NextOpponentCard with H2H record, last 3 results, rivalry type. Fixed .or() query to client-side filter." },
+    "dashboard-history-widget": { "status": "pass", "notes": "HistoryWidget with event cycling, week-based lookups. Fixed .or() query to client-side filter." },
+    "dashboard-trophy-case": { "status": "pass", "notes": "TrophyCase with championships, records, career highlights. Fixed FK ambiguity in championship years query." },
+    "dashboard-rivalry-tracker": { "status": "pass", "notes": "RivalryTracker with nemesis/victim mini-cards" },
     "managers-card-grid": { "status": "pass", "notes": "3 view modes (Grid/List/Power Rank), staggered animations" },
     "managers-sorting": { "status": "pass", "notes": "6 sort options with animated grid rearrangement" },
     "manager-profile-timeline": { "status": "pass", "notes": "Interactive bar chart timeline with hover details" },
@@ -51,8 +51,11 @@
     "h2h-heatmap": { "status": "pass", "notes": "Toggle between Record and Heatmap modes" },
     "records-trophy-cards": { "status": "not-started", "notes": "Trophy card design for records" },
     "records-categories": { "status": "not-started", "notes": "Single week, season, all-time, playoffs" },
-    "season-playoff-bracket": { "status": "not-started", "notes": "Interactive playoff visualization" },
-    "season-journey-chart": { "status": "not-started", "notes": "Week-by-week rank chart" }
+    "season-playoff-bracket": { "status": "pass", "notes": "Horizontal bracket with matchup cards, winner highlighting, championship badge" },
+    "season-journey-chart": { "status": "pass", "notes": "SVG line chart with 12-color palette, team selection, playoff zone marker" },
+    "season-standings": { "status": "pass", "notes": "Table with rank, record, points, status badges" },
+    "season-highlights": { "status": "pass", "notes": "Champion/last place cards, season records grid" },
+    "season-detail-page": { "status": "pass", "notes": "Tabbed interface with Standings/Journey/Playoffs" }
   },
   "phase-2-data-enrichment": {
     "trade-sync": { "status": "not-started", "notes": "Yahoo trade history import" },

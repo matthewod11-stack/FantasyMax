@@ -10,6 +10,167 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-08 (Season Detail Page)
+
+**Phase:** Sprint 1.5 - Core Stats Pages
+**Focus:** Build Season Detail page with Playoff Bracket, Journey Chart, Standings, and Highlights
+
+### Completed
+- [x] **SeasonStandings** - Final standings table with:
+  - Rank column with trophy/skull icons for champion/last place
+  - Team name and manager avatar
+  - Record (W-L-T) and points columns
+  - Status badges for Champion, Last Place, Playoffs
+  - Click-through to manager profile
+
+- [x] **SeasonJourneyChart** - Interactive visualization showing:
+  - SVG-based line chart with team rankings across weeks
+  - 12-color palette for team differentiation
+  - Click to highlight individual team path
+  - Team legend with champion indicator
+  - Playoff zone visual marker
+  - Rank/Points mode toggle (Points disabled - future enhancement)
+
+- [x] **PlayoffBracket** - Tournament bracket visualization:
+  - Horizontal flow layout (rounds → trophy)
+  - Dynamic spacing between rounds
+  - Matchup cards with scores and winner highlight
+  - TBD slots for incomplete brackets
+  - Championship badge with gold styling
+  - Seed numbers and team avatars
+
+- [x] **SeasonHighlights** - Season summary cards:
+  - Champion card with trophy watermark, record, points for
+  - Last Place card with skull watermark
+  - Season records grid: High Score, Low Score, Biggest Blowout, Closest Game
+  - Record cards show member, opponent, week, and value
+
+- [x] **SeasonSkeleton** - Loading states for all sections
+
+- [x] **Season Detail Page** `/seasons/[year]`:
+  - Fetches season with champion/last place team joins
+  - Fetches all teams and matchups for the season
+  - Transforms data for each component
+  - Calculates weekly standings for journey chart
+  - Transforms playoff matchups for bracket
+  - Calculates season records (high/low/blowout/closest)
+  - Tabbed interface: Standings, Season Journey, Playoffs
+
+### Files Created
+```
+src/app/(dashboard)/seasons/[year]/page.tsx
+src/components/features/seasons/
+├── index.ts
+├── SeasonStandings.tsx
+├── SeasonJourneyChart.tsx
+├── PlayoffBracket.tsx
+├── SeasonHighlights.tsx
+└── SeasonSkeleton.tsx
+```
+
+### Verified
+- [x] `npm run build` passes
+- [x] TypeScript compiles without errors
+- [x] All components handle empty states gracefully
+
+### Technical Notes
+- Season data fetched with nested joins for champion/last_place teams
+- Weekly standings calculated from matchup history per team
+- Playoff bracket groups matchups by week to determine rounds
+- Season records calculated by scanning all final matchups
+- Uses design system components: `ManagerAvatar`, `StatBadge`, Tabs
+- Fixed prop names to match contracts (`displayName`, `showChampionRing`)
+- Fixed `StatBadge` usage to use `label`/`value` props instead of children
+
+### Dashboard Query Fixes (Same Session)
+Fixed 3 Supabase query issues in `src/lib/supabase/queries/dashboard.ts`:
+- **getChampionshipYears**: FK ambiguity error (PGRST201) - teams has multiple FKs to seasons, added explicit FK name `seasons!teams_season_id_fkey`
+- **getThisWeekInHistory**: `.or()` with embedded resource filters not supported (PGRST100) - changed to fetch all matchups for the week, then filter client-side for member's teams
+- **getUpcomingMatchup**: Same `.or()` limitation - changed to fetch all scheduled matchups, filter client-side for member's team
+- **Last 3 results query**: Same pattern - fetch all final matchups, filter client-side for H2H between two members
+
+### Sprint 1 Progress
+With this session, Sprint 1 (Core Stats Pages) is **100% complete**:
+- [x] 1.1 Managers Page `/managers`
+- [x] 1.2 Manager Profile `/managers/[id]`
+- [x] 1.3 Head-to-Head Matrix `/head-to-head`
+- [x] 1.4 Personalized Dashboard `/dashboard`
+- [x] 1.5 Season Detail `/seasons/[year]`
+
+### Next Session Should
+- Begin Sprint 2: Records & Recognition
+- Start with Records Page `/records` (trophy card design)
+- Or address any polish/bugs from Sprint 1 pages
+
+---
+
+## Session 2025-12-08 (Personalized Dashboard)
+
+**Phase:** Sprint 1.4 - Core Stats Pages
+**Focus:** Transform generic dashboard into personalized member experience with 4 widgets
+
+### Completed
+- [x] **NextOpponentCard** - Upcoming matchup widget showing:
+  - Opponent avatar and name
+  - All-time H2H record with color-coded wins/losses
+  - Last 3 results as W/L/T badges
+  - Rivalry type label (Nemesis/Victim/Rival/Even/First Meeting)
+  - Contextual "trash talk" hints
+- [x] **HistoryWidget** - "This Week in History" widget showing:
+  - Random historical event from same NFL week across seasons
+  - Event types: championship, high_score, blowout, playoff, low_score
+  - "Show another" cycling through multiple events
+  - Year badge and event value display
+- [x] **TrophyCase** - Personal achievements widget showing:
+  - Championship years as gold badges with count
+  - Records held (limited to 3 with +N more indicator)
+  - Career highlights (Win %, Playoff appearances)
+- [x] **RivalryTracker** - Nemesis/Victim mini-view showing:
+  - Side-by-side compact rivalry cards
+  - Red accent for nemesis, green for victim
+  - Record display with total games badge
+  - "View All" link to H2H matrix
+- [x] **DashboardSkeleton** - Loading states for all 4 widgets
+- [x] **Dashboard page rewrite** - Personalized experience:
+  - Fetches logged-in member (commissioner fallback in dev)
+  - Calls `getDashboardData()` from Agent B's data layer
+  - Current week detection from matchup data
+  - Personalized greeting with career summary
+  - 2x2 responsive widget grid
+
+### Files Created
+```
+src/components/features/dashboard/
+├── index.ts
+├── NextOpponentCard.tsx
+├── HistoryWidget.tsx
+├── TrophyCase.tsx
+├── RivalryTracker.tsx
+└── DashboardSkeleton.tsx
+docs/plans/DASHBOARD_IMPLEMENTATION.md
+```
+
+### Files Modified
+- `src/app/(dashboard)/page.tsx` - Complete rewrite to personalized dashboard
+
+### Verified
+- [x] `npm run build` passes
+- [x] TypeScript compiles without errors
+- [x] All widgets handle empty states gracefully
+
+### Technical Notes
+- Uses `getDashboardData()` and `getThisWeekInHistory()` from Agent B's query layer
+- Current week auto-detected: finds first scheduled matchup, fallback to last final
+- Widgets are client components receiving server-fetched data via props
+- Reuses `ManagerAvatar` from design system for opponent/rivalry avatars
+
+### Next Session Should
+- Test dashboard with live Supabase data
+- Continue Sprint 1 with Season Detail page (`/seasons/[year]`)
+- Consider adding staggered entrance animations to widgets
+
+---
+
 ## Session 2025-12-08 (Roadmap Planning)
 
 **Focus:** Capture operational maturity requirements as parking lot items

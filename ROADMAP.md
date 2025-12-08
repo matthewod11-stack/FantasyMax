@@ -1,6 +1,6 @@
 # FantasyMax Roadmap
 
-**Last Updated:** December 7, 2025
+**Last Updated:** December 8, 2025
 
 The social/historical layer for your fantasy football league. This document is organized by **Sprints** - the single source of truth for what to build and when.
 
@@ -11,7 +11,7 @@ The social/historical layer for your fantasy football league. This document is o
 | Sprint | Focus | Status |
 |--------|-------|--------|
 | **Sprint 0** | Design System | ✅ Complete |
-| **Sprint 1** | Core Stats Pages | 🟡 60% (3/5 pages) |
+| **Sprint 1** | Core Stats Pages | ✅ Complete |
 | **Sprint 2** | Records & Recognition | ⏳ Not Started |
 | **Sprint 3** | Data Enrichment | ⏳ Not Started |
 | **Sprint 4** | Production Ready | ⏳ Not Started |
@@ -59,7 +59,7 @@ The social/historical layer for your fantasy football league. This document is o
 
 ---
 
-## Sprint 1: Core Stats Pages 🟡 IN PROGRESS
+## Sprint 1: Core Stats Pages ✅ COMPLETE
 
 *The first features members will see - must feel polished.*
 
@@ -105,47 +105,49 @@ Interactive matrix showing all manager pairings.
 
 *Location: `src/app/(dashboard)/head-to-head/page.tsx`*
 
-### 1.4 Personalized Dashboard `/dashboard` ⏳ NOT STARTED
+### 1.4 Personalized Dashboard `/dashboard` ✅ COMPLETE
 
 The user's personal hub - their story, not a generic overview.
 
 **"Your Next Opponent" Card:**
-- [ ] Upcoming matchup with opponent avatar
-- [ ] All-time H2H record against opponent
-- [ ] Last 3 matchup results as mini timeline
-- [ ] Rivalry status label (Nemesis, Victim, Even)
+- [x] Upcoming matchup with opponent avatar
+- [x] All-time H2H record against opponent
+- [x] Last 3 matchup results as mini timeline
+- [x] Rivalry status label (Nemesis, Victim, Even)
 
 **"This Week in History" Widget:**
-- [ ] Random historical event from current NFL week
-- [ ] Rotates on refresh, "Show another" button
+- [x] Random historical event from current NFL week
+- [x] Rotates on refresh, "Show another" button
 - [ ] Links to relevant season/matchup
 
 **Personal Trophy Case:**
-- [ ] Championships with years
-- [ ] Records held
+- [x] Championships with years
+- [x] Records held
 - [ ] Awards won
 
 **Rivalry Tracker Mini-View:**
-- [ ] Top Nemesis and Victim with records
+- [x] Top Nemesis and Victim with records
 
-### 1.5 Season Detail `/seasons/[year]` ⏳ NOT STARTED
+### 1.5 Season Detail `/seasons/[year]` ✅ COMPLETE
 
 Deep dive into any season's story.
 
 **Playoff Bracket:**
-- [ ] Visual bracket with hover scores
-- [ ] Winner path highlighted
-- [ ] Click matchup → detailed view
+- [x] Visual bracket with hover scores
+- [x] Winner path highlighted
+- [ ] Click matchup → detailed view (drawer)
 
 **Season Journey Chart:**
-- [ ] Line chart: team rankings week-by-week
-- [ ] Toggle between rank and points
-- [ ] Hover to highlight team
+- [x] Line chart: team rankings week-by-week
+- [ ] Toggle between rank and points (disabled for now)
+- [x] Hover to highlight team
 
 **Standings & Highlights:**
-- [ ] Final standings with records
-- [ ] Champion and Last Place with styling
-- [ ] Season-specific records
+- [x] Final standings with records
+- [x] Champion and Last Place with styling
+- [x] Season-specific records (high score, low score, blowout, closest game)
+
+*Location: `src/app/(dashboard)/seasons/[year]/page.tsx`*
 
 ---
 

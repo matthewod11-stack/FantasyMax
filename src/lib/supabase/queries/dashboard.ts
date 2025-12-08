@@ -100,21 +100,23 @@ export async function getDashboardData(memberId: string): Promise<DashboardData 
 async function getChampionshipYears(memberId: string): Promise<number[]> {
   const supabase = await createAdminClient();
 
+  // Use explicit FK name to disambiguate (teams has multiple FKs to seasons)
   const { data, error } = await supabase
     .from('teams')
-    .select('season:seasons(year)')
+    .select('season:seasons!teams_season_id_fkey(year)')
     .eq('member_id', memberId)
-    .eq('is_champion', true)
-    .order('season(year)', { ascending: false });
+    .eq('is_champion', true);
 
   if (error) {
     console.error('[getChampionshipYears] Error:', error);
     return [];
   }
 
+  // Sort client-side since ordering by joined columns can be problematic
   return (data || [])
     .map((row) => row.season?.year)
-    .filter((year): year is number => year != null);
+    .filter((year): year is number => year != null)
+    .sort((a, b) => b - a); // descending
 }
 
 /**
@@ -134,8 +136,9 @@ export async function getThisWeekInHistory(
   const supabase = await createAdminClient();
   const events: HistoricalEvent[] = [];
 
-  // Get all matchups for this member during this week number
-  const { data: matchups, error } = await supabase
+  // Get all matchups for this week number (filter by member client-side)
+  // Note: Supabase doesn't support .or() on embedded resource filters
+  const { data: allMatchups, error } = await supabase
     .from('matchups')
     .select(`
       *,
@@ -144,13 +147,17 @@ export async function getThisWeekInHistory(
       season:seasons(year)
     `)
     .eq('week', week)
-    .eq('status', 'final')
-    .or(`home_team.member_id.eq.${memberId},away_team.member_id.eq.${memberId}`);
+    .eq('status', 'final');
 
   if (error) {
     console.error('[getThisWeekInHistory] Error:', error);
     return [];
   }
+
+  // Filter to matchups involving this member
+  const matchups = (allMatchups || []).filter(
+    (m) => m.home_team?.member_id === memberId || m.away_team?.member_id === memberId
+  );
 
   for (const matchup of matchups || []) {
     const isHome = matchup.home_team?.member_id === memberId;
@@ -277,8 +284,8 @@ export async function getUpcomingMatchup(
     return null;
   }
 
-  // Find next unplayed matchup
-  const { data: nextMatchup, error: matchupError } = await supabase
+  // Find next unplayed matchup - use direct column filter (not embedded)
+  const { data: scheduledMatchups, error: matchupError } = await supabase
     .from('matchups')
     .select(`
       *,
@@ -287,12 +294,18 @@ export async function getUpcomingMatchup(
     `)
     .eq('season_id', currentSeason.id)
     .eq('status', 'scheduled')
-    .or(`home_team_id.eq.${memberTeam.id},away_team_id.eq.${memberTeam.id}`)
-    .order('week', { ascending: true })
-    .limit(1)
-    .single();
+    .order('week', { ascending: true });
 
-  if (matchupError || !nextMatchup) {
+  if (matchupError) {
+    return null;
+  }
+
+  // Filter client-side for member's team
+  const nextMatchup = (scheduledMatchups || []).find(
+    (m) => m.home_team_id === memberTeam.id || m.away_team_id === memberTeam.id
+  );
+
+  if (!nextMatchup) {
     return null;
   }
 
@@ -308,8 +321,9 @@ export async function getUpcomingMatchup(
   // Get H2H history
   const h2h = await getH2HBetweenMembers(memberId, opponent.id);
 
-  // Get last 3 results
-  const { data: recentMatchups } = await supabase
+  // Get last 3 results - fetch all final matchups and filter client-side
+  // Supabase doesn't support .or() with embedded resource filters
+  const { data: allFinalMatchups } = await supabase
     .from('matchups')
     .select(`
       *,
@@ -317,14 +331,21 @@ export async function getUpcomingMatchup(
       away_team:teams!matchups_away_team_id_fkey(member_id)
     `)
     .eq('status', 'final')
-    .or(
-      `and(home_team.member_id.eq.${memberId},away_team.member_id.eq.${opponent.id}),` +
-      `and(home_team.member_id.eq.${opponent.id},away_team.member_id.eq.${memberId})`
-    )
-    .order('created_at', { ascending: false })
-    .limit(3);
+    .order('created_at', { ascending: false });
 
-  const lastThreeResults: ('W' | 'L' | 'T')[] = (recentMatchups || []).map((m) => {
+  // Filter to matchups between these two members
+  const recentMatchups = (allFinalMatchups || [])
+    .filter((m) => {
+      const homeId = m.home_team?.member_id;
+      const awayId = m.away_team?.member_id;
+      return (
+        (homeId === memberId && awayId === opponent.id) ||
+        (homeId === opponent.id && awayId === memberId)
+      );
+    })
+    .slice(0, 3);
+
+  const lastThreeResults: ('W' | 'L' | 'T')[] = recentMatchups.map((m) => {
     if (m.is_tie) return 'T';
     const memberIsHome = m.home_team?.member_id === memberId;
     const memberTeamId = memberIsHome ? m.home_team_id : m.away_team_id;
