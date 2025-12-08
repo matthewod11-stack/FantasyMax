@@ -45,7 +45,42 @@ With no dedicated staging environment, we need compensating controls for safe de
 
 Safe bootstrap of commissioner account and recovery paths.
 
+### Two-Tier Auth Model
+
+**Key Decision:** This app needs TWO authentication levels:
+
+1. **League Members (Simple Password Gate)**
+   - Commissioner shares URL + league password with members
+   - Password entered once → stored in cookie/localStorage
+   - Full read access to dashboard, stats, records, etc.
+   - NOT tied to individual identity
+   - Example: `modfantasyleague.com` → password screen → dashboard
+
+2. **Commissioners (Full Supabase Auth)**
+   - Real email/password login via Supabase Auth
+   - Required for Yahoo API access, data imports, award granting
+   - Required for admin actions (member management, writeups)
+   - Links to `members` table with `role = 'commissioner'`
+
+### Implementation Approach
+```
+┌─────────────────────────────────────────────────┐
+│  modfantasyleague.com                           │
+├─────────────────────────────────────────────────┤
+│  /login (league password) → cookie set          │
+│     ↓                                           │
+│  Dashboard, Records, Awards, etc. (read-only)   │
+├─────────────────────────────────────────────────┤
+│  /admin/login (Supabase Auth)                   │
+│     ↓                                           │
+│  Admin panel, Yahoo sync, award granting        │
+└─────────────────────────────────────────────────┘
+```
+
 ### Requirements
+- [ ] League password stored in env var (`LEAGUE_ACCESS_PASSWORD`)
+- [ ] Password gate middleware for member routes
+- [ ] Cookie/session for "logged in" state (no user identity)
 - [ ] Pre-seed commissioner account safely
 - [ ] Link existing manager records to commissioner user
 - [ ] Admin bypass path for recovery (break-glass procedure)
@@ -56,17 +91,19 @@ Safe bootstrap of commissioner account and recovery paths.
 ### Policy Matrix (Draft)
 | Table | Select | Insert | Update | Delete |
 |-------|--------|--------|--------|--------|
-| `members` | Authenticated | Commissioner | Commissioner | Never |
-| `teams` | Authenticated | Commissioner | Commissioner | Never |
-| `matchups` | Authenticated | Commissioner | Commissioner | Never |
-| `media` | Authenticated | Uploader/Commissioner | Uploader/Commissioner | Commissioner |
-| `polls` | Authenticated | Commissioner | Commissioner | Commissioner |
-| `votes` | Authenticated | Voter (once) | Never | Never |
+| `members` | Password Gate | Commissioner | Commissioner | Never |
+| `teams` | Password Gate | Commissioner | Commissioner | Never |
+| `matchups` | Password Gate | Commissioner | Commissioner | Never |
+| `media` | Password Gate | Uploader/Commissioner | Uploader/Commissioner | Commissioner |
+| `polls` | Password Gate | Commissioner | Commissioner | Commissioner |
+| `votes` | Password Gate | Voter (once) | Never | Never |
 
 ### Open Questions
 - **Commissioner email:** Which email to pre-seed?
 - **Break-glass:** Manual SQL script with 2FA, or service role key with rotation?
 - **Audit storage:** Dedicated `audit_log` table or external service?
+- **Password rotation:** How to notify league members if password changes?
+- **Cookie duration:** Persist forever, or require re-entry each season?
 
 ---
 
