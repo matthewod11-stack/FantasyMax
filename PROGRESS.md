@@ -10,6 +10,72 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-08 (Records Page)
+
+**Phase:** Sprint 2.1 - Records & Recognition
+**Focus:** Build the Records Page as a "trophy room" experience with digital plaque design
+
+### Completed
+- [x] **RecordCard** - Digital plaque trophy component:
+  - Gradient background with trophy/skull watermark
+  - Holder avatar and display name prominent
+  - Large typography for record value with units
+  - Context line showing when record was set (week/year or all-time)
+  - Dubious variant styling (muted colors, skull icon) for negative records
+  - "New!" ribbon badge for recently broken records
+  - Previous holder display for context
+  - Record-type-specific icons (Flame, Target, Zap, Trophy, Medal, Skull)
+
+- [x] **RecordCategorySection** - Category grouping component:
+  - Header with category icon, title, and description
+  - Responsive grid layout (1/2/3 columns)
+  - Empty state handling
+
+- [x] **RecordsSkeleton** - Loading states:
+  - Card skeleton with avatar, value, and context placeholders
+  - Category section skeleton with header
+  - Full page skeleton with tabs
+
+- [x] **Records Page** `/records`:
+  - Category tabs: Single Week, Season, All-Time, Playoffs, Hall of Shame
+  - Tab icons and record counts
+  - Empty state for no records
+  - Suspense boundary with skeleton fallback
+  - Uses existing `getRecordsGroupedByCategory()` query
+
+### Files Created
+```
+src/app/(dashboard)/records/page.tsx
+src/components/features/records/
+├── index.ts
+├── RecordCard.tsx
+├── RecordCategorySection.tsx
+└── RecordsSkeleton.tsx
+```
+
+### Verified
+- [x] `npm run build` passes
+- [x] TypeScript compiles without errors
+- [x] New route `/records` visible in build output
+
+### Technical Notes
+- Leverages existing `v_league_records` SQL view (11 record types)
+- Record types: highest/lowest week score, blowout/closest margin, season wins/points/record, career wins/points/championships, last places
+- Helper functions: `formatRecordValue()`, `getRecordUnit()`, `isDubiousRecord()`
+- Categories: single_week, season, career, playoff, dubious
+
+### Sprint 2 Progress
+- [x] 2.1 Records Page `/records`
+- [ ] 2.2 Hall of Shame `/hall-of-shame`
+- [ ] 2.3 Awards System `/awards`
+- [ ] 2.4 Commissioner Writeups
+
+### Next Session Should
+- Continue Sprint 2: Build Hall of Shame page `/hall-of-shame`
+- Or polish Records page with real data testing
+
+---
+
 ## Session 2025-12-08 (Season Detail Page)
 
 **Phase:** Sprint 1.5 - Core Stats Pages
