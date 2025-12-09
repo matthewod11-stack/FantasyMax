@@ -62,12 +62,12 @@
 **Resolution:** Enable RLS policies before inviting league members
 
 ### [DATA] Member identity merging needed
-**Status:** Open
+**Status:** Resolved
 **Severity:** Medium
 **Discovered:** 2024-12-06
+**Resolved:** 2025-12-08
 **Description:** Yahoo members who changed emails over the years appear as separate members. Need canonical identity table and merge tooling.
-**Workaround:** Manual identification for now
-**Resolution:** Build member merge UI in Phase 4.2
+**Resolution:** Built `/admin/members` page with merge functionality. Database migration adds `merged_into_id` column, `member_merges` audit table, and `merge_members()` function. Merged members are hidden from normal views.
 
 ### [DATA] Trades not yet imported
 **Status:** Open

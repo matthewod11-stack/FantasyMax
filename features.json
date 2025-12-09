@@ -2,8 +2,8 @@
   "_meta": {
     "description": "Feature tracking for FantasyMax. Status: not-started | in-progress | pass | fail | blocked",
     "lastUpdated": "2025-12-08",
-    "totalFeatures": 64,
-    "passing": 59,
+    "totalFeatures": 67,
+    "passing": 62,
     "failing": 0,
     "inProgress": 2,
     "blocked": 0
@@ -81,6 +81,11 @@
   "phase-2-data-enrichment": {
     "trade-sync": { "status": "not-started", "notes": "Yahoo trade history import" },
     "trade-timeline": { "status": "not-started", "notes": "Trade timeline view" }
+  },
+  "sprint-4-member-management": {
+    "member-merge-schema": { "status": "pass", "notes": "Migration adds merged_into_id column, member_merges audit table, merge_members() function" },
+    "member-merge-queries": { "status": "pass", "notes": "getMembersWithStats, mergeMembers, getMergeHistory query functions" },
+    "member-merge-ui": { "status": "pass", "notes": "Admin page /admin/members with merge dialog, active/merged tabs, history view" }
   },
   "tech-debt": {
     "enable-auth": { "status": "in-progress", "notes": "Currently using BYPASS_AUTH" },

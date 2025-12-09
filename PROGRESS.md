@@ -10,6 +10,77 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-08 (Member Merge Feature)
+
+**Phase:** Sprint 4.2 - Member Management
+**Focus:** Build commissioner tool to merge duplicate member records from Yahoo email changes
+
+### Completed
+- [x] **Database Migration** `20241208100000_member_merge.sql`:
+  - Added `merged_into_id` column to members table
+  - Created `member_merges` audit table
+  - Created `merge_members()` PostgreSQL function
+  - Handles FK updates across all tables (teams, awards, votes, media, etc.)
+  - Auto-refreshes materialized views after merge
+  - RLS policies for merge history visibility
+
+- [x] **Query Functions** `src/lib/supabase/queries/members.ts`:
+  - `getMembersWithStats()` - All members with team counts, years active
+  - `getMemberById()` - Single member lookup
+  - `mergeMembers()` - Calls database function
+  - `getMergeHistory()` - Audit log retrieval
+  - `updateMemberDisplayName()` - Edit member name
+  - `deleteMember()` - Delete member (only if no teams)
+
+- [x] **Admin Members Page** `/admin/members`:
+  - Stats cards: Active members, Merged members, Total merges
+  - Tabbed interface: Active / Merged / History
+  - Active members table with team counts, years active, Yahoo ID preview
+  - Merge dialog with primary/duplicate selection
+  - Preview of teams to be moved and combined years
+  - Success/error feedback with auto-refresh
+  - Merge history timeline
+
+- [x] **Server Actions** `src/app/admin/members/actions.ts`:
+  - `fetchMembersAction()` - Get all members with stats
+  - `mergeMembersAction()` - Execute merge operation
+  - `fetchMergeHistoryAction()` - Get merge audit log
+
+### Files Created
+```
+supabase/migrations/20241208100000_member_merge.sql
+src/lib/supabase/queries/members.ts
+src/app/admin/members/page.tsx
+src/app/admin/members/MembersClient.tsx
+src/app/admin/members/actions.ts
+```
+
+### Files Modified
+```
+src/lib/supabase/queries/index.ts (added member exports)
+ROADMAP.md (checked off merge duplicate members)
+features.json (added sprint-4-member-management section)
+docs/KNOWN_ISSUES.md (resolved member merging issue)
+```
+
+### Verified
+- [x] `npm run build` passes
+- [x] Migration applied to Supabase
+- [x] `merge_members` function exists in database
+
+### Technical Notes
+- **Type assertions**: Using `as unknown as` for queries on new tables/functions not yet in generated types
+- **Merged members hidden**: Query filters with `WHERE merged_into_id IS NULL` by default
+- **Audit trail**: `member_merges` table captures merged member stats as JSONB for potential undo
+- **Materialized views**: Auto-refreshed after merge (`mv_career_stats`, `mv_h2h_matrix`)
+
+### Next Session Should
+- **Use the merge UI** to clean up duplicate members (e.g., Matt vs Matthew)
+- Regenerate TypeScript types to remove type assertions
+- Continue Sprint 2.4 polish or begin Sprint 3 (Trade Sync)
+
+---
+
 ## Session 2025-12-08 (Manager Season Detail Drawer)
 
 **Phase:** Sprint 1/2 Polish

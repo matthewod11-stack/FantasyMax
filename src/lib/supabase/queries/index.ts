@@ -84,3 +84,18 @@ export {
   searchWriteups,
   getWriteupStats,
 } from './writeups';
+
+// Member queries
+export {
+  getMembersWithStats,
+  getMemberById,
+  mergeMembers,
+  getMergeHistory,
+  updateMemberDisplayName,
+  deleteMember,
+} from './members';
+export type {
+  MemberWithStats,
+  MergeResult,
+  MergeHistoryEntry,
+} from './members';

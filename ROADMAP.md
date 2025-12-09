@@ -87,7 +87,7 @@ Deep dive into one manager's history.
 - [x] Team name history across seasons
 - [x] Season-by-season table
 - [x] Click season → drawer with full breakdown
-- [ ] Team name merge for multi-email Yahoo users
+- [x] Team name merge for multi-email Yahoo users
 
 *Location: `src/app/(dashboard)/managers/[id]/page.tsx`*
 
@@ -264,7 +264,7 @@ Historical archive and future content creation.
 - [ ] Invite new members
 - [ ] Link Yahoo accounts to members
 - [ ] Role management (commissioner, president, treasurer)
-- [ ] Merge duplicate members
+- [x] Merge duplicate members
 - [ ] Deactivate former members
 
 ### 4.3 Mobile Experience
