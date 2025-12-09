@@ -10,6 +10,46 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-08 (Merge Function Fix + Data Cleanup)
+
+**Phase:** Bug Fix / Data Maintenance
+**Focus:** Fix merge_members() function bug and reassign misattributed teams
+
+### Completed
+- [x] **Fixed merge_members() function**:
+  - Root cause: Function referenced `proposed_by` column but actual column is `amended_by` in `rule_amendments` table
+  - Created patch migration `20241208100001_fix_merge_function.sql`
+  - Applied to Supabase successfully
+  - Merge feature now functional
+
+- [x] **Data cleanup - Team reassignment**:
+  - Moved 2018 and 2019 "WATTmeWhipWATTmeJJ" teams from PJ M to Paul
+  - These were misattributed during Yahoo sync (ownership change)
+  - Refreshed materialized views (mv_career_stats, mv_h2h_matrix)
+
+### Files Created
+```
+supabase/migrations/20241208100001_fix_merge_function.sql
+```
+
+### Files Modified
+```
+docs/KNOWN_ISSUES.md (documented and resolved merge function bug)
+```
+
+### Verified
+- [x] `npm run build` passes
+- [x] Migration applied to Supabase
+- [x] Team ownership corrected in database
+
+### Next Session Should
+- Test merge feature with actual duplicate members (Matt OD case)
+- Continue Sprint 2.4: Auto-detect member mentions in writeups
+- Or start Sprint 3: Trade sync from Yahoo
+- Or start Sprint 4.1: Authentication (blocking for production)
+
+---
+
 ## Session 2025-12-08 (Member Merge Feature)
 
 **Phase:** Sprint 4.2 - Member Management

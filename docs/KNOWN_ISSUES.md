@@ -69,6 +69,14 @@
 **Description:** Yahoo members who changed emails over the years appear as separate members. Need canonical identity table and merge tooling.
 **Resolution:** Built `/admin/members` page with merge functionality. Database migration adds `merged_into_id` column, `member_merges` audit table, and `merge_members()` function. Merged members are hidden from normal views.
 
+### [BUG] merge_members() function - wrong column name
+**Status:** Resolved
+**Severity:** Medium
+**Discovered:** 2025-12-08
+**Resolved:** 2025-12-08
+**Description:** The `merge_members()` function referenced `proposed_by` column in `rule_amendments` table, but the actual column is `amended_by`. This caused merge operations to fail with "column proposed_by does not exist" error.
+**Resolution:** Created migration `20241208100001_fix_merge_function.sql` with `CREATE OR REPLACE FUNCTION` to correct the column name. Applied to Supabase.
+
 ### [DATA] Trades not yet imported
 **Status:** Open
 **Severity:** Low
