@@ -2,8 +2,8 @@
   "_meta": {
     "description": "Feature tracking for FantasyMax. Status: not-started | in-progress | pass | fail | blocked",
     "lastUpdated": "2025-12-08",
-    "totalFeatures": 56,
-    "passing": 51,
+    "totalFeatures": 64,
+    "passing": 59,
     "failing": 0,
     "inProgress": 2,
     "blocked": 0
@@ -46,6 +46,7 @@
     "managers-sorting": { "status": "pass", "notes": "6 sort options with animated grid rearrangement" },
     "manager-profile-timeline": { "status": "pass", "notes": "Interactive bar chart timeline with hover details" },
     "manager-profile-rivalry": { "status": "pass", "notes": "Nemesis/Victim broadcast-style cards" },
+    "manager-profile-season-drawer": { "status": "pass", "notes": "Click season row → drawer with week-by-week matchups, high/low scores, playoff record" },
     "h2h-matrix": { "status": "pass", "notes": "NxN grid with sticky headers" },
     "h2h-drawer": { "status": "pass", "notes": "Sheet drawer with game-by-game history" },
     "h2h-heatmap": { "status": "pass", "notes": "Toggle between Record and Heatmap modes" },
@@ -68,7 +69,14 @@
     "awards-page": { "status": "pass", "notes": "Full Awards page with leaderboard, by-season timeline, stats footer" },
     "awards-queries": { "status": "pass", "notes": "9 query functions for awards data with typed interfaces" },
     "awards-card-component": { "status": "pass", "notes": "Trophy plaque design with positive/negative variants" },
-    "awards-leaderboard": { "status": "pass", "notes": "Most decorated members with gold/silver/bronze styling" }
+    "awards-leaderboard": { "status": "pass", "notes": "Most decorated members with gold/silver/bronze styling" },
+    "writeups-schema": { "status": "pass", "notes": "Database migration + TypeScript types for commissioner writeups" },
+    "writeups-parser": { "status": "pass", "notes": "Parse script splits alltimewriteups.md into 97 writeups with type inference" },
+    "writeups-seed": { "status": "pass", "notes": "97 writeups imported to Supabase with full-text search working" },
+    "writeups-page": { "status": "pass", "notes": "Full Writeups page with season accordion, detail drawer, search input" },
+    "writeups-queries": { "status": "pass", "notes": "8 query functions including full-text search via PostgreSQL" },
+    "writeups-components": { "status": "pass", "notes": "WriteupCard, WriteupsBySeason accordion, WriteupDetailDrawer" },
+    "writeups-fulltext-search": { "status": "pass", "notes": "PostgreSQL ts_rank search with debounced UI (400ms), ranked results list, dual browse/search modes" }
   },
   "phase-2-data-enrichment": {
     "trade-sync": { "status": "not-started", "notes": "Yahoo trade history import" },

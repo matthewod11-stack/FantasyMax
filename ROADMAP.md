@@ -86,7 +86,7 @@ Deep dive into one manager's history.
 - [x] Career stats grid
 - [x] Team name history across seasons
 - [x] Season-by-season table
-- [ ] Click season → drawer with full breakdown
+- [x] Click season → drawer with full breakdown
 - [ ] Team name merge for multi-email Yahoo users
 
 *Location: `src/app/(dashboard)/managers/[id]/page.tsx`*
@@ -205,11 +205,11 @@ End-of-season recognition.
 Historical archive and future content creation.
 
 **Phase 1: Historical Archive (Priority)**
-- [ ] Database schema for writeups (season, title, content, type, author)
-- [ ] Parse `docs/alltimewriteups.md` into individual writeups with metadata
-- [ ] Seed script to import ~100+ historical writeups (2015-2024)
-- [ ] Writeups page with season grouping (accordion/expand)
-- [ ] Full-text search across writeups
+- [x] Database schema for writeups (season, title, content, type, author)
+- [x] Parse `docs/alltimewriteups.md` into individual writeups with metadata
+- [x] Seed script to import ~100+ historical writeups (2015-2024)
+- [x] Writeups page with season grouping (accordion/expand)
+- [x] Full-text search across writeups (PostgreSQL ts_rank + debounced UI)
 - [ ] Auto-detect mentioned members for tagging
 
 **Phase 2: Commissioner Tools (Future)**

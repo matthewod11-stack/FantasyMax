@@ -5,7 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { CareerTimeline, RivalryCard, type CareerStats } from '@/components/features/managers';
+import { CareerTimeline, RivalryCard, type CareerStats, type SeasonHistoryData } from '@/components/features/managers';
+import { SeasonHistoryClient } from './SeasonHistoryClient';
 import { Trophy, ArrowLeft, Calendar, Target, TrendingUp, Medal } from 'lucide-react';
 import type { Member } from '@/types/database.types';
 
@@ -22,19 +23,6 @@ function getInitials(name: string): string {
     .slice(0, 2);
 }
 
-interface SeasonData {
-  year: number;
-  teamName: string;
-  wins: number;
-  losses: number;
-  ties: number;
-  pointsFor: number;
-  pointsAgainst: number;
-  finalRank: number | null;
-  isChampion: boolean;
-  isLastPlace: boolean;
-  madePlayoffs: boolean;
-}
 
 interface RivalryData {
   opponent: Member;
@@ -96,7 +84,7 @@ async function getManagerProfile(memberId: string) {
     lastPlaceFinishes: 0,
   };
 
-  const seasonData: SeasonData[] = [];
+  const seasonData: SeasonHistoryData[] = [];
 
   for (const team of teams ?? []) {
     const season = team.seasons as { id: string; year: number } | null;
@@ -114,6 +102,8 @@ async function getManagerProfile(memberId: string) {
 
     seasonData.push({
       year: season.year,
+      seasonId: season.id,
+      teamId: team.id,
       teamName: team.team_name,
       wins: team.final_record_wins ?? 0,
       losses: team.final_record_losses ?? 0,
@@ -396,55 +386,14 @@ export default async function ManagerProfilePage({ params }: PageProps) {
         </Card>
       )}
 
-      {/* Season Details Table */}
+      {/* Season Details Table - Click row for full breakdown */}
       <Card>
         <CardHeader>
           <CardTitle>Season History</CardTitle>
+          <CardDescription>Click a season to see week-by-week results</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b text-left">
-                  <th className="pb-2 font-medium">Year</th>
-                  <th className="pb-2 font-medium">Team Name</th>
-                  <th className="pb-2 font-medium text-right">Record</th>
-                  <th className="pb-2 font-medium text-right">Points</th>
-                  <th className="pb-2 font-medium text-right">Finish</th>
-                </tr>
-              </thead>
-              <tbody>
-                {seasonData.map((season) => (
-                  <tr key={season.year} className="border-b last:border-0">
-                    <td className="py-2 font-medium">{season.year}</td>
-                    <td className="py-2">{season.teamName}</td>
-                    <td className="py-2 text-right tabular-nums">
-                      {season.wins}-{season.losses}
-                      {season.ties > 0 && `-${season.ties}`}
-                    </td>
-                    <td className="py-2 text-right tabular-nums">
-                      {season.pointsFor.toFixed(1)}
-                    </td>
-                    <td className="py-2 text-right">
-                      {season.isChampion && (
-                        <Badge className="bg-yellow-500/10 text-yellow-600">
-                          🏆 Champion
-                        </Badge>
-                      )}
-                      {season.isLastPlace && (
-                        <Badge variant="destructive" className="bg-red-500/10 text-red-600">
-                          💀 Last
-                        </Badge>
-                      )}
-                      {!season.isChampion && !season.isLastPlace && season.finalRank && (
-                        <span className="text-muted-foreground">#{season.finalRank}</span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <SeasonHistoryClient seasons={seasonData} memberId={member.id} />
         </CardContent>
       </Card>
     </div>

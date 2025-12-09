@@ -198,3 +198,114 @@ export interface DashboardData {
   };
   recordsHeld: LeagueRecordRow[];
 }
+
+// =====================================
+// Writeup Types (Sprint 2.4)
+// =====================================
+
+/**
+ * Writeup type enum matching database enum
+ */
+export type WriteupType =
+  | 'weekly_recap'
+  | 'playoff_preview'
+  | 'season_recap'
+  | 'draft_notes'
+  | 'standings_update'
+  | 'power_rankings'
+  | 'announcement'
+  | 'other';
+
+/**
+ * Writeup status for publishing workflow
+ */
+export type WriteupStatus = 'draft' | 'published' | 'archived';
+
+/**
+ * Base writeup from database
+ */
+export interface Writeup {
+  id: string;
+  title: string;
+  content: string;
+  excerpt: string | null;
+  season_id: string | null;
+  week: number | null;
+  writeup_type: WriteupType;
+  author_id: string;
+  status: WriteupStatus;
+  published_at: string | null;
+  is_featured: boolean;
+  imported_from: string | null;
+  original_order: number | null;
+  created_at: string;
+  updated_at: string;
+}
+
+/**
+ * Writeup with joined data for display
+ */
+export interface WriteupWithDetails extends Writeup {
+  author: {
+    id: string;
+    display_name: string;
+    avatar_url: string | null;
+  };
+  season: {
+    id: string;
+    year: number;
+  } | null;
+}
+
+/**
+ * Writeups grouped by season for archive view
+ */
+export interface WriteupsBySeason {
+  season_year: number;
+  season_id: string;
+  writeups: WriteupWithDetails[];
+}
+
+/**
+ * Search result from full-text search
+ */
+export interface WriteupSearchResult {
+  id: string;
+  title: string;
+  excerpt: string | null;
+  season_year: number | null;
+  writeup_type: WriteupType;
+  published_at: string | null;
+  rank: number;
+}
+
+/**
+ * Member mention in a writeup
+ */
+export interface WriteupMention {
+  id: string;
+  writeup_id: string;
+  member_id: string;
+  mention_context: string | null;
+  created_at: string;
+}
+
+/**
+ * Query functions for writeups
+ */
+export interface WriteupQueryFunctions {
+  // Fetch writeups
+  getAllWriteups(): Promise<WriteupWithDetails[]>;
+  getWriteupById(id: string): Promise<WriteupWithDetails | null>;
+  getWriteupsBySeason(seasonId: string): Promise<WriteupWithDetails[]>;
+  getWriteupsByYear(year: number): Promise<WriteupWithDetails[]>;
+  getWriteupsGroupedBySeason(): Promise<WriteupsBySeason[]>;
+  getFeaturedWriteups(limit?: number): Promise<WriteupWithDetails[]>;
+
+  // Search
+  searchWriteups(query: string): Promise<WriteupSearchResult[]>;
+
+  // Member-specific
+  getWriteupsMentioningMember(memberId: string): Promise<WriteupWithDetails[]>;
+  getWriteupsByAuthor(authorId: string): Promise<WriteupWithDetails[]>;
+}

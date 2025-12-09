@@ -72,3 +72,15 @@ export type {
   AwardsBySeason,
   AwardsByMember,
 } from './awards';
+
+// Writeups queries
+export {
+  getAllWriteups,
+  getWriteupById,
+  getWriteupsBySeason,
+  getWriteupsForSeason,
+  getWriteupsByType,
+  getFeaturedWriteups,
+  searchWriteups,
+  getWriteupStats,
+} from './writeups';

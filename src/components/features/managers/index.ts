@@ -11,3 +11,10 @@ export { ManagersGrid } from './ManagersGrid';
 export { CareerTimeline } from './CareerTimeline';
 
 export { RivalryCard } from './RivalryCard';
+
+export { SeasonHistoryTable } from './SeasonHistoryTable';
+export type {
+  SeasonHistoryData,
+  SeasonDetail,
+  MatchupResult,
+} from './SeasonHistoryTable';

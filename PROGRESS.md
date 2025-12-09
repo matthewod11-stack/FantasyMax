@@ -10,6 +10,373 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-08 (Manager Season Detail Drawer)
+
+**Phase:** Sprint 1/2 Polish
+**Focus:** Add click-to-expand drawer showing full season breakdown on Manager Profile
+
+### Completed
+- [x] **SeasonHistoryTable Component** `src/components/features/managers/SeasonHistoryTable.tsx`:
+  - Interactive table with clickable rows
+  - Sheet drawer for season details
+  - Week-by-week matchup results (regular season + playoffs)
+  - Season highs/lows (best/worst scores)
+  - Win/loss color coding per matchup
+  - Championship/playoff badges
+
+- [x] **Server Action** `fetchSeasonDetailAction`:
+  - Fetches team data for member + season
+  - Fetches all matchups involving the team
+  - Calculates regular season vs playoff records
+  - Computes season high/low scores
+
+- [x] **SeasonHistoryClient** wrapper:
+  - Connects table to server action
+  - Handles drawer state management
+
+- [x] **Manager Profile Page Update**:
+  - Replaced static table with interactive SeasonHistoryClient
+  - Added hint text "Click a season to see week-by-week results"
+
+### Files Created
+```
+src/components/features/managers/SeasonHistoryTable.tsx
+src/app/(dashboard)/managers/[id]/actions.ts
+src/app/(dashboard)/managers/[id]/SeasonHistoryClient.tsx
+```
+
+### Files Modified
+```
+src/components/features/managers/index.ts (added SeasonHistoryTable exports)
+src/app/(dashboard)/managers/[id]/page.tsx (replaced table with interactive component)
+```
+
+### Verified
+- [x] `npm run build` passes
+- [x] TypeScript compiles without errors
+
+### Technical Notes
+- **Server Action pattern**: Season detail fetched on-demand when drawer opens (not pre-loaded)
+- **Drawer shows**: Summary stats, playoff badge, season high/low, week-by-week results
+- **Matchup rows**: Color-coded W/L, opponent name, scores, playoff/championship indicators
+
+### Next Session Should
+Continue Sprint 1/2 polish items (pick one):
+- "Closest to avoiding it" stats (Hall of Shame) - Low complexity
+- Awards won in Trophy Case (Dashboard) - Low complexity
+- Links to relevant season/matchup (Dashboard History Widget) - Low complexity
+- Filter by season range (H2H Matrix) - Medium complexity
+
+Or begin Sprint 3 (Trade Sync) or Sprint 4 (Authentication).
+
+---
+
+## Session 2025-12-08 (Full-Text Search UI)
+
+**Phase:** Sprint 2.4 - Records & Recognition
+**Focus:** Wire up PostgreSQL full-text search to Writeups page UI
+
+### Completed
+- [x] **Server Action** `searchWriteupsAction` in `actions.ts`:
+  - Wraps `searchWriteups()` RPC function
+  - Minimum 2-character query validation
+  - Error handling with graceful empty array fallback
+
+- [x] **SearchResultsList Component**:
+  - Flat ranked results view (vs accordion browse mode)
+  - Numbered rank badges showing relevance order
+  - Type badges and season metadata per result
+  - "Ranked by relevance" indicator
+  - Loading skeleton during search
+
+- [x] **WriteupsClient Enhancement**:
+  - Debounced search input (400ms delay)
+  - Two modes: Browse (accordion) and Search (flat list)
+  - Loading spinner during search transition
+  - `useTransition` for non-blocking search updates
+  - Cleanup timer on unmount to prevent memory leaks
+
+### Files Created
+```
+src/components/features/writeups/SearchResultsList.tsx
+```
+
+### Files Modified
+```
+src/app/(dashboard)/writeups/actions.ts (added searchWriteupsAction)
+src/app/(dashboard)/writeups/WriteupsClient.tsx (full rewrite for search integration)
+src/components/features/writeups/index.ts (added SearchResultsList export)
+```
+
+### Verified
+- [x] `npm run build` passes
+- [x] TypeScript compiles without errors
+
+### Technical Notes
+- **Debounce timing (400ms)**: Balance between responsiveness and server load for occasional archive browsing
+- **Minimum 2 chars**: Prevents noise from single-letter searches
+- **useTransition**: Keeps UI responsive while search is pending (non-blocking)
+- PostgreSQL `ts_rank` provides relevance scoring via `search_writeups()` RPC
+
+### Sprint 2.4 Status
+Full-text search UI is now **complete**. Remaining Sprint 2.4 items:
+- [ ] Auto-detect mentioned members for tagging (can defer)
+
+---
+
+## Session 2025-12-08 (Writeups Navigation)
+
+**Phase:** Sprint 2.4 - Records & Recognition
+**Focus:** Add Writeups link to sidebar navigation
+
+### Completed
+- [x] Added Writeups link to `memberNavItems` in sidebar
+- [x] Uses `FileText` icon (consistent with writeup type badges)
+- [x] Reorganized nav order: Records → Awards → Writeups → Hall of Shame
+
+### Files Modified
+```
+src/components/layout/sidebar.tsx
+```
+
+### Verified
+- [x] `npm run build` passes
+
+### Notes
+Navigation ordering rationale:
+- Records/Awards/Writeups grouped as "recognition/history" content
+- Hall of Shame follows as the "dubious recognition" section
+- Trades/Media/Voting/Constitution are social/governance features (some not yet implemented)
+
+---
+
+## Session 2025-12-08 (Writeups Page)
+
+**Phase:** Sprint 2.4 - Records & Recognition
+**Focus:** Build the Writeups page with season accordion and detail drawer
+
+### Completed
+- [x] **Query Functions** `src/lib/supabase/queries/writeups.ts`:
+  - `getAllWriteups()` - All published writeups with author/season joins
+  - `getWriteupById()` - Single writeup by ID
+  - `getWriteupsBySeason()` - Writeups grouped by season year
+  - `getWriteupsForSeason()` - Writeups for a specific year
+  - `getWriteupsByType()` - Filter by writeup type
+  - `getFeaturedWriteups()` - Featured writeups for homepage
+  - `searchWriteups()` - Full-text search via PostgreSQL
+  - `getWriteupStats()` - Summary stats for display
+
+- [x] **WriteupCard Component**:
+  - Type badges with icons (FileText, Trophy, BarChart3, etc.)
+  - Color-coded by writeup type
+  - Excerpt preview with line clamping
+  - Author avatar and metadata footer
+  - `WriteupListItem` compact variant for lists
+
+- [x] **WriteupsBySeason Component**:
+  - shadcn accordion for season grouping
+  - Type breakdown badges on each season header
+  - Cards or list display mode toggle
+  - Empty state handling
+
+- [x] **WriteupDetailDrawer**:
+  - Full writeup content in slide-out drawer
+  - Preserved whitespace formatting
+  - Type badge, author, and date metadata
+  - Loading skeleton during fetch
+
+- [x] **Writeups Page** `/writeups`:
+  - Stats bar (total writeups, seasons, recaps, previews)
+  - Search input with client-side filtering
+  - Season accordion with latest year expanded
+  - Click writeup → drawer with full content
+
+### Files Created
+```
+src/lib/supabase/queries/writeups.ts
+src/components/features/writeups/
+├── index.ts
+├── WriteupCard.tsx
+├── WriteupsBySeason.tsx
+├── WriteupDetailDrawer.tsx
+└── WriteupsSkeleton.tsx
+src/app/(dashboard)/writeups/
+├── page.tsx
+├── WriteupsClient.tsx
+└── actions.ts
+```
+
+### Files Modified
+```
+src/lib/supabase/queries/index.ts (added writeups exports)
+src/components/ui/accordion.tsx (installed shadcn accordion)
+```
+
+### Verified
+- [x] `npm run build` passes
+- [x] New route `/writeups` visible in build output
+
+### Technical Notes
+- Uses `getUntypedClient()` pattern since writeups table not in generated types yet
+- Client-side search for now (filters by title/excerpt)
+- Full-text PostgreSQL search available but needs UI integration
+- Accordion from shadcn/ui using Radix primitives
+
+### Next Session Should
+1. Integrate full-text search via `searchWriteups()` RPC
+2. Add navigation link to writeups page in sidebar
+3. Consider member mention detection and tagging
+
+---
+
+## Session 2025-12-08 (Writeups Seed Import)
+
+**Phase:** Sprint 2.4 - Records & Recognition
+**Focus:** Apply migration and import 97 historical writeups into database
+
+### Completed
+- [x] **Seed Script** `scripts/seed-writeups.ts`:
+  - Standalone Supabase client (no Next.js cookie dependency)
+  - Reads parsed `writeups.json` from previous session
+  - Maps season years to season UUIDs
+  - Batch inserts (25 per batch) for efficiency
+  - Dry-run mode for previewing changes
+  - Force mode to clear and re-import
+  - Progress feedback during import
+
+- [x] **Migration Applied**: `20241208000001_writeups_table.sql` now live in Supabase
+  - `writeups` table with 97 rows
+  - `writeup_mentions` table (empty, for future tagging)
+  - Full-text search index + `search_writeups()` function working
+  - RLS policies enabled
+
+- [x] **Database Verification**:
+  - All 97 writeups imported successfully
+  - Season year → UUID mapping verified
+  - Full-text search returning ranked results
+
+### Files Created
+```
+scripts/seed-writeups.ts
+```
+
+### Files Modified
+```
+tsconfig.json (exclude scripts/ from build typecheck)
+package.json (added dotenv devDependency)
+```
+
+### Verified
+- [x] `npm run build` passes
+- [x] Seed script runs successfully
+- [x] Full-text search works (`search_writeups('playoffs championship')`)
+
+### Technical Notes
+- Excluded `scripts/` from tsconfig to avoid type errors (writeups table not in generated types yet)
+- Commissioner ID: `c2b4f7d5-c2c0-427e-aaee-f648d5a4995d` (Matt)
+- All writeups set to `status: 'published'` and `imported_from: 'alltimewriteups.md'`
+
+### Next Session Should
+1. Build Writeups page `/writeups` with season grouping (accordion/expand)
+2. Full-text search UI component
+3. Consider regenerating `database.types.ts` to include writeups table
+
+---
+
+## Session 2025-12-08 (Writeups Parser)
+
+**Phase:** Sprint 2.4 - Records & Recognition
+**Focus:** Parse historical writeups file into structured JSON
+
+### Completed
+- [x] **Parse Script** `scripts/parse-writeups.ts`:
+  - Splits `docs/alltimewriteups.md` (3,143 lines) into 97 individual writeups
+  - 10 seasons detected: 2015-2024 (includes 2019, contradicting earlier notes)
+  - Type inference with pattern matching and content analysis:
+    - `weekly_recap`: 18 (Week X recaps with matchup scores)
+    - `standings_update`: 14 (Playoff race analysis)
+    - `draft_notes`: 14 (Pre-draft and post-draft content)
+    - `playoff_preview`: 9 (Playoff matchup previews)
+    - `announcement`: 6 (League news, new members)
+    - `other`: 36 (Miscellaneous commissioner content)
+  - Week number extraction for weekly recaps
+  - Title generation from first line or content inference
+  - Preserves `original_order` for chronological display
+
+- [x] **Output**: `scripts/output/writeups.json` (ready for seed script)
+
+### Files Created
+```
+scripts/parse-writeups.ts
+scripts/output/writeups.json
+```
+
+### Verified
+- [x] `npm run build` passes (fixed TypeScript strict mode issues)
+
+### Technical Notes
+- Parser uses blank lines as writeup delimiters
+- Season headers: `20XX season` pattern with optional suffix
+- Signature patterns ("Commish", "-Commish Out") help identify writeup boundaries
+- Type inference prioritizes specific patterns, falls back to content heuristics
+
+### Next Session Should
+1. Create seed script to import writeups.json into database
+2. Apply migration to Supabase (requires seasons to exist for FK)
+3. Build Writeups page with season grouping
+
+---
+
+## Session 2025-12-08 (Writeups Schema)
+
+**Phase:** Sprint 2.4 - Records & Recognition
+**Focus:** Database schema and TypeScript types for commissioner writeups
+
+### Completed
+- [x] **Database Migration** `20241208000001_writeups_table.sql`:
+  - `writeups` table with: id, title, content, excerpt, season_id, week, writeup_type, author_id, status, published_at, is_featured, imported_from, original_order
+  - `writeup_mentions` table for member tagging
+  - `writeup_type` ENUM: weekly_recap, playoff_preview, season_recap, draft_notes, standings_update, power_rankings, announcement, other
+  - Full-text search index on title + content
+  - `search_writeups()` function for ranked search results
+  - Auto-excerpt trigger (first 200 chars)
+  - RLS policies (members view published, commissioners manage all)
+
+- [x] **TypeScript Types** in `src/types/contracts/queries.ts`:
+  - `WriteupType`, `WriteupStatus` enums
+  - `Writeup`, `WriteupWithDetails`, `WriteupsBySeason` interfaces
+  - `WriteupSearchResult`, `WriteupMention` interfaces
+  - `WriteupQueryFunctions` interface for query contract
+
+### Files Created
+```
+supabase/migrations/20241208000001_writeups_table.sql
+```
+
+### Files Modified
+```
+src/types/contracts/queries.ts (added writeup types)
+features.json (added writeups-schema: pass)
+ROADMAP.md (checked off schema task)
+```
+
+### Verified
+- [x] `npm run build` passes
+
+### Design Decisions
+- **ENUM for writeup_type** - Database-level validation, efficient storage
+- **Nullable season_id** - Allows league-wide announcements not tied to a season
+- **original_order column** - Preserves ordering from historical import where dates aren't available
+- **Full-text search** - PostgreSQL GIN index with `ts_rank` for relevance scoring
+- **Auto-excerpt trigger** - Ensures list views always have preview text
+
+### Next Session Should
+1. Build parse script to split `docs/alltimewriteups.md` into JSON
+2. Create seed script to import historical writeups
+3. Apply migration to Supabase (local or production)
+
+---
+
 ## Session 2025-12-08 (Commissioner Writeups - Planning)
 
 **Phase:** Sprint 2.4 - Records & Recognition
