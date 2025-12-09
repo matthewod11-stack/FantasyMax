@@ -6,6 +6,11 @@
 import { createAdminClient } from '../server';
 
 // Types for member data
+export interface TeamNameHistory {
+  year: number;
+  team_name: string;
+}
+
 export interface MemberWithStats {
   id: string;
   display_name: string;
@@ -20,6 +25,8 @@ export interface MemberWithStats {
   seasons_played: number;
   years_active: number[];
   team_names: string[];
+  team_name_history: TeamNameHistory[];
+  current_team_name: string | null;
 }
 
 export interface MergeResult {
@@ -111,6 +118,7 @@ async function getMembersWithStatsFallback(
     team_count: number;
     team_names: Set<string>;
     years: Set<number>;
+    team_name_history: TeamNameHistory[];
   }>();
 
   for (const team of teams || []) {
@@ -120,6 +128,7 @@ async function getMembersWithStatsFallback(
         team_count: 0,
         team_names: new Set(),
         years: new Set(),
+        team_name_history: [],
       });
     }
     const stats = teamsByMember.get(memberId)!;
@@ -128,12 +137,19 @@ async function getMembersWithStatsFallback(
     const year = seasonYearMap.get(team.season_id);
     if (year) {
       stats.years.add(year);
+      stats.team_name_history.push({ year, team_name: team.team_name });
     }
+  }
+
+  // Sort team name history by year (descending - most recent first)
+  for (const stats of teamsByMember.values()) {
+    stats.team_name_history.sort((a, b) => b.year - a.year);
   }
 
   // Combine member data with team stats
   return members.map((member) => {
     const teamStats = teamsByMember.get(member.id);
+    const sortedHistory = teamStats?.team_name_history || [];
     return {
       id: member.id,
       display_name: member.display_name,
@@ -148,6 +164,8 @@ async function getMembersWithStatsFallback(
       seasons_played: teamStats?.years.size || 0,
       years_active: teamStats ? Array.from(teamStats.years).sort() : [],
       team_names: teamStats ? Array.from(teamStats.team_names) : [],
+      team_name_history: sortedHistory,
+      current_team_name: sortedHistory.length > 0 ? sortedHistory[0]?.team_name ?? null : null,
     };
   });
 }

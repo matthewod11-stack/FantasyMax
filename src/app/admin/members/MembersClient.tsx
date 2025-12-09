@@ -28,10 +28,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+} from '@/components/ui/sheet';
 import { Textarea } from '@/components/ui/textarea';
+import { Input } from '@/components/ui/input';
 import { ManagerAvatar } from '@/components/ui/manager-avatar';
-import { Users, Merge, History, AlertTriangle, Check, ChevronRight } from 'lucide-react';
-import { mergeMembersAction, fetchMembersAction } from './actions';
+import { Users, Merge, History, AlertTriangle, Check, ChevronRight, Pencil, ChevronDown } from 'lucide-react';
+import { mergeMembersAction, fetchMembersAction, updateMemberNameAction } from './actions';
 import type { MemberWithStats, MergeHistoryEntry } from '@/lib/supabase/queries';
 
 interface MembersClientProps {
@@ -57,9 +65,57 @@ export function MembersClient({
   const [mergeError, setMergeError] = useState<string | null>(null);
   const [mergeSuccess, setMergeSuccess] = useState<string | null>(null);
 
+  // Edit name dialog state
+  const [isEditOpen, setIsEditOpen] = useState(false);
+  const [editingMember, setEditingMember] = useState<MemberWithStats | null>(null);
+  const [editName, setEditName] = useState('');
+  const [editError, setEditError] = useState<string | null>(null);
+
+  // Team history drawer state
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
+  const [historyMember, setHistoryMember] = useState<MemberWithStats | null>(null);
+
   // Get member by ID
   const getMember = (id: string) =>
     [...members, ...mergedMembers].find((m) => m.id === id);
+
+  // Open edit dialog
+  const openEditDialog = (member: MemberWithStats) => {
+    setEditingMember(member);
+    setEditName(member.display_name);
+    setEditError(null);
+    setIsEditOpen(true);
+  };
+
+  // Handle name update
+  const handleUpdateName = () => {
+    if (!editingMember || !editName.trim()) {
+      setEditError('Name cannot be empty');
+      return;
+    }
+
+    startTransition(async () => {
+      const result = await updateMemberNameAction(editingMember.id, editName.trim());
+      if (result.success) {
+        // Update local state
+        setMembers((prev) =>
+          prev.map((m) =>
+            m.id === editingMember.id ? { ...m, display_name: editName.trim() } : m
+          )
+        );
+        setIsEditOpen(false);
+        setEditingMember(null);
+      } else {
+        setEditError(result.error || 'Failed to update name');
+      }
+    });
+  };
+
+  // Open team history drawer
+  const openHistoryDrawer = (member: MemberWithStats) => {
+    setHistoryMember(member);
+    setIsHistoryOpen(true);
+  };
 
   // Handle merge submission
   const handleMerge = () => {
@@ -155,9 +211,8 @@ export function MembersClient({
                 <TableHeader>
                   <TableRow>
                     <TableHead>Member</TableHead>
-                    <TableHead>Teams</TableHead>
-                    <TableHead>Years Active</TableHead>
-                    <TableHead>Yahoo ID</TableHead>
+                    <TableHead>Current Team</TableHead>
+                    <TableHead>Seasons</TableHead>
                     <TableHead className="text-right">Actions</TableHead>
                   </TableRow>
                 </TableHeader>
@@ -172,7 +227,17 @@ export function MembersClient({
                             size="sm"
                           />
                           <div>
-                            <div className="font-medium">{member.display_name}</div>
+                            <div className="font-medium flex items-center gap-2">
+                              {member.display_name}
+                              <Button
+                                variant="ghost"
+                                size="icon"
+                                className="h-6 w-6"
+                                onClick={() => openEditDialog(member)}
+                              >
+                                <Pencil className="h-3 w-3" />
+                              </Button>
+                            </div>
                             {member.email && (
                               <div className="text-xs text-muted-foreground">
                                 {member.email}
@@ -182,7 +247,21 @@ export function MembersClient({
                         </div>
                       </TableCell>
                       <TableCell>
-                        <Badge variant="outline">{member.team_count}</Badge>
+                        {member.current_team_name ? (
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className="h-auto py-1 px-2 font-normal text-left"
+                            onClick={() => openHistoryDrawer(member)}
+                          >
+                            <span className="truncate max-w-[200px]">
+                              {member.current_team_name}
+                            </span>
+                            <ChevronDown className="h-3 w-3 ml-1 text-muted-foreground" />
+                          </Button>
+                        ) : (
+                          <span className="text-xs text-muted-foreground">–</span>
+                        )}
                       </TableCell>
                       <TableCell>
                         {member.years_active.length > 0 ? (
@@ -191,19 +270,12 @@ export function MembersClient({
                             {member.years_active[member.years_active.length - 1]}
                             {' '}
                             <span className="text-xs">
-                              ({member.seasons_played} seasons)
+                              ({member.seasons_played})
                             </span>
                           </span>
                         ) : (
                           <span className="text-xs text-muted-foreground">No teams</span>
                         )}
-                      </TableCell>
-                      <TableCell>
-                        <code className="text-xs text-muted-foreground">
-                          {member.yahoo_manager_id
-                            ? `${member.yahoo_manager_id.slice(0, 8)}...`
-                            : '–'}
-                        </code>
                       </TableCell>
                       <TableCell className="text-right">
                         <Button
@@ -214,7 +286,7 @@ export function MembersClient({
                             setIsMergeOpen(true);
                           }}
                         >
-                          Select
+                          Merge
                         </Button>
                       </TableCell>
                     </TableRow>
@@ -460,6 +532,89 @@ export function MembersClient({
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      {/* Edit Name Dialog */}
+      <Dialog open={isEditOpen} onOpenChange={setIsEditOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Edit Member Name</DialogTitle>
+            <DialogDescription>
+              Change the display name for {editingMember?.display_name}
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="space-y-4 py-4">
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Display Name</label>
+              <Input
+                value={editName}
+                onChange={(e) => setEditName(e.target.value)}
+                placeholder="Enter display name"
+              />
+            </div>
+
+            {editError && (
+              <div className="flex items-center gap-2 text-destructive text-sm">
+                <AlertTriangle className="h-4 w-4" />
+                {editError}
+              </div>
+            )}
+          </div>
+
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setIsEditOpen(false)}>
+              Cancel
+            </Button>
+            <Button onClick={handleUpdateName} disabled={isPending}>
+              {isPending ? 'Saving...' : 'Save'}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Team Name History Drawer */}
+      <Sheet open={isHistoryOpen} onOpenChange={setIsHistoryOpen}>
+        <SheetContent>
+          <SheetHeader>
+            <SheetTitle>
+              {historyMember?.display_name}&apos;s Team Names
+            </SheetTitle>
+            <SheetDescription>
+              Historical team names across all seasons
+            </SheetDescription>
+          </SheetHeader>
+
+          <div className="mt-6 space-y-3">
+            {historyMember?.team_name_history.map((entry, index) => (
+              <div
+                key={`${entry.year}-${index}`}
+                className="flex items-center justify-between border-b pb-3 last:border-0"
+              >
+                <div className="flex items-center gap-3">
+                  <Badge variant={index === 0 ? 'default' : 'secondary'}>
+                    {entry.year}
+                  </Badge>
+                  <span className={index === 0 ? 'font-medium' : ''}>
+                    {entry.team_name}
+                  </span>
+                </div>
+                {index === 0 && (
+                  <Badge variant="outline" className="text-xs">
+                    Current
+                  </Badge>
+                )}
+              </div>
+            ))}
+
+            {(!historyMember?.team_name_history ||
+              historyMember.team_name_history.length === 0) && (
+              <p className="text-muted-foreground text-center py-8">
+                No team history available
+              </p>
+            )}
+          </div>
+        </SheetContent>
+      </Sheet>
     </div>
   );
 }

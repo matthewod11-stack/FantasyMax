@@ -98,4 +98,5 @@ export type {
   MemberWithStats,
   MergeResult,
   MergeHistoryEntry,
+  TeamNameHistory,
 } from './members';
