@@ -87,17 +87,23 @@ async function getMembersWithStatsFallback(
     return [];
   }
 
-  // Get team data for each member
+  // Get team data with season info
   const { data: teams, error: teamsError } = await client
     .from('teams')
-    .select(`
-      member_id,
-      team_name,
-      season:seasons!inner(year)
-    `);
+    .select('member_id, team_name, season_id');
 
   if (teamsError) {
     console.error('Error fetching teams:', teamsError);
+  }
+
+  // Get all seasons for year lookup
+  const { data: seasons } = await client
+    .from('seasons')
+    .select('id, year');
+
+  const seasonYearMap = new Map<string, number>();
+  for (const s of seasons || []) {
+    seasonYearMap.set(s.id, s.year);
   }
 
   // Aggregate team data by member
@@ -119,9 +125,9 @@ async function getMembersWithStatsFallback(
     const stats = teamsByMember.get(memberId)!;
     stats.team_count++;
     stats.team_names.add(team.team_name);
-    const season = team.season as unknown as { year: number };
-    if (season?.year) {
-      stats.years.add(season.year);
+    const year = seasonYearMap.get(team.season_id);
+    if (year) {
+      stats.years.add(year);
     }
   }
 
