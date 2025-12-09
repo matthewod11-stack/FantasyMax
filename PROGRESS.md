@@ -25,7 +25,7 @@ Most recent session should be first.
   - RLS policies for merge history visibility
 
 - [x] **Query Functions** `src/lib/supabase/queries/members.ts`:
-  - `getMembersWithStats()` - All members with team counts, years active
+  - `getMembersWithStats()` - All members with team counts, years active, team name history
   - `getMemberById()` - Single member lookup
   - `mergeMembers()` - Calls database function
   - `getMergeHistory()` - Audit log retrieval
@@ -35,9 +35,10 @@ Most recent session should be first.
 - [x] **Admin Members Page** `/admin/members`:
   - Stats cards: Active members, Merged members, Total merges
   - Tabbed interface: Active / Merged / History
-  - Active members table with team counts, years active, Yahoo ID preview
-  - Merge dialog with primary/duplicate selection
-  - Preview of teams to be moved and combined years
+  - Active members table with current team name, seasons, edit/merge actions
+  - **Edit name**: Pencil icon opens dialog to change display name
+  - **Team name history**: Click current team → drawer with all historical team names by year
+  - Merge dialog with primary/duplicate selection and preview
   - Success/error feedback with auto-refresh
   - Merge history timeline
 
@@ -45,6 +46,7 @@ Most recent session should be first.
   - `fetchMembersAction()` - Get all members with stats
   - `mergeMembersAction()` - Execute merge operation
   - `fetchMergeHistoryAction()` - Get merge audit log
+  - `updateMemberNameAction()` - Update display name
 
 ### Files Created
 ```
@@ -68,16 +70,22 @@ docs/KNOWN_ISSUES.md (resolved member merging issue)
 - [x] Migration applied to Supabase
 - [x] `merge_members` function exists in database
 
+### Known Issue (Next Session)
+- **Merge error**: `column "proposed_by" does not exist` in `rule_amendments` table
+  - The `merge_members()` function references wrong column name
+  - Fix: Update migration to use correct column name or remove that table from merge
+
 ### Technical Notes
 - **Type assertions**: Using `as unknown as` for queries on new tables/functions not yet in generated types
 - **Merged members hidden**: Query filters with `WHERE merged_into_id IS NULL` by default
 - **Audit trail**: `member_merges` table captures merged member stats as JSONB for potential undo
 - **Materialized views**: Auto-refreshed after merge (`mv_career_stats`, `mv_h2h_matrix`)
+- **Team name history**: Sorted by year descending, current team is first entry
 
 ### Next Session Should
-- **Use the merge UI** to clean up duplicate members (e.g., Matt vs Matthew)
+- **Fix merge function**: Update `proposed_by` column reference in `merge_members()` function
+- **Test merge**: Clean up Matt vs Matthew duplicate
 - Regenerate TypeScript types to remove type assertions
-- Continue Sprint 2.4 polish or begin Sprint 3 (Trade Sync)
 
 ---
 
