@@ -10,6 +10,65 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-10 (Auto-Detect Member Mentions)
+
+**Phase:** Sprint 2.4 - Records & Recognition (Final)
+**Focus:** Auto-detect member mentions in writeup content
+
+### Completed
+- [x] **Mention Detection Module** `src/lib/mentions/`:
+  - `detect-mentions.ts` - Core detection with word boundary matching
+  - `queries.ts` - Database operations for `writeup_mentions` table
+  - `index.ts` - Module exports
+  - Name aliases for common variations (e.g., "Matt" → "Matt OD", "Mike B" → "Mikey B")
+  - Context extraction (~60 chars around each mention)
+
+- [x] **Backfill Script** `scripts/backfill-mentions.ts`:
+  - Dry-run and live modes
+  - Verbose output option for debugging
+  - Top-mentioned members summary
+
+- [x] **Database Populated**:
+  - 164 mentions detected across 65 writeups
+  - 19 unique members mentioned
+  - Top mentions: Matt OD (48), PJ M (17), Big Ben (16), James H (15)
+
+### Files Created
+```
+src/lib/mentions/
+├── index.ts
+├── detect-mentions.ts
+└── queries.ts
+scripts/backfill-mentions.ts
+```
+
+### Verified
+- [x] `npm run build` passes
+- [x] Mentions saved to `writeup_mentions` table
+- [x] Context properly extracted for each mention
+
+### Technical Notes
+- **Word boundary matching**: Uses `\b` regex boundaries to avoid false positives
+- **Name aliases**: Maps display names to variations (e.g., "Mike OD" matches "Michael O'Donnell")
+- **Skipped names**: "K" excluded as too short (causes false positives)
+- **Unique constraint**: `writeup_mentions(writeup_id, member_id)` prevents duplicates
+- **Upsert pattern**: Script can be re-run safely without creating duplicates
+
+### Sprint 2.4 Status
+**Sprint 2 Phase 1 is now COMPLETE.** All historical archive features done:
+- ✅ Database schema
+- ✅ Parse + seed scripts
+- ✅ Writeups page with accordion
+- ✅ Full-text search
+- ✅ Member mention detection
+
+### Next Session Should
+- Begin Sprint 3: Trade Sync from Yahoo
+- Or begin Sprint 4: Authentication (blocking for production)
+- Or add polish items (H2H season filter, awards in trophy case)
+
+---
+
 ## Session 2025-12-08 (Merge Function Fix + Data Cleanup)
 
 **Phase:** Bug Fix / Data Maintenance

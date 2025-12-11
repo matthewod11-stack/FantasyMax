@@ -1,6 +1,6 @@
 # FantasyMax Roadmap
 
-**Last Updated:** December 8, 2025
+**Last Updated:** December 10, 2025
 
 The social/historical layer for your fantasy football league. This document is organized by **Sprints** - the single source of truth for what to build and when.
 
@@ -12,7 +12,7 @@ The social/historical layer for your fantasy football league. This document is o
 |--------|-------|--------|
 | **Sprint 0** | Design System | ✅ Complete |
 | **Sprint 1** | Core Stats Pages | ✅ Complete |
-| **Sprint 2** | Records & Recognition | 🔄 In Progress (2.4 remaining) |
+| **Sprint 2** | Records & Recognition | ✅ Complete (Phase 1) |
 | **Sprint 3** | Data Enrichment | ⏳ Not Started |
 | **Sprint 4** | Production Ready | ⏳ Not Started |
 | **Sprint 5** | Social Features | ⏳ Not Started |
@@ -210,7 +210,7 @@ Historical archive and future content creation.
 - [x] Seed script to import ~100+ historical writeups (2015-2024)
 - [x] Writeups page with season grouping (accordion/expand)
 - [x] Full-text search across writeups (PostgreSQL ts_rank + debounced UI)
-- [ ] Auto-detect mentioned members for tagging
+- [x] Auto-detect mentioned members for tagging
 
 **Phase 2: Commissioner Tools (Future)**
 - [ ] Rich text editor for new recaps
