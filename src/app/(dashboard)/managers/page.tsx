@@ -50,7 +50,7 @@ async function getManagersWithStats(): Promise<ManagerWithStats[]> {
       is_champion,
       is_last_place,
       made_playoffs,
-      seasons (
+      seasons!teams_season_id_fkey (
         year
       )
     `);
