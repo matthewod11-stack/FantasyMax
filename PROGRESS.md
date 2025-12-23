@@ -10,6 +10,37 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-23 (1.2: Fix H2H Merge Issue)
+
+**Phase:** Phase 1 - Fix Blockers
+**Focus:** Fix H2H matrix not showing merged members' historical records
+
+### Problem
+After member merge, Matt's historical H2H records weren't showing in the matrix.
+
+**Root Cause:** The H2H page queried `.eq('is_active', true)` which excluded merged members (who have `is_active = false`). The H2H data existed in `mv_h2h_matrix` - just the member list was incomplete.
+
+### Solution
+Changed query strategy from "fetch active members" to "fetch members who appear in H2H records":
+1. Query H2H records first
+2. Extract unique member IDs from both `member_1_id` and `member_2_id` columns
+3. Fetch members by those IDs (regardless of `is_active` status)
+
+### Files Modified
+```
+src/app/(dashboard)/head-to-head/page.tsx
+```
+
+### Verified
+- [x] `npm run build` passes
+- [x] Merged members with H2H history now included in matrix
+
+### Next Session Should
+- Start with **Session 2.1: Global Member Selector**
+- Read plan: `~/.claude/plans/joyful-puzzling-harbor.md`
+
+---
+
 ## Session 2025-12-23 (1.1: Fix Dashboard Loading)
 
 **Phase:** Phase 1 - Fix Blockers

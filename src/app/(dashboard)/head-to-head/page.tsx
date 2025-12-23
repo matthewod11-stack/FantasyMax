@@ -32,25 +32,33 @@ interface MatchupDetail {
 async function getH2HData() {
   const supabase = await createAdminClient();
 
-  // Fetch all active members
-  const { data: members, error: membersError } = await supabase
-    .from('members')
-    .select('*')
-    .eq('is_active', true)
-    .order('display_name');
-
-  if (membersError || !members) {
-    console.error('Error fetching members:', membersError);
-    return { members: [], records: [], matchups: [] };
-  }
-
-  // Fetch H2H records from the view
+  // Fetch H2H records from the view first
   const { data: h2hRecords, error: h2hError } = await supabase
     .from('head_to_head_records')
     .select('*');
 
   if (h2hError) {
     console.error('Error fetching H2H records:', h2hError);
+  }
+
+  // Extract unique member IDs from H2H records
+  // This includes merged members who have historical records
+  const memberIdsInH2H = new Set<string>();
+  (h2hRecords ?? []).forEach((r) => {
+    if (r.member_1_id) memberIdsInH2H.add(r.member_1_id);
+    if (r.member_2_id) memberIdsInH2H.add(r.member_2_id);
+  });
+
+  // Fetch members who have H2H history (regardless of is_active status)
+  const { data: members, error: membersError } = await supabase
+    .from('members')
+    .select('*')
+    .in('id', Array.from(memberIdsInH2H))
+    .order('display_name');
+
+  if (membersError || !members) {
+    console.error('Error fetching members:', membersError);
+    return { members: [], records: [], matchups: [] };
   }
 
   // Transform records to match our interface
@@ -148,7 +156,7 @@ async function H2HContent() {
     return (
       <Card>
         <CardContent className="py-12 text-center text-muted-foreground">
-          No active members found. Import league data to see H2H records.
+          No head-to-head records found. Import league data to see H2H matchups.
         </CardContent>
       </Card>
     );
