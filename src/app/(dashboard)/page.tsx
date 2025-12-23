@@ -122,9 +122,15 @@ async function DashboardContent() {
           Welcome back, {member.display_name.split(' ')[0]}
         </h1>
         <p className="text-muted-foreground">
-          {careerStats.seasons_played} seasons | {careerStats.total_wins}-{careerStats.total_losses}
-          {careerStats.total_ties > 0 && `-${careerStats.total_ties}`} career record
-          {championships.total > 0 && ` | ${championships.total}x Champion`}
+          {careerStats.seasons_played > 0 ? (
+            <>
+              {careerStats.seasons_played} seasons | {careerStats.total_wins}-{careerStats.total_losses}
+              {careerStats.total_ties > 0 && `-${careerStats.total_ties}`} career record
+              {championships.total > 0 && ` | ${championships.total}x Champion`}
+            </>
+          ) : (
+            'League member'
+          )}
         </p>
       </div>
 

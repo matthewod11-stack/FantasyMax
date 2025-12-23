@@ -10,6 +10,39 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-23 (1.1: Fix Dashboard Loading)
+
+**Phase:** Phase 1 - Fix Blockers
+**Focus:** Fix dashboard "Unable to load" for members without team history
+
+### Problem
+Dashboard showed "Unable to load" for commissioner member because `mv_career_stats` materialized view excludes members without team history.
+
+**Root Cause:** The view's WHERE clause `WHERE m.is_active = TRUE OR ts.seasons_played > 0` evaluates to NULL (falsy) when:
+- Member has `is_active = FALSE`, OR
+- Member has no teams (LEFT JOIN produces NULL for `seasons_played`)
+
+### Solution
+1. Added `createDefaultCareerStats()` helper function in `dashboard.ts` that returns zero-value CareerStatsRow
+2. Modified `getDashboardData()` to use fallback instead of returning null
+3. Updated dashboard page to show "League member" instead of "0 seasons | 0-0 record"
+
+### Files Modified
+```
+src/lib/supabase/queries/dashboard.ts
+src/app/(dashboard)/page.tsx
+```
+
+### Verified
+- [x] `npm run build` passes
+- [x] Dashboard now loads for members without team history
+
+### Next Session Should
+- Start with **Session 1.2: Fix H2H Merge Issue**
+- Read plan: `~/.claude/plans/joyful-puzzling-harbor.md`
+
+---
+
 ## Session 2025-12-23 (Planning: Shareable App Roadmap)
 
 **Phase:** Planning & Architecture

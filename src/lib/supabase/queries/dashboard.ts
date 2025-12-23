@@ -12,6 +12,7 @@
 
 import { createAdminClient } from '../server';
 import type {
+  CareerStatsRow,
   DashboardData,
   HistoricalEvent,
   UpcomingMatchup,
@@ -21,6 +22,34 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 import { getCareerStatsForMember } from './career';
 import { getTopNemesis, getTopVictim, getH2HBetweenMembers } from './h2h';
 import { getRecordsForMember } from './records';
+
+/**
+ * Create default career stats for members without team history
+ *
+ * This handles the case where a member (e.g., commissioner) exists
+ * but has never played in the league. The mv_career_stats view
+ * excludes such members, so we provide sensible defaults.
+ */
+function createDefaultCareerStats(member: Member): CareerStatsRow {
+  return {
+    member_id: member.id,
+    display_name: member.display_name,
+    total_wins: 0,
+    total_losses: 0,
+    total_ties: 0,
+    win_percentage: 0,
+    total_points_for: 0,
+    total_points_against: 0,
+    seasons_played: 0,
+    championships: 0,
+    playoff_appearances: 0,
+    last_place_finishes: 0,
+    best_season_year: null,
+    worst_season_year: null,
+    first_season_year: 0,
+    last_season_year: 0,
+  };
+}
 
 /**
  * Helper to get a Supabase client that can query any table/view
@@ -64,10 +93,8 @@ export async function getDashboardData(memberId: string): Promise<DashboardData 
       getChampionshipYears(memberId),
     ]);
 
-  if (!careerStats) {
-    console.error('[getDashboardData] Career stats not found for member');
-    return null;
-  }
+  // Use actual stats or fallback to defaults for members without team history
+  const stats = careerStats ?? createDefaultCareerStats(member as Member);
 
   // Upcoming matchup is context-dependent (current week)
   // For now, return null - this would be implemented when we know current week
@@ -78,7 +105,7 @@ export async function getDashboardData(memberId: string): Promise<DashboardData 
 
   return {
     member: member as Member,
-    careerStats,
+    careerStats: stats,
     topNemesis,
     topVictim,
     upcomingMatchup,
