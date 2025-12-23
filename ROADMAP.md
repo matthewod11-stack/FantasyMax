@@ -1,6 +1,6 @@
 # FantasyMax Roadmap
 
-**Last Updated:** December 10, 2025
+**Last Updated:** December 23, 2025
 
 The social/historical layer for your fantasy football league. This document is organized by **Sprints** - the single source of truth for what to build and when.
 
@@ -13,6 +13,7 @@ The social/historical layer for your fantasy football league. This document is o
 | **Sprint 0** | Design System | ✅ Complete |
 | **Sprint 1** | Core Stats Pages | ✅ Complete |
 | **Sprint 2** | Records & Recognition | ✅ Complete (Phase 1) |
+| **Sprint 2.5** | Shareable App | ⏳ In Progress |
 | **Sprint 3** | Data Enrichment | ⏳ Not Started |
 | **Sprint 4** | Production Ready | ⏳ Not Started |
 | **Sprint 5** | Social Features | ⏳ Not Started |
@@ -217,6 +218,37 @@ Historical archive and future content creation.
 - [ ] Weekly power rankings posts
 - [ ] Publish/draft status
 - [ ] Feature on homepage
+
+---
+
+## Sprint 2.5: Shareable App ⏳ IN PROGRESS
+
+*Make the app shareable with league friends - no login required.*
+
+**Plan:** `~/.claude/plans/joyful-puzzling-harbor.md`
+
+### Phase 1: Fix Blockers
+- [ ] Fix dashboard loading (career stats not found for member)
+- [ ] Fix H2H matrix (merged member records not showing)
+
+### Phase 2: Make Shareable
+- [ ] Global member selector in header ("Viewing as: [Member]")
+- [ ] Champion team name on season tiles
+
+### Phase 3: Visual Polish
+- [ ] Manager profile image upload (Supabase Storage)
+- [ ] H2H simplification (remove Record mode, keep Heatmap only)
+- [ ] H2H active/all-time members toggle
+
+### Phase 4: Feature Enhancements
+- [ ] Redesign Awards → Champions Gallery (championship winners only)
+- [ ] AI-generated season reviews for champions
+- [ ] AI-generated writeup titles (3-5 word summaries)
+- [ ] Hall of Shame: worst record AND worst points per season
+- [ ] Hall of Shame: AI writeup for "double shame" teams
+
+### Phase 5: Coming Soon
+- [ ] Trades/Media/Voting/Constitution placeholder pages with mockups
 
 ---
 

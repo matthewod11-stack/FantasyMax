@@ -1,11 +1,11 @@
 {
   "_meta": {
     "description": "Feature tracking for FantasyMax. Status: not-started | in-progress | pass | fail | blocked",
-    "lastUpdated": "2025-12-10",
-    "totalFeatures": 68,
-    "passing": 63,
+    "lastUpdated": "2025-12-23",
+    "totalFeatures": 80,
+    "passing": 65,
     "failing": 0,
-    "inProgress": 2,
+    "inProgress": 12,
     "blocked": 0
   },
   "foundation": {
@@ -89,9 +89,23 @@
     "member-merge-ui": { "status": "pass", "notes": "Admin page /admin/members with merge dialog, active/merged tabs, history view" },
     "member-merge-function-fix": { "status": "pass", "notes": "Fixed amended_by column reference in merge_members() via patch migration 20241208100001" }
   },
+  "sprint-2.5-shareable-app": {
+    "fix-dashboard-loading": { "status": "in-progress", "notes": "Career stats not found for member - mv_career_stats view issue" },
+    "fix-h2h-merge": { "status": "in-progress", "notes": "Merged members not showing - is_active filter excludes them" },
+    "member-selector": { "status": "not-started", "notes": "Global header dropdown for 'Viewing as: [Member]'" },
+    "champion-on-seasons": { "status": "not-started", "notes": "Show champion team name on season tiles" },
+    "avatar-upload": { "status": "not-started", "notes": "File upload to Supabase Storage for member avatars" },
+    "h2h-simplification": { "status": "not-started", "notes": "Remove Record mode, keep only Heatmap + active/all-time toggle" },
+    "champions-gallery": { "status": "not-started", "notes": "Redesign Awards page to show only championship winners" },
+    "ai-season-reviews": { "status": "not-started", "notes": "Generate ~200 word narratives for each champion's season" },
+    "ai-writeup-titles": { "status": "not-started", "notes": "Generate 3-5 word titles for 97 writeups" },
+    "hall-of-shame-dual": { "status": "not-started", "notes": "Show worst record AND worst points per season" },
+    "ai-shame-writeups": { "status": "not-started", "notes": "AI writeup for double shame teams" },
+    "coming-soon-pages": { "status": "not-started", "notes": "Placeholder pages for Trades/Media/Voting/Constitution" }
+  },
   "tech-debt": {
-    "enable-auth": { "status": "in-progress", "notes": "Currently using BYPASS_AUTH" },
-    "enable-rls": { "status": "in-progress", "notes": "Currently using admin client" },
-    "switch-to-createClient": { "status": "not-started", "notes": "After RLS configured" }
+    "enable-auth": { "status": "not-needed", "notes": "Decision: No auth required - app is shareable without login" },
+    "enable-rls": { "status": "not-needed", "notes": "Decision: Using admin client for public read-only access" },
+    "switch-to-createClient": { "status": "not-needed", "notes": "Decision: Keep admin client for shareable app" }
   }
 }

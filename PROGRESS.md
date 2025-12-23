@@ -10,6 +10,52 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-23 (Planning: Shareable App Roadmap)
+
+**Phase:** Planning & Architecture
+**Focus:** Make app shareable with friends (no auth), identify and plan fixes for bugs
+
+### Context
+- 13 days since last session
+- User wants to share app with league friends without requiring login
+- Multiple issues identified that need fixing
+
+### Issues Identified
+1. **Dashboard not loading** - `mv_career_stats` view filters out members without team history
+2. **H2H Matrix** - Merged members (Matt) not showing; Record/Heatmap modes redundant
+3. **Awards page** - Should become Champions Gallery (only championship winners)
+4. **Hall of Shame** - Needs worst points in addition to worst record
+5. **Writeups** - Need better AI-generated titles
+
+### Decisions Made
+- **No auth required** - Remove login requirement entirely for league sharing
+- **Member selector** - Global header dropdown for "Viewing as: [Member]"
+- **Manager images** - File upload to Supabase Storage
+- **AI features** - Anthropic API key ready for season reviews, titles, shame writeups
+
+### Roadmap Created
+12-session implementation plan saved to `~/.claude/plans/joyful-puzzling-harbor.md`:
+
+| Phase | Focus | Sessions |
+|-------|-------|----------|
+| 1 | Fix blockers (dashboard, H2H) | 2 |
+| 2 | Make shareable (member selector, champion tiles) | 2 |
+| 3 | Visual polish (avatars, H2H cleanup) | 2 |
+| 4 | Features (Champions Gallery, AI content) | 5 |
+| 5 | Coming Soon placeholders | 1 |
+
+### Verified
+- [x] `npm run build` passes
+- [x] Dev server runs on port 3004
+- [x] Existing features functional
+
+### Next Session Should
+- Run `./scripts/dev-init.sh`
+- Read plan: **`~/.claude/plans/joyful-puzzling-harbor.md`**
+- Start with **Session 1.1: Fix Dashboard Loading**
+
+---
+
 ## Session 2025-12-10 (Auto-Detect Member Mentions)
 
 **Phase:** Sprint 2.4 - Records & Recognition (Final)
