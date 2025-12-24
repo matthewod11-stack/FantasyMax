@@ -54,24 +54,43 @@ async function getCurrentWeek(): Promise<number> {
   return finalMatchup?.week ?? 1;
 }
 
-async function DashboardContent() {
+interface DashboardContentProps {
+  memberId?: string;
+}
+
+async function DashboardContent({ memberId }: DashboardContentProps) {
   const supabase = await createAdminClient();
 
-  // Get current member (same pattern as layout.tsx)
-  let { data: member } = await supabase
-    .from('members')
-    .select('*')
-    .eq('role', 'commissioner')
-    .limit(1)
-    .single();
+  // Get member from URL param, fallback to commissioner, then any member
+  let member = null;
 
-  if (!member) {
-    const { data: anyMember } = await supabase
+  if (memberId) {
+    const { data } = await supabase
       .from('members')
       .select('*')
+      .eq('id', memberId)
+      .single();
+    member = data;
+  }
+
+  if (!member) {
+    const { data } = await supabase
+      .from('members')
+      .select('*')
+      .eq('role', 'commissioner')
       .limit(1)
       .single();
-    member = anyMember;
+    member = data;
+  }
+
+  if (!member) {
+    const { data } = await supabase
+      .from('members')
+      .select('*')
+      .eq('is_active', true)
+      .limit(1)
+      .single();
+    member = data;
   }
 
   if (!member) {
@@ -159,10 +178,16 @@ async function DashboardContent() {
   );
 }
 
-export default function DashboardPage() {
+interface DashboardPageProps {
+  searchParams: Promise<{ member?: string }>;
+}
+
+export default async function DashboardPage({ searchParams }: DashboardPageProps) {
+  const params = await searchParams;
+
   return (
     <Suspense fallback={<DashboardSkeleton />}>
-      <DashboardContent />
+      <DashboardContent memberId={params.member} />
     </Suspense>
   );
 }

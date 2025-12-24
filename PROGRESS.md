@@ -10,6 +10,44 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-23 (2.1: Global Member Selector)
+
+**Phase:** Phase 2 - Make Shareable
+**Focus:** Add member selector dropdown for sharing app with friends
+
+### Implemented
+Global member selection with URL sync for shareable links.
+
+**Architecture:**
+- React Context (`MemberProvider`) for client-side state
+- URL search param `?member=<id>` for shareable links
+- Server-side data fetching reads from URL params
+
+### Files Created
+```
+src/contexts/member-context.tsx        - Selection context + provider
+src/components/layout/member-selector.tsx - Dropdown component
+```
+
+### Files Modified
+```
+src/components/layout/header.tsx       - Added MemberSelector
+src/app/(dashboard)/layout.tsx         - Wrapped with MemberProvider, fetch all members
+src/app/(dashboard)/page.tsx           - Read member from searchParams
+```
+
+### Verified
+- [x] `npm run build` passes
+- [x] Member selector appears in header
+- [x] URL updates when member is changed
+- [x] Dashboard shows selected member's data
+
+### Next Session Should
+- Start with **Session 2.2: Champion Team on Season Tiles**
+- Read plan: `~/.claude/plans/joyful-puzzling-harbor.md`
+
+---
+
 ## Session 2025-12-23 (1.2: Fix H2H Merge Issue)
 
 **Phase:** Phase 1 - Fix Blockers

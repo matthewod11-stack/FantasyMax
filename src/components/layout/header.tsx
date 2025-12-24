@@ -13,6 +13,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { LogOut, User } from 'lucide-react';
+import { MemberSelector } from './member-selector';
 import type { Member } from '@/types/database.types';
 
 interface HeaderProps {
@@ -38,7 +39,7 @@ export function Header({ member }: HeaderProps) {
 
   return (
     <header className="h-16 border-b bg-card px-6 flex items-center justify-between">
-      <div />
+      <MemberSelector />
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="relative h-10 w-10 rounded-full">
