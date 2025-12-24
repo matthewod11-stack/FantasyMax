@@ -10,6 +10,48 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-23 (2.2: Champion Team on Season Tiles)
+
+**Phase:** Phase 2 - Make Shareable
+**Focus:** Display champion's team name on each season card
+
+### Implemented
+Each season tile in `/seasons` now shows the champion's team name and manager.
+
+**Query Enhancement:**
+```sql
+champion_team:teams!fk_champion_team(team_name, member:members(display_name))
+```
+
+### Files Modified
+```
+src/app/(dashboard)/seasons/page.tsx  - Added champion_team to query, display in card
+```
+
+### Verified
+- [x] `npm run build` passes
+- [x] Champion info displays on season cards
+
+---
+
+## Session 2025-12-23 (Doc: Resolve Stale Blocker)
+
+**Phase:** Maintenance
+**Focus:** Mark resolved blocker issue in KNOWN_ISSUES.md
+
+### Summary
+The dashboard layout null check issue was already fixed in a previous session when MemberProvider was added. The guard at line 70-75 properly checks `if (!defaultMember || !allMembers || allMembers.length === 0)` before rendering.
+
+### Changes
+- Moved `[BUILD] Dashboard layout TypeScript null check error` from Open to Resolved in KNOWN_ISSUES.md
+- Verified build still passes
+
+### Verified
+- [x] `npm run build` passes
+- [x] KNOWN_ISSUES.md updated
+
+---
+
 ## Session 2025-12-23 (2.1: Global Member Selector)
 
 **Phase:** Phase 2 - Make Shareable

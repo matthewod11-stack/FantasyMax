@@ -13,7 +13,11 @@ export default async function SeasonsPage() {
     .from('seasons')
     .select(`
       *,
-      teams:teams!teams_season_id_fkey(count)
+      teams:teams!teams_season_id_fkey(count),
+      champion_team:teams!fk_champion_team(
+        team_name,
+        member:members(display_name)
+      )
     `)
     .order('year', { ascending: false });
 
@@ -71,6 +75,15 @@ export default async function SeasonsPage() {
                   <CardDescription>{season.name}</CardDescription>
                 </CardHeader>
                 <CardContent>
+                  {season.champion_team && (
+                    <div className="flex items-center gap-2 mb-3 text-sm">
+                      <Trophy className="h-4 w-4 text-yellow-500" />
+                      <span className="font-medium">{season.champion_team.team_name}</span>
+                      <span className="text-muted-foreground">
+                        ({season.champion_team.member?.display_name})
+                      </span>
+                    </div>
+                  )}
                   <div className="flex items-center gap-4 text-sm text-muted-foreground">
                     <div className="flex items-center gap-1">
                       <Users className="h-4 w-4" />

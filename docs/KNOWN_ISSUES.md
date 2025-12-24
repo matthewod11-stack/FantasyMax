@@ -28,15 +28,6 @@
 
 ## Open Issues
 
-### [BUILD] Dashboard layout TypeScript null check error
-**Status:** Open (Pre-existing in main)
-**Severity:** Blocker
-**Discovered:** 2024-12-07
-**Description:** `npm run build` fails with TypeScript error in `src/app/(dashboard)/layout.tsx:63` - "'member' is possibly 'null'". The fallback logic at line 52-58 doesn't guarantee `member` is non-null if both queries fail.
-**Workaround:** Build fails on all branches including `main`. Type checking can pass with `npx tsc --noEmit` excluding the problematic file.
-**Resolution:** Agent C (Features) should add null guard: `if (!member) { redirect('/error'); }` after line 58.
-**Affects:** All agents - blocks `npm run build` verification
-
 ### [TECH-DEBT] Auth bypass using createAdminClient()
 **Status:** Open
 **Severity:** High
@@ -89,7 +80,13 @@
 
 ## Resolved Issues
 
-*(Move issues here when resolved)*
+### [BUILD] Dashboard layout TypeScript null check error
+**Status:** Resolved
+**Severity:** Blocker
+**Discovered:** 2024-12-07
+**Resolved:** 2025-12-23
+**Description:** `npm run build` fails with TypeScript error in `src/app/(dashboard)/layout.tsx:63` - "'member' is possibly 'null'". The fallback logic at line 52-58 doesn't guarantee `member` is non-null if both queries fail.
+**Resolution:** The layout was refactored to properly guard against null values. Line 70-75 now explicitly checks `if (!defaultMember || !allMembers || allMembers.length === 0)` before rendering, ensuring TypeScript can verify the value is non-null.
 
 ---
 
