@@ -3,7 +3,7 @@
     "description": "Feature tracking for FantasyMax. Status: not-started | in-progress | pass | fail | blocked",
     "lastUpdated": "2025-12-23",
     "totalFeatures": 80,
-    "passing": 68,
+    "passing": 69,
     "failing": 0,
     "inProgress": 9,
     "blocked": 0
@@ -93,7 +93,7 @@
     "fix-dashboard-loading": { "status": "pass", "notes": "Added createDefaultCareerStats() fallback for members without team history" },
     "fix-h2h-merge": { "status": "pass", "notes": "Query members from H2H records instead of is_active filter" },
     "member-selector": { "status": "pass", "notes": "MemberProvider context + MemberSelector dropdown with URL sync" },
-    "champion-on-seasons": { "status": "not-started", "notes": "Show champion team name on season tiles" },
+    "champion-on-seasons": { "status": "pass", "notes": "Champion team name + manager displayed on season cards" },
     "avatar-upload": { "status": "not-started", "notes": "File upload to Supabase Storage for member avatars" },
     "h2h-simplification": { "status": "not-started", "notes": "Remove Record mode, keep only Heatmap + active/all-time toggle" },
     "champions-gallery": { "status": "not-started", "notes": "Redesign Awards page to show only championship winners" },
