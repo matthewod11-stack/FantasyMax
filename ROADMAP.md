@@ -228,11 +228,11 @@ Historical archive and future content creation.
 **Plan:** `~/.claude/plans/joyful-puzzling-harbor.md`
 
 ### Phase 1: Fix Blockers
-- [ ] Fix dashboard loading (career stats not found for member)
-- [ ] Fix H2H matrix (merged member records not showing)
+- [x] Fix dashboard loading (career stats not found for member)
+- [x] Fix H2H matrix (merged member records not showing)
 
 ### Phase 2: Make Shareable
-- [ ] Global member selector in header ("Viewing as: [Member]")
+- [x] Global member selector in header ("Viewing as: [Member]")
 - [ ] Champion team name on season tiles
 
 ### Phase 3: Visual Polish

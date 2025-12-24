@@ -3,9 +3,9 @@
     "description": "Feature tracking for FantasyMax. Status: not-started | in-progress | pass | fail | blocked",
     "lastUpdated": "2025-12-23",
     "totalFeatures": 80,
-    "passing": 65,
+    "passing": 68,
     "failing": 0,
-    "inProgress": 12,
+    "inProgress": 9,
     "blocked": 0
   },
   "foundation": {
@@ -90,9 +90,9 @@
     "member-merge-function-fix": { "status": "pass", "notes": "Fixed amended_by column reference in merge_members() via patch migration 20241208100001" }
   },
   "sprint-2.5-shareable-app": {
-    "fix-dashboard-loading": { "status": "in-progress", "notes": "Career stats not found for member - mv_career_stats view issue" },
-    "fix-h2h-merge": { "status": "in-progress", "notes": "Merged members not showing - is_active filter excludes them" },
-    "member-selector": { "status": "not-started", "notes": "Global header dropdown for 'Viewing as: [Member]'" },
+    "fix-dashboard-loading": { "status": "pass", "notes": "Added createDefaultCareerStats() fallback for members without team history" },
+    "fix-h2h-merge": { "status": "pass", "notes": "Query members from H2H records instead of is_active filter" },
+    "member-selector": { "status": "pass", "notes": "MemberProvider context + MemberSelector dropdown with URL sync" },
     "champion-on-seasons": { "status": "not-started", "notes": "Show champion team name on season tiles" },
     "avatar-upload": { "status": "not-started", "notes": "File upload to Supabase Storage for member avatars" },
     "h2h-simplification": { "status": "not-started", "notes": "Remove Record mode, keep only Heatmap + active/all-time toggle" },
