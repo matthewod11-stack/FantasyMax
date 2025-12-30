@@ -1,9 +1,9 @@
 {
   "_meta": {
     "description": "Feature tracking for FantasyMax. Status: not-started | in-progress | pass | fail | blocked",
-    "lastUpdated": "2025-12-23",
-    "totalFeatures": 80,
-    "passing": 69,
+    "lastUpdated": "2025-12-30",
+    "totalFeatures": 81,
+    "passing": 70,
     "failing": 0,
     "inProgress": 9,
     "blocked": 0
@@ -94,7 +94,8 @@
     "fix-h2h-merge": { "status": "pass", "notes": "Query members from H2H records instead of is_active filter" },
     "member-selector": { "status": "pass", "notes": "MemberProvider context + MemberSelector dropdown with URL sync" },
     "champion-on-seasons": { "status": "pass", "notes": "Champion team name + manager displayed on season cards" },
-    "avatar-upload": { "status": "not-started", "notes": "File upload to Supabase Storage for member avatars" },
+    "ai-generated-avatars": { "status": "pass", "notes": "14 Pixar-style AI avatars generated with Gemini, stored in public/avatars/, auto-lookup in ManagerAvatar" },
+    "avatar-upload": { "status": "not-started", "notes": "File upload to Supabase Storage - deferred, using AI avatars instead" },
     "h2h-simplification": { "status": "not-started", "notes": "Remove Record mode, keep only Heatmap + active/all-time toggle" },
     "champions-gallery": { "status": "not-started", "notes": "Redesign Awards page to show only championship winners" },
     "ai-season-reviews": { "status": "not-started", "notes": "Generate ~200 word narratives for each champion's season" },

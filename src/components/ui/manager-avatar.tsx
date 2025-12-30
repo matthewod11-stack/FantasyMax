@@ -3,6 +3,7 @@
 import * as React from 'react';
 import { cn } from '@/lib/utils';
 import { Avatar, AvatarImage, AvatarFallback } from './avatar';
+import { getAvatarUrl } from '@/lib/utils/avatar-map';
 import type { ManagerAvatarProps } from '@/types/contracts/components';
 
 /**
@@ -48,6 +49,8 @@ export interface ManagerAvatarComponentProps extends ManagerAvatarProps {
 const ManagerAvatar = React.forwardRef<HTMLSpanElement, ManagerAvatarComponentProps>(
   ({ avatarUrl, displayName, size, showChampionRing = false, className }, ref) => {
     const initials = getInitials(displayName);
+    // Auto-lookup avatar from static map if none provided
+    const resolvedAvatarUrl = avatarUrl || getAvatarUrl(displayName);
 
     return (
       <Avatar
@@ -59,8 +62,8 @@ const ManagerAvatar = React.forwardRef<HTMLSpanElement, ManagerAvatarComponentPr
           className
         )}
       >
-        {avatarUrl && (
-          <AvatarImage src={avatarUrl} alt={displayName} />
+        {resolvedAvatarUrl && (
+          <AvatarImage src={resolvedAvatarUrl} alt={displayName} />
         )}
         <AvatarFallback
           className={cn(

@@ -1,6 +1,6 @@
 # FantasyMax Roadmap
 
-**Last Updated:** December 23, 2025
+**Last Updated:** December 30, 2025
 
 The social/historical layer for your fantasy football league. This document is organized by **Sprints** - the single source of truth for what to build and when.
 
@@ -233,10 +233,11 @@ Historical archive and future content creation.
 
 ### Phase 2: Make Shareable
 - [x] Global member selector in header ("Viewing as: [Member]")
-- [ ] Champion team name on season tiles
+- [x] Champion team name on season tiles
 
 ### Phase 3: Visual Polish
-- [ ] Manager profile image upload (Supabase Storage)
+- [x] AI-generated Pixar-style member avatars (14 active members)
+- [ ] Manager profile image upload (Supabase Storage) - deferred, using AI avatars
 - [ ] H2H simplification (remove Record mode, keep Heatmap only)
 - [ ] H2H active/all-time members toggle
 

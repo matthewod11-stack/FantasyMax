@@ -5,6 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Trophy, TrendingUp, TrendingDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { getAvatarUrl } from '@/lib/utils/avatar-map';
 import type { Member } from '@/types/database.types';
 
 /**
@@ -51,6 +52,8 @@ export function ManagerCard({
 }: ManagerCardProps) {
   const hasChampionships = stats && stats.championships > 0;
   const winPct = stats ? (stats.winPercentage * 100).toFixed(1) : null;
+  // Resolve avatar URL from static map or database
+  const avatarUrl = member.avatar_url || getAvatarUrl(member.display_name);
 
   if (variant === 'compact') {
     return (
@@ -63,7 +66,7 @@ export function ManagerCard({
         )}
       >
         <Avatar className="h-8 w-8">
-          <AvatarImage src={member.avatar_url ?? undefined} />
+          <AvatarImage src={avatarUrl} />
           <AvatarFallback className="text-xs">
             {getInitials(member.display_name)}
           </AvatarFallback>
@@ -95,7 +98,7 @@ export function ManagerCard({
               hasChampionships && 'after:absolute after:inset-0 after:rounded-full after:shadow-[0_0_15px_rgba(234,179,8,0.3)]'
             )}>
               <Avatar className="h-20 w-20 border-2 border-border">
-                <AvatarImage src={member.avatar_url ?? undefined} />
+                <AvatarImage src={avatarUrl} />
                 <AvatarFallback className="text-xl font-bold bg-muted">
                   {getInitials(member.display_name)}
                 </AvatarFallback>
@@ -184,7 +187,7 @@ export function ManagerCard({
             hasChampionships && 'after:absolute after:inset-0 after:rounded-full after:shadow-[0_0_12px_rgba(234,179,8,0.25)]'
           )}>
             <Avatar className="h-14 w-14">
-              <AvatarImage src={member.avatar_url ?? undefined} />
+              <AvatarImage src={avatarUrl} />
               <AvatarFallback className="text-lg font-semibold">
                 {getInitials(member.display_name)}
               </AvatarFallback>

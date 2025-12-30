@@ -10,6 +10,64 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-30 (3.1: AI-Generated Member Avatars)
+
+**Phase:** Phase 3 - Visual Polish
+**Focus:** Generate Pixar-style avatars for 14 active league members using AI
+
+### Implemented
+AI-generated Pixar-style 3D character avatars for all 14 active members.
+
+**Architecture:**
+- Used Gemini MCP to generate images from reference photos
+- Static avatar mapping utility (`src/lib/utils/avatar-map.ts`)
+- Auto-lookup in `ManagerAvatar` component when no database URL exists
+- Avatars stored in `public/avatars/` as static assets
+
+**Avatar Generation:**
+- Iterative prompt refinement to capture likeness + team names
+- Each avatar features member's fantasy team name on jersey
+- Pixar-style 3D rendering with likeness preservation
+
+### Files Created
+```
+public/avatars/
+├── billy.png       (HoodieCru)
+├── garrett.png     (Victorious Secret)
+├── hugo.png        (Knickerbockers)
+├── james.png       (Feeling Good)
+├── jeff.png        (Purple Reign)
+├── k.png           (Joe Buck Yourself)
+├── kerry.png       (Fieldit2me)
+├── marko.png       (MoDitkaMoHJohnson)
+├── matt.png        (Game of Jones)
+├── mike.png        (ODEEZUS)
+├── nick-d.png      (AceBoogie)
+├── nick-f.png      (Laces Out)
+├── paul.png        (HR Nightmare)
+└── pj.png          (Big Trade Energy)
+src/lib/utils/avatar-map.ts
+```
+
+### Files Modified
+```
+src/components/ui/manager-avatar.tsx    - Added auto-lookup via getAvatarUrl()
+src/components/features/managers/ManagerCard.tsx - Added avatar resolution
+```
+
+### Verified
+- [x] `npm run build` passes
+- [x] Avatars display on Managers page
+- [x] Members without avatars fall back to initials
+
+### Technical Notes
+- **Hybrid approach:** Generated 2-3 test avatars first to establish style before batch
+- **Prompt engineering:** Key was "closely match exact face shape, facial features" for likeness
+- **Static mapping:** Chose hardcoded map over database to keep it simple for single-league use
+- **7 members without avatars:** Big Ben, Camil B, Evan S, Jim W, Mikey B, Rohit K, Tim M (fallback to initials)
+
+---
+
 ## Session 2025-12-23 (2.2: Champion Team on Season Tiles)
 
 **Phase:** Phase 2 - Make Shareable
