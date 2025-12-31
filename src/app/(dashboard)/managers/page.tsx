@@ -23,10 +23,12 @@ async function getManagersWithStats(): Promise<ManagerWithStats[]> {
   // TODO: Switch to createClient() when auth is enabled
   const supabase = await createAdminClient();
 
-  // Fetch all members
+  // Fetch all active, non-merged members
   const { data: members, error: membersError } = await supabase
     .from('members')
     .select('*')
+    .eq('is_active', true)
+    .is('merged_into_id', null)
     .order('display_name');
 
   if (membersError || !members) {
