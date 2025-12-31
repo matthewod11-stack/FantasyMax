@@ -32,9 +32,9 @@ interface MatchupDetail {
 async function getH2HData() {
   const supabase = await createAdminClient();
 
-  // Fetch H2H records from the view first
+  // Fetch H2H records from the materialized view
   const { data: h2hRecords, error: h2hError } = await supabase
-    .from('head_to_head_records')
+    .from('mv_h2h_matrix')
     .select('*');
 
   if (h2hError) {
@@ -66,7 +66,7 @@ async function getH2HData() {
     member1Id: r.member_1_id!,
     member2Id: r.member_2_id!,
     member1Wins: r.member_1_wins ?? 0,
-    member2Wins: r.member_1_losses ?? 0,
+    member2Wins: r.member_2_wins ?? 0,
     totalMatchups: r.total_matchups ?? 0,
   }));
 

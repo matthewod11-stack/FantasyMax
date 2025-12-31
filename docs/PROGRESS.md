@@ -10,6 +10,41 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-31 (H2H Records Fix)
+
+**Phase:** Sprint 2.5 - Bug Fixes
+**Focus:** Fix incorrect H2H records display on head-to-head page
+
+### Problem
+Screenshots showed H2H records with math that didn't add up:
+- Nick D vs Mike OD: "4-9" with "11 total matchups" (4+9=13, not 11)
+- Matt OD vs Hugo P: "4-5" with "10 total matchups" (4+5=9, not 10)
+
+### Root Cause
+The H2H page was using the OLD materialized view (`head_to_head_records`) instead of the NEW one (`mv_h2h_matrix`), and had a column name mismatch (`member_1_losses` vs `member_2_wins`).
+
+### Completed
+- [x] Changed H2H page to use `mv_h2h_matrix` view
+- [x] Fixed column mapping: `member_1_losses` → `member_2_wins`
+- [x] Build verified passing
+
+### Files Modified
+```
+src/app/(dashboard)/head-to-head/page.tsx - Use correct MV and column names
+```
+
+### Scripts Created (Investigation - can be deleted)
+```
+scripts/investigate-h2h.ts
+scripts/audit-h2h.ts
+scripts/refresh-views.ts
+```
+
+### Notes
+Deeper investigation revealed potential data sync issues between materialized views and raw matchup data, but fixing the view reference should resolve the immediate display issue. Further investigation may be needed if records still appear incorrect.
+
+---
+
 ## Session 2025-12-31 (AI Reviews & Member Fixes)
 
 **Phase:** Sprint 2.5 - Feature Enhancements
