@@ -10,6 +10,51 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-31 (AI Reviews & Member Fixes)
+
+**Phase:** Sprint 2.5 - Feature Enhancements
+**Focus:** Fix member merge issues, avatar stretching, integrate AI reviews into Writeups page
+
+### Completed
+- [x] Fixed duplicate Matt OD member from 2025 import (merged into original)
+- [x] Fixed is_active filter (now shows only 14 current season members)
+- [x] Fixed avatar stretching (added `object-cover` to AvatarImage component)
+- [x] Regenerated Jeff's avatar as 1024x1024 square image
+- [x] Moved AI season reviews from Season page tab to Writeups page
+- [x] AI reviews now display at top of each season accordion in Writeups
+- [x] Added expandable preview with "Read Full Review" button
+- [x] Fixed test fixtures for AI review fields (factory.ts, members.ts, seasons.ts)
+
+### Files Created
+```
+public/avatars/jeff.png (regenerated as square)
+```
+
+### Files Modified
+```
+src/components/ui/avatar.tsx - Added object-cover to prevent stretching
+src/components/features/writeups/WriteupsBySeason.tsx - Added AIReviewSection component
+src/lib/supabase/queries/writeups.ts - Fetch AI reviews with writeups
+src/types/contracts/queries.ts - Added ai_review fields to WriteupsBySeason type
+tests/fixtures/factory.ts - Added ai_review fields to createSeason
+tests/fixtures/members.ts - Added merged_into_id to all fixtures
+tests/fixtures/seasons.ts - Added ai_review fields to all fixtures
+package.json - Added react-markdown dependency
+```
+
+### Database Changes (Applied to Production)
+- Merged duplicate Matt OD (8985ac9d) into original (c2b4f7d5)
+- Set is_active=true only for 14 members in 2025 season
+- AI reviews already in database (11 seasons)
+
+### Verified
+- [x] Build passes
+- [x] 14 active members correct
+- [x] Matt OD has 11 seasons of history
+- [x] AI reviews display on Writeups page
+
+---
+
 ## Session 2025-12-31 (2025 Season Import)
 
 **Phase:** Sprint 2.5 - Phase 4 Data Import

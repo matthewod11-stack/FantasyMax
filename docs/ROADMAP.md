@@ -235,10 +235,10 @@ Historical archive and future content creation.
 - [x] Active/Historic toggle for H2H matrix
 - [x] Heatmap "Viewing As" highlighting
 
-### Phase 3: Visual Polish ⏳
+### Phase 3: Visual Polish ✅
 - [x] AI-generated Pixar-style member avatars (14 active members)
 - [x] League rebranded to "Matt OD's League of Degenerates"
-- [ ] Fix avatar stretching (Matt OD, Jeff have inconsistent aspect ratios)
+- [x] Fix avatar stretching (added object-cover, regenerated Jeff as square)
 - [ ] Manager profile image upload (Supabase Storage) - deferred, using AI avatars
 
 ### Phase 4: Data Import

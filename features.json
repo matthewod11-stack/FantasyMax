@@ -103,7 +103,7 @@
     "avatar-upload": { "status": "not-started", "notes": "File upload to Supabase Storage - deferred, using AI avatars instead" },
     "h2h-simplification": { "status": "not-started", "notes": "Remove Record mode, keep only Heatmap + active/all-time toggle" },
     "champions-gallery": { "status": "not-started", "notes": "Redesign Awards page to show only championship winners" },
-    "ai-season-reviews": { "status": "pass", "notes": "11 AI reviews generated in DB, AISeasonReview component displays on season pages" },
+    "ai-season-reviews": { "status": "pass", "notes": "11 AI reviews in DB, integrated into Writeups page with expandable preview" },
     "ai-writeup-titles": { "status": "not-started", "notes": "Generate 3-5 word titles for 97 writeups" },
     "hall-of-shame-dual": { "status": "not-started", "notes": "Show worst record AND worst points per season" },
     "ai-shame-writeups": { "status": "not-started", "notes": "AI writeup for double shame teams" },
