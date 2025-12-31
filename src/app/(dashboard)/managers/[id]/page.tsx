@@ -63,7 +63,7 @@ async function getManagerProfile(memberId: string) {
       is_last_place,
       made_playoffs,
       season_id,
-      seasons (
+      seasons:seasons!teams_season_id_fkey (
         id,
         year
       )
