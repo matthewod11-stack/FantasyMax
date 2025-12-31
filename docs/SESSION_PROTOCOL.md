@@ -13,11 +13,11 @@ We use **structured artifacts** to maintain continuity:
 
 | Artifact | Purpose | Location |
 |----------|---------|----------|
-| **PROGRESS.md** | Log of completed work | `PROGRESS.md` |
+| **PROGRESS.md** | Log of recent work (last 3-5 sessions) | `PROGRESS.md` |
 | **ROADMAP.md** | Checkbox tracking | `ROADMAP.md` |
 | **features.json** | Pass/fail status | `features.json` |
 | **KNOWN_ISSUES.md** | Parking lot for blockers | `docs/KNOWN_ISSUES.md` |
-| **FUTURE_CONSIDERATIONS.md** | Ops/infra parking lot | `docs/FUTURE_CONSIDERATIONS.md` |
+| **Archive** | Old sessions & docs | `docs/archive/` |
 
 ---
 

@@ -200,9 +200,8 @@ export function DashboardSkeleton() {
         <Shimmer className="h-4 w-96" />
       </div>
 
-      {/* Widgets grid skeleton */}
-      <div className="grid gap-6 md:grid-cols-2">
-        <NextOpponentSkeleton />
+      {/* Widgets grid skeleton - 3 tiles across */}
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <TrophyCaseSkeleton />
         <HistorySkeleton />
         <RivalryTrackerSkeleton />

@@ -1,6 +1,6 @@
 # FantasyMax Roadmap
 
-**Last Updated:** December 30, 2025
+**Last Updated:** December 31, 2025
 
 The social/historical layer for your fantasy football league. This document is organized by **Sprints** - the single source of truth for what to build and when.
 
@@ -27,6 +27,7 @@ The social/historical layer for your fantasy football league. This document is o
 | Teams | 133 | Yahoo API |
 | Matchups | 978 | Yahoo API |
 | Trades | 0 | Not yet imported |
+| **Pending:** | 2025 season | To be imported |
 
 ---
 
@@ -225,31 +226,46 @@ Historical archive and future content creation.
 
 *Make the app shareable with league friends - no login required.*
 
-**Plan:** `~/.claude/plans/joyful-puzzling-harbor.md`
-
-### Phase 1: Fix Blockers
+### Phase 1: Fix Blockers ✅
 - [x] Fix dashboard loading (career stats not found for member)
 - [x] Fix H2H matrix (merged member records not showing)
 
-### Phase 2: Make Shareable
+### Phase 2: Make Shareable ✅
 - [x] Global member selector in header ("Viewing as: [Member]")
 - [x] Champion team name on season tiles
+- [x] Active/Historic toggle for H2H matrix
+- [x] Heatmap "Viewing As" highlighting
 
-### Phase 3: Visual Polish
+### Phase 3: Visual Polish ⏳
 - [x] AI-generated Pixar-style member avatars (14 active members)
+- [x] League rebranded to "Matt OD's League of Degenerates"
+- [ ] Fix avatar stretching (Matt OD, Jeff have inconsistent aspect ratios)
 - [ ] Manager profile image upload (Supabase Storage) - deferred, using AI avatars
-- [ ] H2H simplification (remove Record mode, keep Heatmap only)
-- [ ] H2H active/all-time members toggle
 
-### Phase 4: Feature Enhancements
-- [ ] Redesign Awards → Champions Gallery (championship winners only)
-- [ ] AI-generated season reviews for champions
-- [ ] AI-generated writeup titles (3-5 word summaries)
-- [ ] Hall of Shame: worst record AND worst points per season
-- [ ] Hall of Shame: AI writeup for "double shame" teams
+### Phase 4: Data Import
+- [ ] Fix 500 error on import page (live website)
+- [ ] Import 2025 season (11th season, just completed)
+- [ ] Import draft data from Yahoo
+- [ ] Import trade data from Yahoo
 
-### Phase 5: Coming Soon
-- [ ] Trades/Media/Voting/Constitution placeholder pages with mockups
+### Phase 5: Feature Enhancements
+- [ ] AI-generated season reviews (using standings + writeup files)
+- [ ] Weekly high score cash tracker ($50/week) on manager page
+- [ ] Championship winnings tracker (rules changed over years) - "Coming Soon"
+- [ ] Reimagine H2H page:
+  - [ ] Record tab: selected member vs each team
+  - [ ] Click team → expandable panel with matchup week/score history
+  - [ ] Remove heatmap highlight (keep heatmap as separate view)
+- [ ] Fix rivalry tracker confusion (clarify nemesis/victim record display)
+- [ ] Hall of Shame: "Toilet Trophy Winners" (least wins in season)
+  - [ ] AI-generated images of members getting flushed (Gemini/nanobanana)
+  - [ ] Leverage original member photos for likeness
+
+### Phase 6: V2 Features (Coming Soon)
+- [ ] Trades page - placeholder with "Coming Soon" (no 404)
+- [ ] Media page - placeholder with "Coming Soon" (no 404)
+- [ ] Voting page - placeholder with "Coming Soon" (no 404)
+- [ ] Constitution page - placeholder with "Coming Soon" (no 404)
 
 ---
 

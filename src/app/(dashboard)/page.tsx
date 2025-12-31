@@ -2,7 +2,6 @@ import { Suspense } from 'react';
 import { createAdminClient } from '@/lib/supabase/server';
 import { getDashboardData, getThisWeekInHistory } from '@/lib/supabase/queries';
 import {
-  NextOpponentCard,
   HistoryWidget,
   TrophyCase,
   RivalryTracker,
@@ -128,7 +127,6 @@ async function DashboardContent({ memberId }: DashboardContentProps) {
     careerStats,
     topNemesis,
     topVictim,
-    upcomingMatchup,
     championships,
     recordsHeld,
   } = dashboardData;
@@ -153,12 +151,8 @@ async function DashboardContent({ memberId }: DashboardContentProps) {
         </p>
       </div>
 
-      {/* Widget grid */}
-      <div className="grid gap-6 md:grid-cols-2">
-        <NextOpponentCard
-          upcomingMatchup={upcomingMatchup}
-          memberName={member.display_name}
-        />
+      {/* Widget grid - 3 tiles across */}
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <TrophyCase
           championships={championships}
           recordsHeld={recordsHeld}
