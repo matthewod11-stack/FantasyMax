@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { CareerTimeline, RivalryCard, type CareerStats, type SeasonHistoryData } from '@/components/features/managers';
 import { SeasonHistoryClient } from './SeasonHistoryClient';
 import { Trophy, ArrowLeft, Calendar, Target, TrendingUp, Medal } from 'lucide-react';
+import { getAvatarUrl } from '@/lib/utils/avatar-map';
 import type { Member } from '@/types/database.types';
 
 interface PageProps {
@@ -47,7 +48,7 @@ async function getManagerProfile(memberId: string) {
   }
 
   // Fetch all teams for this member
-  const { data: teams } = await supabase
+  const { data: teams, error: teamsError } = await supabase
     .from('teams')
     .select(`
       id,
@@ -61,13 +62,24 @@ async function getManagerProfile(memberId: string) {
       is_champion,
       is_last_place,
       made_playoffs,
+      season_id,
       seasons (
         id,
         year
       )
     `)
-    .eq('member_id', memberId)
-    .order('seasons(year)', { ascending: false });
+    .eq('member_id', memberId);
+
+  if (teamsError) {
+    console.error('[getManagerProfile] Teams query error:', teamsError);
+  }
+
+  // Sort by season year descending (can't use nested order in Supabase)
+  const sortedTeams = (teams ?? []).sort((a, b) => {
+    const yearA = (a.seasons as { year: number } | null)?.year ?? 0;
+    const yearB = (b.seasons as { year: number } | null)?.year ?? 0;
+    return yearB - yearA;
+  });
 
   // Calculate career stats
   const careerStats: CareerStats = {
@@ -86,7 +98,7 @@ async function getManagerProfile(memberId: string) {
 
   const seasonData: SeasonHistoryData[] = [];
 
-  for (const team of teams ?? []) {
+  for (const team of sortedTeams) {
     const season = team.seasons as { id: string; year: number } | null;
     if (!season) continue;
 
@@ -214,7 +226,10 @@ export default async function ManagerProfilePage({ params }: PageProps) {
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
         <div className="relative">
           <Avatar className="h-24 w-24 border-4 border-border">
-            <AvatarImage src={member.avatar_url ?? undefined} />
+            <AvatarImage
+              src={member.avatar_url || getAvatarUrl(member.display_name)}
+              className="object-cover"
+            />
             <AvatarFallback className="text-3xl font-bold">
               {getInitials(member.display_name)}
             </AvatarFallback>
