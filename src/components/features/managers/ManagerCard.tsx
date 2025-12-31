@@ -139,8 +139,8 @@ export function ManagerCard({
               </div>
             )}
 
-            {/* Hover reveal - key stat */}
-            {stats && (
+            {/* Hover reveal - key stat (only show if there's something to brag about) */}
+            {stats && (stats.championships > 0 || stats.playoffAppearances > 0) && (
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-card via-card to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                 <div className="flex items-center justify-center gap-2 text-sm">
                   {stats.championships > 0 ? (
@@ -150,15 +150,10 @@ export function ManagerCard({
                         {stats.championships}x Champion
                       </span>
                     </>
-                  ) : stats.playoffAppearances > 0 ? (
+                  ) : (
                     <>
                       <TrendingUp className="h-4 w-4 text-green-500" />
                       <span>{stats.playoffAppearances} Playoff Appearances</span>
-                    </>
-                  ) : (
-                    <>
-                      <TrendingDown className="h-4 w-4 text-muted-foreground" />
-                      <span>Seeking first playoff berth</span>
                     </>
                   )}
                 </div>
