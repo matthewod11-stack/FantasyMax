@@ -44,7 +44,7 @@
     "dashboard-rivalry-tracker": { "status": "pass", "notes": "RivalryTracker with nemesis/victim mini-cards" },
     "managers-card-grid": { "status": "pass", "notes": "3 view modes (Grid/List/Power Rank), staggered animations" },
     "managers-sorting": { "status": "pass", "notes": "6 sort options with animated grid rearrangement" },
-    "manager-profile-timeline": { "status": "pass", "notes": "Interactive bar chart timeline with hover details" },
+    "manager-profile-timeline": { "status": "pass", "notes": "Interactive bar chart timeline with hover details. Fixed seasons FK query 2025-12-31." },
     "manager-profile-rivalry": { "status": "pass", "notes": "Nemesis/Victim broadcast-style cards" },
     "manager-profile-season-drawer": { "status": "pass", "notes": "Click season row → drawer with week-by-week matchups, high/low scores, playoff record" },
     "h2h-matrix": { "status": "pass", "notes": "NxN grid with sticky headers" },

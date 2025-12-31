@@ -10,6 +10,45 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-31 (Manager Profile Fixes)
+
+**Phase:** Sprint 2.5 - Bug Fixes
+**Focus:** Fix manager profile pages showing empty stats, data fixes
+
+### Completed
+- [x] Changed league name from "FFL 2K16" to "Matt O'Donnells Fantasy Degenerates"
+- [x] Fixed manager profile pages showing empty stats (Supabase nested order bug)
+- [x] Fixed avatar not loading on manager profile (added getAvatarUrl fallback)
+- [x] Filtered merged members from managers list page
+- [x] Fixed seasons relation FK reference (`seasons!teams_season_id_fkey`)
+- [x] Fixed `made_playoffs` data - derived from actual playoff matchups
+- [x] Removed inaccurate "Seeking first playoff berth" text from manager cards
+
+### Root Cause
+The manager profile query used `.order('seasons(year)')` which doesn't work with Supabase nested relations - it silently returns empty results. Also needed explicit FK reference for the seasons join.
+
+### Database Changes (Applied to Production)
+- Updated league name to "Matt O'Donnells Fantasy Degenerates"
+- Set `made_playoffs = true` for all teams that appeared in playoff matchups
+
+### Files Modified
+```
+src/app/(dashboard)/managers/[id]/page.tsx - Fixed query, added avatar lookup
+src/app/(dashboard)/managers/page.tsx - Filter merged members
+src/components/features/managers/ManagerCard.tsx - Remove "seeking playoff" text
+```
+
+### Verified
+- [x] Build passes
+- [x] Manager profiles show full career stats
+- [x] Avatars display correctly
+- [x] Career Timeline shows playoff dots
+
+### Future Tasks (noted by user)
+- [ ] Add all-time career points to Records section
+
+---
+
 ## Session 2025-12-31 (H2H Records Fix)
 
 **Phase:** Sprint 2.5 - Bug Fixes
