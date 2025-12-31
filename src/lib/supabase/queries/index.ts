@@ -100,3 +100,27 @@ export type {
   MergeHistoryEntry,
   TeamNameHistory,
 } from './members';
+
+// League queries
+export {
+  getLeagueStats,
+  getLeagueWeekHistory,
+  getLatestSeason,
+} from './league';
+export type {
+  LeagueStats,
+  NotableMatchup,
+  LatestSeasonInfo,
+} from './league';
+
+// Records - Top N queries
+export {
+  getTopHighestScores,
+  getTopLowestScores,
+  getTopBlowouts,
+  getTopClosestGames,
+  getTopSeasonWins,
+  getTopSeasonPoints,
+  getTopNForRecordType,
+} from './records';
+export type { TopNEntry } from './records';
