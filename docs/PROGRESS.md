@@ -10,6 +10,36 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-31 (2025 Season Import)
+
+**Phase:** Sprint 2.5 - Phase 4 Data Import
+**Focus:** Import 2025 season from Yahoo API
+
+### Completed
+- [x] Fixed admin import page 500 error (created AdminHeader component)
+- [x] Imported 2025 season via production Yahoo OAuth flow
+- [x] Refreshed materialized views (mv_career_stats, mv_h2h_matrix)
+- [x] Verified: 14 teams, 110 matchups imported successfully
+
+### Files Created
+```
+src/components/layout/admin-header.tsx - Simplified header for admin pages (no MemberProvider required)
+```
+
+### Files Modified
+```
+src/app/admin/layout.tsx - Use AdminHeader instead of Header
+```
+
+### Data Status
+| Metric | Before | After |
+|--------|--------|-------|
+| Seasons | 10 | 11 |
+| Teams | 133 | 147 |
+| Matchups | 978 | 1088 |
+
+---
+
 ## Session 2025-12-31 (Repo Cleanup & Dashboard Fix)
 
 **Phase:** Maintenance / Pre-Import
@@ -92,10 +122,10 @@ src/lib/utils/avatar-map.ts
 ### Data Status
 | Data | Count | Source |
 |------|-------|--------|
-| Seasons | 10 | Yahoo API (2015-2024) |
+| Seasons | 11 | Yahoo API (2015-2025) |
 | Members | 22 | Yahoo API |
-| Teams | 133 | Yahoo API |
-| Matchups | 978 | Yahoo API |
+| Teams | 147 | Yahoo API |
+| Matchups | 1088 | Yahoo API |
 | Trades | 0 | Not yet imported |
 
 ### Deployment

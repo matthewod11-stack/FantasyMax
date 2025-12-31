@@ -22,12 +22,11 @@ The social/historical layer for your fantasy football league. This document is o
 ### Data Imported
 | Data | Count | Source |
 |------|-------|--------|
-| Seasons | 10 | Yahoo API (2015-2024) |
+| Seasons | 11 | Yahoo API (2015-2025) |
 | Members | 22 | Yahoo API |
-| Teams | 133 | Yahoo API |
-| Matchups | 978 | Yahoo API |
+| Teams | 147 | Yahoo API |
+| Matchups | 1088 | Yahoo API |
 | Trades | 0 | Not yet imported |
-| **Pending:** | 2025 season | To be imported |
 
 ---
 
@@ -243,8 +242,8 @@ Historical archive and future content creation.
 - [ ] Manager profile image upload (Supabase Storage) - deferred, using AI avatars
 
 ### Phase 4: Data Import
-- [ ] Fix 500 error on import page (live website)
-- [ ] Import 2025 season (11th season, just completed)
+- [x] Fix 500 error on import page (live website) - AdminHeader fix
+- [x] Import 2025 season (11th season, just completed) - 14 teams, 110 matchups
 - [ ] Import draft data from Yahoo
 - [ ] Import trade data from Yahoo
 

@@ -1,18 +1,18 @@
 {
   "_meta": {
     "description": "Feature tracking for League of Degenerates. Status: not-started | in-progress | pass | fail | blocked",
-    "lastUpdated": "2025-12-30",
+    "lastUpdated": "2025-12-31",
     "totalFeatures": 85,
-    "passing": 75,
+    "passing": 76,
     "failing": 0,
-    "inProgress": 1,
+    "inProgress": 0,
     "blocked": 0
   },
   "foundation": {
     "yahoo-oauth": { "status": "pass", "notes": "Yahoo OAuth connection working" },
-    "league-sync": { "status": "pass", "notes": "All 10 seasons synced" },
-    "teams-sync": { "status": "pass", "notes": "133 teams imported" },
-    "matchups-sync": { "status": "pass", "notes": "978 matchups imported" },
+    "league-sync": { "status": "pass", "notes": "All 11 seasons synced (2015-2025)" },
+    "teams-sync": { "status": "pass", "notes": "147 teams imported" },
+    "matchups-sync": { "status": "pass", "notes": "1088 matchups imported" },
     "members-sync": { "status": "pass", "notes": "22 members created" },
     "vercel-deploy": { "status": "pass", "notes": "Auto-deploy from main branch" },
     "supabase-setup": { "status": "pass", "notes": "Database schema complete" },
