@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
 import { createClient, createAdminClient } from '@/lib/supabase/server';
 import { Sidebar } from '@/components/layout/sidebar';
-import { Header } from '@/components/layout/header';
+import { AdminHeader } from '@/components/layout/admin-header';
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   // TODO: Remove BYPASS_AUTH when ready for production auth
@@ -35,7 +35,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       <div className="flex min-h-screen bg-background">
         <Sidebar userRole={member.role} />
         <div className="flex-1 flex flex-col">
-          <Header member={member} />
+          <AdminHeader member={member} />
           <main className="flex-1 p-6">{children}</main>
         </div>
       </div>
@@ -69,7 +69,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       <div className="flex min-h-screen bg-background">
         <Sidebar userRole={fallbackMember.role} />
         <div className="flex-1 flex flex-col">
-          <Header member={fallbackMember} />
+          <AdminHeader member={fallbackMember} />
           <main className="flex-1 p-6">{children}</main>
         </div>
       </div>
@@ -80,7 +80,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     <div className="flex min-h-screen bg-background">
       <Sidebar userRole={member.role} />
       <div className="flex-1 flex flex-col">
-        <Header member={member} />
+        <AdminHeader member={member} />
         <main className="flex-1 p-6">{children}</main>
       </div>
     </div>
