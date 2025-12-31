@@ -104,16 +104,45 @@ export async function getWriteupById(id: string): Promise<WriteupWithDetails | n
 }
 
 /**
- * Get writeups grouped by season
+ * Get writeups grouped by season, including AI reviews
  *
- * @returns Array of seasons with their writeups, sorted by year descending
+ * @returns Array of seasons with their writeups and AI reviews, sorted by year descending
  */
 export async function getWriteupsBySeason(): Promise<WriteupsBySeason[]> {
+  const supabase = await getUntypedClient();
   const writeups = await getAllWriteups();
 
-  // Group by season year
+  // Fetch AI reviews for all seasons
+  const { data: seasons } = await supabase
+    .from('seasons')
+    .select('id, year, ai_review, ai_review_generated_at')
+    .order('year', { ascending: false });
+
+  // Create a map of season data by year
+  const seasonDataByYear = new Map<number, { id: string; ai_review: string | null; ai_review_generated_at: string | null }>();
+  for (const season of seasons || []) {
+    seasonDataByYear.set(season.year, {
+      id: season.id,
+      ai_review: season.ai_review,
+      ai_review_generated_at: season.ai_review_generated_at,
+    });
+  }
+
+  // Group writeups by season year
   const byYear = new Map<number, WriteupsBySeason>();
 
+  // First, create entries for all seasons that have AI reviews (even if no writeups)
+  for (const [year, data] of seasonDataByYear) {
+    byYear.set(year, {
+      season_year: year,
+      season_id: data.id,
+      writeups: [],
+      ai_review: data.ai_review,
+      ai_review_generated_at: data.ai_review_generated_at,
+    });
+  }
+
+  // Then add writeups to their respective seasons
   for (const writeup of writeups) {
     const year = writeup.season?.year ?? 0;
     const seasonId = writeup.season?.id ?? '';
@@ -122,10 +151,13 @@ export async function getWriteupsBySeason(): Promise<WriteupsBySeason[]> {
     if (existing) {
       existing.writeups.push(writeup);
     } else {
+      // Season not in our map (shouldn't happen, but handle gracefully)
       byYear.set(year, {
         season_year: year,
         season_id: seasonId,
         writeups: [writeup],
+        ai_review: null,
+        ai_review_generated_at: null,
       });
     }
   }
@@ -140,7 +172,10 @@ export async function getWriteupsBySeason(): Promise<WriteupsBySeason[]> {
   }
 
   // Convert to array and sort by year descending
-  return Array.from(byYear.values()).sort((a, b) => b.season_year - a.season_year);
+  // Only include seasons that have writeups OR an AI review
+  return Array.from(byYear.values())
+    .filter(s => s.writeups.length > 0 || s.ai_review)
+    .sort((a, b) => b.season_year - a.season_year);
 }
 
 /**

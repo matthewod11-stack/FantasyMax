@@ -264,6 +264,9 @@ export interface WriteupsBySeason {
   season_year: number;
   season_id: string;
   writeups: WriteupWithDetails[];
+  /** AI-generated season review (from seasons.ai_review) */
+  ai_review: string | null;
+  ai_review_generated_at: string | null;
 }
 
 /**

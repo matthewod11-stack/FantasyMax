@@ -9,8 +9,9 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { WriteupCard, WriteupListItem } from './WriteupCard';
-import { Calendar, FileText, ChevronDown } from 'lucide-react';
+import { Calendar, FileText, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
 import type { WriteupsBySeason as WriteupsBySeasonType } from '@/types/contracts/queries';
+import ReactMarkdown from 'react-markdown';
 
 interface WriteupsBySeasonProps {
   seasons: WriteupsBySeasonType[];
@@ -101,26 +102,42 @@ export function WriteupsBySeason({
             </div>
           </AccordionTrigger>
 
-          <AccordionContent className="px-4 pb-4">
-            {displayMode === 'cards' ? (
-              <div className="grid gap-4 sm:grid-cols-2">
-                {season.writeups.map((writeup) => (
-                  <WriteupCard
-                    key={writeup.id}
-                    writeup={writeup}
-                    onClick={onWriteupClick ? () => onWriteupClick(writeup.id) : undefined}
-                  />
-                ))}
-              </div>
-            ) : (
-              <div className="rounded-lg border bg-background/50 overflow-hidden">
-                {season.writeups.map((writeup) => (
-                  <WriteupListItem
-                    key={writeup.id}
-                    writeup={writeup}
-                    onClick={onWriteupClick ? () => onWriteupClick(writeup.id) : undefined}
-                  />
-                ))}
+          <AccordionContent className="px-4 pb-4 space-y-6">
+            {/* AI Season Review */}
+            {season.ai_review && (
+              <AIReviewSection review={season.ai_review} year={season.season_year} />
+            )}
+
+            {/* Commissioner Writeups */}
+            {season.writeups.length > 0 && (
+              <div className="space-y-3">
+                {season.ai_review && (
+                  <h4 className="font-display text-sm uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                    <FileText className="h-4 w-4" />
+                    Commissioner Writeups ({season.writeups.length})
+                  </h4>
+                )}
+                {displayMode === 'cards' ? (
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    {season.writeups.map((writeup) => (
+                      <WriteupCard
+                        key={writeup.id}
+                        writeup={writeup}
+                        onClick={onWriteupClick ? () => onWriteupClick(writeup.id) : undefined}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="rounded-lg border bg-background/50 overflow-hidden">
+                    {season.writeups.map((writeup) => (
+                      <WriteupListItem
+                        key={writeup.id}
+                        writeup={writeup}
+                        onClick={onWriteupClick ? () => onWriteupClick(writeup.id) : undefined}
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
             )}
           </AccordionContent>
@@ -160,4 +177,72 @@ function formatTypeLabel(type: string): string {
     other: 'other',
   };
   return labels[type] || type;
+}
+
+/**
+ * AI Review Section - Expandable AI-generated season review
+ */
+function AIReviewSection({ review, year }: { review: string; year: number }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  // Truncate to ~500 chars for preview
+  const previewLength = 500;
+  const needsTruncation = review.length > previewLength;
+  const previewText = needsTruncation
+    ? review.slice(0, previewLength).split('\n').slice(0, 6).join('\n') + '...'
+    : review;
+
+  return (
+    <div className="rounded-lg border border-gold/30 bg-gradient-to-br from-gold/5 to-transparent overflow-hidden">
+      {/* Header */}
+      <div className="px-4 py-3 border-b border-gold/20 bg-gold/5">
+        <div className="flex items-center gap-2">
+          <Sparkles className="h-4 w-4 text-gold" />
+          <h4 className="font-display text-sm uppercase tracking-wider text-gold">
+            AI Season Review
+          </h4>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="px-4 py-4">
+        <div
+          className={cn(
+            "prose prose-sm prose-invert max-w-none",
+            "prose-headings:font-display prose-headings:text-foreground",
+            "prose-p:text-muted-foreground prose-p:leading-relaxed",
+            "prose-strong:text-foreground",
+            !isExpanded && needsTruncation && "line-clamp-[8]"
+          )}
+        >
+          <ReactMarkdown>
+            {isExpanded ? review : previewText}
+          </ReactMarkdown>
+        </div>
+
+        {/* Expand/Collapse button */}
+        {needsTruncation && (
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className={cn(
+              "mt-4 flex items-center gap-1.5 text-sm font-medium",
+              "text-gold hover:text-gold/80 transition-colors"
+            )}
+          >
+            {isExpanded ? (
+              <>
+                <ChevronUp className="h-4 w-4" />
+                Show Less
+              </>
+            ) : (
+              <>
+                <ChevronDown className="h-4 w-4" />
+                Read Full Review
+              </>
+            )}
+          </button>
+        )}
+      </div>
+    </div>
+  );
 }
