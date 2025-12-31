@@ -4,11 +4,12 @@ import { createAdminClient } from '@/lib/supabase/server';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowLeft, Trophy, Users, TrendingUp, Brackets } from 'lucide-react';
+import { ArrowLeft, Trophy, Users, TrendingUp, Brackets, Sparkles } from 'lucide-react';
 import { SeasonStandings } from '@/components/features/seasons/SeasonStandings';
 import { SeasonHighlights } from '@/components/features/seasons/SeasonHighlights';
 import { SeasonJourneyChart } from '@/components/features/seasons/SeasonJourneyChart';
 import { PlayoffBracket } from '@/components/features/seasons/PlayoffBracket';
+import { AISeasonReview, AISeasonReviewEmpty } from '@/components/features/seasons/AISeasonReview';
 
 interface PageProps {
   params: Promise<{ year: string }>;
@@ -30,6 +31,9 @@ export default async function SeasonDetailPage({ params }: PageProps) {
     .from('seasons')
     .select(`
       *,
+      ai_review,
+      ai_review_generated_at,
+      ai_review_model,
       champion_team:teams!fk_champion_team(
         id,
         team_name,
@@ -195,6 +199,12 @@ export default async function SeasonDetailPage({ params }: PageProps) {
             <Brackets className="h-4 w-4" />
             Playoffs
           </TabsTrigger>
+          {season.ai_review && (
+            <TabsTrigger value="ai-review" className="gap-2">
+              <Sparkles className="h-4 w-4" />
+              AI Review
+            </TabsTrigger>
+          )}
         </TabsList>
 
         <TabsContent value="standings">
@@ -240,6 +250,19 @@ export default async function SeasonDetailPage({ params }: PageProps) {
               )}
             </CardContent>
           </Card>
+        </TabsContent>
+
+        <TabsContent value="ai-review">
+          {season.ai_review ? (
+            <AISeasonReview
+              review={season.ai_review}
+              generatedAt={season.ai_review_generated_at}
+              model={season.ai_review_model}
+              year={year}
+            />
+          ) : (
+            <AISeasonReviewEmpty year={year} />
+          )}
         </TabsContent>
       </Tabs>
     </div>

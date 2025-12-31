@@ -88,6 +88,20 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "awards_member_id_fkey"
+            columns: ["member_id"]
+            isOneToOne: false
+            referencedRelation: "mv_career_stats"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "awards_member_id_fkey"
+            columns: ["member_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["member_id"]
+          },
+          {
             foreignKeyName: "awards_season_id_fkey"
             columns: ["season_id"]
             isOneToOne: false
@@ -95,11 +109,25 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "awards_season_id_fkey"
+            columns: ["season_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["season_id"]
+          },
+          {
             foreignKeyName: "awards_team_id_fkey"
             columns: ["team_id"]
             isOneToOne: false
             referencedRelation: "teams"
             referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "awards_team_id_fkey"
+            columns: ["team_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["team_id"]
           },
         ]
       }
@@ -152,11 +180,32 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "import_logs_season_id_fkey"
+            columns: ["season_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["season_id"]
+          },
+          {
             foreignKeyName: "import_logs_started_by_fkey"
             columns: ["started_by"]
             isOneToOne: false
             referencedRelation: "members"
             referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "import_logs_started_by_fkey"
+            columns: ["started_by"]
+            isOneToOne: false
+            referencedRelation: "mv_career_stats"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "import_logs_started_by_fkey"
+            columns: ["started_by"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["member_id"]
           },
         ]
       }
@@ -263,11 +312,25 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "matchups_away_team_id_fkey"
+            columns: ["away_team_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["team_id"]
+          },
+          {
             foreignKeyName: "matchups_home_team_id_fkey"
             columns: ["home_team_id"]
             isOneToOne: false
             referencedRelation: "teams"
             referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "matchups_home_team_id_fkey"
+            columns: ["home_team_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["team_id"]
           },
           {
             foreignKeyName: "matchups_season_id_fkey"
@@ -277,11 +340,25 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "matchups_season_id_fkey"
+            columns: ["season_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["season_id"]
+          },
+          {
             foreignKeyName: "matchups_winner_team_id_fkey"
             columns: ["winner_team_id"]
             isOneToOne: false
             referencedRelation: "teams"
             referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "matchups_winner_team_id_fkey"
+            columns: ["winner_team_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["team_id"]
           },
         ]
       }
@@ -346,6 +423,20 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "media_member_id_fkey"
+            columns: ["member_id"]
+            isOneToOne: false
+            referencedRelation: "mv_career_stats"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "media_member_id_fkey"
+            columns: ["member_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["member_id"]
+          },
+          {
             foreignKeyName: "media_season_id_fkey"
             columns: ["season_id"]
             isOneToOne: false
@@ -353,11 +444,32 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "media_season_id_fkey"
+            columns: ["season_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["season_id"]
+          },
+          {
             foreignKeyName: "media_uploaded_by_fkey"
             columns: ["uploaded_by"]
             isOneToOne: false
             referencedRelation: "members"
             referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "media_uploaded_by_fkey"
+            columns: ["uploaded_by"]
+            isOneToOne: false
+            referencedRelation: "mv_career_stats"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "media_uploaded_by_fkey"
+            columns: ["uploaded_by"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["member_id"]
           },
         ]
       }
@@ -395,6 +507,114 @@ export type Database = {
             referencedRelation: "members"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "media_tags_member_id_fkey"
+            columns: ["member_id"]
+            isOneToOne: false
+            referencedRelation: "mv_career_stats"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "media_tags_member_id_fkey"
+            columns: ["member_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["member_id"]
+          },
+        ]
+      }
+      member_merges: {
+        Row: {
+          id: string
+          merged_at: string | null
+          merged_by: string | null
+          merged_member_id: string
+          merged_member_stats: Json | null
+          notes: string | null
+          primary_member_id: string
+        }
+        Insert: {
+          id?: string
+          merged_at?: string | null
+          merged_by?: string | null
+          merged_member_id: string
+          merged_member_stats?: Json | null
+          notes?: string | null
+          primary_member_id: string
+        }
+        Update: {
+          id?: string
+          merged_at?: string | null
+          merged_by?: string | null
+          merged_member_id?: string
+          merged_member_stats?: Json | null
+          notes?: string | null
+          primary_member_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "member_merges_merged_by_fkey"
+            columns: ["merged_by"]
+            isOneToOne: false
+            referencedRelation: "members"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "member_merges_merged_by_fkey"
+            columns: ["merged_by"]
+            isOneToOne: false
+            referencedRelation: "mv_career_stats"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "member_merges_merged_by_fkey"
+            columns: ["merged_by"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "member_merges_merged_member_id_fkey"
+            columns: ["merged_member_id"]
+            isOneToOne: false
+            referencedRelation: "members"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "member_merges_merged_member_id_fkey"
+            columns: ["merged_member_id"]
+            isOneToOne: false
+            referencedRelation: "mv_career_stats"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "member_merges_merged_member_id_fkey"
+            columns: ["merged_member_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "member_merges_primary_member_id_fkey"
+            columns: ["primary_member_id"]
+            isOneToOne: false
+            referencedRelation: "members"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "member_merges_primary_member_id_fkey"
+            columns: ["primary_member_id"]
+            isOneToOne: false
+            referencedRelation: "mv_career_stats"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "member_merges_primary_member_id_fkey"
+            columns: ["primary_member_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["member_id"]
+          },
         ]
       }
       members: {
@@ -408,6 +628,7 @@ export type Database = {
           invite_token: string | null
           is_active: boolean | null
           joined_year: number
+          merged_into_id: string | null
           role: string
           updated_at: string | null
           user_id: string | null
@@ -423,6 +644,7 @@ export type Database = {
           invite_token?: string | null
           is_active?: boolean | null
           joined_year: number
+          merged_into_id?: string | null
           role?: string
           updated_at?: string | null
           user_id?: string | null
@@ -438,12 +660,35 @@ export type Database = {
           invite_token?: string | null
           is_active?: boolean | null
           joined_year?: number
+          merged_into_id?: string | null
           role?: string
           updated_at?: string | null
           user_id?: string | null
           yahoo_manager_id?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "members_merged_into_id_fkey"
+            columns: ["merged_into_id"]
+            isOneToOne: false
+            referencedRelation: "members"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "members_merged_into_id_fkey"
+            columns: ["merged_into_id"]
+            isOneToOne: false
+            referencedRelation: "mv_career_stats"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "members_merged_into_id_fkey"
+            columns: ["merged_into_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["member_id"]
+          },
+        ]
       }
       polls: {
         Row: {
@@ -468,7 +713,7 @@ export type Database = {
           description?: string | null
           id?: string
           is_anonymous?: boolean | null
-          opens_at?: string
+          opens_at: string
           options: Json
           poll_type: string
           season_id?: string | null
@@ -500,11 +745,32 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "polls_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "mv_career_stats"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "polls_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["member_id"]
+          },
+          {
             foreignKeyName: "polls_season_id_fkey"
             columns: ["season_id"]
             isOneToOne: false
             referencedRelation: "seasons"
             referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "polls_season_id_fkey"
+            columns: ["season_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["season_id"]
           },
         ]
       }
@@ -546,6 +812,20 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "members"
             referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "rule_amendments_amended_by_fkey"
+            columns: ["amended_by"]
+            isOneToOne: false
+            referencedRelation: "mv_career_stats"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "rule_amendments_amended_by_fkey"
+            columns: ["amended_by"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["member_id"]
           },
           {
             foreignKeyName: "rule_amendments_approved_by_poll_id_fkey"
@@ -612,6 +892,9 @@ export type Database = {
       }
       seasons: {
         Row: {
+          ai_review: string | null
+          ai_review_generated_at: string | null
+          ai_review_model: string | null
           champion_team_id: string | null
           created_at: string | null
           data_source: string | null
@@ -632,6 +915,9 @@ export type Database = {
           year: number
         }
         Insert: {
+          ai_review?: string | null
+          ai_review_generated_at?: string | null
+          ai_review_model?: string | null
           champion_team_id?: string | null
           created_at?: string | null
           data_source?: string | null
@@ -652,6 +938,9 @@ export type Database = {
           year: number
         }
         Update: {
+          ai_review?: string | null
+          ai_review_generated_at?: string | null
+          ai_review_model?: string | null
           champion_team_id?: string | null
           created_at?: string | null
           data_source?: string | null
@@ -680,11 +969,25 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "fk_champion_team"
+            columns: ["champion_team_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["team_id"]
+          },
+          {
             foreignKeyName: "fk_last_place_team"
             columns: ["last_place_team_id"]
             isOneToOne: false
             referencedRelation: "teams"
             referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "fk_last_place_team"
+            columns: ["last_place_team_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["team_id"]
           },
           {
             foreignKeyName: "seasons_league_id_fkey"
@@ -774,11 +1077,32 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "teams_member_id_fkey"
+            columns: ["member_id"]
+            isOneToOne: false
+            referencedRelation: "mv_career_stats"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "teams_member_id_fkey"
+            columns: ["member_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["member_id"]
+          },
+          {
             foreignKeyName: "teams_season_id_fkey"
             columns: ["season_id"]
             isOneToOne: false
             referencedRelation: "seasons"
             referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "teams_season_id_fkey"
+            columns: ["season_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["season_id"]
           },
         ]
       }
@@ -837,8 +1161,29 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "trades_season_id_fkey"
+            columns: ["season_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["season_id"]
+          },
+          {
             foreignKeyName: "trades_team_1_id_fkey"
             columns: ["team_1_id"]
+            isOneToOne: false
+            referencedRelation: "teams"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "trades_team_1_id_fkey"
+            columns: ["team_1_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["team_id"]
+          },
+          {
+            foreignKeyName: "trades_team_2_id_fkey"
+            columns: ["team_2_id"]
             isOneToOne: false
             referencedRelation: "teams"
             referencedColumns: ["id"]
@@ -847,8 +1192,8 @@ export type Database = {
             foreignKeyName: "trades_team_2_id_fkey"
             columns: ["team_2_id"]
             isOneToOne: false
-            referencedRelation: "teams"
-            referencedColumns: ["id"]
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["team_id"]
           },
         ]
       }
@@ -883,11 +1228,168 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "votes_member_id_fkey"
+            columns: ["member_id"]
+            isOneToOne: false
+            referencedRelation: "mv_career_stats"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "votes_member_id_fkey"
+            columns: ["member_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["member_id"]
+          },
+          {
             foreignKeyName: "votes_poll_id_fkey"
             columns: ["poll_id"]
             isOneToOne: false
             referencedRelation: "polls"
             referencedColumns: ["id"]
+          },
+        ]
+      }
+      writeup_mentions: {
+        Row: {
+          created_at: string | null
+          id: string
+          member_id: string
+          mention_context: string | null
+          writeup_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          member_id: string
+          mention_context?: string | null
+          writeup_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          member_id?: string
+          mention_context?: string | null
+          writeup_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "writeup_mentions_member_id_fkey"
+            columns: ["member_id"]
+            isOneToOne: false
+            referencedRelation: "members"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "writeup_mentions_member_id_fkey"
+            columns: ["member_id"]
+            isOneToOne: false
+            referencedRelation: "mv_career_stats"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "writeup_mentions_member_id_fkey"
+            columns: ["member_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "writeup_mentions_writeup_id_fkey"
+            columns: ["writeup_id"]
+            isOneToOne: false
+            referencedRelation: "writeups"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      writeups: {
+        Row: {
+          author_id: string
+          content: string
+          created_at: string | null
+          excerpt: string | null
+          id: string
+          imported_from: string | null
+          is_featured: boolean | null
+          original_order: number | null
+          published_at: string | null
+          season_id: string | null
+          status: string | null
+          title: string
+          updated_at: string | null
+          week: number | null
+          writeup_type: Database["public"]["Enums"]["writeup_type"]
+        }
+        Insert: {
+          author_id: string
+          content: string
+          created_at?: string | null
+          excerpt?: string | null
+          id?: string
+          imported_from?: string | null
+          is_featured?: boolean | null
+          original_order?: number | null
+          published_at?: string | null
+          season_id?: string | null
+          status?: string | null
+          title: string
+          updated_at?: string | null
+          week?: number | null
+          writeup_type?: Database["public"]["Enums"]["writeup_type"]
+        }
+        Update: {
+          author_id?: string
+          content?: string
+          created_at?: string | null
+          excerpt?: string | null
+          id?: string
+          imported_from?: string | null
+          is_featured?: boolean | null
+          original_order?: number | null
+          published_at?: string | null
+          season_id?: string | null
+          status?: string | null
+          title?: string
+          updated_at?: string | null
+          week?: number | null
+          writeup_type?: Database["public"]["Enums"]["writeup_type"]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "writeups_author_id_fkey"
+            columns: ["author_id"]
+            isOneToOne: false
+            referencedRelation: "members"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "writeups_author_id_fkey"
+            columns: ["author_id"]
+            isOneToOne: false
+            referencedRelation: "mv_career_stats"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "writeups_author_id_fkey"
+            columns: ["author_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "writeups_season_id_fkey"
+            columns: ["season_id"]
+            isOneToOne: false
+            referencedRelation: "seasons"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "writeups_season_id_fkey"
+            columns: ["season_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["season_id"]
           },
         ]
       }
@@ -906,6 +1408,13 @@ export type Database = {
         Relationships: [
           {
             foreignKeyName: "teams_member_id_fkey"
+            columns: ["member_1_id"]
+            isOneToOne: false
+            referencedRelation: "members"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "teams_member_id_fkey"
             columns: ["member_2_id"]
             isOneToOne: false
             referencedRelation: "members"
@@ -915,19 +1424,139 @@ export type Database = {
             foreignKeyName: "teams_member_id_fkey"
             columns: ["member_1_id"]
             isOneToOne: false
-            referencedRelation: "members"
-            referencedColumns: ["id"]
+            referencedRelation: "mv_career_stats"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "teams_member_id_fkey"
+            columns: ["member_2_id"]
+            isOneToOne: false
+            referencedRelation: "mv_career_stats"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "teams_member_id_fkey"
+            columns: ["member_1_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["member_id"]
+          },
+          {
+            foreignKeyName: "teams_member_id_fkey"
+            columns: ["member_2_id"]
+            isOneToOne: false
+            referencedRelation: "v_season_standings"
+            referencedColumns: ["member_id"]
           },
         ]
       }
+      mv_career_stats: {
+        Row: {
+          best_season_year: number | null
+          championships: number | null
+          display_name: string | null
+          first_season_year: number | null
+          last_place_finishes: number | null
+          last_season_year: number | null
+          member_id: string | null
+          playoff_appearances: number | null
+          seasons_played: number | null
+          total_losses: number | null
+          total_points_against: number | null
+          total_points_for: number | null
+          total_ties: number | null
+          total_wins: number | null
+          win_percentage: number | null
+          worst_season_year: number | null
+        }
+        Relationships: []
+      }
+      mv_h2h_matrix: {
+        Row: {
+          last_matchup_date: string | null
+          member_1_id: string | null
+          member_1_points: number | null
+          member_1_streak: number | null
+          member_1_wins: number | null
+          member_2_id: string | null
+          member_2_points: number | null
+          member_2_wins: number | null
+          ties: number | null
+          total_matchups: number | null
+        }
+        Relationships: []
+      }
+      v_league_records: {
+        Row: {
+          category: string | null
+          description: string | null
+          holder_display_name: string | null
+          holder_member_id: string | null
+          matchup_id: string | null
+          record_type: string | null
+          season_year: number | null
+          value: number | null
+          week: number | null
+        }
+        Relationships: []
+      }
+      v_season_standings: {
+        Row: {
+          display_name: string | null
+          final_rank: number | null
+          is_champion: boolean | null
+          is_last_place: boolean | null
+          losses: number | null
+          made_playoffs: boolean | null
+          member_id: string | null
+          points_against: number | null
+          points_for: number | null
+          season_id: string | null
+          season_year: number | null
+          team_id: string | null
+          team_name: string | null
+          ties: number | null
+          wins: number | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
-      get_current_member_id: { Args: never; Returns: string }
-      is_commissioner: { Args: never; Returns: boolean }
-      is_league_member: { Args: never; Returns: boolean }
+      get_current_member_id: { Args: Record<PropertyKey, never>; Returns: string }
+      is_commissioner: { Args: Record<PropertyKey, never>; Returns: boolean }
+      is_league_member: { Args: Record<PropertyKey, never>; Returns: boolean }
+      merge_members: {
+        Args: {
+          p_merged_by?: string
+          p_merged_id: string
+          p_notes?: string
+          p_primary_id: string
+        }
+        Returns: Json
+      }
+      search_writeups: {
+        Args: { search_query: string }
+        Returns: {
+          excerpt: string
+          id: string
+          published_at: string
+          rank: number
+          season_year: number
+          title: string
+          writeup_type: Database["public"]["Enums"]["writeup_type"]
+        }[]
+      }
     }
     Enums: {
-      [_ in never]: never
+      writeup_type:
+        | "weekly_recap"
+        | "playoff_preview"
+        | "season_recap"
+        | "draft_notes"
+        | "standings_update"
+        | "power_rankings"
+        | "announcement"
+        | "other"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -1054,50 +1683,23 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      writeup_type: [
+        "weekly_recap",
+        "playoff_preview",
+        "season_recap",
+        "draft_notes",
+        "standings_update",
+        "power_rankings",
+        "announcement",
+        "other",
+      ],
+    },
   },
 } as const
 
-// =====================================
-// Convenience Type Aliases
-// =====================================
-
-// Row types (what you get when reading from DB)
-export type League = Tables<'league'>
+// Convenience type aliases for common tables
 export type Member = Tables<'members'>
 export type Season = Tables<'seasons'>
 export type Team = Tables<'teams'>
 export type Matchup = Tables<'matchups'>
-export type Trade = Tables<'trades'>
-export type AwardType = Tables<'award_types'>
-export type Award = Tables<'awards'>
-export type Poll = Tables<'polls'>
-export type Vote = Tables<'votes'>
-export type Media = Tables<'media'>
-export type MediaTag = Tables<'media_tags'>
-export type Rule = Tables<'rules'>
-export type RuleAmendment = Tables<'rule_amendments'>
-export type ImportLog = Tables<'import_logs'>
-
-// Insert types (what you provide when creating)
-export type LeagueInsert = TablesInsert<'league'>
-export type MemberInsert = TablesInsert<'members'>
-export type SeasonInsert = TablesInsert<'seasons'>
-export type TeamInsert = TablesInsert<'teams'>
-export type MatchupInsert = TablesInsert<'matchups'>
-export type TradeInsert = TablesInsert<'trades'>
-export type AwardInsert = TablesInsert<'awards'>
-export type PollInsert = TablesInsert<'polls'>
-export type VoteInsert = TablesInsert<'votes'>
-export type MediaInsert = TablesInsert<'media'>
-export type RuleInsert = TablesInsert<'rules'>
-
-// Update types (what you provide when updating)
-export type LeagueUpdate = TablesUpdate<'league'>
-export type MemberUpdate = TablesUpdate<'members'>
-export type SeasonUpdate = TablesUpdate<'seasons'>
-export type TeamUpdate = TablesUpdate<'teams'>
-export type MatchupUpdate = TablesUpdate<'matchups'>
-
-// Role type
-export type MemberRole = 'commissioner' | 'president' | 'treasurer' | 'member'

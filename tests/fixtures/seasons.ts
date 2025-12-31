@@ -44,6 +44,9 @@ export const SEASON_2024: Season = {
   recap_title: null,
   recap_content: null,
   recap_published_at: null,
+  ai_review: null,
+  ai_review_generated_at: null,
+  ai_review_model: null,
   created_at: '2024-01-01T00:00:00Z',
   updated_at: '2024-12-01T00:00:00Z',
 };
@@ -68,6 +71,9 @@ export const SEASON_2023: Season = {
   recap_title: 'Mike Repeats!',
   recap_content: 'An incredible season ending...',
   recap_published_at: '2024-01-05T00:00:00Z',
+  ai_review: null,
+  ai_review_generated_at: null,
+  ai_review_model: null,
   created_at: '2023-01-01T00:00:00Z',
   updated_at: '2024-01-01T00:00:00Z',
 };
@@ -92,6 +98,9 @@ export const SEASON_2021: Season = {
   recap_title: null,
   recap_content: null,
   recap_published_at: null,
+  ai_review: null,
+  ai_review_generated_at: null,
+  ai_review_model: null,
   created_at: '2021-01-01T00:00:00Z',
   updated_at: '2022-01-01T00:00:00Z',
 };
@@ -116,6 +125,9 @@ export const SEASON_2019: Season = {
   recap_title: "Mike's Year",
   recap_content: null,
   recap_published_at: null,
+  ai_review: null,
+  ai_review_generated_at: null,
+  ai_review_model: null,
   created_at: '2019-01-01T00:00:00Z',
   updated_at: '2020-01-01T00:00:00Z',
 };
@@ -140,6 +152,9 @@ export const SEASON_2015: Season = {
   recap_title: 'It Begins',
   recap_content: null,
   recap_published_at: null,
+  ai_review: null,
+  ai_review_generated_at: null,
+  ai_review_model: null,
   created_at: '2015-01-01T00:00:00Z',
   updated_at: '2016-01-01T00:00:00Z',
 };

@@ -65,6 +65,7 @@ export function createMember(options: CreateMemberOptions = {}): Member {
     yahoo_manager_id: null,
     invite_token: null,
     invite_sent_at: null,
+    merged_into_id: null,
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
   };
@@ -102,6 +103,9 @@ export function createSeason(options: CreateSeasonOptions = {}): Season {
     recap_title: null,
     recap_content: null,
     recap_published_at: null,
+    ai_review: null,
+    ai_review_generated_at: null,
+    ai_review_model: null,
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
   };

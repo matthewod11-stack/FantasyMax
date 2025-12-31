@@ -248,7 +248,7 @@ Historical archive and future content creation.
 - [ ] Import trade data from Yahoo
 
 ### Phase 5: Feature Enhancements
-- [ ] AI-generated season reviews (using standings + writeup files)
+- [x] AI-generated season reviews (using standings + writeup files)
 - [ ] Weekly high score cash tracker ($50/week) on manager page
 - [ ] Championship winnings tracker (rules changed over years) - "Coming Soon"
 - [ ] Reimagine H2H page:

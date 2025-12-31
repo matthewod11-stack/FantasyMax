@@ -37,6 +37,7 @@ export const MIKE: Member = {
   yahoo_manager_id: '1',
   invite_token: null,
   invite_sent_at: null,
+  merged_into_id: null,
   created_at: '2015-01-01T00:00:00Z',
   updated_at: '2024-01-01T00:00:00Z',
 };
@@ -56,6 +57,7 @@ export const JOHN: Member = {
   yahoo_manager_id: '2',
   invite_token: null,
   invite_sent_at: null,
+  merged_into_id: null,
   created_at: '2015-01-01T00:00:00Z',
   updated_at: '2024-01-01T00:00:00Z',
 };
@@ -75,6 +77,7 @@ export const SARAH: Member = {
   yahoo_manager_id: '3',
   invite_token: null,
   invite_sent_at: null,
+  merged_into_id: null,
   created_at: '2020-01-01T00:00:00Z',
   updated_at: '2024-01-01T00:00:00Z',
 };
@@ -94,6 +97,7 @@ export const DAVID: Member = {
   yahoo_manager_id: '4',
   invite_token: null,
   invite_sent_at: null,
+  merged_into_id: null,
   created_at: '2015-01-01T00:00:00Z',
   updated_at: '2024-01-01T00:00:00Z',
 };
@@ -113,6 +117,7 @@ export const ALEX: Member = {
   yahoo_manager_id: '5',
   invite_token: null,
   invite_sent_at: null,
+  merged_into_id: null,
   created_at: '2015-01-01T00:00:00Z',
   updated_at: '2019-01-01T00:00:00Z',
 };
@@ -132,6 +137,7 @@ export const CHRIS: Member = {
   yahoo_manager_id: '0',
   invite_token: null,
   invite_sent_at: null,
+  merged_into_id: null,
   created_at: '2015-01-01T00:00:00Z',
   updated_at: '2024-01-01T00:00:00Z',
 };
