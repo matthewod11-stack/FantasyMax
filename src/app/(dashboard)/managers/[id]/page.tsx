@@ -179,11 +179,11 @@ export async function generateMetadata({ params }: PageProps) {
   const profile = await getManagerProfile(id);
 
   if (!profile) {
-    return { title: 'Manager Not Found | FantasyMax' };
+    return { title: 'Manager Not Found | League of Degenerates' };
   }
 
   return {
-    title: `${profile.member.display_name} | FantasyMax`,
+    title: `${profile.member.display_name} | League of Degenerates`,
     description: `Career stats and history for ${profile.member.display_name}`,
   };
 }

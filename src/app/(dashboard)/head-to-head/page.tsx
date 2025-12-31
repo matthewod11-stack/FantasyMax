@@ -4,7 +4,7 @@ import { H2HMatrix } from '@/components/features/h2h';
 import { Card, CardContent } from '@/components/ui/card';
 
 export const metadata = {
-  title: 'Head-to-Head | FantasyMax',
+  title: 'Head-to-Head | League of Degenerates',
   description: 'View head-to-head records between all league managers',
 };
 

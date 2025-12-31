@@ -39,8 +39,8 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FantasyMax",
-  description: "Fantasy football league history and social platform",
+  title: "League of Degenerates",
+  description: "Matt OD's League of Degenerates - Fantasy football league history",
 };
 
 export default function RootLayout({

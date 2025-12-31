@@ -5,7 +5,11 @@ import { HeatmapCell } from './HeatmapCell';
 import { H2HDrawer } from './H2HDrawer';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Switch } from '@/components/ui/switch';
+import { Label } from '@/components/ui/label';
 import { cn } from '@/lib/utils';
+import { useMember } from '@/contexts/member-context';
+import { Info, History } from 'lucide-react';
 import type { Member } from '@/types/database.types';
 
 interface H2HRecord {
@@ -48,10 +52,22 @@ function getInitials(name: string): string {
 
 export function H2HMatrix({ members, records, matchups }: H2HMatrixProps) {
   const [mode, setMode] = useState<DisplayMode>('record');
+  const [showHistoric, setShowHistoric] = useState(false);
   const [selectedCell, setSelectedCell] = useState<{
     member1: Member;
     member2: Member;
   } | null>(null);
+
+  // Get the selected member from context for "Viewing as" functionality
+  const { selectedMember } = useMember();
+
+  // Filter members based on active/historic toggle
+  const filteredMembers = useMemo(() => {
+    if (showHistoric) {
+      return members; // Show all members with H2H history
+    }
+    return members.filter((m) => m.is_active !== false);
+  }, [members, showHistoric]);
 
   // Create a map for quick record lookup
   const recordMap = useMemo(() => {
@@ -113,30 +129,49 @@ export function H2HMatrix({ members, records, matchups }: H2HMatrixProps) {
 
   return (
     <div className="space-y-4">
-      {/* Mode toggle */}
-      <div className="flex items-center gap-2">
-        <span className="text-sm text-muted-foreground">Display:</span>
-        <div className="flex rounded-lg border bg-muted p-1">
-          <Button
-            variant="ghost"
-            size="sm"
-            className={cn('h-8 px-3', mode === 'record' && 'bg-background shadow-sm')}
-            onClick={() => setMode('record')}
-          >
-            Record
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            className={cn('h-8 px-3', mode === 'heatmap' && 'bg-background shadow-sm')}
-            onClick={() => setMode('heatmap')}
-          >
-            Heatmap
-          </Button>
+      {/* Controls row */}
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        {/* Left side: Mode toggle */}
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-muted-foreground">Display:</span>
+          <div className="flex rounded-lg border bg-muted p-1">
+            <Button
+              variant="ghost"
+              size="sm"
+              className={cn('h-8 px-3', mode === 'record' && 'bg-background shadow-sm')}
+              onClick={() => setMode('record')}
+            >
+              Record
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className={cn('h-8 px-3', mode === 'heatmap' && 'bg-background shadow-sm')}
+              onClick={() => setMode('heatmap')}
+            >
+              Heatmap
+            </Button>
+          </div>
+          <span className="ml-2 text-xs text-muted-foreground hidden sm:inline">
+            Click cell for details
+          </span>
         </div>
-        <span className="ml-4 text-xs text-muted-foreground">
-          Click any cell to see full matchup history
-        </span>
+
+        {/* Right side: Historic toggle */}
+        <div className="flex items-center gap-2">
+          <History className="h-4 w-4 text-muted-foreground" />
+          <Switch
+            id="show-historic"
+            checked={showHistoric}
+            onCheckedChange={setShowHistoric}
+          />
+          <Label htmlFor="show-historic" className="text-sm cursor-pointer">
+            Include past members
+          </Label>
+          <span className="text-xs text-muted-foreground">
+            ({filteredMembers.length} shown)
+          </span>
+        </div>
       </div>
 
       {/* Matrix */}
@@ -148,7 +183,7 @@ export function H2HMatrix({ members, records, matchups }: H2HMatrixProps) {
                 {/* Empty corner cell */}
                 <th className="sticky left-0 z-20 bg-background p-2 min-w-[120px]" />
                 {/* Column headers */}
-                {members.map((member) => (
+                {filteredMembers.map((member) => (
                   <th
                     key={member.id}
                     className="p-2 min-w-[80px] max-w-[100px] text-center bg-muted/50"
@@ -169,12 +204,20 @@ export function H2HMatrix({ members, records, matchups }: H2HMatrixProps) {
               </tr>
             </thead>
             <tbody>
-              {members.map((rowMember) => (
-                <tr key={rowMember.id}>
+              {filteredMembers.map((rowMember) => {
+                // Determine row state for "Viewing as" mode
+                const isViewingAsRow = mode === 'heatmap' && selectedMember?.id === rowMember.id;
+                const isRowDimmed = mode === 'heatmap' && selectedMember && selectedMember.id !== rowMember.id;
+
+                return (
+                <tr key={rowMember.id} className={cn(isRowDimmed && 'opacity-40')}>
                   {/* Row header - sticky */}
-                  <th className="sticky left-0 z-10 bg-background p-2 text-left">
+                  <th className={cn(
+                    'sticky left-0 z-10 bg-background p-2 text-left transition-opacity',
+                    isViewingAsRow && 'bg-primary/10'
+                  )}>
                     <div className="flex items-center gap-2">
-                      <Avatar className="h-8 w-8">
+                      <Avatar className={cn('h-8 w-8', isViewingAsRow && 'ring-2 ring-primary')}>
                         <AvatarImage src={rowMember.avatar_url ?? undefined} />
                         <AvatarFallback className="text-xs">
                           {getInitials(rowMember.display_name)}
@@ -186,7 +229,7 @@ export function H2HMatrix({ members, records, matchups }: H2HMatrixProps) {
                     </div>
                   </th>
                   {/* Cells */}
-                  {members.map((colMember) => {
+                  {filteredMembers.map((colMember) => {
                     const record = getRecord(rowMember.id, colMember.id);
                     const isSelf = rowMember.id === colMember.id;
                     const isSelected =
@@ -194,7 +237,13 @@ export function H2HMatrix({ members, records, matchups }: H2HMatrixProps) {
                       selectedCell?.member2.id === colMember.id;
 
                     return (
-                      <td key={colMember.id} className="border p-0">
+                      <td
+                        key={colMember.id}
+                        className={cn(
+                          'border p-0',
+                          isViewingAsRow && 'ring-2 ring-primary ring-inset bg-primary/5'
+                        )}
+                      >
                         <HeatmapCell
                           wins={record?.member1Wins ?? 0}
                           losses={record?.member2Wins ?? 0}
@@ -207,42 +256,60 @@ export function H2HMatrix({ members, records, matchups }: H2HMatrixProps) {
                     );
                   })}
                 </tr>
-              ))}
+              )})}
             </tbody>
           </table>
         </div>
       </div>
 
-      {/* Legend for heatmap mode */}
+      {/* Legend and hint for heatmap mode */}
       {mode === 'heatmap' && (
-        <div className="flex justify-center gap-2 text-xs">
-          <div className="flex items-center gap-1">
-            <div className="w-4 h-4 rounded bg-green-900" />
-            <span>Dominant</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <div className="w-4 h-4 rounded bg-green-600" />
-            <span>Strong</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <div className="w-4 h-4 rounded bg-green-400/80" />
-            <span>Edge</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <div className="w-4 h-4 rounded bg-yellow-500/50" />
-            <span>Even</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <div className="w-4 h-4 rounded bg-red-400/80" />
-            <span>Behind</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <div className="w-4 h-4 rounded bg-red-600" />
-            <span>Bad</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <div className="w-4 h-4 rounded bg-red-900" />
-            <span>Dominated</span>
+        <div className="space-y-3">
+          {/* Hint when no member is selected */}
+          {!selectedMember && (
+            <div className="flex items-center justify-center gap-2 p-3 bg-muted rounded-lg">
+              <Info className="h-4 w-4 text-muted-foreground" />
+              <span className="text-sm text-muted-foreground">
+                Use <strong>&quot;Viewing as&quot;</strong> in the header to see the heatmap from a specific member&apos;s perspective
+              </span>
+            </div>
+          )}
+          {/* Context when member is selected */}
+          {selectedMember && (
+            <div className="text-center text-sm text-muted-foreground">
+              Viewing from <strong>{selectedMember.display_name}&apos;s</strong> perspective
+            </div>
+          )}
+          {/* Legend */}
+          <div className="flex justify-center gap-2 text-xs">
+            <div className="flex items-center gap-1">
+              <div className="w-4 h-4 rounded bg-green-900" />
+              <span>Dominant</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-4 h-4 rounded bg-green-600" />
+              <span>Strong</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-4 h-4 rounded bg-green-400/80" />
+              <span>Edge</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-4 h-4 rounded bg-yellow-500/50" />
+              <span>Even</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-4 h-4 rounded bg-red-400/80" />
+              <span>Behind</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-4 h-4 rounded bg-red-600" />
+              <span>Bad</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-4 h-4 rounded bg-red-900" />
+              <span>Dominated</span>
+            </div>
           </div>
         </div>
       )}

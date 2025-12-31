@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Upload, Users, Calendar, FileText, ArrowRight } from 'lucide-react';
+import { RefreshDataButton } from '@/components/admin/RefreshDataButton';
 
 export default async function AdminDashboardPage() {
   const supabase = await createClient();
@@ -77,9 +78,12 @@ export default async function AdminDashboardPage() {
 
   return (
     <div className="space-y-8">
-      <div>
-        <h1 className="text-3xl font-bold">Commissioner Dashboard</h1>
-        <p className="text-muted-foreground">Manage your league data and settings</p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-3xl font-bold">Commissioner Dashboard</h1>
+          <p className="text-muted-foreground">Manage your league data and settings</p>
+        </div>
+        <RefreshDataButton />
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">

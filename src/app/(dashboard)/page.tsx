@@ -10,7 +10,7 @@ import {
 } from '@/components/features/dashboard';
 
 export const metadata = {
-  title: 'Dashboard | FantasyMax',
+  title: 'Dashboard | League of Degenerates',
   description: 'Your personalized fantasy football dashboard',
 };
 
@@ -96,7 +96,7 @@ async function DashboardContent({ memberId }: DashboardContentProps) {
   if (!member) {
     return (
       <div className="flex flex-col items-center justify-center py-12 text-center">
-        <h2 className="text-xl font-semibold mb-2">Welcome to FantasyMax</h2>
+        <h2 className="text-xl font-semibold mb-2">Welcome to League of Degenerates</h2>
         <p className="text-muted-foreground">
           No league data found. Import your league to get started.
         </p>

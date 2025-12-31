@@ -40,7 +40,7 @@ export default function ImportHubPage() {
       <div>
         <h1 className="text-3xl font-bold">Import Data</h1>
         <p className="text-muted-foreground">
-          Choose how you want to import your league&apos;s data into FantasyMax
+          Choose how you want to import your league&apos;s data
         </p>
       </div>
 

@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "description": "Feature tracking for FantasyMax. Status: not-started | in-progress | pass | fail | blocked",
+    "description": "Feature tracking for League of Degenerates. Status: not-started | in-progress | pass | fail | blocked",
     "lastUpdated": "2025-12-30",
-    "totalFeatures": 81,
-    "passing": 70,
+    "totalFeatures": 85,
+    "passing": 75,
     "failing": 0,
-    "inProgress": 9,
+    "inProgress": 1,
     "blocked": 0
   },
   "foundation": {
@@ -95,10 +95,15 @@
     "member-selector": { "status": "pass", "notes": "MemberProvider context + MemberSelector dropdown with URL sync" },
     "champion-on-seasons": { "status": "pass", "notes": "Champion team name + manager displayed on season cards" },
     "ai-generated-avatars": { "status": "pass", "notes": "14 Pixar-style AI avatars generated with Gemini, stored in public/avatars/, auto-lookup in ManagerAvatar" },
+    "league-rebrand": { "status": "pass", "notes": "Renamed from FantasyMax to Matt OD's League of Degenerates across all pages" },
+    "season-journey-fix": { "status": "pass", "notes": "Fixed bug showing flat lines - now calculates actual week-by-week rankings" },
+    "admin-refresh-views": { "status": "pass", "notes": "Added /api/admin/refresh-views endpoint and Refresh Data button to admin dashboard" },
+    "h2h-viewing-as": { "status": "pass", "notes": "Heatmap highlights selected member row, dims other rows, shows perspective hint" },
+    "h2h-active-historic-toggle": { "status": "pass", "notes": "Switch toggle to show active members only vs all historical members" },
     "avatar-upload": { "status": "not-started", "notes": "File upload to Supabase Storage - deferred, using AI avatars instead" },
     "h2h-simplification": { "status": "not-started", "notes": "Remove Record mode, keep only Heatmap + active/all-time toggle" },
     "champions-gallery": { "status": "not-started", "notes": "Redesign Awards page to show only championship winners" },
-    "ai-season-reviews": { "status": "not-started", "notes": "Generate ~200 word narratives for each champion's season" },
+    "ai-season-reviews": { "status": "in-progress", "notes": "NEXT SESSION: Generate funny sportswriter-style synopses from writeups + standings data" },
     "ai-writeup-titles": { "status": "not-started", "notes": "Generate 3-5 word titles for 97 writeups" },
     "hall-of-shame-dual": { "status": "not-started", "notes": "Show worst record AND worst points per season" },
     "ai-shame-writeups": { "status": "not-started", "notes": "AI writeup for double shame teams" },

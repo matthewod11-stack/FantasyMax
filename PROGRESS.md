@@ -10,6 +10,81 @@
 Most recent session should be first.
 -->
 
+## Session 2025-12-30 (3.2: UX Fixes & Pre-Launch Polish)
+
+**Phase:** Phase 3 - Visual Polish / Pre-Launch
+**Focus:** Fix multiple UX issues identified from screenshots, rebrand to "League of Degenerates"
+
+### Implemented
+
+**Season Journey Chart Fix:**
+- Fixed bug where chart showed flat lines (was using `final_rank` for all weeks)
+- Implemented two-pass algorithm: accumulates weekly records, then calculates actual standings
+- Chart now shows true week-by-week ranking changes throughout season
+
+**League Rebranding:**
+- Renamed from "FantasyMax" to "Matt OD's League of Degenerates"
+- Updated sidebar, login page, page titles, and metadata across all pages
+
+**Admin Data Refresh:**
+- Added `/api/admin/refresh-views` endpoint to refresh materialized views
+- Added "Refresh Data" button to Commissioner Dashboard
+- Fixes dashboard data after member merges
+
+**Heatmap "Viewing As" Integration:**
+- Heatmap now responds to "Viewing as" selector in header
+- Selected member's row is highlighted with primary color ring
+- Other rows dimmed to 40% opacity for focus
+- Added hint prompting users to use "Viewing as" when in heatmap mode
+
+**Active/Historic Toggle:**
+- Added toggle switch to H2H matrix header
+- Allows switching between active members only vs all historical members
+- Shows count of currently displayed members
+
+**Public Access Verified:**
+- Confirmed `BYPASS_AUTH=true` enables public access without login
+- Ready for sharing via ngrok or production deployment
+
+### Files Created
+```
+src/app/api/admin/refresh-views/route.ts
+src/components/admin/RefreshDataButton.tsx
+src/components/ui/switch.tsx (via shadcn)
+```
+
+### Files Modified
+```
+src/app/(dashboard)/seasons/[year]/page.tsx   - Fixed calculateWeeklyStandings()
+src/components/layout/sidebar.tsx              - League name rebrand
+src/app/layout.tsx                             - Title/description update
+src/app/(auth)/login/page.tsx                  - Login page rebrand
+src/app/(auth)/invite/[token]/page.tsx         - Invite page rebrand
+src/app/(dashboard)/page.tsx                   - Dashboard rebrand
+src/app/(dashboard)/head-to-head/page.tsx      - Page title update
+src/app/(dashboard)/managers/page.tsx          - Page title update
+src/app/(dashboard)/managers/[id]/page.tsx     - Page title update
+src/app/admin/page.tsx                         - Added RefreshDataButton
+src/app/admin/import/page.tsx                  - Removed FantasyMax reference
+src/app/admin/import/yahoo/page.tsx            - Removed FantasyMax reference
+src/components/features/h2h/H2HMatrix.tsx      - Viewing as + Active/Historic toggle
+```
+
+### Verified
+- [x] `npm run build` passes
+- [x] Season Journey shows actual week-by-week progression
+- [x] Heatmap highlights selected member's row
+- [x] Active/Historic toggle filters H2H matrix
+
+### Next Session: AI Season Synopses
+**Priority task for next session:** Generate AI-powered season recaps
+- Use writeups data + standings to create funny sportswriter-style synopses
+- Pre-generate and store in database
+- Two-tier UX: Season recap cards → drill-down to raw writeups
+- Match Matt's existing writing tone
+
+---
+
 ## Session 2025-12-30 (3.1: AI-Generated Member Avatars)
 
 **Phase:** Phase 3 - Visual Polish

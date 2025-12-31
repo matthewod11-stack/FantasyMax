@@ -4,7 +4,7 @@ import { ManagersGrid, ManagerCardSkeleton, type CareerStats } from '@/component
 import type { Member } from '@/types/database.types';
 
 export const metadata = {
-  title: 'Managers | FantasyMax',
+  title: 'Managers | League of Degenerates',
   description: 'View all league managers and their career stats',
 };
 

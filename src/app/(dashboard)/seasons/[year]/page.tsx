@@ -284,17 +284,26 @@ function calculateWeeklyStandings(
   matchups: MatchupData[],
   totalWeeks: number
 ) {
-  // Build a lookup of team ID to team data
-  const teamMap = new Map(teams.map((t) => [t.id, t]));
+  // First pass: Calculate cumulative records for each team through each week
+  const teamRecords = new Map<string, {
+    wins: number;
+    losses: number;
+    ties: number;
+    points: number;
+  }[]>();
 
-  // For each team, calculate cumulative record through each week
-  return teams.map((team) => {
-    const weeklyData: { week: number; rank: number; points: number; record: string }[] = [];
+  // Initialize tracking for each team
+  teams.forEach((team) => {
+    teamRecords.set(team.id, []);
+  });
 
+  // Calculate cumulative records week by week
+  teams.forEach((team) => {
     let wins = 0;
     let losses = 0;
     let ties = 0;
     let totalPoints = 0;
+    const records = teamRecords.get(team.id)!;
 
     for (let week = 1; week <= totalWeeks; week++) {
       // Find matchup for this team this week
@@ -324,14 +333,58 @@ function calculateWeeklyStandings(
         }
       }
 
-      // Calculate rank based on wins (simplified - real ranking would consider tiebreakers)
-      const rank = team.final_rank || teams.length;
+      records.push({ wins, losses, ties, points: totalPoints });
+    }
+  });
+
+  // Second pass: Calculate actual rankings for each week
+  const weeklyRankings = new Map<number, Map<string, number>>();
+
+  for (let week = 1; week <= totalWeeks; week++) {
+    // Collect all teams' records for this week
+    const weekData = teams.map((team) => {
+      const records = teamRecords.get(team.id)!;
+      const record = records[week - 1] || { wins: 0, losses: 0, ties: 0, points: 0 };
+      return {
+        teamId: team.id,
+        wins: record.wins,
+        losses: record.losses,
+        ties: record.ties,
+        points: record.points,
+        winPct: record.wins + record.losses + record.ties > 0
+          ? record.wins / (record.wins + record.losses + record.ties)
+          : 0,
+      };
+    });
+
+    // Sort by win percentage (desc), then by points (desc) as tiebreaker
+    weekData.sort((a, b) => {
+      if (b.winPct !== a.winPct) return b.winPct - a.winPct;
+      return b.points - a.points;
+    });
+
+    // Assign ranks
+    const rankings = new Map<string, number>();
+    weekData.forEach((data, index) => {
+      rankings.set(data.teamId, index + 1);
+    });
+    weeklyRankings.set(week, rankings);
+  }
+
+  // Build final result with actual weekly ranks
+  return teams.map((team) => {
+    const records = teamRecords.get(team.id)!;
+    const weeklyData: { week: number; rank: number; points: number; record: string }[] = [];
+
+    for (let week = 1; week <= totalWeeks; week++) {
+      const record = records[week - 1] || { wins: 0, losses: 0, ties: 0, points: 0 };
+      const rank = weeklyRankings.get(week)?.get(team.id) || teams.length;
 
       weeklyData.push({
         week,
         rank,
-        points: totalPoints,
-        record: `${wins}-${losses}${ties > 0 ? `-${ties}` : ''}`,
+        points: record.points,
+        record: `${record.wins}-${record.losses}${record.ties > 0 ? `-${record.ties}` : ''}`,
       });
     }
 

@@ -139,7 +139,7 @@ export default function YahooImportPage() {
             <div className="space-y-4">
               <p className="text-sm text-muted-foreground">
                 Connect your Yahoo account to sync your fantasy football leagues. This will allow
-                FantasyMax to import:
+                us to import:
               </p>
               <ul className="text-sm text-muted-foreground space-y-1 ml-4 list-disc">
                 <li>League settings and configuration</li>

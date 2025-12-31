@@ -53,8 +53,11 @@ export function Sidebar({ userRole }: SidebarProps) {
     <aside className="w-64 border-r bg-card min-h-screen p-4">
       <div className="mb-8">
         <Link href="/" className="flex items-center gap-2">
-          <Trophy className="h-8 w-8 text-primary" />
-          <span className="text-xl font-bold">FantasyMax</span>
+          <Trophy className="h-8 w-8 text-primary shrink-0" />
+          <div className="flex flex-col leading-tight">
+            <span className="text-sm font-medium text-muted-foreground">Matt OD&apos;s</span>
+            <span className="text-lg font-bold">League of Degenerates</span>
+          </div>
         </Link>
       </div>
 
