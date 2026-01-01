@@ -124,3 +124,7 @@ export {
   getTopNForRecordType,
 } from './records';
 export type { TopNEntry } from './records';
+
+// Earnings queries
+export { getWeeklyHighScoresForMember } from './earnings';
+export type { WeeklyHighScoreData } from './earnings';

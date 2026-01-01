@@ -1,6 +1,6 @@
 # FantasyMax Roadmap
 
-**Last Updated:** December 31, 2025
+**Last Updated:** January 1, 2026
 
 The social/historical layer for your fantasy football league. This document is organized by **Sprints** - the single source of truth for what to build and when.
 
@@ -244,27 +244,32 @@ Historical archive and future content creation.
 ### Phase 4: Data Import
 - [x] Fix 500 error on import page (live website) - AdminHeader fix
 - [x] Import 2025 season (11th season, just completed) - 14 teams, 110 matchups
-- [ ] Import draft data from Yahoo
-- [ ] Import trade data from Yahoo
+- [ ] Import draft data from Yahoo - put on hold included in sprint 3 (v2 features coming soon)
+- [ ] Import trade data from Yahoo - put on hold included in sprint 3 (v2 features coming soon)
 
 ### Phase 5: Feature Enhancements
 - [x] AI-generated season reviews (using standings + writeup files)
-- [ ] Weekly high score cash tracker ($50/week) on manager page
-- [ ] Championship winnings tracker (rules changed over years) - "Coming Soon"
+- [x] Weekly high score cash tracker ($50/week) on manager page
+- [x] Championship winnings tracker (rules changed over years) - "Coming Soon" placeholder
 - [ ] Reimagine H2H page:
-  - [ ] Record tab: selected member vs each team
+  - [ ] Record tab: selected member vs each team: each combination of match up between league memebers get their (matt od vs mike, matt od vs pj, etc.) should have an AI generated historical matchup recap. 
   - [ ] Click team → expandable panel with matchup week/score history
   - [ ] Remove heatmap highlight (keep heatmap as separate view)
-- [ ] Fix rivalry tracker confusion (clarify nemesis/victim record display)
+- [x] Fix rivalry tracker confusion (clarify nemesis/victim record display) - added contextual narratives
 - [ ] Hall of Shame: "Toilet Trophy Winners" (least wins in season)
   - [ ] AI-generated images of members getting flushed (Gemini/nanobanana)
   - [ ] Leverage original member photos for likeness
+- [x] Media page - added vegasentrance.mov with submission CTA for league members
+- [ ] Expected wins vs actual wins (luck analysis) displayed on manager profile page. 
+- [ ] Schedule strength analysis displayed on manager profile page. 
 
 ### Phase 6: V2 Features (Coming Soon)
 - [ ] Trades page - placeholder with "Coming Soon" (no 404)
-- [ ] Media page - placeholder with "Coming Soon" (no 404)
-- [ ] Voting page - placeholder with "Coming Soon" (no 404)
-- [ ] Constitution page - placeholder with "Coming Soon" (no 404)
+- [ ] Draft Analyzer - placeholder with "coming soon" - This is new and needs to be added!
+- [ ] Voting page - placeholder with "Coming Soon" (no 404) combine with constitution page
+- [ ] Constitution page - placeholder with "Coming Soon" (no 404) combine with voting page
+
+Pause for UI/UX Review and enhanvcement with claude plugin. 
 
 ---
 
@@ -368,7 +373,7 @@ Historical archive and future content creation.
 
 *AI-generated content and insights.*
 
-### 6.1 Season Recaps `/seasons/[year]/recap`
+### 6.1 Season Recaps `/seasons/[year]/recap` (THIS HAS been done in sprint 2.5 earlier). 
 
 - [ ] Auto-generate season narratives
 - [ ] Key turning points identification
@@ -488,7 +493,7 @@ This includes:
 - Reduced motion mode
 
 ### Engagement
-- "This day in league history" widget
+- "This day in league history" widget - we can of have this already in the form of this week in fantasy histroty which is enough. 
 - Random stat generator ("Did you know...")
 - Share buttons for records
 - Export stats to CSV

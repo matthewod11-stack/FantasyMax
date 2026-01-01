@@ -1,9 +1,9 @@
 {
   "_meta": {
     "description": "Feature tracking for League of Degenerates. Status: not-started | in-progress | pass | fail | blocked",
-    "lastUpdated": "2025-12-31",
-    "totalFeatures": 85,
-    "passing": 77,
+    "lastUpdated": "2026-01-01",
+    "totalFeatures": 90,
+    "passing": 82,
     "failing": 0,
     "inProgress": 0,
     "blocked": 0
@@ -107,7 +107,12 @@
     "ai-writeup-titles": { "status": "not-started", "notes": "Generate 3-5 word titles for 97 writeups" },
     "hall-of-shame-dual": { "status": "not-started", "notes": "Show worst record AND worst points per season" },
     "ai-shame-writeups": { "status": "not-started", "notes": "AI writeup for double shame teams" },
-    "coming-soon-pages": { "status": "not-started", "notes": "Placeholder pages for Trades/Media/Voting/Constitution" }
+    "coming-soon-pages": { "status": "not-started", "notes": "Placeholder pages for Trades/Media/Voting/Constitution" },
+    "weekly-high-score-tracker": { "status": "pass", "notes": "$50/week earnings query and display on manager profile Trophy Case" },
+    "championship-winnings-placeholder": { "status": "pass", "notes": "Coming Soon placeholder in Trophy Case for 1st/2nd/3rd payouts" },
+    "manager-trophy-case": { "status": "pass", "notes": "Trophy Case section on manager profile with championships and earnings" },
+    "rivalry-narratives": { "status": "pass", "notes": "Contextual narratives on RivalryCard explaining nemesis/victim relationship" },
+    "media-page": { "status": "pass", "notes": "Media gallery with Vegas entrance video and commissioner submission CTA" }
   },
   "tech-debt": {
     "enable-auth": { "status": "not-needed", "notes": "Decision: No auth required - app is shareable without login" },

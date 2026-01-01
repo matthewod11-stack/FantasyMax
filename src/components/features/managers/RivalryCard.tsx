@@ -50,6 +50,50 @@ const rivalryConfig: Record<RivalryType, { label: string; color: string; bgColor
   },
 };
 
+/**
+ * Generate a contextual narrative explaining the rivalry
+ */
+function getRivalryNarrative(
+  rivalryType: RivalryType,
+  opponentName: string,
+  memberWins: number,
+  opponentWins: number
+): string {
+  const margin = Math.abs(memberWins - opponentWins);
+  const firstName = opponentName.split(' ')[0];
+
+  switch (rivalryType) {
+    case 'nemesis':
+      // Opponent beats you
+      if (margin >= 5) {
+        return `${firstName} has completely owned this matchup`;
+      } else if (margin >= 3) {
+        return `${firstName} has your number`;
+      } else {
+        return `${firstName} has the edge in this rivalry`;
+      }
+
+    case 'victim':
+      // You beat opponent
+      if (margin >= 5) {
+        return `You've completely dominated ${firstName}`;
+      } else if (margin >= 3) {
+        return `${firstName} can't figure you out`;
+      } else {
+        return `You have the edge over ${firstName}`;
+      }
+
+    case 'rival':
+      return `A competitive back-and-forth rivalry`;
+
+    case 'even':
+      return `Perfectly matched opponents`;
+
+    default:
+      return '';
+  }
+}
+
 export function RivalryCard({
   member,
   opponent,
@@ -62,6 +106,7 @@ export function RivalryCard({
   const config = rivalryConfig[rivalryType];
   const isWinning = memberWins > opponentWins;
   const isLosing = memberWins < opponentWins;
+  const narrative = getRivalryNarrative(rivalryType, opponent.display_name, memberWins, opponentWins);
 
   return (
     <Card
@@ -120,6 +165,14 @@ export function RivalryCard({
               >
                 {memberWins + opponentWins + ties} matchups
               </Badge>
+              {narrative && (
+                <p className={cn(
+                  'mt-2 text-xs italic text-center max-w-[140px]',
+                  config.color
+                )}>
+                  {narrative}
+                </p>
+              )}
             </div>
 
             {/* Opponent side */}

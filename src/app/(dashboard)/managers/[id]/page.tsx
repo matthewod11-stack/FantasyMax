@@ -5,7 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { CareerTimeline, RivalryCard, type CareerStats, type SeasonHistoryData } from '@/components/features/managers';
+import { CareerTimeline, RivalryCard, ManagerTrophyCase, type CareerStats, type SeasonHistoryData } from '@/components/features/managers';
+import { getWeeklyHighScoresForMember } from '@/lib/supabase/queries';
 import { SeasonHistoryClient } from './SeasonHistoryClient';
 import { Trophy, ArrowLeft, Calendar, Target, TrendingUp, Medal } from 'lucide-react';
 import { getAvatarUrl } from '@/lib/utils/avatar-map';
@@ -175,6 +176,15 @@ async function getManagerProfile(memberId: string) {
   // Get unique team names for team name history
   const teamNames = [...new Set(seasonData.map((s) => s.teamName))];
 
+  // Get championship years
+  const championshipYears = seasonData
+    .filter((s) => s.isChampion)
+    .map((s) => s.year)
+    .sort((a, b) => a - b);
+
+  // Get weekly high score earnings
+  const weeklyHighScores = await getWeeklyHighScoresForMember(memberId);
+
   return {
     member,
     careerStats,
@@ -183,6 +193,8 @@ async function getManagerProfile(memberId: string) {
     nemesis,
     victim,
     teamNames,
+    championshipYears,
+    weeklyHighScores,
   };
 }
 
@@ -208,7 +220,7 @@ export default async function ManagerProfilePage({ params }: PageProps) {
     notFound();
   }
 
-  const { member, careerStats, seasonData, nemesis, victim, teamNames } = profile;
+  const { member, careerStats, seasonData, nemesis, victim, teamNames, championshipYears, weeklyHighScores } = profile;
 
   return (
     <div className="space-y-8">
@@ -330,6 +342,15 @@ export default async function ManagerProfilePage({ params }: PageProps) {
           </CardContent>
         </Card>
       </div>
+
+      {/* Trophy Case */}
+      <ManagerTrophyCase
+        championships={{
+          years: championshipYears,
+          total: careerStats.championships,
+        }}
+        weeklyHighScores={weeklyHighScores}
+      />
 
       {/* Career Timeline */}
       <Card>

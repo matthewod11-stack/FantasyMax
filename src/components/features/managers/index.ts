@@ -18,3 +18,5 @@ export type {
   SeasonDetail,
   MatchupResult,
 } from './SeasonHistoryTable';
+
+export { ManagerTrophyCase } from './ManagerTrophyCase';

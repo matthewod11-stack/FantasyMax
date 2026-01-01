@@ -10,6 +10,42 @@
 Most recent session should be first.
 -->
 
+## Session 2026-01-01 (Trophy Case & Earnings)
+
+**Phase:** Sprint 2.5 - Feature Enhancements
+**Focus:** Add Trophy Case with earnings tracking, fix rivalry confusion, add media page
+
+### Completed
+- [x] Weekly high score cash tracker ($50/week) - query + display on manager profile
+- [x] Championship winnings placeholder ("Coming Soon")
+- [x] Trophy Case section on manager profile page
+- [x] Fixed rivalry tracker confusion - added contextual narratives
+- [x] Media page with Vegas entrance video and submission CTA
+
+### Files Created
+```
+src/lib/supabase/queries/earnings.ts - Weekly high score query function
+src/components/features/managers/ManagerTrophyCase.tsx - Trophy Case UI component
+src/app/(dashboard)/media/page.tsx - Media gallery page
+```
+
+### Files Modified
+```
+src/lib/supabase/queries/index.ts - Export earnings functions
+src/components/features/managers/index.ts - Export ManagerTrophyCase
+src/app/(dashboard)/managers/[id]/page.tsx - Add Trophy Case section
+src/components/features/managers/RivalryCard.tsx - Add contextual narratives
+```
+
+### Verified
+- [x] Build passes
+- [x] Trophy Case displays on manager profiles
+- [x] Weekly high scores calculated correctly
+- [x] Rivalry cards show explanatory text
+- [x] Media page accessible at /media
+
+---
+
 ## Session 2025-12-31 (Manager Profile Fixes)
 
 **Phase:** Sprint 2.5 - Bug Fixes
