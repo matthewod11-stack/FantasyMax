@@ -251,14 +251,13 @@ Historical archive and future content creation.
 - [x] AI-generated season reviews (using standings + writeup files)
 - [x] Weekly high score cash tracker ($50/week) on manager page
 - [x] Championship winnings tracker (rules changed over years) - "Coming Soon" placeholder
-- [ ] Reimagine H2H page ⏳ IN PROGRESS (Sessions 1-2 of 5 complete)
+- [x] Reimagine H2H page ✅ COMPLETE
   - [x] Session 1: Database + queries (`h2h_recaps` table, query functions)
   - [x] Session 2: AI generation script (91 ESPN-style recaps generated)
-  - [ ] Session 3: UI components (`H2HRivalryCard`, `RivalriesTab`, enhanced drawer)
-  - [ ] Session 4: Page integration (tabs, client wrapper)
-  - [ ] Session 5: Polish + testing
-  - **Plan:** `.claude/plans/hidden-foraging-codd.md`
-  - **Design:** Tabbed layout (Rivalries list + Matrix), AI recaps in drawer
+  - [x] Session 3: UI components (`H2HRivalryCard`, `RivalriesTab`, enhanced drawer)
+  - [x] Session 4: Page integration (tabs, client wrapper, data fetching)
+  - [x] Session 5: Polish + testing (removed Viewing As from Matrix, mobile responsive)
+  - **Result:** Tabbed layout with Rivalries + Matrix views, AI recaps in drawer
 - [x] Fix rivalry tracker confusion (clarify nemesis/victim record display) - added contextual narratives
 - [x] Hall of Shame: "Toilet Trophy Winners" (least wins in season)
   - [x] AI-generated images of members getting flushed (Gemini/nanobanana)

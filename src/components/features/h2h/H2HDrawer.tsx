@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import {
   Sheet,
   SheetContent,
@@ -9,8 +10,10 @@ import {
 } from '@/components/ui/sheet';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
+import { Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
 import type { Member } from '@/types/database.types';
 
 interface MatchupDetail {
@@ -32,6 +35,8 @@ interface H2HDrawerProps {
   matchups: MatchupDetail[];
   member1Wins: number;
   member2Wins: number;
+  /** AI-generated rivalry recap (optional) */
+  aiRecap?: string | null;
 }
 
 function getInitials(name: string): string {
@@ -51,7 +56,10 @@ export function H2HDrawer({
   matchups,
   member1Wins,
   member2Wins,
+  aiRecap,
 }: H2HDrawerProps) {
+  const [isRecapExpanded, setIsRecapExpanded] = useState(false);
+
   // Sort matchups by year (desc) then week (desc)
   const sortedMatchups = [...matchups].sort((a, b) => {
     if (a.seasonYear !== b.seasonYear) return b.seasonYear - a.seasonYear;
@@ -136,6 +144,44 @@ export function H2HDrawer({
             </Badge>
           )}
         </div>
+
+        {/* AI Rivalry Recap */}
+        {aiRecap && (
+          <div className="mt-6 p-4 bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg border border-primary/20">
+            <div className="flex items-center gap-2 mb-3">
+              <Sparkles className="h-4 w-4 text-primary" />
+              <span className="font-semibold text-sm">Rivalry Analysis</span>
+            </div>
+            <div
+              className={cn(
+                'text-sm text-muted-foreground leading-relaxed',
+                !isRecapExpanded && 'line-clamp-4'
+              )}
+            >
+              {aiRecap}
+            </div>
+            {aiRecap.length > 300 && (
+              <Button
+                variant="ghost"
+                size="sm"
+                className="mt-2 h-7 px-2 text-xs"
+                onClick={() => setIsRecapExpanded(!isRecapExpanded)}
+              >
+                {isRecapExpanded ? (
+                  <>
+                    <ChevronUp className="h-3 w-3 mr-1" />
+                    Show less
+                  </>
+                ) : (
+                  <>
+                    <ChevronDown className="h-3 w-3 mr-1" />
+                    Read full analysis
+                  </>
+                )}
+              </Button>
+            )}
+          </div>
+        )}
 
         <Separator className="my-6" />
 

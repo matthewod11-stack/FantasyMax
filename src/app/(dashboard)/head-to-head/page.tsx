@@ -1,7 +1,9 @@
 import { Suspense } from 'react';
 import { createAdminClient } from '@/lib/supabase/server';
-import { H2HMatrix } from '@/components/features/h2h';
+import { H2HPageClient } from '@/components/features/h2h';
+import { getH2HRecapsForMember } from '@/lib/supabase/queries';
 import { Card, CardContent } from '@/components/ui/card';
+import type { H2HRecapWithRivalry } from '@/types/contracts/queries';
 
 export const metadata = {
   title: 'Head-to-Head | League of Degenerates',
@@ -58,7 +60,7 @@ async function getH2HData() {
 
   if (membersError || !members) {
     console.error('Error fetching members:', membersError);
-    return { members: [], records: [], matchups: [] };
+    return { members: [], records: [], matchups: [], rivalriesByMember: {} };
   }
 
   // Transform records to match our interface
@@ -129,7 +131,27 @@ async function getH2HData() {
     };
   });
 
-  return { members, records, matchups };
+  // Fetch rivalries with AI recaps for all active members
+  const activeMembers = members.filter((m) => m.is_active !== false);
+  const rivalriesByMember: Record<string, H2HRecapWithRivalry[]> = {};
+
+  // Fetch rivalries for each active member in parallel
+  const rivalryPromises = activeMembers.map(async (member) => {
+    try {
+      const rivalries = await getH2HRecapsForMember(member.id);
+      return { memberId: member.id, rivalries };
+    } catch (error) {
+      console.error(`Error fetching rivalries for ${member.display_name}:`, error);
+      return { memberId: member.id, rivalries: [] };
+    }
+  });
+
+  const rivalryResults = await Promise.all(rivalryPromises);
+  rivalryResults.forEach(({ memberId, rivalries }) => {
+    rivalriesByMember[memberId] = rivalries;
+  });
+
+  return { members, records, matchups, rivalriesByMember };
 }
 
 function H2HMatrixSkeleton() {
@@ -150,7 +172,7 @@ function H2HMatrixSkeleton() {
 }
 
 async function H2HContent() {
-  const { members, records, matchups } = await getH2HData();
+  const { members, records, matchups, rivalriesByMember } = await getH2HData();
 
   if (members.length === 0) {
     return (
@@ -163,10 +185,11 @@ async function H2HContent() {
   }
 
   return (
-    <H2HMatrix
+    <H2HPageClient
       members={members}
       records={records}
       matchups={matchups}
+      rivalriesByMember={rivalriesByMember}
     />
   );
 }

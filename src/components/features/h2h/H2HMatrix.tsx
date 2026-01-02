@@ -8,8 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { cn } from '@/lib/utils';
-import { useMember } from '@/contexts/member-context';
-import { Info, History } from 'lucide-react';
+import { History } from 'lucide-react';
 import type { Member } from '@/types/database.types';
 
 interface H2HRecord {
@@ -57,9 +56,6 @@ export function H2HMatrix({ members, records, matchups }: H2HMatrixProps) {
     member1: Member;
     member2: Member;
   } | null>(null);
-
-  // Get the selected member from context for "Viewing as" functionality
-  const { selectedMember } = useMember();
 
   // Filter members based on active/historic toggle
   const filteredMembers = useMemo(() => {
@@ -204,20 +200,12 @@ export function H2HMatrix({ members, records, matchups }: H2HMatrixProps) {
               </tr>
             </thead>
             <tbody>
-              {filteredMembers.map((rowMember) => {
-                // Determine row state for "Viewing as" mode
-                const isViewingAsRow = mode === 'heatmap' && selectedMember?.id === rowMember.id;
-                const isRowDimmed = mode === 'heatmap' && selectedMember && selectedMember.id !== rowMember.id;
-
-                return (
-                <tr key={rowMember.id} className={cn(isRowDimmed && 'opacity-40')}>
+              {filteredMembers.map((rowMember) => (
+                <tr key={rowMember.id}>
                   {/* Row header - sticky */}
-                  <th className={cn(
-                    'sticky left-0 z-10 bg-background p-2 text-left transition-opacity',
-                    isViewingAsRow && 'bg-primary/10'
-                  )}>
+                  <th className="sticky left-0 z-10 bg-background p-2 text-left">
                     <div className="flex items-center gap-2">
-                      <Avatar className={cn('h-8 w-8', isViewingAsRow && 'ring-2 ring-primary')}>
+                      <Avatar className="h-8 w-8">
                         <AvatarImage src={rowMember.avatar_url ?? undefined} />
                         <AvatarFallback className="text-xs">
                           {getInitials(rowMember.display_name)}
@@ -237,13 +225,7 @@ export function H2HMatrix({ members, records, matchups }: H2HMatrixProps) {
                       selectedCell?.member2.id === colMember.id;
 
                     return (
-                      <td
-                        key={colMember.id}
-                        className={cn(
-                          'border p-0',
-                          isViewingAsRow && 'ring-2 ring-primary ring-inset bg-primary/5'
-                        )}
-                      >
+                      <td key={colMember.id} className="border p-0">
                         <HeatmapCell
                           wins={record?.member1Wins ?? 0}
                           losses={record?.member2Wins ?? 0}
@@ -256,60 +238,42 @@ export function H2HMatrix({ members, records, matchups }: H2HMatrixProps) {
                     );
                   })}
                 </tr>
-              )})}
+              ))}
             </tbody>
           </table>
         </div>
       </div>
 
-      {/* Legend and hint for heatmap mode */}
+      {/* Legend for heatmap mode */}
       {mode === 'heatmap' && (
-        <div className="space-y-3">
-          {/* Hint when no member is selected */}
-          {!selectedMember && (
-            <div className="flex items-center justify-center gap-2 p-3 bg-muted rounded-lg">
-              <Info className="h-4 w-4 text-muted-foreground" />
-              <span className="text-sm text-muted-foreground">
-                Use <strong>&quot;Viewing as&quot;</strong> in the header to see the heatmap from a specific member&apos;s perspective
-              </span>
-            </div>
-          )}
-          {/* Context when member is selected */}
-          {selectedMember && (
-            <div className="text-center text-sm text-muted-foreground">
-              Viewing from <strong>{selectedMember.display_name}&apos;s</strong> perspective
-            </div>
-          )}
-          {/* Legend */}
-          <div className="flex justify-center gap-2 text-xs">
-            <div className="flex items-center gap-1">
-              <div className="w-4 h-4 rounded bg-green-900" />
-              <span>Dominant</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="w-4 h-4 rounded bg-green-600" />
-              <span>Strong</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="w-4 h-4 rounded bg-green-400/80" />
-              <span>Edge</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="w-4 h-4 rounded bg-yellow-500/50" />
-              <span>Even</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="w-4 h-4 rounded bg-red-400/80" />
-              <span>Behind</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="w-4 h-4 rounded bg-red-600" />
-              <span>Bad</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="w-4 h-4 rounded bg-red-900" />
-              <span>Dominated</span>
-            </div>
+        <div className="flex flex-wrap justify-center gap-2 text-xs">
+          <div className="flex items-center gap-1">
+            <div className="w-4 h-4 rounded bg-green-900" />
+            <span>Dominant</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <div className="w-4 h-4 rounded bg-green-600" />
+            <span>Strong</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <div className="w-4 h-4 rounded bg-green-400/80" />
+            <span>Edge</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <div className="w-4 h-4 rounded bg-yellow-500/50" />
+            <span>Even</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <div className="w-4 h-4 rounded bg-red-400/80" />
+            <span>Behind</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <div className="w-4 h-4 rounded bg-red-600" />
+            <span>Bad</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <div className="w-4 h-4 rounded bg-red-900" />
+            <span>Dominated</span>
           </div>
         </div>
       )}
