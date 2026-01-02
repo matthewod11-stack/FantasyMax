@@ -10,6 +10,49 @@
 Most recent session should be first.
 -->
 
+## Session 2026-01-01 (V2 Feature Placeholders - Complete)
+
+**Phase:** Sprint 2.5 - Phase 6
+**Focus:** Implement "Coming Soon" placeholders for all V2 features to ensure full app navigability
+
+### Completed
+- [x] Created `PlaceholderCard` component for consistent V2 feature display
+- [x] Created `GovernancePlaceholder` component for unified Voting/Constitution hub
+- [x] Implemented placeholder pages for:
+  - `/trades`
+  - `/draft-analyzer` (New)
+  - `/voting`
+  - `/constitution`
+- [x] Added "Draft Analyzer" to sidebar navigation
+- [x] Verified full app navigability without 404s
+
+### Files Created
+```
+src/components/ui/placeholder-card.tsx
+src/components/features/governance/GovernancePlaceholder.tsx
+src/components/features/governance/index.ts
+src/app/(dashboard)/draft-analyzer/page.tsx
+```
+
+### Files Modified
+```
+src/app/(dashboard)/trades/page.tsx
+src/app/(dashboard)/voting/page.tsx
+src/app/(dashboard)/constitution/page.tsx
+src/components/layout/sidebar.tsx
+```
+
+### Verified
+- [x] Build passes (`npm run build`)
+- [x] All 13 main sidebar links lead to pages (no 404s)
+
+### Next Session Should
+- Conduct final UI/UX audit of all V1 pages
+- Verify "Shareable App" requirement (no login required with `BYPASS_AUTH=true`)
+- Check mobile responsiveness across all core pages
+
+---
+
 ## Session 2026-01-01 (Roadmap Reorganization for V2 Planning)
 
 **Phase:** Sprint 2.5 - Documentation & Planning

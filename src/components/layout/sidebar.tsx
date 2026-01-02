@@ -17,6 +17,7 @@ import {
   Settings,
   Upload,
   FileText,
+  ClipboardList,
 } from 'lucide-react';
 interface SidebarProps {
   userRole?: string | null;
@@ -32,6 +33,7 @@ const memberNavItems = [
   { href: '/writeups', label: 'Writeups', icon: FileText },
   { href: '/hall-of-shame', label: 'Hall of Shame', icon: Skull },
   { href: '/trades', label: 'Trades', icon: ArrowLeftRight },
+  { href: '/draft-analyzer', label: 'Draft Analyzer', icon: ClipboardList },
   { href: '/media', label: 'Media', icon: Image },
   { href: '/voting', label: 'Voting', icon: Vote },
   { href: '/constitution', label: 'Constitution', icon: BookOpen },

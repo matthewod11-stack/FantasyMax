@@ -264,11 +264,11 @@ Historical archive and future content creation.
 - [x] Expected wins vs actual wins (luck analysis) displayed on manager profile page
 - [x] Schedule strength analysis displayed on manager profile page 
 
-### Phase 6: V2 Features (Coming Soon)
-- [ ] Trades page - placeholder with "Coming Soon" (no 404)
-- [ ] Draft Analyzer - placeholder with "coming soon" - This is new and needs to be added!
-- [ ] Voting page - placeholder with "Coming Soon" (no 404) combine with constitution page
-- [ ] Constitution page - placeholder with "Coming Soon" (no 404) combine with voting page
+### Phase 6: V2 Features ✅ COMPLETE
+- [x] Trades page - placeholder with "Coming Soon" (no 404)
+- [x] Draft Analyzer - placeholder with "coming soon" - This is new and needs to be added!
+- [x] Voting page - placeholder with "Coming Soon" (no 404) combine with constitution page
+- [x] Constitution page - placeholder with "Coming Soon" (no 404) combine with voting page
 
 Pause for UI/UX Review and enhanvcement with claude plugin. 
 
@@ -323,7 +323,7 @@ Pause for UI/UX Review and enhanvcement with claude plugin.
 Before sharing with league members (no login required):
 
 - [x] All Sprint 1 pages complete and polished
-- [ ] Sprint 2.5 Phase 6: V2 Features placeholders (Trades, Draft Analyzer, Voting/Constitution)
+- [x] Sprint 2.5 Phase 6: V2 Features placeholders (Trades, Draft Analyzer, Voting/Constitution)
 - [ ] CI passing: lint, typecheck, test, build
 - [ ] Mobile responsive (basic audit)
 - [ ] Shareable app ready (member selector working, no auth required)
