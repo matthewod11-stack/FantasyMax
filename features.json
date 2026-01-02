@@ -63,7 +63,7 @@
     "season-detail-page": { "status": "pass", "notes": "Tabbed interface with Standings/Journey/Playoffs" }
   },
   "sprint-2-records": {
-    "hall-of-shame-page": { "status": "pass", "notes": "Full Hall of Shame page with leaderboard, season inductees, stats footer" },
+    "hall-of-shame-page": { "status": "pass", "notes": "Full Hall of Shame page with leaderboard, season inductees, stats footer. Fixed data flagging for 11 seasons." },
     "hall-of-shame-leaderboard": { "status": "pass", "notes": "Most last places ranking with King/Prince/Duke titles" },
     "hall-of-shame-timeline": { "status": "pass", "notes": "Season-by-season inductees grouped by decade" },
     "shame-card-component": { "status": "pass", "notes": "Inverted trophy design with skull watermark" },

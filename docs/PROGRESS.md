@@ -16,6 +16,7 @@ Most recent session should be first.
 **Focus:** Highlight "Toilet Trophy" winners on the Hall of Shame page with a dedicated gallery and hero integration
 
 ### Completed
+- [x] Fixed Hall of Shame "No Shame Yet" issue by correctly flagging the last-place finisher in each of the 11 seasons
 - [x] Created `TrophyGallery` component to display all AI-generated toilet trophies in a grid
 - [x] Added "Trophy Room" tab to Hall of Shame page
 - [x] Enhanced "Latest Inductee" hero section to show the toilet trophy image alongside the shame card
