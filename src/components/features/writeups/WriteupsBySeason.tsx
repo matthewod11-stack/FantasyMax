@@ -9,9 +9,8 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { WriteupCard, WriteupListItem } from './WriteupCard';
-import { Calendar, FileText, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
+import { Calendar, FileText, Sparkles, ChevronDown, ChevronUp, Trophy, Flame, Skull, Quote } from 'lucide-react';
 import type { WriteupsBySeason as WriteupsBySeasonType } from '@/types/contracts/queries';
-import ReactMarkdown from 'react-markdown';
 
 interface WriteupsBySeasonProps {
   seasons: WriteupsBySeasonType[];
@@ -179,18 +178,186 @@ function formatTypeLabel(type: string): string {
   return labels[type] || type;
 }
 
+// ============================================
+// AI Review Parsing Types & Logic
+// ============================================
+
+interface ParsedSection {
+  type: 'title' | 'intro' | 'highlight' | 'body' | 'pullquote' | 'conclusion';
+  content: string;
+  icon?: 'trophy' | 'flame' | 'skull';
+}
+
 /**
- * AI Review Section - Expandable AI-generated season review
+ * Split wall of text into logical sections based on topic shifts
  */
-function AIReviewSection({ review, year }: { review: string; year: number }) {
+function splitIntoLogicalSections(text: string): string[] {
+  const sections: string[] = [];
+  const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+
+  let currentSection: string[] = [];
+  let sentenceCount = 0;
+
+  // Topic shift indicators
+  const topicShifters = [
+    /^(but|however|meanwhile|speaking of|let's|at the|the middle|the opposite|as confetti|the degenerates)/i,
+  ];
+
+  sentences.forEach((sentence) => {
+    const trimmed = sentence.trim();
+    sentenceCount++;
+
+    const isTopicShift = topicShifters.some(pattern => pattern.test(trimmed));
+
+    // Start new section on topic shift or every 3-4 sentences
+    if ((isTopicShift || sentenceCount >= 3) && currentSection.length > 0) {
+      sections.push(currentSection.join(' '));
+      currentSection = [trimmed];
+      sentenceCount = 1;
+    } else {
+      currentSection.push(trimmed);
+    }
+  });
+
+  if (currentSection.length > 0) {
+    sections.push(currentSection.join(' '));
+  }
+
+  return sections;
+}
+
+/**
+ * Check if paragraph contains highlight-worthy content
+ */
+function containsHighlightContent(text: string): boolean {
+  const patterns = [
+    /\d{3}(\.\d)?\s*points/i,
+    /dropped\s+\d{3}/i,
+    /nuclear|explosion|obliterat/i,
+    /record.*\d+-\d+/i,
+    /blowout|beatdown|disaster/i,
+  ];
+  return patterns.some(p => p.test(text));
+}
+
+/**
+ * Detect which icon to use based on content
+ */
+function detectIcon(text: string): 'trophy' | 'flame' | 'skull' {
+  if (/champion|victory|crown|title|winner/i.test(text)) return 'trophy';
+  if (/disaster|worst|terrible|last.*place|shame|embarrass/i.test(text)) return 'skull';
+  return 'flame';
+}
+
+/**
+ * Extract a dramatic sentence suitable for pull quote
+ */
+function extractPullQuote(text: string): string | null {
+  const sentences = text.match(/[^.!?]+[.!?]+/g) || [];
+
+  for (const sentence of sentences) {
+    const trimmed = sentence.trim();
+    if (
+      trimmed.length > 40 &&
+      trimmed.length < 150 &&
+      /cruel|irony|glorious|brutal|poor|obliterat|somehow|stumbl|blood|execution/i.test(trimmed)
+    ) {
+      return trimmed;
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Intelligently parse the review into structured sections
+ */
+function parseReviewContent(review: string): ParsedSection[] {
+  const sections: ParsedSection[] = [];
+
+  // Split by newlines first, fall back to sentence parsing
+  let paragraphs = review.split(/\n\n+/).filter(p => p.trim());
+
+  if (paragraphs.length <= 1) {
+    paragraphs = splitIntoLogicalSections(review);
+  }
+
+  let pullQuoteUsed = false;
+
+  paragraphs.forEach((para, index) => {
+    const trimmed = para.trim();
+    if (!trimmed) return;
+
+    // First paragraph that looks like a title (short, no period)
+    if (index === 0 && trimmed.length < 80 && !trimmed.includes('.')) {
+      sections.push({ type: 'title', content: trimmed });
+      return;
+    }
+
+    // First real paragraph is intro
+    if (sections.length === 0 || (sections.length === 1 && sections[0]?.type === 'title')) {
+      sections.push({ type: 'intro', content: trimmed });
+      return;
+    }
+
+    // Detect highlight-worthy paragraphs
+    if (containsHighlightContent(trimmed)) {
+      const icon = detectIcon(trimmed);
+      sections.push({ type: 'highlight', content: trimmed, icon });
+      return;
+    }
+
+    // Detect pull-quote worthy sentences (max 1)
+    if (!pullQuoteUsed) {
+      const pullQuote = extractPullQuote(trimmed);
+      if (pullQuote) {
+        pullQuoteUsed = true;
+        sections.push({ type: 'pullquote', content: pullQuote });
+        const remainder = trimmed.replace(pullQuote, '').trim();
+        if (remainder) {
+          sections.push({ type: 'body', content: remainder });
+        }
+        return;
+      }
+    }
+
+    // Last paragraph is conclusion
+    if (index === paragraphs.length - 1) {
+      sections.push({ type: 'conclusion', content: trimmed });
+      return;
+    }
+
+    sections.push({ type: 'body', content: trimmed });
+  });
+
+  return sections;
+}
+
+// ============================================
+// AI Review Section Component
+// ============================================
+
+/**
+ * AI Review Section - Expandable AI-generated season review with rich formatting
+ */
+function AIReviewSection({ review }: { review: string; year: number }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Truncate to ~500 chars for preview
-  const previewLength = 500;
-  const needsTruncation = review.length > previewLength;
-  const previewText = needsTruncation
-    ? review.slice(0, previewLength).split('\n').slice(0, 6).join('\n') + '...'
-    : review;
+  const sections = parseReviewContent(review);
+
+  // For collapsed view, show only first 3 sections
+  const previewSections = sections.slice(0, 3);
+  const needsTruncation = sections.length > 3;
+  const displaySections = isExpanded ? sections : previewSections;
+
+  const renderIcon = (icon?: 'trophy' | 'flame' | 'skull') => {
+    switch (icon) {
+      case 'trophy': return <Trophy className="h-4 w-4 text-yellow-500" />;
+      case 'flame': return <Flame className="h-4 w-4 text-orange-500" />;
+      case 'skull': return <Skull className="h-4 w-4 text-red-500" />;
+      default: return null;
+    }
+  };
 
   return (
     <div className="rounded-lg border border-gold/30 bg-gradient-to-br from-gold/5 to-transparent overflow-hidden">
@@ -206,18 +373,76 @@ function AIReviewSection({ review, year }: { review: string; year: number }) {
 
       {/* Content */}
       <div className="px-4 py-4">
-        <div
-          className={cn(
-            "prose prose-sm prose-invert max-w-none",
-            "prose-headings:font-display prose-headings:text-foreground",
-            "prose-p:text-muted-foreground prose-p:leading-relaxed",
-            "prose-strong:text-foreground",
-            !isExpanded && needsTruncation && "line-clamp-[8]"
-          )}
-        >
-          <ReactMarkdown>
-            {isExpanded ? review : previewText}
-          </ReactMarkdown>
+        <div className="space-y-4">
+          {displaySections.map((section, index) => {
+            switch (section.type) {
+              case 'title':
+                return (
+                  <h3
+                    key={index}
+                    className="text-lg font-bold text-foreground tracking-tight"
+                  >
+                    {section.content}
+                  </h3>
+                );
+
+              case 'intro':
+                return (
+                  <p
+                    key={index}
+                    className="text-muted-foreground leading-relaxed first-letter:text-2xl first-letter:font-bold first-letter:text-gold first-letter:float-left first-letter:mr-2 first-letter:mt-0.5"
+                  >
+                    {section.content}
+                  </p>
+                );
+
+              case 'highlight':
+                return (
+                  <div
+                    key={index}
+                    className="relative pl-4 border-l-2 border-gold/50 bg-gold/5 py-3 pr-4 rounded-r-lg"
+                  >
+                    {section.icon && (
+                      <div className="absolute -left-3 top-3 bg-background p-1 rounded-full border border-gold/20">
+                        {renderIcon(section.icon)}
+                      </div>
+                    )}
+                    <p className="text-muted-foreground leading-relaxed text-sm">
+                      {section.content}
+                    </p>
+                  </div>
+                );
+
+              case 'pullquote':
+                return (
+                  <blockquote
+                    key={index}
+                    className="relative my-4 py-3 px-4 bg-muted/30 rounded-lg border-l-4 border-gold"
+                  >
+                    <Quote className="absolute -top-2 -left-2 h-5 w-5 text-gold/40" />
+                    <p className="text-foreground/90 italic text-sm leading-relaxed">
+                      {section.content}
+                    </p>
+                  </blockquote>
+                );
+
+              case 'conclusion':
+                return (
+                  <div key={index} className="pt-3 border-t border-border/30">
+                    <p className="text-muted-foreground leading-relaxed italic text-sm">
+                      {section.content}
+                    </p>
+                  </div>
+                );
+
+              default:
+                return (
+                  <p key={index} className="text-muted-foreground leading-relaxed text-sm">
+                    {section.content}
+                  </p>
+                );
+            }
+          })}
         </div>
 
         {/* Expand/Collapse button */}
@@ -237,7 +462,7 @@ function AIReviewSection({ review, year }: { review: string; year: number }) {
             ) : (
               <>
                 <ChevronDown className="h-4 w-4" />
-                Read Full Review
+                Read Full Review ({sections.length - 3} more sections)
               </>
             )}
           </button>
