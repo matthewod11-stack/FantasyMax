@@ -2,7 +2,9 @@
 
 import { cn } from '@/lib/utils';
 import { ShameCard } from './ShameCard';
+import { ToiletTrophyImage } from './ToiletTrophyImage';
 import { Skull, Calendar } from 'lucide-react';
+import { hasToiletTrophy } from '@/lib/utils/trophy-map';
 import type { ShameInductee } from '@/lib/supabase/queries';
 
 interface SeasonInducteesProps {
@@ -58,13 +60,34 @@ export function SeasonInductees({ inductees, className }: SeasonInducteesProps) 
             </div>
 
             {/* Inductee cards for this decade */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {decadeInductees.map((inductee) => (
-                <ShameCard
-                  key={`${inductee.season_year}-${inductee.member_id}`}
-                  inductee={inductee}
-                />
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {decadeInductees.map((inductee) => {
+                const hasTrophy = hasToiletTrophy(inductee.season_year);
+                return (
+                  <div
+                    key={`${inductee.season_year}-${inductee.member_id}`}
+                    className={cn(
+                      'flex gap-4',
+                      hasTrophy ? 'flex-row items-stretch' : 'flex-col'
+                    )}
+                  >
+                    {/* Toilet Trophy Image */}
+                    {hasTrophy && (
+                      <ToiletTrophyImage
+                        year={inductee.season_year}
+                        memberName={inductee.display_name}
+                        size="md"
+                        showYearBadge={false}
+                        className="flex-shrink-0"
+                      />
+                    )}
+                    {/* Shame Card */}
+                    <div className="flex-1">
+                      <ShameCard inductee={inductee} className="h-full" />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         );

@@ -10,6 +10,193 @@
 Most recent session should be first.
 -->
 
+## Session 2026-01-01 (H2H Page Reimagination - Sessions 1 & 2)
+
+**Phase:** Sprint 2.5 - Feature Enhancements
+**Focus:** Reimagine H2H page with Rivalries tab and AI-generated matchup recaps
+
+### Multi-Session Plan
+This is a 5-session implementation. Sessions 1-2 completed this sitting.
+**Plan Location:** `.claude/plans/hidden-foraging-codd.md`
+
+| Session | Focus | Status |
+|---------|-------|--------|
+| 1 | Database + Queries | ✅ Complete |
+| 2 | AI Generation Script | ✅ Complete |
+| 3 | UI Components | ⏳ Pending |
+| 4 | Page Integration | ⏳ Pending |
+| 5 | Polish + Testing | ⏳ Pending |
+
+### Session 1: Database + Queries ✅
+- [x] Created `h2h_recaps` table migration with member pair constraint
+- [x] Created `h2h-recaps.ts` query functions (get, upsert, delete)
+- [x] Added `H2HRecap` and `H2HRecapWithRivalry` types to contracts
+- [x] Applied migration to Supabase production
+
+### Session 2: AI Generation Script ✅
+- [x] Created `scripts/generate-h2h-recaps.ts` following existing pattern
+- [x] Supports CLI options: --dry-run, --active-only, --force, --limit, --member
+- [x] ESPN broadcast style prompts with notable matchups
+- [x] Generated 91 recaps for active member pairs (avg 2,673 chars)
+
+### Files Created
+```
+supabase/migrations/20260101000001_h2h_recaps.sql
+src/lib/supabase/queries/h2h-recaps.ts
+scripts/generate-h2h-recaps.ts
+```
+
+### Files Modified
+```
+src/types/contracts/queries.ts - Added H2HRecap types
+src/lib/supabase/queries/index.ts - Export recap queries
+```
+
+### Database Status
+| Table | Rows |
+|-------|------|
+| h2h_recaps | 91 |
+
+### Verified
+- [x] Build passes
+- [x] Migration applied
+- [x] 91 AI recaps generated and stored
+
+### Next Sessions (3-5)
+- Create `H2HRivalryCard.tsx` and `RivalriesTab.tsx` components
+- Enhance `H2HDrawer.tsx` with AI recap section
+- Create `H2HPageClient.tsx` with tabs
+- Remove "Viewing As" highlighting from matrix
+
+---
+
+## Session 2026-01-01 (Luck & Schedule Analytics Implementation)
+
+**Phase:** Sprint 2.5 - Feature Enhancements
+**Focus:** Implement expected wins (luck analysis) and schedule strength on manager profile
+
+### Completed
+- [x] Created luck.ts calculator functions (pure functions, no DB calls)
+  - `calculateExpectedWins` - All-play method comparing weekly scores vs all teams
+  - `calculateActualWins` - Count actual wins from scores
+  - `calculateLuckIndex` - Actual minus expected (positive = lucky)
+  - `calculateScheduleStrength` - Average opponent win percentage
+- [x] Created luck query functions in `luck.ts`
+  - `getCareerLuckStats` - Aggregated across all seasons
+  - `getSeasonLuckStats` - Broken down by season
+- [x] Integrated into manager profile page
+  - Expanded stats grid from 4 to 6 columns
+  - Added "Luck Index" card with color-coded display
+  - Added "Schedule Strength" card with opponent win %
+- [x] Added unit tests (28 tests, all passing)
+- [x] Fixed bug in `calculateScheduleStrength` (proper handling of zero-game opponents)
+
+### Files Created
+```
+src/lib/stats/luck.ts - Pure calculator functions
+src/lib/supabase/queries/luck.ts - Query functions
+tests/unit/stats/luck.test.ts - Unit tests (28 tests)
+```
+
+### Files Modified
+```
+src/lib/stats/index.ts - Export luck module
+src/lib/supabase/queries/index.ts - Export luck queries
+src/app/(dashboard)/managers/[id]/page.tsx - Add luck stats to UI
+```
+
+### Technical Notes
+- **All-Play Method**: For each week, compare score against ALL teams (not just opponent).
+  If you outscored 11 of 13 teams, expected wins = 11/13. Sum across all weeks.
+- **Luck Index**: Actual wins - Expected wins. Positive = lucky (won more than expected).
+- **Schedule Strength**: Average final win percentage of opponents faced.
+- Regular season only (playoffs excluded by default)
+
+### Verified
+- [x] Build passes
+- [x] 28 unit tests pass
+- [x] Stats display on manager profile
+
+---
+
+## Session 2026-01-01 (Planning: Luck & Schedule Analytics)
+
+**Phase:** Sprint 2.5 - Feature Enhancements
+**Focus:** Plan expected wins (luck analysis) and schedule strength for manager profile
+
+### Completed
+- [x] Explored manager profile page structure
+- [x] Explored matchup data model and queries
+- [x] Explored stat calculator patterns
+- [x] Designed all-play algorithm for expected wins
+- [x] Created implementation plan
+
+### Plan Location
+`.claude/plans/dynamic-orbiting-mitten.md`
+
+### Files to Create/Modify (Next Session)
+| File | Action |
+|------|--------|
+| `src/lib/stats/luck.ts` | CREATE - Pure calculator functions |
+| `src/lib/stats/index.ts` | MODIFY - Add export |
+| `src/lib/supabase/queries/luck.ts` | CREATE - Query function |
+| `src/lib/supabase/queries/index.ts` | MODIFY - Add export |
+| `src/app/(dashboard)/managers/[id]/page.tsx` | MODIFY - UI integration (6-col grid) |
+| `tests/unit/stats/luck.test.ts` | CREATE - Unit tests |
+
+### Key Design Decisions
+- **All-Play Method**: Compare weekly score against all other teams for expected wins
+- **Luck Index**: Actual wins minus expected wins (+lucky, -unlucky)
+- **Schedule Strength**: Average opponent win percentage
+- **Display**: Expand Stats Grid from 4 to 6 columns
+
+---
+
+## Session 2026-01-01 (Toilet Trophy Winners)
+
+**Phase:** Sprint 2.5 - Feature Enhancements
+**Focus:** Generate AI toilet trophy images for Hall of Shame last-place finishers
+
+### Completed
+- [x] Created `public/trophies/` directory for trophy images
+- [x] Queried database for last-place finishers per season (11 seasons, 2015-2025)
+- [x] Generated 7 AI toilet trophy images using Gemini (skipping 4 seasons without member photos)
+- [x] Created trophy-map.ts utility for year → image URL mapping
+- [x] Created ToiletTrophyImage component with fallback for missing images
+- [x] Integrated toilet trophy images into SeasonInductees component on Hall of Shame page
+
+### Files Created
+```
+public/trophies/2016.png - PJ M toilet trophy
+public/trophies/2017.png - Mike OD toilet trophy
+public/trophies/2020.png - Nick D toilet trophy
+public/trophies/2022.png - Nick F toilet trophy
+public/trophies/2023.png - James H toilet trophy
+public/trophies/2024.png - PJ M toilet trophy (repeat offender!)
+public/trophies/2025.png - Billy toilet trophy
+src/lib/utils/trophy-map.ts - Year → trophy image URL mapping
+src/components/features/hall-of-shame/ToiletTrophyImage.tsx - Trophy image component
+```
+
+### Files Modified
+```
+src/components/features/hall-of-shame/index.ts - Export ToiletTrophyImage
+src/components/features/hall-of-shame/SeasonInductees.tsx - Integrate trophy images
+```
+
+### Technical Notes
+- Used Gemini via nanobanana MCP with reference photos from `~/Desktop/League Pictures/`
+- 4 seasons skipped due to missing member photos: 2015 (Tim M), 2018 (Mikey B), 2019/2021 (Jim W)
+- PJ M appears twice (2016 and 2024) - two separate toilet trophy images
+- ToiletTrophyImage shows placeholder icon for years without images
+
+### Verified
+- [x] Build passes
+- [x] 7 trophy images generated and saved
+- [x] Images display on Hall of Shame page
+
+---
+
 ## Session 2026-01-01 (Trophy Case & Earnings)
 
 **Phase:** Sprint 2.5 - Feature Enhancements

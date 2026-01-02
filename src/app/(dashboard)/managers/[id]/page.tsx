@@ -6,9 +6,10 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { CareerTimeline, RivalryCard, ManagerTrophyCase, type CareerStats, type SeasonHistoryData } from '@/components/features/managers';
-import { getWeeklyHighScoresForMember } from '@/lib/supabase/queries';
+import { getWeeklyHighScoresForMember, getCareerLuckStats, type LuckStats } from '@/lib/supabase/queries';
+import { formatLuckIndex, classifyLuck, getLuckDescription, formatScheduleStrength, classifySchedule } from '@/lib/stats/luck';
 import { SeasonHistoryClient } from './SeasonHistoryClient';
-import { Trophy, ArrowLeft, Calendar, Target, TrendingUp, Medal } from 'lucide-react';
+import { Trophy, ArrowLeft, Calendar, Target, TrendingUp, Medal, Dice5, BarChart3 } from 'lucide-react';
 import { getAvatarUrl } from '@/lib/utils/avatar-map';
 import type { Member } from '@/types/database.types';
 
@@ -182,8 +183,11 @@ async function getManagerProfile(memberId: string) {
     .map((s) => s.year)
     .sort((a, b) => a - b);
 
-  // Get weekly high score earnings
-  const weeklyHighScores = await getWeeklyHighScoresForMember(memberId);
+  // Get weekly high score earnings and luck stats in parallel
+  const [weeklyHighScores, luckStats] = await Promise.all([
+    getWeeklyHighScoresForMember(memberId),
+    getCareerLuckStats(memberId),
+  ]);
 
   return {
     member,
@@ -195,6 +199,7 @@ async function getManagerProfile(memberId: string) {
     teamNames,
     championshipYears,
     weeklyHighScores,
+    luckStats,
   };
 }
 
@@ -220,7 +225,7 @@ export default async function ManagerProfilePage({ params }: PageProps) {
     notFound();
   }
 
-  const { member, careerStats, seasonData, nemesis, victim, teamNames, championshipYears, weeklyHighScores } = profile;
+  const { member, careerStats, seasonData, nemesis, victim, teamNames, championshipYears, weeklyHighScores, luckStats } = profile;
 
   return (
     <div className="space-y-8">
@@ -287,7 +292,7 @@ export default async function ManagerProfilePage({ params }: PageProps) {
       </div>
 
       {/* Stats grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
         <Card>
           <CardHeader className="pb-2">
             <CardDescription className="flex items-center gap-1.5">
@@ -341,6 +346,48 @@ export default async function ManagerProfilePage({ params }: PageProps) {
             </p>
           </CardContent>
         </Card>
+
+        {/* Luck Index Card */}
+        {luckStats && (
+          <Card>
+            <CardHeader className="pb-2">
+              <CardDescription className="flex items-center gap-1.5">
+                <Dice5 className="h-3.5 w-3.5" />
+                Luck Index
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className={`text-2xl font-bold tabular-nums ${
+                luckStats.luckIndex >= 0 ? 'text-green-500' : 'text-red-500'
+              }`}>
+                {formatLuckIndex(luckStats.luckIndex)}
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">
+                {getLuckDescription(classifyLuck(luckStats.luckIndex))}
+              </p>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Schedule Strength Card */}
+        {luckStats && (
+          <Card>
+            <CardHeader className="pb-2">
+              <CardDescription className="flex items-center gap-1.5">
+                <BarChart3 className="h-3.5 w-3.5" />
+                Schedule Strength
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-2xl font-bold tabular-nums">
+                {formatScheduleStrength(luckStats.scheduleStrength)}
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Avg opponent win %
+              </p>
+            </CardContent>
+          </Card>
+        )}
       </div>
 
       {/* Trophy Case */}

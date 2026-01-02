@@ -128,3 +128,16 @@ export type { TopNEntry } from './records';
 // Earnings queries
 export { getWeeklyHighScoresForMember } from './earnings';
 export type { WeeklyHighScoreData } from './earnings';
+
+// Luck queries
+export { getCareerLuckStats, getSeasonLuckStats } from './luck';
+export type { LuckStats, SeasonLuckStats } from './luck';
+
+// H2H Recaps queries
+export {
+  getH2HRecap,
+  getH2HRecapsForMember,
+  getAllH2HRecaps,
+  upsertH2HRecap,
+  deleteH2HRecap,
+} from './h2h-recaps';

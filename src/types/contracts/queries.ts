@@ -165,6 +165,44 @@ export interface RivalryData {
   last_matchup_date: string | null;
 }
 
+// =====================================
+// H2H Recap Types
+// =====================================
+
+/**
+ * AI-generated rivalry recap from h2h_recaps table
+ */
+export interface H2HRecap {
+  id: string;
+  member_1_id: string;
+  member_2_id: string;
+  ai_recap: string;
+  ai_recap_preview: string | null;
+  ai_recap_generated_at: string | null;
+  ai_recap_model: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+/**
+ * H2H recap combined with rivalry stats and opponent info
+ * Used for the Rivalries tab display
+ */
+export interface H2HRecapWithRivalry {
+  opponent: Member;
+  wins: number;
+  losses: number;
+  ties: number;
+  rivalry_type: 'nemesis' | 'victim' | 'rival' | 'even';
+  total_matchups: number;
+  last_matchup_date: string | null;
+  streak: number; // positive = winning streak, negative = losing
+  ai_recap: string | null;
+  ai_recap_preview: string | null;
+  ai_recap_generated_at: string | null;
+  ai_recap_model: string | null;
+}
+
 export interface UpcomingMatchup {
   opponent: Member;
   h2h_record: [number, number]; // [your wins, their wins]

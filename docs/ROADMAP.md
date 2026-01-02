@@ -251,17 +251,21 @@ Historical archive and future content creation.
 - [x] AI-generated season reviews (using standings + writeup files)
 - [x] Weekly high score cash tracker ($50/week) on manager page
 - [x] Championship winnings tracker (rules changed over years) - "Coming Soon" placeholder
-- [ ] Reimagine H2H page:
-  - [ ] Record tab: selected member vs each team: each combination of match up between league memebers get their (matt od vs mike, matt od vs pj, etc.) should have an AI generated historical matchup recap. 
-  - [ ] Click team → expandable panel with matchup week/score history
-  - [ ] Remove heatmap highlight (keep heatmap as separate view)
+- [ ] Reimagine H2H page ⏳ IN PROGRESS (Sessions 1-2 of 5 complete)
+  - [x] Session 1: Database + queries (`h2h_recaps` table, query functions)
+  - [x] Session 2: AI generation script (91 ESPN-style recaps generated)
+  - [ ] Session 3: UI components (`H2HRivalryCard`, `RivalriesTab`, enhanced drawer)
+  - [ ] Session 4: Page integration (tabs, client wrapper)
+  - [ ] Session 5: Polish + testing
+  - **Plan:** `.claude/plans/hidden-foraging-codd.md`
+  - **Design:** Tabbed layout (Rivalries list + Matrix), AI recaps in drawer
 - [x] Fix rivalry tracker confusion (clarify nemesis/victim record display) - added contextual narratives
-- [ ] Hall of Shame: "Toilet Trophy Winners" (least wins in season)
-  - [ ] AI-generated images of members getting flushed (Gemini/nanobanana)
-  - [ ] Leverage original member photos for likeness
+- [x] Hall of Shame: "Toilet Trophy Winners" (least wins in season)
+  - [x] AI-generated images of members getting flushed (Gemini/nanobanana)
+  - [x] Leverage original member photos for likeness (7 of 11 seasons - 4 skipped due to missing photos)
 - [x] Media page - added vegasentrance.mov with submission CTA for league members
-- [ ] Expected wins vs actual wins (luck analysis) displayed on manager profile page. 
-- [ ] Schedule strength analysis displayed on manager profile page. 
+- [x] Expected wins vs actual wins (luck analysis) displayed on manager profile page
+- [x] Schedule strength analysis displayed on manager profile page 
 
 ### Phase 6: V2 Features (Coming Soon)
 - [ ] Trades page - placeholder with "Coming Soon" (no 404)
