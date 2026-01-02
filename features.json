@@ -2,8 +2,8 @@
   "_meta": {
     "description": "Feature tracking for League of Degenerates. Status: not-started | in-progress | pass | fail | blocked",
     "lastUpdated": "2026-01-01",
-    "totalFeatures": 95,
-    "passing": 87,
+    "totalFeatures": 99,
+    "passing": 91,
     "failing": 0,
     "inProgress": 0,
     "blocked": 0
@@ -116,7 +116,11 @@
     "media-page": { "status": "pass", "notes": "Media gallery with Vegas entrance video and commissioner submission CTA" },
     "toilet-trophy-images": { "status": "pass", "notes": "AI-generated toilet trophy images for 7 seasons via Gemini, integrated into Hall of Shame" },
     "hall-of-shame-trophy-room": { "status": "pass", "notes": "Dedicated Trophy Room tab in Hall of Shame showing all historic toilet trophy images" },
-    "h2h-reimagination": { "status": "pass", "notes": "Tabbed H2H page with Rivalries + Matrix tabs, 91 AI ESPN-style recaps, RivalryCard components" }
+    "h2h-reimagination": { "status": "pass", "notes": "Tabbed H2H page with Rivalries + Matrix tabs, 91 AI ESPN-style recaps, RivalryCard components" },
+    "h2h-recap-markdown": { "status": "pass", "notes": "AI rivalry recaps render with ReactMarkdown prose styling" },
+    "dashboard-leaderboard-wins": { "status": "pass", "notes": "All-Time Leaderboard sorted by wins instead of championships" },
+    "dashboard-season-recap": { "status": "pass", "notes": "Latest season card shows AI review preview and removed In Progress badge" },
+    "hall-of-shame-unified-cards": { "status": "pass", "notes": "Unified single-card layout with trophy image + member info together" }
   },
   "tech-debt": {
     "enable-auth": { "status": "not-needed", "notes": "Decision: No auth required - app is shareable without login" },
