@@ -30,6 +30,7 @@ export { SkeletonCard, Skeleton } from './skeleton-card';
 
 // Layout components
 export { DrawerPanel } from './drawer-panel';
+export { DetailModal } from './detail-modal';
 
 // Navigation components
 export { CommandPalette } from './command-palette';

@@ -2,13 +2,7 @@
 
 import { useState, useCallback } from 'react';
 import { Badge } from '@/components/ui/badge';
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-} from '@/components/ui/sheet';
+import { DetailModal } from '@/components/ui/detail-modal';
 import { cn } from '@/lib/utils';
 import {
   Trophy,
@@ -86,9 +80,9 @@ interface SeasonHistoryTableProps {
 }
 
 /**
- * SeasonHistoryTable - Interactive season history with detail drawer
+ * SeasonHistoryTable - Interactive season history with detail modal
  *
- * Displays a table of seasons with click-to-expand drawer showing:
+ * Displays a table of seasons with click-to-expand modal showing:
  * - Week-by-week matchup results
  * - Regular season vs playoff records
  * - Season highs and lows
@@ -99,13 +93,13 @@ export function SeasonHistoryTable({
   fetchSeasonDetail,
 }: SeasonHistoryTableProps) {
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [seasonDetail, setSeasonDetail] = useState<SeasonDetail | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleRowClick = useCallback(async (year: number) => {
     setSelectedYear(year);
-    setIsDrawerOpen(true);
+    setIsModalOpen(true);
     setIsLoading(true);
     setSeasonDetail(null);
 
@@ -114,8 +108,8 @@ export function SeasonHistoryTable({
     setIsLoading(false);
   }, [memberId, fetchSeasonDetail]);
 
-  const handleDrawerClose = useCallback(() => {
-    setIsDrawerOpen(false);
+  const handleModalClose = useCallback(() => {
+    setIsModalOpen(false);
     setTimeout(() => {
       setSelectedYear(null);
       setSeasonDetail(null);
@@ -185,43 +179,37 @@ export function SeasonHistoryTable({
         </table>
       </div>
 
-      {/* Season Detail Drawer */}
-      <Sheet open={isDrawerOpen} onOpenChange={(open) => !open && handleDrawerClose()}>
-        <SheetContent className="w-full sm:max-w-lg overflow-y-auto">
-          <SheetHeader>
-            <SheetTitle className="flex items-center gap-2">
-              <Calendar className="h-5 w-5" />
-              {selectedYear} Season
-            </SheetTitle>
-            <SheetDescription>
-              {seasonDetail?.teamName ?? 'Loading...'}
-            </SheetDescription>
-          </SheetHeader>
-
-          {isLoading ? (
-            <SeasonDetailSkeleton />
-          ) : seasonDetail ? (
-            <SeasonDetailContent detail={seasonDetail} />
-          ) : (
-            <div className="py-8 text-center text-muted-foreground">
-              Failed to load season details
-            </div>
-          )}
-        </SheetContent>
-      </Sheet>
+      {/* Season Detail Modal */}
+      <DetailModal
+        isOpen={isModalOpen}
+        onClose={handleModalClose}
+        title={`${selectedYear} Season`}
+        description={seasonDetail?.teamName ?? 'Loading...'}
+        size="md"
+      >
+        {isLoading ? (
+          <SeasonDetailSkeleton />
+        ) : seasonDetail ? (
+          <SeasonDetailContent detail={seasonDetail} />
+        ) : (
+          <div className="py-8 text-center text-muted-foreground">
+            Failed to load season details
+          </div>
+        )}
+      </DetailModal>
     </>
   );
 }
 
 /**
- * Season detail content for the drawer
+ * Season detail content for the modal
  */
 function SeasonDetailContent({ detail }: { detail: SeasonDetail }) {
   const regularSeasonMatchups = detail.matchups.filter((m) => !m.isPlayoff);
   const playoffMatchups = detail.matchups.filter((m) => m.isPlayoff);
 
   return (
-    <div className="mt-6 space-y-6">
+    <div className="space-y-6">
       {/* Summary stats */}
       <div className="grid grid-cols-2 gap-4">
         <div className="rounded-lg border bg-card p-4">
@@ -392,11 +380,11 @@ function MatchupRow({
 }
 
 /**
- * Loading skeleton for drawer content
+ * Loading skeleton for modal content
  */
 function SeasonDetailSkeleton() {
   return (
-    <div className="mt-6 space-y-6">
+    <div className="space-y-6">
       <div className="flex items-center justify-center py-8">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
       </div>

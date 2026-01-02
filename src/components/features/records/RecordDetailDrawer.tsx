@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { DrawerPanel } from '@/components/ui/drawer-panel';
+import { DetailModal } from '@/components/ui/detail-modal';
 import { ManagerAvatar } from '@/components/ui/manager-avatar';
 import { Trophy, Medal, Award, Calendar, Loader2 } from 'lucide-react';
 import type { LeagueRecordRow, RecordType } from '@/types/contracts/queries';
@@ -177,7 +177,7 @@ export function RecordDetailDrawer({
   const hasTopN = supportsTopN(record.record_type);
 
   return (
-    <DrawerPanel
+    <DetailModal
       isOpen={isOpen}
       onClose={onClose}
       title={getRecordTitle(record.record_type)}
@@ -314,6 +314,6 @@ export function RecordDetailDrawer({
           </div>
         )}
       </div>
-    </DrawerPanel>
+    </DetailModal>
   );
 }

@@ -28,13 +28,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-} from '@/components/ui/sheet';
+import { DetailModal } from '@/components/ui/detail-modal';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
 import { ManagerAvatar } from '@/components/ui/manager-avatar';
@@ -572,49 +566,44 @@ export function MembersClient({
         </DialogContent>
       </Dialog>
 
-      {/* Team Name History Drawer */}
-      <Sheet open={isHistoryOpen} onOpenChange={setIsHistoryOpen}>
-        <SheetContent>
-          <SheetHeader>
-            <SheetTitle>
-              {historyMember?.display_name}&apos;s Team Names
-            </SheetTitle>
-            <SheetDescription>
-              Historical team names across all seasons
-            </SheetDescription>
-          </SheetHeader>
-
-          <div className="mt-6 space-y-3">
-            {historyMember?.team_name_history.map((entry, index) => (
-              <div
-                key={`${entry.year}-${index}`}
-                className="flex items-center justify-between border-b pb-3 last:border-0"
-              >
-                <div className="flex items-center gap-3">
-                  <Badge variant={index === 0 ? 'default' : 'secondary'}>
-                    {entry.year}
-                  </Badge>
-                  <span className={index === 0 ? 'font-medium' : ''}>
-                    {entry.team_name}
-                  </span>
-                </div>
-                {index === 0 && (
-                  <Badge variant="outline" className="text-xs">
-                    Current
-                  </Badge>
-                )}
+      {/* Team Name History Modal */}
+      <DetailModal
+        isOpen={isHistoryOpen}
+        onClose={() => setIsHistoryOpen(false)}
+        title={`${historyMember?.display_name}'s Team Names`}
+        description="Historical team names across all seasons"
+        size="sm"
+      >
+        <div className="space-y-3">
+          {historyMember?.team_name_history.map((entry, index) => (
+            <div
+              key={`${entry.year}-${index}`}
+              className="flex items-center justify-between border-b pb-3 last:border-0"
+            >
+              <div className="flex items-center gap-3">
+                <Badge variant={index === 0 ? 'default' : 'secondary'}>
+                  {entry.year}
+                </Badge>
+                <span className={index === 0 ? 'font-medium' : ''}>
+                  {entry.team_name}
+                </span>
               </div>
-            ))}
+              {index === 0 && (
+                <Badge variant="outline" className="text-xs">
+                  Current
+                </Badge>
+              )}
+            </div>
+          ))}
 
-            {(!historyMember?.team_name_history ||
-              historyMember.team_name_history.length === 0) && (
-              <p className="text-muted-foreground text-center py-8">
-                No team history available
-              </p>
-            )}
-          </div>
-        </SheetContent>
-      </Sheet>
+          {(!historyMember?.team_name_history ||
+            historyMember.team_name_history.length === 0) && (
+            <p className="text-muted-foreground text-center py-8">
+              No team history available
+            </p>
+          )}
+        </div>
+      </DetailModal>
     </div>
   );
 }

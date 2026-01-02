@@ -1,12 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-} from '@/components/ui/sheet';
+import { DetailModal } from '@/components/ui/detail-modal';
 import { ManagerAvatar } from '@/components/ui/manager-avatar';
 import { WriteupDetailSkeleton } from './WriteupsSkeleton';
 import {
@@ -18,9 +13,7 @@ import {
   ClipboardList,
   TrendingUp,
   HelpCircle,
-  X,
 } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import type { WriteupWithDetails, WriteupType } from '@/types/contracts/queries';
 
 interface WriteupDetailDrawerProps {
@@ -59,7 +52,7 @@ const WRITEUP_TYPE_LABELS: Record<WriteupType, string> = {
 };
 
 /**
- * WriteupDetailDrawer - Full writeup content in slide-out drawer
+ * WriteupDetailDrawer - Full writeup content in centered modal
  *
  * Shows the complete writeup content with formatting preserved.
  */
@@ -94,98 +87,87 @@ export function WriteupDetailDrawer({
   const typeLabel = writeup ? WRITEUP_TYPE_LABELS[writeup.writeup_type] : '';
 
   return (
-    <Sheet open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <SheetContent
-        side="right"
-        className="w-full sm:max-w-xl md:max-w-2xl overflow-y-auto"
-      >
-        <SheetHeader className="text-left">
-          <SheetTitle className="sr-only">
-            {writeup?.title || 'Writeup'}
-          </SheetTitle>
-        </SheetHeader>
+    <DetailModal
+      isOpen={isOpen}
+      onClose={onClose}
+      title={writeup?.title || 'Writeup'}
+      size="lg"
+    >
+      {isLoading && <WriteupDetailSkeleton />}
 
-        {isLoading && <WriteupDetailSkeleton />}
-
-        {!isLoading && writeup && (
-          <div className="space-y-6">
-            {/* Header */}
-            <div className="space-y-3">
-              {/* Type badge and metadata */}
-              <div className="flex items-center gap-3 flex-wrap">
-                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary text-sm font-medium text-gold">
-                  <Icon className="h-4 w-4" />
-                  <span>{typeLabel}</span>
-                </div>
-
-                {writeup.week && (
-                  <span className="text-sm text-muted-foreground">
-                    Week {writeup.week}
-                  </span>
-                )}
-
-                {writeup.season && (
-                  <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                    <Calendar className="h-4 w-4" />
-                    <span>{writeup.season.year} Season</span>
-                  </div>
-                )}
+      {!isLoading && writeup && (
+        <div className="space-y-6">
+          {/* Header */}
+          <div className="space-y-3">
+            {/* Type badge and metadata */}
+            <div className="flex items-center gap-3 flex-wrap">
+              <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary text-sm font-medium text-gold">
+                <Icon className="h-4 w-4" />
+                <span>{typeLabel}</span>
               </div>
 
-              {/* Title */}
-              <h2 className="text-2xl font-display uppercase tracking-wide text-foreground">
-                {writeup.title}
-              </h2>
+              {writeup.week && (
+                <span className="text-sm text-muted-foreground">
+                  Week {writeup.week}
+                </span>
+              )}
 
-              {/* Author */}
-              <div className="flex items-center gap-3">
-                <ManagerAvatar
-                  avatarUrl={writeup.author.avatar_url}
-                  displayName={writeup.author.display_name}
-                  size="sm"
-                />
-                <div>
-                  <p className="text-sm font-medium text-foreground">
-                    {writeup.author.display_name}
-                  </p>
-                  {writeup.published_at && (
-                    <p className="text-xs text-muted-foreground">
-                      {formatDate(writeup.published_at)}
-                    </p>
-                  )}
+              {writeup.season && (
+                <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                  <Calendar className="h-4 w-4" />
+                  <span>{writeup.season.year} Season</span>
                 </div>
-              </div>
+              )}
             </div>
 
-            {/* Divider */}
-            <div className="border-t" />
-
-            {/* Content */}
-            <div className="prose prose-sm prose-invert max-w-none">
-              <div className="whitespace-pre-wrap font-body text-foreground/90 leading-relaxed">
-                {writeup.content}
-              </div>
-            </div>
-
-            {/* Footer */}
-            {writeup.imported_from && (
-              <div className="pt-4 border-t">
-                <p className="text-xs text-muted-foreground italic">
-                  Imported from historical archive
+            {/* Author */}
+            <div className="flex items-center gap-3">
+              <ManagerAvatar
+                avatarUrl={writeup.author.avatar_url}
+                displayName={writeup.author.display_name}
+                size="sm"
+              />
+              <div>
+                <p className="text-sm font-medium text-foreground">
+                  {writeup.author.display_name}
                 </p>
+                {writeup.published_at && (
+                  <p className="text-xs text-muted-foreground">
+                    {formatDate(writeup.published_at)}
+                  </p>
+                )}
               </div>
-            )}
+            </div>
           </div>
-        )}
 
-        {!isLoading && !writeup && writeupId && (
-          <div className="text-center py-12 text-muted-foreground">
-            <FileText className="h-12 w-12 mx-auto mb-4 opacity-30" />
-            <p>Writeup not found</p>
+          {/* Divider */}
+          <div className="border-t" />
+
+          {/* Content */}
+          <div className="prose prose-sm prose-invert max-w-none">
+            <div className="whitespace-pre-wrap font-body text-foreground/90 leading-relaxed">
+              {writeup.content}
+            </div>
           </div>
-        )}
-      </SheetContent>
-    </Sheet>
+
+          {/* Footer */}
+          {writeup.imported_from && (
+            <div className="pt-4 border-t">
+              <p className="text-xs text-muted-foreground italic">
+                Imported from historical archive
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+
+      {!isLoading && !writeup && writeupId && (
+        <div className="text-center py-12 text-muted-foreground">
+          <FileText className="h-12 w-12 mx-auto mb-4 opacity-30" />
+          <p>Writeup not found</p>
+        </div>
+      )}
+    </DetailModal>
   );
 }
 
