@@ -81,7 +81,7 @@ async function LeagueDashboardContent() {
     getLeagueStats(),
     getCurrentWeek(),
     getLatestSeason(),
-    getCareerLeaderboard('championships', 5),
+    getCareerLeaderboard('total_wins', 5),
     getBiggestRivalries(4),
     getTopHighestScores(1),
     getTopBlowouts(1),

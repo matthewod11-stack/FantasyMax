@@ -190,6 +190,7 @@ export interface LatestSeasonInfo {
   championTeamName: string | null;
   lastPlaceName: string | null;
   isComplete: boolean;
+  aiReviewPreview: string | null;
 }
 
 export async function getLatestSeason(): Promise<LatestSeasonInfo | null> {
@@ -203,6 +204,7 @@ export async function getLatestSeason(): Promise<LatestSeasonInfo | null> {
       name,
       num_teams,
       num_weeks,
+      ai_review,
       champion_team:teams!fk_champion_team(
         team_name,
         member:members(display_name)
@@ -223,6 +225,16 @@ export async function getLatestSeason(): Promise<LatestSeasonInfo | null> {
   // Check if season is complete (has champion)
   const isComplete = !!season.champion_team;
 
+  // Create a short preview of the AI review (first ~150 chars, end at sentence)
+  let aiReviewPreview: string | null = null;
+  if (season.ai_review) {
+    const preview = season.ai_review.slice(0, 200);
+    const sentenceEnd = preview.lastIndexOf('. ');
+    aiReviewPreview = sentenceEnd > 80
+      ? preview.slice(0, sentenceEnd + 1)
+      : preview.slice(0, 150) + '...';
+  }
+
   return {
     id: season.id,
     year: season.year,
@@ -233,5 +245,6 @@ export async function getLatestSeason(): Promise<LatestSeasonInfo | null> {
     championTeamName: season.champion_team?.team_name ?? null,
     lastPlaceName: season.last_place_team?.member?.display_name ?? null,
     isComplete,
+    aiReviewPreview,
   };
 }

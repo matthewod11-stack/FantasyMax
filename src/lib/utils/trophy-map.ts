@@ -4,8 +4,8 @@
  * Maps seasons to their "Toilet Trophy" images - AI-generated humorous
  * images of the last-place finisher being flushed down a golden toilet.
  *
- * Note: Only seasons with available member photos have trophy images.
- * Seasons without photos (2015, 2018, 2019, 2021) are not included.
+ * Note: Only seasons with available member photos have custom trophy images.
+ * Seasons without photos use the default trophy image.
  */
 
 const TROPHY_MAP: Record<number, string> = {
@@ -18,12 +18,23 @@ const TROPHY_MAP: Record<number, string> = {
   2025: '/trophies/2025.png',
 };
 
+/** Default toilet trophy image for seasons without custom AI images */
+export const DEFAULT_TOILET_TROPHY = '/avatars/default-toilet-trophy.png';
+
 /**
  * Get the toilet trophy image URL for a given season year.
- * Returns undefined if no trophy image exists for that year.
+ * Returns undefined if no custom trophy image exists for that year.
  */
 export function getToiletTrophyUrl(year: number): string | undefined {
   return TROPHY_MAP[year];
+}
+
+/**
+ * Get the toilet trophy image URL, falling back to default if no custom image.
+ * Always returns a valid URL.
+ */
+export function getToiletTrophyUrlWithFallback(year: number): string {
+  return TROPHY_MAP[year] ?? DEFAULT_TOILET_TROPHY;
 }
 
 /**

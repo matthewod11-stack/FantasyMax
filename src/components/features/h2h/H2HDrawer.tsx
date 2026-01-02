@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 import { Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 import type { Member } from '@/types/database.types';
 
 interface MatchupDetail {
@@ -147,39 +148,52 @@ export function H2HDrawer({
 
         {/* AI Rivalry Recap */}
         {aiRecap && (
-          <div className="mt-6 p-4 bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg border border-primary/20">
-            <div className="flex items-center gap-2 mb-3">
-              <Sparkles className="h-4 w-4 text-primary" />
-              <span className="font-semibold text-sm">Rivalry Analysis</span>
+          <div className="mt-6 rounded-lg border border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10 overflow-hidden">
+            {/* Header */}
+            <div className="px-4 py-3 border-b border-primary/20 bg-primary/5">
+              <div className="flex items-center gap-2">
+                <Sparkles className="h-4 w-4 text-primary" />
+                <span className="font-semibold text-sm">Rivalry Analysis</span>
+              </div>
             </div>
-            <div
-              className={cn(
-                'text-sm text-muted-foreground leading-relaxed',
-                !isRecapExpanded && 'line-clamp-4'
-              )}
-            >
-              {aiRecap}
-            </div>
-            {aiRecap.length > 300 && (
-              <Button
-                variant="ghost"
-                size="sm"
-                className="mt-2 h-7 px-2 text-xs"
-                onClick={() => setIsRecapExpanded(!isRecapExpanded)}
-              >
-                {isRecapExpanded ? (
-                  <>
-                    <ChevronUp className="h-3 w-3 mr-1" />
-                    Show less
-                  </>
-                ) : (
-                  <>
-                    <ChevronDown className="h-3 w-3 mr-1" />
-                    Read full analysis
-                  </>
+
+            {/* Content */}
+            <div className="px-4 py-4">
+              <div
+                className={cn(
+                  'prose prose-sm prose-invert max-w-none',
+                  'prose-headings:font-semibold prose-headings:text-foreground prose-headings:mt-4 prose-headings:mb-2',
+                  'prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:my-2',
+                  'prose-strong:text-foreground prose-strong:font-semibold',
+                  'prose-ul:my-2 prose-li:text-muted-foreground',
+                  !isRecapExpanded && 'line-clamp-[6]'
                 )}
-              </Button>
-            )}
+              >
+                <ReactMarkdown>{aiRecap}</ReactMarkdown>
+              </div>
+
+              {/* Expand/Collapse button */}
+              {aiRecap.length > 400 && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="mt-3 h-7 px-2 text-xs text-primary hover:text-primary/80"
+                  onClick={() => setIsRecapExpanded(!isRecapExpanded)}
+                >
+                  {isRecapExpanded ? (
+                    <>
+                      <ChevronUp className="h-3 w-3 mr-1" />
+                      Show less
+                    </>
+                  ) : (
+                    <>
+                      <ChevronDown className="h-3 w-3 mr-1" />
+                      Read full analysis
+                    </>
+                  )}
+                </Button>
+              )}
+            </div>
           </div>
         )}
 

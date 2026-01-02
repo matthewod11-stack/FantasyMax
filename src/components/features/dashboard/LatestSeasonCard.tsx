@@ -2,9 +2,8 @@
 
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Calendar, Trophy, Skull, ArrowRight, Users } from 'lucide-react';
+import { Calendar, Trophy, Skull, ArrowRight, Users, Sparkles } from 'lucide-react';
 import type { LatestSeasonInfo } from '@/lib/supabase/queries';
 
 interface LatestSeasonCardProps {
@@ -22,16 +21,7 @@ export function LatestSeasonCard({ season }: LatestSeasonCardProps) {
       <CardContent className="pt-6">
         <div className="flex items-start justify-between mb-4">
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <h3 className="text-xl font-bold">{season.year} Season</h3>
-              {season.isComplete ? (
-                <Badge variant="secondary">Complete</Badge>
-              ) : (
-                <Badge className="bg-green-500/10 text-green-500 border-green-500/50">
-                  In Progress
-                </Badge>
-              )}
-            </div>
+            <h3 className="text-xl font-bold mb-1">{season.year} Season</h3>
             {season.name && (
               <p className="text-sm text-muted-foreground">{season.name}</p>
             )}
@@ -42,7 +32,8 @@ export function LatestSeasonCard({ season }: LatestSeasonCardProps) {
           </div>
         </div>
 
-        {season.isComplete && (
+        {/* Champion & Last Place */}
+        {(season.championName || season.lastPlaceName) && (
           <div className="grid grid-cols-2 gap-4 mb-4">
             {season.championName && (
               <div className="flex items-center gap-2 p-3 rounded-lg bg-yellow-500/10">
@@ -62,6 +53,18 @@ export function LatestSeasonCard({ season }: LatestSeasonCardProps) {
                 </div>
               </div>
             )}
+          </div>
+        )}
+
+        {/* AI Season Recap Preview */}
+        {season.aiReviewPreview && (
+          <div className="mb-4 p-3 bg-muted/50 rounded-lg border border-border/50">
+            <div className="flex items-start gap-2">
+              <Sparkles className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+              <p className="text-sm text-muted-foreground line-clamp-2 italic">
+                {season.aiReviewPreview}
+              </p>
+            </div>
           </div>
         )}
 
