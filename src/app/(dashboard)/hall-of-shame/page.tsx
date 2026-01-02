@@ -1,16 +1,20 @@
 import { Suspense } from 'react';
 import { Skull, Trophy } from 'lucide-react';
+import { cn } from '@/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   ShameCard,
   ShameLeaderboard,
   SeasonInductees,
+  TrophyGallery,
   ShameSkeleton,
+  ToiletTrophyImage,
 } from '@/components/features/hall-of-shame';
 import {
   getHallOfShame,
   getShameInducteesBySeason,
 } from '@/lib/supabase/queries';
+import { hasToiletTrophy, getToiletTrophyYears } from '@/lib/utils/trophy-map';
 
 export const dynamic = 'force-dynamic';
 
@@ -27,6 +31,7 @@ async function HallOfShameContent() {
   const totalInductees = seasonInductees.length;
   const mostShamed = shameLeaderboard[0];
   const latestInductee = seasonInductees[0];
+  const latestHasTrophy = latestInductee ? hasToiletTrophy(latestInductee.season_year) : false;
 
   // Empty state
   if (totalInductees === 0) {
@@ -54,8 +59,25 @@ async function HallOfShameContent() {
               Latest Inductee
             </h2>
           </div>
-          <div className="max-w-md">
-            <ShameCard inductee={latestInductee} featured />
+          <div className={cn(
+            "flex flex-col md:flex-row gap-6",
+            !latestHasTrophy && "max-w-md"
+          )}>
+            <ShameCard 
+              inductee={latestInductee} 
+              featured 
+              className={cn("flex-1", !latestHasTrophy && "w-full")} 
+            />
+            {latestHasTrophy && (
+              <div className="flex-shrink-0">
+                <ToiletTrophyImage 
+                  year={latestInductee.season_year}
+                  memberName={latestInductee.display_name}
+                  size="lg"
+                  className="mx-auto md:mx-0"
+                />
+              </div>
+            )}
           </div>
         </section>
       )}
@@ -72,6 +94,11 @@ async function HallOfShameContent() {
             <Trophy className="h-4 w-4" />
             <span>By Season</span>
             <span className="text-xs text-muted-foreground">({totalInductees})</span>
+          </TabsTrigger>
+          <TabsTrigger value="trophies" className="gap-2 data-[state=active]:text-loss">
+            <Skull className="h-4 w-4" />
+            <span>Trophy Room</span>
+            <span className="text-xs text-muted-foreground">({getToiletTrophyYears().length})</span>
           </TabsTrigger>
         </TabsList>
 
@@ -114,6 +141,21 @@ async function HallOfShameContent() {
               </p>
             </div>
             <SeasonInductees inductees={seasonInductees} />
+          </section>
+        </TabsContent>
+
+        {/* Trophy Room Tab */}
+        <TabsContent value="trophies">
+          <section className="space-y-4">
+            <div>
+              <h2 className="font-display text-2xl uppercase tracking-wide text-loss">
+                Toilet Trophy Winners
+              </h2>
+              <p className="text-sm text-muted-foreground">
+                AI-generated memorials of the most historic flushes
+              </p>
+            </div>
+            <TrophyGallery inductees={seasonInductees} />
           </section>
         </TabsContent>
       </Tabs>

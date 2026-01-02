@@ -2,8 +2,8 @@
   "_meta": {
     "description": "Feature tracking for League of Degenerates. Status: not-started | in-progress | pass | fail | blocked",
     "lastUpdated": "2026-01-01",
-    "totalFeatures": 94,
-    "passing": 86,
+    "totalFeatures": 95,
+    "passing": 87,
     "failing": 0,
     "inProgress": 0,
     "blocked": 0
@@ -115,6 +115,7 @@
     "rivalry-narratives": { "status": "pass", "notes": "Contextual narratives on RivalryCard explaining nemesis/victim relationship" },
     "media-page": { "status": "pass", "notes": "Media gallery with Vegas entrance video and commissioner submission CTA" },
     "toilet-trophy-images": { "status": "pass", "notes": "AI-generated toilet trophy images for 7 seasons via Gemini, integrated into Hall of Shame" },
+    "hall-of-shame-trophy-room": { "status": "pass", "notes": "Dedicated Trophy Room tab in Hall of Shame showing all historic toilet trophy images" },
     "h2h-reimagination": { "status": "pass", "notes": "Tabbed H2H page with Rivalries + Matrix tabs, 91 AI ESPN-style recaps, RivalryCard components" }
   },
   "tech-debt": {
