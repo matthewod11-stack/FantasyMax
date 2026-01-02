@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Trophy, Skull, TrendingUp, TrendingDown, Minus } from 'lucide-react';
+import { Trophy, Skull } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface SeasonData {
@@ -29,137 +29,165 @@ export function CareerTimeline({ seasons, onSeasonClick }: CareerTimelineProps) 
   // Sort by year ascending
   const sortedSeasons = [...seasons].sort((a, b) => a.year - b.year);
 
-  // Calculate win percentage for each season
-  const seasonsWithWinPct = sortedSeasons.map((season) => {
-    const totalGames = season.wins + season.losses + season.ties;
-    const winPct = totalGames > 0
-      ? (season.wins + season.ties * 0.5) / totalGames
-      : 0;
-    return { ...season, winPct };
-  });
+  // Find max wins for scaling (minimum of 10 for reasonable chart)
+  const maxWins = Math.max(...sortedSeasons.map((s) => s.wins), 10);
 
-  // Find min/max win percentages for scaling
-  const minWinPct = Math.min(...seasonsWithWinPct.map((s) => s.winPct), 0.3);
-  const maxWinPct = Math.max(...seasonsWithWinPct.map((s) => s.winPct), 0.7);
+  // Chart dimensions
+  const chartHeight = 160; // px
+  const barMaxHeight = chartHeight - 20; // Leave room for icons
+
+  // Calculate bar height based on wins
+  const getBarHeight = (wins: number) => {
+    return Math.max((wins / maxWins) * barMaxHeight, 4); // minimum 4px
+  };
+
+  // Get bar color based on season outcome
+  const getBarColor = (season: SeasonData) => {
+    if (season.isChampion) return 'bg-yellow-500';
+    if (season.isLastPlace) return 'bg-red-500';
+    if (season.madePlayoffs) return 'bg-green-500';
+    return 'bg-muted-foreground/40';
+  };
 
   return (
     <div className="relative">
-      {/* Timeline line */}
-      <div className="absolute left-0 right-0 top-1/2 h-0.5 bg-border -translate-y-1/2" />
+      {/* Y-axis labels */}
+      <div className="absolute left-0 top-0 bottom-8 w-8 flex flex-col justify-between text-xs text-muted-foreground">
+        <span className="tabular-nums">{maxWins}W</span>
+        <span className="tabular-nums">{Math.round(maxWins / 2)}W</span>
+        <span className="tabular-nums">0W</span>
+      </div>
 
-      {/* Timeline points */}
-      <div className="relative flex justify-between items-end min-h-[200px] pb-8 pt-16">
-        {seasonsWithWinPct.map((season) => {
-          const isHovered = hoveredYear === season.year;
-          // Calculate height based on win percentage (30% to 100% of container)
-          const heightPercent = 30 + ((season.winPct - minWinPct) / (maxWinPct - minWinPct)) * 70;
-          // Calculate position trend
-          const prevSeason = seasonsWithWinPct.find((s) => s.year === season.year - 1);
-          const trend = prevSeason
-            ? season.winPct > prevSeason.winPct
-              ? 'up'
-              : season.winPct < prevSeason.winPct
-                ? 'down'
-                : 'neutral'
-            : 'neutral';
+      {/* Chart area */}
+      <div className="ml-10">
+        {/* Grid lines */}
+        <div className="absolute left-10 right-0 top-0" style={{ height: chartHeight }}>
+          <div className="absolute left-0 right-0 top-0 border-t border-border/30" />
+          <div className="absolute left-0 right-0 top-1/2 border-t border-border/30" />
+          <div className="absolute left-0 right-0 bottom-0 border-t border-border" />
+        </div>
 
-          return (
-            <div
-              key={season.year}
-              className="flex flex-col items-center relative group cursor-pointer"
-              onMouseEnter={() => setHoveredYear(season.year)}
-              onMouseLeave={() => setHoveredYear(null)}
-              onClick={() => onSeasonClick?.(season.year)}
-            >
-              {/* Hover card */}
+        {/* Bars */}
+        <div
+          className="relative flex items-end justify-around gap-1"
+          style={{ height: chartHeight }}
+        >
+          {sortedSeasons.map((season) => {
+            const isHovered = hoveredYear === season.year;
+            const barHeight = getBarHeight(season.wins);
+            const winPct = season.wins + season.losses + season.ties > 0
+              ? ((season.wins + season.ties * 0.5) / (season.wins + season.losses + season.ties) * 100).toFixed(1)
+              : '0.0';
+
+            return (
               <div
-                className={cn(
-                  'absolute bottom-full mb-2 p-3 bg-popover border rounded-lg shadow-lg z-10',
-                  'transition-all duration-200 min-w-[180px]',
-                  isHovered
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-2 pointer-events-none'
-                )}
+                key={season.year}
+                className="flex-1 flex flex-col items-center relative group cursor-pointer min-w-0"
+                onMouseEnter={() => setHoveredYear(season.year)}
+                onMouseLeave={() => setHoveredYear(null)}
+                onClick={() => onSeasonClick?.(season.year)}
               >
-                <div className="text-sm font-bold mb-1">{season.teamName}</div>
-                <div className="text-lg font-bold tabular-nums">
-                  {season.wins}-{season.losses}
-                  {season.ties > 0 && `-${season.ties}`}
+                {/* Hover tooltip */}
+                <div
+                  className={cn(
+                    'absolute bottom-full mb-2 p-3 bg-popover border rounded-lg shadow-lg z-20',
+                    'transition-all duration-200 min-w-[160px] whitespace-nowrap',
+                    isHovered
+                      ? 'opacity-100 translate-y-0'
+                      : 'opacity-0 translate-y-2 pointer-events-none'
+                  )}
+                >
+                  <div className="text-sm font-bold mb-1 truncate">{season.teamName}</div>
+                  <div className="text-xl font-bold tabular-nums">
+                    {season.wins}-{season.losses}
+                    {season.ties > 0 && `-${season.ties}`}
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    {winPct}% Win Rate
+                  </div>
+                  {season.finalRank && (
+                    <div className="text-xs text-muted-foreground mt-1">
+                      Finished #{season.finalRank}
+                    </div>
+                  )}
+                  <div className="flex items-center gap-1 mt-2 text-xs">
+                    {season.isChampion && (
+                      <span className="text-yellow-500 font-medium">🏆 Champion</span>
+                    )}
+                    {season.isLastPlace && (
+                      <span className="text-red-500 font-medium">💀 Last Place</span>
+                    )}
+                    {!season.isChampion && !season.isLastPlace && season.madePlayoffs && (
+                      <span className="text-green-500">Made Playoffs</span>
+                    )}
+                    {!season.isChampion && !season.isLastPlace && !season.madePlayoffs && (
+                      <span className="text-muted-foreground">Missed Playoffs</span>
+                    )}
+                  </div>
                 </div>
-                <div className="text-xs text-muted-foreground">
-                  {(season.winPct * 100).toFixed(1)}% Win Rate
-                </div>
-                {season.finalRank && (
-                  <div className="text-xs text-muted-foreground mt-1">
-                    Finished #{season.finalRank}
+
+                {/* Icon for special seasons */}
+                {(season.isChampion || season.isLastPlace) && (
+                  <div
+                    className="absolute z-10 transition-transform"
+                    style={{ bottom: barHeight + 4 }}
+                  >
+                    {season.isChampion && (
+                      <Trophy
+                        className={cn(
+                          'h-4 w-4 text-yellow-500',
+                          isHovered && 'scale-125'
+                        )}
+                      />
+                    )}
+                    {season.isLastPlace && !season.isChampion && (
+                      <Skull
+                        className={cn(
+                          'h-4 w-4 text-red-500',
+                          isHovered && 'scale-125'
+                        )}
+                      />
+                    )}
                   </div>
                 )}
-                <div className="flex items-center gap-1 mt-2 text-xs">
-                  {season.madePlayoffs && (
-                    <span className="text-green-500">Made Playoffs</span>
+
+                {/* Bar */}
+                <div
+                  className={cn(
+                    'w-full max-w-[24px] rounded-t transition-all duration-200',
+                    getBarColor(season),
+                    isHovered && 'opacity-80 scale-x-110'
                   )}
-                  {!season.madePlayoffs && (
-                    <span className="text-muted-foreground">Missed Playoffs</span>
-                  )}
-                </div>
+                  style={{ height: barHeight }}
+                />
               </div>
+            );
+          })}
+        </div>
 
-              {/* Bar / point */}
+        {/* X-axis labels (years) */}
+        <div className="flex justify-around gap-1 mt-2">
+          {sortedSeasons.map((season) => {
+            const isHovered = hoveredYear === season.year;
+            return (
               <div
+                key={season.year}
                 className={cn(
-                  'w-3 rounded-t-full transition-all duration-300',
-                  season.isChampion
-                    ? 'bg-yellow-500'
-                    : season.isLastPlace
-                      ? 'bg-red-500'
-                      : season.madePlayoffs
-                        ? 'bg-green-500'
-                        : 'bg-muted-foreground/50',
-                  isHovered && 'scale-110'
-                )}
-                style={{ height: `${heightPercent}%` }}
-              />
-
-              {/* Icon overlay for special seasons */}
-              {season.isChampion && (
-                <div className="absolute top-0 -translate-y-6">
-                  <Trophy
-                    className={cn(
-                      'h-5 w-5 text-yellow-500',
-                      isHovered && 'animate-bounce'
-                    )}
-                  />
-                </div>
-              )}
-              {season.isLastPlace && (
-                <div className="absolute top-0 -translate-y-6">
-                  <Skull className="h-5 w-5 text-red-500" />
-                </div>
-              )}
-
-              {/* Year label */}
-              <div
-                className={cn(
-                  'absolute -bottom-6 text-xs font-medium transition-colors',
-                  isHovered ? 'text-foreground' : 'text-muted-foreground'
+                  'flex-1 text-center text-xs tabular-nums transition-colors min-w-0',
+                  isHovered ? 'text-foreground font-medium' : 'text-muted-foreground'
                 )}
               >
-                {season.year}
+                {/* Show abbreviated year on small screens */}
+                <span className="hidden sm:inline">{season.year}</span>
+                <span className="sm:hidden">{String(season.year).slice(-2)}</span>
               </div>
-
-              {/* Trend indicator */}
-              <div className="absolute -top-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                {trend === 'up' && <TrendingUp className="h-3 w-3 text-green-500" />}
-                {trend === 'down' && <TrendingDown className="h-3 w-3 text-red-500" />}
-                {trend === 'neutral' && <Minus className="h-3 w-3 text-muted-foreground" />}
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
 
       {/* Legend */}
-      <div className="flex justify-center gap-6 mt-4 text-xs text-muted-foreground">
+      <div className="flex justify-center gap-4 sm:gap-6 mt-6 text-xs text-muted-foreground flex-wrap">
         <div className="flex items-center gap-1.5">
           <div className="w-3 h-3 rounded-sm bg-yellow-500" />
           <span>Champion</span>
@@ -169,7 +197,7 @@ export function CareerTimeline({ seasons, onSeasonClick }: CareerTimelineProps) 
           <span>Playoffs</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <div className="w-3 h-3 rounded-sm bg-muted-foreground/50" />
+          <div className="w-3 h-3 rounded-sm bg-muted-foreground/40" />
           <span>Missed</span>
         </div>
         <div className="flex items-center gap-1.5">
