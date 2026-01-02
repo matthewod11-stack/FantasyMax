@@ -10,6 +10,33 @@
 Most recent session should be first.
 -->
 
+## Session 2026-01-01 (Roadmap Reorganization for V2 Planning)
+
+**Phase:** Sprint 2.5 - Documentation & Planning
+**Focus:** Reorganize roadmap to separate V1 completion from V2 planning
+
+### Completed
+- [x] Moved Sprint 3-6 (Data Enrichment, Production Ready, Social Features, AI Features) to KNOWN_ISSUES.md as V2 Backlog
+- [x] Removed Sprint 3-6 sections from ROADMAP.md
+- [x] Updated Quick Status table to remove future sprints
+- [x] Updated Release Checklist to "V1 Release Checklist" focused on shareable app (no login required)
+- [x] Added V2 Planning section with reference to KNOWN_ISSUES.md
+- [x] Updated Phase 4 comments to reference V2 instead of Sprint 3
+
+### Files Modified
+```
+docs/ROADMAP.md - Removed Sprint 3-6, updated status and checklist
+docs/KNOWN_ISSUES.md - Added V2 Backlog section with Sprint 3-6 content
+```
+
+### Rationale
+The roadmap is now focused on V1 completion (Sprint 2.5 Phase 6: V2 Features placeholders). All future planning (Sprints 3-6) is staged in KNOWN_ISSUES.md as a staging ground for V2 planning, keeping the roadmap clean and focused on the current sprint goal: making the app shareable with league members without requiring login.
+
+### Next Steps
+- Complete Sprint 2.5 Phase 6: V2 Features placeholders (Trades, Draft Analyzer, Voting/Constitution pages)
+
+---
+
 ## Session 2026-01-01 (H2H Page Reimagination - Complete)
 
 **Phase:** Sprint 2.5 - Feature Enhancements

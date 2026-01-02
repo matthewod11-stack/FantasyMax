@@ -14,10 +14,8 @@ The social/historical layer for your fantasy football league. This document is o
 | **Sprint 1** | Core Stats Pages | ✅ Complete |
 | **Sprint 2** | Records & Recognition | ✅ Complete (Phase 1) |
 | **Sprint 2.5** | Shareable App | ⏳ In Progress |
-| **Sprint 3** | Data Enrichment | ⏳ Not Started |
-| **Sprint 4** | Production Ready | ⏳ Not Started |
-| **Sprint 5** | Social Features | ⏳ Not Started |
-| **Sprint 6** | AI Features | ⏳ Not Started |
+
+*Note: Sprint 3-6 have been moved to [KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md) as V2 Backlog for future planning.*
 
 ### Data Imported
 | Data | Count | Source |
@@ -244,8 +242,8 @@ Historical archive and future content creation.
 ### Phase 4: Data Import
 - [x] Fix 500 error on import page (live website) - AdminHeader fix
 - [x] Import 2025 season (11th season, just completed) - 14 teams, 110 matchups
-- [ ] Import draft data from Yahoo - put on hold included in sprint 3 (v2 features coming soon)
-- [ ] Import trade data from Yahoo - put on hold included in sprint 3 (v2 features coming soon)
+- [ ] Import draft data from Yahoo - deferred to V2
+- [ ] Import trade data from Yahoo - deferred to V2
 
 ### Phase 5: Feature Enhancements
 - [x] AI-generated season reviews (using standings + writeup files)
@@ -276,133 +274,9 @@ Pause for UI/UX Review and enhanvcement with claude plugin.
 
 ---
 
-## Sprint 3: Data Enrichment
+## V2 Planning
 
-*Import additional data to unlock more features.*
-
-### 3.1 Trade Sync
-
-- [ ] Yahoo trade history import
-- [ ] Trade detail storage (players exchanged)
-- [ ] Trade timeline view
-- [ ] "Trade winners/losers" analysis
-
-### 3.2 Draft Data
-
-- [ ] Draft results by year
-- [ ] Draft grade history
-- [ ] "Best picks" and "Biggest busts" tracking
-
-### 3.3 Enhanced Season Pages
-
-- [ ] Trade activity timeline in season pages
-- [ ] Draft recap integration
-
----
-
-## Sprint 4: Production Ready
-
-*Final touches before inviting the league.*
-
-### 4.1 Authentication ⚠️ BLOCKING
-
-- [ ] Re-enable Supabase auth
-- [ ] Member invitation flow via email
-- [ ] Email verification
-- [ ] Password reset
-- [ ] Session management
-- [ ] Switch from `createAdminClient()` to `createClient()`
-- [ ] Enable RLS policies
-- [ ] Remove `BYPASS_AUTH` for production
-
-### 4.2 Member Management
-
-- [ ] Invite new members
-- [ ] Link Yahoo accounts to members
-- [ ] Role management (commissioner, president, treasurer)
-- [x] Merge duplicate members
-- [ ] Deactivate former members
-
-### 4.3 Mobile Experience
-
-- [ ] Responsive design audit
-- [ ] Touch-friendly interactions
-- [ ] Mobile navigation improvements
-
-### 4.4 Performance
-
-- [ ] Apply database migrations to production
-- [ ] Regenerate TypeScript types
-- [ ] Image optimization
-- [ ] Loading state audit
-
----
-
-## Sprint 5: Social Features
-
-*The community-building layer.*
-
-### 5.1 Voting System `/voting`
-
-- [ ] Create polls (commissioner)
-- [ ] Vote on rule changes
-- [ ] Award voting
-- [ ] Anonymous vs public options
-- [ ] Results visualization
-
-### 5.2 Media Gallery `/media`
-
-- [ ] Photo/video upload
-- [ ] Tag members in media
-- [ ] Event categorization (draft, championship)
-- [ ] Gallery with lightbox
-
-### 5.3 Constitution `/constitution`
-
-- [ ] Formatted rules display
-- [ ] Rule categories
-- [ ] Amendment history
-- [ ] Version tracking
-
-### 5.4 Notifications
-
-- [ ] Email notifications for polls
-- [ ] New content alerts
-- [ ] Championship/shame announcements
-
----
-
-## Sprint 6: AI Features (Optional)
-
-*AI-generated content and insights.*
-
-### 6.1 Season Recaps `/seasons/[year]/recap` (THIS HAS been done in sprint 2.5 earlier). 
-
-- [ ] Auto-generate season narratives
-- [ ] Key turning points identification
-- [ ] Commissioner edit/approve workflow
-- [ ] Tone options (serious, humorous, ESPN-style)
-
-### 6.2 Matchup Previews
-
-- [ ] Weekly preview articles
-- [ ] H2H history, recent form, key stats
-- [ ] Predictions with confidence levels
-- [ ] Shareable preview cards
-
-### 6.3 Natural Language Query
-
-- [ ] "Who has the best record against Mike?"
-- [ ] "What's my longest win streak?"
-- [ ] Convert to database lookups
-- [ ] Suggest related queries
-
-### 6.4 Trash Talk Assistant 🔥
-
-- [ ] Generate historically-accurate trash talk
-- [ ] References actual H2H records
-- [ ] Tone selector (friendly → ruthless)
-- [ ] Copy to clipboard
+*Future sprints (3-6) have been moved to [KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md) as the V2 Backlog for future planning.*
 
 ---
 
@@ -444,16 +318,17 @@ Pause for UI/UX Review and enhanvcement with claude plugin.
 
 ---
 
-## Release Checklist
+## V1 Release Checklist
 
-Before inviting league members:
+Before sharing with league members (no login required):
 
-- [ ] All Sprint 1 pages complete and polished
-- [ ] Authentication working (Sprint 4.1)
-- [ ] RLS enabled, admin client server-only
+- [x] All Sprint 1 pages complete and polished
+- [ ] Sprint 2.5 Phase 6: V2 Features placeholders (Trades, Draft Analyzer, Voting/Constitution)
 - [ ] CI passing: lint, typecheck, test, build
-- [ ] Mobile responsive
-- [ ] p95 < 1.5s for main pages
+- [ ] Mobile responsive (basic audit)
+- [ ] Shareable app ready (member selector working, no auth required)
+
+*Note: Full authentication and production hardening moved to V2 backlog.*
 
 ---
 
