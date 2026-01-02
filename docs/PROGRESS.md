@@ -39,8 +39,10 @@ src/app/(dashboard)/hall-of-shame/page.tsx
 - [x] Hero section correctly displays 2025 "Billy" trophy
 
 ### Next Session Should
-- Final UI/UX audit before launch
-- Check mobile responsiveness on new Trophy Gallery
+- Final V1 UI/UX audit (consistency check, empty states, loading states)
+- Detailed mobile responsiveness audit across all core pages
+- Verify "Shareable App" requirement (ensure all pages work with `BYPASS_AUTH=true` and no login)
+- Final preparation for league launch
 
 ---
 

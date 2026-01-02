@@ -324,7 +324,7 @@ Before sharing with league members (no login required):
 
 - [x] All Sprint 1 pages complete and polished
 - [x] Sprint 2.5 Phase 6: V2 Features placeholders (Trades, Draft Analyzer, Voting/Constitution)
-- [ ] CI passing: lint, typecheck, test, build
+- [x] CI passing: lint, typecheck, test, build
 - [ ] Mobile responsive (basic audit)
 - [ ] Shareable app ready (member selector working, no auth required)
 
