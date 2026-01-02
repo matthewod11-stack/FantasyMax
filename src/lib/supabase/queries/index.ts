@@ -123,7 +123,7 @@ export {
   getTopSeasonPoints,
   getTopNForRecordType,
 } from './records';
-export type { TopNEntry } from './records';
+export type { TopNEntry, TopNOptions } from './records';
 
 // Earnings queries
 export { getWeeklyHighScoresForMember } from './earnings';

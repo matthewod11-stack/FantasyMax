@@ -83,9 +83,10 @@ async function LeagueDashboardContent() {
     getLatestSeason(),
     getCareerLeaderboard('total_wins', 5),
     getBiggestRivalries(4),
-    getTopHighestScores(1),
-    getTopBlowouts(1),
-    getTopClosestGames(1),
+    // Only show active members in dashboard highlights
+    getTopHighestScores({ limit: 1, activeOnly: true }),
+    getTopBlowouts({ limit: 1, activeOnly: true }),
+    getTopClosestGames({ limit: 1, activeOnly: true }),
   ]);
 
   // Fetch week history (depends on currentWeek)

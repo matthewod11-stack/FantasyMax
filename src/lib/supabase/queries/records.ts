@@ -245,9 +245,23 @@ export interface TopNEntry {
 }
 
 /**
- * Get top N highest single week scores
+ * Options for top N queries
  */
-export async function getTopHighestScores(limit: number = 10): Promise<TopNEntry[]> {
+export interface TopNOptions {
+  limit?: number;
+  activeOnly?: boolean;
+}
+
+/**
+ * Get top N highest single week scores
+ * @param options - Query options including limit and activeOnly filter
+ */
+export async function getTopHighestScores(options: number | TopNOptions = 10): Promise<TopNEntry[]> {
+  // Support both old signature (limit: number) and new (options object)
+  const { limit = 10, activeOnly = false } = typeof options === 'number'
+    ? { limit: options }
+    : options;
+
   const supabase = await createAdminClient();
 
   // Get all scores (both home and away) from matchups
@@ -258,8 +272,8 @@ export async function getTopHighestScores(limit: number = 10): Promise<TopNEntry
       week,
       home_score,
       away_score,
-      home_team:teams!matchups_home_team_id_fkey(member_id, member:members(display_name)),
-      away_team:teams!matchups_away_team_id_fkey(member_id, member:members(display_name)),
+      home_team:teams!matchups_home_team_id_fkey(member_id, member:members(display_name, is_active)),
+      away_team:teams!matchups_away_team_id_fkey(member_id, member:members(display_name, is_active)),
       season:seasons(year)
     `)
     .eq('status', 'final')
@@ -276,6 +290,8 @@ export async function getTopHighestScores(limit: number = 10): Promise<TopNEntry
 
   for (const m of matchups || []) {
     if (m.home_score != null && m.home_team?.member_id && m.home_team?.member?.display_name) {
+      // Skip inactive members if activeOnly is true
+      if (activeOnly && !m.home_team.member.is_active) continue;
       scores.push({
         score: m.home_score,
         member_id: m.home_team.member_id,
@@ -286,6 +302,8 @@ export async function getTopHighestScores(limit: number = 10): Promise<TopNEntry
       });
     }
     if (m.away_score != null && m.away_team?.member_id && m.away_team?.member?.display_name) {
+      // Skip inactive members if activeOnly is true
+      if (activeOnly && !m.away_team.member.is_active) continue;
       scores.push({
         score: m.away_score,
         member_id: m.away_team.member_id,
@@ -382,8 +400,13 @@ export async function getTopLowestScores(limit: number = 10): Promise<TopNEntry[
 
 /**
  * Get top N biggest blowouts
+ * @param options - Query options including limit and activeOnly filter
  */
-export async function getTopBlowouts(limit: number = 10): Promise<TopNEntry[]> {
+export async function getTopBlowouts(options: number | TopNOptions = 10): Promise<TopNEntry[]> {
+  const { limit = 10, activeOnly = false } = typeof options === 'number'
+    ? { limit: options }
+    : options;
+
   const supabase = await createAdminClient();
 
   const { data: matchups, error } = await supabase
@@ -395,8 +418,8 @@ export async function getTopBlowouts(limit: number = 10): Promise<TopNEntry[]> {
       away_score,
       winner_team_id,
       home_team_id,
-      home_team:teams!matchups_home_team_id_fkey(member_id, member:members(display_name)),
-      away_team:teams!matchups_away_team_id_fkey(member_id, member:members(display_name)),
+      home_team:teams!matchups_home_team_id_fkey(member_id, member:members(display_name, is_active)),
+      away_team:teams!matchups_away_team_id_fkey(member_id, member:members(display_name, is_active)),
       season:seasons(year)
     `)
     .eq('status', 'final')
@@ -418,6 +441,8 @@ export async function getTopBlowouts(limit: number = 10): Promise<TopNEntry[]> {
     const winner = isHomeWinner ? m.home_team : m.away_team;
 
     if (winner?.member_id && winner?.member?.display_name) {
+      // Skip inactive members if activeOnly is true
+      if (activeOnly && !winner.member.is_active) continue;
       blowouts.push({
         margin,
         winner_id: winner.member_id,
@@ -446,8 +471,13 @@ export async function getTopBlowouts(limit: number = 10): Promise<TopNEntry[]> {
 
 /**
  * Get top N closest games
+ * @param options - Query options including limit and activeOnly filter
  */
-export async function getTopClosestGames(limit: number = 10): Promise<TopNEntry[]> {
+export async function getTopClosestGames(options: number | TopNOptions = 10): Promise<TopNEntry[]> {
+  const { limit = 10, activeOnly = false } = typeof options === 'number'
+    ? { limit: options }
+    : options;
+
   const supabase = await createAdminClient();
 
   const { data: matchups, error } = await supabase
@@ -459,8 +489,8 @@ export async function getTopClosestGames(limit: number = 10): Promise<TopNEntry[
       away_score,
       winner_team_id,
       home_team_id,
-      home_team:teams!matchups_home_team_id_fkey(member_id, member:members(display_name)),
-      away_team:teams!matchups_away_team_id_fkey(member_id, member:members(display_name)),
+      home_team:teams!matchups_home_team_id_fkey(member_id, member:members(display_name, is_active)),
+      away_team:teams!matchups_away_team_id_fkey(member_id, member:members(display_name, is_active)),
       season:seasons(year)
     `)
     .eq('status', 'final')
@@ -482,6 +512,8 @@ export async function getTopClosestGames(limit: number = 10): Promise<TopNEntry[
     const winner = isHomeWinner ? m.home_team : m.away_team;
 
     if (winner?.member_id && winner?.member?.display_name) {
+      // Skip inactive members if activeOnly is true
+      if (activeOnly && !winner.member.is_active) continue;
       games.push({
         margin,
         winner_id: winner.member_id,
