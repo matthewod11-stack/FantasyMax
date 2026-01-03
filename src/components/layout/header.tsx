@@ -12,7 +12,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { LogOut, User } from 'lucide-react';
+import { LogOut, User, Search } from 'lucide-react';
+import { useCommandPalette } from '@/hooks/use-command-palette';
 import { MemberSelector } from './member-selector';
 import type { Member } from '@/types/database.types';
 
@@ -23,6 +24,7 @@ interface HeaderProps {
 export function Header({ member }: HeaderProps) {
   const router = useRouter();
   const supabase = createClient();
+  const { open: openPalette } = useCommandPalette();
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
@@ -40,6 +42,29 @@ export function Header({ member }: HeaderProps) {
   return (
     <header className="h-16 border-b bg-card px-6 flex items-center justify-between">
       <MemberSelector />
+      <div className="flex items-center gap-3">
+        {/* Search Button */}
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={openPalette}
+          className="hidden sm:flex items-center gap-2 text-muted-foreground hover:text-foreground"
+        >
+          <Search className="h-4 w-4" />
+          <span className="text-sm">Search...</span>
+          <kbd className="ml-2 pointer-events-none hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
+            <span className="text-xs">⌘</span>K
+          </kbd>
+        </Button>
+        {/* Mobile search button */}
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={openPalette}
+          className="sm:hidden"
+        >
+          <Search className="h-5 w-5" />
+        </Button>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="relative h-10 w-10 rounded-full">
@@ -69,6 +94,7 @@ export function Header({ member }: HeaderProps) {
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
+      </div>
     </header>
   );
 }

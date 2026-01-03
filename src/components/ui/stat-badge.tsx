@@ -24,14 +24,14 @@ import type { StatBadgeProps } from '@/types/contracts/components';
 
 const statBadgeVariants = cva(
   // Base styles
-  'inline-flex items-center gap-1.5 rounded-md font-mono transition-all',
+  'inline-flex items-center gap-1.5 rounded-md font-mono transition-all duration-150 hover:scale-[1.02] active:scale-[0.98]',
   {
     variants: {
       variant: {
         default: 'bg-muted text-foreground',
         win: 'bg-win/10 text-win border border-win/20',
         loss: 'bg-loss/10 text-loss border border-loss/20',
-        championship: 'bg-gold/10 text-gold border border-gold/20 glow-gold',
+        championship: 'bg-gold/10 text-gold border border-gold/20 glow-gold-animate',
         highlight: 'bg-primary/10 text-primary border border-primary/20',
       },
       size: {

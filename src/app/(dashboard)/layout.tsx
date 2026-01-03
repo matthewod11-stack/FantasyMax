@@ -4,6 +4,7 @@ import { createClient, createAdminClient } from '@/lib/supabase/server';
 import { Sidebar } from '@/components/layout/sidebar';
 import { Header } from '@/components/layout/header';
 import { MemberProvider } from '@/contexts/member-context';
+import { CommandPaletteWrapper } from '@/components/layout/command-palette-wrapper';
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   // TODO: Remove BYPASS_AUTH when ready for production auth
@@ -37,6 +38,14 @@ export default async function DashboardLayout({ children }: { children: React.Re
       .eq('is_active', true)
       .order('display_name');
 
+    // Fetch seasons for command palette
+    const { data: seasons } = await supabase
+      .from('seasons')
+      .select('year')
+      .order('year', { ascending: false });
+
+    const seasonYears = seasons?.map((s) => s.year) ?? [];
+
     if (!allMembers || allMembers.length === 0) {
       redirect('/login');
     }
@@ -49,6 +58,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
             <MemberProvider members={allMembers} defaultMember={member}>
               <Header member={member} />
               <main className="flex-1 p-6">{children}</main>
+              <CommandPaletteWrapper members={allMembers} seasons={seasonYears} />
             </MemberProvider>
           </Suspense>
         </div>
@@ -66,6 +76,14 @@ export default async function DashboardLayout({ children }: { children: React.Re
     .eq('is_active', true)
     .order('display_name');
 
+  // Fetch seasons for command palette
+  const { data: seasons } = await supabase
+    .from('seasons')
+    .select('year')
+    .order('year', { ascending: false });
+
+  const seasonYears = seasons?.map((s) => s.year) ?? [];
+
   // Find commissioner as default, fallback to first member
   let defaultMember = allMembers?.find((m) => m.role === 'commissioner') ?? allMembers?.[0];
 
@@ -82,6 +100,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
           <MemberProvider members={allMembers} defaultMember={defaultMember}>
             <Header member={defaultMember} />
             <main className="flex-1 p-6">{children}</main>
+            <CommandPaletteWrapper members={allMembers} seasons={seasonYears} />
           </MemberProvider>
         </Suspense>
       </div>

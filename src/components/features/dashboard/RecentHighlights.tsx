@@ -27,7 +27,7 @@ function HighlightItem({
   if (!entry) return null;
 
   return (
-    <div className="flex items-start gap-3 p-3 rounded-lg bg-muted/30">
+    <div className="flex items-start gap-3 p-3 rounded-lg bg-muted/30 border-l-2 border-transparent hover:border-primary hover:bg-muted/50 hover:scale-[1.01] transition-all duration-200">
       <div className={`p-2 rounded-lg ${iconColor}`}>
         <Icon className="h-4 w-4" />
       </div>

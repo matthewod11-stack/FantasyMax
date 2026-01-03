@@ -118,7 +118,7 @@ async function LeagueDashboardContent() {
     <div className="space-y-8">
       {/* League Header */}
       <div className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight">
+        <h1 className="font-display text-4xl tracking-wide">
           {leagueStats.leagueName}
         </h1>
         <div className="flex flex-wrap items-center gap-3 text-muted-foreground">
@@ -143,19 +143,31 @@ async function LeagueDashboardContent() {
 
       {/* Main Widget Grid */}
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <AllTimeLeaderboard leaders={championLeaders} />
-        <HotRivalries rivalries={enrichedRivalries} />
-        <RecentHighlights
-          highScore={topHighScore[0] ?? null}
-          biggestBlowout={topBlowout[0] ?? null}
-          closestGame={topClosest[0] ?? null}
-        />
+        <div className="animate-in fade-in slide-in-from-bottom-4" style={{ animationDelay: '0ms', animationFillMode: 'backwards' }}>
+          <AllTimeLeaderboard leaders={championLeaders} />
+        </div>
+        <div className="animate-in fade-in slide-in-from-bottom-4" style={{ animationDelay: '75ms', animationFillMode: 'backwards' }}>
+          <HotRivalries rivalries={enrichedRivalries} />
+        </div>
+        <div className="animate-in fade-in slide-in-from-bottom-4" style={{ animationDelay: '150ms', animationFillMode: 'backwards' }}>
+          <RecentHighlights
+            highScore={topHighScore[0] ?? null}
+            biggestBlowout={topBlowout[0] ?? null}
+            closestGame={topClosest[0] ?? null}
+          />
+        </div>
       </div>
 
       {/* Secondary Row */}
       <div className="grid gap-6 lg:grid-cols-2">
-        <LeagueHistoryWidget events={weekHistory} currentWeek={currentWeek} />
-        {latestSeason && <LatestSeasonCard season={latestSeason} />}
+        <div className="animate-in fade-in slide-in-from-bottom-4" style={{ animationDelay: '225ms', animationFillMode: 'backwards' }}>
+          <LeagueHistoryWidget events={weekHistory} currentWeek={currentWeek} />
+        </div>
+        {latestSeason && (
+          <div className="animate-in fade-in slide-in-from-bottom-4" style={{ animationDelay: '300ms', animationFillMode: 'backwards' }}>
+            <LatestSeasonCard season={latestSeason} />
+          </div>
+        )}
       </div>
     </div>
   );

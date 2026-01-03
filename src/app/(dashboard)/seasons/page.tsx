@@ -32,7 +32,7 @@ export default async function SeasonsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold">Seasons</h1>
+          <h1 className="font-display text-4xl tracking-wide">Seasons</h1>
           <p className="text-muted-foreground">View league history by season</p>
         </div>
         {isCommissioner && (

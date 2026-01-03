@@ -198,7 +198,7 @@ export default function HeadToHeadPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Head-to-Head</h1>
+        <h1 className="font-display text-4xl tracking-wide">Head-to-Head</h1>
         <p className="text-muted-foreground">
           Who owns who? The complete rivalry tracker.
         </p>

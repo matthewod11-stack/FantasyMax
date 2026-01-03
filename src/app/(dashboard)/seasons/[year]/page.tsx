@@ -166,7 +166,7 @@ export default async function SeasonDetailPage({ params }: PageProps) {
           </Link>
         </Button>
         <div>
-          <h1 className="text-3xl font-bold flex items-center gap-2">
+          <h1 className="font-display text-4xl tracking-wide flex items-center gap-2">
             <Trophy className="h-7 w-7 text-primary" />
             {year} Season
           </h1>

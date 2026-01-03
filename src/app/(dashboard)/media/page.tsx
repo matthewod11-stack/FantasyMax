@@ -12,7 +12,7 @@ export default function MediaPage() {
     <div className="space-y-8">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold flex items-center gap-3">
+        <h1 className="font-display text-4xl tracking-wide flex items-center gap-3">
           <Camera className="h-8 w-8" />
           Media Gallery
         </h1>

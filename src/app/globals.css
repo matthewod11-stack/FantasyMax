@@ -408,3 +408,82 @@
     transform: translateX(100%);
   }
 }
+
+/* =====================================
+ * Championship Animations
+ * Premium "wow" effects for winners
+ * ===================================== */
+
+/* Championship pulse - 3s gold glow cycle */
+@keyframes championship-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 20px rgba(251, 191, 36, 0.25),
+      0 0 40px rgba(251, 191, 36, 0.1),
+      inset 0 0 20px rgba(251, 191, 36, 0.05);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(251, 191, 36, 0.4),
+      0 0 60px rgba(251, 191, 36, 0.2),
+      inset 0 0 30px rgba(251, 191, 36, 0.1);
+  }
+}
+
+/* Championship shimmer - subtle light sweep */
+@keyframes championship-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@layer utilities {
+  /* Animated championship glow */
+  .glow-gold-animate {
+    animation: championship-pulse 3s ease-in-out infinite;
+  }
+
+  /* Championship shimmer overlay effect */
+  .championship-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .championship-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(251, 191, 36, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: championship-shimmer 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Combined effect for maximum wow */
+  .championship-effect {
+    animation: championship-pulse 3s ease-in-out infinite;
+    border-color: rgba(251, 191, 36, 0.3);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .glow-gold-animate,
+  .championship-effect {
+    animation: none;
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+  }
+
+  .championship-shimmer::after {
+    animation: none;
+    opacity: 0;
+  }
+}

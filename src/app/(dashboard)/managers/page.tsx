@@ -138,7 +138,7 @@ export default function ManagersPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Managers</h1>
+        <h1 className="font-display text-4xl tracking-wide">Managers</h1>
         <p className="text-muted-foreground">
           The people who make this league legendary
         </p>

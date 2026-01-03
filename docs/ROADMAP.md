@@ -279,39 +279,38 @@ Historical archive and future content creation.
 
 **See detailed plan:** [docs/PHASE8_UI_UX_PLAN.md](PHASE8_UI_UX_PLAN.md)
 
-#### Phase 8.1: Design System Fixes
-- [x] Muted foreground color refinement (blue tint) *(started)*
-- [x] Border opacity increase for visibility *(started)*
-- [ ] Card shadow elevation (shadow-sm → shadow-lg)
-- [ ] Championship pulse animation
+#### Phase 8.1: Design System Fixes ✅
+- [x] Muted foreground color refinement (blue tint)
+- [x] Border opacity increase for visibility
+- [x] Card shadow elevation (shadow-sm → shadow-lg)
+- [x] Championship pulse animation (`glow-gold-animate`)
 
-#### Phase 8.2: Typography Consistency
-- [ ] Dashboard heading to font-display
-- [ ] Managers page heading fix
-- [ ] H2H, Seasons, Media heading fixes
+#### Phase 8.2: Typography Consistency ✅
+- [x] Dashboard heading to font-display
+- [x] Managers page heading fix
+- [x] H2H, Seasons, Media, Season detail heading fixes
 
-#### Phase 8.3: Hover States & Interactions
-- [ ] Dashboard component hover states
-- [ ] HeatmapCell scale reduction (105% → 102%)
-- [ ] StatBadge enhancement
+#### Phase 8.3: Hover States & Interactions ✅
+- [x] Dashboard component hover states (scale + shadow)
+- [x] HeatmapCell scale reduction (105% → 102%)
+- [x] StatBadge enhancement (hover feedback + animated championship)
 
-#### Phase 8.4: Championship Wow Factor
-- [ ] Holographic trophy card (3D tilt effect)
-- [ ] Apply to LatestSeasonCard, TrophyGallery
+#### Phase 8.4: Championship Wow Factor - DEFERRED TO V2
+- ~~Holographic trophy card (3D tilt effect)~~ → V2 backlog
 
 #### Phase 8.5: AI Content Enhancements
 - [ ] Shorten rivalry recaps to 3-4 sentences (regenerate)
 - [ ] Typewriter effect for AI recaps
 - [ ] Review season reviews length
 
-#### Phase 8.6: Page Load Animations
-- [ ] Staggered entrance animations (cards fade in sequentially)
-- [ ] Number counting animations (stats count up)
+#### Phase 8.6: Page Load Animations ✅
+- [x] Staggered entrance animations (dashboard widgets fade in sequentially)
+- [x] Number counting hook (`useCountUp`) created for future use
 
-#### Phase 8.7: Command Palette (⌘K)
-- [ ] Add search button in header
-- [ ] Wire up existing cmdk palette with items
-- [ ] Mount palette in layout
+#### Phase 8.7: Command Palette (⌘K) ✅
+- [x] Add search button in header (desktop + mobile)
+- [x] Wire up cmdk palette with managers, seasons, pages
+- [x] Mount CommandPaletteWrapper in layout
 
 #### Phase 8.8: Verification
 - [ ] Mobile responsiveness audit

@@ -68,7 +68,7 @@ export function AllTimeLeaderboard({ leaders }: AllTimeLeaderboardProps) {
           <Link
             key={leader.member_id}
             href={`/managers/${leader.member_id}`}
-            className="flex items-center gap-3 p-2 -mx-2 rounded-lg hover:bg-muted/50 transition-colors"
+            className="flex items-center gap-3 p-2 -mx-2 rounded-lg hover:bg-muted/50 hover:scale-[1.02] hover:shadow-md active:scale-[0.98] transition-all duration-200"
           >
             <RankIcon rank={index + 1} />
             <Avatar className="h-8 w-8">

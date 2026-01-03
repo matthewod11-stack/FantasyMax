@@ -18,13 +18,13 @@ function RivalryBar({ wins1, wins2 }: { wins1: number; wins2: number }) {
   const pct1 = total > 0 ? (wins1 / total) * 100 : 50;
 
   return (
-    <div className="w-full h-2 bg-muted rounded-full overflow-hidden flex">
+    <div className="w-full h-3 bg-muted rounded-full overflow-hidden flex">
       <div
-        className="h-full bg-primary transition-all"
+        className="h-full bg-primary transition-all duration-300"
         style={{ width: `${pct1}%` }}
       />
       <div
-        className="h-full bg-destructive/60 transition-all"
+        className="h-full bg-destructive/60 transition-all duration-300"
         style={{ width: `${100 - pct1}%` }}
       />
     </div>
@@ -69,7 +69,7 @@ export function HotRivalries({ rivalries }: HotRivalriesProps) {
             <Link
               key={`${rivalry.member_1_id}-${rivalry.member_2_id}`}
               href={`/head-to-head?member1=${rivalry.member_1_id}&member2=${rivalry.member_2_id}`}
-              className="block p-3 -mx-3 rounded-lg hover:bg-muted/50 transition-colors"
+              className="block p-3 -mx-3 rounded-lg hover:bg-muted/50 hover:scale-[1.02] hover:shadow-md active:scale-[0.98] transition-all duration-200"
             >
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-2">

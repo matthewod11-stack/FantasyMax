@@ -117,7 +117,7 @@ const HeatmapCell = React.forwardRef<HTMLButtonElement, HeatmapCellComponentProp
           // Interactive states
           total > 0 && [
             'cursor-pointer',
-            'hover:scale-105 hover:shadow-lg hover:z-10',
+            'hover:scale-[1.02] hover:shadow-[0_8px_16px_rgba(0,0,0,0.4)] hover:z-10',
             'focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-background',
           ],
           // Selected state
