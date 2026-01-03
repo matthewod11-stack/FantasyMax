@@ -280,8 +280,8 @@ Historical archive and future content creation.
 **See detailed plan:** [docs/PHASE8_UI_UX_PLAN.md](PHASE8_UI_UX_PLAN.md)
 
 #### Phase 8.1: Design System Fixes
-- [ ] Muted foreground color refinement (blue tint)
-- [ ] Border opacity increase for visibility
+- [x] Muted foreground color refinement (blue tint) *(started)*
+- [x] Border opacity increase for visibility *(started)*
 - [ ] Card shadow elevation (shadow-sm → shadow-lg)
 - [ ] Championship pulse animation
 
@@ -295,11 +295,25 @@ Historical archive and future content creation.
 - [ ] HeatmapCell scale reduction (105% → 102%)
 - [ ] StatBadge enhancement
 
-#### Phase 8.4: AI Summaries (Regenerate)
-- [ ] Shorten rivalry recaps to 3-4 sentences
+#### Phase 8.4: Championship Wow Factor
+- [ ] Holographic trophy card (3D tilt effect)
+- [ ] Apply to LatestSeasonCard, TrophyGallery
+
+#### Phase 8.5: AI Content Enhancements
+- [ ] Shorten rivalry recaps to 3-4 sentences (regenerate)
+- [ ] Typewriter effect for AI recaps
 - [ ] Review season reviews length
 
-#### Phase 8.5: Verification
+#### Phase 8.6: Page Load Animations
+- [ ] Staggered entrance animations (cards fade in sequentially)
+- [ ] Number counting animations (stats count up)
+
+#### Phase 8.7: Command Palette (⌘K)
+- [ ] Add search button in header
+- [ ] Wire up existing cmdk palette with items
+- [ ] Mount palette in layout
+
+#### Phase 8.8: Verification
 - [ ] Mobile responsiveness audit
 - [ ] Browser visual verification
 - [ ] Final V1 polish before league launch 
