@@ -270,7 +270,34 @@ Historical archive and future content creation.
 - [x] Voting page - placeholder with "Coming Soon" (no 404) combine with constitution page
 - [x] Constitution page - placeholder with "Coming Soon" (no 404) combine with voting page
 
-Pause for UI/UX Review and enhanvcement with claude plugin. 
+### Phase 7: Data Integrity (Post-Import) ✅ COMPLETE
+- [x] Fix member merges after Yahoo re-import (Matt OD duplicate, PJ → paul)
+- [x] Fix champion data inconsistencies across all seasons
+- [x] Sync `seasons.champion_team_id` with `teams.is_champion` flags
+
+### Phase 8: UI/UX Review ⏳ PENDING
+- [ ] UI/UX review with Claude plugin
+- [ ] Mobile responsiveness audit
+- [ ] Final V1 polish before league launch
+
+### Phase 9: League Launch 🚀 PENDING
+*Simple password-protected access for league members - no Supabase auth required.*
+
+**Goal:** Share modfantasyleague.com with league members using a simple shared password ("football")
+
+**Implementation Ideas:**
+- [ ] Simple password gate (client-side or edge middleware)
+- [ ] Cookie-based session after password entry (persist for 30 days)
+- [ ] Clean password entry page with league branding
+- [ ] No user accounts - just "you're in or you're not"
+- [ ] Environment variable for password (`LEAGUE_PASSWORD`)
+
+**Launch Checklist:**
+- [ ] Password protection implemented
+- [ ] Domain configured (modfantasyleague.com → Vercel)
+- [ ] Final smoke test of all pages
+- [ ] Share URL + password with league group chat
+- [ ] Collect feedback from members
 
 ---
 

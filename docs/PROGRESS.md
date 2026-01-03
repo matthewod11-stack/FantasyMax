@@ -10,6 +10,51 @@
 Most recent session should be first.
 -->
 
+## Session 2026-01-02 (Post-Import Data Fixes)
+
+**Phase:** Sprint 2.5 - Data Integrity
+**Focus:** Fix member merges and champion data after Yahoo re-import
+
+### Context
+User re-imported all seasons from Yahoo to restore correct data after a previous data corruption incident. This undid previous member merges and introduced champion data inconsistencies.
+
+### Completed
+
+#### Member Merge Fixes
+- [x] Fixed Matt OD duplicate - deleted 11 orphaned teams from already-merged member record
+- [x] Merged PJ → paul - deleted PJ's duplicate matchups and teams, marked as merged
+- [x] Refreshed materialized views (mv_career_stats, mv_h2h_matrix)
+
+#### Champion Data Fixes
+- [x] Identified root cause: Two separate data sources (`seasons.champion_team_id` FK vs `teams.is_champion` boolean) were out of sync
+- [x] Fixed 2024: Updated `champion_team_id` to Garrett C's "Victorious Secret"
+- [x] Fixed 2025: Updated `champion_team_id` to K's "Joe Buck Yourself"
+- [x] Fixed 2018, 2022, 2023: Set `is_champion=true` and `champion_team_id` for Matt OD's "Game of Jones" (were missing entirely)
+
+### Database Changes (Applied to Production)
+| Change | Details |
+|--------|---------|
+| Matt OD merge cleanup | Deleted 11 teams from merged member |
+| PJ → paul merge | Deleted PJ's matchups + teams, set `merged_into_id` |
+| Champion fixes | Updated 5 seasons' champion data |
+
+### Technical Notes
+- Champion display uses two sources: `seasons.champion_team_id` (main tile) and `teams.is_champion` (standings badge)
+- Yahoo import sets `is_champion` based on `rank === 1` (regular season winner), not playoff champion
+- This can cause divergence when commissioner-designated champion differs from regular season winner
+
+### Verified
+- [x] Matt OD shows 4 championships in career stats
+- [x] All 11 seasons have correct champion data
+- [x] Merged members no longer appear in leaderboards
+
+### Next Session Should
+- UI/UX review with Claude plugin
+- Mobile responsiveness audit
+- Final V1 polish before league launch
+
+---
+
 ## Session 2026-01-01 (Hall of Shame: Toilet Trophy Winners)
 
 **Phase:** Sprint 2.5 - Feature Enhancements
