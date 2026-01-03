@@ -167,7 +167,7 @@
 
   /* Muted - Subdued elements */
   --muted: #1a1a24;
-  --muted-foreground: #9ca3af;     /* Gray-400 equivalent */
+  --muted-foreground: #94a3b8;     /* Slate-400: subtle blue tint for sophistication */
 
   /* Accent - Interactive highlights */
   --accent: #1a1a24;
@@ -177,9 +177,13 @@
   --destructive: #ef4444;
 
   /* Borders & Inputs */
-  --border: rgba(255, 255, 255, 0.1);
+  --border: rgba(255, 255, 255, 0.12);  /* Increased for visibility */
   --input: rgba(255, 255, 255, 0.15);
   --ring: #fbbf24;                 /* Gold focus ring */
+
+  /* Elevation System */
+  --card-elevated: #1a1a24;        /* Dropdowns, modals */
+  --card-overlay: #22222e;         /* Peak elevation (tooltips) */
 
   /* FantasyMax Semantic Colors */
   --win: #22c55e;                  /* Green-500 */

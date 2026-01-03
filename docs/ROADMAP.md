@@ -275,10 +275,34 @@ Historical archive and future content creation.
 - [x] Fix champion data inconsistencies across all seasons
 - [x] Sync `seasons.champion_team_id` with `teams.is_champion` flags
 
-### Phase 8: UI/UX Review ⏳ PENDING
-- [ ] UI/UX review with Claude plugin
+### Phase 8: UI/UX Review ⏳ IN PROGRESS
+
+**See detailed plan:** [docs/PHASE8_UI_UX_PLAN.md](PHASE8_UI_UX_PLAN.md)
+
+#### Phase 8.1: Design System Fixes
+- [ ] Muted foreground color refinement (blue tint)
+- [ ] Border opacity increase for visibility
+- [ ] Card shadow elevation (shadow-sm → shadow-lg)
+- [ ] Championship pulse animation
+
+#### Phase 8.2: Typography Consistency
+- [ ] Dashboard heading to font-display
+- [ ] Managers page heading fix
+- [ ] H2H, Seasons, Media heading fixes
+
+#### Phase 8.3: Hover States & Interactions
+- [ ] Dashboard component hover states
+- [ ] HeatmapCell scale reduction (105% → 102%)
+- [ ] StatBadge enhancement
+
+#### Phase 8.4: AI Summaries (Regenerate)
+- [ ] Shorten rivalry recaps to 3-4 sentences
+- [ ] Review season reviews length
+
+#### Phase 8.5: Verification
 - [ ] Mobile responsiveness audit
-- [ ] Final V1 polish before league launch
+- [ ] Browser visual verification
+- [ ] Final V1 polish before league launch 
 
 ### Phase 9: League Launch 🚀 PENDING
 *Simple password-protected access for league members - no Supabase auth required.*
