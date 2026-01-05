@@ -14,7 +14,6 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { LogOut, User, Search } from 'lucide-react';
 import { useCommandPalette } from '@/hooks/use-command-palette';
-import { MemberSelector } from './member-selector';
 import type { Member } from '@/types/database.types';
 
 interface HeaderProps {
@@ -40,8 +39,7 @@ export function Header({ member }: HeaderProps) {
     .slice(0, 2);
 
   return (
-    <header className="h-16 border-b bg-card px-6 flex items-center justify-between">
-      <MemberSelector />
+    <header className="h-16 border-b bg-card px-6 flex items-center justify-end">
       <div className="flex items-center gap-3">
         {/* Search Button */}
         <Button

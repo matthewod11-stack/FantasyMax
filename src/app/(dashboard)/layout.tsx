@@ -3,7 +3,6 @@ import { Suspense } from 'react';
 import { createClient, createAdminClient } from '@/lib/supabase/server';
 import { Sidebar } from '@/components/layout/sidebar';
 import { Header } from '@/components/layout/header';
-import { MemberProvider } from '@/contexts/member-context';
 import { CommandPaletteWrapper } from '@/components/layout/command-palette-wrapper';
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
@@ -55,11 +54,9 @@ export default async function DashboardLayout({ children }: { children: React.Re
         <Sidebar userRole={member.role} />
         <div className="flex-1 flex flex-col">
           <Suspense fallback={null}>
-            <MemberProvider members={allMembers} defaultMember={member}>
-              <Header member={member} />
-              <main className="flex-1 p-6">{children}</main>
-              <CommandPaletteWrapper members={allMembers} seasons={seasonYears} />
-            </MemberProvider>
+            <Header member={member} />
+            <main className="flex-1 p-6">{children}</main>
+            <CommandPaletteWrapper members={allMembers} seasons={seasonYears} />
           </Suspense>
         </div>
       </div>
@@ -97,12 +94,10 @@ export default async function DashboardLayout({ children }: { children: React.Re
       <Sidebar userRole={defaultMember.role} />
       <div className="flex-1 flex flex-col">
         <Suspense fallback={null}>
-          <MemberProvider members={allMembers} defaultMember={defaultMember}>
             <Header member={defaultMember} />
             <main className="flex-1 p-6">{children}</main>
             <CommandPaletteWrapper members={allMembers} seasons={seasonYears} />
-          </MemberProvider>
-        </Suspense>
+          </Suspense>
       </div>
     </div>
   );
