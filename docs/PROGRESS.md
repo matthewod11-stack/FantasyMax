@@ -10,6 +10,46 @@
 Most recent session should be first.
 -->
 
+## Session 2026-01-05b (UI Cleanup: Header & Sidebar)
+
+**Phase:** Sprint 2.5 - UI Cleanup
+**Focus:** Remove unused "Viewing as" selector, reorganize sidebar navigation
+
+### Completed
+
+#### Removed "Viewing as" Header Selector
+- [x] Removed `MemberSelector` component from header
+- [x] Removed `MemberProvider` context wrapper from dashboard layout
+- [x] Deleted `src/components/layout/member-selector.tsx`
+- [x] Deleted `src/contexts/member-context.tsx`
+- [x] Removed empty `src/contexts/` directory
+- [x] -212 lines of dead code removed
+
+#### Sidebar Navigation Reorganization
+- [x] Removed Awards from navigation (page still exists but hidden)
+- [x] Reordered: Hall of Shame moved after Records, Media moved after Writeups
+- [x] New order: Dashboard, Seasons, Managers, H2H, Records, Hall of Shame, Writeups, Media, Trades, Draft Analyzer, Voting, Constitution
+
+### Files Modified
+```
+src/components/layout/header.tsx - Removed MemberSelector
+src/app/(dashboard)/layout.tsx - Removed MemberProvider wrapper
+src/components/layout/sidebar.tsx - Reordered nav items, removed Awards
+```
+
+### Files Deleted
+```
+src/components/layout/member-selector.tsx
+src/contexts/member-context.tsx
+```
+
+### Verified
+- [x] Build passes
+- [x] H2H page still works (uses independent local state)
+- [x] Sidebar displays correct order
+
+---
+
 ## Session 2026-01-05 (Phase 8.5: AI Content Cleanup)
 
 **Phase:** Sprint 2.5 - Phase 8.5 AI Content Enhancements

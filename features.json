@@ -2,8 +2,8 @@
   "_meta": {
     "description": "Feature tracking for League of Degenerates. Status: not-started | in-progress | pass | fail | blocked",
     "lastUpdated": "2026-01-05",
-    "totalFeatures": 106,
-    "passing": 98,
+    "totalFeatures": 108,
+    "passing": 99,
     "failing": 0,
     "inProgress": 0,
     "blocked": 0
@@ -93,7 +93,7 @@
   "sprint-2.5-shareable-app": {
     "fix-dashboard-loading": { "status": "pass", "notes": "Added createDefaultCareerStats() fallback for members without team history" },
     "fix-h2h-merge": { "status": "pass", "notes": "Query members from H2H records instead of is_active filter" },
-    "member-selector": { "status": "pass", "notes": "MemberProvider context + MemberSelector dropdown with URL sync" },
+    "member-selector": { "status": "not-needed", "notes": "Removed - H2H page has own selector, global context was unused" },
     "champion-on-seasons": { "status": "pass", "notes": "Champion team name + manager displayed on season cards" },
     "ai-generated-avatars": { "status": "pass", "notes": "14 Pixar-style AI avatars generated with Gemini, stored in public/avatars/, auto-lookup in ManagerAvatar" },
     "league-rebrand": { "status": "pass", "notes": "Renamed from FantasyMax to Matt OD's League of Degenerates across all pages" },
@@ -126,7 +126,9 @@
     "h2h-two-panel-redesign": { "status": "pass", "notes": "Yahoo-style two-panel layout with member selector on left, opponent records on right" },
     "dashboard-avatars": { "status": "pass", "notes": "ManagerAvatar added to AllTimeLeaderboard and HotRivalries dashboard widgets" },
     "season-champion-avatar": { "status": "pass", "notes": "Champion avatar with gold ring added to season tiles" },
-    "records-inline-leaderboards": { "status": "pass", "notes": "RecordFullCard with inline Top 10 leaderboards, 2-column grid, no drawer needed" }
+    "records-inline-leaderboards": { "status": "pass", "notes": "RecordFullCard with inline Top 10 leaderboards, 2-column grid, no drawer needed" },
+    "sidebar-reorganization": { "status": "pass", "notes": "Reordered nav, removed Awards, Hall of Shame after Records, Media after Writeups" },
+    "header-cleanup": { "status": "pass", "notes": "Removed unused Viewing As selector, deleted MemberContext (-212 lines)" }
   },
   "phase-8.5-ai-content": {
     "h2h-recaps-shortened": { "status": "pass", "notes": "Regenerated 91 H2H recaps from 400-500 words to 3-4 sentences (85% reduction)" },
