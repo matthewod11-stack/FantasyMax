@@ -1,9 +1,9 @@
 {
   "_meta": {
     "description": "Feature tracking for League of Degenerates. Status: not-started | in-progress | pass | fail | blocked",
-    "lastUpdated": "2026-01-01",
-    "totalFeatures": 99,
-    "passing": 91,
+    "lastUpdated": "2026-01-04",
+    "totalFeatures": 103,
+    "passing": 95,
     "failing": 0,
     "inProgress": 0,
     "blocked": 0
@@ -121,6 +121,12 @@
     "dashboard-leaderboard-wins": { "status": "pass", "notes": "All-Time Leaderboard sorted by wins instead of championships" },
     "dashboard-season-recap": { "status": "pass", "notes": "Latest season card shows AI review preview and removed In Progress badge" },
     "hall-of-shame-unified-cards": { "status": "pass", "notes": "Unified single-card layout with trophy image + member info together" }
+  },
+  "phase-8-ui-polish": {
+    "h2h-two-panel-redesign": { "status": "pass", "notes": "Yahoo-style two-panel layout with member selector on left, opponent records on right" },
+    "dashboard-avatars": { "status": "pass", "notes": "ManagerAvatar added to AllTimeLeaderboard and HotRivalries dashboard widgets" },
+    "season-champion-avatar": { "status": "pass", "notes": "Champion avatar with gold ring added to season tiles" },
+    "records-inline-leaderboards": { "status": "pass", "notes": "RecordFullCard with inline Top 10 leaderboards, 2-column grid, no drawer needed" }
   },
   "tech-debt": {
     "enable-auth": { "status": "not-needed", "notes": "Decision: No auth required - app is shareable without login" },

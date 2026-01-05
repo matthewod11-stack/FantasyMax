@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Flame, Swords } from 'lucide-react';
+import { ManagerAvatar } from '@/components/ui/manager-avatar';
+import { Flame } from 'lucide-react';
 import type { H2HMatrixRow } from '@/types/contracts/queries';
 import type { Member } from '@/types/database.types';
 
@@ -73,10 +74,11 @@ export function HotRivalries({ rivalries }: HotRivalriesProps) {
             >
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-2">
-                  <Swords className="h-4 w-4 text-orange-500" />
+                  <ManagerAvatar avatarUrl={null} displayName={name1} size="sm" />
                   <span className="font-medium text-sm">
                     {firstName1} vs {firstName2}
                   </span>
+                  <ManagerAvatar avatarUrl={null} displayName={name2} size="sm" />
                 </div>
                 <span className="text-sm font-mono">
                   {rivalry.member_1_wins}-{rivalry.member_2_wins}

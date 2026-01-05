@@ -1,6 +1,7 @@
 import { createAdminClient } from '@/lib/supabase/server';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { ManagerAvatar } from '@/components/ui/manager-avatar';
 import Link from 'next/link';
 import { Plus, Calendar, Trophy, Users } from 'lucide-react';
 
@@ -77,6 +78,12 @@ export default async function SeasonsPage() {
                 <CardContent>
                   {season.champion_team && (
                     <div className="flex items-center gap-2 mb-3 text-sm">
+                      <ManagerAvatar
+                        avatarUrl={null}
+                        displayName={season.champion_team.member?.display_name ?? 'Champion'}
+                        size="sm"
+                        showChampionRing
+                      />
                       <Trophy className="h-4 w-4 text-yellow-500" />
                       <span className="font-medium">{season.champion_team.team_name}</span>
                       <span className="text-muted-foreground">

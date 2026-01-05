@@ -1,30 +1,17 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { RecordCard } from './RecordCard';
+import { RecordFullCard } from './RecordFullCard';
 import { Trophy, Flame, Calendar, Medal, Skull } from 'lucide-react';
 import type { LeagueRecordRow, RecordCategory, RecordType } from '@/types/contracts/queries';
-
-/**
- * Record types that support the Top N leaderboard view
- */
-const LEADERBOARD_SUPPORTED_TYPES: RecordType[] = [
-  'highest_single_week_score',
-  'lowest_single_week_score',
-  'biggest_blowout_margin',
-  'closest_game_margin',
-  'most_season_wins',
-  'most_season_points',
-];
+import type { TopNEntry } from '@/lib/supabase/queries/records';
 
 interface RecordCategorySectionProps {
   category: RecordCategory;
   records: LeagueRecordRow[];
+  /** Top N entries keyed by record type */
+  topNByRecordType: Record<RecordType, TopNEntry[]>;
   className?: string;
-  /**
-   * Called when a record card is clicked
-   */
-  onRecordClick?: (record: LeagueRecordRow) => void;
 }
 
 /**
@@ -87,13 +74,14 @@ function getCategoryInfo(category: RecordCategory): {
 /**
  * RecordCategorySection
  *
- * Groups records by category with a header and grid layout.
+ * Groups records by category with a header and 2-column grid layout.
+ * Each record shows the full leaderboard inline.
  */
 export function RecordCategorySection({
   category,
   records,
+  topNByRecordType,
   className,
-  onRecordClick,
 }: RecordCategorySectionProps) {
   const { title, description, icon, color } = getCategoryInfo(category);
 
@@ -118,19 +106,15 @@ export function RecordCategorySection({
         </div>
       </div>
 
-      {/* Records grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {records.map((record) => {
-          const hasLeaderboard = LEADERBOARD_SUPPORTED_TYPES.includes(record.record_type);
-          return (
-            <RecordCard
-              key={record.record_type}
-              record={record}
-              onClick={onRecordClick ? () => onRecordClick(record) : undefined}
-              hasLeaderboard={hasLeaderboard}
-            />
-          );
-        })}
+      {/* Records grid - 2 columns */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {records.map((record) => (
+          <RecordFullCard
+            key={record.record_type}
+            record={record}
+            topEntries={topNByRecordType[record.record_type] ?? []}
+          />
+        ))}
       </div>
     </section>
   );

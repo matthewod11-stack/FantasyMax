@@ -1,10 +1,12 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Card } from '@/components/ui/card';
 import { H2HMatrix } from './H2HMatrix';
-import { RivalriesTab } from './RivalriesTab';
-import { useMember } from '@/contexts/member-context';
+import { H2HMemberSelector } from './H2HMemberSelector';
+import { H2HOpponentList } from './H2HOpponentList';
+import { H2HDrawer } from './H2HDrawer';
 import { Users, Grid3X3 } from 'lucide-react';
 import type { H2HRecapWithRivalry } from '@/types/contracts/queries';
 import type { Member } from '@/types/database.types';
@@ -47,17 +49,31 @@ export function H2HPageClient({
   matchups,
   rivalriesByMember,
 }: H2HPageClientProps) {
-  const { selectedMember } = useMember();
+  // Local state for selected member (not using header context)
+  const activeMembers = useMemo(
+    () => members.filter((m) => m.is_active !== false),
+    [members]
+  );
+
+  const [selectedMemberId, setSelectedMemberId] = useState<string | null>(
+    activeMembers[0]?.id ?? null
+  );
+
+  // Selected member object
+  const selectedMember = useMemo(
+    () => members.find((m) => m.id === selectedMemberId) ?? null,
+    [members, selectedMemberId]
+  );
 
   // Get rivalries for the currently selected member
   const currentRivalries = useMemo(() => {
-    if (!selectedMember) return [];
-    return rivalriesByMember[selectedMember.id] || [];
-  }, [selectedMember, rivalriesByMember]);
+    if (!selectedMemberId) return [];
+    return rivalriesByMember[selectedMemberId] || [];
+  }, [selectedMemberId, rivalriesByMember]);
 
-  // Transform matchups for RivalriesTab (keyed by opponent ID)
+  // Transform matchups for drawer (keyed by opponent ID)
   const matchupsByOpponent = useMemo(() => {
-    if (!selectedMember) return {};
+    if (!selectedMemberId) return {};
 
     const result: Record<string, {
       id: string;
@@ -71,8 +87,8 @@ export function H2HPageClient({
     }[]> = {};
 
     matchups.forEach((m) => {
-      const isHome = m.homeTeamMemberId === selectedMember.id;
-      const isAway = m.awayTeamMemberId === selectedMember.id;
+      const isHome = m.homeTeamMemberId === selectedMemberId;
+      const isAway = m.awayTeamMemberId === selectedMemberId;
 
       if (!isHome && !isAway) return;
 
@@ -95,42 +111,87 @@ export function H2HPageClient({
     });
 
     return result;
-  }, [selectedMember, matchups]);
+  }, [selectedMemberId, matchups]);
+
+  // Drawer state
+  const [selectedRivalry, setSelectedRivalry] = useState<H2HRecapWithRivalry | null>(null);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const handleSelectOpponent = (rivalry: H2HRecapWithRivalry) => {
+    setSelectedRivalry(rivalry);
+    setIsDrawerOpen(true);
+  };
+
+  const handleCloseDrawer = () => {
+    setIsDrawerOpen(false);
+    setTimeout(() => setSelectedRivalry(null), 300);
+  };
 
   return (
-    <Tabs defaultValue="rivalries" className="space-y-4">
-      <TabsList>
-        <TabsTrigger value="rivalries" className="gap-2">
-          <Users className="h-4 w-4" />
-          <span>Rivalries</span>
-        </TabsTrigger>
-        <TabsTrigger value="matrix" className="gap-2">
-          <Grid3X3 className="h-4 w-4" />
-          <span>Matrix</span>
-        </TabsTrigger>
-      </TabsList>
+    <>
+      <Tabs defaultValue="rivalries" className="space-y-4">
+        <TabsList>
+          <TabsTrigger value="rivalries" className="gap-2">
+            <Users className="h-4 w-4" />
+            <span>Rivalries</span>
+          </TabsTrigger>
+          <TabsTrigger value="matrix" className="gap-2">
+            <Grid3X3 className="h-4 w-4" />
+            <span>Matrix</span>
+          </TabsTrigger>
+        </TabsList>
 
-      <TabsContent value="rivalries">
-        {selectedMember ? (
-          <RivalriesTab
-            viewingMember={selectedMember}
-            rivalries={currentRivalries}
-            matchupsByOpponent={matchupsByOpponent}
-          />
-        ) : (
-          <div className="text-center py-12 text-muted-foreground">
-            Select a member using &quot;Viewing as&quot; in the header to see their rivalries
+        <TabsContent value="rivalries">
+          {/* Two-panel layout */}
+          <div className="flex flex-col lg:flex-row gap-6">
+            {/* Left panel: Member selector */}
+            <Card className="lg:w-56 shrink-0 p-4 max-h-[600px] overflow-y-auto">
+              <H2HMemberSelector
+                members={activeMembers}
+                selectedMemberId={selectedMemberId}
+                onSelectMember={setSelectedMemberId}
+              />
+            </Card>
+
+            {/* Right panel: Opponent list */}
+            <Card className="flex-1 p-4">
+              {selectedMember ? (
+                <H2HOpponentList
+                  viewingMember={selectedMember}
+                  rivalries={currentRivalries}
+                  onSelectOpponent={handleSelectOpponent}
+                />
+              ) : (
+                <div className="text-center py-12 text-muted-foreground">
+                  Select a member to view their head-to-head records
+                </div>
+              )}
+            </Card>
           </div>
-        )}
-      </TabsContent>
+        </TabsContent>
 
-      <TabsContent value="matrix">
-        <H2HMatrix
-          members={members}
-          records={records}
-          matchups={matchups}
+        <TabsContent value="matrix">
+          <H2HMatrix
+            members={members}
+            records={records}
+            matchups={matchups}
+          />
+        </TabsContent>
+      </Tabs>
+
+      {/* H2H Drawer for detailed matchup history */}
+      {selectedMember && selectedRivalry && (
+        <H2HDrawer
+          isOpen={isDrawerOpen}
+          onClose={handleCloseDrawer}
+          member1={selectedMember}
+          member2={selectedRivalry.opponent}
+          matchups={matchupsByOpponent[selectedRivalry.opponent.id] ?? []}
+          member1Wins={selectedRivalry.wins}
+          member2Wins={selectedRivalry.losses}
+          aiRecap={selectedRivalry.ai_recap}
         />
-      </TabsContent>
-    </Tabs>
+      )}
+    </>
   );
 }

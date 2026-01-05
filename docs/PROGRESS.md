@@ -10,6 +10,70 @@
 Most recent session should be first.
 -->
 
+## Session 2026-01-04 (Phase 8.X: H2H Redesign + Avatar Enhancements)
+
+**Phase:** Sprint 2.5 - Phase 8.X UI/UX Polish
+**Focus:** Redesign H2H page to Yahoo-style two-panel layout, add avatars throughout app, redesign Records page with inline leaderboards
+
+### Completed
+
+#### Dashboard Avatar Enhancements
+- [x] AllTimeLeaderboard: Replaced basic Avatar with ManagerAvatar (shows actual photos)
+- [x] HotRivalries: Added avatars for both members in each rivalry row
+- [x] Season tiles: Added champion avatar with gold ring to each season card
+
+#### H2H Page Redesign (Yahoo-style)
+- [x] Created `H2HMemberSelector` - Left panel with vertical member list + avatars
+- [x] Created `H2HOpponentList` - Right panel showing all-time records against each opponent
+- [x] Updated `H2HPageClient` - Two-panel layout replacing header "Viewing As" dropdown
+- [x] Matrix tab remains as secondary view for power users
+- [x] Existing H2HDrawer still opens for detailed matchup history + AI recap
+
+#### Records Page Redesign
+- [x] Created `RecordFullCard` - Full expanded card with inline leaderboard
+- [x] Updated `RecordCategorySection` - Changed from 3-col to 2-col grid
+- [x] Updated page.tsx - Server-side pre-fetch of all Top N data in parallel
+- [x] Simplified `RecordsClient` - Removed drawer, everything inline
+
+### Files Created
+```
+src/components/features/h2h/H2HMemberSelector.tsx
+src/components/features/h2h/H2HOpponentList.tsx
+src/components/features/records/RecordFullCard.tsx
+```
+
+### Files Modified
+```
+src/components/features/dashboard/AllTimeLeaderboard.tsx - ManagerAvatar
+src/components/features/dashboard/HotRivalries.tsx - Dual avatars
+src/app/(dashboard)/seasons/page.tsx - Champion avatar
+src/components/features/h2h/H2HPageClient.tsx - Two-panel layout
+src/components/features/h2h/index.ts - New exports
+src/components/features/records/RecordCategorySection.tsx - 2-col + RecordFullCard
+src/components/features/records/index.ts - New export
+src/app/(dashboard)/records/page.tsx - Pre-fetch Top N
+src/app/(dashboard)/records/RecordsClient.tsx - Removed drawer
+```
+
+### Design Patterns Applied
+| Pattern | Implementation |
+|---------|----------------|
+| Two-panel master-detail | H2H: member selector left, records right |
+| Inline expansion | Records: full leaderboard shown without click |
+| Avatar auto-lookup | ManagerAvatar with `avatarUrl={null}` uses static map |
+
+### Verified
+- [x] Build passes
+- [x] H2H two-panel layout works
+- [x] Records show inline leaderboards
+- [x] Avatars display throughout dashboard
+
+### Next Session Should
+- Phase 8.8: Mobile responsiveness audit
+- Phase 9: League launch (password protection)
+
+---
+
 ## Session 2026-01-02 (Phase 8 UI/UX Implementation)
 
 **Phase:** Sprint 2.5 - Phase 8 UI/UX Review

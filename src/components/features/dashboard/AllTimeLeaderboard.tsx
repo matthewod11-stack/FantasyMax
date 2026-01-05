@@ -2,21 +2,12 @@
 
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { ManagerAvatar } from '@/components/ui/manager-avatar';
 import { Trophy, Medal, Crown } from 'lucide-react';
 import type { CareerStatsRow } from '@/types/contracts/queries';
 
 interface AllTimeLeaderboardProps {
   leaders: CareerStatsRow[];
-}
-
-function getInitials(name: string): string {
-  return name
-    .split(' ')
-    .map((n) => n[0])
-    .join('')
-    .toUpperCase()
-    .slice(0, 2);
 }
 
 function RankIcon({ rank }: { rank: number }) {
@@ -71,11 +62,12 @@ export function AllTimeLeaderboard({ leaders }: AllTimeLeaderboardProps) {
             className="flex items-center gap-3 p-2 -mx-2 rounded-lg hover:bg-muted/50 hover:scale-[1.02] hover:shadow-md active:scale-[0.98] transition-all duration-200"
           >
             <RankIcon rank={index + 1} />
-            <Avatar className="h-8 w-8">
-              <AvatarFallback className="text-xs">
-                {getInitials(leader.display_name)}
-              </AvatarFallback>
-            </Avatar>
+            <ManagerAvatar
+              avatarUrl={null}
+              displayName={leader.display_name}
+              size="sm"
+              showChampionRing={leader.championships > 0}
+            />
             <div className="flex-1 min-w-0">
               <p className="font-medium truncate">{leader.display_name}</p>
               <p className="text-xs text-muted-foreground">
