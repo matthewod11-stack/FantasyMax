@@ -10,6 +10,54 @@
 Most recent session should be first.
 -->
 
+## Session 2026-01-05 (Phase 8.5: AI Content Cleanup)
+
+**Phase:** Sprint 2.5 - Phase 8.5 AI Content Enhancements
+**Focus:** Shorten H2H rivalry recaps and season reviews, fix markdown rendering
+
+### Completed
+
+#### H2H Rivalry Recaps
+- [x] Updated generation prompt from 400-500 words to 3-4 sentences (50-75 words)
+- [x] Regenerated all 91 active member pair recaps
+- [x] Reduced from ~2,600 chars to ~450 chars per recap (85% reduction)
+
+#### Season Reviews
+- [x] Updated generation prompt from 400-600 words to 150-200 words
+- [x] Regenerated all 11 season reviews (2015-2025)
+- [x] Reduced from ~3,000 chars to ~1,200 chars per review (60% reduction)
+
+#### Season Review Rendering Fix
+- [x] Replaced custom `parseReviewContent()` parser with ReactMarkdown
+- [x] Removed 150+ lines of custom parsing code (splitIntoLogicalSections, containsHighlightContent, detectIcon, extractPullQuote)
+- [x] Fixed markdown headers (`#`) and blockquotes (`>`) now rendering properly
+- [x] Simplified AIReviewSection component from 130 lines to 50 lines
+
+### Files Modified
+```
+scripts/generate-h2h-recaps.ts - Shortened prompt, reduced MAX_TOKENS to 500
+scripts/generate-ai-reviews.ts - Shortened prompt, reduced MAX_TOKENS to 600
+src/components/features/writeups/WriteupsBySeason.tsx - ReactMarkdown rendering
+```
+
+### Content Changes
+| Content Type | Before | After | Reduction |
+|--------------|--------|-------|-----------|
+| H2H Recaps | ~2,600 chars | ~450 chars | 85% |
+| Season Reviews | ~3,000 chars | ~1,200 chars | 60% |
+
+### Verified
+- [x] Build passes
+- [x] 91 H2H recaps regenerated and saved
+- [x] 11 season reviews regenerated and saved
+- [x] ReactMarkdown rendering works in Writeups page
+
+### Next Session Should
+- Phase 8.8: Mobile responsiveness audit
+- Phase 9: League launch (password protection)
+
+---
+
 ## Session 2026-01-04 (Phase 8.X: H2H Redesign + Avatar Enhancements)
 
 **Phase:** Sprint 2.5 - Phase 8.X UI/UX Polish

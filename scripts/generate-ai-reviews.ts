@@ -25,7 +25,7 @@ dotenv.config({ path: '.env.local' });
 
 // Configuration
 const CLAUDE_MODEL = 'claude-sonnet-4-20250514';
-const MAX_TOKENS = 1500;
+const MAX_TOKENS = 600; // Reduced for shorter 150-200 word reviews
 const TEMPERATURE = 0.85;
 
 // Types
@@ -369,35 +369,24 @@ function buildPrompt(
     return `${t.final_record_wins}-${t.final_record_losses}${t.final_record_ties > 0 ? `-${t.final_record_ties}` : ''}`;
   };
 
-  return `You are a veteran fantasy football sportswriter covering "Matt OD's League of Degenerates" - a long-running friends fantasy football league. Write an engaging 400-600 word season review for the ${season.year} season.
+  return `You are a sportswriter for "Matt OD's League of Degenerates" fantasy football league. Write a BRIEF season review for ${season.year}.
 
-## Season Facts
-- Year: ${season.year}
-- Number of Teams: ${season.num_teams}
-- Regular Season Weeks: ${season.num_weeks}
-- Champion: ${champion?.member?.display_name || 'Unknown'} (${champion?.team_name || 'Unknown Team'}) - Record: ${formatRecord(champion)}, ${champion?.total_points_for?.toFixed(1) || '0'} total points
-- Last Place: ${lastPlace?.member?.display_name || 'Unknown'} (${lastPlace?.team_name || 'Unknown Team'}) - Record: ${formatRecord(lastPlace)}
-
-## Final Standings (Top 10)
-${standingsTable}
+## Key Facts
+- Champion: ${champion?.member?.display_name || 'Unknown'} (${formatRecord(champion)})
+- Last Place: ${lastPlace?.member?.display_name || 'Unknown'} (${formatRecord(lastPlace)})
+- ${season.num_teams} teams, ${season.num_weeks} weeks
 
 ## Season Records
-${recordsText || 'No notable records available'}
+${recordsText || 'No notable records'}
 
-${writeupExcerpts ? `## Commissioner Notes (for context and tone - do not quote directly)
-${writeupExcerpts}` : ''}
+## Instructions
+Write exactly 3-4 short paragraphs (150-200 words total):
+1. Opening hook about the season's theme or defining moment
+2. Champion's story - how they won it all
+3. One memorable stat or matchup that defined the year
+4. Quick jab at the last place finisher for the Hall of Shame
 
-## Writing Instructions
-Write a narrative season review that:
-1. Opens with a compelling hook about the season's defining moment or theme
-2. Discusses the champion's journey and what made their season special
-3. Mentions 2-3 notable storylines, rivalries, or dramatic moments
-4. References specific matchups or records that shaped the season
-5. Ends with a playful mention of the last place finisher and their Hall of Shame induction
-
-Use a fun, slightly irreverent tone appropriate for a group of longtime friends who enjoy trash talk. Be specific with names and stats. Make it feel like a real sportswriter covering a league they know well.
-
-Do NOT use generic phrases. Make it specific to this season's actual results.`;
+Keep it punchy and fun. Use specific names and scores. NO markdown headers or bullet points - just flowing prose paragraphs.`;
 }
 
 /**

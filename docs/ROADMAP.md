@@ -298,10 +298,11 @@ Historical archive and future content creation.
 #### Phase 8.4: Championship Wow Factor - DEFERRED TO V2
 - ~~Holographic trophy card (3D tilt effect)~~ → V2 backlog
 
-#### Phase 8.5: AI Content Enhancements
-- [ ] Shorten rivalry recaps to 3-4 sentences (regenerate)
-- [ ] Typewriter effect for AI recaps
-- [ ] Review season reviews length
+#### Phase 8.5: AI Content Enhancements ✅
+- [x] Shorten rivalry recaps to 3-4 sentences (regenerated 91 recaps)
+- [x] Shorten season reviews to 150-200 words (regenerated 11 reviews)
+- [x] Fix season review rendering (replaced custom parser with ReactMarkdown)
+- [ ] Typewriter effect for AI recaps (deferred)
 
 #### Phase 8.6: Page Load Animations ✅
 - [x] Staggered entrance animations (dashboard widgets fade in sequentially)

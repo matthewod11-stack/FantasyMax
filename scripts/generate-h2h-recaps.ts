@@ -26,7 +26,7 @@ dotenv.config({ path: '.env.local' });
 
 // Configuration
 const CLAUDE_MODEL = 'claude-sonnet-4-20250514';
-const MAX_TOKENS = 2000;
+const MAX_TOKENS = 500; // Reduced for shorter 3-4 sentence recaps
 const TEMPERATURE = 0.85;
 
 // Types
@@ -441,34 +441,25 @@ function buildPrompt(
   // Get notable matchups
   const notableMatchups = calculateNotableMatchups(matchups, member1.id, member1Name, member2Name);
 
-  return `You are a veteran ESPN fantasy football analyst covering "Matt OD's League of Degenerates" - a long-running friends fantasy football league (2015-present). Write a dramatic, broadcast-style rivalry analysis between ${member1Name} and ${member2Name}.
+  return `You are an ESPN fantasy football analyst covering "Matt OD's League of Degenerates" fantasy league. Write a BRIEF rivalry recap for ${member1Name} vs ${member2Name}.
 
-## Rivalry Stats
-- **${member1Name} vs ${member2Name}**
-- All-time record: ${member1Wins}-${member2Wins} (${record.total_matchups} total matchups)
-- Ties: ${record.ties}
-- Total points scored: ${member1Name} ${member1Points.toFixed(1)} | ${member2Name} ${member2Points.toFixed(1)}
-- Current streak: ${streakDesc}
+## Stats
+- Record: ${member1Wins}-${member2Wins} (${record.total_matchups} matchups)
+- ${streakDesc}
 - ${rivalryDesc}
 
-## Notable Matchups
+## Notable Matchups (pick ONE to reference)
 ${notableMatchups}
 
-## Writing Instructions
-Write an ESPN-style rivalry breakdown (400-500 words) that:
-1. Opens with a dramatic hook about this specific rivalry's narrative
-2. References SPECIFIC memorable matchups with scores, weeks, and years
-3. Discusses patterns in the rivalry (playoff dominance, regular season consistency, close games, blowouts)
-4. Includes playful trash talk appropriate for longtime friends
-5. Builds to a conclusion about the rivalry's current state and what the future holds
+## Instructions
+Write exactly 3-4 sentences (50-75 words max) in ESPN broadcast style:
+1. State who dominates or if it's a true rivalry
+2. Reference ONE specific memorable matchup with the score
+3. End with current momentum or what's at stake
 
-Use an energetic broadcast announcer style - dramatic pauses, specific stats, memorable moments. Make it feel like real sports coverage of a rivalry that MATTERS. Reference the actual data provided.
+Keep it punchy and dramatic. No headers, no bullet points - just flowing prose.
 
-After the full recap, on a new line write "---PREVIEW---" followed by a 2-3 sentence preview suitable for a card display that captures the essence of this rivalry with dramatic flair.
-
-Example preview format:
----PREVIEW---
-The most lopsided rivalry in league history? Not quite, but Matt OD's 9-4 dominance over PJ makes every matchup a chance for revenge. After a playoff beatdown in 2023, PJ is hungry - but history isn't on his side.`;
+After the recap, write "---PREVIEW---" followed by ONE sentence capturing the rivalry's essence.`;
 }
 
 /**
