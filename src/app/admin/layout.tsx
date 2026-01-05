@@ -1,12 +1,14 @@
 import { redirect } from 'next/navigation';
+import { cookies } from 'next/headers';
 import { createClient, createAdminClient } from '@/lib/supabase/server';
 import { Sidebar } from '@/components/layout/sidebar';
 import { AdminHeader } from '@/components/layout/admin-header';
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
-  // TODO: Remove BYPASS_AUTH when ready for production auth
-  // Set BYPASS_AUTH=true in .env.local for local development
-  const bypassAuth = process.env.BYPASS_AUTH === 'true';
+  // Check for password gate or dev bypass
+  const cookieStore = await cookies();
+  const hasLeagueAccess = cookieStore.get('league_access')?.value === 'granted';
+  const bypassAuth = process.env.BYPASS_AUTH === 'true' || hasLeagueAccess;
 
   if (!bypassAuth) {
     const supabase = await createClient();
