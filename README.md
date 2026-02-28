@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FantasyMax
+
+**The historical and social layer for your fantasy football league.**
+
+FantasyMax sits alongside Yahoo and ESPN to give your league what those platforms don't: a decade of history, head-to-head rivalry tracking, commissioner writeups, media uploads, a hall of shame, and a living constitution. It's built for leagues that have been running for years and want a home for the stories behind the stats.
+
+<!-- Add a screenshot to docs/screenshots/ and uncomment:
+![FantasyMax Dashboard](docs/screenshots/dashboard.png)
+-->
+
+[Live Site](https://fantasymax.vercel.app)
+
+---
+
+## Features
+
+- **10+ years of historical stats** — season-by-season records, standings, and matchup results imported from Yahoo or CSV
+- **Head-to-head rivalry tracker** — lifetime records between every pair of managers with win streaks and point differentials
+- **Manager dashboards** — personal pages with career stats, awards, and trade history
+- **AI-powered recaps** — commissioner writeups and season reviews generated with Claude
+- **Media gallery** — photo and video uploads from draft days, Vegas trips, and league events
+- **League voting** — polls and votes for awards, rule changes, and disputes
+- **Constitution** — living rules document with amendment history
+- **Hall of Shame** — last-place finishers immortalized forever
+- **Draft analyzer** — historical draft performance breakdowns
+- **Trade history** — full trade log with context and commentary
+- **Invite-only access** — password-gated, members-only experience
+
+## Tech Stack
+
+| Technology | Role |
+|---|---|
+| Next.js 15 | App Router, React Server Components |
+| TypeScript | Strict mode throughout |
+| Supabase | PostgreSQL database, auth, row-level security, file storage |
+| Tailwind CSS v4 | Styling |
+| shadcn/ui | Component library |
+| Anthropic Claude | AI-generated recaps and season reviews |
+| Zod | Runtime validation for all inputs and imports |
+| Vitest | Unit and integration testing |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Clone
+git clone https://github.com/matthewod11-stack/FantasyMax.git
+cd FantasyMax
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.local.example .env.local
+# Fill in your Supabase and Yahoo API credentials
+
+# Run locally
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3004](http://localhost:3004) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Architecture
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+FantasyMax uses a **dual import system** — data can come from the Yahoo Fantasy API or CSV files, both normalizing to the same schema. Historical data is pre-loaded by the commissioner before members are invited.
 
-## Learn More
+Key design decisions:
+- **Materialized views** for pre-calculated head-to-head records
+- **Row-level security** on all tables via Supabase RLS
+- **Server components by default**, client components only where interactivity requires it
+- **Members vs. Teams** — members are real people that persist across seasons; teams are season-specific
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[MIT](LICENSE)
