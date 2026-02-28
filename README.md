@@ -4,9 +4,7 @@
 
 FantasyMax sits alongside Yahoo and ESPN to give your league what those platforms don't: a decade of history, head-to-head rivalry tracking, commissioner writeups, media uploads, a hall of shame, and a living constitution. It's built for leagues that have been running for years and want a home for the stories behind the stats.
 
-<!-- Add a screenshot to docs/screenshots/ and uncomment:
 ![FantasyMax Dashboard](docs/screenshots/dashboard.png)
--->
 
 [Live Site](https://fantasymax.vercel.app)
 
