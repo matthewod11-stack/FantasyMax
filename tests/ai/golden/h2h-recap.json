@@ -1,0 +1,12 @@
+[
+  {
+    "input": {
+      "member1": "Matt OD",
+      "member2": "Paul",
+      "wins1": 8,
+      "wins2": 5,
+      "totalMatchups": 13
+    },
+    "expected_facts": ["8", "5", "13"]
+  }
+]

@@ -1,6 +1,20 @@
+import { createClient as createSupabaseClient } from '@supabase/supabase-js';
 import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
+import type { SupabaseClient } from '@supabase/supabase-js';
 import type { Database } from '@/types/database.types';
+
+/** Direct service-role client for admin writes (no cookie/session coupling). */
+export function createServiceRoleClient(): SupabaseClient {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !key) {
+    throw new Error('Supabase service role env vars are not configured');
+  }
+  return createSupabaseClient(url, key, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
+}
 
 export async function createClient() {
   const cookieStore = await cookies();
@@ -51,4 +65,9 @@ export async function createAdminClient() {
       },
     },
   );
+}
+
+/** Use for tables not yet in generated database.types.ts */
+export function getUntypedAdminClient(): SupabaseClient {
+  return createServiceRoleClient();
 }

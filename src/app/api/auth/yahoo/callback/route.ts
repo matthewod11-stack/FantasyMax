@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { YahooFantasyClient } from '@/lib/yahoo/client';
+import { saveYahooCredentials } from '@/lib/yahoo/credentials';
+import { createAdminClient } from '@/lib/supabase/server';
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
@@ -26,6 +28,12 @@ export async function GET(request: NextRequest) {
       maxAge: 60 * 60 * 24 * 30, // 30 days
       path: '/',
     });
+
+    const supabase = await createAdminClient();
+    const { data: league } = await supabase.from('league').select('id').single();
+    if (league) {
+      await saveYahooCredentials(league.id, tokens);
+    }
 
     return NextResponse.redirect(
       `${process.env.NEXT_PUBLIC_APP_URL}/admin/import/yahoo?success=true`,

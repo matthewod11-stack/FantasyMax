@@ -1,38 +1,34 @@
-import React from 'react';
+import { getTradeTimeline, getTradeCount } from '@/lib/supabase/queries/trades';
+import { TradesTimeline } from '@/components/features/trades/TradesTimeline';
+import { Badge } from '@/components/ui/badge';
 import { ArrowLeftRight } from 'lucide-react';
-import { PlaceholderCard } from '@/components/ui/placeholder-card';
 
-export default function TradesPage() {
+export const metadata = {
+  title: 'Trades | League of Degenerates',
+  description: 'League trade history timeline',
+};
+
+export default async function TradesPage() {
+  const [trades, count] = await Promise.all([getTradeTimeline({ limit: 100 }), getTradeCount()]);
+
   return (
-    <div className="space-y-6">
-      <div className="space-y-1">
-        <div className="flex items-center gap-3">
+    <div className="space-y-8">
+      <div className="space-y-2">
+        <h1 className="font-display text-4xl tracking-wide uppercase flex items-center gap-3">
           <ArrowLeftRight className="h-8 w-8 text-primary" />
-          <h1 className="font-display text-4xl tracking-wide text-foreground uppercase">
-            Trades
-          </h1>
+          Trade History
+        </h1>
+        <div className="flex items-center gap-2">
+          <Badge variant="outline">{count} trades on record</Badge>
+          {count === 0 && (
+            <span className="text-sm text-muted-foreground">
+              Run Yahoo sync from admin to import trades
+            </span>
+          )}
         </div>
-        <p className="text-muted-foreground font-body">
-          The art of the deal and league transactional history
-        </p>
       </div>
 
-      <div className="py-8">
-        <PlaceholderCard
-          title="Trade Center"
-          description="A complete history of all trades made in the League of Degenerates. From the league-altering blockbusters to the bench-depth swaps."
-          icon={ArrowLeftRight}
-          v2Features={[
-            'Yahoo trade history sync',
-            'Detailed trade breakdowns (who got who)',
-            'Trade timeline by season',
-            'Trade winner/loser analysis',
-            'All-time most active traders',
-            'Trade impact on season outcomes'
-          ]}
-        />
-      </div>
+      <TradesTimeline trades={trades} />
     </div>
   );
 }
-

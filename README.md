@@ -28,7 +28,7 @@ FantasyMax sits alongside Yahoo and ESPN to give your league what those platform
 
 | Technology | Role |
 |---|---|
-| Next.js 15 | App Router, React Server Components |
+| Next.js 16 | App Router, React Server Components |
 | TypeScript | Strict mode throughout |
 | Supabase | PostgreSQL database, auth, row-level security, file storage |
 | Tailwind CSS v4 | Styling |

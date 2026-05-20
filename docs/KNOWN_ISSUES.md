@@ -28,13 +28,21 @@
 
 ## Open Issues
 
-### [TECH-DEBT] Auth bypass using createAdminClient()
+### [DEPLOY] Vercel env for Tuesday Yahoo cron
 **Status:** Open
 **Severity:** High
+**Discovered:** 2026-05-20
+**Description:** `CRON_SECRET` and `SYNC_ENABLED=true` must be set in Vercel project settings (not only `.env.local`). Production must run deployed sync code before `yahoo_credentials` and `weekly_digests` populate.
+**Workaround:** Manual Sync Now on production after deploy + Yahoo reconnect
+**Resolution:** Add env vars and run one prod sync after deploy
+
+### [INTENTIONAL] Shareable app uses createAdminClient() for reads
+**Status:** Resolved (by design)
+**Severity:** N/A
 **Discovered:** 2024-12-06
-**Description:** Dashboard and Seasons pages use `createAdminClient()` instead of `createClient()` to bypass RLS during development. This bypasses all row-level security.
-**Workaround:** Acceptable during development, but MUST be fixed before production
-**Resolution:** Switch back to `createClient()` after enabling proper RLS policies
+**Updated:** 2026-04-20
+**Description:** Password-gate launch (`league_access` cookie) uses service-role reads so all league members see the same pre-loaded data without per-user Supabase auth.
+**Resolution:** Intentional for shareable mode. Revisit only if migrating to full member auth + RLS.
 
 ### [TECH-DEBT] BYPASS_AUTH environment variable
 **Status:** Open

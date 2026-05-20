@@ -24,7 +24,9 @@ export class YahooFantasyClient {
 
   setTokens(tokens: YahooOAuthTokens) {
     this.accessToken = tokens.access_token;
-    this.refreshToken = tokens.refresh_token;
+    if (tokens.refresh_token) {
+      this.refreshToken = tokens.refresh_token;
+    }
     this.tokenExpiresAt = tokens.expires_at || Date.now() + tokens.expires_in * 1000;
   }
 
@@ -125,6 +127,7 @@ export class YahooFantasyClient {
     const tokens = await response.json();
     const newTokens: YahooOAuthTokens = {
       ...tokens,
+      refresh_token: tokens.refresh_token ?? this.refreshToken ?? undefined,
       expires_at: Date.now() + tokens.expires_in * 1000,
     };
 
@@ -416,13 +419,32 @@ export class YahooFantasyClient {
 
   // Get transactions (trades only)
   async getTrades(leagueKey: string): Promise<YahooTransaction[]> {
-    const response = await this.apiRequest<{
-      fantasy_content: {
-        league: [YahooLeague, { transactions: { transaction: YahooTransaction[] } }];
-      };
-    }>(`/league/${leagueKey}/transactions;types=trade`);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const response = await this.apiRequest<any>(
+      `/league/${leagueKey}/transactions;types=trade`,
+    );
 
-    return response.fantasy_content.league[1]?.transactions?.transaction || [];
+    const leagueData = response.fantasy_content?.league;
+    const leagueArray = Array.isArray(leagueData)
+      ? leagueData
+      : this.yahooObjectToArray(leagueData);
+
+    const transactionsWrapper = leagueArray[1]?.transactions;
+    if (!transactionsWrapper) return [];
+
+    const transactionsRaw = this.yahooObjectToArray(transactionsWrapper);
+    const trades: YahooTransaction[] = [];
+
+    for (const txWrapper of transactionsRaw) {
+      const tx = txWrapper?.transaction || txWrapper;
+      if (!tx) continue;
+      const txInner = this.yahooObjectToArray(tx)[0] || tx;
+      if (txInner.type === 'trade' || tx.type === 'trade') {
+        trades.push({ ...tx, ...txInner } as YahooTransaction);
+      }
+    }
+
+    return trades;
   }
 }
 

@@ -3,10 +3,12 @@ import { createClient } from '@/lib/supabase/server';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Upload, Users, Calendar, FileText, ArrowRight } from 'lucide-react';
+import { Upload, Users, Calendar, FileText, ArrowRight, Mail } from 'lucide-react';
+import { getLatestSyncStatus } from '@/lib/supabase/queries/weekly-digest';
 import { RefreshDataButton } from '@/components/admin/RefreshDataButton';
 
 export default async function AdminDashboardPage() {
+  const syncStatus = await getLatestSyncStatus();
   const supabase = await createClient();
 
   // Get recent import logs
@@ -60,6 +62,14 @@ export default async function AdminDashboardPage() {
       icon: FileText,
       href: '/admin/writeups',
       action: 'Write',
+    },
+    {
+      title: 'Weekly Email',
+      description: 'Tuesday sync digest — copy/paste for the group email',
+      icon: Mail,
+      href: '/admin/weekly',
+      action: 'Draft',
+      badge: syncStatus.isStale ? 'Sync needed' : undefined,
     },
   ];
 

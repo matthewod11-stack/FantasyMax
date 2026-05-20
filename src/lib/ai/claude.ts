@@ -6,7 +6,8 @@ export interface ClaudeOptions {
   temperature?: number;
 }
 
-const DEFAULT_MODEL = 'claude-sonnet-4-20250514';
+export const DEFAULT_MODEL =
+  process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-20250514';
 const DEFAULT_MAX_TOKENS = 1500;
 const DEFAULT_TEMPERATURE = 0.8;
 

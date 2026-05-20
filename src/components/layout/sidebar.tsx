@@ -13,7 +13,9 @@ import {
   BookOpen,
   Skull,
   Award,
+  Star,
   Swords,
+  Coins,
   Settings,
   Upload,
   FileText,
@@ -29,6 +31,7 @@ const memberNavItems = [
   { href: '/managers', label: 'Managers', icon: Users },
   { href: '/head-to-head', label: 'Head-to-Head', icon: Swords },
   { href: '/records', label: 'Records', icon: Award },
+  { href: '/awards', label: 'Awards', icon: Star },
   { href: '/hall-of-shame', label: 'Hall of Shame', icon: Skull },
   { href: '/writeups', label: 'Writeups', icon: FileText },
   { href: '/media', label: 'Media', icon: Image },
@@ -36,6 +39,8 @@ const memberNavItems = [
   { href: '/draft-analyzer', label: 'Draft Analyzer', icon: ClipboardList },
   { href: '/voting', label: 'Voting', icon: Vote },
   { href: '/constitution', label: 'Constitution', icon: BookOpen },
+  { href: '/props', label: 'Degenerate Dollars', icon: Coins },
+  { href: '/timeline', label: 'Timeline', icon: Calendar },
 ];
 
 const adminNavItems = [
@@ -44,6 +49,7 @@ const adminNavItems = [
   { href: '/admin/members', label: 'Manage Members', icon: Users },
   { href: '/admin/seasons', label: 'Manage Seasons', icon: Calendar },
   { href: '/admin/writeups', label: 'Writeups', icon: BookOpen },
+  { href: '/admin/weekly', label: 'Weekly Email', icon: FileText },
 ];
 
 export function Sidebar({ userRole }: SidebarProps) {

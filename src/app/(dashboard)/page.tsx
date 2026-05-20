@@ -10,6 +10,7 @@ import {
   getTopBlowouts,
   getTopClosestGames,
 } from '@/lib/supabase/queries';
+import { getWeeklyDigest, getLatestSyncStatus } from '@/lib/supabase/queries/weekly-digest';
 import {
   AllTimeLeaderboard,
   HotRivalries,
@@ -17,9 +18,11 @@ import {
   LeagueHistoryWidget,
   LatestSeasonCard,
   DashboardSkeleton,
+  WeekInReview,
 } from '@/components/features/dashboard';
+import { LastUpdatedBadge } from '@/components/layout/LastUpdatedBadge';
 import { Badge } from '@/components/ui/badge';
-import { Trophy, Calendar, Users, Swords } from 'lucide-react';
+import { Trophy, Calendar, Users, Swords, AlertTriangle } from 'lucide-react';
 
 export const metadata = {
   title: 'Dashboard | League of Degenerates',
@@ -66,7 +69,13 @@ async function getCurrentWeek(): Promise<number> {
   return finalMatchup?.week ?? 1;
 }
 
-async function LeagueDashboardContent() {
+async function LeagueDashboardContent({
+  weekParam,
+}: {
+  weekParam?: string;
+}) {
+  const syncStatus = await getLatestSyncStatus();
+
   // Fetch all data in parallel
   const [
     leagueStats,
@@ -83,11 +92,16 @@ async function LeagueDashboardContent() {
     getLatestSeason(),
     getCareerLeaderboard('total_wins', 5),
     getBiggestRivalries(4),
-    // Only show active members in dashboard highlights
     getTopHighestScores({ limit: 1, activeOnly: true }),
     getTopBlowouts({ limit: 1, activeOnly: true }),
     getTopClosestGames({ limit: 1, activeOnly: true }),
   ]);
+
+  const reviewWeek = weekParam ? parseInt(weekParam, 10) : Math.max(1, currentWeek - 1);
+  const weekDigest =
+    latestSeason && !Number.isNaN(reviewWeek)
+      ? await getWeeklyDigest(latestSeason.id, reviewWeek)
+      : null;
 
   // Fetch week history (depends on currentWeek)
   const weekHistory = await getLeagueWeekHistory(currentWeek, 4);
@@ -116,12 +130,28 @@ async function LeagueDashboardContent() {
 
   return (
     <div className="space-y-8">
+      {syncStatus.isStale && (
+        <div className="flex items-center gap-2 rounded-lg border border-destructive/50 bg-destructive/10 px-4 py-3 text-sm">
+          <AlertTriangle className="h-4 w-4 text-destructive shrink-0" />
+          Data may be stale — last Yahoo sync was over 8 days ago.
+        </div>
+      )}
+
+      {weekDigest && (
+        <WeekInReview
+          week={weekDigest.week}
+          seasonYear={weekDigest.seasonYear}
+          highlights={weekDigest.highlights}
+        />
+      )}
+
       {/* League Header */}
       <div className="space-y-2">
         <h1 className="font-display text-4xl tracking-wide">
           {leagueStats.leagueName}
         </h1>
         <div className="flex flex-wrap items-center gap-3 text-muted-foreground">
+          <LastUpdatedBadge />
           <Badge variant="outline" className="flex items-center gap-1.5">
             <Calendar className="h-3.5 w-3.5" />
             Est. {leagueStats.foundedYear}
@@ -173,10 +203,15 @@ async function LeagueDashboardContent() {
   );
 }
 
-export default function DashboardPage() {
+export default async function DashboardPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ week?: string }>;
+}) {
+  const params = await searchParams;
   return (
     <Suspense fallback={<DashboardSkeleton />}>
-      <LeagueDashboardContent />
+      <LeagueDashboardContent weekParam={params.week} />
     </Suspense>
   );
 }

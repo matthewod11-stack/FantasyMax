@@ -1,9 +1,9 @@
 {
   "_meta": {
     "description": "Feature tracking for League of Degenerates. Status: not-started | in-progress | pass | fail | blocked",
-    "lastUpdated": "2026-01-05",
-    "totalFeatures": 111,
-    "passing": 102,
+    "lastUpdated": "2026-05-20",
+    "totalFeatures": 120,
+    "passing": 111,
     "failing": 0,
     "inProgress": 0,
     "blocked": 0
@@ -81,8 +81,19 @@
     "writeups-member-mentions": { "status": "pass", "notes": "Auto-detect member names in writeups with aliases, word boundaries, context extraction. 164 mentions across 65 writeups." }
   },
   "phase-2-data-enrichment": {
-    "trade-sync": { "status": "not-started", "notes": "Yahoo trade history import" },
-    "trade-timeline": { "status": "not-started", "notes": "Trade timeline view" }
+    "trade-sync": { "status": "pass", "notes": "Yahoo trade sync in src/lib/yahoo/sync.ts" },
+    "trade-timeline": { "status": "pass", "notes": "/trades timeline UI" }
+  },
+  "2026-refresh": {
+    "live-yahoo-sync": { "status": "pass", "notes": "syncYahooLeague incremental/full, Sync Now admin button" },
+    "yahoo-credentials-db": { "status": "pass", "notes": "Encrypted tokens in yahoo_credentials via service-role client" },
+    "tuesday-cron": { "status": "pass", "notes": "vercel.json cron + /api/cron/yahoo-sync" },
+    "weekly-email-draft": { "status": "pass", "notes": "weekly_digests + Admin Weekly Email panel" },
+    "week-dashboard": { "status": "pass", "notes": "/?week=N, WeekInReview, LastUpdatedBadge" },
+    "gate-rate-limit": { "status": "pass", "notes": "Rate limit on /api/gate/verify" },
+    "ai-trash-talk": { "status": "pass", "notes": "/api/ai/trash-talk + TrashTalkAssistant" },
+    "governance-scaffold": { "status": "pass", "notes": "Voting + constitution pages wired" },
+    "economy-scaffold": { "status": "pass", "notes": "Props, timeline, economy queries + migration tables" }
   },
   "sprint-4-member-management": {
     "member-merge-schema": { "status": "pass", "notes": "Migration adds merged_into_id column, member_merges audit table, merge_members() function" },

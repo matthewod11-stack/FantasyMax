@@ -1,99 +1,68 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Camera, Mail, MessageSquare, Upload } from 'lucide-react';
+import { createAdminClient } from '@/lib/supabase/server';
+import { Card, CardContent } from '@/components/ui/card';
+import { MediaGallery } from '@/components/features/media/MediaGallery';
+import { MediaUploadForm } from '@/components/features/media/MediaUploadForm';
+import { Image } from 'lucide-react';
 
 export const metadata = {
-  title: 'Media Gallery | League of Degenerates',
-  description: 'Photos and videos from league history',
+  title: 'Media | League of Degenerates',
 };
 
-export default function MediaPage() {
+export default async function MediaPage() {
+  const supabase = await createAdminClient();
+
+  const { data: media } = await supabase
+    .from('media')
+    .select('id, title, url, file_type, created_at, uploader:members!media_uploaded_by_fkey(display_name)')
+    .order('created_at', { ascending: false })
+    .limit(50);
+
+  const { data: seasons } = await supabase
+    .from('seasons')
+    .select('id, year')
+    .order('year', { ascending: false });
+
+  const { data: members } = await supabase
+    .from('members')
+    .select('id, display_name')
+    .eq('is_active', true);
+
+  const galleryItems = (media ?? []).map((m) => ({
+    id: m.id,
+    title: m.title ?? 'Untitled',
+    file_url: m.url,
+    file_type: m.file_type,
+    created_at: m.created_at ?? '',
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    member: (m.uploader as any) ? { display_name: (m.uploader as any).display_name } : null,
+  }));
+
   return (
     <div className="space-y-8">
-      {/* Header */}
       <div>
-        <h1 className="font-display text-4xl tracking-wide flex items-center gap-3">
-          <Camera className="h-8 w-8" />
+        <h1 className="font-display text-4xl tracking-wide uppercase flex items-center gap-3">
+          <Image className="h-8 w-8 text-primary" />
           Media Gallery
         </h1>
-        <p className="text-muted-foreground mt-2">
-          Photos and videos from league history
-        </p>
+        <p className="text-muted-foreground">Draft nights, championships, Vegas, and league chaos</p>
       </div>
 
-      {/* Submit Media CTA */}
-      <Card className="border-dashed border-2 bg-muted/30">
-        <CardContent className="py-6">
-          <div className="flex flex-col sm:flex-row items-center gap-4">
-            <div className="p-3 rounded-full bg-primary/10">
-              <Upload className="h-6 w-6 text-primary" />
-            </div>
-            <div className="flex-1 text-center sm:text-left">
-              <h3 className="font-semibold">Have photos or videos to share?</h3>
-              <p className="text-sm text-muted-foreground mt-1">
-                Send your draft day pics, championship celebrations, or shame moments to the commissioner!
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-2">
-              <Badge variant="outline" className="flex items-center gap-1.5 px-3 py-1.5">
-                <Mail className="h-3.5 w-3.5" />
-                Email
-              </Badge>
-              <Badge variant="outline" className="flex items-center gap-1.5 px-3 py-1.5">
-                <MessageSquare className="h-3.5 w-3.5" />
-                Text
-              </Badge>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+      <MediaUploadForm seasons={seasons ?? []} members={members ?? []} />
 
-      {/* Media Grid */}
-      <div className="space-y-6">
-        <h2 className="text-xl font-semibold">League Moments</h2>
-
-        <div className="grid gap-6">
-          {/* Vegas Entrance Video */}
-          <Card>
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <div>
-                  <CardTitle>Vegas Draft Entrance</CardTitle>
-                  <CardDescription>The legendary arrival</CardDescription>
-                </div>
-                <Badge>Video</Badge>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="relative aspect-video rounded-lg overflow-hidden bg-black">
-                <video
-                  controls
-                  className="w-full h-full object-contain"
-                  poster=""
-                  preload="metadata"
-                >
-                  <source src="/Vegasentrance.MOV" type="video/quicktime" />
-                  <source src="/Vegasentrance.MOV" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-
-      {/* Coming Soon */}
-      <Card className="bg-muted/20">
-        <CardContent className="py-8 text-center">
-          <Camera className="h-12 w-12 mx-auto text-muted-foreground mb-3" />
-          <p className="text-muted-foreground">
-            More photos and videos coming soon!
-          </p>
-          <p className="text-sm text-muted-foreground/70 mt-1">
-            Send your media to the commissioner to be featured here.
-          </p>
-        </CardContent>
-      </Card>
+      {galleryItems.length > 0 ? (
+        <MediaGallery items={galleryItems} />
+      ) : (
+        <Card>
+          <CardContent className="py-8 text-center text-muted-foreground">
+            <p>No uploads yet. Legacy Vegas entrance below.</p>
+            <video
+              className="mx-auto mt-6 max-w-md rounded-lg"
+              controls
+              src="/Vegasentrance.MOV"
+            />
+          </CardContent>
+        </Card>
+      )}
     </div>
   );
 }

@@ -10,3 +10,4 @@ export { HotRivalries } from './HotRivalries';
 export { RecentHighlights } from './RecentHighlights';
 export { LeagueHistoryWidget } from './LeagueHistoryWidget';
 export { LatestSeasonCard } from './LatestSeasonCard';
+export { WeekInReview } from './WeekInReview';

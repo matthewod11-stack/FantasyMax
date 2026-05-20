@@ -213,8 +213,9 @@ Follow ~/claude-docs/rules.md standards, with these specifics:
 
 ### Importing Data
 - CSV: Use `src/lib/import/csv-parser.ts`
-- Yahoo: Use `src/lib/yahoo/sync.ts`
-- Both normalize to same schema via `src/lib/import/normalizer.ts`
+- Yahoo: Use `src/lib/yahoo/sync.ts` (manual admin sync, Tuesday cron, incremental current season)
+- Server-side OAuth: `src/lib/yahoo/credentials.ts` (encrypted refresh token for cron)
+- Weekly digest: `src/lib/supabase/queries/weekly-digest.ts` + `/admin/weekly`
 
 ## Security Considerations
 

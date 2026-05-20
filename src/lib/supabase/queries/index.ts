@@ -107,6 +107,26 @@ export {
   getLeagueWeekHistory,
   getLatestSeason,
 } from './league';
+
+export { getTradeTimeline, getTradeCount } from './trades';
+export type { TradeTimelineItem } from './trades';
+
+export {
+  generateWeeklyDigest,
+  getWeeklyDigest,
+  getLatestSyncStatus,
+} from './weekly-digest';
+export type { WeekHighlight, WeeklyDigestData } from './weekly-digest';
+
+export { getOpenPolls, getRules, castVote } from './governance';
+export type { PollWithVotes } from './governance';
+
+export {
+  getChampionshipPayouts,
+  getMemberBalance,
+  getOpenProps,
+  getPropLeaderboard,
+} from './economy';
 export type {
   LeagueStats,
   NotableMatchup,

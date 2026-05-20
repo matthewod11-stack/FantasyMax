@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
+import { getClientIp, rateLimit } from '@/lib/rate-limit';
 
 const verifySchema = z.object({
   password: z.string().min(1, 'Password is required'),
@@ -10,6 +11,15 @@ const COOKIE_MAX_AGE = 60 * 60 * 24 * 30; // 30 days in seconds
 
 export async function POST(request: NextRequest) {
   try {
+    const ip = getClientIp(request.headers);
+    const { success } = rateLimit(`gate:${ip}`, 10, 15 * 60 * 1000);
+    if (!success) {
+      return NextResponse.json(
+        { error: 'Too many attempts. Try again in 15 minutes.' },
+        { status: 429 },
+      );
+    }
+
     const body = await request.json();
     const { password } = verifySchema.parse(body);
 
