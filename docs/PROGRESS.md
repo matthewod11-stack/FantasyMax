@@ -10,6 +10,26 @@
 Most recent session should be first.
 -->
 
+## Session: 2026-07-02 (Task 2 Production Sync Readiness)
+
+### Completed
+- Added an exact `/api/cron/yahoo-sync` middleware bypass so Vercel Cron can reach the route handler without a league password cookie
+- Kept cron route protection in the route handler via bearer-token `CRON_SECRET`
+- Added focused tests for middleware pass-through, protected API redirect behavior, and cron route unauthorized responses
+- Updated production sync ops docs/status notes without recording any secret values
+
+### Verified
+- Regression test red before fix: cron middleware test returned `307` instead of expected pass-through
+- Focused tests pass: 2 test files, 5 tests
+- `npm run lint` exits 0 with 52 warnings and 0 errors
+- `npm run test:run` passes: 9 test files, 142 tests
+- `npm run typecheck` passes
+- `npm run build` passes
+
+### Follow-up
+- After merge/deploy, verify anonymous production `/api/cron/yahoo-sync` returns `401 Unauthorized` instead of redirecting to `/gate`
+- After Yahoo reconnect and league key confirmation, run production Admin -> Sync Now and confirm Admin -> Weekly Email
+
 ## Session: 2026-07-02 (CI And Lint Green)
 
 ### Completed

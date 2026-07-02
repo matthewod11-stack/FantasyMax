@@ -87,7 +87,7 @@
   "2026-refresh": {
     "live-yahoo-sync": { "status": "pass", "notes": "syncYahooLeague incremental/full, Sync Now admin button" },
     "yahoo-credentials-db": { "status": "pass", "notes": "Encrypted tokens in yahoo_credentials via service-role client" },
-    "tuesday-cron": { "status": "pass", "notes": "vercel.json cron + /api/cron/yahoo-sync" },
+    "tuesday-cron": { "status": "pass", "notes": "vercel.json cron + bearer-protected /api/cron/yahoo-sync. Middleware bypass added 2026-07-02; production 401 check pending deploy." },
     "weekly-email-draft": { "status": "pass", "notes": "weekly_digests + Admin Weekly Email panel" },
     "week-dashboard": { "status": "pass", "notes": "/?week=N, WeekInReview, LastUpdatedBadge" },
     "gate-rate-limit": { "status": "pass", "notes": "Rate limit on /api/gate/verify" },
