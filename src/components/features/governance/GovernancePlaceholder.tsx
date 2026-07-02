@@ -78,11 +78,10 @@ export function GovernancePlaceholder({
             <h3 className="font-display text-lg uppercase tracking-wide">Living Records</h3>
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            No more "I thought that was the rule." The Constitution will be the single source of truth, with a complete audit trail of how rules evolved over the seasons.
+            No more &ldquo;I thought that was the rule.&rdquo; The Constitution will be the single source of truth, with a complete audit trail of how rules evolved over the seasons.
           </p>
         </div>
       </div>
     </div>
   );
 }
-
