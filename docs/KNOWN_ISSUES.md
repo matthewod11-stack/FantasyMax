@@ -29,12 +29,13 @@
 ## Open Issues
 
 ### [DEPLOY] Vercel env for Tuesday Yahoo cron
-**Status:** Open
+**Status:** In Progress
 **Severity:** High
 **Discovered:** 2026-05-20
-**Description:** `CRON_SECRET` and `SYNC_ENABLED=true` must be set in Vercel project settings (not only `.env.local`). Production must run deployed sync code before `yahoo_credentials` and `weekly_digests` populate.
-**Workaround:** Manual Sync Now on production after deploy + Yahoo reconnect
-**Resolution:** Add env vars and run one prod sync after deploy
+**Updated:** 2026-07-02
+**Description:** `CRON_SECRET` and `SYNC_ENABLED=true` were added to Vercel Production env on 2026-07-02. Anonymous production checks still redirected `/api/cron/yahoo-sync` to `/gate`, which means the password-gate middleware was intercepting the cron request before the route handler could enforce its bearer-token `CRON_SECRET` check.
+**Workaround:** Manual Sync Now on production after deploy + Yahoo reconnect.
+**Resolution:** Middleware bypass for `/api/cron/yahoo-sync` is pending merge/deploy. After deploy, verify anonymous `/api/cron/yahoo-sync` returns `401 Unauthorized` instead of redirecting to `/gate`, then run production Sync Now after Yahoo reconnect and league key confirmation. Do not record the `CRON_SECRET` value.
 
 ### [INTENTIONAL] Shareable app uses createAdminClient() for reads
 **Status:** Resolved (by design)

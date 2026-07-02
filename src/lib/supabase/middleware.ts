@@ -19,6 +19,11 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Vercel Cron must reach the route handler, which enforces CRON_SECRET.
+  if (pathname === '/api/cron/yahoo-sync') {
+    return NextResponse.next();
+  }
+
   // Check for access cookie
   const accessCookie = request.cookies.get(COOKIE_NAME);
   const hasAccess = accessCookie?.value === 'granted';
