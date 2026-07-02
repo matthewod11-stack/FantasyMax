@@ -25,9 +25,11 @@ Most recent session should be first.
 - `npm run test:run` passes: 9 test files, 142 tests
 - `npm run typecheck` passes
 - `npm run build` passes
+- GitHub Actions on `main` passed after push
+- Vercel production redeploy is Ready and aliased to `https://modfantasyleague.com`
+- Anonymous production `GET /api/cron/yahoo-sync` returns `401 Unauthorized` instead of redirecting to `/gate`
 
 ### Follow-up
-- After merge/deploy, verify anonymous production `/api/cron/yahoo-sync` returns `401 Unauthorized` instead of redirecting to `/gate`
 - After Yahoo reconnect and league key confirmation, run production Admin -> Sync Now and confirm Admin -> Weekly Email
 
 ## Session: 2026-07-02 (CI And Lint Green)
@@ -42,9 +44,10 @@ Most recent session should be first.
 - `npm run test:run` passes: 7 test files, 137 tests
 - `npm run typecheck` passes
 - `npm run build` passes
+- GitHub Actions on `main` passed after push
 
 ### Follow-up
-- GitHub Actions on `main` still needs coordinator/post-push validation
+- Remaining 52 lint warnings are non-blocking backlog cleanup
 
 ---
 

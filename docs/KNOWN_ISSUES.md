@@ -28,15 +28,6 @@
 
 ## Open Issues
 
-### [DEPLOY] Vercel env for Tuesday Yahoo cron
-**Status:** In Progress
-**Severity:** High
-**Discovered:** 2026-05-20
-**Updated:** 2026-07-02
-**Description:** `CRON_SECRET` and `SYNC_ENABLED=true` were added to Vercel Production env on 2026-07-02. Anonymous production checks still redirected `/api/cron/yahoo-sync` to `/gate`, which means the password-gate middleware was intercepting the cron request before the route handler could enforce its bearer-token `CRON_SECRET` check.
-**Workaround:** Manual Sync Now on production after deploy + Yahoo reconnect.
-**Resolution:** Middleware bypass for `/api/cron/yahoo-sync` is pending merge/deploy. After deploy, verify anonymous `/api/cron/yahoo-sync` returns `401 Unauthorized` instead of redirecting to `/gate`, then run production Sync Now after Yahoo reconnect and league key confirmation. Do not record the `CRON_SECRET` value.
-
 ### [INTENTIONAL] Shareable app uses createAdminClient() for reads
 **Status:** Resolved (by design)
 **Severity:** N/A
@@ -88,6 +79,14 @@
 ---
 
 ## Resolved Issues
+
+### [DEPLOY] Vercel env for Tuesday Yahoo cron
+**Status:** Resolved
+**Severity:** High
+**Discovered:** 2026-05-20
+**Resolved:** 2026-07-02
+**Description:** `CRON_SECRET` and `SYNC_ENABLED=true` were added to Vercel Production env on 2026-07-02. The first `CRON_SECRET` entry included trailing whitespace and caused a Vercel build failure; it was removed and re-added as a single-line value without recording the secret.
+**Resolution:** Added an exact middleware bypass for `/api/cron/yahoo-sync`, redeployed production, and verified anonymous `GET /api/cron/yahoo-sync` returns `401 Unauthorized` instead of redirecting to `/gate`. Remaining preseason ops are Yahoo reconnect, 2026 league key confirmation, production Sync Now, and Admin -> Weekly Email verification.
 
 ### [BUILD] Dashboard layout TypeScript null check error
 **Status:** Resolved

@@ -24,7 +24,7 @@
     "stat-calculators": { "status": "pass", "notes": "11 pure functions for win%, H2H, streaks, achievements" },
     "error-boundaries": { "status": "pass", "notes": "5 error types, 3 fallback components, App Router integration" },
     "structured-logging": { "status": "pass", "notes": "Request IDs, query timing, JSON in prod, colors in dev" },
-    "ci-pipeline": { "status": "pass", "notes": "Local CI gate green on 2026-07-02: lint, test, typecheck, build. GitHub Actions main validation pending post-push." }
+    "ci-pipeline": { "status": "pass", "notes": "Local CI gate green on 2026-07-02: lint, test, typecheck, build. GitHub Actions main validation passed after push." }
   },
   "sprint-0-design-system": {
     "typography-system": { "status": "pass", "notes": "Bebas Neue + DM Sans + DM Mono via next/font" },
@@ -87,7 +87,7 @@
   "2026-refresh": {
     "live-yahoo-sync": { "status": "pass", "notes": "syncYahooLeague incremental/full, Sync Now admin button" },
     "yahoo-credentials-db": { "status": "pass", "notes": "Encrypted tokens in yahoo_credentials via service-role client" },
-    "tuesday-cron": { "status": "pass", "notes": "vercel.json cron + bearer-protected /api/cron/yahoo-sync. Middleware bypass added 2026-07-02; production 401 check pending deploy." },
+    "tuesday-cron": { "status": "pass", "notes": "vercel.json cron + bearer-protected /api/cron/yahoo-sync. Middleware bypass deployed 2026-07-02; anonymous production check returns 401." },
     "weekly-email-draft": { "status": "pass", "notes": "weekly_digests + Admin Weekly Email panel" },
     "week-dashboard": { "status": "pass", "notes": "/?week=N, WeekInReview, LastUpdatedBadge" },
     "gate-rate-limit": { "status": "pass", "notes": "Rate limit on /api/gate/verify" },
