@@ -277,7 +277,7 @@ export async function syncYahooLeague(options: SyncOptions = {}): Promise<SyncRe
   let importLogId: string | null = null;
 
   try {
-    let tokens: YahooOAuthTokens | null =
+    const tokens: YahooOAuthTokens | null =
       options.tokens ?? (await loadYahooCredentials());
 
     if (!tokens) {

@@ -388,7 +388,7 @@ export function MembersClient({
                       )}
                       {entry.notes && (
                         <p className="text-sm text-muted-foreground italic">
-                          "{entry.notes}"
+                          &ldquo;{entry.notes}&rdquo;
                         </p>
                       )}
                     </div>

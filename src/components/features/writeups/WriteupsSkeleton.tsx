@@ -2,6 +2,8 @@
 
 import { cn } from '@/lib/utils';
 
+const SKELETON_LINE_WIDTHS = ['92%', '78%', '88%', '66%', '94%', '72%', '84%', '68%'];
+
 /**
  * Skeleton for a single writeup card
  */
@@ -136,7 +138,7 @@ export function WriteupDetailSkeleton() {
           <div
             key={i}
             className="h-4 rounded bg-secondary"
-            style={{ width: `${Math.random() * 40 + 60}%` }}
+            style={{ width: SKELETON_LINE_WIDTHS[i - 1] }}
           />
         ))}
       </div>

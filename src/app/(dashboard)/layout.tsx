@@ -84,7 +84,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
   const seasonYears = seasons?.map((s) => s.year) ?? [];
 
   // Find commissioner as default, fallback to first member
-  let defaultMember = allMembers?.find((m) => m.role === 'commissioner') ?? allMembers?.[0];
+  const defaultMember = allMembers?.find((m) => m.role === 'commissioner') ?? allMembers?.[0];
 
   // If no members exist at all (empty database), redirect to login
   if (!defaultMember || !allMembers || allMembers.length === 0) {

@@ -63,39 +63,68 @@ export function WriteupDetailDrawer({
   fetchWriteup,
 }: WriteupDetailDrawerProps) {
   const [writeup, setWriteup] = useState<WriteupWithDetails | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [loadedWriteupId, setLoadedWriteupId] = useState<string | null>(null);
 
   // Fetch writeup when ID changes
   useEffect(() => {
-    if (writeupId && isOpen) {
-      setIsLoading(true);
-      fetchWriteup(writeupId)
-        .then(setWriteup)
-        .finally(() => setIsLoading(false));
+    if (!writeupId || !isOpen) {
+      return;
     }
+
+    let isCurrent = true;
+
+    fetchWriteup(writeupId)
+      .then((result) => {
+        if (!isCurrent) {
+          return;
+        }
+
+        setWriteup(result);
+      })
+      .catch(() => {
+        if (!isCurrent) {
+          return;
+        }
+
+        setWriteup(null);
+      })
+      .finally(() => {
+        if (isCurrent) {
+          setLoadedWriteupId(writeupId);
+        }
+      });
+
+    return () => {
+      isCurrent = false;
+    };
   }, [writeupId, isOpen, fetchWriteup]);
 
   // Clear writeup when closed
   useEffect(() => {
     if (!isOpen) {
-      const timer = setTimeout(() => setWriteup(null), 300);
+      const timer = setTimeout(() => {
+        setWriteup(null);
+        setLoadedWriteupId(null);
+      }, 300);
       return () => clearTimeout(timer);
     }
   }, [isOpen]);
 
-  const Icon = writeup ? WRITEUP_TYPE_ICONS[writeup.writeup_type] : FileText;
-  const typeLabel = writeup ? WRITEUP_TYPE_LABELS[writeup.writeup_type] : '';
+  const currentWriteup = writeup?.id === writeupId ? writeup : null;
+  const isLoading = Boolean(writeupId && isOpen && loadedWriteupId !== writeupId);
+  const Icon = currentWriteup ? WRITEUP_TYPE_ICONS[currentWriteup.writeup_type] : FileText;
+  const typeLabel = currentWriteup ? WRITEUP_TYPE_LABELS[currentWriteup.writeup_type] : '';
 
   return (
     <DetailModal
       isOpen={isOpen}
       onClose={onClose}
-      title={writeup?.title || 'Writeup'}
+      title={currentWriteup?.title || 'Writeup'}
       size="lg"
     >
       {isLoading && <WriteupDetailSkeleton />}
 
-      {!isLoading && writeup && (
+      {!isLoading && currentWriteup && (
         <div className="space-y-6">
           {/* Header */}
           <div className="space-y-3">
@@ -106,16 +135,16 @@ export function WriteupDetailDrawer({
                 <span>{typeLabel}</span>
               </div>
 
-              {writeup.week && (
+              {currentWriteup.week && (
                 <span className="text-sm text-muted-foreground">
-                  Week {writeup.week}
+                  Week {currentWriteup.week}
                 </span>
               )}
 
-              {writeup.season && (
+              {currentWriteup.season && (
                 <div className="flex items-center gap-1 text-sm text-muted-foreground">
                   <Calendar className="h-4 w-4" />
-                  <span>{writeup.season.year} Season</span>
+                  <span>{currentWriteup.season.year} Season</span>
                 </div>
               )}
             </div>
@@ -123,17 +152,17 @@ export function WriteupDetailDrawer({
             {/* Author */}
             <div className="flex items-center gap-3">
               <ManagerAvatar
-                avatarUrl={writeup.author.avatar_url}
-                displayName={writeup.author.display_name}
+                avatarUrl={currentWriteup.author.avatar_url}
+                displayName={currentWriteup.author.display_name}
                 size="sm"
               />
               <div>
                 <p className="text-sm font-medium text-foreground">
-                  {writeup.author.display_name}
+                  {currentWriteup.author.display_name}
                 </p>
-                {writeup.published_at && (
+                {currentWriteup.published_at && (
                   <p className="text-xs text-muted-foreground">
-                    {formatDate(writeup.published_at)}
+                    {formatDate(currentWriteup.published_at)}
                   </p>
                 )}
               </div>
@@ -146,12 +175,12 @@ export function WriteupDetailDrawer({
           {/* Content */}
           <div className="prose prose-sm prose-invert max-w-none">
             <div className="whitespace-pre-wrap font-body text-foreground/90 leading-relaxed">
-              {writeup.content}
+              {currentWriteup.content}
             </div>
           </div>
 
           {/* Footer */}
-          {writeup.imported_from && (
+          {currentWriteup.imported_from && (
             <div className="pt-4 border-t">
               <p className="text-xs text-muted-foreground italic">
                 Imported from historical archive
@@ -161,7 +190,7 @@ export function WriteupDetailDrawer({
         </div>
       )}
 
-      {!isLoading && !writeup && writeupId && (
+      {!isLoading && !currentWriteup && writeupId && (
         <div className="text-center py-12 text-muted-foreground">
           <FileText className="h-12 w-12 mx-auto mb-4 opacity-30" />
           <p>Writeup not found</p>

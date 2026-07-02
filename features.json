@@ -1,7 +1,7 @@
 {
   "_meta": {
     "description": "Feature tracking for League of Degenerates. Status: not-started | in-progress | pass | fail | blocked",
-    "lastUpdated": "2026-05-20",
+    "lastUpdated": "2026-07-02",
     "totalFeatures": 120,
     "passing": 111,
     "failing": 0,
@@ -16,7 +16,7 @@
     "members-sync": { "status": "pass", "notes": "22 members created" },
     "vercel-deploy": { "status": "pass", "notes": "Auto-deploy from main branch" },
     "supabase-setup": { "status": "pass", "notes": "Database schema complete" },
-    "build": { "status": "pass", "notes": "Build passing as of 2025-12-08" }
+    "build": { "status": "pass", "notes": "Next build passing locally as of 2026-07-02" }
   },
   "testing-infrastructure": {
     "vitest-config": { "status": "pass", "notes": "Vitest 4.0.13 with jsdom, path aliases, 80% coverage threshold" },
@@ -24,7 +24,7 @@
     "stat-calculators": { "status": "pass", "notes": "11 pure functions for win%, H2H, streaks, achievements" },
     "error-boundaries": { "status": "pass", "notes": "5 error types, 3 fallback components, App Router integration" },
     "structured-logging": { "status": "pass", "notes": "Request IDs, query timing, JSON in prod, colors in dev" },
-    "ci-pipeline": { "status": "pass", "notes": "GitHub Actions: lint, typecheck, test, build" }
+    "ci-pipeline": { "status": "pass", "notes": "Local CI gate green on 2026-07-02: lint, test, typecheck, build. GitHub Actions main validation pending post-push." }
   },
   "sprint-0-design-system": {
     "typography-system": { "status": "pass", "notes": "Bebas Neue + DM Sans + DM Mono via next/font" },

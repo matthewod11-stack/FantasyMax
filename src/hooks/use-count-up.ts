@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 
 /**
  * useCountUp Hook
@@ -38,6 +38,20 @@ function easeOutExpo(t: number): number {
   return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
 }
 
+interface AnimationRun {
+  decimals: number;
+  delay: number;
+  duration: number;
+  enabled: boolean;
+  end: number;
+  start: number;
+}
+
+interface AnimationState {
+  runKey: AnimationRun;
+  value: number;
+}
+
 export function useCountUp(
   end: number,
   options: UseCountUpOptions = {}
@@ -50,21 +64,26 @@ export function useCountUp(
     enabled = true,
   } = options;
 
-  const [value, setValue] = useState(enabled ? start : end);
+  const runKey = useMemo(
+    () => ({ decimals, delay, duration, enabled, end, start }),
+    [decimals, delay, duration, enabled, end, start]
+  );
+  const [animationState, setAnimationState] = useState<AnimationState>(() => ({
+    runKey,
+    value: start,
+  }));
   const rafRef = useRef<number | null>(null);
   const startTimeRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (!enabled) {
-      setValue(end);
       return;
     }
 
-    // Reset on end change
-    setValue(start);
-    startTimeRef.current = null;
-
     const timeout = setTimeout(() => {
+      setAnimationState({ runKey, value: start });
+      startTimeRef.current = null;
+
       const animate = (timestamp: number) => {
         if (!startTimeRef.current) {
           startTimeRef.current = timestamp;
@@ -75,7 +94,10 @@ export function useCountUp(
         const easedProgress = easeOutExpo(progress);
         const currentValue = start + (end - start) * easedProgress;
 
-        setValue(Number(currentValue.toFixed(decimals)));
+        setAnimationState({
+          runKey,
+          value: Number(currentValue.toFixed(decimals)),
+        });
 
         if (progress < 1) {
           rafRef.current = requestAnimationFrame(animate);
@@ -91,9 +113,13 @@ export function useCountUp(
         cancelAnimationFrame(rafRef.current);
       }
     };
-  }, [end, duration, decimals, start, delay, enabled]);
+  }, [end, duration, decimals, start, delay, enabled, runKey]);
 
-  return value;
+  if (!enabled) {
+    return end;
+  }
+
+  return animationState.runKey === runKey ? animationState.value : start;
 }
 
 /**
