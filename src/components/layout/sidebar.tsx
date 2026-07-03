@@ -7,19 +7,13 @@ import {
   Trophy,
   Users,
   Calendar,
-  ArrowLeftRight,
-  Image,
-  Vote,
   BookOpen,
   Skull,
   Award,
-  Star,
   Swords,
-  Coins,
   Settings,
   Upload,
   FileText,
-  ClipboardList,
 } from 'lucide-react';
 interface SidebarProps {
   userRole?: string | null;
@@ -31,16 +25,8 @@ const memberNavItems = [
   { href: '/managers', label: 'Managers', icon: Users },
   { href: '/head-to-head', label: 'Head-to-Head', icon: Swords },
   { href: '/records', label: 'Records', icon: Award },
-  { href: '/awards', label: 'Awards', icon: Star },
   { href: '/hall-of-shame', label: 'Hall of Shame', icon: Skull },
   { href: '/writeups', label: 'Writeups', icon: FileText },
-  { href: '/media', label: 'Media', icon: Image },
-  { href: '/trades', label: 'Trades', icon: ArrowLeftRight },
-  { href: '/draft-analyzer', label: 'Draft Analyzer', icon: ClipboardList },
-  { href: '/voting', label: 'Voting', icon: Vote },
-  { href: '/constitution', label: 'Constitution', icon: BookOpen },
-  { href: '/props', label: 'Degenerate Dollars', icon: Coins },
-  { href: '/timeline', label: 'Timeline', icon: Calendar },
 ];
 
 const adminNavItems = [
