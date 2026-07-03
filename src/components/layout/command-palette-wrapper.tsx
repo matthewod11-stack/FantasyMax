@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { CommandPalette } from '@/components/ui/command-palette';
 import { useCommandPalette, searchCommandItems } from '@/hooks/use-command-palette';
@@ -25,7 +25,7 @@ export function CommandPaletteWrapper({ members, seasons }: CommandPaletteWrappe
   const [isLoading, setIsLoading] = useState(false);
 
   // Build searchable items from props
-  const allItems: CommandPaletteItem[] = [
+  const allItems = useMemo<CommandPaletteItem[]>(() => [
     // Managers
     ...members.map((m) => ({
       id: `manager-${m.id}`,
@@ -51,6 +51,20 @@ export function CommandPaletteWrapper({ members, seasons }: CommandPaletteWrappe
       href: '/',
     },
     {
+      id: 'action-seasons',
+      label: 'Seasons',
+      description: 'Browse season history',
+      category: 'action' as const,
+      href: '/seasons',
+    },
+    {
+      id: 'action-managers',
+      label: 'Managers',
+      description: 'Browse league managers',
+      category: 'action' as const,
+      href: '/managers',
+    },
+    {
       id: 'action-h2h',
       label: 'Head-to-Head Matrix',
       description: 'View all matchup records',
@@ -72,20 +86,13 @@ export function CommandPaletteWrapper({ members, seasons }: CommandPaletteWrappe
       href: '/hall-of-shame',
     },
     {
-      id: 'action-awards',
-      label: 'Awards',
-      description: 'End-of-season awards',
-      category: 'action' as const,
-      href: '/awards',
-    },
-    {
       id: 'action-writeups',
       label: 'Writeups',
       description: 'Commissioner recaps and writeups',
       category: 'action' as const,
       href: '/writeups',
     },
-  ];
+  ], [members, seasons]);
 
   const handleSearch = useCallback((query: string) => {
     setIsLoading(true);

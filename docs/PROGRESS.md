@@ -10,6 +10,23 @@
 Most recent session should be first.
 -->
 
+## Session: 2026-07-03 (Task 4 Member Nav Focus)
+
+### Completed
+- Focused the default member sidebar on populated league surfaces: Dashboard, Seasons, Managers, Head-to-Head, Records, Hall of Shame, and Writeups
+- Removed scaffold or lower-confidence member links from default nav: Awards, Media, Trades, Draft Analyzer, Voting, Constitution, Degenerate Dollars, and Timeline
+- Aligned command palette quick actions with the visible member nav by removing Awards and adding top-level Seasons and Managers actions
+
+### Verified
+- `npm run lint` exits 0 with 51 warnings and 0 errors
+- `npm run test:run` passes: 9 test files, 142 tests
+- `npm run typecheck` passes after clearing stale `.next` types from the parked Task 3 branch
+- `npm run build` passes and generates 39 routes
+
+### Follow-up
+- Task 3 commissioner gate remains parked on `codex/fantasymax-commissioner-gate` until the signed-cookie/Yahoo OAuth review blockers are fixed
+- Reintroduce Media after the memory-wall polish task and Trades after confirmed trade data exists
+
 ## Session: 2026-07-02 (Task 2 Production Sync Readiness)
 
 ### Completed
