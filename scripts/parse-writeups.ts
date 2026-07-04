@@ -15,9 +15,10 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { fileURLToPath } from 'url';
 
 // Types matching database schema
-type WriteupType =
+export type WriteupType =
   | 'weekly_recap'
   | 'playoff_preview'
   | 'season_recap'
@@ -51,12 +52,40 @@ const WEEK_PATTERNS = [
   /^Week\s+(\d+)/i,
   /Week\s+(\d+)\s+(is\s+in\s+the\s+books|recap|update|match\s*ups)/i,
   /Fantasy\s+Week\s+(\d+)/i,
+  /\bWeek\s+(\d+)\b/i,
 ];
 
 // Type inference patterns - order matters, more specific patterns first
 const TYPE_PATTERNS: { pattern: RegExp; type: WriteupType }[] = [
+  // League announcements and transaction drama
+  { pattern: /\b(rule\s+change|rules?\s+chatter|league\s+(announcement|vote|settings)|dues?|payment|payouts?|constitution|faab|waiver\s+budget)\b/i, type: 'announcement' },
+  { pattern: /\btrade\s+(block|deadline|drama|offer|offers|proposal|proposals)\b/i, type: 'announcement' },
+  { pattern: /\btrades?\s+(are|is|were|was|have|has)\b/i, type: 'announcement' },
+  { pattern: /\b(help\s+me\s+welcome|new\s+team|new\s+owner|introduce\s+another\s+new)\b/i, type: 'announcement' },
+
+  // Draft logistics and destination drafts
+  { pattern: /\b(vegas|suite|flights?|hotel|travel).{0,80}\bdraft\b/i, type: 'draft_notes' },
+  { pattern: /\bdraft.{0,80}\b(vegas|suite|flights?|hotel|travel)\b/i, type: 'draft_notes' },
+  { pattern: /\b(down\s+for\s+vegas|vegas\s+this\s+year|finding\s+the\s+weekend)\b/i, type: 'draft_notes' },
+  { pattern: /\b(custom\s+draft\s+board|draft\s+weekend|live\s+draft|draft\s+date)\b/i, type: 'draft_notes' },
+  { pattern: /\bdraft.{0,100}\b(days?\s+out|thursday|calendar\s+invite|starts?|order)\b/i, type: 'draft_notes' },
+  { pattern: /\bnfl\s+draft.{0,160}\b(upcoming\s+season|repeat|rosters?|draft)\b/i, type: 'draft_notes' },
+
+  // Championship recaps are season-level lore, not previews
+  { pattern: /\bchampionship\s+(recap|review|collapse|results?|wrap|ring)\b/i, type: 'season_recap' },
+  { pattern: /\b(title\s+game|championship\s+game).{0,80}\b(won|lost|survived|collapsed|recap)\b/i, type: 'season_recap' },
+  { pattern: /\b(all\s+hail|glory\s+glory|congratulations?).{0,160}\b(champion|championship|title)\b/i, type: 'season_recap' },
+  { pattern: /\b(champion|championship|title).{0,160}\b(congratulations?|all\s+hail|glory\s+glory|that.?s\s+all\s+she\s+wrote)\b/i, type: 'season_recap' },
+  { pattern: /\b(yours\s+truly.{0,120}champion|once\s+again.{0,40}champion|how\s+does\s+he\s+keep\s+winning)\b/i, type: 'season_recap' },
+
+  // Playoff race updates
+  { pattern: /\b(playoff\s+(berth|birth|race|spot|spots|seed|seeding|picture|scenario|scenarios|run)|clinched?|final\s+seed|tie\s*breaker)\b/i, type: 'standings_update' },
+  { pattern: /\bcoming\s+down\s+to\s+the\s+wire\b/i, type: 'standings_update' },
+  { pattern: /\b(standings\s+are\s+starting|control\s+their\s+own\s+fate|cream\s+continues\s+to\s+rise|top\s+of\s+the\s+points\s+scored\s+standings)\b/i, type: 'standings_update' },
+
   // Playoff content
   { pattern: /playoff\s*(preview|matchup|begin|recap)/i, type: 'playoff_preview' },
+  { pattern: /\b(playoffs\s+baby|teams\s+still\s+alive|championship\s+is\s+all\s+but\s+wrapped\s+up|come\s+down\s+to\s+this\s+weekend.{0,120}championship)\b/i, type: 'playoff_preview' },
   { pattern: /let\s+the\s+playoffs\s+begin/i, type: 'playoff_preview' },
   { pattern: /championship\s+(game|matchup|preview)/i, type: 'playoff_preview' },
   { pattern: /semi.?final/i, type: 'playoff_preview' },
@@ -66,6 +95,8 @@ const TYPE_PATTERNS: { pattern: RegExp; type: WriteupType }[] = [
   { pattern: /Week\s+\d+\s+match\s*ups/i, type: 'weekly_recap' },
   { pattern: /Fantasy\s+Week\s+\d+/i, type: 'weekly_recap' },
   { pattern: /Week\s+\d+.{0,20}(recap|update|review)/i, type: 'weekly_recap' },
+  { pattern: /\b(high\s+score|scoring\s+win|points\s+scored|what\s+a\s+week\s+of\s+matchups|gonna\s+keep\s+it\s+quick\s+this\s+week)\b/i, type: 'weekly_recap' },
+  { pattern: /\b(rbs?\s+gone\s+missing|ovr\s+rank|from\s+worst\s+to\s+first)\b/i, type: 'weekly_recap' },
 
   // Draft-related
   { pattern: /draft\s+(notes|day|date|recap|order)/i, type: 'draft_notes' },
@@ -114,9 +145,9 @@ function extractWeekNumber(content: string): number | null {
 /**
  * Infer writeup type from content
  */
-function inferWriteupType(content: string): WriteupType {
+export function inferWriteupType(content: string): WriteupType {
   // Check first 1000 chars for patterns
-  const searchText = content.slice(0, 1000);
+  const searchText = content.slice(0, 1000).replace(/\s+/g, ' ');
 
   for (const { pattern, type } of TYPE_PATTERNS) {
     if (pattern.test(searchText)) {
@@ -159,38 +190,57 @@ function inferWriteupType(content: string): WriteupType {
 /**
  * Generate a title from writeup content
  */
-function generateTitle(content: string, type: WriteupType, seasonYear: number): string {
+export function generateTitle(content: string, type: WriteupType, seasonYear: number): string {
   const lines = content.split('\n').filter((l) => l.trim());
   const firstLine = lines[0]?.trim() || '';
+  const searchText = content.slice(0, 1200).replace(/\s+/g, ' ');
 
-  // Use first line if it's short enough and looks like a title
-  if (firstLine.length > 0 && firstLine.length <= 80 && !firstLine.includes('(') && !firstLine.endsWith('.')) {
-    return firstLine;
+  if (type === 'announcement' && /\btrade\s+(block|deadline|drama|offer|offers|proposal|proposals)\b/i.test(searchText)) {
+    return `${seasonYear} Trade Drama`;
   }
 
-  // For weekly recaps, try to extract week number
-  const week = extractWeekNumber(content);
-  if (week !== null) {
-    return `Week ${week} Recap`;
+  if (type === 'draft_notes' && (/\b(vegas|suite|flights?|hotel|travel).{0,100}\bdraft\b/i.test(searchText)
+    || /\bdraft.{0,100}\b(vegas|suite|flights?|hotel|travel)\b/i.test(searchText)
+    || /\b(custom\s+draft\s+board|draft\s+weekend|live\s+draft|down\s+for\s+vegas|vegas\s+this\s+year)\b/i.test(searchText))) {
+    return `${seasonYear} Vegas Draft Planning`;
+  }
+
+  if (type === 'season_recap' && (/\bchampionship\s+(recap|review|collapse|results?|wrap)\b/i.test(searchText)
+    || /\b(title\s+game|championship\s+game).{0,100}\b(won|lost|survived|collapsed|recap)\b/i.test(searchText))) {
+    return `${seasonYear} Championship Recap`;
+  }
+
+  if (type === 'standings_update' && (/\b(playoff\s+(berth|birth|race|spot|spots|seed|seeding|picture|scenario|scenarios)|final\s+seed|tie\s*breaker)\b/i.test(searchText)
+    || /\bcoming\s+down\s+to\s+the\s+wire\b/i.test(searchText))) {
+    return `${seasonYear} Playoff Race Update`;
+  }
+
+  if (type === 'weekly_recap') {
+    const week = extractWeekNumber(content);
+    return week !== null ? `${seasonYear} Week ${week} Recap` : `${seasonYear} Weekly Recap`;
   }
 
   // Generate based on type
   switch (type) {
     case 'playoff_preview':
-      return 'Playoff Preview';
+      return `${seasonYear} Playoff Preview`;
     case 'draft_notes':
-      return 'Draft Notes';
+      return `${seasonYear} Draft Notes`;
     case 'standings_update':
-      return 'Standings Update';
+      return `${seasonYear} Standings Update`;
     case 'power_rankings':
-      return 'Power Rankings';
+      return `${seasonYear} Power Rankings`;
     case 'season_recap':
       return `${seasonYear} Season Recap`;
     case 'announcement':
-      return 'League Announcement';
+      return `${seasonYear} League Announcement`;
     default:
+      // Use first line if it's short enough and looks like a title
+      if (firstLine.length > 0 && firstLine.length <= 80 && !firstLine.includes('(') && !firstLine.endsWith('.')) {
+        return firstLine;
+      }
       // Use truncated first line
-      return firstLine.length > 50 ? firstLine.slice(0, 47) + '...' : firstLine || 'Untitled';
+      return firstLine.length > 50 ? firstLine.slice(0, 47) + '...' : firstLine || `${seasonYear} League Note`;
   }
 }
 
@@ -286,7 +336,7 @@ function parseWriteupsFile(filePath: string): ParsedWriteup[] {
       if (!text) continue;
       const type = inferWriteupType(text);
       const title = generateTitle(text, type, season.year);
-      const week = extractWeekNumber(text);
+      const week = type === 'weekly_recap' ? extractWeekNumber(text) : null;
 
       allWriteups.push({
         title,
@@ -305,7 +355,7 @@ function parseWriteupsFile(filePath: string): ParsedWriteup[] {
 /**
  * Main execution
  */
-function main() {
+export function main() {
   const isDryRun = process.argv.includes('--dry-run');
 
   const inputPath = path.join(process.cwd(), 'docs', 'alltimewriteups.md');
@@ -361,4 +411,9 @@ function main() {
   }
 }
 
-main();
+const executedPath = process.argv[1] ? path.resolve(process.argv[1]) : '';
+const modulePath = path.resolve(fileURLToPath(import.meta.url));
+
+if (executedPath === modulePath) {
+  main();
+}

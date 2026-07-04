@@ -10,6 +10,28 @@
 Most recent session should be first.
 -->
 
+## Session: 2026-07-03 (Task 7 Writeup Organization And Lore Tags)
+
+### Completed
+- Reclassified historical commissioner writeups with stronger parser patterns for Vegas/draft logistics, playoff races, championship recaps, trade drama, new-owner notes, rules/dues announcements, and weekly recap language
+- Regenerated `scripts/output/writeups.json` with 97 writeups preserved and `other` reduced from 36 to 0
+- Added derived lore topics for Playoffs, Draft, Trades, and Championship without expanding the database enum
+- Loaded `writeup_mentions` with each writeup and added member/topic/season/type filtering to the member-facing Writeups archive
+- Added lore topic chips to browse cards and search results, with clickable rows rendered as semantic buttons
+- Reseeded remote Supabase writeups and backfilled 164 member mentions across 65 writeups
+
+### Verified
+- Focused Task 7 tests pass: 3 files, 13 tests
+- `npm run test:run` passes: 14 files, 163 tests
+- `npm run lint` exits 0 with 45 warnings and 0 errors
+- `npm run typecheck` passes
+- `npm run build` passes and generates 39 routes
+- Remote Supabase verification confirmed 97 writeups, 164 mentions, and type counts: 27 weekly recaps, 24 announcements, 17 standings updates, 15 draft notes, 10 playoff previews, 4 season recaps
+
+### Follow-up
+- Search mode remains keyword-first; topic/member filters apply to browse mode
+- URL-synced writeup filters would be a useful later polish pass if the archive becomes a frequent deep-link surface
+
 ## Session: 2026-07-03 (Task 6 Lore-Grounded AI Season Reviews)
 
 ### Completed
