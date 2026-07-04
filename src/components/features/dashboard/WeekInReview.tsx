@@ -3,12 +3,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import type { WeekHighlight } from '@/lib/supabase/queries/weekly-digest';
-import { Trophy, TrendingUp, Zap } from 'lucide-react';
+import { Trophy, TrendingUp, Zap, LinkIcon } from 'lucide-react';
 
 interface WeekInReviewProps {
   week: number;
   seasonYear: number;
   highlights: WeekHighlight[];
+  title?: string;
+  commissionerNote?: string | null;
+  publishedAt?: string | null;
 }
 
 const iconMap = {
@@ -16,25 +19,44 @@ const iconMap = {
   upset: TrendingUp,
   closest: Zap,
   earnings: Trophy,
+  dashboard: LinkIcon,
 };
 
-export function WeekInReview({ week, seasonYear, highlights }: WeekInReviewProps) {
+export function WeekInReview({
+  week,
+  seasonYear,
+  highlights,
+  title,
+  commissionerNote,
+  publishedAt,
+}: WeekInReviewProps) {
+  const factHighlights = highlights.filter((highlight) => highlight.type !== 'dashboard');
+
   return (
     <Card className="border-primary/30 bg-gradient-to-br from-primary/5 to-transparent">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
             <CardTitle className="font-display text-2xl tracking-wide uppercase">
-              Week {week} in Review
+              {title || `Week ${week} in Review`}
             </CardTitle>
-            <CardDescription>{seasonYear} season — post-MNF update</CardDescription>
+            <CardDescription>
+              {publishedAt
+                ? `${seasonYear} season — published ${new Date(publishedAt).toLocaleDateString()}`
+                : `${seasonYear} season — post-MNF update`}
+            </CardDescription>
           </div>
-          <Badge variant="default">This Week</Badge>
+          <Badge variant="default">League Dispatch</Badge>
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
+        {commissionerNote && (
+          <div className="rounded-lg border border-primary/20 bg-background/80 p-4">
+            <p className="whitespace-pre-wrap text-sm leading-6">{commissionerNote}</p>
+          </div>
+        )}
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {highlights.map((h, i) => {
+          {factHighlights.map((h, i) => {
             const Icon = iconMap[h.type] ?? Trophy;
             return (
               <div

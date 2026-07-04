@@ -10,6 +10,34 @@
 Most recent session should be first.
 -->
 
+## Session: 2026-07-03 (Task 5 League Dispatch V1)
+
+### Completed
+- Added publish fields to `weekly_digests`: draft/published status, commissioner note, published timestamp, and dashboard title
+- Converted Admin -> Weekly Email into an editable League Dispatch panel with Save Draft, Publish, Move to Draft, and copy-subject/body controls
+- Updated dashboard Week In Review to render only published dispatches, with published title and commissioner note shown to members
+- Preserved already-published dispatches during future Yahoo syncs so a later sync does not silently rewrite the league-facing story
+- Normalized empty digest highlights from `{}` to `[]` in the migration to match dashboard rendering
+- Tightened `weekly_digests` RLS so Data API reads are limited to published rows and draft rows stay server/admin-only
+- Added digest-generation error handling so Supabase read/write failures are logged by the sync path instead of being silently ignored
+- Added focused unit coverage for published-only dashboard queries and admin save/publish/unpublish actions
+
+### Verified
+- Baseline before edits: `npm run test:run` passed: 9 test files, 142 tests
+- Focused Task 5 tests pass: 2 test files, 8 tests
+- `npm run lint` exits 0 with 50 warnings and 0 errors
+- `npm run test:run` passes: 11 test files, 150 tests
+- `npm run typecheck` passes
+- `npm run build` passes and generates 39 routes
+- Applied `supabase/migrations/20260704002503_weekly_digest_publish.sql` to linked remote Supabase via `supabase db query --linked --file ...`
+- Remote schema verification confirmed `status`, `commissioner_note`, `published_at`, `published_title`, highlights default `[]`, and the `weekly_digests_status_check` constraint
+- Remote RLS verification confirmed the only `weekly_digests` policy is published-only SELECT
+
+### Follow-up
+- After deploy, run production Sync Now, edit/publish the latest digest in Admin -> Weekly Email, then confirm `/?week=N` shows the published dispatch
+- Task 3 commissioner gate remains parked; Task 5 server actions match the current admin boundary but do not replace the signed commissioner gate work
+- Supabase advisors still report broader pre-existing database debt outside Task 5, including security-definer views/functions and broad policies on older tables
+
 ## Session: 2026-07-03 (Task 4 Member Nav Focus)
 
 ### Completed

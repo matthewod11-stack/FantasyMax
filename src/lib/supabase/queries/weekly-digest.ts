@@ -1,19 +1,88 @@
 import { createAdminClient, getUntypedAdminClient } from '../server';
 
 export interface WeekHighlight {
-  type: 'high_score' | 'upset' | 'closest' | 'earnings';
+  type: 'high_score' | 'upset' | 'closest' | 'earnings' | 'dashboard';
   title: string;
   description: string;
   memberName?: string;
   value?: string;
 }
 
+export type WeeklyDigestStatus = 'draft' | 'published';
+
 export interface WeeklyDigestData {
+  id: string;
   week: number;
   seasonYear: number;
   highlights: WeekHighlight[];
   emailSubject: string;
   emailBody: string;
+  status: WeeklyDigestStatus;
+  commissionerNote: string | null;
+  publishedAt: string | null;
+  publishedTitle: string;
+}
+
+export interface WeeklyDigestAdminData extends WeeklyDigestData {
+  seasonId: string;
+  generatedAt: string | null;
+}
+
+interface WeeklyDigestRow {
+  id: string;
+  season_id: string;
+  week: number;
+  highlights: unknown;
+  email_subject: string | null;
+  email_body: string | null;
+  generated_at: string | null;
+  status: string | null;
+  commissioner_note: string | null;
+  published_at: string | null;
+  published_title: string | null;
+  seasons?: { year?: number | null } | { year?: number | null }[] | null;
+}
+
+interface TeamRelation {
+  team_name?: string | null;
+  member?: { display_name?: string | null } | { display_name?: string | null }[] | null;
+}
+
+function getTeamDisplayName(team: TeamRelation | null, fallback: string) {
+  const member = Array.isArray(team?.member) ? team?.member[0] : team?.member;
+  return member?.display_name || team?.team_name || fallback;
+}
+
+function getSeasonYearFromRow(row: WeeklyDigestRow, fallbackYear: number) {
+  const season = Array.isArray(row.seasons) ? row.seasons[0] : row.seasons;
+  return season?.year ?? fallbackYear;
+}
+
+function toDigestStatus(status: string | null | undefined): WeeklyDigestStatus {
+  return status === 'published' ? 'published' : 'draft';
+}
+
+function defaultPublishedTitle(week: number, highScorerName?: string) {
+  return highScorerName
+    ? `Week ${week}: ${highScorerName} Sets the Pace`
+    : `Week ${week} League Dispatch`;
+}
+
+function formatWeeklyDigest(row: WeeklyDigestRow, fallbackSeasonYear: number): WeeklyDigestData {
+  const highlights = Array.isArray(row.highlights) ? row.highlights : [];
+
+  return {
+    id: row.id,
+    week: row.week,
+    seasonYear: getSeasonYearFromRow(row, fallbackSeasonYear),
+    highlights: highlights as WeekHighlight[],
+    emailSubject: row.email_subject ?? '',
+    emailBody: row.email_body ?? '',
+    status: toDigestStatus(row.status),
+    commissionerNote: row.commissioner_note,
+    publishedAt: row.published_at,
+    publishedTitle: row.published_title ?? defaultPublishedTitle(row.week),
+  };
 }
 
 export async function generateWeeklyDigest(
@@ -22,18 +91,42 @@ export async function generateWeeklyDigest(
 ): Promise<WeeklyDigestData | null> {
   const supabase = await createAdminClient();
 
-  const { data: season } = await supabase
+  const { data: season, error: seasonError } = await supabase
     .from('seasons')
     .select('id, year')
     .eq('id', seasonId)
-    .single();
+    .maybeSingle();
+
+  if (seasonError) {
+    throw new Error(`Failed to load season for weekly digest: ${seasonError.message}`);
+  }
 
   if (!season) return null;
 
-  let { data: matchups } = await supabase
+  const untyped = await getUntypedAdminClient();
+
+  const { data: existingDigest, error: existingDigestError } = await untyped
+    .from('weekly_digests')
+    .select(
+      'id, season_id, week, highlights, email_subject, email_body, generated_at, status, commissioner_note, published_at, published_title',
+    )
+    .eq('season_id', seasonId)
+    .eq('week', week)
+    .maybeSingle();
+
+  if (existingDigestError) {
+    throw new Error(`Failed to load existing weekly digest: ${existingDigestError.message}`);
+  }
+
+  if ((existingDigest as WeeklyDigestRow | null)?.status === 'published') {
+    return formatWeeklyDigest(existingDigest as WeeklyDigestRow, season.year);
+  }
+
+  const { data: regularSeasonMatchups, error: matchupsError } = await supabase
     .from('matchups')
     .select(
       `
+      id,
       week,
       home_score,
       away_score,
@@ -45,13 +138,21 @@ export async function generateWeeklyDigest(
     .eq('season_id', seasonId)
     .eq('week', week)
     .eq('status', 'final')
-    .eq('is_playoff', false);
+    .eq('is_playoff', false)
+    .order('id', { ascending: true });
+
+  if (matchupsError) {
+    throw new Error(`Failed to load regular-season matchups for weekly digest: ${matchupsError.message}`);
+  }
+
+  let matchups = regularSeasonMatchups;
 
   if (!matchups?.length) {
     const fallback = await supabase
       .from('matchups')
       .select(
         `
+        id,
         week,
         home_score,
         away_score,
@@ -62,24 +163,28 @@ export async function generateWeeklyDigest(
       )
       .eq('season_id', seasonId)
       .eq('week', week)
-      .eq('status', 'final');
+      .eq('status', 'final')
+      .order('id', { ascending: true });
+
+    if (fallback.error) {
+      throw new Error(`Failed to load fallback matchups for weekly digest: ${fallback.error.message}`);
+    }
+
     matchups = fallback.data ?? [];
   }
 
   const highlights: WeekHighlight[] = [];
   let highScorer = { name: '', score: 0 };
   let closest = { diff: Infinity, desc: '' };
-  let biggestUpset = { diff: 0, desc: '' };
+  let biggestMargin = { diff: 0, desc: '' };
 
   for (const m of matchups ?? []) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const home = m.home_team as any;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const away = m.away_team as any;
+    const home = m.home_team as TeamRelation | null;
+    const away = m.away_team as TeamRelation | null;
     const homeScore = m.home_score ?? 0;
     const awayScore = m.away_score ?? 0;
-    const homeName = home?.member?.display_name || home?.team_name || 'Home';
-    const awayName = away?.member?.display_name || away?.team_name || 'Away';
+    const homeName = getTeamDisplayName(home, 'Home');
+    const awayName = getTeamDisplayName(away, 'Away');
 
     if (homeScore > highScorer.score) {
       highScorer = { name: homeName, score: homeScore };
@@ -97,8 +202,8 @@ export async function generateWeeklyDigest(
     }
 
     const margin = Math.abs(homeScore - awayScore);
-    if (margin > biggestUpset.diff) {
-      biggestUpset = {
+    if (margin > biggestMargin.diff) {
+      biggestMargin = {
         diff: margin,
         desc: `${homeScore > awayScore ? homeName : awayName} won by ${margin.toFixed(1)}`,
       };
@@ -111,7 +216,7 @@ export async function generateWeeklyDigest(
       title: 'Weekly High Scorer',
       description: `${highScorer.name} dropped ${highScorer.score.toFixed(1)} points`,
       memberName: highScorer.name,
-      value: `$50 earnings`,
+      value: '$50 earnings',
     });
   }
 
@@ -123,16 +228,17 @@ export async function generateWeeklyDigest(
     });
   }
 
-  if (biggestUpset.desc) {
+  if (biggestMargin.desc) {
     highlights.push({
       type: 'upset',
       title: 'Biggest Margin',
-      description: biggestUpset.desc,
+      description: biggestMargin.desc,
     });
   }
 
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://modfantasyleague.com';
   const dashboardUrl = `${baseUrl}/?week=${week}`;
+  const title = defaultPublishedTitle(week, highScorer.name);
 
   const emailSubject = `Week ${week} — ${highScorer.name || 'League'} tops the board`;
   const emailBody = `Week ${week} is in the books.
@@ -140,32 +246,56 @@ export async function generateWeeklyDigest(
 ${highScorer.name ? `${highScorer.name} led the league with ${highScorer.score.toFixed(1)} points` : 'Scores are updated'}${highScorer.name ? ' — another $50 in the kitty.' : '.'}
 
 ${closest.desc ? `Closest game: ${closest.desc}.` : ''}
+${biggestMargin.desc ? `Biggest margin: ${biggestMargin.desc}.` : ''}
 
 See standings, rivalries, earnings, and more:
 ${dashboardUrl}
 
 — League of Degenerates`;
 
+  highlights.push({
+    type: 'dashboard',
+    title: 'Dashboard Link',
+    description: dashboardUrl,
+  });
+
+  const existing = existingDigest as WeeklyDigestRow | null;
+  const savedSubject = existing?.email_subject || emailSubject;
+  const savedBody = existing?.email_body || emailBody;
+  const savedTitle = existing?.published_title || title;
+
   const digest: WeeklyDigestData = {
+    id: existing?.id ?? '',
     week,
     seasonYear: season.year,
     highlights,
-    emailSubject,
-    emailBody,
+    emailSubject: savedSubject,
+    emailBody: savedBody,
+    status: toDigestStatus(existing?.status),
+    commissionerNote: existing?.commissioner_note ?? null,
+    publishedAt: existing?.published_at ?? null,
+    publishedTitle: savedTitle,
   };
 
-  const untyped = await getUntypedAdminClient();
-  await untyped.from('weekly_digests').upsert(
+  const { error: upsertError } = await untyped.from('weekly_digests').upsert(
     {
       season_id: seasonId,
       week,
       highlights,
-      email_subject: emailSubject,
-      email_body: emailBody,
+      email_subject: savedSubject,
+      email_body: savedBody,
       generated_at: new Date().toISOString(),
+      status: digest.status,
+      commissioner_note: digest.commissionerNote,
+      published_at: digest.publishedAt,
+      published_title: savedTitle,
     },
     { onConflict: 'season_id,week' },
   );
+
+  if (upsertError) {
+    throw new Error(`Failed to save weekly digest: ${upsertError.message}`);
+  }
 
   return digest;
 }
@@ -174,27 +304,45 @@ export async function getWeeklyDigest(
   seasonId: string,
   week: number,
 ): Promise<WeeklyDigestData | null> {
-  const supabase = await createAdminClient();
-
   const untyped = await getUntypedAdminClient();
   const { data } = await untyped
     .from('weekly_digests')
-    .select('week, highlights, email_subject, email_body, seasons(year)')
+    .select(
+      'id, season_id, week, highlights, email_subject, email_body, generated_at, status, commissioner_note, published_at, published_title, seasons(year)',
+    )
     .eq('season_id', seasonId)
     .eq('week', week)
-    .single();
+    .eq('status', 'published')
+    .maybeSingle();
 
   if (!data) return null;
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const seasons = data.seasons as any;
+  return formatWeeklyDigest(data as WeeklyDigestRow, new Date().getFullYear());
+}
+
+export async function getLatestWeeklyDigestForAdmin(
+  seasonId: string,
+): Promise<WeeklyDigestAdminData | null> {
+  const untyped = await getUntypedAdminClient();
+  const { data } = await untyped
+    .from('weekly_digests')
+    .select(
+      'id, season_id, week, highlights, email_subject, email_body, generated_at, status, commissioner_note, published_at, published_title, seasons(year)',
+    )
+    .eq('season_id', seasonId)
+    .order('week', { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  if (!data) return null;
+
+  const row = data as WeeklyDigestRow;
+  const digest = formatWeeklyDigest(row, new Date().getFullYear());
 
   return {
-    week: data.week,
-    seasonYear: seasons?.year ?? new Date().getFullYear(),
-    highlights: (data.highlights as WeekHighlight[]) ?? [],
-    emailSubject: data.email_subject ?? '',
-    emailBody: data.email_body ?? '',
+    ...digest,
+    seasonId: row.season_id,
+    generatedAt: row.generated_at,
   };
 }
 

@@ -142,6 +142,9 @@ async function LeagueDashboardContent({
           week={weekDigest.week}
           seasonYear={weekDigest.seasonYear}
           highlights={weekDigest.highlights}
+          title={weekDigest.publishedTitle}
+          commissionerNote={weekDigest.commissionerNote}
+          publishedAt={weekDigest.publishedAt}
         />
       )}
 

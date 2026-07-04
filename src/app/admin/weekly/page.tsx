@@ -1,5 +1,8 @@
-import { createAdminClient, getUntypedAdminClient } from '@/lib/supabase/server';
-import { getLatestSyncStatus } from '@/lib/supabase/queries/weekly-digest';
+import { createAdminClient } from '@/lib/supabase/server';
+import {
+  getLatestSyncStatus,
+  getLatestWeeklyDigestForAdmin,
+} from '@/lib/supabase/queries/weekly-digest';
 import { WeeklyEmailPanel } from '@/components/admin/WeeklyEmailPanel';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -7,7 +10,6 @@ import { SyncNowButton } from '@/components/admin/SyncNowButton';
 
 export default async function AdminWeeklyPage() {
   const supabase = await createAdminClient();
-  const untyped = await getUntypedAdminClient();
   const syncStatus = await getLatestSyncStatus();
 
   const { data: season } = await supabase
@@ -17,21 +19,7 @@ export default async function AdminWeeklyPage() {
     .limit(1)
     .single();
 
-  const { data: latestDigest } = season
-    ? await untyped
-        .from('weekly_digests')
-        .select('*')
-        .eq('season_id', season.id)
-        .order('week', { ascending: false })
-        .limit(1)
-        .single()
-    : { data: null };
-
-  const digest = latestDigest as {
-    email_subject: string | null;
-    email_body: string | null;
-    week: number;
-  } | null;
+  const digest = season ? await getLatestWeeklyDigestForAdmin(season.id) : null;
 
   return (
     <div className="space-y-8">
@@ -63,8 +51,13 @@ export default async function AdminWeeklyPage() {
 
       {digest && season && (
         <WeeklyEmailPanel
-          subject={digest.email_subject ?? ''}
-          body={digest.email_body ?? ''}
+          digestId={digest.id}
+          subject={digest.emailSubject}
+          body={digest.emailBody}
+          title={digest.publishedTitle}
+          note={digest.commissionerNote ?? ''}
+          status={digest.status}
+          publishedAt={digest.publishedAt}
           week={digest.week}
           seasonYear={season.year}
         />
