@@ -8,11 +8,21 @@ import { ArrowLeftRight, Trophy } from 'lucide-react';
 
 interface TradesTimelineProps {
   trades: TradeTimelineItem[];
+  initialTradeId?: string | null;
+  emptyMessage?: string;
 }
 
-export function TradesTimeline({ trades }: TradesTimelineProps) {
-  const [selected, setSelected] = useState<TradeTimelineItem | null>(null);
-  const activeTrade = selected ?? trades[0] ?? null;
+export function TradesTimeline({
+  trades,
+  initialTradeId = null,
+  emptyMessage,
+}: TradesTimelineProps) {
+  const initialTrade = useMemo(
+    () => trades.find((trade) => trade.id === initialTradeId) ?? null,
+    [initialTradeId, trades],
+  );
+  const [selected, setSelected] = useState<TradeTimelineItem | null>(initialTrade);
+  const activeTrade = selected ?? initialTrade ?? trades[0] ?? null;
   const dateFormatter = useMemo(
     () => new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
     [],
@@ -22,7 +32,7 @@ export function TradesTimeline({ trades }: TradesTimelineProps) {
     return (
       <Card>
         <CardContent className="py-12 text-center text-muted-foreground">
-          No trades imported yet. Commissioner can sync from Yahoo in Admin → Import.
+          {emptyMessage ?? 'No trades imported yet. Commissioner can sync from Yahoo in Admin → Import.'}
         </CardContent>
       </Card>
     );

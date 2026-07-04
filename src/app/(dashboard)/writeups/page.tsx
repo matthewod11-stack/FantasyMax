@@ -8,10 +8,29 @@ import { WriteupsClient } from './WriteupsClient';
 
 export const dynamic = 'force-dynamic';
 
+interface WriteupsPageProps {
+  searchParams: Promise<{
+    season?: string;
+    writeup?: string;
+  }>;
+}
+
+function parseSeasonParam(value: string | undefined): number | null {
+  if (!value) return null;
+  const year = Number(value);
+  return Number.isInteger(year) && year >= 2000 && year <= 2100 ? year : null;
+}
+
 /**
  * Writeups content - fetches and displays writeup data
  */
-async function WriteupsContent() {
+async function WriteupsContent({
+  initialSeasonYear,
+  initialWriteupId,
+}: {
+  initialSeasonYear: number | null;
+  initialWriteupId: string | null;
+}) {
   // Fetch data in parallel
   const [seasonWriteups, stats] = await Promise.all([
     getWriteupsBySeason(),
@@ -66,7 +85,9 @@ async function WriteupsContent() {
       {/* Client-side interactive component */}
       <WriteupsClient
         seasonWriteups={seasonWriteups}
-        defaultExpandedYear={latestSeasonYear}
+        defaultExpandedYear={initialSeasonYear ?? latestSeasonYear}
+        initialSeasonFilter={initialSeasonYear}
+        initialWriteupId={initialWriteupId}
       />
     </div>
   );
@@ -109,7 +130,10 @@ function StatCard({
  * - Full-text search
  * - Drawer for full writeup content
  */
-export default function WriteupsPage() {
+export default async function WriteupsPage({ searchParams }: WriteupsPageProps) {
+  const params = await searchParams;
+  const initialSeasonYear = parseSeasonParam(params.season);
+
   return (
     <div className="space-y-6">
       {/* Page header */}
@@ -127,7 +151,10 @@ export default function WriteupsPage() {
 
       {/* Content with loading state */}
       <Suspense fallback={<WriteupsSkeleton />}>
-        <WriteupsContent />
+        <WriteupsContent
+          initialSeasonYear={initialSeasonYear}
+          initialWriteupId={params.writeup ?? null}
+        />
       </Suspense>
     </div>
   );

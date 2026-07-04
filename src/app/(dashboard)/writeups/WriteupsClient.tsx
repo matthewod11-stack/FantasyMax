@@ -33,6 +33,8 @@ import { getWriteupByIdAction, searchWriteupsAction } from './actions';
 interface WriteupsClientProps {
   seasonWriteups: WriteupsBySeasonType[];
   defaultExpandedYear: number | null;
+  initialSeasonFilter?: number | null;
+  initialWriteupId?: string | null;
 }
 
 /**
@@ -76,20 +78,24 @@ const WRITEUP_TYPE_LABELS: Record<WriteupType, string> = {
 export function WriteupsClient({
   seasonWriteups,
   defaultExpandedYear,
+  initialSeasonFilter = null,
+  initialWriteupId = null,
 }: WriteupsClientProps) {
   // Search state
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<WriteupSearchResult[]>([]);
   const [isSearching, startSearchTransition] = useTransition();
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const [seasonFilter, setSeasonFilter] = useState(ALL_FILTER_VALUE);
+  const [seasonFilter, setSeasonFilter] = useState(
+    initialSeasonFilter ? String(initialSeasonFilter) : ALL_FILTER_VALUE,
+  );
   const [typeFilter, setTypeFilter] = useState(ALL_FILTER_VALUE);
   const [topicFilter, setTopicFilter] = useState(ALL_FILTER_VALUE);
   const [memberFilter, setMemberFilter] = useState(ALL_FILTER_VALUE);
 
   // Drawer state
-  const [selectedWriteupId, setSelectedWriteupId] = useState<string | null>(null);
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [selectedWriteupId, setSelectedWriteupId] = useState<string | null>(initialWriteupId);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(Boolean(initialWriteupId));
 
   // Determine if we're in search mode (non-empty query with results)
   const isSearchMode = searchQuery.length >= MIN_SEARCH_LENGTH;

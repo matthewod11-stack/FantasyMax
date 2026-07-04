@@ -10,6 +10,10 @@ import { SeasonHighlights } from '@/components/features/seasons/SeasonHighlights
 import { SeasonJourneyChart } from '@/components/features/seasons/SeasonJourneyChart';
 import { PlayoffBracket } from '@/components/features/seasons/PlayoffBracket';
 import { AISeasonReview, AISeasonReviewEmpty } from '@/components/features/seasons/AISeasonReview';
+import { SeasonArc } from '@/components/features/seasons/SeasonArc';
+import { buildSeasonArc } from '@/lib/supabase/queries/league';
+import { getSeasonArcTrades } from '@/lib/supabase/queries/trades';
+import { getSeasonArcWriteups } from '@/lib/supabase/queries/writeups';
 
 interface PageProps {
   params: Promise<{ year: string }>;
@@ -59,45 +63,51 @@ export default async function SeasonDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  // Fetch all teams for this season
-  const { data: teams } = await supabase
-    .from('teams')
-    .select(`
-      id,
-      team_name,
-      final_rank,
-      final_record_wins,
-      final_record_losses,
-      final_record_ties,
-      total_points_for,
-      total_points_against,
-      is_champion,
-      is_last_place,
-      made_playoffs,
-      playoff_seed,
-      member:members(id, display_name, avatar_url)
-    `)
-    .eq('season_id', season.id)
-    .order('final_rank', { ascending: true });
-
-  // Fetch all matchups for this season
-  const { data: matchups } = await supabase
-    .from('matchups')
-    .select(`
-      id,
-      week,
-      home_team_id,
-      away_team_id,
-      home_score,
-      away_score,
-      winner_team_id,
-      status,
-      is_playoff,
-      is_championship,
-      is_consolation
-    `)
-    .eq('season_id', season.id)
-    .order('week', { ascending: true });
+  const [
+    { data: teams },
+    { data: matchups },
+    seasonArcWriteups,
+    seasonArcTrades,
+  ] = await Promise.all([
+    supabase
+      .from('teams')
+      .select(`
+        id,
+        team_name,
+        final_rank,
+        final_record_wins,
+        final_record_losses,
+        final_record_ties,
+        total_points_for,
+        total_points_against,
+        is_champion,
+        is_last_place,
+        made_playoffs,
+        playoff_seed,
+        member:members(id, display_name, avatar_url)
+      `)
+      .eq('season_id', season.id)
+      .order('final_rank', { ascending: true }),
+    supabase
+      .from('matchups')
+      .select(`
+        id,
+        week,
+        home_team_id,
+        away_team_id,
+        home_score,
+        away_score,
+        winner_team_id,
+        status,
+        is_playoff,
+        is_championship,
+        is_consolation
+      `)
+      .eq('season_id', season.id)
+      .order('week', { ascending: true }),
+    getSeasonArcWriteups(year, 4),
+    getSeasonArcTrades(season.id, 4),
+  ]);
 
   // Transform teams for standings
   const standingsData = (teams || []).map((team) => ({
@@ -128,6 +138,19 @@ export default async function SeasonDetailPage({ params }: PageProps) {
 
   // Calculate season records
   const seasonRecords = calculateSeasonRecords(matchups || [], teams || []);
+
+  const seasonArc = buildSeasonArc({
+    year,
+    season: {
+      id: season.id,
+      champion_team_id: season.champion_team_id,
+      last_place_team_id: season.last_place_team_id,
+    },
+    teams: teams || [],
+    matchups: matchups || [],
+    writeups: seasonArcWriteups,
+    trades: seasonArcTrades,
+  });
 
   // Transform champion data
   const championData = season.champion_team
@@ -161,8 +184,8 @@ export default async function SeasonDetailPage({ params }: PageProps) {
       {/* Header */}
       <div className="flex items-center gap-4">
         <Button variant="ghost" size="icon" asChild>
-          <Link href="/seasons">
-            <ArrowLeft className="h-4 w-4" />
+          <Link href="/seasons" aria-label="Back to Seasons">
+            <ArrowLeft className="h-4 w-4" aria-hidden="true" />
           </Link>
         </Button>
         <div>
@@ -183,6 +206,8 @@ export default async function SeasonDetailPage({ params }: PageProps) {
         lastPlace={lastPlaceData}
         records={seasonRecords}
       />
+
+      <SeasonArc year={year} arc={seasonArc} />
 
       {/* Tabbed content */}
       <Tabs defaultValue="standings" className="space-y-4">
@@ -278,8 +303,11 @@ interface TeamData {
   final_record_wins: number | null;
   final_record_losses: number | null;
   final_record_ties: number | null;
+  total_points_for: number | null;
+  total_points_against: number | null;
   is_champion: boolean | null;
   is_last_place: boolean | null;
+  made_playoffs: boolean | null;
   playoff_seed: number | null;
   member: {
     id: string;

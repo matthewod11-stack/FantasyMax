@@ -51,6 +51,43 @@ async function getUntypedClient() {
   return (await createAdminClient()) as any;
 }
 
+const SEASON_ARC_WRITEUP_PRIORITY: Record<WriteupType, number> = {
+  season_recap: 0,
+  playoff_preview: 1,
+  weekly_recap: 2,
+  standings_update: 3,
+  power_rankings: 4,
+  draft_notes: 5,
+  announcement: 6,
+  other: 7,
+};
+
+export function prioritizeSeasonArcWriteups<
+  T extends {
+    writeup_type: WriteupType;
+    week: number | null;
+    published_at?: string | null;
+    original_order?: number | null;
+  },
+>(writeups: readonly T[], limit: number = 4): T[] {
+  return [...writeups]
+    .sort((a, b) => {
+      const priorityDelta =
+        SEASON_ARC_WRITEUP_PRIORITY[a.writeup_type] -
+        SEASON_ARC_WRITEUP_PRIORITY[b.writeup_type];
+      if (priorityDelta !== 0) return priorityDelta;
+
+      const weekDelta = (b.week ?? -1) - (a.week ?? -1);
+      if (weekDelta !== 0) return weekDelta;
+
+      const orderDelta = (a.original_order ?? 999) - (b.original_order ?? 999);
+      if (orderDelta !== 0) return orderDelta;
+
+      return (b.published_at ?? '').localeCompare(a.published_at ?? '');
+    })
+    .slice(0, limit);
+}
+
 /**
  * Get all published writeups with author and season info
  *
@@ -204,6 +241,14 @@ export async function getWriteupsForSeason(year: number): Promise<WriteupWithDet
   }
 
   return (data || []).map(transformWriteup);
+}
+
+export async function getSeasonArcWriteups(
+  year: number,
+  limit: number = 4,
+): Promise<WriteupWithDetails[]> {
+  const writeups = await getWriteupsForSeason(year);
+  return prioritizeSeasonArcWriteups(writeups, limit);
 }
 
 /**

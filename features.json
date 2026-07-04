@@ -2,8 +2,8 @@
   "_meta": {
     "description": "Feature tracking for League of Degenerates. Status: not-started | in-progress | pass | fail | blocked",
     "lastUpdated": "2026-07-04",
-    "totalFeatures": 121,
-    "passing": 112,
+    "totalFeatures": 122,
+    "passing": 113,
     "failing": 0,
     "inProgress": 0,
     "blocked": 0
@@ -139,6 +139,7 @@
     "season-champion-avatar": { "status": "pass", "notes": "Champion avatar with gold ring added to season tiles" },
     "records-inline-leaderboards": { "status": "pass", "notes": "RecordFullCard with inline Top 10 leaderboards, 2-column grid, no drawer needed" },
     "sidebar-reorganization": { "status": "pass", "notes": "Preseason member nav focused on Dashboard, Seasons, Managers, H2H, Records, Hall of Shame, and Writeups. Scaffold links hidden from default nav." },
+    "season-arc-pages": { "status": "pass", "notes": "Season detail pages now render deterministic Season Arc story beats with champion path, last-place race, records, writeup receipts, and trade receipts." },
     "header-cleanup": { "status": "pass", "notes": "Removed unused Viewing As selector, deleted MemberContext (-212 lines)" }
   },
   "phase-8.5-ai-content": {

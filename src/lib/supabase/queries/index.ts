@@ -79,6 +79,8 @@ export {
   getWriteupById,
   getWriteupsBySeason,
   getWriteupsForSeason,
+  getSeasonArcWriteups,
+  prioritizeSeasonArcWriteups,
   getWriteupsByType,
   getFeaturedWriteups,
   searchWriteups,
@@ -106,9 +108,10 @@ export {
   getLeagueStats,
   getLeagueWeekHistory,
   getLatestSeason,
+  buildSeasonArc,
 } from './league';
 
-export { getTradeTimeline, getTradeCount } from './trades';
+export { getTradeTimeline, getSeasonArcTrades, getTradeCount } from './trades';
 export type { TradeTimelineItem } from './trades';
 
 export {
@@ -131,6 +134,7 @@ export type {
   LeagueStats,
   NotableMatchup,
   LatestSeasonInfo,
+  SeasonArcData,
 } from './league';
 
 // Records - Top N queries

@@ -22,6 +22,7 @@ interface TradeTimelineItemWithMemberIds extends TradeTimelineItem {
 
 export async function getTradeTimeline(options?: {
   seasonId?: string;
+  seasonYear?: number;
   memberId?: string;
   limit?: number;
 }): Promise<TradeTimelineItem[]> {
@@ -53,6 +54,10 @@ export async function getTradeTimeline(options?: {
 
   if (options?.seasonId) {
     query = query.eq('season_id', options.seasonId);
+  }
+
+  if (options?.seasonYear) {
+    query = query.eq('seasons.year', options.seasonYear);
   }
 
   if (options?.limit) {
@@ -118,6 +123,18 @@ export async function getTradeTimeline(options?: {
     team2Sends: item.team2Sends,
     championshipImpact: item.championshipImpact,
   }));
+}
+
+export async function getSeasonArcTrades(
+  seasonId: string,
+  limit: number = 4,
+): Promise<TradeTimelineItem[]> {
+  try {
+    return await getTradeTimeline({ seasonId, limit });
+  } catch (error) {
+    console.error('[getSeasonArcTrades] Error:', error);
+    return [];
+  }
 }
 
 export async function getTradeCount(): Promise<number> {

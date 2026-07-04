@@ -8,8 +8,26 @@ export const metadata = {
   description: 'League trade history timeline',
 };
 
-export default async function TradesPage() {
-  const [trades, count] = await Promise.all([getTradeTimeline({ limit: 100 }), getTradeCount()]);
+interface TradesPageProps {
+  searchParams: Promise<{
+    season?: string;
+    trade?: string;
+  }>;
+}
+
+function parseSeasonParam(value: string | undefined): number | null {
+  if (!value) return null;
+  const year = Number(value);
+  return Number.isInteger(year) && year >= 2000 && year <= 2100 ? year : null;
+}
+
+export default async function TradesPage({ searchParams }: TradesPageProps) {
+  const params = await searchParams;
+  const seasonYear = parseSeasonParam(params.season);
+  const [trades, count] = await Promise.all([
+    getTradeTimeline({ limit: 100, seasonYear: seasonYear ?? undefined }),
+    getTradeCount(),
+  ]);
 
   return (
     <div className="space-y-8">
@@ -20,6 +38,7 @@ export default async function TradesPage() {
         </h1>
         <div className="flex items-center gap-2">
           <Badge variant="outline">{count} trades on record</Badge>
+          {seasonYear && <Badge variant="secondary">{seasonYear} season</Badge>}
           {count === 0 && (
             <span className="text-sm text-muted-foreground">
               Run Yahoo sync from admin to import trades
@@ -28,7 +47,15 @@ export default async function TradesPage() {
         </div>
       </div>
 
-      <TradesTimeline trades={trades} />
+      <TradesTimeline
+        trades={trades}
+        initialTradeId={params.trade ?? null}
+        emptyMessage={
+          seasonYear
+            ? `No trades imported for the ${seasonYear} season yet.`
+            : undefined
+        }
+      />
     </div>
   );
 }

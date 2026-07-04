@@ -7,4 +7,5 @@ export { SeasonStandings } from './SeasonStandings';
 export { SeasonJourneyChart } from './SeasonJourneyChart';
 export { PlayoffBracket } from './PlayoffBracket';
 export { SeasonHighlights } from './SeasonHighlights';
+export { SeasonArc } from './SeasonArc';
 export { SeasonSkeleton } from './SeasonSkeleton';
