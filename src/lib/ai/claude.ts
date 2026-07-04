@@ -7,7 +7,7 @@ export interface ClaudeOptions {
 }
 
 export const DEFAULT_MODEL =
-  process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-20250514';
+  process.env.ANTHROPIC_MODEL || 'claude-sonnet-5';
 const DEFAULT_MAX_TOKENS = 1500;
 const DEFAULT_TEMPERATURE = 0.8;
 
@@ -30,7 +30,9 @@ export async function generateWithClaude(
   const response = await client.messages.create({
     model,
     max_tokens: options.maxTokens || DEFAULT_MAX_TOKENS,
-    temperature: options.temperature || DEFAULT_TEMPERATURE,
+    ...(model.startsWith('claude-sonnet-5')
+      ? {}
+      : { temperature: options.temperature || DEFAULT_TEMPERATURE }),
     messages: [
       {
         role: 'user',

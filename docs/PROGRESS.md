@@ -10,6 +10,28 @@
 Most recent session should be first.
 -->
 
+## Session: 2026-07-03 (Task 6 Lore-Grounded AI Season Reviews)
+
+### Completed
+- Added final standings and commissioner writeup excerpts to the season-review generation prompt
+- Tightened grounding rules to avoid invented trades, injuries, roster moves, waiver-wire filler, private quotes, and unsupported NFL storylines
+- Changed dry-run behavior so it previews full prompts without requiring `ANTHROPIC_API_KEY` and without skipping already-reviewed seasons
+- Updated AI model defaults from retired `claude-sonnet-4-20250514` to available `claude-sonnet-5`, while preserving `ANTHROPIC_MODEL` overrides
+- Updated Claude 5 calls to omit deprecated `temperature`
+- Expanded `npm run ai:eval` to read multiple golden fixtures, validate prompt-input facts, and check generated text when `ANTHROPIC_API_KEY` is set
+- Added a 2024 season-review golden fixture grounded in Garrett C, PJ M, James H's 200.9 high score, and the custom draft board writeup phrase
+- Regenerated all 11 remote Supabase season reviews with `claude-sonnet-5`
+
+### Verified
+- `npx tsx scripts/generate-ai-reviews.ts --year=2024 --dry-run` prints standings and real commissioner writeup excerpts
+- `npm run ai:eval` passes: H2H prompt fixture 1/1, season-review prompt fixture 1/1, season-review generated text check 1/1
+- 2024 sample review was inspected and regenerated until it had no markdown heading or unsupported waiver/trade/injury drift
+- Full remote content audit passes for 2015-2025: 11/11 reviews mention champion, last place, and a real season-record number; 0 markdown headings; 0 forbidden drift terms
+
+### Follow-up
+- Password/commissioner boundary remains intentionally parked until the preseason task list is complete
+- Future AI scripts should keep `ANTHROPIC_MODEL` override support because model availability can drift
+
 ## Session: 2026-07-03 (Task 5 League Dispatch V1)
 
 ### Completed
