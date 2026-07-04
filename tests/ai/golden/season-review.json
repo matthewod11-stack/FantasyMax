@@ -1,0 +1,38 @@
+[
+  {
+    "name": "2024 grounded season review",
+    "input": {
+      "year": 2024,
+      "champion": "Garrett C",
+      "championRecord": "7-7",
+      "lastPlace": "PJ M",
+      "lastPlaceRecord": "3-11",
+      "highestScore": "200.9",
+      "highestScoreMember": "James H",
+      "highestScoreWeek": 15,
+      "standingsLine": "1. Garrett C - 7-7",
+      "writeupExcerptPhrase": "Custom draft board has arrived"
+    },
+    "expected_facts": [
+      "Garrett C",
+      "PJ M",
+      "200.9",
+      "1. Garrett C - 7-7",
+      "Custom draft board has arrived"
+    ],
+    "required_generated_facts": [
+      "Garrett C",
+      "PJ M",
+      "200.9",
+      "Custom draft board has arrived"
+    ],
+    "forbidden_generated_claims": [
+      "#",
+      "blockbuster trade",
+      "torn ACL",
+      "private quote",
+      "waiver wire"
+    ],
+    "eval_prompt": "Write one sentence for a fantasy football season review. Use these exact facts: champion Garrett C, last place PJ M, highest score 200.9 by James H, and commissioner excerpt phrase \"Custom draft board has arrived\". Do not mention trades, injuries, or private quotes."
+  }
+]

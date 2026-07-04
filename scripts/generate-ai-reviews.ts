@@ -13,7 +13,8 @@
  *
  * Prerequisites:
  *   - Migration 20241231000001_ai_season_reviews.sql applied
- *   - Environment variables: NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY
+ *   - Environment variables: NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY
+ *   - ANTHROPIC_API_KEY required unless --dry-run is used
  */
 
 import { createClient } from '@supabase/supabase-js';
@@ -24,8 +25,8 @@ import * as dotenv from 'dotenv';
 dotenv.config({ path: '.env.local' });
 
 // Configuration
-const CLAUDE_MODEL = 'claude-sonnet-4-20250514';
-const MAX_TOKENS = 600; // Reduced for shorter 150-200 word reviews
+const CLAUDE_MODEL = process.env.ANTHROPIC_MODEL || 'claude-sonnet-5';
+const MAX_TOKENS = 500; // Keep season reviews tight enough for card/detail views.
 const TEMPERATURE = 0.85;
 
 // Types
@@ -330,7 +331,7 @@ function buildPrompt(
 
   // Format standings table
   const standingsTable = teams
-    .slice(0, 10) // Top 10
+    .slice(0, 10)
     .map((t, i) => {
       const record = `${t.final_record_wins}-${t.final_record_losses}${t.final_record_ties > 0 ? `-${t.final_record_ties}` : ''}`;
       const playoff = t.made_playoffs ? '(P)' : '';
@@ -359,8 +360,9 @@ function buildPrompt(
   const writeupExcerpts = writeups
     .slice(0, 5) // Max 5 writeups for context
     .map((w) => {
-      const excerpt = w.content.slice(0, 300).replace(/\n/g, ' ');
-      return `[${w.writeup_type}${w.week ? ` Week ${w.week}` : ''}]: ${excerpt}...`;
+      const excerpt = w.content.replace(/\s+/g, ' ').trim().slice(0, 300);
+      const title = w.title ? ` "${w.title}"` : '';
+      return `[${w.writeup_type}${w.week ? ` Week ${w.week}` : ''}${title}]: ${excerpt}...`;
     })
     .join('\n\n');
 
@@ -376,17 +378,38 @@ function buildPrompt(
 - Last Place: ${lastPlace?.member?.display_name || 'Unknown'} (${formatRecord(lastPlace)})
 - ${season.num_teams} teams, ${season.num_weeks} weeks
 
+## Final Standings
+${standingsTable || 'No standings available'}
+
 ## Season Records
 ${recordsText || 'No notable records'}
 
+## Commissioner Writeup Excerpts
+${writeupExcerpts || 'No historical writeup excerpts available.'}
+
 ## Instructions
-Write exactly 3-4 short paragraphs (150-200 words total):
+Write exactly 3 short paragraphs. Target 160-190 words total and do not exceed 200 words:
 1. Opening hook about the season's theme or defining moment
 2. Champion's story - how they won it all
 3. One memorable stat or matchup that defined the year
 4. Quick jab at the last place finisher for the Hall of Shame
 
-Keep it punchy and fun. Use specific names and scores. NO markdown headers or bullet points - just flowing prose paragraphs.`;
+Grounding rules:
+- Use only the provided facts, standings, season records, and commissioner writeup excerpts.
+- Do not invent trades, injuries, waiver wire moves, waiver claims, punishments, private quotes, or events not shown above.
+- Never use the phrase "waiver wire"; it reads like invented filler in season reviews.
+- Do not mention roster moves, injuries, trades, draft picks, or real-world NFL storylines unless the exact detail appears in the inputs.
+- Cite at least one specific score, record, or final record when available.
+- In the third paragraph, cite one Season Records bullet with its specific number.
+- Pull in one real theme, phrase, or detail from the writeup excerpts when available.
+- Keep the commissioner-style edge, but keep every claim grounded in the inputs.
+
+Output rules:
+- Start directly with the first paragraph. Do not include a title.
+- No markdown headings, labels, bullets, blockquotes, or lists.
+- Return only flowing prose paragraphs separated by blank lines.
+
+Keep it punchy and fun. Use specific names and scores.`;
 }
 
 /**
@@ -399,7 +422,7 @@ async function generateReview(
   const response = await client.messages.create({
     model: CLAUDE_MODEL,
     max_tokens: MAX_TOKENS,
-    temperature: TEMPERATURE,
+    ...(CLAUDE_MODEL.startsWith('claude-sonnet-5') ? {} : { temperature: TEMPERATURE }),
     messages: [{ role: 'user', content: prompt }],
   });
 
@@ -457,8 +480,10 @@ async function main() {
   const supabase = createSupabaseClient();
   console.log('Connected to Supabase');
 
-  const anthropic = createAnthropicClient();
-  console.log('Anthropic client ready\n');
+  const anthropic = isDryRun ? null : createAnthropicClient();
+  if (anthropic) {
+    console.log('Anthropic client ready\n');
+  }
 
   // Fetch seasons
   const seasons = await fetchSeasons(supabase, targetYear);
@@ -472,7 +497,7 @@ async function main() {
     console.log(`\n--- ${season.year} Season ---`);
 
     // Check if already has review
-    if (season.ai_review && !force) {
+    if (season.ai_review && !force && !isDryRun) {
       console.log('  Already has AI review. Use --force to regenerate.');
       skipped++;
       continue;
@@ -499,8 +524,10 @@ async function main() {
     const prompt = buildPrompt(season, teams, records, writeups);
 
     if (isDryRun) {
-      console.log('\n  [Dry run] Would generate review with prompt:');
-      console.log('  ' + prompt.split('\n').slice(0, 5).join('\n  ') + '...\n');
+      console.log('\n  [Dry run] Prompt preview:');
+      console.log('  --- BEGIN PROMPT ---');
+      console.log(prompt);
+      console.log('  --- END PROMPT ---\n');
       generated++;
       continue;
     }

@@ -25,7 +25,7 @@ import * as dotenv from 'dotenv';
 dotenv.config({ path: '.env.local' });
 
 // Configuration
-const CLAUDE_MODEL = 'claude-sonnet-4-20250514';
+const CLAUDE_MODEL = process.env.ANTHROPIC_MODEL || 'claude-sonnet-5';
 const MAX_TOKENS = 500; // Reduced for shorter 3-4 sentence recaps
 const TEMPERATURE = 0.85;
 
@@ -472,7 +472,7 @@ async function generateRecap(
   const response = await client.messages.create({
     model: CLAUDE_MODEL,
     max_tokens: MAX_TOKENS,
-    temperature: TEMPERATURE,
+    ...(CLAUDE_MODEL.startsWith('claude-sonnet-5') ? {} : { temperature: TEMPERATURE }),
     messages: [{ role: 'user', content: prompt }],
   });
 
