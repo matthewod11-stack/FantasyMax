@@ -13,6 +13,7 @@ import {
   ChevronRight,
   Sparkles,
 } from 'lucide-react';
+import { formatLoreTopicLabel } from '@/lib/writeups/lore';
 import type { WriteupSearchResult, WriteupType } from '@/types/contracts/queries';
 
 interface SearchResultsListProps {
@@ -118,15 +119,14 @@ function SearchResultItem({
   const typeColor = TYPE_COLORS[result.writeup_type];
 
   return (
-    <div
+    <button
+      type="button"
       className={cn(
-        'group flex items-start gap-4 py-3 px-4',
-        'hover:bg-secondary/30 transition-colors cursor-pointer'
+        'group flex w-full cursor-pointer items-start gap-4 px-4 py-3 text-left',
+        'hover:bg-secondary/30 transition-colors',
+        'focus-visible:ring-ring/50 focus-visible:ring-[3px]'
       )}
       onClick={onClick}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => e.key === 'Enter' && onClick()}
     >
       {/* Rank badge */}
       <div className="shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-secondary text-xs font-mono text-muted-foreground">
@@ -148,7 +148,7 @@ function SearchResultItem({
         )}
 
         {/* Metadata row */}
-        <div className="flex items-center gap-3 mt-2">
+        <div className="mt-2 flex flex-wrap items-center gap-3">
           {/* Type badge */}
           <div className={cn('flex items-center gap-1', typeColor)}>
             <Icon className="h-3 w-3" />
@@ -164,12 +164,21 @@ function SearchResultItem({
               <span>{result.season_year}</span>
             </div>
           )}
+
+          {result.lore_topics?.slice(0, 3).map((topic) => (
+            <span
+              key={topic}
+              className="rounded-full border border-border/60 px-1.5 py-0.5 text-xs text-muted-foreground"
+            >
+              {formatLoreTopicLabel(topic)}
+            </span>
+          ))}
         </div>
       </div>
 
       {/* Arrow */}
-      <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-gold group-hover:translate-x-0.5 transition-all shrink-0 mt-0.5" />
-    </div>
+      <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground transition-[color,transform] group-hover:translate-x-0.5 group-hover:text-gold" />
+    </button>
   );
 }
 

@@ -293,6 +293,7 @@ export interface WriteupWithDetails extends Writeup {
     id: string;
     year: number;
   } | null;
+  mentions: WriteupMentionWithMember[];
 }
 
 /**
@@ -316,9 +317,12 @@ export interface WriteupSearchResult {
   excerpt: string | null;
   season_year: number | null;
   writeup_type: WriteupType;
+  lore_topics?: WriteupLoreTopic[];
   published_at: string | null;
   rank: number;
 }
+
+export type WriteupLoreTopic = 'playoffs' | 'draft' | 'trade' | 'championship';
 
 /**
  * Member mention in a writeup
@@ -329,6 +333,14 @@ export interface WriteupMention {
   member_id: string;
   mention_context: string | null;
   created_at: string;
+}
+
+export interface WriteupMentionWithMember extends WriteupMention {
+  member: {
+    id: string;
+    display_name: string;
+    avatar_url: string | null;
+  } | null;
 }
 
 /**

@@ -14,6 +14,7 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import type { WriteupWithDetails, WriteupType } from '@/types/contracts/queries';
+import { formatLoreTopicLabel, getWriteupLoreTopics } from '@/lib/writeups/lore';
 
 interface WriteupCardProps {
   writeup: WriteupWithDetails;
@@ -91,104 +92,138 @@ export function WriteupCard({
 }: WriteupCardProps) {
   const typeConfig = WRITEUP_TYPE_CONFIG[writeup.writeup_type];
   const Icon = typeConfig.icon;
+  const loreTopics = getWriteupLoreTopics(writeup);
 
   // Format week label if present
   const weekLabel = writeup.week ? `Week ${writeup.week}` : null;
+
+  const body = (
+    <div className={cn('p-4', expanded && 'p-5')}>
+      {/* Header: Type badge + Week label */}
+      <div className="mb-3 flex items-center gap-2">
+        {/* Type badge */}
+        <div
+          className={cn(
+            'flex items-center gap-1.5 rounded-full px-2 py-0.5',
+            'bg-secondary/50 text-xs font-medium',
+            typeConfig.color
+          )}
+        >
+          <Icon className="h-3 w-3" />
+          <span>{typeConfig.label}</span>
+        </div>
+
+        {/* Week number if present */}
+        {weekLabel && (
+          <span className="text-xs text-muted-foreground">
+            {weekLabel}
+          </span>
+        )}
+
+        {/* Spacer */}
+        <div className="flex-1" />
+
+        {/* Season year */}
+        {writeup.season && (
+          <div className="flex items-center gap-1 text-xs text-muted-foreground">
+            <Calendar className="h-3 w-3" />
+            <span>{writeup.season.year}</span>
+          </div>
+        )}
+      </div>
+
+      {/* Title */}
+      <h3
+        className={cn(
+          'mb-2 font-body font-semibold text-foreground',
+          expanded ? 'text-lg' : 'text-base',
+          'line-clamp-2 group-hover:text-gold transition-colors'
+        )}
+      >
+        {writeup.title}
+      </h3>
+
+      {/* Lore topic badges */}
+      {loreTopics.length > 0 && (
+        <div className="mb-3 flex flex-wrap gap-1.5">
+          {loreTopics.slice(0, 3).map((topic) => (
+            <span
+              key={topic}
+              className="rounded-full border border-border/60 px-2 py-0.5 text-xs text-muted-foreground"
+            >
+              {formatLoreTopicLabel(topic)}
+            </span>
+          ))}
+        </div>
+      )}
+
+      {/* Excerpt */}
+      {writeup.excerpt && (
+        <p
+          className={cn(
+            'mb-3 text-sm text-muted-foreground',
+            expanded ? 'line-clamp-4' : 'line-clamp-2'
+          )}
+        >
+          {writeup.excerpt}
+        </p>
+      )}
+
+      {/* Footer: Author + Read more */}
+      <div className="flex items-center justify-between">
+        {/* Author */}
+        <div className="flex items-center gap-2">
+          <ManagerAvatar
+            avatarUrl={writeup.author.avatar_url}
+            displayName={writeup.author.display_name}
+            size="sm"
+          />
+          <span className="text-xs text-muted-foreground">
+            {writeup.author.display_name}
+          </span>
+        </div>
+
+        {/* Read more indicator */}
+        {onClick && (
+          <div className="flex items-center gap-1 text-xs text-muted-foreground transition-colors group-hover:text-gold">
+            <span>Read</span>
+            <ChevronRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+
+  const classNames = cn(
+    'group relative overflow-hidden rounded-lg border',
+    'bg-card hover:bg-secondary/30',
+    'transition-[background-color,border-color,box-shadow,color] duration-200',
+    onClick && 'cursor-pointer hover:border-gold/30 focus-visible:ring-ring/50 focus-visible:ring-[3px]',
+    className
+  );
+
+  if (onClick) {
+    return (
+      <button
+        type="button"
+        className={cn(classNames, 'w-full text-left')}
+        onClick={onClick}
+      >
+        {body}
+      </button>
+    );
+  }
 
   return (
     <div
       className={cn(
         'group relative overflow-hidden rounded-lg border',
         'bg-card hover:bg-secondary/30',
-        'transition-all duration-200',
-        onClick && 'cursor-pointer hover:border-gold/30',
+        'transition-[background-color,border-color,color] duration-200',
         className
       )}
-      onClick={onClick}
-      role={onClick ? 'button' : undefined}
-      tabIndex={onClick ? 0 : undefined}
-      onKeyDown={onClick ? (e) => e.key === 'Enter' && onClick() : undefined}
     >
-      <div className={cn('p-4', expanded && 'p-5')}>
-        {/* Header: Type badge + Week label */}
-        <div className="flex items-center gap-2 mb-3">
-          {/* Type badge */}
-          <div
-            className={cn(
-              'flex items-center gap-1.5 px-2 py-0.5 rounded-full',
-              'bg-secondary/50 text-xs font-medium',
-              typeConfig.color
-            )}
-          >
-            <Icon className="h-3 w-3" />
-            <span>{typeConfig.label}</span>
-          </div>
-
-          {/* Week number if present */}
-          {weekLabel && (
-            <span className="text-xs text-muted-foreground">
-              {weekLabel}
-            </span>
-          )}
-
-          {/* Spacer */}
-          <div className="flex-1" />
-
-          {/* Season year */}
-          {writeup.season && (
-            <div className="flex items-center gap-1 text-xs text-muted-foreground">
-              <Calendar className="h-3 w-3" />
-              <span>{writeup.season.year}</span>
-            </div>
-          )}
-        </div>
-
-        {/* Title */}
-        <h3
-          className={cn(
-            'font-body font-semibold text-foreground mb-2',
-            expanded ? 'text-lg' : 'text-base',
-            'line-clamp-2 group-hover:text-gold transition-colors'
-          )}
-        >
-          {writeup.title}
-        </h3>
-
-        {/* Excerpt */}
-        {writeup.excerpt && (
-          <p
-            className={cn(
-              'text-sm text-muted-foreground mb-3',
-              expanded ? 'line-clamp-4' : 'line-clamp-2'
-            )}
-          >
-            {writeup.excerpt}
-          </p>
-        )}
-
-        {/* Footer: Author + Read more */}
-        <div className="flex items-center justify-between">
-          {/* Author */}
-          <div className="flex items-center gap-2">
-            <ManagerAvatar
-              avatarUrl={writeup.author.avatar_url}
-              displayName={writeup.author.display_name}
-              size="sm"
-            />
-            <span className="text-xs text-muted-foreground">
-              {writeup.author.display_name}
-            </span>
-          </div>
-
-          {/* Read more indicator */}
-          {onClick && (
-            <div className="flex items-center gap-1 text-xs text-muted-foreground group-hover:text-gold transition-colors">
-              <span>Read</span>
-              <ChevronRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform" />
-            </div>
-          )}
-        </div>
-      </div>
+      {body}
     </div>
   );
 }
@@ -205,20 +240,10 @@ export function WriteupListItem({
 }) {
   const typeConfig = WRITEUP_TYPE_CONFIG[writeup.writeup_type];
   const Icon = typeConfig.icon;
+  const loreTopics = getWriteupLoreTopics(writeup);
 
-  return (
-    <div
-      className={cn(
-        'group flex items-center gap-4 py-3 px-4',
-        'border-b border-border/50 last:border-0',
-        'hover:bg-secondary/30 transition-colors',
-        onClick && 'cursor-pointer'
-      )}
-      onClick={onClick}
-      role={onClick ? 'button' : undefined}
-      tabIndex={onClick ? 0 : undefined}
-      onKeyDown={onClick ? (e) => e.key === 'Enter' && onClick() : undefined}
-    >
+  const body = (
+    <>
       {/* Type icon */}
       <div className={cn('shrink-0', typeConfig.color)}>
         <Icon className="h-4 w-4" />
@@ -229,17 +254,47 @@ export function WriteupListItem({
         <h4 className="text-sm font-medium text-foreground truncate group-hover:text-gold transition-colors">
           {writeup.title}
         </h4>
-        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
           {writeup.week && <span>Week {writeup.week}</span>}
           {writeup.week && writeup.season && <span>•</span>}
           {writeup.season && <span>{writeup.season.year}</span>}
+          {loreTopics.slice(0, 2).map((topic) => (
+            <span key={topic} className="rounded-full bg-secondary/60 px-1.5 py-0.5">
+              {formatLoreTopicLabel(topic)}
+            </span>
+          ))}
         </div>
       </div>
 
       {/* Arrow */}
       {onClick && (
-        <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-gold group-hover:translate-x-0.5 transition-all" />
+        <ChevronRight className="h-4 w-4 text-muted-foreground transition-[color,transform] group-hover:translate-x-0.5 group-hover:text-gold" />
       )}
+    </>
+  );
+
+  const className = cn(
+    'group flex w-full items-center gap-4 px-4 py-3 text-left',
+    'border-b border-border/50 last:border-0',
+    'hover:bg-secondary/30 transition-colors',
+    onClick && 'cursor-pointer focus-visible:ring-ring/50 focus-visible:ring-[3px]'
+  );
+
+  if (onClick) {
+    return (
+      <button
+        type="button"
+        className={className}
+        onClick={onClick}
+      >
+        {body}
+      </button>
+    );
+  }
+
+  return (
+    <div className={className}>
+      {body}
     </div>
   );
 }

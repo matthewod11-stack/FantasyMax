@@ -13,7 +13,7 @@ import { createClient } from '@supabase/supabase-js';
 
 // Load environment variables from .env.local
 dotenv.config({ path: '.env.local' });
-import { detectUniqueMentions, type MemberNameEntry, type DetectedMention } from '../src/lib/mentions/detect-mentions';
+import { detectUniqueMentions, type MemberNameEntry } from '../src/lib/mentions/detect-mentions';
 
 // Parse command line arguments
 const args = process.argv.slice(2);

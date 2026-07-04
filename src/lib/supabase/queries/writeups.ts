@@ -13,6 +13,35 @@ import type {
   WriteupSearchResult,
   WriteupType,
 } from '@/types/contracts/queries';
+import { getWriteupLoreTopics } from '@/lib/writeups/lore';
+
+const WRITEUP_WITH_DETAILS_SELECT = `
+  id,
+  title,
+  content,
+  excerpt,
+  season_id,
+  week,
+  writeup_type,
+  author_id,
+  status,
+  published_at,
+  is_featured,
+  imported_from,
+  original_order,
+  created_at,
+  updated_at,
+  author:members!author_id(id, display_name, avatar_url),
+  season:seasons!season_id(id, year),
+  mentions:writeup_mentions(
+    id,
+    writeup_id,
+    member_id,
+    mention_context,
+    created_at,
+    member:members!member_id(id, display_name, avatar_url)
+  )
+`;
 
 /**
  * Helper to get untyped client (writeups table not in generated types yet)
@@ -32,25 +61,7 @@ export async function getAllWriteups(): Promise<WriteupWithDetails[]> {
 
   const { data, error } = await supabase
     .from('writeups')
-    .select(`
-      id,
-      title,
-      content,
-      excerpt,
-      season_id,
-      week,
-      writeup_type,
-      author_id,
-      status,
-      published_at,
-      is_featured,
-      imported_from,
-      original_order,
-      created_at,
-      updated_at,
-      author:members!author_id(id, display_name, avatar_url),
-      season:seasons!season_id(id, year)
-    `)
+    .select(WRITEUP_WITH_DETAILS_SELECT)
     .eq('status', 'published')
     .order('published_at', { ascending: false });
 
@@ -73,25 +84,7 @@ export async function getWriteupById(id: string): Promise<WriteupWithDetails | n
 
   const { data, error } = await supabase
     .from('writeups')
-    .select(`
-      id,
-      title,
-      content,
-      excerpt,
-      season_id,
-      week,
-      writeup_type,
-      author_id,
-      status,
-      published_at,
-      is_featured,
-      imported_from,
-      original_order,
-      created_at,
-      updated_at,
-      author:members!author_id(id, display_name, avatar_url),
-      season:seasons!season_id(id, year)
-    `)
+    .select(WRITEUP_WITH_DETAILS_SELECT)
     .eq('id', id)
     .single();
 
@@ -200,25 +193,7 @@ export async function getWriteupsForSeason(year: number): Promise<WriteupWithDet
 
   const { data, error } = await supabase
     .from('writeups')
-    .select(`
-      id,
-      title,
-      content,
-      excerpt,
-      season_id,
-      week,
-      writeup_type,
-      author_id,
-      status,
-      published_at,
-      is_featured,
-      imported_from,
-      original_order,
-      created_at,
-      updated_at,
-      author:members!author_id(id, display_name, avatar_url),
-      season:seasons!season_id(id, year)
-    `)
+    .select(WRITEUP_WITH_DETAILS_SELECT)
     .eq('season_id', season.id)
     .eq('status', 'published')
     .order('original_order', { ascending: true });
@@ -242,25 +217,7 @@ export async function getWriteupsByType(type: WriteupType): Promise<WriteupWithD
 
   const { data, error } = await supabase
     .from('writeups')
-    .select(`
-      id,
-      title,
-      content,
-      excerpt,
-      season_id,
-      week,
-      writeup_type,
-      author_id,
-      status,
-      published_at,
-      is_featured,
-      imported_from,
-      original_order,
-      created_at,
-      updated_at,
-      author:members!author_id(id, display_name, avatar_url),
-      season:seasons!season_id(id, year)
-    `)
+    .select(WRITEUP_WITH_DETAILS_SELECT)
     .eq('writeup_type', type)
     .eq('status', 'published')
     .order('published_at', { ascending: false });
@@ -284,25 +241,7 @@ export async function getFeaturedWriteups(limit: number = 3): Promise<WriteupWit
 
   const { data, error } = await supabase
     .from('writeups')
-    .select(`
-      id,
-      title,
-      content,
-      excerpt,
-      season_id,
-      week,
-      writeup_type,
-      author_id,
-      status,
-      published_at,
-      is_featured,
-      imported_from,
-      original_order,
-      created_at,
-      updated_at,
-      author:members!author_id(id, display_name, avatar_url),
-      season:seasons!season_id(id, year)
-    `)
+    .select(WRITEUP_WITH_DETAILS_SELECT)
     .eq('is_featured', true)
     .eq('status', 'published')
     .order('published_at', { ascending: false })
@@ -334,15 +273,27 @@ export async function searchWriteups(query: string): Promise<WriteupSearchResult
     return [];
   }
 
-  return (data || []).map((row: Record<string, unknown>) => ({
-    id: row.id as string,
-    title: row.title as string,
-    excerpt: row.excerpt as string | null,
-    season_year: row.season_year as number | null,
-    writeup_type: row.writeup_type as WriteupType,
-    published_at: row.published_at as string | null,
-    rank: row.rank as number,
-  }));
+  return (data || []).map((row: Record<string, unknown>) => {
+    const title = row.title as string;
+    const excerpt = row.excerpt as string | null;
+    const writeupType = row.writeup_type as WriteupType;
+
+    return {
+      id: row.id as string,
+      title,
+      excerpt,
+      season_year: row.season_year as number | null,
+      writeup_type: writeupType,
+      lore_topics: getWriteupLoreTopics({
+        title,
+        excerpt,
+        content: '',
+        writeup_type: writeupType,
+      }),
+      published_at: row.published_at as string | null,
+      rank: row.rank as number,
+    };
+  });
 }
 
 /**
@@ -386,6 +337,7 @@ export async function getWriteupStats(): Promise<{
 function transformWriteup(row: Record<string, unknown>): WriteupWithDetails {
   const author = row.author as { id: string; display_name: string; avatar_url: string | null } | null;
   const season = row.season as { id: string; year: number } | null;
+  const mentions = row.mentions as WriteupWithDetails['mentions'] | null;
 
   return {
     id: row.id as string,
@@ -409,5 +361,6 @@ function transformWriteup(row: Record<string, unknown>): WriteupWithDetails {
       avatar_url: null,
     },
     season: season,
+    mentions: mentions ?? [],
   };
 }

@@ -1,7 +1,6 @@
 import { Suspense } from 'react';
-import { FileText, Calendar, Search } from 'lucide-react';
+import { FileText, Calendar } from 'lucide-react';
 import {
-  WriteupsBySeason,
   WriteupsSkeleton,
 } from '@/components/features/writeups';
 import { getWriteupsBySeason, getWriteupStats } from '@/lib/supabase/queries';
