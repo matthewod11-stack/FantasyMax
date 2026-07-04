@@ -14,10 +14,15 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { LogOut, User, Search } from 'lucide-react';
 import { useCommandPalette } from '@/hooks/use-command-palette';
-import type { Member } from '@/types/database.types';
+
+export interface HeaderMember {
+  display_name: string | null;
+  avatar_url: string | null;
+  role: string | null;
+}
 
 interface HeaderProps {
-  member: Member | null;
+  member: HeaderMember | null;
 }
 
 export function Header({ member }: HeaderProps) {
@@ -67,7 +72,7 @@ export function Header({ member }: HeaderProps) {
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="relative h-10 w-10 rounded-full">
             <Avatar className="h-10 w-10">
-              <AvatarImage src={member?.avatar_url ?? undefined} alt={member?.display_name} />
+              <AvatarImage src={member?.avatar_url ?? undefined} alt={member?.display_name ?? ''} />
               <AvatarFallback>{initials ?? '?'}</AvatarFallback>
             </Avatar>
           </Button>
@@ -76,7 +81,6 @@ export function Header({ member }: HeaderProps) {
           <DropdownMenuLabel>
             <div className="flex flex-col space-y-1">
               <p className="text-sm font-medium">{member?.display_name}</p>
-              <p className="text-xs text-muted-foreground">{member?.email}</p>
               <p className="text-xs text-muted-foreground capitalize">{member?.role}</p>
             </div>
           </DropdownMenuLabel>

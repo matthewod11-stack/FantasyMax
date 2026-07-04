@@ -5,10 +5,15 @@ import { useRouter } from 'next/navigation';
 import { CommandPalette } from '@/components/ui/command-palette';
 import { useCommandPalette, searchCommandItems } from '@/hooks/use-command-palette';
 import type { CommandPaletteItem } from '@/types/contracts/components';
-import type { Member } from '@/types/database.types';
+
+export interface CommandPaletteMember {
+  id: string;
+  display_name: string | null;
+  role: string | null;
+}
 
 interface CommandPaletteWrapperProps {
-  members: Member[];
+  members: CommandPaletteMember[];
   seasons: number[];
 }
 
@@ -29,7 +34,7 @@ export function CommandPaletteWrapper({ members, seasons }: CommandPaletteWrappe
     // Managers
     ...members.map((m) => ({
       id: `manager-${m.id}`,
-      label: m.display_name,
+      label: m.display_name ?? 'Unknown Manager',
       description: m.role === 'commissioner' ? 'Commissioner' : 'Manager',
       category: 'manager' as const,
       href: `/managers/${m.id}`,

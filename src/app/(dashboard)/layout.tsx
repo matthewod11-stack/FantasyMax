@@ -6,6 +6,31 @@ import { Sidebar } from '@/components/layout/sidebar';
 import { Header } from '@/components/layout/header';
 import { CommandPaletteWrapper } from '@/components/layout/command-palette-wrapper';
 
+interface LayoutMember {
+  id: string;
+  display_name: string | null;
+  avatar_url: string | null;
+  role: string | null;
+}
+
+const memberClientFields = 'id, display_name, avatar_url, role';
+
+function toHeaderMember(member: LayoutMember) {
+  return {
+    display_name: member.display_name,
+    avatar_url: member.avatar_url,
+    role: member.role,
+  };
+}
+
+function toCommandPaletteMembers(members: LayoutMember[]) {
+  return members.map((member) => ({
+    id: member.id,
+    display_name: member.display_name,
+    role: member.role,
+  }));
+}
+
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   // Check for password gate or dev bypass
   const cookieStore = await cookies();
@@ -24,9 +49,9 @@ export default async function DashboardLayout({ children }: { children: React.Re
 
     const { data: member } = await supabase
       .from('members')
-      .select('*')
+      .select(memberClientFields)
       .eq('user_id', user.id)
-      .single();
+      .single<LayoutMember>();
 
     if (!member) {
       redirect('/login');
@@ -35,9 +60,10 @@ export default async function DashboardLayout({ children }: { children: React.Re
     // Fetch all active members for the selector
     const { data: allMembers } = await supabase
       .from('members')
-      .select('*')
+      .select(memberClientFields)
       .eq('is_active', true)
-      .order('display_name');
+      .order('display_name')
+      .returns<LayoutMember[]>();
 
     // Fetch seasons for command palette
     const { data: seasons } = await supabase
@@ -56,9 +82,12 @@ export default async function DashboardLayout({ children }: { children: React.Re
         <Sidebar userRole={member.role} />
         <div className="flex-1 flex flex-col">
           <Suspense fallback={null}>
-            <Header member={member} />
+            <Header member={toHeaderMember(member)} />
             <main className="flex-1 p-6">{children}</main>
-            <CommandPaletteWrapper members={allMembers} seasons={seasonYears} />
+            <CommandPaletteWrapper
+              members={toCommandPaletteMembers(allMembers)}
+              seasons={seasonYears}
+            />
           </Suspense>
         </div>
       </div>
@@ -71,9 +100,10 @@ export default async function DashboardLayout({ children }: { children: React.Re
   // Fetch all active members for the selector
   const { data: allMembers } = await supabase
     .from('members')
-    .select('*')
+    .select(memberClientFields)
     .eq('is_active', true)
-    .order('display_name');
+    .order('display_name')
+    .returns<LayoutMember[]>();
 
   // Fetch seasons for command palette
   const { data: seasons } = await supabase
@@ -96,10 +126,13 @@ export default async function DashboardLayout({ children }: { children: React.Re
       <Sidebar userRole={defaultMember.role} />
       <div className="flex-1 flex flex-col">
         <Suspense fallback={null}>
-            <Header member={defaultMember} />
-            <main className="flex-1 p-6">{children}</main>
-            <CommandPaletteWrapper members={allMembers} seasons={seasonYears} />
-          </Suspense>
+          <Header member={toHeaderMember(defaultMember)} />
+          <main className="flex-1 p-6">{children}</main>
+          <CommandPaletteWrapper
+            members={toCommandPaletteMembers(allMembers)}
+            seasons={seasonYears}
+          />
+        </Suspense>
       </div>
     </div>
   );

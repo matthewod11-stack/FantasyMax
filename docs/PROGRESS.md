@@ -20,6 +20,7 @@ Most recent session should be first.
 - Replaced the partial `trades(yahoo_trade_key)` index with a full nullable unique index so Supabase upserts can target `yahoo_trade_key`
 - Restored Trades to member nav and command palette now that real content exists
 - Upgraded `/trades` with deal summaries, exchanged-player previews, default selected trade detail, dates, and deterministic championship-impact callouts
+- Sanitized dashboard layout props so client-rendered header and command palette no longer receive full member rows with email/user id fields
 
 ### Verified
 - Baseline before edits: `npm run test:run` passed: 14 files, 163 tests
@@ -31,6 +32,7 @@ Most recent session should be first.
 - `npm run test:run` passes: 17 files, 170 tests
 - `npm run typecheck` passes
 - `npm run build` passes and generates 39 routes, including `/trades`
+- Production smoke check confirmed `/trades` renders 41 trade records behind the existing gate; follow-up deployment verifies member email/user id fields are not serialized in the page payload
 
 ### Follow-up
 - Five historical Yahoo trades still skip because one involved team key is missing from the imported season teams
