@@ -32,9 +32,14 @@ Most recent session should be first.
 - Applied `supabase/migrations/20260704002503_weekly_digest_publish.sql` to linked remote Supabase via `supabase db query --linked --file ...`
 - Remote schema verification confirmed `status`, `commissioner_note`, `published_at`, `published_title`, highlights default `[]`, and the `weekly_digests_status_check` constraint
 - Remote RLS verification confirmed the only `weekly_digests` policy is published-only SELECT
+- GitHub Actions on `main` passed after merge/push
+- Vercel production deploy is Ready and aliased to `https://modfantasyleague.com`
+- Production Admin -> Weekly Email renders the new League Dispatch edit/publish controls
+- Production dashboard hides the existing 2025 Week 16 digest while it is a draft
+- Temporary production publish of the 2025 Week 16 digest rendered the dispatch title, commissioner note, and highlight facts on `/?week=16`; row was restored to draft/null afterward
 
 ### Follow-up
-- After deploy, run production Sync Now, edit/publish the latest digest in Admin -> Weekly Email, then confirm `/?week=N` shows the published dispatch
+- For the real 2026 season, run production Sync Now after Yahoo reconnect, edit/publish the latest digest in Admin -> Weekly Email, then leave that real dispatch published
 - Task 3 commissioner gate remains parked; Task 5 server actions match the current admin boundary but do not replace the signed commissioner gate work
 - Supabase advisors still report broader pre-existing database debt outside Task 5, including security-definer views/functions and broad policies on older tables
 
