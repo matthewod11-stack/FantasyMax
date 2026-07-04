@@ -1,4 +1,5 @@
 import { createAdminClient } from '../server';
+import { formatTradeChampionshipImpact } from '@/lib/trades/story';
 
 export interface TradeTimelineItem {
   id: string;
@@ -11,6 +12,12 @@ export interface TradeTimelineItem {
   team2MemberName: string;
   team1Sends: { name: string; position?: string }[];
   team2Sends: { name: string; position?: string }[];
+  championshipImpact: string | null;
+}
+
+interface TradeTimelineItemWithMemberIds extends TradeTimelineItem {
+  team1MemberId?: string;
+  team2MemberId?: string;
 }
 
 export async function getTradeTimeline(options?: {
@@ -32,11 +39,13 @@ export async function getTradeTimeline(options?: {
       seasons!inner(year),
       team_1:teams!trades_team_1_id_fkey(
         team_name,
-        member:members(display_name)
+        is_champion,
+        member:members(id, display_name)
       ),
       team_2:teams!trades_team_2_id_fkey(
         team_name,
-        member:members(display_name)
+        is_champion,
+        member:members(id, display_name)
       )
     `,
     )
@@ -53,7 +62,7 @@ export async function getTradeTimeline(options?: {
   const { data, error } = await query;
   if (error) throw error;
 
-  let items = (data ?? []).map((t) => {
+  let items: TradeTimelineItemWithMemberIds[] = (data ?? []).map((t) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const t1 = t.team_1 as any;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -61,17 +70,28 @@ export async function getTradeTimeline(options?: {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const seasons = t.seasons as any;
 
+    const seasonYear = seasons?.year ?? 0;
+    const team1MemberName = t1?.member?.display_name ?? 'Unknown';
+    const team2MemberName = t2?.member?.display_name ?? 'Unknown';
+
     return {
       id: t.id,
       tradeDate: t.trade_date,
       week: t.week,
-      seasonYear: seasons?.year ?? 0,
+      seasonYear,
       team1Name: t1?.team_name ?? 'Team 1',
       team2Name: t2?.team_name ?? 'Team 2',
-      team1MemberName: t1?.member?.display_name ?? 'Unknown',
-      team2MemberName: t2?.member?.display_name ?? 'Unknown',
+      team1MemberName,
+      team2MemberName,
       team1Sends: (t.team_1_sends as { name: string; position?: string }[]) ?? [],
       team2Sends: (t.team_2_sends as { name: string; position?: string }[]) ?? [],
+      championshipImpact: formatTradeChampionshipImpact({
+        seasonYear,
+        team1MemberName,
+        team2MemberName,
+        team1IsChampion: Boolean(t1?.is_champion),
+        team2IsChampion: Boolean(t2?.is_champion),
+      }),
       team1MemberId: t1?.member?.id,
       team2MemberId: t2?.member?.id,
     };
@@ -80,14 +100,24 @@ export async function getTradeTimeline(options?: {
   if (options?.memberId) {
     items = items.filter(
       (t) =>
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (t as any).team1MemberId === options.memberId ||
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (t as any).team2MemberId === options.memberId,
+        t.team1MemberId === options.memberId ||
+        t.team2MemberId === options.memberId,
     );
   }
 
-  return items.map(({ team1MemberId: _a, team2MemberId: _b, ...rest }) => rest);
+  return items.map((item) => ({
+    id: item.id,
+    tradeDate: item.tradeDate,
+    week: item.week,
+    seasonYear: item.seasonYear,
+    team1Name: item.team1Name,
+    team2Name: item.team2Name,
+    team1MemberName: item.team1MemberName,
+    team2MemberName: item.team2MemberName,
+    team1Sends: item.team1Sends,
+    team2Sends: item.team2Sends,
+    championshipImpact: item.championshipImpact,
+  }));
 }
 
 export async function getTradeCount(): Promise<number> {

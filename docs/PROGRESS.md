@@ -10,6 +10,32 @@
 Most recent session should be first.
 -->
 
+## Session: 2026-07-04 (Task 8 Trade Import And Trade Storytelling)
+
+### Completed
+- Added a read-only Yahoo trade diagnostic script that can audit the configured league key or all accessible NFL league keys without writing to Supabase
+- Confirmed the configured 2025 league key returns 0 trades, but historical Yahoo league keys expose 48 total trade transactions, including 46 for app seasons
+- Fixed Yahoo trade parsing so numeric-key transaction wrappers and nested player transaction data map into the local `YahooTransaction` shape
+- Added a controlled dry-run/live trade importer and imported 41 mapped historical trades into remote Supabase
+- Replaced the partial `trades(yahoo_trade_key)` index with a full nullable unique index so Supabase upserts can target `yahoo_trade_key`
+- Restored Trades to member nav and command palette now that real content exists
+- Upgraded `/trades` with deal summaries, exchanged-player previews, default selected trade detail, dates, and deterministic championship-impact callouts
+
+### Verified
+- Baseline before edits: `npm run test:run` passed: 14 files, 163 tests
+- Read-only Yahoo audit found 48 historical trades across 15 accessible NFL leagues; 2025 configured key returned 0 trades
+- Dry-run import found 46 app-season Yahoo trades, 41 mapped rows, 5 missing-team skips, and 2 non-app-season skips
+- Live import wrote 41 remote `trades` rows; remote sample includes 2024 trades with player payloads
+- Focused Task 8 tests pass: 3 files, 7 tests
+- `npm run lint` exits 0 with 43 warnings and 0 errors
+- `npm run test:run` passes: 17 files, 170 tests
+- `npm run typecheck` passes
+- `npm run build` passes and generates 39 routes, including `/trades`
+
+### Follow-up
+- Five historical Yahoo trades still skip because one involved team key is missing from the imported season teams
+- Trade `week` remains null because Yahoo transaction payloads provide dates but not fantasy week numbers
+
 ## Session: 2026-07-03 (Task 7 Writeup Organization And Lore Tags)
 
 ### Completed

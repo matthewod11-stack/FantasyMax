@@ -1,7 +1,7 @@
 {
   "_meta": {
     "description": "Feature tracking for League of Degenerates. Status: not-started | in-progress | pass | fail | blocked",
-    "lastUpdated": "2026-07-03",
+    "lastUpdated": "2026-07-04",
     "totalFeatures": 121,
     "passing": 112,
     "failing": 0,
@@ -81,8 +81,8 @@
     "writeups-member-mentions": { "status": "pass", "notes": "Auto-detect member names in writeups with aliases, word boundaries, context extraction. 164 mentions across 65 writeups." }
   },
   "phase-2-data-enrichment": {
-    "trade-sync": { "status": "pass", "notes": "Yahoo trade sync in src/lib/yahoo/sync.ts" },
-    "trade-timeline": { "status": "pass", "notes": "/trades timeline UI" }
+    "trade-sync": { "status": "pass", "notes": "Yahoo historical trade audit found 46 app-season trades; 41 mapped trades imported to Supabase on 2026-07-04" },
+    "trade-timeline": { "status": "pass", "notes": "/trades timeline has real imported trade rows, player payloads, and championship-impact callouts" }
   },
   "2026-refresh": {
     "live-yahoo-sync": { "status": "pass", "notes": "syncYahooLeague incremental/full, Sync Now admin button" },

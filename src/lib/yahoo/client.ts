@@ -6,6 +6,7 @@ import type {
   YahooTransaction,
   YahooGame,
 } from './types';
+import { parseYahooTradeTransactions } from './trade-diagnostics';
 
 const YAHOO_AUTH_URL = 'https://api.login.yahoo.com/oauth2/request_auth';
 const YAHOO_TOKEN_URL = 'https://api.login.yahoo.com/oauth2/get_token';
@@ -418,33 +419,16 @@ export class YahooFantasyClient {
   }
 
   // Get transactions (trades only)
-  async getTrades(leagueKey: string): Promise<YahooTransaction[]> {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const response = await this.apiRequest<any>(
-      `/league/${leagueKey}/transactions;types=trade`,
+  async getLeagueTransactionsRaw(leagueKey: string, type: 'trade' = 'trade'): Promise<unknown> {
+    return this.apiRequest(
+      `/league/${leagueKey}/transactions;types=${encodeURIComponent(type)}`,
     );
+  }
 
-    const leagueData = response.fantasy_content?.league;
-    const leagueArray = Array.isArray(leagueData)
-      ? leagueData
-      : this.yahooObjectToArray(leagueData);
-
-    const transactionsWrapper = leagueArray[1]?.transactions;
-    if (!transactionsWrapper) return [];
-
-    const transactionsRaw = this.yahooObjectToArray(transactionsWrapper);
-    const trades: YahooTransaction[] = [];
-
-    for (const txWrapper of transactionsRaw) {
-      const tx = txWrapper?.transaction || txWrapper;
-      if (!tx) continue;
-      const txInner = this.yahooObjectToArray(tx)[0] || tx;
-      if (txInner.type === 'trade' || tx.type === 'trade') {
-        trades.push({ ...tx, ...txInner } as YahooTransaction);
-      }
-    }
-
-    return trades;
+  // Get transactions (trades only)
+  async getTrades(leagueKey: string): Promise<YahooTransaction[]> {
+    const response = await this.getLeagueTransactionsRaw(leagueKey);
+    return parseYahooTradeTransactions(response);
   }
 }
 

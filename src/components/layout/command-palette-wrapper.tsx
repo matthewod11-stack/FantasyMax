@@ -92,6 +92,13 @@ export function CommandPaletteWrapper({ members, seasons }: CommandPaletteWrappe
       category: 'action' as const,
       href: '/writeups',
     },
+    {
+      id: 'action-trades',
+      label: 'Trades',
+      description: 'Browse league trade history',
+      category: 'action' as const,
+      href: '/trades',
+    },
   ], [members, seasons]);
 
   const handleSearch = useCallback((query: string) => {
@@ -118,7 +125,7 @@ export function CommandPaletteWrapper({ members, seasons }: CommandPaletteWrappe
       onSearch={handleSearch}
       onSelect={handleSelect}
       isLoading={isLoading}
-      placeholder="Search managers, seasons, pages..."
+      placeholder="Search managers, seasons, pages…"
     />
   );
 }

@@ -14,6 +14,7 @@ import {
   Settings,
   Upload,
   FileText,
+  ArrowLeftRight,
 } from 'lucide-react';
 interface SidebarProps {
   userRole?: string | null;
@@ -27,6 +28,7 @@ const memberNavItems = [
   { href: '/records', label: 'Records', icon: Award },
   { href: '/hall-of-shame', label: 'Hall of Shame', icon: Skull },
   { href: '/writeups', label: 'Writeups', icon: FileText },
+  { href: '/trades', label: 'Trades', icon: ArrowLeftRight },
 ];
 
 const adminNavItems = [

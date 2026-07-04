@@ -69,12 +69,12 @@
 **Resolution:** Created migration `20241208100001_fix_merge_function.sql` with `CREATE OR REPLACE FUNCTION` to correct the column name. Applied to Supabase.
 
 ### [DATA] Trades not yet imported
-**Status:** Open
+**Status:** Resolved
 **Severity:** Low
 **Discovered:** 2024-12-06
-**Description:** Trade history not synced from Yahoo. Trade count shows 0.
-**Workaround:** Feature deferred to Phase 2.1
-**Resolution:** Implement Yahoo trade sync
+**Resolved:** 2026-07-04
+**Description:** Trade history was not synced from Yahoo. Trade count showed 0.
+**Resolution:** Confirmed Yahoo exposes historical trade transactions for prior league keys, fixed trade parsing/upsert support, and imported 41 mapped historical trades into remote Supabase. Five Yahoo trades remain skipped because an involved historical team key is missing from local teams.
 
 ---
 
@@ -134,9 +134,9 @@
 
 #### 3.1 Trade Sync
 
-- [ ] Yahoo trade history import
-- [ ] Trade detail storage (players exchanged)
-- [ ] Trade timeline view
+- [x] Yahoo trade history import
+- [x] Trade detail storage (players exchanged)
+- [x] Trade timeline view
 - [ ] "Trade winners/losers" analysis
 
 #### 3.2 Draft Data

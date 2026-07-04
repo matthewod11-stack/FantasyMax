@@ -5,6 +5,7 @@ import { loadYahooCredentials, saveYahooCredentials } from './credentials';
 import { withRetry } from './retry';
 import type { YahooOAuthTokens, YahooLeague, YahooMatchup } from './types';
 import { generateWeeklyDigest } from '@/lib/supabase/queries/weekly-digest';
+import { mapYahooTradeToDbRow } from './trade-import';
 
 export interface SyncOptions {
   leagueKey?: string;
@@ -194,53 +195,23 @@ async function syncTrades(
   seasonId: string,
 ): Promise<number> {
   const transactions = await withRetry(() => yahoo.getTrades(leagueKey));
+  const { data: seasonTeams } = await supabase
+    .from('teams')
+    .select('id, yahoo_team_key')
+    .eq('season_id', seasonId);
+  const teamIdByYahooKey = new Map(
+    (seasonTeams ?? [])
+      .filter((team) => team.yahoo_team_key)
+      .map((team) => [team.yahoo_team_key as string, team.id as string]),
+  );
   let count = 0;
 
   for (const tx of transactions) {
-    const traderKey = tx.trader_team_key;
-    const tradeeKey = tx.tradee_team_key;
-    if (!traderKey || !tradeeKey) continue;
-
-    const { data: team1 } = await supabase
-      .from('teams')
-      .select('id')
-      .eq('season_id', seasonId)
-      .eq('yahoo_team_key', traderKey)
-      .single();
-
-    const { data: team2 } = await supabase
-      .from('teams')
-      .select('id')
-      .eq('season_id', seasonId)
-      .eq('yahoo_team_key', tradeeKey)
-      .single();
-
-    if (!team1 || !team2) continue;
-
-    const team1Sends =
-      tx.players
-        ?.filter((p) => p.transaction_data?.source_team_key === traderKey)
-        .map((p) => ({ name: p.name?.full || 'Unknown', position: '' })) || [];
-
-    const team2Sends =
-      tx.players
-        ?.filter((p) => p.transaction_data?.source_team_key === tradeeKey)
-        .map((p) => ({ name: p.name?.full || 'Unknown', position: '' })) || [];
-
-    const tradeDate = tx.timestamp
-      ? new Date(tx.timestamp * 1000).toISOString().split('T')[0]
-      : new Date().toISOString().split('T')[0];
+    const { row } = mapYahooTradeToDbRow(tx, { seasonId, teamIdByYahooKey });
+    if (!row) continue;
 
     const { error } = await supabase.from('trades').upsert(
-      {
-        season_id: seasonId,
-        team_1_id: team1.id,
-        team_2_id: team2.id,
-        team_1_sends: team1Sends,
-        team_2_sends: team2Sends,
-        trade_date: tradeDate,
-        yahoo_trade_key: tx.transaction_key,
-      },
+      row,
       { onConflict: 'yahoo_trade_key', ignoreDuplicates: false },
     );
 
