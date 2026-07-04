@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react';
 import { HeatmapCell } from './HeatmapCell';
 import { H2HDrawer } from './H2HDrawer';
 import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { ManagerAvatar } from '@/components/ui/manager-avatar';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { cn } from '@/lib/utils';
@@ -39,15 +39,6 @@ interface H2HMatrixProps {
 }
 
 type DisplayMode = 'record' | 'heatmap';
-
-function getInitials(name: string): string {
-  return name
-    .split(' ')
-    .map((n) => n[0])
-    .join('')
-    .toUpperCase()
-    .slice(0, 2);
-}
 
 export function H2HMatrix({ members, records, matchups }: H2HMatrixProps) {
   const [mode, setMode] = useState<DisplayMode>('record');
@@ -185,12 +176,11 @@ export function H2HMatrix({ members, records, matchups }: H2HMatrixProps) {
                     className="p-2 min-w-[80px] max-w-[100px] text-center bg-muted/50"
                   >
                     <div className="flex flex-col items-center gap-1">
-                      <Avatar className="h-8 w-8">
-                        <AvatarImage src={member.avatar_url ?? undefined} />
-                        <AvatarFallback className="text-xs">
-                          {getInitials(member.display_name)}
-                        </AvatarFallback>
-                      </Avatar>
+                      <ManagerAvatar
+                        avatarUrl={member.avatar_url}
+                        displayName={member.display_name}
+                        size="sm"
+                      />
                       <span className="text-xs font-medium truncate max-w-full">
                         {member.display_name.split(' ')[0]}
                       </span>
@@ -205,12 +195,11 @@ export function H2HMatrix({ members, records, matchups }: H2HMatrixProps) {
                   {/* Row header - sticky */}
                   <th className="sticky left-0 z-10 bg-background p-2 text-left">
                     <div className="flex items-center gap-2">
-                      <Avatar className="h-8 w-8">
-                        <AvatarImage src={rowMember.avatar_url ?? undefined} />
-                        <AvatarFallback className="text-xs">
-                          {getInitials(rowMember.display_name)}
-                        </AvatarFallback>
-                      </Avatar>
+                      <ManagerAvatar
+                        avatarUrl={rowMember.avatar_url}
+                        displayName={rowMember.display_name}
+                        size="sm"
+                      />
                       <span className="text-sm font-medium truncate max-w-[80px]">
                         {rowMember.display_name.split(' ')[0]}
                       </span>

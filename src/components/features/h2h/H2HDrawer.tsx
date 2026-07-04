@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { DetailModal } from '@/components/ui/detail-modal';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { ManagerAvatar } from '@/components/ui/manager-avatar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
@@ -32,15 +32,6 @@ interface H2HDrawerProps {
   member2Wins: number;
   /** AI-generated rivalry recap (optional) */
   aiRecap?: string | null;
-}
-
-function getInitials(name: string): string {
-  return name
-    .split(' ')
-    .map((n) => n[0])
-    .join('')
-    .toUpperCase()
-    .slice(0, 2);
 }
 
 export function H2HDrawer({
@@ -84,10 +75,12 @@ export function H2HDrawer({
       {/* Header with avatars and overall record */}
       <div className="flex items-center justify-between gap-4">
         <div className="flex flex-col items-center flex-1">
-          <Avatar className="h-16 w-16 mb-2">
-            <AvatarImage src={member1.avatar_url ?? undefined} />
-            <AvatarFallback>{getInitials(member1.display_name)}</AvatarFallback>
-          </Avatar>
+          <ManagerAvatar
+            avatarUrl={member1.avatar_url}
+            displayName={member1.display_name}
+            size="xl"
+            className="mb-2"
+          />
           <span className="font-medium text-sm text-center truncate max-w-full">
             {member1.display_name}
           </span>
@@ -109,10 +102,12 @@ export function H2HDrawer({
         </div>
 
         <div className="flex flex-col items-center flex-1">
-          <Avatar className="h-16 w-16 mb-2">
-            <AvatarImage src={member2.avatar_url ?? undefined} />
-            <AvatarFallback>{getInitials(member2.display_name)}</AvatarFallback>
-          </Avatar>
+          <ManagerAvatar
+            avatarUrl={member2.avatar_url}
+            displayName={member2.display_name}
+            size="xl"
+            className="mb-2"
+          />
           <span className="font-medium text-sm text-center truncate max-w-full">
             {member2.display_name}
           </span>

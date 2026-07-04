@@ -10,6 +10,30 @@
 Most recent session should be first.
 -->
 
+## Session: 2026-07-04 (Task 9 Media And Avatar Polish)
+
+### Completed
+- Reframed `/media` as League Memories instead of an upload-first media gallery
+- Promoted `public/Vegasentrance.MOV` into a persistent featured League Artifact with context and caption
+- Hid media upload controls from password-gated member sessions while preserving a signed-in commissioner path
+- Hardened `/api/media/upload` so uploads require a signed-in commissioner before service-role storage/database writes
+- Added upload validation for same-origin requests, file signature, file size, metadata, commissioner/IP rate limiting, and authenticated `uploaded_by`
+- Normalized local AI avatar lookup by display-name casing/spacing and added object-position metadata for non-square assets
+- Replaced direct manager avatar rendering in H2H, manager, season, and Hall of Shame surfaces with `ManagerAvatar`
+- Added keyboard/focus semantics to clickable manager and rivalry cards touched during avatar polish
+
+### Verified
+- Baseline before edits: `npm run test:run` passed: 17 files, 170 tests
+- Focused Task 9 tests pass: 4 files, 14 tests
+- `npm run lint` exits 0 with 40 warnings and 0 errors
+- `npm run test:run` passes: 21 files, 184 tests
+- `npm run typecheck` passes
+- `npm run build` passes and generates 39 routes, including `/media`
+
+### Follow-up
+- No real manager photos were found in `public/`; current implementation keeps AI avatars and normalizes rendering first
+- Member tagging, lightbox browsing, and moderated member uploads remain V2 media-gallery backlog items
+
 ## Session: 2026-07-04 (Task 8 Trade Import And Trade Storytelling)
 
 ### Completed

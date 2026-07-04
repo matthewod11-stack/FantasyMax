@@ -1,9 +1,10 @@
 'use client';
 
 import * as React from 'react';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import { Avatar, AvatarImage, AvatarFallback } from './avatar';
-import { getAvatarUrl } from '@/lib/utils/avatar-map';
+import { Avatar, AvatarFallback } from './avatar';
+import { getAvatarAsset } from '@/lib/utils/avatar-map';
 import type { ManagerAvatarProps } from '@/types/contracts/components';
 
 /**
@@ -50,7 +51,16 @@ const ManagerAvatar = React.forwardRef<HTMLSpanElement, ManagerAvatarComponentPr
   ({ avatarUrl, displayName, size, showChampionRing = false, className }, ref) => {
     const initials = getInitials(displayName);
     // Auto-lookup avatar from static map if none provided
-    const resolvedAvatarUrl = avatarUrl || getAvatarUrl(displayName);
+    const mappedAsset = getAvatarAsset(displayName);
+    const resolvedAvatarUrl = avatarUrl || mappedAsset?.src;
+    const objectPosition = avatarUrl ? 'center center' : mappedAsset?.objectPosition;
+    const [imageFailed, setImageFailed] = React.useState(false);
+    const showImage = Boolean(resolvedAvatarUrl) && !imageFailed;
+    const imageSrc = showImage ? resolvedAvatarUrl : null;
+
+    React.useEffect(() => {
+      setImageFailed(false);
+    }, [resolvedAvatarUrl]);
 
     return (
       <Avatar
@@ -62,9 +72,6 @@ const ManagerAvatar = React.forwardRef<HTMLSpanElement, ManagerAvatarComponentPr
           className
         )}
       >
-        {resolvedAvatarUrl && (
-          <AvatarImage src={resolvedAvatarUrl} alt={displayName} />
-        )}
         <AvatarFallback
           className={cn(
             'bg-secondary text-secondary-foreground font-display',
@@ -73,6 +80,19 @@ const ManagerAvatar = React.forwardRef<HTMLSpanElement, ManagerAvatarComponentPr
         >
           {initials}
         </AvatarFallback>
+        {imageSrc && (
+          <Image
+            src={imageSrc}
+            alt={displayName}
+            className="aspect-square size-full object-cover object-center"
+            fill
+            sizes="64px"
+            loading="lazy"
+            unoptimized
+            style={{ objectPosition }}
+            onError={() => setImageFailed(true)}
+          />
+        )}
       </Avatar>
     );
   }

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { ManagerAvatar } from '@/components/ui/manager-avatar';
 import { Skull, Calendar, TrendingDown, Target } from 'lucide-react';
 import { getToiletTrophyUrlWithFallback, hasToiletTrophy } from '@/lib/utils/trophy-map';
 import type { ShameInductee } from '@/lib/supabase/queries';
@@ -12,15 +12,6 @@ import type { ShameInductee } from '@/lib/supabase/queries';
 interface SeasonInducteesProps {
   inductees: ShameInductee[];
   className?: string;
-}
-
-function getInitials(name: string): string {
-  return name
-    .split(' ')
-    .map((n) => n[0])
-    .join('')
-    .toUpperCase()
-    .slice(0, 2);
 }
 
 /**
@@ -113,12 +104,12 @@ export function SeasonInductees({ inductees, className }: SeasonInducteesProps) 
                         <div className="flex-1 p-4 flex flex-col justify-between">
                           {/* Member info */}
                           <div className="flex items-start gap-3">
-                            <Avatar className="h-10 w-10 border-2 border-loss/30">
-                              <AvatarImage src={`/avatars/${inductee.display_name.toLowerCase().replace(/\s+/g, '-')}.png`} />
-                              <AvatarFallback className="bg-loss/10 text-loss text-sm">
-                                {getInitials(inductee.display_name)}
-                              </AvatarFallback>
-                            </Avatar>
+                            <ManagerAvatar
+                              avatarUrl={null}
+                              displayName={inductee.display_name}
+                              size="md"
+                              className="border-2 border-loss/30"
+                            />
                             <div className="min-w-0 flex-1">
                               <h3 className="font-semibold text-foreground truncate">
                                 {inductee.display_name}

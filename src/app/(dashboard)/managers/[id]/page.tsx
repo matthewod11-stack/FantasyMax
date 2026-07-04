@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { createAdminClient } from '@/lib/supabase/server';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { ManagerAvatar } from '@/components/ui/manager-avatar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { CareerTimeline, RivalryCard, ManagerTrophyCase, type CareerStats, type SeasonHistoryData } from '@/components/features/managers';
@@ -10,22 +10,11 @@ import { getWeeklyHighScoresForMember, getCareerLuckStats, type LuckStats } from
 import { formatLuckIndex, classifyLuck, getLuckDescription, formatScheduleStrength, classifySchedule } from '@/lib/stats/luck';
 import { SeasonHistoryClient } from './SeasonHistoryClient';
 import { Trophy, ArrowLeft, Calendar, Target, TrendingUp, Medal, Dice5, BarChart3 } from 'lucide-react';
-import { getAvatarUrl } from '@/lib/utils/avatar-map';
 import type { Member } from '@/types/database.types';
 
 interface PageProps {
   params: Promise<{ id: string }>;
 }
-
-function getInitials(name: string): string {
-  return name
-    .split(' ')
-    .map((n) => n[0])
-    .join('')
-    .toUpperCase()
-    .slice(0, 2);
-}
-
 
 interface RivalryData {
   opponent: Member;
@@ -242,15 +231,12 @@ export default async function ManagerProfilePage({ params }: PageProps) {
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
         <div className="relative">
-          <Avatar className="h-24 w-24 border-4 border-border">
-            <AvatarImage
-              src={member.avatar_url || getAvatarUrl(member.display_name)}
-              className="object-cover"
-            />
-            <AvatarFallback className="text-3xl font-bold">
-              {getInitials(member.display_name)}
-            </AvatarFallback>
-          </Avatar>
+          <ManagerAvatar
+            avatarUrl={member.avatar_url}
+            displayName={member.display_name}
+            size="xl"
+            className="size-24 border-4 border-border text-3xl"
+          />
           {careerStats.championships > 0 && (
             <div className="absolute -bottom-1 -right-1 bg-yellow-500 rounded-full p-1.5">
               <Trophy className="h-4 w-4 text-yellow-900" />

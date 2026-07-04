@@ -1,11 +1,11 @@
 'use client';
 
+import type { KeyboardEvent } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { ManagerAvatar } from '@/components/ui/manager-avatar';
 import { Badge } from '@/components/ui/badge';
-import { Trophy, TrendingUp, TrendingDown } from 'lucide-react';
+import { Trophy, TrendingUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { getAvatarUrl } from '@/lib/utils/avatar-map';
 import type { Member } from '@/types/database.types';
 
 /**
@@ -34,15 +34,6 @@ export interface ManagerCardProps {
   onClick?: () => void;
 }
 
-function getInitials(name: string): string {
-  return name
-    .split(' ')
-    .map((n) => n[0])
-    .join('')
-    .toUpperCase()
-    .slice(0, 2);
-}
-
 export function ManagerCard({
   member,
   variant,
@@ -52,25 +43,28 @@ export function ManagerCard({
 }: ManagerCardProps) {
   const hasChampionships = stats && stats.championships > 0;
   const winPct = stats ? (stats.winPercentage * 100).toFixed(1) : null;
-  // Resolve avatar URL from static map or database
-  const avatarUrl = member.avatar_url || getAvatarUrl(member.display_name);
+  const handleCardKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (!onClick || (event.key !== 'Enter' && event.key !== ' ')) return;
+    event.preventDefault();
+    onClick();
+  };
 
   if (variant === 'compact') {
     return (
       <button
+        type="button"
         onClick={onClick}
         className={cn(
           'flex items-center gap-3 p-2 rounded-lg transition-colors w-full text-left',
-          'hover:bg-accent',
+          'hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
           onClick && 'cursor-pointer'
         )}
       >
-        <Avatar className="h-8 w-8">
-          <AvatarImage src={avatarUrl} />
-          <AvatarFallback className="text-xs">
-            {getInitials(member.display_name)}
-          </AvatarFallback>
-        </Avatar>
+        <ManagerAvatar
+          avatarUrl={member.avatar_url}
+          displayName={member.display_name}
+          size="sm"
+        />
         <span className="font-medium text-sm">{member.display_name}</span>
         {hasChampionships && showChampionships && (
           <Trophy className="h-3 w-3 text-yellow-500 ml-auto" />
@@ -83,12 +77,16 @@ export function ManagerCard({
     return (
       <Card
         className={cn(
-          'group relative overflow-hidden transition-all duration-300',
+          'group relative overflow-hidden transition-[box-shadow,transform] duration-300',
           'hover:shadow-lg hover:scale-[1.02]',
-          onClick && 'cursor-pointer',
+          onClick && 'cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
           hasChampionships && 'ring-1 ring-yellow-500/20'
         )}
         onClick={onClick}
+        onKeyDown={handleCardKeyDown}
+        role={onClick ? 'button' : undefined}
+        tabIndex={onClick ? 0 : undefined}
+        aria-label={onClick ? `View ${member.display_name}` : undefined}
       >
         <CardContent className="p-6">
           <div className="flex flex-col items-center text-center">
@@ -97,12 +95,12 @@ export function ManagerCard({
               'relative mb-4',
               hasChampionships && 'after:absolute after:inset-0 after:rounded-full after:shadow-[0_0_15px_rgba(234,179,8,0.3)]'
             )}>
-              <Avatar className="h-20 w-20 border-2 border-border">
-                <AvatarImage src={avatarUrl} />
-                <AvatarFallback className="text-xl font-bold bg-muted">
-                  {getInitials(member.display_name)}
-                </AvatarFallback>
-              </Avatar>
+              <ManagerAvatar
+                avatarUrl={member.avatar_url}
+                displayName={member.display_name}
+                size="xl"
+                className="size-20 border-2 border-border text-xl"
+              />
               {hasChampionships && (
                 <div className="absolute -bottom-1 -right-1 bg-yellow-500 rounded-full p-1">
                   <Trophy className="h-3 w-3 text-yellow-900" />
@@ -169,11 +167,15 @@ export function ManagerCard({
   return (
     <Card
       className={cn(
-        'transition-all duration-300 hover:shadow-md',
-        onClick && 'cursor-pointer',
+        'transition-shadow duration-300 hover:shadow-md',
+        onClick && 'cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
         hasChampionships && 'ring-1 ring-yellow-500/20'
       )}
       onClick={onClick}
+      onKeyDown={handleCardKeyDown}
+      role={onClick ? 'button' : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      aria-label={onClick ? `View ${member.display_name}` : undefined}
     >
       <CardContent className="p-4">
         <div className="flex items-center gap-4">
@@ -181,12 +183,12 @@ export function ManagerCard({
             'relative',
             hasChampionships && 'after:absolute after:inset-0 after:rounded-full after:shadow-[0_0_12px_rgba(234,179,8,0.25)]'
           )}>
-            <Avatar className="h-14 w-14">
-              <AvatarImage src={avatarUrl} />
-              <AvatarFallback className="text-lg font-semibold">
-                {getInitials(member.display_name)}
-              </AvatarFallback>
-            </Avatar>
+            <ManagerAvatar
+              avatarUrl={member.avatar_url}
+              displayName={member.display_name}
+              size="lg"
+              className="size-14"
+            />
             {hasChampionships && (
               <div className="absolute -bottom-0.5 -right-0.5 bg-yellow-500 rounded-full p-0.5">
                 <Trophy className="h-2.5 w-2.5 text-yellow-900" />

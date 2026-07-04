@@ -9,11 +9,14 @@ import { toast } from 'sonner';
 interface MediaUploadFormProps {
   seasons: { id: string; year: number }[];
   members: { id: string; display_name: string }[];
+  canUpload?: boolean;
 }
 
-export function MediaUploadForm({ seasons, members }: MediaUploadFormProps) {
+export function MediaUploadForm({ seasons, members, canUpload = true }: MediaUploadFormProps) {
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
+
+  if (!canUpload) return null;
 
   async function upload() {
     if (!file) return;
@@ -38,12 +41,21 @@ export function MediaUploadForm({ seasons, members }: MediaUploadFormProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-sm">Submit Media</CardTitle>
+        <CardTitle className="text-sm">Add League Memory</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-wrap gap-2 items-end">
-        <Input type="file" accept="image/*,video/*" onChange={(e) => setFile(e.target.files?.[0] ?? null)} />
+        <label className="min-w-0 flex-1 text-sm font-medium">
+          <span className="mb-2 block">Media File</span>
+          <Input
+            name="media-file"
+            type="file"
+            accept="image/*,video/*"
+            autoComplete="off"
+            onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+          />
+        </label>
         <Button onClick={upload} disabled={!file || loading}>
-          {loading ? 'Uploading...' : 'Upload'}
+          {loading ? 'Uploading…' : 'Upload Memory'}
         </Button>
       </CardContent>
     </Card>

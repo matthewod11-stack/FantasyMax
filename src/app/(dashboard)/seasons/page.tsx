@@ -17,7 +17,7 @@ export default async function SeasonsPage() {
       teams:teams!teams_season_id_fkey(count),
       champion_team:teams!fk_champion_team(
         team_name,
-        member:members(display_name)
+        member:members(display_name, avatar_url)
       )
     `)
     .order('year', { ascending: false });
@@ -79,7 +79,7 @@ export default async function SeasonsPage() {
                   {season.champion_team && (
                     <div className="flex items-center gap-2 mb-3 text-sm">
                       <ManagerAvatar
-                        avatarUrl={null}
+                        avatarUrl={season.champion_team.member?.avatar_url ?? null}
                         displayName={season.champion_team.member?.display_name ?? 'Champion'}
                         size="sm"
                         showChampionRing

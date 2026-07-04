@@ -1,7 +1,8 @@
 'use client';
 
+import type { KeyboardEvent } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { ManagerAvatar } from '@/components/ui/manager-avatar';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { TrendingUp, TrendingDown, Minus, ChevronRight, Sparkles } from 'lucide-react';
@@ -10,15 +11,6 @@ import type { H2HRecapWithRivalry } from '@/types/contracts/queries';
 interface H2HRivalryCardProps {
   rivalry: H2HRecapWithRivalry;
   onClick?: () => void;
-}
-
-function getInitials(name: string): string {
-  return name
-    .split(' ')
-    .map((n) => n[0])
-    .join('')
-    .toUpperCase()
-    .slice(0, 2);
 }
 
 const rivalryConfig = {
@@ -70,18 +62,25 @@ export function H2HRivalryCard({ rivalry, onClick }: H2HRivalryCardProps) {
   const isLosing = rivalry.wins < rivalry.losses;
   const streakInfo = getStreakDisplay(rivalry.streak);
   const StreakIcon = streakInfo.icon;
-
-  // Get first name for more compact display
-  const opponentFirstName = rivalry.opponent.display_name.split(' ')[0];
+  const handleCardKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (!onClick || (event.key !== 'Enter' && event.key !== ' ')) return;
+    event.preventDefault();
+    onClick();
+  };
 
   return (
     <Card
       className={cn(
-        'overflow-hidden transition-all duration-300 hover:shadow-lg border-l-4',
+        'overflow-hidden border-l-4 transition-[box-shadow,transform] duration-300 hover:shadow-lg',
         config.borderColor,
-        onClick && 'cursor-pointer hover:scale-[1.01]'
+        onClick &&
+          'cursor-pointer hover:scale-[1.01] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
       )}
       onClick={onClick}
+      onKeyDown={handleCardKeyDown}
+      role={onClick ? 'button' : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      aria-label={onClick ? `View rivalry with ${rivalry.opponent.display_name}` : undefined}
     >
       <CardContent className="p-0">
         {/* Main content area */}
@@ -89,12 +88,12 @@ export function H2HRivalryCard({ rivalry, onClick }: H2HRivalryCardProps) {
           {/* Top row: Avatar, name, rivalry badge, record */}
           <div className="flex items-center gap-4">
             {/* Opponent avatar */}
-            <Avatar className="h-14 w-14 border-2 border-border shrink-0">
-              <AvatarImage src={rivalry.opponent.avatar_url ?? undefined} />
-              <AvatarFallback className="text-lg font-bold">
-                {getInitials(rivalry.opponent.display_name)}
-              </AvatarFallback>
-            </Avatar>
+            <ManagerAvatar
+              avatarUrl={rivalry.opponent.avatar_url}
+              displayName={rivalry.opponent.display_name}
+              size="lg"
+              className="size-14 border-2 border-border"
+            />
 
             {/* Name and rivalry type */}
             <div className="flex-1 min-w-0">

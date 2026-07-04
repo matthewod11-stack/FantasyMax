@@ -1,7 +1,8 @@
 'use client';
 
+import type { KeyboardEvent } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { ManagerAvatar } from '@/components/ui/manager-avatar';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import type { Member } from '@/types/database.types';
@@ -16,15 +17,6 @@ interface RivalryCardProps {
   ties?: number;
   rivalryType: RivalryType;
   onClick?: () => void;
-}
-
-function getInitials(name: string): string {
-  return name
-    .split(' ')
-    .map((n) => n[0])
-    .join('')
-    .toUpperCase()
-    .slice(0, 2);
 }
 
 const rivalryConfig: Record<RivalryType, { label: string; color: string; bgColor: string }> = {
@@ -107,14 +99,24 @@ export function RivalryCard({
   const isWinning = memberWins > opponentWins;
   const isLosing = memberWins < opponentWins;
   const narrative = getRivalryNarrative(rivalryType, opponent.display_name, memberWins, opponentWins);
+  const handleCardKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (!onClick || (event.key !== 'Enter' && event.key !== ' ')) return;
+    event.preventDefault();
+    onClick();
+  };
 
   return (
     <Card
       className={cn(
-        'overflow-hidden transition-all duration-300 hover:shadow-lg',
-        onClick && 'cursor-pointer hover:scale-[1.02]'
+        'overflow-hidden transition-shadow duration-300 hover:shadow-lg',
+        onClick &&
+          'cursor-pointer hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
       )}
       onClick={onClick}
+      onKeyDown={handleCardKeyDown}
+      role={onClick ? 'button' : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      aria-label={onClick ? `View ${member.display_name} vs ${opponent.display_name}` : undefined}
     >
       <CardContent className="p-0">
         {/* Header with rivalry type */}
@@ -129,12 +131,12 @@ export function RivalryCard({
           <div className="flex items-center justify-between gap-4">
             {/* Member side */}
             <div className="flex-1 flex flex-col items-center">
-              <Avatar className="h-16 w-16 mb-2 border-2 border-border">
-                <AvatarImage src={member.avatar_url ?? undefined} />
-                <AvatarFallback className="text-lg font-bold">
-                  {getInitials(member.display_name)}
-                </AvatarFallback>
-              </Avatar>
+              <ManagerAvatar
+                avatarUrl={member.avatar_url}
+                displayName={member.display_name}
+                size="xl"
+                className="mb-2 border-2 border-border"
+              />
               <span className="font-semibold text-sm text-center truncate max-w-full">
                 {member.display_name}
               </span>
@@ -177,12 +179,12 @@ export function RivalryCard({
 
             {/* Opponent side */}
             <div className="flex-1 flex flex-col items-center">
-              <Avatar className="h-16 w-16 mb-2 border-2 border-border">
-                <AvatarImage src={opponent.avatar_url ?? undefined} />
-                <AvatarFallback className="text-lg font-bold">
-                  {getInitials(opponent.display_name)}
-                </AvatarFallback>
-              </Avatar>
+              <ManagerAvatar
+                avatarUrl={opponent.avatar_url}
+                displayName={opponent.display_name}
+                size="xl"
+                className="mb-2 border-2 border-border"
+              />
               <span className="font-semibold text-sm text-center truncate max-w-full">
                 {opponent.display_name}
               </span>
