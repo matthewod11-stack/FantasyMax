@@ -2,10 +2,10 @@
   "_meta": {
     "description": "Feature tracking for League of Degenerates. Status: not-started | in-progress | pass | fail | blocked",
     "lastUpdated": "2026-07-03",
-    "totalFeatures": 120,
+    "totalFeatures": 121,
     "passing": 111,
     "failing": 0,
-    "inProgress": 0,
+    "inProgress": 1,
     "blocked": 0
   },
   "foundation": {
@@ -154,6 +154,7 @@
   "phase-9-league-launch": {
     "password-gate": { "status": "pass", "notes": "Simple password protection with 30-day cookie, middleware redirect to /gate" },
     "gate-page": { "status": "pass", "notes": "Password entry page with league branding at /gate" },
-    "gate-api": { "status": "pass", "notes": "POST /api/gate/verify sets league_access cookie" }
+    "gate-api": { "status": "pass", "notes": "POST /api/gate/verify sets league_access cookie" },
+    "league-dispatch-v1": { "status": "in-progress", "notes": "Code and remote schema ready; awaiting production Vercel publish-flow validation" }
   }
 }
