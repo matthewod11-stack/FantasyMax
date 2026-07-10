@@ -247,6 +247,13 @@ Historical archive and future content creation.
 
 ### Phase 5: Feature Enhancements
 - [x] AI-generated season reviews (using standings + writeup files)
+- [ ] [WIP] Source-grounded narrative refresh
+  - [x] Preserve six supplied 2025 commissioner emails as separate, verbatim source records
+  - [x] Add and dry-run an additive/idempotent source importer
+  - [ ] Execute the reviewed six-row 2025 source import
+  - [ ] Segment and index the clean 2015-2024 commissioner source one season at a time
+  - [ ] Regenerate season reviews from cited source records plus verified league facts
+  - [ ] Build manager Scouting Reports from the same source/fact layer
 - [x] Weekly high score cash tracker ($50/week) on manager page
 - [x] Championship winnings tracker (rules changed over years) - "Coming Soon" placeholder
 - [x] Reimagine H2H page ✅ COMPLETE

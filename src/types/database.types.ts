@@ -1315,6 +1315,8 @@ export type Database = {
           original_order: number | null
           published_at: string | null
           season_id: string | null
+          source_key: string | null
+          source_published_on: string | null
           status: string | null
           title: string
           updated_at: string | null
@@ -1332,6 +1334,8 @@ export type Database = {
           original_order?: number | null
           published_at?: string | null
           season_id?: string | null
+          source_key?: string | null
+          source_published_on?: string | null
           status?: string | null
           title: string
           updated_at?: string | null
@@ -1349,6 +1353,8 @@ export type Database = {
           original_order?: number | null
           published_at?: string | null
           season_id?: string | null
+          source_key?: string | null
+          source_published_on?: string | null
           status?: string | null
           title?: string
           updated_at?: string | null

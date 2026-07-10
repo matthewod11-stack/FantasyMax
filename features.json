@@ -145,7 +145,9 @@
   "phase-8.5-ai-content": {
     "h2h-recaps-shortened": { "status": "pass", "notes": "Regenerated 91 H2H recaps from 400-500 words to 3-4 sentences (85% reduction)" },
     "season-reviews-shortened": { "status": "pass", "notes": "Regenerated 11 season reviews from 400-600 words to 150-200 words (60% reduction)" },
-    "season-review-rendering-fix": { "status": "pass", "notes": "Replaced custom parser with ReactMarkdown, fixed markdown headers and blockquotes" }
+    "season-review-rendering-fix": { "status": "pass", "notes": "Replaced custom parser with ReactMarkdown, fixed markdown headers and blockquotes" },
+    "source-first-2025-archive": { "status": "pass", "notes": "Six commissioner emails preserved as separate verbatim source records with stable keys, chronological metadata, and no copied email headers or addresses" },
+    "additive-writeup-importer": { "status": "pass", "notes": "Dry-run-by-default source importer verified against production: 97 existing rows, 6 planned inserts, 0 updates, and no mutations; live six-row import remains an explicit decision" }
   },
   "tech-debt": {
     "enable-auth": { "status": "not-needed", "notes": "Decision: No auth required - app is shareable without login" },

@@ -4,6 +4,31 @@
 
 ---
 
+## Session: 2026-05-20
+
+### Completed
+- Implemented 2026 refresh from audit plan: live Yahoo sync (`sync.ts`), encrypted `yahoo_credentials`, Tuesday cron (`vercel.json`), commissioner weekly email draft panel
+- Trade import + `/trades` timeline, AI platform (`src/lib/ai/`), trash-talk API, rate-limited gate
+- Scaffolds: draft analyzer, media upload, voting, constitution, props, timeline, economy queries
+- DB migration `20260420100000_2026_refresh.sql` applied to remote Supabase
+- Fixed Yahoo token refresh wiping `refresh_token`; credential saves use direct service-role client
+- Weekly digest fallback includes playoff weeks when regular season has no finals
+
+### In Progress
+- Production deploy to Vercel (code committed this session; env vars still needed on Vercel)
+
+### Issues Encountered
+- Sync tested on **live production** before deploy — DB `last_sync_at` updated but new credential/digest code was not running there
+- `yahoo_credentials` empty until prod deploy + reconnect/sync on production URL
+- `supabase db push` blocked by migration history mismatch; migration applied via `db query --file`
+
+### Next Session Should
+- Confirm Vercel deploy green; add `CRON_SECRET` and `SYNC_ENABLED=true` in Vercel env (match `.env.local`)
+- On production: Admin → Import Yahoo (reconnect if needed) → **Sync Now** once
+- Open **Admin → Weekly Email** and verify digest draft; spot-check `/trades` and `/?week=N` dashboard
+
+---
+
 ## Sessions Archived (Oldest to Newest)
 
 ### December 2024

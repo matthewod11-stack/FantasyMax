@@ -10,6 +10,46 @@
 Most recent session should be first.
 -->
 
+## Session: 2026-07-10 16:17
+
+### Completed
+- Audited the live season-review and H2H-recap corpus instead of assuming the recent regeneration solved content quality
+- Confirmed the season reviews still follow a repeated fixed story shape and sampled H2H recaps contain grounding contradictions
+- Chose the original commissioner writing plus verified league data as the authoritative inputs for future recaps and manager scouting reports
+- Added a durable AI/scouting/draft-analysis plan with evidence rules, confidence thresholds, Yahoo draft-import sequencing, and an explicit source-first workflow
+- Preserved the supplied 2025 email chain as six separate chronological source records: draft analysis, midseason power rankings, two playoff-race updates, quarterfinal preview, and Final Four preview
+- Retained the five dates visible in the email headers and left the Final Four email explicitly undated
+- Kept all commissioner body text verbatim apart from collapsed blank lines and removed email-chain headers/addresses
+- Documented archive rules so 2015-2024 can be segmented season by season without rewriting the clean original bodies
+- Added an additive source importer that defaults to dry-run, validates the full season archive, resolves the established commissioner from existing authorship, and upserts only by stable source key
+- Added nullable source identity/date columns and a unique source-key index without changing any of the 97 existing writeups
+- Added archive tests that lock the six curated body hashes and reject malformed metadata, email transport artifacts, duplicate identities, and broken source order
+
+### Verified
+- Source audit passes: 6 files, 6 unique source keys, orders 1-6, and 0 copied email addresses/quoted-header artifacts
+- Normalized body comparison passes 6/6 against the supplied attachment
+- Linked database schema verified: nullable `source_key` and `source_published_on` columns plus the unique `idx_writeups_source_key` index
+- Importer dry run verified: 97 existing writeups, 6 planned inserts, 0 planned updates, and 0 database rows changed
+- Focused archive suite passes: 6 tests
+- `npm run test:run` passes: 25 files, 195 tests
+- `npm run lint` exits 0 with 40 existing warnings and 0 errors
+- `npm run typecheck` passes
+- `npm run build` passes and generates 39 routes
+
+### In Progress
+- The additive importer and production schema are ready, but the reviewed six-row 2025 source import has not been executed
+- The source-grounded recap overhaul and Yahoo draft-history work remain planned, not implemented
+
+### Issues Encountered
+- Production contains two active commissioner records; the importer now resolves the established author from existing writeup authorship instead of assuming one commissioner row
+- The supplied 2025 thread ends at the Final Four and does not include a championship result or final season recap
+
+### Next Session Should
+1. Execute and verify the production import with `npm run writeups:import -- --year=2025 --run`; confirm 103 total writeups and 6 source-keyed rows
+2. Generate a new 2025 season review from the six independently retrievable sources plus verified season facts, creating a fresh artifact instead of tweaking the existing recap
+3. Work backward through the clean 2015-2024 source material, then replace the other existing AI season/H2H recaps with source-grounded versions
+4. Resume `docs/AI_SCOUTING_DRAFT_PLAN_2026.md`: import Yahoo draft results, build deterministic manager evidence, and then add manager scouting reports and draft analysis
+
 ## Session: 2026-07-04 (Task 10 Season Arc Pages)
 
 ### Completed
@@ -216,33 +256,6 @@ Most recent session should be first.
 
 ### Follow-up
 - Remaining 52 lint warnings are non-blocking backlog cleanup
-
----
-
-## Session: 2026-05-20
-
-### Completed
-- Implemented 2026 refresh from audit plan: live Yahoo sync (`sync.ts`), encrypted `yahoo_credentials`, Tuesday cron (`vercel.json`), commissioner weekly email draft panel
-- Trade import + `/trades` timeline, AI platform (`src/lib/ai/`), trash-talk API, rate-limited gate
-- Scaffolds: draft analyzer, media upload, voting, constitution, props, timeline, economy queries
-- DB migration `20260420100000_2026_refresh.sql` applied to remote Supabase
-- Fixed Yahoo token refresh wiping `refresh_token`; credential saves use direct service-role client
-- Weekly digest fallback includes playoff weeks when regular season has no finals
-
-### In Progress
-- Production deploy to Vercel (code committed this session; env vars still needed on Vercel)
-
-### Issues Encountered
-- Sync tested on **live production** before deploy — DB `last_sync_at` updated but new credential/digest code was not running there
-- `yahoo_credentials` empty until prod deploy + reconnect/sync on production URL
-- `supabase db push` blocked by migration history mismatch; migration applied via `db query --file`
-
-### Next Session Should
-- Confirm Vercel deploy green; add `CRON_SECRET` and `SYNC_ENABLED=true` in Vercel env (match `.env.local`)
-- On production: Admin → Import Yahoo (reconnect if needed) → **Sync Now** once
-- Open **Admin → Weekly Email** and verify digest draft; spot-check `/trades` and `/?week=N` dashboard
-
----
 
 ## Session 2026-01-05b (UI Cleanup: Header & Sidebar)
 
