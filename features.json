@@ -147,7 +147,8 @@
     "season-reviews-shortened": { "status": "pass", "notes": "Regenerated 11 season reviews from 400-600 words to 150-200 words (60% reduction)" },
     "season-review-rendering-fix": { "status": "pass", "notes": "Replaced custom parser with ReactMarkdown, fixed markdown headers and blockquotes" },
     "source-first-2025-archive": { "status": "pass", "notes": "Six commissioner emails preserved as separate verbatim source records with stable keys, chronological metadata, and no copied email headers or addresses" },
-    "additive-writeup-importer": { "status": "pass", "notes": "Dry-run-by-default source importer verified against production: 97 existing rows, 6 planned inserts, 0 updates, and no mutations; live six-row import remains an explicit decision" }
+    "additive-writeup-importer": { "status": "pass", "notes": "Dry-run-by-default source importer verified against production: 97 existing rows, 6 planned inserts, 0 updates, and no mutations; live six-row import remains an explicit decision" },
+    "league-history-infographic": { "status": "pass", "notes": "Standalone 2015-2025 league-history experience published permanently at tropic-slate-skkk.here.now with a frozen credential-free Supabase snapshot" }
   },
   "tech-debt": {
     "enable-auth": { "status": "not-needed", "notes": "Decision: No auth required - app is shareable without login" },

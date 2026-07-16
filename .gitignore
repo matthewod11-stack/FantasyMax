@@ -30,6 +30,7 @@ supabase/.temp/
 # local agent/editor state
 .codex/
 .cursor/
+.herenow/
 
 # debug
 npm-debug.log*

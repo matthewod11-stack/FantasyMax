@@ -4,6 +4,25 @@
 
 ---
 
+## Session: 2026-07-02 (CI And Lint Green)
+
+### Completed
+- Cleared 9 blocking ESLint errors across dashboard layout, member merge history, governance copy, writeup detail loading, writeup skeleton rendering, Yahoo sync, and `useCountUp`
+- Kept cleanup scoped to lint-blocking errors; existing non-blocking warnings remain for later backlog cleanup
+- Updated stale CI/build tracking in `features.json`
+
+### Verified
+- `npm run lint` exits 0 with 52 warnings and 0 errors
+- `npm run test:run` passes: 7 test files, 137 tests
+- `npm run typecheck` passes
+- `npm run build` passes
+- GitHub Actions on `main` passed after push
+
+### Follow-up
+- Remaining 52 lint warnings are non-blocking backlog cleanup
+
+---
+
 ## Session: 2026-05-20
 
 ### Completed

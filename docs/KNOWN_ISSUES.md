@@ -28,6 +28,14 @@
 
 ## Open Issues
 
+### [DATA] Duplicate 2025 team rows
+**Status:** Open
+**Severity:** Medium
+**Discovered:** 2026-07-16
+**Description:** The 2025 season has 16 team rows despite `seasons.num_teams = 14`. Final ranks 8 and 14 each have a duplicate row tied to a second member identity, which can inflate career and season aggregates that do not deduplicate by final rank.
+**Workaround:** The standalone league-history snapshot selects one canonical team per season/final rank, prioritizing champion/last-place flags and active members.
+**Resolution:** Use the existing member-merge tooling to consolidate the duplicate Matt OD and Billy/Matthew identities, then verify the 2025 season returns exactly 14 teams and refresh affected materialized views.
+
 ### [INTENTIONAL] Shareable app uses createAdminClient() for reads
 **Status:** Resolved (by design)
 **Severity:** N/A

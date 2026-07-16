@@ -10,6 +10,31 @@
 Most recent session should be first.
 -->
 
+---
+
+## Session: 2026-07-16 13:05
+
+### Completed
+- Built a standalone, mobile-first league-history infographic covering all 11 completed seasons from 2015 through 2025
+- Extracted and validated a credential-free production Supabase snapshot with champions, runners-up, last-place finishes, points leaders, highest weekly scores, and the all-time title ledger
+- Deduplicated two extra 2025 team rows in the snapshot logic without mutating production data
+- Added the 2026 transition from Feeling Good / James H to Pat G and linked the experience back to FantasyMax
+- Published the infographic permanently to `https://tropic-slate-skkk.here.now/`
+- Confirmed the production FantasyMax gate remains enabled and the configured shared password succeeds
+- Added `.herenow/` to `.gitignore` so local publish credentials/state cannot be committed
+
+### In Progress
+- No implementation work remains for the kickoff infographic
+
+### Issues Encountered
+- Production Supabase contains 16 team rows for the 14-team 2025 season because final ranks 8 and 14 each have a duplicate member row; the static snapshot handles this safely, but the underlying member duplicates remain
+- The here.now account already owns the active `lunarweekly.here.now` handle, so the infographic retains its generated permanent URL
+
+### Next Session Should
+- Review the live infographic and kickoff email once more before sending to the league
+- If desired, attach a branded custom domain such as `history.modfantasyleague.com`
+- Reconfirm the current production password before sharing if the gate configuration changes
+
 ## Session: 2026-07-10 16:17
 
 ### Completed
@@ -240,22 +265,6 @@ Most recent session should be first.
 ### Follow-up
 - After Yahoo reconnect and league key confirmation, run production Admin -> Sync Now and confirm Admin -> Weekly Email
 
-## Session: 2026-07-02 (CI And Lint Green)
-
-### Completed
-- Cleared 9 blocking ESLint errors across dashboard layout, member merge history, governance copy, writeup detail loading, writeup skeleton rendering, Yahoo sync, and `useCountUp`
-- Kept cleanup scoped to lint-blocking errors; existing non-blocking warnings remain for later backlog cleanup
-- Updated stale CI/build tracking in `features.json`
-
-### Verified
-- `npm run lint` exits 0 with 52 warnings and 0 errors
-- `npm run test:run` passes: 7 test files, 137 tests
-- `npm run typecheck` passes
-- `npm run build` passes
-- GitHub Actions on `main` passed after push
-
-### Follow-up
-- Remaining 52 lint warnings are non-blocking backlog cleanup
 
 ## Session 2026-01-05b (UI Cleanup: Header & Sidebar)
 
