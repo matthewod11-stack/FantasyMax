@@ -20,6 +20,7 @@ Most recent session should be first.
 - Upgraded Vitest from 4.0.13 to 4.1.10 and refreshed compatible transitive dependencies, including Supabase CLI 2.109.1 and `ws` 8.21.1
 - Added a patched PostCSS 8.5.19 override because Next.js 16.2.10 still pins the vulnerable 8.4.31 release
 - Fixed the Node 24 media-upload test timeout by running the server route test in Vitest's Node environment and making the shared browser mock environment-safe
+- Linked the migrated checkout to the existing Vercel project and added the public Supabase URL and anonymous key to Preview scope so feature-branch builds match Production requirements
 
 ### Verified
 - Clean `npm ci` succeeds with 698 packages installed
@@ -29,6 +30,7 @@ Most recent session should be first.
 - `npm run lint` exits 0 with 40 existing warnings and 0 errors
 - `npm run build` passes on Next.js 16.2.10 and generates 39 routes
 - `npm audit --omit=dev` and full `npm audit` both report 0 vulnerabilities
+- Exact-head Vercel Preview redeploy reaches `READY`, and the password gate returns HTTP 200
 
 ### Follow-up
 - Next.js still warns that the `middleware` file convention is deprecated in favor of `proxy`; migrate that boundary in a separate focused session
