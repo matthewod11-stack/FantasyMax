@@ -15,6 +15,7 @@ import {
   Upload,
   FileText,
   ArrowLeftRight,
+  FlaskConical,
 } from 'lucide-react';
 interface SidebarProps {
   userRole?: string | null;
@@ -29,6 +30,7 @@ const memberNavItems = [
   { href: '/hall-of-shame', label: 'Hall of Shame', icon: Skull },
   { href: '/writeups', label: 'Writeups', icon: FileText },
   { href: '/trades', label: 'Trades', icon: ArrowLeftRight },
+  { href: '/war-room', label: 'War Room', icon: FlaskConical },
 ];
 
 const adminNavItems = [

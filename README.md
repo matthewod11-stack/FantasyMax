@@ -21,6 +21,7 @@ FantasyMax sits alongside Yahoo and ESPN to give your league what those platform
 - **Constitution** — living rules document with amendment history
 - **Hall of Shame** — last-place finishers immortalized forever
 - **Draft analyzer** — historical draft performance breakdowns
+- **2026 War Room** — evidence-led offseason signals interpreted through league-specific roster and scoring settings
 - **Trade history** — full trade log with context and commentary
 - **Invite-only access** — password-gated, members-only experience
 

@@ -1,0 +1,85 @@
+export const leagueProfile = {
+  source: {
+    platform: 'Yahoo',
+    leagueName: 'FFL 2K26',
+    leagueId: '165039',
+    capturedOn: '2026-07-17',
+  },
+  roster: {
+    active: {
+      QB: 1,
+      WR: 2,
+      RB: 2,
+      TE: 1,
+      FLEX: 2,
+      K: 1,
+      DEF: 1,
+    },
+    activeSlots: 10,
+    bench: 4,
+    injuredReserve: 2,
+    draftableSlots: 14,
+  },
+  scoring: {
+    fractionalPoints: true,
+    negativePoints: true,
+    passing: {
+      touchdown: 4,
+      interception: -1,
+      yardsPerPoint: 25,
+      pickSix: -1,
+    },
+    rushing: {
+      touchdown: 6,
+      yardsPerPoint: 10,
+    },
+    receiving: {
+      touchdown: 6,
+      reception: 1,
+      yardsPerPoint: 10,
+    },
+    returns: {
+      touchdown: 6,
+      yardsPerPoint: 20,
+    },
+    twoPointConversion: 2,
+    fumbleLost: -2,
+    bigPlayBonuses: {
+      passingTouchdown40Plus: 1,
+      rushingTouchdown40Plus: 2,
+      receivingTouchdown40Plus: 1,
+    },
+    kicking: {
+      fieldGoal: { zeroToNineteen: 3, twentyToTwentyNine: 3, thirtyToThirtyNine: 3, fortyToFortyNine: 4, fiftyPlus: 5 },
+      missedZeroToNineteen: -5,
+      extraPointMade: 1,
+      extraPointMissed: -1,
+    },
+    defense: {
+      pointsAllowed: {
+        shutout: 10,
+        oneToSix: 7,
+        sevenToThirteen: 5,
+        fourteenToTwenty: 2,
+        twentyOneToTwentySeven: 0,
+        twentyEightToThirtyFour: -2,
+        thirtyFivePlus: -5,
+      },
+      sack: 1,
+      interception: 2,
+      fumbleRecovery: 2,
+      touchdown: 6,
+      safety: 2,
+      blockedKick: 5,
+      returnYardsPerPoint: 20,
+      returnTouchdown: 6,
+      fourthDownStop: 1,
+      tackleForLoss: 0.25,
+      yardsAllowedZeroToNinetyNine: 5,
+      threeAndOut: 1,
+      extraPointReturned: 2,
+    },
+  },
+} as const;
+
+export type LeagueProfile = typeof leagueProfile;
