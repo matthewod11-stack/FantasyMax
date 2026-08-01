@@ -50,7 +50,10 @@ export class YahooFantasyClient {
       client_id: clientId,
       redirect_uri: redirectUri,
       response_type: 'code',
-      scope: 'openid fspt-r',
+      // Fantasy Sports access is granted by the permission selected on the
+      // Yahoo developer application. Yahoo's server-side authorization flow
+      // does not document a separate Fantasy scope parameter.
+      prompt: 'consent',
     });
 
     if (state) {
