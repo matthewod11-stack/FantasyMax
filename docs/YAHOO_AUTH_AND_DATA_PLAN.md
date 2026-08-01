@@ -1,6 +1,6 @@
 # Yahoo Authentication And League Data Plan
 
-**Status:** Yahoo account connection repaired; Fantasy Sports data access externally blocked  
+**Status:** Yahoo account connection repaired; Fantasy Sports data access externally blocked
 **Last verified:** 2026-08-01
 
 ## Current Production Truth
