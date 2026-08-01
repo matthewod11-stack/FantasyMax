@@ -2,9 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { z } from 'zod';
 import { syncYahooLeague } from '@/lib/yahoo/sync';
-import { saveYahooCredentials } from '@/lib/yahoo/credentials';
+import { loadYahooCredentials, saveYahooCredentials } from '@/lib/yahoo/credentials';
 import { createAdminClient } from '@/lib/supabase/server';
-import type { YahooOAuthTokens } from '@/lib/yahoo/types';
 
 const syncRequestSchema = z.object({
   leagueKey: z.string().min(1),
@@ -19,12 +18,12 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 
-    const tokensCookie = cookieStore.get('yahoo_tokens');
-    if (!tokensCookie?.value) {
+    const tokens = await loadYahooCredentials();
+
+    if (!tokens) {
       return NextResponse.json({ error: 'Yahoo not connected' }, { status: 400 });
     }
 
-    const tokens: YahooOAuthTokens = JSON.parse(tokensCookie.value);
     const supabase = await createAdminClient();
     const { data: league } = await supabase.from('league').select('id').single();
 

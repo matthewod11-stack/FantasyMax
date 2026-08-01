@@ -1,25 +1,31 @@
 import { NextResponse } from 'next/server';
+import { cookies } from 'next/headers';
+import { randomBytes } from 'crypto';
 import { YahooFantasyClient } from '@/lib/yahoo/client';
+import { getCanonicalAppUrl, getYahooRedirectUri } from '@/lib/yahoo/oauth';
+
+const OAUTH_STATE_COOKIE = 'yahoo_oauth_state';
 
 export async function GET() {
   try {
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL;
-    const redirectUri = `${appUrl}/api/auth/yahoo/callback`;
-    const clientId = process.env.YAHOO_CLIENT_ID;
+    const redirectUri = getYahooRedirectUri();
+    const state = randomBytes(32).toString('hex');
+    const cookieStore = await cookies();
+    cookieStore.set(OAUTH_STATE_COOKIE, state, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 10 * 60,
+      path: '/api/auth/yahoo',
+    });
 
-    console.log('=== Yahoo OAuth Debug ===');
-    console.log('NEXT_PUBLIC_APP_URL:', appUrl);
-    console.log('Redirect URI:', redirectUri);
-    console.log('Client ID:', clientId?.substring(0, 20) + '...');
-
-    const authUrl = YahooFantasyClient.getAuthUrl(redirectUri);
-    console.log('Full Auth URL:', authUrl);
+    const authUrl = YahooFantasyClient.getAuthUrl(redirectUri, state);
 
     return NextResponse.redirect(authUrl);
   } catch (error) {
     console.error('Yahoo auth error:', error);
     return NextResponse.redirect(
-      `${process.env.NEXT_PUBLIC_APP_URL}/admin/import/yahoo?error=auth_failed`,
+      `${getCanonicalAppUrl()}/admin/import/yahoo?error=auth_failed`,
     );
   }
 }

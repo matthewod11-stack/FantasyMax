@@ -42,7 +42,7 @@ export class YahooFantasyClient {
     };
   }
 
-  static getAuthUrl(redirectUri: string): string {
+  static getAuthUrl(redirectUri: string, state?: string): string {
     const clientId = process.env.YAHOO_CLIENT_ID;
     if (!clientId) throw new Error('YAHOO_CLIENT_ID not configured');
 
@@ -52,6 +52,10 @@ export class YahooFantasyClient {
       response_type: 'code',
       scope: 'openid fspt-r',
     });
+
+    if (state) {
+      params.set('state', state);
+    }
 
     return `${YAHOO_AUTH_URL}?${params.toString()}`;
   }

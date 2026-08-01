@@ -1,18 +1,16 @@
 import { NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
 import { getYahooClient } from '@/lib/yahoo/client';
-import type { YahooOAuthTokens, YahooLeague } from '@/lib/yahoo/types';
+import { loadYahooCredentials, saveYahooCredentials } from '@/lib/yahoo/credentials';
+import { createAdminClient } from '@/lib/supabase/server';
 
 export async function GET() {
   try {
-    const cookieStore = await cookies();
-    const tokensCookie = cookieStore.get('yahoo_tokens');
+    const tokens = await loadYahooCredentials();
 
-    if (!tokensCookie?.value) {
+    if (!tokens) {
       return NextResponse.json({ connected: false });
     }
 
-    const tokens: YahooOAuthTokens = JSON.parse(tokensCookie.value);
     const client = getYahooClient(tokens);
 
     // Fetch all user leagues across all seasons
@@ -23,13 +21,11 @@ export async function GET() {
     // Update tokens if refreshed
     const updatedTokens = client.getTokens();
     if (updatedTokens && updatedTokens.access_token !== tokens.access_token) {
-      cookieStore.set('yahoo_tokens', JSON.stringify(updatedTokens), {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'lax',
-        maxAge: 60 * 60 * 24 * 30,
-        path: '/',
-      });
+      const supabase = await createAdminClient();
+      const { data: league } = await supabase.from('league').select('id').single();
+      if (league) {
+        await saveYahooCredentials(league.id, updatedTokens);
+      }
     }
 
     return NextResponse.json({

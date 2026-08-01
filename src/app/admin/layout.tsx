@@ -3,6 +3,7 @@ import { cookies } from 'next/headers';
 import { createClient, createAdminClient } from '@/lib/supabase/server';
 import { Sidebar } from '@/components/layout/sidebar';
 import { AdminHeader } from '@/components/layout/admin-header';
+import { selectCanonicalCommissioner } from '@/lib/members/canonical-commissioner';
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   // Check for password gate or dev bypass
@@ -47,12 +48,13 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   // Development mode: bypass auth, use commissioner as mock user
   const supabase = await createAdminClient();
 
-  // Find commissioner member
-  const { data: member } = await supabase
+  // Select the established active commissioner deterministically. Production can
+  // retain merged or legacy commissioner rows, so `.single()` is not valid here.
+  const { data: commissionerCandidates } = await supabase
     .from('members')
     .select('*')
-    .eq('role', 'commissioner')
-    .single();
+    .eq('role', 'commissioner');
+  const member = selectCanonicalCommissioner(commissionerCandidates ?? []);
 
   if (!member) {
     // Fallback to first active member if no commissioner

@@ -14,11 +14,6 @@ export async function updateSession(request: NextRequest) {
   const publicRoutes = ['/gate', '/api/gate/verify'];
   const isPublicRoute = publicRoutes.some((route) => pathname.startsWith(route));
 
-  // Skip auth for Yahoo OAuth routes (needed for admin data import)
-  if (pathname.startsWith('/api/auth/yahoo')) {
-    return NextResponse.next();
-  }
-
   // Vercel Cron must reach the route handler, which enforces CRON_SECRET.
   if (pathname === '/api/cron/yahoo-sync') {
     return NextResponse.next();

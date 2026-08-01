@@ -39,4 +39,18 @@ describe('league password middleware', () => {
       'https://modfantasyleague.com/gate?redirect=%2Fapi%2Fadmin%2Fsync-yahoo'
     );
   });
+
+  it('protects Yahoo OAuth routes with the league cookie', async () => {
+    const blocked = await updateSession(createRequest('/api/auth/yahoo'));
+    expect(blocked.status).toBe(307);
+    expect(blocked.headers.get('location')).toBe(
+      'https://modfantasyleague.com/gate?redirect=%2Fapi%2Fauth%2Fyahoo'
+    );
+
+    const allowed = await updateSession(
+      createRequest('/api/auth/yahoo', 'league_access=granted')
+    );
+    expect(allowed.status).toBe(200);
+    expect(allowed.headers.get('location')).toBeNull();
+  });
 });

@@ -3,31 +3,37 @@ import { cookies } from 'next/headers';
 import { YahooFantasyClient } from '@/lib/yahoo/client';
 import { saveYahooCredentials } from '@/lib/yahoo/credentials';
 import { createAdminClient } from '@/lib/supabase/server';
+import { getCanonicalAppUrl, getYahooRedirectUri } from '@/lib/yahoo/oauth';
+
+const OAUTH_STATE_COOKIE = 'yahoo_oauth_state';
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const code = searchParams.get('code');
   const error = searchParams.get('error');
+  const returnedState = searchParams.get('state');
+  const cookieStore = await cookies();
+  const expectedState = cookieStore.get(OAUTH_STATE_COOKIE)?.value;
 
   if (error || !code) {
+    cookieStore.delete(OAUTH_STATE_COOKIE);
     return NextResponse.redirect(
-      `${process.env.NEXT_PUBLIC_APP_URL}/admin/import/yahoo?error=${error || 'no_code'}`,
+      `${getCanonicalAppUrl()}/admin/import/yahoo?error=${error || 'no_code'}`,
     );
   }
 
-  try {
-    const redirectUri = `${process.env.NEXT_PUBLIC_APP_URL}/api/auth/yahoo/callback`;
-    const tokens = await YahooFantasyClient.exchangeCodeForTokens(code, redirectUri);
+  if (!expectedState || !returnedState || returnedState !== expectedState) {
+    cookieStore.delete(OAUTH_STATE_COOKIE);
+    return NextResponse.redirect(
+      `${getCanonicalAppUrl()}/admin/import/yahoo?error=invalid_state`,
+    );
+  }
 
-    // Store tokens in httpOnly cookie (encrypted in production)
-    const cookieStore = await cookies();
-    cookieStore.set('yahoo_tokens', JSON.stringify(tokens), {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
-      maxAge: 60 * 60 * 24 * 30, // 30 days
-      path: '/',
-    });
+  cookieStore.delete(OAUTH_STATE_COOKIE);
+
+  try {
+    const redirectUri = getYahooRedirectUri();
+    const tokens = await YahooFantasyClient.exchangeCodeForTokens(code, redirectUri);
 
     const supabase = await createAdminClient();
     const { data: league } = await supabase.from('league').select('id').single();
@@ -36,12 +42,12 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.redirect(
-      `${process.env.NEXT_PUBLIC_APP_URL}/admin/import/yahoo?success=true`,
+      `${getCanonicalAppUrl()}/admin/import/yahoo?success=true`,
     );
   } catch (err) {
     console.error('Yahoo callback error:', err);
     return NextResponse.redirect(
-      `${process.env.NEXT_PUBLIC_APP_URL}/admin/import/yahoo?error=token_exchange_failed`,
+      `${getCanonicalAppUrl()}/admin/import/yahoo?error=token_exchange_failed`,
     );
   }
 }
