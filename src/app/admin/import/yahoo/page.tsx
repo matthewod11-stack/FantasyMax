@@ -45,11 +45,17 @@ export default function YahooImportPage() {
       if (data.connected) {
         setStatus('connected');
         setLeagues(data.leagues || []);
+        setError(null);
+      } else if (data.error) {
+        setStatus('error');
+        setError(data.error);
       } else {
         setStatus('disconnected');
+        setError(null);
       }
     } catch {
-      setStatus('disconnected');
+      setStatus('error');
+      setError('FantasyMax could not check the Yahoo connection.');
     }
   };
 
@@ -167,10 +173,12 @@ export default function YahooImportPage() {
 
           {status === 'error' && (
             <div className="space-y-4">
-              <p className="text-sm text-destructive">
-                There was an error connecting to Yahoo. Please try again.
+              <p className="text-sm text-destructive">{error}</p>
+              <p className="text-sm text-muted-foreground">
+                Your Yahoo sign-in completed successfully. League syncing will remain unavailable
+                until Yahoo restores Fantasy Sports API access for this application.
               </p>
-              <Button onClick={handleConnect}>Reconnect</Button>
+              <Button onClick={handleConnect}>Try Yahoo Again</Button>
             </div>
           )}
         </CardContent>

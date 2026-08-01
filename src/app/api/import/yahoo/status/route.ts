@@ -39,6 +39,20 @@ export async function GET() {
     });
   } catch (error) {
     console.error('Yahoo status check error:', error);
+
+    const message = error instanceof Error ? error.message : '';
+    if (message.includes('403') && message.includes('not authorized')) {
+      return NextResponse.json(
+        {
+          connected: false,
+          code: 'yahoo_fantasy_api_unavailable',
+          error:
+            'Yahoo accepted the account connection, but is not authorizing Fantasy Sports API access for this application.',
+        },
+        { status: 502 },
+      );
+    }
+
     return NextResponse.json({ connected: false, error: 'Connection check failed' });
   }
 }

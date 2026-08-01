@@ -62,4 +62,25 @@ describe('Yahoo connection status route', () => {
     expect(await response.json()).toEqual({ connected: false });
     expect(getYahooClient).not.toHaveBeenCalled();
   });
+
+  it('reports Yahoo Fantasy authorization failures without exposing the upstream response', async () => {
+    vi.mocked(loadYahooCredentials).mockResolvedValue(storedTokens);
+    vi.mocked(getYahooClient).mockReturnValue({
+      getAllUserLeagues: vi
+        .fn()
+        .mockRejectedValue(
+          new Error('Yahoo API error: 403 - This application is not authorized to perform this action.'),
+        ),
+    } as never);
+
+    const response = await GET();
+
+    expect(response.status).toBe(502);
+    expect(await response.json()).toEqual({
+      connected: false,
+      code: 'yahoo_fantasy_api_unavailable',
+      error:
+        'Yahoo accepted the account connection, but is not authorizing Fantasy Sports API access for this application.',
+    });
+  });
 });

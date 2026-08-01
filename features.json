@@ -1,12 +1,12 @@
 {
   "_meta": {
     "description": "Feature tracking for League of Degenerates. Status: not-started | in-progress | pass | fail | blocked",
-    "lastUpdated": "2026-07-04",
+    "lastUpdated": "2026-08-01",
     "totalFeatures": 122,
-    "passing": 113,
+    "passing": 112,
     "failing": 0,
     "inProgress": 0,
-    "blocked": 0
+    "blocked": 1
   },
   "foundation": {
     "yahoo-oauth": { "status": "pass", "notes": "Yahoo OAuth connection working" },
@@ -85,7 +85,7 @@
     "trade-timeline": { "status": "pass", "notes": "/trades timeline has real imported trade rows, player payloads, and championship-impact callouts" }
   },
   "2026-refresh": {
-    "live-yahoo-sync": { "status": "pass", "notes": "syncYahooLeague incremental/full, Sync Now admin button" },
+    "live-yahoo-sync": { "status": "blocked", "notes": "Implementation and admin controls exist, but Yahoo rejects fresh read-consented tokens with HTTP 403 and no longer offers Fantasy permission on new apps as of 2026-08-01" },
     "yahoo-credentials-db": { "status": "pass", "notes": "Encrypted tokens in yahoo_credentials via service-role client" },
     "tuesday-cron": { "status": "pass", "notes": "vercel.json cron + bearer-protected /api/cron/yahoo-sync. Middleware bypass deployed 2026-07-02; anonymous production check returns 401." },
     "weekly-email-draft": { "status": "pass", "notes": "weekly_digests + Admin Weekly Email panel" },
@@ -151,7 +151,7 @@
     "league-history-infographic": { "status": "pass", "notes": "Standalone 2015-2025 league-history experience published permanently at tropic-slate-skkk.here.now with a frozen credential-free Supabase snapshot" }
   },
   "tech-debt": {
-    "enable-auth": { "status": "not-needed", "notes": "Decision: No auth required - app is shareable without login" },
+    "enable-auth": { "status": "not-started", "notes": "Future direction: Yahoo OpenID login mapped to an allowlisted FantasyMax member/team, with explicit commissioner authorization and temporary shared-password fallback" },
     "enable-rls": { "status": "not-needed", "notes": "Decision: Using admin client for public read-only access" },
     "switch-to-createClient": { "status": "not-needed", "notes": "Decision: Keep admin client for shareable app" }
   },

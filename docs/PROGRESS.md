@@ -12,6 +12,37 @@ Most recent session should be first.
 
 ---
 
+## Session: 2026-08-01 (Production Yahoo Connection Recovery)
+
+### Completed
+- Fixed the production callback-host split by making `modfantasyleague.com` the canonical Yahoo redirect in code, Vercel, and the Yahoo developer app
+- Added OAuth state validation, protected Yahoo routes behind the league gate, and moved credentials from a browser cookie to encrypted Supabase storage
+- Repaired the admin identity fallback so the commissioner header resolves to Matt OD instead of Marko
+- Added a real disconnect path and durable-credential support to connection status and manual imports
+- Upgraded patched Next.js and Sharp releases; full and production dependency audits report zero vulnerabilities
+- Verified the Yahoo OAuth consent round-trip completes on the custom domain and saves a fresh refresh token
+- Added a clear production error state for Yahoo's current Fantasy API authorization failure
+- Documented the recommended split between Yahoo member login and league-data ingestion in `docs/YAHOO_AUTH_AND_DATA_PLAN.md`
+
+### External Blocker
+- Yahoo returns HTTP 403 for all Fantasy Sports requests made with a fresh token from the legacy read-enabled app
+- Yahoo's current app form no longer offers Fantasy Sports permission, and its documented OAuth1 request-token endpoint returns HTTP 404
+- Current 2026 data cannot be refreshed through a supported Yahoo API path until Yahoo restores access or a replacement supported import source is selected
+
+### Verified
+- Full suite passes: 35 test files and 215 tests
+- TypeScript passes; lint exits with zero errors and 39 existing warnings
+- Production build passes on Next.js 16.2.12 and generates 40 routes
+- GitHub CI and Vercel production deployment passed for the connection repair
+- Live custom-domain review shows Matt OD, a successful Yahoo consent callback, encrypted credential persistence, and the upstream 403 isolated from the UI
+
+### Next Session Should
+1. Contact Yahoo Developer Support with the legacy app ID and sanitized 403 evidence
+2. Decide the supported 2026 ingestion path before changing the importer
+3. Scope Yahoo OpenID member login with an allowlist, member/team mapping, commissioner approval, and shared-password fallback
+
+---
+
 ## Session: 2026-07-17 (War Room Integration And Sites Publication)
 
 ### Completed
